@@ -1,0 +1,677 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:svg="http://www.w3.org/2000/svg" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+<head>
+<title>Chapter 2 Cybersecurity Threat Landscape</title>
+<link href="WileyTemplate_v5.5.css" rel="stylesheet" type="text/css"/>
+<meta content="urn:uuid:57d469d3-a1d3-48bd-8447-18ce82f57cc2" name="Adept.expected.resource"/>
+</head>
+<body epub:type="bodymatter">
+<section aria-labelledby="c02_1" epub:type="chapter" role="doc-chapter">
+<header>
+<h1 id="c02_1"><span aria-label="21" epub:type="pagebreak" id="Page_21" role="doc-pagebreak"/><span id="c02"/><span class="chapterNumber">Chapter 2</span><br/><span class="chapterTitle">Cybersecurity Threat Landscape</span></h1>
+</header>
+<section aria-label="chapter opening"><span id="c02-sec-0001"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p><b>THE COMPTIA SECURITY+ EXAM OBJECTIVES COVERED IN THIS CHAPTER INCLUDE:</b></p>
+<ul class="check1" id="c02-list-0002">
+<li id="c02-li-0002"><b>Domain 2.0: Threats, Vulnerabilities, and Mitigations</b>
+<ul class="square1" id="c02-list-0003">
+<li id="c02-li-0003">2.1. Compare and contrast common threat actors and motivations.
+<ul class="square1" id="c02-list-0004">
+<li id="c02-li-0004">Threat actors (Nation-state, Unskilled attacker, Hacktivist, Insider threat, Organized crime, Shadow IT)</li>
+<li id="c02-li-0005">Attributes of actors (Internal/external, Resources/funding, Level of sophistication/capability)</li>
+<li id="c02-li-0006">Motivations (Data exfiltration, Espionage, Service disruption, Blackmail, Financial gain, Philosophical/political beliefs, Ethical, Revenge, Disruption/chaos, War)</li>
+</ul>
+</li>
+<li id="c02-li-0007">2.2. Explain common threat vectors and attack surfaces.
+<ul class="square1" id="c02-list-0005">
+<li id="c02-li-0008">Message-based (Email, Short Message Service (SMS), Instant messaging (IM))</li>
+<li id="c02-li-0009">Image-based</li>
+<li id="c02-li-0010">File-based</li>
+<li id="c02-li-0011">Voice call</li>
+<li id="c02-li-0012">Removable device</li>
+<li id="c02-li-0013">Vulnerable software (Client-based vs. agentless)</li>
+<li id="c02-li-0014">Unsupported systems and applications</li>
+<li id="c02-li-0015">Unsecure networks (Wireless, Wired, Bluetooth)</li>
+<li id="c02-li-0016">Open service ports</li>
+<li id="c02-li-0017">Default credentials</li>
+<li id="c02-li-0018">Supply chain (Managed service providers (MSPs), Vendors, Suppliers)</li>
+</ul>
+</li>
+<li id="c02-li-0019"><span aria-label="22" epub:type="pagebreak" id="Page_22" role="doc-pagebreak"/> 2.3. Explain various types of vulnerabilities.
+<ul class="square1" id="c02-list-0006">
+<li id="c02-li-0020">Supply chain (Service provider, Hardware provider, Software provider)</li>
+<li id="c02-li-0021">Zero-day</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="c02-li-0022"><b>Domain 4.0: Security Operations</b>
+<ul class="square1" id="c02-list-0007">
+<li id="c02-li-0023">4.3. Explain various activities associated with vulnerability management.
+<ul class="square1" id="c02-list-0008">
+<li id="c02-li-0024">Identification methods (Threat feed, Open-source intelligence (OSINT), Proprietary/third-party, Information-sharing organization, Dark web)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul> <span aria-label="23" epub:type="pagebreak" id="Page_23" role="doc-pagebreak"/>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c02-para-0010">Cybersecurity threats have become increasingly sophisticated and diverse over the past few decades. An environment that was once populated by lone hobbyists is now shared by skilled technologists, organized criminal syndicates, and even government-sponsored attackers, all seeking to exploit the digital domain to achieve their own objectives. Cybersecurity professionals seeking to safeguard the confidentiality, integrity, and availability of their organization's assets must have a strong understanding of the threat environment to develop appropriate defensive mechanisms.</p>
+<p id="c02-para-0011">In the first part of this chapter, you will learn about the modern cybersecurity threat environment, including the major types of threat and the characteristics that differentiate them. In the sections that follow, you will learn how to build your own organization's threat intelligence capability to stay current as the threat environment evolves.</p>
+</section>
+<section aria-labelledby="head-2-15"><span id="c02-sec-0002"/>
+<h2 id="head-2-15">Exploring Cybersecurity Threats</h2>
+<p id="c02-para-0012">Cybersecurity threat actors differ significantly in their skills, capabilities, resources, and motivation. Protecting your organization's information and systems requires a solid understanding of the nature of these different threats so that you may develop a set of security controls that comprehensively protects your organization against their occurrence.</p>
+<section><span id="c02-sec-0003"/>
+<h3 id="head-3-11">Classifying Cybersecurity Threats</h3>
+<p id="c02-para-0013">Before we explore specific types of threat actors, let's examine the characteristics that differentiate the types of cybersecurity threat actors. Understanding our adversary is crucial to defending against them.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c02-fea-0001"/>
+<h3 id="head-2-16">Exam Note</h3>
+<section><span id="c02-sec-0004"/>
+<p id="c02-para-0014">The threat characteristics in the section below are the characteristics specifically mentioned in the CompTIA SY0-701 Security+ exam objectives. If you face questions about threat actor attributes on the exam, remember that every exam question ties back to a specific exam objective and the answer is most likely either found on this list or directly related to one of these attributes.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<span aria-label="24" epub:type="pagebreak" id="Page_24" role="doc-pagebreak"/>
+<ul class="none" id="c02-list-0009">
+<li id="c02-li-0025"><b>Internal vs. External</b> We most often think about the threat actors who exist outside our organizations: competitors, criminals, and the curious. However, some of the most dangerous threats come from within our own environments. We'll discuss the insider threat later in this chapter.</li>
+<li id="c02-li-0026"><b>Level of Sophistication/Capability</b> Threat actors vary greatly in their level of cybersecurity sophistication and capability. As we explore different types of threat actors in this chapter, we'll discuss how they range from the unsophisticated/unskilled attacker simply running code borrowed from others to the advanced persistent threat (APT) actor exploiting vulnerabilities discovered in their own research labs and unknown to the security community.</li>
+<li id="c02-li-0027"><b>Resources/Funding</b> Just as threat actors vary in their sophistication, they also vary in the resources available to them. Highly organized attackers sponsored by organized crime or national governments often have virtually limitless resources, whereas less organized attackers may simply be hobbyists working in their spare time.</li>
+<li id="c02-li-0028"><b>Intent/Motivation</b> Attackers also vary in their motivation and intent. The unskilled attacker may be simply out for the thrill of the attack, whereas competitors may be engaged in highly targeted corporate espionage. Nation-states seek to achieve political objectives; organized crime often focuses on direct financial gain.</li>
+</ul>
+<p id="c02-para-0020">As we work through this chapter, we'll explore different types of threat actors. As we do so, take some time to reflect back on these characteristics. In addition, you may wish to reference them when you hear news of current cybersecurity attacks in the media and other sources. Dissect those stories and analyze the threat actors involved. If the attack came from an unknown source, think about the characteristics that are most likely associated with the attacker. These can be important clues during a cybersecurity investigation. For example, a ransomware attack seeking payment from the victim is more likely associated with a organized crime seeking financial gain than a competitor engaged in corporate espionage.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c02-fea-0002"/>
+<h3 id="head-2-17">The Hats Hackers Wear</h3>
+<section><span id="c02-sec-0005"/>
+<p id="c02-para-0021">The cybersecurity community uses a shorthand lingo to refer to the motivations of attackers, describing them as having different-colored hats. The origins of this approach date back to old Western films, where the “good guys” wore white hats and the “bad guys” wore black hats to help distinguish them in the film.</p>
+<p>Cybersecurity professionals have adopted this approach to describe different types of cybersecurity adversaries:</p>
+<ul class="square" id="c02-list-0010">
+<li id="c02-li-0029">Authorized attackers, also known as white-hat hackers, are those who act with authorization and seek to discover security vulnerabilities with the intent of correcting them. White-hat hackers may either be employees of the organization or contractors hired to engage in penetration testing.</li>
+<li id="c02-li-0030"><span aria-label="25" epub:type="pagebreak" id="Page_25" role="doc-pagebreak"/>Unauthorized attackers, also known as black-hat hackers, are those with malicious intent. They seek to defeat security controls and compromise the confidentiality, integrity, or availability of information and systems for their own, unauthorized purposes.</li>
+<li id="c02-li-0031">Semi-authorized attackers, also known as gray-hat hackers, are those who fall somewhere between white- and black-hat hackers. They act without proper authorization, but they do so with the intent of informing their targets of any security vulnerabilities.</li>
+</ul>
+<p id="c02-para-0023">It's important to understand that simply having good intent does not make gray-hat hacking legal or ethical. The techniques used by gray-hat attackers can still be punished as criminal offenses.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c02-sec-0006"/>
+<h3 id="head-3-12">Threat Actors</h3>
+<p id="c02-para-0024">Now that we have a set of attributes that we can use to discuss the different types of threat actors, let's explore the most common types that security professionals encounter in their work.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c02-fea-1001"/>
+<h3 id="head-2-18">Exam Note</h3>
+<section><span id="c02-sec-1004"/>
+<p id="c02-para-0025">In addition to being the types of threat actors most commonly found in cybersecurity work, the attackers discussed in this section are also those found in the CompTIA SY0-701 exam objectives.</p>
+<p id="c02-para-0026">Be certain that you understand the differences between unskilled attackers; hacktivists; organized crime; advanced persistent threats (APTs), including nation-state actors; and shadow IT.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section><span id="c02-sec-0008"/>
+<h4 id="head-4-6">Unskilled Attackers</h4>
+<p id="c02-para-0027">The term <i>script kiddie</i> is a derogatory term for <i>unskilled attackers</i> who use hacking techniques but have limited skills. Often such attackers may rely almost entirely on automated tools they download from the Internet. These attackers often have little knowledge of how their attacks actually work, and they are simply seeking out convenient targets of opportunity.</p>
+<p id="c02-para-0028">You might think that with their relatively low skill level, unskilled attackers are not a real security threat. However, that isn't the case for two important reasons. First, simplistic hacking tools are freely available on the Internet. If you're vulnerable to them, anyone can easily find tools to automate denial-of-service (DoS) attacks, create viruses, make a Trojan horse, <span aria-label="26" epub:type="pagebreak" id="Page_26" role="doc-pagebreak"/>or even distribute ransomware as a service. Personal technical skills are no longer a barrier to attacking a network.</p>
+<p id="c02-para-0029">Second, unskilled attackers are plentiful and unfocused in their work. Although the nature of your business might not find you in the crosshairs of a sophisticated military-sponsored attack, unskilled attackers are much less discriminating in their target selection. They often just search for and discover vulnerable victims without even knowing the identity of their target. They might root around in files and systems and only discover who they've penetrated after their attack succeeds.</p>
+<p id="c02-para-0030">In general, the motivations of unskilled attackers revolve around trying to prove their skill. In other words, they may attack your network simply because it is there. Secondary school and university networks are common targets of unskilled attackers attacks because many of these attackers are school-aged individuals.</p>
+<p id="c02-para-0031">Fortunately, the number of unskilled attackers is often offset by their lack of skill and lack of resources. These individuals tend to be rather young, they work alone, and they have very few resources. And by resources, we mean time as well as money. An unskilled attacker normally can't attack your network 24 hours a day. They usually have to work a job, go to school, and attend to other life functions.</p>
+</section>
+<section><span id="c02-sec-0009"/>
+<h4 id="head-4-7">Hacktivists</h4>
+<p id="c02-para-0032"><i>Hacktivists</i> use hacking techniques to accomplish some activist goal. They might deface the website of a company whose policies they disagree with. Or a hacktivist might attack a network due to some political issue. The defining characteristic of hacktivists is that they believe they are motivated by the greater good, even if their activity violates the law.</p>
+<p id="c02-para-0033">Their activist motivation means that measures that might deter other attackers will be less likely to deter a hacktivist. Because they believe that they are engaged in a just crusade, they will, at least in some instances, risk getting caught to accomplish their goals. They may even view being caught as a badge of honor and a sacrifice for their cause.</p>
+<p id="c02-para-0034">The skill levels of hacktivists vary widely. Some are only unskilled attackers, whereas others are quite skilled, having honed their craft over the years. In fact, some cybersecurity researchers believe that some hacktivists are actually employed as cybersecurity professionals as their “day job” and perform hacktivist attacks in their spare time. Highly skilled hacktivists pose a significant danger to their targets.</p>
+<p id="c02-para-0035">The resources of hacktivists also vary somewhat. Many are working alone and have very limited resources. However, some are part of organized efforts. The hacking group Anonymous, who uses the logo seen in <a href="#c02-fig-0001" id="R_c02-fig-0001">Figure 2.1</a>, is the most well-known hacktivist group. They collectively decide their agenda and their targets. Over the years, Anonymous has waged cyberattacks against targets as diverse as the Church of Scientology, PayPal, Visa and Mastercard, Westboro Baptist Church, and even government agencies.</p>
+<p id="c02-para-0036">This type of anonymous collective of attackers can prove quite powerful. Large groups will always have more time and other resources than a lone attacker. Due to their distributed and anonymous nature, it is difficult to identify, investigate, and prosecute participants in their hacking activities. The group lacks a hierarchical structure, and the capture of one member is unlikely to compromise the identities of other members.</p>
+<figure> <img alt="A photograph of a logo. It has a coat suit with a question mark on its head and a globe-like network structure behind it." class="center" src="images/c02f001.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c02-fig-0001" id="c02-fig-0001" role="doc-backlink"><b>FIGURE 2.1</b></a></span> Logo of the hacktivist group Anonymous</p>
+</figcaption>
+</figure>
+<p id="c02-para-0037"><span aria-label="27" epub:type="pagebreak" id="Page_27" role="doc-pagebreak"/>Hacktivists tend to be external attackers, but in some cases, internal employees who disagree strongly with their company's policies engage in hacktivism. In those instances, it is more likely that the hacktivist will attack the company by releasing confidential information. Government employees and self-styled whistleblowers fit this pattern of activity, seeking to bring what they consider unethical government actions to the attention of the public.</p>
+<p id="c02-para-0038">For example, many people consider Edward Snowden a hacktivist. In 2013, Snowden, a former contractor with the U.S. National Security Agency, shared a large cache of sensitive government documents with journalists. Snowden's actions provided unprecedented insight into the digital intelligence gathering capabilities of the United States and its allies.</p>
+</section>
+<section><span id="c02-sec-0010"/>
+<h4 id="head-4-8">Organized Crime</h4>
+<p id="c02-para-0039"><i>Organized crime</i> appears in any case where there is money to be made, and cybercrime is no exception. The ranks of cybercriminals include links to traditional organized crime families in the United States, outlaw gangs, the Russian mafia, and even criminal groups organized specifically for the purpose of engaging in cybercrime.</p>
+<p id="c02-para-0040">The common thread among these groups is motive and intent. The motive is simply illegal financial gain. Organized criminal syndicates do not normally embrace political issues or causes, and they are not trying to demonstrate their skills. In fact, they would often prefer to remain in the shadows, drawing as little attention to themselves as possible. They simply want to generate as much illegal profit as they possibly can.</p>
+<p><span aria-label="28" epub:type="pagebreak" id="Page_28" role="doc-pagebreak"/>In their 2021 Internet Organized Crime Threat Assessment (IOCTA), the European Union Agency for Law Enforcement Cooperation (EUROPOL) found that organized crime groups were active in a variety of cybercrime categories, including the following:</p>
+<ul class="square" id="c02-list-0011">
+<li id="c02-li-0032"><i>Cyber-dependent crime</i>, including ransomware, data compromise, distributed denial-of-service (DDoS) attacks, website defacement, and attacks against critical infrastructure</li>
+<li id="c02-li-0033"><i>Child sexual abuse material</i>, including child pornography, abuse, and solicitation</li>
+<li id="c02-li-0034"><i>Online fraud</i>, including credit card fraud and business email compromises</li>
+<li id="c02-li-0035"><i>Dark web</i> activity, including the sale of illegal goods and services</li>
+<li id="c02-li-0037"><i>Cross-cutting crime factors</i>, including social engineering, money mules, and the criminal abuse of cryptocurrencies</li>
+</ul>
+<p id="c02-para-0042">Organized crime tends to have attackers who range from moderately skilled to highly skilled. It is rare for unskilled attackers to be involved in these crimes, and if they are, they tend to be caught rather quickly. The other defining factor is that organized crime groups tend to have more resources, both in terms of time and money, than do hacktivists or unskilled attackers. They often embrace the idea that “it takes money to make money” and are willing to invest in their criminal enterprises in the hopes of yielding a significant return on their investments.</p>
+</section>
+<section><span id="c02-sec-0011"/>
+<h4 id="head-4-9">Nation-State Attackers</h4>
+<p id="c02-para-0043">In recent years, a great deal of attention has been given to <i>nation-state</i> attackers hacking into either foreign governments or corporations. The term <i>advanced persistent threats</i> (APTs) describes a series of attacks that they first traced to sources connected to the Chinese military. In subsequent years, the security community discovered similar organizations linked to the government of virtually every technologically advanced country.</p>
+<p id="c02-para-0044">The term APT tells you a great deal about the attacks themselves. First, they use advanced techniques, not simply tools downloaded from the Internet. Second, the attacks are persistent, occurring over a significant period of time. In some cases, the attacks continue for years as attackers patiently stalk their targets, awaiting the right opportunity to strike.</p>
+<p id="c02-para-0045">The APT attacks that Mandiant reported are emblematic of <i>nation-state attacks</i>. They tend to be characterized by highly skilled attackers with significant resources. A nation has the labor force, time, and money to finance ongoing, sophisticated attacks.</p>
+<p id="c02-para-0046">The motive can be political or economic. In some cases, the attack is done for traditional espionage goals: to gather information about the target's defense capabilities. In other cases, the attack might be targeting intellectual property or other economic assets.</p> <span aria-label="29" epub:type="pagebreak" id="Page_29" role="doc-pagebreak"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c02-fea-0003"/>
+<h3 id="head-2-19">Zero-Day Attacks</h3>
+<section><span id="c02-sec-0012"/>
+<p id="c02-para-0047">APT attackers often conduct their own security vulnerability research in an attempt to discover vulnerabilities that are not known to other attackers or cybersecurity teams. After they uncover a vulnerability, they do not disclose it but rather store it in a vulnerability repository for later use.</p>
+<p id="c02-para-0048">Attacks that exploit these vulnerabilities are known as <i>zero-day attacks</i>. Zero-day attacks are particularly dangerous because they are unknown to product vendors, and therefore, no patches are available to correct them. APT actors who exploit zero-day vulnerabilities are often able to easily compromise their targets.</p>
+<p id="c02-para-0049">Stuxnet is one of the most well-known examples of an APT attack. The Stuxnet attack, traced to the U.S. and Israeli governments, exploited zero-day vulnerabilities to compromise the control networks at an Iranian uranium enrichment facility.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c02-sec-0013"/>
+<h4 id="head-4-10">Insider Threat</h4>
+<p id="c02-para-0050"><i>Insider attacks</i> occur when an employee, contractor, vendor, or other individual with authorized access to information and systems uses that access to wage an attack against the organization. These attacks are often aimed at disclosing confidential information, but insiders may also seek to alter information or disrupt business processes.</p>
+<p id="c02-para-0051">An insider might be of any skill level. They could be an unskilled attacker or very technically skilled. Insiders may also have differing motivations behind their attacks. Some are motivated by certain activist goals, whereas others are motivated by financial gain. Still others may simply be upset that they were passed over for a promotion or slighted in some other manner.</p>
+<p id="c02-para-0052">An insider will usually be working alone and have limited financial resources and time. However, the fact that they are insiders gives them an automatic advantage. They already have some access to your network and some level of knowledge. Depending on the insider's job role, they might have significant access and knowledge.</p>
+<p id="c02-para-0053">Behavioral assessments are a powerful tool in identifying insider attacks. Cybersecurity teams should work with human resources partners to identify insiders exhibiting unusual behavior and intervene before the situation escalates.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c02-fea-0004"/>
+<h3 id="head-2-20">The Threat of Shadow IT</h3>
+<section><span id="c02-sec-0014"/>
+<p id="c02-para-0054">Dedicated employees often seek to achieve their goals and objectives through whatever means allows them to do so. Sometimes, this involves purchasing technology services that aren't approved by the organization. For example, when file sharing and synchronization services first came on the market, many employees turned to personal Dropbox accounts <span aria-label="30" epub:type="pagebreak" id="Page_30" role="doc-pagebreak"/>to sync work content between their business and personal devices. They did not do this with any malicious intent. On the contrary, they were trying to benefit the business by being more productive.</p>
+<p id="c02-para-0055">This situation, where individuals and groups seek out their own technology solutions, is a phenomenon known as <i>shadow IT</i>. Shadow IT poses a risk to the organization because it puts sensitive information in the hands of vendors outside of the organization's control. Cybersecurity teams should remain vigilant for shadow IT adoption and remember that the presence of shadow IT in an organization means that business needs are not being met by the enterprise IT team. Consulting with shadow IT users often identifies acceptable alternatives that both meet business needs and satisfy security requirements.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c02-sec-0015"/>
+<h4 id="head-4-11">Competitors</h4>
+<p id="c02-para-0056">Competitors may engage in corporate espionage designed to steal sensitive information from your organization and use it to their own business advantage. This may include theft of customer information, stealing proprietary software, identifying confidential product development plans, or gaining access to any other information that would benefit the competitor.</p>
+<p id="c02-para-0057">In some cases, competitors will use a disgruntled insider to get information from your company. They may also seek out insider information available for purchase on the <i>dark web</i>, a shadowy anonymous network often engaging in illicit activity. <a href="#c02-fig-0002" id="R_c02-fig-0002">Figure 2.2</a> shows an actual dark web market with corporate information for sale.</p> <span aria-label="31" epub:type="pagebreak" id="Page_31" role="doc-pagebreak"/>
+<figure> <img alt="A snapshot of a webpage. It has three rows. 1. All big database leak part 1. 2. B 2 B U S A company. 3. Experian203 dot 957 dot 083entries complete dump leaked database." class="center" src="images/c02f002.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c02-fig-0002" id="c02-fig-0002" role="doc-backlink"><b>FIGURE 2.2</b></a></span> Dark web market</p>
+</figcaption>
+</figure>
+<p id="c02-para-0058">These markets don't care how they get the information; their only concern is selling it. In some cases, hackers break into a network and then sell the information to a dark web market. In other cases, insiders sell confidential information on the dark web. In fact, some dark web markets are advertising that they wish to buy confidential data from corporate insiders. This provides a ready resource for competitors to purchase your company's information on the dark web.</p>
+<p id="c02-para-0059">Your organization may want to consider other specific threat actors based on your threat models and profile, so you should not consider this a complete list. You should conduct periodic organizational threat assessments to determine what types of threat actors are most likely to target your organization, and why.</p>
+</section>
+</section>
+<section><span id="c02-sec-0016"/>
+<h3 id="head-3-13">Attacker Motivations</h3>
+<p>You've already read a few examples of how different threat actors may have different motivations. For example, hacktivists are generally motivated by political beliefs, whereas organized crime may be motivated by financial gain. Let's take a look at some of the primary motivations behind cyberattacks:</p>
+<ul class="square" id="c02-list-0012">
+<li id="c02-li-0038"><i>Data exfiltration</i> attacks are motivated by the desire to obtain sensitive or proprietary information, such as customer data or intellectual property.</li>
+<li id="c02-li-0039"><i>Espionage</i> attacks are motivated by organizations seeking to steal secret information from other organizations. This may come in the form of nation-states attacking each other or corporate espionage.</li>
+<li id="c02-li-0040"><i>Service disruption</i> attacks seek to take down or interrupt critical systems or networks, such as banking systems or health-care networks.</li>
+<li id="c02-li-0041"><i>Blackmail</i> attacks seek to extort money or other concessions from victims by threatening to release sensitive information or launch further attacks.</li>
+<li id="c02-li-0042"><i>Financial gain</i> attacks are motivated by the desire to make money through theft or fraud. Organized crime is generally motivated by financial gain, as are other types of attackers.</li>
+<li id="c02-li-0043"><i>Philosophical/political belief</i> attacks are motivated by ideological or political reasons, such as promoting a particular cause or ideology. Hacktivists are generally motivated by philosophical or political beliefs.</li>
+<li id="c02-li-0044"><i>Ethical</i> attacks, or white-hat hacking, are motivated by a desire to expose vulnerabilities and improve security. These attacks are often carried out by security researchers or ethical hackers with the permission of the organization being tested.</li>
+<li id="c02-li-0045"><i>Revenge</i> attacks are motivated by a desire to get even with an individual or organization by embarrassing them or exacting some other form of retribution against them.</li>
+<li id="c02-li-0046"><i>Disruption/chaos</i> attacks are motivated by a desire to cause chaos and disrupt normal operations.</li>
+<li id="c02-li-0047"><i>War</i> may also be a motivation for cyberattacks. Military units and civilian groups may use hacking in an attempt to disrupt military operations and change the outcome of an armed conflict.</li>
+</ul>
+<p id="c02-para-0061"><span aria-label="32" epub:type="pagebreak" id="Page_32" role="doc-pagebreak"/>Understanding the motivations of attackers can help you understand what they might target and how to defend your organization against them.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c02-fea-0005"/>
+<h3 id="head-2-21">Exam Note</h3>
+<section><span id="c02-sec-0017"/>
+<p id="c02-para-0062">It is very likely you will be asked to compare and contrast the various threat actors on the exam. You should know the attributes and motivations behind each.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c02-sec-0018"/>
+<h3 id="head-3-14">Threat Vectors and Attack Surfaces</h3>
+<p id="c02-para-0063">Threat actors targeting an organization need some means to gain access to that organization's information or systems. First, they must discover an <i>attack surface</i>. This is a system, application, or service that contains a vulnerability that they might exploit. Then, they must obtain access by exploiting one of those vulnerabilities using a <i>threat vector</i>. Threat vectors are the means that threat actors use to obtain access. One of the goals of security professionals is to reduce the size and complexity of the attack surface through effective security measures and risk mitigation strategies.</p>
+<section><span id="c02-sec-0019"/>
+<h4 id="head-4-12">Message-Based Threat Vectors</h4>
+<p id="c02-para-0064">Email is one of the most commonly exploited threat vectors. Phishing messages, spam messages, and other email-borne attacks are simple ways to gain access to an organization's network. These attacks are easy to execute and can be launched against many users simultaneously. The benefit for the attacker is that they generally need to succeed only one time to launch a broader attack. Even if 99.9 percent of users ignore a phishing message, the attacker needs the login credentials of only a single user to begin their attack.</p>
+<p id="c02-para-0065">Message-based attacks may also be carried out through other communications mechanisms, such as by sending text messages through <i>Short Message Service (SMS)</i> or <i>instant messaging (IM)</i> applications. Voice calls may also be used to conduct vishing (voice phishing) attacks.</p>
+<p id="c02-para-0066">Social media may be used as a threat vector in similar ways. Attackers might directly target users on social media, or they might use social media in an effort to harvest information about users that may be used in another type of attack. We will discuss these attacks in <a href="c04.xhtml">Chapter 4</a>, “Social Engineering and Password Attacks.”</p>
+</section>
+<section><span id="c02-sec-0020"/>
+<h4 id="head-4-13">Wired Networks</h4>
+<p id="c02-para-0067">Bold attackers may seek to gain direct access to an organization's wired network by physically entering the organization's facilities. One of the most common ways they do this is by entering public areas of a facility, such as a lobby, customer store, or other easily accessible <span aria-label="33" epub:type="pagebreak" id="Page_33" role="doc-pagebreak"/>location and sitting and working on their laptops, which are surreptitiously connected to unsecured network jacks on the wall.</p>
+<p id="c02-para-0068">Alternatively, attackers who gain physical access to a facility may be able to find an unsecured computer terminal, network device, or other system. Security professionals must assume that an attacker who is able to physically touch a component will be able to compromise that device and use it for malicious purposes.</p>
+<p id="c02-para-0069">This highlights the importance of physical security, which we will discuss in detail in <a href="c09.xhtml">Chapter 9</a>, “Resilience and Physical Security.”</p>
+</section>
+<section><span id="c02-sec-0021"/>
+<h4 id="head-4-14">Wireless Networks</h4>
+<p id="c02-para-0070">Wireless networks offer an even easier path onto an organization's network. Attackers don't need to gain physical access to the network or your facilities if they are able to sit in the parking lot and access your organization's wireless network. Bluetooth-enabled devices may be configured without security settings that prevent unauthorized connections. Unsecured or poorly secured wireless networks pose a significant security risk.</p>
+<p id="c02-para-0071">We'll discuss the security of wireless networks in <a href="c13.xhtml">Chapter 13</a>, “Wireless and Mobile Security.”</p>
+</section>
+<section><span id="c02-sec-0022"/>
+<h4 id="head-4-15">Systems</h4>
+<p id="c02-para-0072">Individual systems may also serve as threat vectors depending on how they are configured and the software installed on them. The operating system configuration may expose open service ports that are not necessary to meet business needs or that allow the use of well-known default credentials that were never changed. Software installed on a system may contain known or undetected vulnerabilities. Organizations may be using legacy applications or systems that are no longer supported by their vendor. Any of these vulnerabilities could be used as a threat vector by an attacker seeking to gain a foothold on a system.</p>
+<p id="c02-para-0073">We'll discuss securing endpoint systems in <a href="c11.xhtml">Chapter 11</a>, “Endpoint Security.”</p>
+</section>
+<section><span id="c02-sec-0023"/>
+<h4 id="head-4-16">Files and Images</h4>
+<p id="c02-para-0074">Individual files, including images, may also be threat vectors. An attacker may create a file that contains embedded malicious code and then trick a user into opening that file, activating the malware infection. These malicious files may be sent by email, stored on a file server, or placed in any other location where an unsuspecting user might be tempted to open it.</p>
+</section>
+<section><span id="c02-sec-0024"/>
+<h4 id="head-4-17">Removable Devices</h4>
+<p id="c02-para-0075">Attackers also commonly use removable media, such as USB drives, to spread malware and launch their attacks. An attacker might distribute inexpensive USB sticks in parking lots, airports, or other public areas, hoping that someone will find the device and plug it into their computer, curious to see what it contains. As soon as that happens, the device triggers a malware infection that silently compromises the finder's computer and places it under the control of the attacker.</p>
+<p id="c02-para-0076"><span aria-label="34" epub:type="pagebreak" id="Page_34" role="doc-pagebreak"/>We discuss the security of endpoint devices, including control over the use of removable media, in <a href="c11.xhtml">Chapter 11</a>.</p>
+</section>
+<section><span id="c02-sec-0025"/>
+<h4 id="head-4-18">Cloud</h4>
+<p id="c02-para-0077">Cloud services can also be used as an attack vector. Attackers routinely scan popular cloud services for files with improper access controls, systems that have security flaws, or accidentally published API keys and passwords. Organizations must include the cloud services that they use as an important component of their security program.</p>
+<p id="c02-para-0078">The vulnerabilities facing organizations operating in cloud environments bear similarities to those found in on-premises environments, but the controls often differ. We discuss secure cloud operations in <a href="c10.xhtml">Chapter 10</a>, “Cloud and Virtualization Security.”</p>
+</section>
+<section><span id="c02-sec-0026"/>
+<h4 id="head-4-19">Supply Chain</h4>
+<p id="c02-para-0079">Sophisticated attackers may attempt to interfere with an organization's IT supply chain, including hardware providers, software providers, and service providers. Attacking an organization's vendors and suppliers provides an indirect mechanism to attack the organization itself.</p>
+<p id="c02-para-0080">Attackers may gain access to hardware devices at the manufacturer or while the devices are in transit from the manufacturer to the end user. Tampering with a device before the end user receives it allows attackers to insert backdoors that grant them control of the device once the customer installs it on their network. This type of third-party risk is difficult to anticipate and address.</p>
+<p id="c02-para-0081">Supply chain attackers may also target software providers, inserting vulnerabilities into software before it is released or deploying backdoors in software through official update and patching mechanisms.</p>
+<p id="c02-para-0082">Attackers who infiltrate <i>managed service providers (MSPs)</i> may be able to use their access to the MSP network to leverage access that the MSP has to its customer's systems and networks.</p>
+<p id="c02-para-0083">Other issues may also arise in the supply chain, particularly if a vendor fails to continue to support a system that the organization depends on, fails to provide required system integrations, or fails to provide adequate security for outsourced code development or data storage. Strong vendor management practices can identify these issues quickly as they arise and allow the organization to address the risks appropriately.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c02-fea-0006"/>
+<h3 id="head-2-22">Exam Note</h3>
+<section><span id="c02-sec-0027"/>
+<p id="c02-para-0084">Be ready to identify and explain the common threat vectors and attack surfaces.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+</section> <span aria-label="35" epub:type="pagebreak" id="Page_35" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-23"><span id="c02-sec-0028"/>
+<h2 id="head-2-23">Threat Data and Intelligence</h2>
+<p id="c02-para-0085"><i>Threat intelligence</i> is the set of activities and resources available to cybersecurity professionals seeking to learn about changes in the threat environment. Building a threat intelligence program is a crucial part of any organization's approach to cybersecurity. If you're not familiar with current threats, you won't be able to build appropriate defenses to protect your organization against those threats. Threat intelligence information can also be used for <i>predictive analysis</i> to identify likely risks to the organization.</p>
+<p id="c02-para-0086">There are many sources of threat intelligence, ranging from open source intelligence (OSINT) that you can gather from publicly available sources, to commercial services that provide proprietary or closed-source intelligence information. An increasing number of products and services have the ability to consume threat feed data, allowing you to leverage it throughout your infrastructure and systems.</p>
+<p id="c02-para-0087">Regardless of their source, threat feeds are intended to provide up-to-date detail about threats in a way that your organization can leverage. Threat feeds often include technical details about threats, such as IP addresses, hostnames and domains, email addresses, URLs, file hashes, file paths, Common Vulnerabilities and Exposures (CVE) record numbers, and other details about a threat. Additional information is often included to help make the information relevant and understandable, including details of what may make your organization a target or vulnerable to the threat, descriptions of threat actors, and even details of their motivations and methodologies.</p>
+<p id="c02-para-0088"><i>Vulnerability databases</i> are also an essential part of an organization's threat intelligence program. Reports of vulnerabilities certainly help direct an organization's defensive efforts, but they also provide valuable insight into the types of exploits being discovered by researchers.</p>
+<p id="c02-para-0089">Threat intelligence sources may also provide <i>indicators of compromise (IoCs)</i>. These are the telltale signs that an attack has taken place and may include file signatures, log patterns, and other evidence left behind by attackers. IoCs may also be found in <i>file and code repositories</i> that offer threat intelligence information.</p>
+<section><span id="c02-sec-0029"/>
+<h3 id="head-3-15">Open Source Intelligence</h3>
+<p id="c02-para-0090"><i>Open source threat intelligence</i> is threat intelligence that is acquired from publicly available sources. Many organizations have recognized how useful open sharing of threat information can be, and open source threat intelligence has become broadly available. In fact, now the challenge is often around deciding what threat intelligence sources to use, ensuring that they are reliable and up-to-date, and leveraging them well.</p>
+<p>A number of sites maintain extensive lists of open source threat information sources:</p>
+<ul class="square" id="c02-list-0013">
+<li id="c02-li-0048"><code><a href="https://senki.org">Senki.org</a></code> provides a list: <code><a href="https://www.senki.org/operators-security-toolkit/open-source-threat-intelligence-feeds">www.senki.org/operators-security-toolkit/open-source-threat-intelligence-feeds</a></code></li>
+<li id="c02-li-0049">The Open Threat Exchange operated by AT&amp;T is part of a global community of security professionals and threat researchers: <code><a href="https://cybersecurity.att.com/open-threat-exchange">https://cybersecurity.att.com/open-threat-exchange</a></code></li>
+<li id="c02-li-0050"><span aria-label="36" epub:type="pagebreak" id="Page_36" role="doc-pagebreak"/>The MISP Threat Sharing project, <code><a href="https://www.misp-project.org/feeds">www.misp-project.org/feeds</a></code>, provides standardized threat feeds from many sources, with community-driven collections.</li>
+<li id="c02-li-0051">Threatfeeds.io hosts a list of open source threat intelligence feeds, with details of when they were added and modified, who maintains them, and other useful information: <code><a href="https://threatfeeds.io">https://threatfeeds.io</a></code></li>
+</ul>
+<p id="c02-para-0092">In addition to open source and community threat data sources, there are many government and public sources of threat intelligence data. For example, <a href="#c02-fig-0003" id="R_c02-fig-0003">Figure 2.3</a> shows an alert listing from the Cybersecurity &amp; Infrastructure Security Agency (CISA) website.</p>
+<figure> <img alt="A snapshot of a webpage. The title reads Cybersecurity and Infrastructure Security Agency. The subtitle reads Cybersecurity Alerts and Advisories. Other options include topics, spotlights, resources and tools, news and events, careers, and about." class="center" src="images/c02f003.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c02-fig-0003" id="c02-fig-0003" role="doc-backlink"><b>FIGURE 2.3</b></a></span> Alert listing from the CISA website</p>
+</figcaption>
+</figure>
+<p>Government sites:</p>
+<ul class="square" id="c02-list-0014">
+<li id="c02-li-0052">The U.S. Cybersecurity &amp; Infrastructure Security Agency (CISA) site: <code><a href="https://www.cisa.gov">www.cisa.gov</a></code></li>
+<li id="c02-li-0053">The U.S. Department of Defense Cyber Crime Center site: <code><a href="https://www.dc3.mil">www.dc3.mil</a></code></li>
+<li id="c02-li-0054">The CISA's Automated Indicator Sharing (AIS) program, <code><a href="https://www.cisa.gov/topics/cyber-threats-and-advisories/information-sharing/automated-indicator-sharing-ais">www.cisa.gov/topics/cyber-threats-and-advisories/information-sharing/automated-indicator-sharing-ais</a></code>, and their Information Sharing and Analysis <span aria-label="37" epub:type="pagebreak" id="Page_37" role="doc-pagebreak"/>Organizations program, <code><a href="https://www.cisa.gov/information-sharing-and-analysis-organizations-isaos">www.cisa.gov/information-sharing-and-analysis-organizations-isaos</a></code></li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c02-para-0095"><img alt="" role="presentation" src="images/tip.png"/> Many countries provide their own cybersecurity sites, like the Australian Signals Directorate's Cyber Security Centre: <code><a href="https://www.cyber.gov.au">www.cyber.gov.au</a></code>. You should become familiar with major intelligence providers, worldwide and for each country you operate in or work with.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>Vendor websites:</p>
+<ul class="square" id="c02-list-0015">
+<li id="c02-li-0055">Microsoft's threat intelligence blog: <code><a href="http://www.microsoft.com/en-us/security/blog/topic/threat-intelligence">www.microsoft.com/en-us/security/blog/topic/threat-intelligence</a></code></li>
+<li id="c02-li-0056">Cisco Security Advisories site (<code><a href="https://sec.cloudapps.cisco.com/security/center/publicationListing.x">https://sec.cloudapps.cisco.com/security/center/publicationListing.x</a> <a href="https://sec.cloudapps.cisco.com/security/center/publicationListing.x">https://sec.cloudapps.cisco.com/security/center/publicationListing.x</a></code>) includes an experts' blog with threat research information, as well as the Cisco Talos reputation lookup tool, <code><a href="https://talosintelligence.com">https://talosintelligence.com</a></code></li>
+</ul>
+<p>Public sources:</p>
+<ul class="square" id="c02-list-0016">
+<li id="c02-li-0057">The SANS Internet Storm Center: <code><a href="https://isc.sans.org">https://isc.sans.org</a></code></li>
+<li id="c02-li-0058">VirusShare contains details about malware uploaded to VirusTotal: <code><a href="https://virusshare.com">https://virusshare.com</a></code></li>
+<li id="c02-li-0059">The Spamhaus Project focuses on blocklists, including spam via the Spamhaus Block List (SBL), hijacked and compromised computers on the Exploits Block List (XBL), the Policy Block List (PBL), the Domain Block List (DBL), the Don't Route or Peer lists (DROP) listing netblocks that you may not want to allow traffic from, and a variety of other information: <code><a href="https://www.spamhaus.org">www.spamhaus.org</a></code></li>
+</ul>
+<p id="c02-para-0098">These are just a small portion of the open source intelligence resources available to security practitioners, but they give you a good idea of what is available.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c02-fea-0007"/>
+<h3 id="head-2-24">Exploring the Dark Web</h3>
+<section><span id="c02-sec-0031"/>
+<p id="c02-para-0099">The <i>dark web</i> is a network run over standard Internet connections but using multiple layers of encryption to provide anonymous communication. Hackers often use sites on the dark web to share information and sell credentials and other data stolen during their attacks.</p>
+<p id="c02-para-0100">Threat intelligence teams should familiarize themselves with the dark web and include searches of dark web marketplaces for credentials belonging to their organizations or its clients. The sudden appearance of credentials on dark web marketplaces likely indicates that a successful attack took place and requires further investigation.</p>
+<p id="c02-para-0101">You can access the dark web using the Tor browser. You'll find more information on the Tor browser at the Tor Project website: <code><a href="https://www.torproject.org">www.torproject.org</a></code>.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section> <span aria-label="38" epub:type="pagebreak" id="Page_38" role="doc-pagebreak"/>
+<section><span id="c02-sec-0032"/>
+<h3 id="head-3-16">Proprietary and Closed-Source Intelligence</h3>
+<p id="c02-para-0102">Commercial security vendors, government organizations, and other security-centric organizations also create and make use of proprietary, or <i>closed-source intelligence</i>. They do their own information gathering and research, and they may use custom tools, analysis models, or other proprietary methods to gather, curate, and maintain their threat feeds.</p>
+<p id="c02-para-0103">There are a number of reasons that proprietary threat intelligence may be used. The organization may want to keep their threat data secret, they may want to sell or license it and their methods and sources are their trade secrets, or they may not want to take the chance of the threat actors knowing about the data they are gathering.</p>
+<p id="c02-para-0104">Commercial closed-source intelligence is often part of a service offering, which can be a compelling resource for security professionals. The sheer amount of data available via open source threat intelligence feeds can be overwhelming for many organizations. Combing through threat feeds to identify relevant threats, and then ensuring that they are both well defined and applied appropriately for your organization, can require massive amounts of effort. Validating threat data can be difficult in many cases, and once you are done making sure you have quality threat data, you still have to do something with it!</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c02-fea-0008"/>
+<h3 id="head-2-25">When a Threat Feed Fails</h3>
+<section><span id="c02-sec-0033"/>
+<p id="c02-para-0105">The authors of this book learned a lesson about up-to-date threat feeds a number of years ago after working with an IDS and IPS vendor. The vendor promised up-to-date feeds and signatures for current issues, but they tended to run behind other vendors in the marketplace. In one case, a critical Microsoft vulnerability was announced, and exploit code was available and in active use within less than 48 hours. Despite repeated queries, the vendor did not provide detection rules for over two weeks. Unfortunately, manual creation of rules on this vendor's platform did not work well, resulting in exposure of systems that should have been protected.</p>
+<p id="c02-para-0106">It is critical that you have reliable, up-to-date feeds to avoid situations like this. You may want to have multiple feeds that you can check against each other—often one feed may be faster or release information sooner, so multiple good-quality, reliable feeds can be a big help!</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c02-para-0107"><i>Threat maps</i> provide a geographic view of threat intelligence. Many security vendors offer high-level maps that provide real-time insight into the cybersecurity threat landscape. For example, Check Point offers the public the threat map shown in <a href="#c02-fig-0004" id="R_c02-fig-0004">Figure 2.4</a> at <code><a href="https://threatmap.checkpoint.com">https://threatmap.checkpoint.com</a></code>.</p>
+<p id="c02-para-0108">Organizations may also use threat mapping information to gain insight into the sources of attacks aimed directly at their networks. However, threat map information viewed skeptically because geographic attribution is notoriously unreliable. Attackers often relay their <span aria-label="39" epub:type="pagebreak" id="Page_39" role="doc-pagebreak"/>attacks through cloud services and other compromised networks, hiding their true geographic location from threat analysis tools.</p>
+<figure> <img alt="An illustration of a map. The title reads Live Cyber Threat Map. It includes cities like C A, United States, M O, United States, Mexico, Brazil, and Germany." class="center" src="images/c02f004.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c02-fig-0004" id="c02-fig-0004" role="doc-backlink"><b>FIGURE 2.4</b></a></span> Check Point Cyber Threat Map</p>
+</figcaption>
+</figure>
+</section>
+<section><span id="c02-sec-0034"/>
+<h3 id="head-3-17">Assessing Threat Intelligence</h3>
+<p>Regardless of the source of your threat intelligence information, you need to assess it. A number of common factors come into play when you assess a threat intelligence source or a specific threat intelligence notification.</p>
+<ol class="decimal" id="c02-list-0017">
+<li id="c02-li-0060">Is it timely? A feed that is operating on delay can cause you to miss a threat, or to react after the threat is no longer relevant.</li>
+<li id="c02-li-0061">Is the information accurate? Can you rely on what it says, and how likely is it that the assessment is valid? Does it rely on a single source or multiple sources? How often are those sources correct?</li>
+<li id="c02-li-0062">Is the information relevant? If it describes the wrong platform, software, or reason for the organization to be targeted, the data may be very timely, very accurate, and completely irrelevant to your organization.</li>
+</ol>
+<p id="c02-para-0110"><span aria-label="40" epub:type="pagebreak" id="Page_40" role="doc-pagebreak"/>One way to summarize the threat intelligence assessment data is via a confidence score. Confidence scores allow organizations to filter and use threat intelligence based on how much trust they can give it. That doesn't mean that lower confidence information isn't useful; in fact, a lot of threat intelligence starts with a lower confidence score, and that score increases as the information solidifies and as additional sources of information confirm it or are able to do a full analysis. Low confidence threat information shouldn't be completely ignored, but it also shouldn't be relied on to make important decisions without taking the low confidence score into account.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c02-fea-0009"/>
+<h3 id="head-2-26">Assessing the Confidence Level of Your Intelligence</h3>
+<section><span id="c02-sec-0035"/>
+<p>Many threat feeds will include a confidence rating, along with a descriptive scale. For example, one approach uses six levels of confidence:</p>
+<ul class="square" id="c02-list-0018">
+<li id="c02-li-0063"><i>Confirmed</i> (90–100) uses independent sources or direct analysis to prove that the threat is real.</li>
+<li id="c02-li-0064"><i>Probable</i> (70–89) relies on logical inference but does not directly confirm the threat.</li>
+<li id="c02-li-0065"><i>Possible</i> (50–69) is used when some information agrees with the analysis, but the assessment is not confirmed.</li>
+<li id="c02-li-0066"><i>Doubtful</i> (30–49) is assigned when the assessment is possible but not the most likely option, or the assessment cannot be proven or disproven by the information that is available.</li>
+<li id="c02-li-0067"><i>Improbable</i> (2–29) means that the assessment is possible but is not the most logical option, or it is refuted by other information that is available.</li>
+<li id="c02-li-0068"><i>Discredited</i> (1) is used when the assessment has been confirmed to be inaccurate or incorrect.</li>
+</ul>
+<p id="c02-para-0112">Your organization may use a different scale: 1–5, 1–10, and High/Medium/Low scales are all commonly used to allow threat intelligence users to quickly assess the quality of the assessment and its underlying data.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c02-sec-0036"/>
+<h3 id="head-3-18">Threat Indicator Management and Exchange</h3>
+<p id="c02-para-0113">Managing threat information at any scale requires standardization and tooling to allow the threat information to be processed and used in automated ways. Indicator management can be much easier with a defined set of terms. That's where structured markup languages like STIX and OpenIOC come in.</p>
+<p><span aria-label="41" epub:type="pagebreak" id="Page_41" role="doc-pagebreak"/> <i>Structured Threat Information eXpression (STIX)</i> is an XML language originally sponsored by the U.S. Department of Homeland Security. In its current version, STIX 2.1 defines 18 STIX Domain Objects, including things like attack patterns, identities, malware, threat actors, and tools. These objects are then related to each other by one of two STIX Relationship Objects: either as a relationship or as a sighting. A STIX JSON description of a threat actor might read as follows:</p>
+<pre id="c02-code-0001"><code>{</code>
+<code> "type": "threat-actor",</code>
+<code> "created": "2019-10-20T19:17:05.000Z",</code>
+<code> "modified": "2019-10-21T12:22:20.000Z",</code>
+<code> "labels": [ "crime-syndicate"],</code>
+<code> "name": "Evil Maid, Inc",</code>
+<code> "description": "Threat actors with access to hotel rooms",</code>
+<code> "aliases": ["Local USB threats"],</code>
+<code> "goals": ["Gain physical access to devices", "Acquire data"],</code>
+<code> "sophistication": "intermediate",</code>
+<code> "resource:level": "government",</code>
+<code> "primary_motivation": "organizational-gain"</code>
+<code>}</code>
+</pre>
+<p>Fields like <code>sophistication</code> and <code>resource level</code> use defined vocabulary options to allow STIX users to consistently use the data as part of automated and manual systems.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c02-para-0116"><img alt="" role="presentation" src="images/tip.png"/> Using a single threat feed can leave you in the dark! Many organizations leverage multiple threat feeds to get the most up-to-date information. Thread feed combinations can also be challenging since the feeds may not use the same format, classification model, or other elements. You can work around this by finding sources that already combine multiple feeds or by finding feeds that use the same description frameworks, like STIX.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c02-para-0117">Since its creation, STIX has been handed off to the Organization for the Advancement of Structured Information Standards (OASIS), an international nonprofit consortium that maintains many other projects related to information formatting, including XML and HTML.</p>
+<p id="c02-para-0118">A companion to STIX is the <i>Trusted Automated eXchange of Intelligence Information</i> (<i>TAXII)</i> protocol. TAXII is intended to allow cyber-threat information to be communicated at the application layer via HTTPS. TAXII is specifically designed to support STIX data exchange. You can read more about both STIX and TAXII in detail at the OASIS GitHub documentation site: <code><a href="https://oasis-open.github.io/cti-documentation">https://oasis-open.github.io/cti-documentation</a></code>.</p>
+</section>
+<section><span id="c02-sec-0038"/>
+<h3 id="head-3-19">Information Sharing Organizations</h3>
+<p id="c02-para-0119">In addition to threat intelligence vendors and resources, threat intelligence communities have been created to share threat information. In the United States, organizations known as <span aria-label="42" epub:type="pagebreak" id="Page_42" role="doc-pagebreak"/>Information Sharing and Analysis Centers (ISACs) help infrastructure owners and operators share threat information and provide tools and assistance to their members. The National Council of ISACs lists the sector-based ISACs at <code><a href="https://www.nationalisacs.org/member-isacs-3">www.nationalisacs.org/member-isacs-3</a></code>.</p>
+<p id="c02-para-0120">The ISAC concept was introduced in 1998, as part of Presidential Decision Directive-63 (PDD-63), which asked critical infrastructure sectors to establish organizations to share information about threats and vulnerabilities. ISACs operate on a trust model, allowing in-depth sharing of threat information for both physical and cyber threats. Most ISACs operate 24/7, providing ISAC members in their sector with incident response and threat analysis.</p>
+<p id="c02-para-0121">In addition to ISACs, there are specific U.S. agencies or department partners for each critical infrastructure area. A list breaking them down by sector can be found at <code><a href="http://www.cisa.gov/topics/critical-infrastructure-security-and-resilience/critical-infrastructure-sectors">www.cisa.gov/topics/critical-infrastructure-security-and-resilience/critical-infrastructure-sectors</a></code>.</p>
+<p id="c02-para-0122">Outside the United States, government bodies and agencies with similar responsibilities exist in many countries. The UK National Protective Security Authority (<code><a href="http://www.npsa.gov.uk">www.npsa.gov.uk</a></code>) is tasked with providing threat information, resources, and guidance to industry and academia, as well as to other parts of the UK government and law enforcement.</p>
+</section>
+<section><span id="c02-sec-0039"/>
+<h3 id="head-3-20">Conducting Your Own Research</h3>
+<p>As a security professional, you should continue to conduct your own research into emerging cybersecurity threats. Here are sources you might consult as you build your threat research toolkit:</p>
+<ul class="square" id="c02-list-0019">
+<li id="c02-li-0069">Vendor security information websites.</li>
+<li id="c02-li-0070">Vulnerability and threat feeds from vendors, government agencies, and private organizations.</li>
+<li id="c02-li-0071">Academic journals and technical publications, such as Internet Request for Comments (RFC) documents. RFC documents are particularly informative because they contain the detailed technical specifications for Internet protocols.</li>
+<li id="c02-li-0072">Professional conferences and local industry group meetings.</li>
+<li id="c02-li-0073">Social media accounts of prominent security professionals.</li>
+</ul>
+<p id="c02-para-0124">As you reference these sources, keep a particular eye out for information on adversary <i>tactics, techniques, and procedures (TTPs)</i>. Learning more about the ways that attackers function allows you to improve your own threat intelligence program.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-27"><span id="c02-sec-0040"/>
+<h2 id="head-2-27">Summary</h2>
+<p id="c02-para-0125">Cybersecurity professionals must have a strong working understanding of the threat landscape in order to assess the risks facing their organizations and the controls required to mitigate those risks. Cybersecurity threats may be classified based on their internal or external <span aria-label="43" epub:type="pagebreak" id="Page_43" role="doc-pagebreak"/>status, their level of sophistication and capability, their resources and funding, and their intent and motivation.</p>
+<p id="c02-para-0126">Threat actors take many forms, ranging from relatively unsophisticated/unskilled attackers who are simply seeking the thrill of a successful hack to advanced nation-state actors who use cyberattacks as a military weapon to achieve political advantage. Hacktivists, organized crime, competitors, and other threat actors may all target the same organizations for different reasons.</p>
+<p id="c02-para-0127">Cyberattacks come through a variety of threat vectors. The most common vectors include email and social media; other attacks may come through direct physical access, supply chain exploits, network-based attacks, and other vectors. Organizations should build robust threat intelligence programs to help them stay abreast of emerging threats and adapt their controls to function in a changing environment.</p>
+</section>
+<section aria-labelledby="head-2-28"><span id="c02-sec-0041"/>
+<h2 id="head-2-28">Exam Essentials</h2>
+<p id="c02-li-0074"><b>Threat actors differ in several key attributes.</b> We can classify threat actors using four major criteria. First, threat actors may be internal to the organization, or they may come from external sources. Second, threat actors differ in their level of sophistication and capability. Third, they differ in their available resources and funding. Finally, different threat actors have different motivations and levels of intent.</p>
+<p id="c02-li-0075"><b>Threat actors come from many different sources.</b> Threat actors may be very simplistic in their techniques, such as unskilled attackers using exploit code written by others, or quite sophisticated, such as the advanced persistent threat posed by nation-state actors and organized crime. Hacktivists may seek to carry out political agendas, whereas competitors may seek financial gain. Employees and other users may pose an insider threat by working from within to attack your organization. The use of unapproved shadow IT systems may also expose your data to risk.</p>
+<p id="c02-li-0076"><b>Attackers have varying motivations for their attacks.</b> Attackers may be motivated by many different drivers. Common motivations for attack include data exfiltration, espionage, service disruption, blackmail, financial gain, philosophical or political beliefs, revenge, disruption and chaos, or war. Some attackers may believe they are behaving ethically and acting in the best interests of society.</p>
+<p id="c02-li-0077"><b>Attackers exploit different vectors to gain initial access to an organization.</b> Attackers may attempt to gain initial access to an organization remotely over the Internet, through a wireless connection, or by attempting direct physical access. They may also approach employees over email or social media. Attackers may seek to use removable media to trick employees into unintentionally compromising their networks, or they may seek to spread exploits through cloud services. Sophisticated attackers may attempt to interfere with an organization's supply chain.</p>
+<p id="c02-li-0078"><span aria-label="44" epub:type="pagebreak" id="Page_44" role="doc-pagebreak"/><b>Threat intelligence provides organizations with valuable insight into the threat landscape.</b> Security teams may leverage threat intelligence from public and private sources to learn about current threats and vulnerabilities. They may seek out detailed indicators of compromise and perform predictive analytics on their own data. Threat intelligence teams often supplement open source and closed source intelligence that they obtain externally with their own research.</p>
+<p id="c02-li-0079"><b>Security teams must monitor for supply chain risks.</b> Modern enterprises depend on hardware, software, and cloud service vendors to deliver IT services to their internal and external customers. Vendor management techniques protect the supply chain against attackers seeking to compromise these external links into an organization's network. Security professionals should pay particular attention to risks posed by outsourced code development, cloud data storage, and integration between external and internal systems.</p>
+
+</section> <span aria-label="45" epub:type="pagebreak" id="Page_45" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-29"><span id="c02-sec-0042"/>
+<h2 id="head-2-29">Review Questions</h2>
+<section><span id="c02-exsec-0001"/>
+<ol class="decimal">
+<li id="c02-ex-0001">Which of the following measures is not commonly used to assess threat intelligence?
+<ol class="upper-alpha">
+<li>Timeliness</li>
+<li>Detail</li>
+<li>Accuracy</li>
+<li>Relevance</li>
+</ol>
+</li>
+<li id="c02-ex-0002">Which one of the following motivations is most commonly attributed to hacktivists?
+<ol class="upper-alpha">
+<li>War</li>
+<li>Financial gain</li>
+<li>Political/philosophical beliefs</li>
+<li>Ethical</li>
+</ol>
+</li>
+<li id="c02-ex-0003">Kolin is a penetration tester who works for a cybersecurity company. His firm was hired to conduct a penetration test against a health-care system, and Kolin is working to gain access to the systems belonging to a hospital in that system. What term best describes Kolin's work?
+<ol class="upper-alpha">
+<li>Authorized attacker</li>
+<li>Unauthorized attacker</li>
+<li>Unknown attacker</li>
+<li>Semi-authorized attacker</li>
+</ol>
+</li>
+<li id="c02-ex-0004">Which one of the following attackers is most likely to be associated with an APT?
+<ol class="upper-alpha">
+<li>Nation-state actor</li>
+<li>Hacktivist</li>
+<li>Unskilled</li>
+<li>Insider</li>
+</ol>
+</li>
+<li id="c02-ex-0005">Which organization did the U.S. government help create to share knowledge between organizations in specific verticals?
+<ol class="upper-alpha">
+<li>DHS</li>
+<li>SANS</li>
+<li>CERTS</li>
+<li>ISACs</li>
+</ol>
+</li>
+<li id="c02-ex-0006">Which of the following threat actors typically has the greatest access to resources?
+<ol class="upper-alpha">
+<li>Nation-state actors</li>
+<li>Organized crime</li>
+<li>Hacktivists</li>
+<li>Insider threats</li>
+</ol>
+</li>
+<li id="c02-ex-0007"><span aria-label="46" epub:type="pagebreak" id="Page_46" role="doc-pagebreak"/> Of the threat vectors shown here, which one is most commonly exploited by attackers who are at a distant location?
+<ol class="upper-alpha">
+<li>Email</li>
+<li>Direct access</li>
+<li>Wireless</li>
+<li>Removable media</li>
+</ol>
+</li>
+<li id="c02-ex-0008">Which one of the following is the best example of a hacktivist group?
+<ol class="upper-alpha">
+<li>Chinese military</li>
+<li>U.S. government</li>
+<li>Russian mafia</li>
+<li>Anonymous</li>
+</ol>
+</li>
+<li id="c02-ex-0009">What type of assessment is particularly useful for identifying insider threats?
+<ol class="upper-alpha">
+<li>Behavioral</li>
+<li>Instinctual</li>
+<li>Habitual</li>
+<li>IoCs</li>
+</ol>
+</li>
+<li id="c02-ex-0010">Cindy is concerned that her organization may be targeted by a supply chain attack and is conducting a review of all of her vendor and supplier partners. Which one of the following organizations is least likely to be the conduit for a supply chain attack?
+<ol class="upper-alpha">
+<li>Hardware provider</li>
+<li>Software provider</li>
+<li>Managed service provider</li>
+<li>Talent provider</li>
+</ol>
+</li>
+<li id="c02-ex-0011">Greg believes that an attacker may have installed malicious firmware in a network device before it was provided to his organization by the supplier. What type of threat vector best describes this attack?
+<ol class="upper-alpha">
+<li>Supply chain</li>
+<li>Removable media</li>
+<li>Cloud</li>
+<li>Direct access</li>
+</ol>
+</li>
+<li id="c02-ex-0012">Ken is conducting threat research on Transport Layer Security (TLS) and would like to consult the authoritative reference for the protocol's technical specification. What resource would best meet his needs?
+<ol class="upper-alpha">
+<li>Academic journal</li>
+<li>Internet RFCs</li>
+<li>Subject matter experts</li>
+<li>Textbooks</li>
+</ol>
+</li>
+<li id="c02-ex-0013"><span aria-label="47" epub:type="pagebreak" id="Page_47" role="doc-pagebreak"/> Wendy is scanning cloud-based repositories for sensitive information. Which one of the following should concern her most, if discovered in a public repository?
+<ol class="upper-alpha">
+<li>Product manuals</li>
+<li>Source code</li>
+<li>API keys</li>
+<li>Open source data</li>
+</ol>
+</li>
+<li id="c02-ex-0014">Which one of the following threat research tools is used to visually display information about the location of threat actors?
+<ol class="upper-alpha">
+<li>Threat map</li>
+<li>Predictive analysis</li>
+<li>Vulnerability feed</li>
+<li>STIX</li>
+</ol>
+</li>
+<li id="c02-ex-0015">Vince recently received the hash values of malicious software that several other firms in his industry found installed on their systems after a compromise. What term best describes this information?
+<ol class="upper-alpha">
+<li>Vulnerability feed</li>
+<li>IoC</li>
+<li>TTP</li>
+<li>RFC</li>
+</ol>
+</li>
+<li id="c02-ex-0016">Ursula recently discovered that a group of developers are sharing information over a messaging tool provided by a cloud vendor but not sanctioned by her organization. What term best describes this use of technology?
+<ol class="upper-alpha">
+<li>Shadow IT</li>
+<li>System integration</li>
+<li>Vendor management</li>
+<li>Data exfiltration</li>
+</ol>
+</li>
+<li id="c02-ex-0017">Tom's organization recently learned that the vendor is discontinuing support for their customer relationship management (CRM) system. What should concern Tom the most from a security perspective?
+<ol class="upper-alpha">
+<li>Unavailability of future patches</li>
+<li>Lack of technical support</li>
+<li>Theft of customer information</li>
+<li>Increased costs</li>
+</ol>
+</li>
+<li id="c02-ex-0018"><span aria-label="48" epub:type="pagebreak" id="Page_48" role="doc-pagebreak"/> Which one of the following information sources would not be considered an OSINT source?
+<ol class="upper-alpha">
+<li>DNS lookup</li>
+<li>Search engine research</li>
+<li>Port scans</li>
+<li>WHOIS queries</li>
+</ol>
+</li>
+<li id="c02-ex-0019">Edward Snowden was a government contractor who disclosed sensitive government documents to journalists to uncover what he believed were unethical activities. Which of the following terms best describe Snowden's activities? (Choose two.)
+<ol class="upper-alpha">
+<li>Insider</li>
+<li>State actor</li>
+<li>Hacktivist</li>
+<li>APT</li>
+<li>Organized crime</li>
+</ol>
+</li>
+<li id="c02-ex-0020">Renee is a cybersecurity hobbyist. She receives an email about a new web-based grading system being used by her son's school and she visits the site. She notices that the URL for the site looks like this:
+<p class="listPara1" id="c02-para-0232"><code><a href="https://www.myschool.edu/grades.php%26studentID=1023425">www.myschool.edu/grades.php&amp;studentID=1023425</a></code></p><b/>
+<p class="listPara1" id="c02-para-0233">She realizes that 1023425 is her son's student ID number and she then attempts to access the following similar URLs:</p>
+<p class="listPara1" id="c02-para-0234"><code><a href="https://www.myschool.edu/grades.php%26studentID=1023423">www.myschool.edu/grades.php&amp;studentID=1023423</a></code></p>
+<p class="listPara1" id="c02-para-0235"><code><a href="https://www.myschool.edu/grades.php%26studentID=1023424">www.myschool.edu/grades.php&amp;studentID=1023424</a></code></p>
+<p class="listPara1" id="c02-para-0236"><code><a href="https://www.myschool.edu/grades.php%26studentID=1023426">www.myschool.edu/grades.php&amp;studentID=1023426</a></code></p>
+<p class="listPara1" id="c02-para-0237"><code><a href="https://www.myschool.edu/grades.php%26studentID=1023427">www.myschool.edu/grades.php&amp;studentID=1023427</a></code></p>
+<p class="listPara1" id="c02-para-0238">When she does so, she accesses the records of other students. She closes the records and immediately informs the school principal of the vulnerability. What term best describes Renee's work?</p>
+<ol class="upper-alpha">
+<li>Authorized hacking</li>
+<li>Unknown hacking</li>
+<li>Semi-authorized hacking</li>
+<li>Unauthorized hacking</li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+</section>
+</body>
+</html>

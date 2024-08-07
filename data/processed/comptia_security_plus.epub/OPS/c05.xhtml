@@ -1,0 +1,1295 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:svg="http://www.w3.org/2000/svg" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+<head>
+<title>Chapter 5 Security Assessment and Testing</title>
+<link href="WileyTemplate_v5.5.css" rel="stylesheet" type="text/css"/>
+<meta content="urn:uuid:57d469d3-a1d3-48bd-8447-18ce82f57cc2" name="Adept.expected.resource"/>
+</head>
+<body epub:type="bodymatter">
+<section aria-labelledby="c05_1" epub:type="chapter" role="doc-chapter">
+<header>
+<h1 id="c05_1"><span aria-label="85" epub:type="pagebreak" id="Page_85" role="doc-pagebreak"/><span id="c05"/><span class="chapterNumber">Chapter 5</span><br/><span class="chapterTitle">Security Assessment and Testing</span></h1>
+</header>
+<section aria-label="chapter opening"><span id="c05-sec-0001"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p><b>THE COMPTIA SECURITY+ EXAM OBJECTIVES COVERED IN THIS CHAPTER INCLUDE:</b></p>
+<ul class="check1" id="c05-list-0002">
+<li id="c05-li-0002"><b>Domain 4.0: Security Operations</b>
+<ul class="square1" id="c05-list-0003">
+<li id="c05-li-0003">4.3. Explain various activities associated with vulnerability management.
+<ul class="square1" id="c05-list-0004">
+<li id="c05-li-0004">Identification methods (Vulnerability scan, Penetration testing, Responsible disclosure program, Bug bounty program, System/process audit)</li>
+<li id="c05-li-0005">Analysis (Confirmation, Prioritize, Common Vulnerability Scoring System (CVSS), Common Vulnerabilities and Exposures (CVE), Vulnerability classification, Exposure factor, Environmental variables, Industry/organizational impact, Risk tolerance)</li>
+<li id="c05-li-0006">Vulnerability response and remediation (Patching, Insurance, Segmentation, Compensating controls, Exceptions and exemptions)</li>
+<li id="c05-li-0007">Validation of remediation (Rescanning, Audit, Verification)</li>
+<li id="c05-li-0008">Reporting</li>
+</ul>
+</li>
+<li id="c05-li-0009">4.4. Explain security alerting and monitoring concepts and tools.
+<ul class="square1" id="c05-list-0005">
+<li id="c05-li-0010">Tools (Security Content Automation Protocol (SCAP), Vulnerability scanners)</li>
+</ul>
+</li>
+<li id="c05-li-0011">4.8. Explain appropriate incident response activities.
+<ul class="square1" id="c05-list-0006">
+<li id="c05-li-0012">Threat hunting</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="c05-li-0013"><span aria-label="86" epub:type="pagebreak" id="Page_86" role="doc-pagebreak"/><b>Domain 5.0: Security Program Management and Oversight</b>
+<ul class="square1" id="c05-list-0007">
+<li id="c05-li-0014">5.3. Explain processes associated with third-party risk assessment and management.
+<ul class="square1" id="c05-list-0008">
+<li id="c05-li-0015">Rules of engagement</li>
+</ul>
+</li>
+<li id="c05-li-0016">5.5. Explain types and purposes of audits and assessments.
+<ul class="square1" id="c05-list-0009">
+<li id="c05-li-0017">Attestation</li>
+<li id="c05-li-0018">Internal (Compliance, Audit committee, Self-assessments)</li>
+<li id="c05-li-0019">External (Regulatory, Examinations, Assessment, Independent third-party audit)</li>
+<li id="c05-li-0020">Penetration testing (Physical, Offensive, Defensive, Integrated, Known environment, Partially known environment, Unknown environment, Reconnaissance, Passive, Active)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul> <span aria-label="87" epub:type="pagebreak" id="Page_87" role="doc-pagebreak"/>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c05-para-0011">Many security threats exist in today's cybersecurity landscape. In previous chapters, you've read about the threats posed by hackers with varying motivations, malicious code, and social engineering. Cybersecurity professionals are responsible for building, operating, and maintaining security controls that protect against these threats. An important component of this maintenance is performing regular security assessment and testing to ensure that controls are operating properly and that the environment contains no exploitable vulnerabilities.</p>
+<p id="c05-para-0012">This chapter begins with a discussion of vulnerability management, including the design, scheduling, and interpretation of vulnerability scans. It then moves on to discuss penetration testing, an assessment tool that puts cybersecurity professionals in the role of attackers to test security controls. The chapter concludes with a discussion of cybersecurity exercises that may be used as part of an ongoing training and assessment program.</p>
+</section>
+<section aria-labelledby="head-2-46"><span id="c05-sec-0002"/>
+<h2 id="head-2-46">Vulnerability Management</h2>
+<p id="c05-para-0013">Our technical environments are complex. We operate servers, endpoint systems, network devices, and many other components that each runs millions of lines of code and processes complex configurations. No matter how much we work to secure these systems, it is inevitable that they will contain vulnerabilities and that new vulnerabilities will arise on a regular basis.</p>
+<p id="c05-para-0014"><i>Vulnerability management</i> programs play a crucial role in identifying, prioritizing, and remediating vulnerabilities in our environments. They use <i>vulnerability scanning</i> to detect new vulnerabilities as they arise and then implement a remediation workflow that addresses the highest-priority vulnerabilities. Every organization should incorporate vulnerability management into their cybersecurity program.</p>
+<section><span id="c05-sec-0003"/>
+<h3 id="head-3-31">Identifying Scan Targets</h3>
+<p>Once an organization decides that it wishes to conduct vulnerability scanning and determines which, if any, regulatory requirements apply to their scans, they move on to the more detailed phases of the planning process. The next step is to identify the systems that will be covered by the vulnerability scans. Some organizations choose to cover all systems in their <span aria-label="88" epub:type="pagebreak" id="Page_88" role="doc-pagebreak"/>scanning process, whereas others scan systems differently (or not at all) depending on the answers to many different questions, including:</p>
+<ul class="square" id="c05-list-0010">
+<li id="c05-li-0021">What is the data classification of the information stored, processed, or transmitted by the system?</li>
+<li id="c05-li-0022">Is the system exposed to the Internet or other public or semipublic networks?</li>
+<li id="c05-li-0023">What services are offered by the system?</li>
+<li id="c05-li-0024">Is the system a production, test, or development system?</li>
+</ul>
+<p id="c05-para-0016">Organizations also use automated techniques to identify the systems that may be covered by a scan. Cybersecurity professionals use scanning tools to search the network for connected systems, whether they were previously known or unknown, and to build an <i>asset inventory</i>. <a href="#c05-fig-0001" id="R_c05-fig-0001">Figure 5.1</a> shows an example of an asset map developed using the Qualys vulnerability scanner's asset inventory functionality.</p>
+<figure> <img alt="A snapshot of Qualys asset map. The title reads Map results colon Oak Internal Map. The total number of hosts in the domain is 65535. New hosts are 65508. Other options include New, approved, scannable, live, in netblock, and rogue." class="center" src="images/c05f001.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-fig-0001" id="c05-fig-0001" role="doc-backlink"><b>FIGURE 5.1</b></a></span> Qualys asset map</p>
+</figcaption>
+</figure>
+<p id="c05-para-0017">Administrators may then supplement this inventory with additional information about the type of system and the information it handles. This information then helps make determinations about which systems are critical and which are noncritical. Asset inventory and <i>asset criticality</i> information helps guide decisions about the types of scans that are performed, the <span aria-label="89" epub:type="pagebreak" id="Page_89" role="doc-pagebreak"/>frequency of those scans, and the priority administrators should place on remediating vulnerabilities detected by the scan.</p>
+</section>
+<section><span id="c05-sec-0004"/>
+<h3 id="head-3-32">Determining Scan Frequency</h3>
+<p id="c05-para-0018">Cybersecurity professionals depend on automation to help them perform their duties in an efficient, effective manner. Vulnerability scanning tools allow the automated scheduling of scans to take the burden off administrators. <a href="#c05-fig-0002" id="R_c05-fig-0002">Figure 5.2</a> shows an example of how these scans might be configured in Tenable's Nessus product. Nessus was one of the first vulnerability scanners on the market and remains widely used today. Administrators may designate a schedule that meets their security, compliance, and business requirements.</p>
+<figure> <img alt="A snapshot of Nessus scan. The title reads Mike's website and configuration. Options include my scan, routine scan, all scans, trash, policies, plugin rules, customized reports, scanners, community, and research." class="center" src="images/c05f002.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-fig-0002" id="c05-fig-0002" role="doc-backlink"><b>FIGURE 5.2</b></a></span> Configuring a Nessus scan</p>
+</figcaption>
+</figure>
+<p id="c05-para-0019">Administrators should configure these scans to provide automated alerting when they detect new vulnerabilities. Many security teams configure their scans to produce automated email reports of scan results, such as the report shown in <a href="#c05-fig-0003" id="R_c05-fig-0003">Figure 5.3</a>.</p>
+<p>Many different factors influence how often an organization decides to conduct vulnerability scans against its systems:</p>
+<ul class="square" id="c05-list-0011">
+<li id="c05-li-0025">The organization's <i>risk appetite</i> is its willingness to tolerate risk within the environment. If an organization is extremely risk averse, it may choose to conduct scans more frequently to minimize the amount of time between when a vulnerability comes into existence and when it is detected by a scan.
+<figure> <img alt="A snapshot of Nessus scan report. The title reads Nessus. A text reads Nessus completed the scan B I website. Please click here to view and edit the scan results. The report summary has three columns: severity, plugin I D, and name." class="center" src="images/c05f003.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-fig-0003" id="c05-fig-0003" role="doc-backlink"><b>FIGURE 5.3</b></a></span> Sample Nessus scan report</p>
+</figcaption>
+</figure></li>
+<li id="c05-li-0026"><span aria-label="90" epub:type="pagebreak" id="Page_90" role="doc-pagebreak"/><i>Regulatory requirements</i>, such as those imposed by the Payment Card Industry Data Security Standard (PCI DSS) or the Federal Information Security Modernization Act (FISMA), may dictate a minimum frequency for vulnerability scans. These requirements may also come from corporate policies.</li>
+<li id="c05-li-0027"><i>Technical constraints</i> may limit the frequency of scanning. For example, the scanning system may only be capable of performing a certain number of scans per day, and organizations may need to adjust scan frequency to ensure that all scans complete successfully.</li>
+<li id="c05-li-0028"><i>Business constraints</i> may limit the organization from conducting resource-intensive vulnerability scans during periods of high business activity to avoid disruption of critical processes.</li>
+<li id="c05-li-0029"><i>Licensing limitations</i> may curtail the bandwidth consumed by the scanner or the number of scans that may be conducted simultaneously.</li>
+</ul>
+<p id="c05-para-0021">Cybersecurity professionals must balance each of these considerations when planning a vulnerability scanning program. It is usually wise to begin small and slowly expand the scope and frequency of vulnerability scans over time to avoid overwhelming the scanning infrastructure or enterprise systems.</p>
+</section> <span aria-label="91" epub:type="pagebreak" id="Page_91" role="doc-pagebreak"/>
+<section><span id="c05-sec-0005"/>
+<h3 id="head-3-33">Configuring Vulnerability Scans</h3>
+<p id="c05-para-0022">Vulnerability management solutions provide administrators with the ability to configure many different parameters related to scans. In addition to scheduling automated scans and producing reports, administrators may customize the types of checks performed by the scanner, provide credentials to access target servers, install scanning agents on target servers, and conduct scans from a variety of network perspectives. It is important to conduct regular configuration reviews of vulnerability scanners to ensure that scan settings match current requirements.</p>
+<section><span id="c05-sec-0006"/>
+<h4 id="head-4-30">Scan Sensitivity Levels</h4>
+<p id="c05-para-0023">Cybersecurity professionals configuring vulnerability scans should pay careful attention to the configuration settings related to the scan sensitivity level. These settings determine the types of checks that the scanner will perform and should be customized to ensure that the scan meets its objectives while minimizing the possibility of disrupting the target environment.</p>
+<p id="c05-para-0024">Typically, administrators create a new scan by beginning with a template. This may be a template provided by the vulnerability management vendor and built into the product, such as the Nessus scan templates shown in <a href="#c05-fig-0004" id="R_c05-fig-0004">Figure 5.4</a>, or it may be a custom-developed template created for use within the organization. As administrators create their own scan configurations, they should consider saving common configuration settings in templates to allow efficient reuse of their work, saving time and reducing errors when configuring future scans.</p> <span aria-label="92" epub:type="pagebreak" id="Page_92" role="doc-pagebreak"/>
+<figure> <img alt="A snapshot of Nessus scan templates. The title reads Nessus. The subtitle reads scan library. It includes advanced scan, audit cloud infrastructure, badlock detection, bash shellshock detection, basic network scan, patch audit, D R O W N, host discovery, P C I network scan, malware scan, M D M, mobile device scan, offline audit, external scan, policy, S C A P, and web application test." class="center" src="images/c05f004.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-fig-0004" id="c05-fig-0004" role="doc-backlink"><b>FIGURE 5.4</b></a></span> Nessus scan templates</p>
+</figcaption>
+</figure>
+<p id="c05-para-0025">Administrators may also improve the efficiency of their scans by configuring the specific plug-ins that will run during each scan. Each plug-in performs a check for a specific vulnerability, and these plug-ins are often grouped into families based on the operating system, application, or device that they involve. Disabling unnecessary plug-ins improves the speed of the scan by bypassing unnecessary checks and also may reduce the number of false positive results detected by the scanner.</p>
+<p id="c05-para-0026">For example, an organization that does not use the Amazon Linux operating system may choose to disable all checks related to Amazon Linux in their scanning template. <a href="#c05-fig-0005" id="R_c05-fig-0005">Figure 5.5</a> shows an example of disabling these plug-ins in Nessus.</p>
+<figure> <img alt="A snapshot of disabling unused plug-ins. The title reads My scan policy. The options include policies, settings, credentials, compliances, and plugins." class="center" src="images/c05f005.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-fig-0005" id="c05-fig-0005" role="doc-backlink"><b>FIGURE 5.5</b></a></span> Disabling unused plug-ins</p>
+</figcaption>
+</figure>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c05-para-0028"><img alt="" role="presentation" src="images/warn.png"/> Some plug-ins perform tests that may actually disrupt activity on a production system or, in the worst case, damage content on those systems. These <i>intrusive plug-ins</i> are a tricky situation. Administrators want to run these scans because they may identify problems that could be exploited by a malicious source. At the same time, cybersecurity professionals clearly don't want to <i>cause</i> problems on the organization's network and, as a result, may limit their scans to <i>nonintrusive plug-ins</i>.</p>
+<p id="c05-para-0029">One way around this problem is to maintain a test environment containing copies of the same systems running on the production network and running scans against those test systems first. If the scans detect problems in the test environment, administrators may correct the underlying causes on both test and production networks before running scans on the production network.</p> <span aria-label="93" epub:type="pagebreak" id="Page_93" role="doc-pagebreak"/>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c05-sec-0008"/>
+<h4 id="head-4-31">Supplementing Network Scans</h4>
+<p id="c05-para-0030">Basic vulnerability scans run over a network, probing a system from a distance. This provides a realistic view of the system's security by simulating what an attacker might see from another network vantage point. However, the firewalls, intrusion prevention systems, and other security controls that exist on the path between the scanner and the target server may affect the scan results, providing an inaccurate view of the server's security independent of those controls.</p>
+<p id="c05-para-0031">Additionally, many security vulnerabilities are difficult to confirm using only a remote scan. Vulnerability scans that run over the network may detect the possibility that a vulnerability exists but be unable to confirm it with confidence, causing a false positive result that requires time-consuming administrator investigation.</p>
+<p id="c05-para-0032">Modern vulnerability management solutions can supplement these remote scans with trusted information about server configurations. This information may be gathered in two ways. First, administrators can provide the scanner with credentials that allow the scanner to connect to the target server and retrieve configuration information. This information can then be used to determine whether a vulnerability exists, improving the scan's accuracy over noncredentialed alternatives. For example, if a vulnerability scan detects a potential issue that can be corrected by an operating system update, the credentialed scan can check whether the update is installed on the system before reporting a vulnerability.</p>
+<p id="c05-para-0033"><a href="#c05-fig-0006" id="R_c05-fig-0006">Figure 5.6</a> shows an example of the <i>credentialed scanning</i> options available within Qualys. Credentialed scans may access operating systems, databases, and applications, among other sources.</p> <span aria-label="94" epub:type="pagebreak" id="Page_94" role="doc-pagebreak"/>
+<figure> <img alt="A snapshot of configuring credentialed scanning. The title reads authentication. The text reads authentication enables the scanners to log into hosts at scan time to extend detection capabilities. See the online help to learn how to configure this option. Options like Windows, Unix-Cisco I O S, and Oracle are marked." class="center" src="images/c05f006.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-fig-0006" id="c05-fig-0006" role="doc-backlink"><b>FIGURE 5.6</b></a></span> Configuring credentialed scanning</p>
+</figcaption>
+</figure>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c05-fea-0001"/>
+<h3 id="head-2-47">Exam Note</h3>
+<section><span id="c05-sec-0009"/>
+<p id="c05-para-0034">Credentialed scans typically only retrieve information from target servers and do not make changes to the server itself. Therefore, administrators should enforce the principle of least privilege by providing the scanner with a read-only account on the server. This reduces the likelihood of a security incident related to the scanner's credentialed access.</p>
+<p id="c05-para-0035">As you prepare for the Security+ exam, be certain that you understand the differences between credentialed and noncredentialed scanning!</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>In addition to credentialed scanning, some scanners supplement the traditional <i>server-based scanning</i> approach to vulnerability scanning with a complementary <i>agent-based scanning</i> approach. In this approach, administrators install small software agents on each target server. These agents conduct scans of the server configuration, providing an “inside-out” vulnerability scan, and then report information back to the vulnerability management platform for analysis and reporting.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c05-para-0037"><img alt="" role="presentation" src="images/tip.png"/> System administrators are typically wary of installing agents on the servers that they manage for fear that the agent will cause performance or stability issues. If you choose to use an agent-based approach to scanning, you should approach this concept conservatively, beginning with a small pilot deployment that builds confidence in the agent before proceeding with a more widespread deployment.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c05-sec-0011"/>
+<h4 id="head-4-32">Scan Perspective</h4>
+<p>Comprehensive vulnerability management programs provide the ability to conduct scans from a variety of <i>scan perspectives</i>. Each scan perspective conducts the scan from a different location on the network, providing a different view into vulnerabilities. For example, an external scan is run from the Internet, giving administrators a view of what an attacker located outside the organization would see as potential vulnerabilities. Internal scans might run from a scanner on the general corporate network, providing the view that a malicious insider might encounter. Finally, scanners located inside the datacenter and agents located on the servers offer the most accurate view of the real state of the server by showing vulnerabilities that might be blocked by other security controls on the network. Controls that might affect scan results include the following:</p>
+<ul class="square" id="c05-list-0012">
+<li id="c05-li-0030">Firewall settings</li>
+<li id="c05-li-0031">Network segmentation</li>
+<li id="c05-li-0032">Intrusion detection systems (IDSs)</li>
+<li id="c05-li-0033">Intrusion prevention systems (IPSs)</li>
+</ul>
+<span aria-label="95" epub:type="pagebreak" id="Page_95" role="doc-pagebreak"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c05-para-0039"><img alt="" role="presentation" src="images/note.png"/> The internal and external scans required by PCI DSS are a good example of scans performed from different perspectives. The organization may conduct its own internal scans but must supplement them with external scans conducted by an Approved Scanning Vendor (ASV).</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c05-para-0040">Vulnerability management platforms have the ability to manage different scanners and provide a consolidated view of scan results, compiling data from different sources. <a href="#c05-fig-0007" id="R_c05-fig-0007">Figure 5.7</a> shows an example of how the administrator may select the scanner for a newly configured scan using Qualys.</p>
+<figure> <img alt="A snapshot describes choosing a scan appliance. The title reads Launch Vulnerability Scan. The options include general information, choose target hosts and notification." class="center" src="images/c05f007.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-fig-0007" id="c05-fig-0007" role="doc-backlink"><b>FIGURE 5.7</b></a></span> Choosing a scan appliance</p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section><span id="c05-sec-0013"/>
+<h3 id="head-3-34">Scanner Maintenance</h3>
+<p>As with any technology product, vulnerability management solutions require maintenance. Administrators should conduct regular maintenance of their vulnerability scanner to ensure that the scanning software and <i>vulnerability feeds</i> remain up-to-date.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c05-para-0042"><img alt="" role="presentation" src="images/tip.png"/> Scanning systems do provide automatic updating capabilities that keep the scanner and its vulnerability feeds up-to-date. Organizations can and should take advantage of these features, but it is always a good idea to check in once in a while and manually verify that the scanner is updating properly.</p><span aria-label="96" epub:type="pagebreak" id="Page_96" role="doc-pagebreak"/>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section><span id="c05-sec-0015"/>
+<h4 id="head-4-33">Scanner Software</h4>
+<p id="c05-para-0043">Scanning systems themselves aren't immune from vulnerabilities. As shown in <a href="#c05-fig-0008" id="R_c05-fig-0008">Figure 5.8</a>, even vulnerability scanners can have security issues! Regular patching of scanner software protects an organization against scanner-specific vulnerabilities and also provides important bug fixes and feature enhancements to improve scan quality.</p> <span aria-label="97" epub:type="pagebreak" id="Page_97" role="doc-pagebreak"/>
+<figure> <img alt="A snapshot of Nessus vulnerability in the N I S T. The title reads National Vulnerability Database. The subtitles read the current description, severity, reference to advisories, solutions, tools, and weakness enumeration." class="center" src="images/c05f008.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-fig-0008" id="c05-fig-0008" role="doc-backlink"><b>FIGURE 5.8</b></a></span> Nessus vulnerability in the NIST National Vulnerability Database</p>
+<p class="source">Source: National Institute of Standards and Technology</p>
+</figcaption>
+</figure>
+</section>
+<section><span id="c05-sec-0016"/>
+<h4 id="head-4-34">Vulnerability Plug-in Feeds</h4>
+<p id="c05-para-0044">Security researchers discover new vulnerabilities every week, and vulnerability scanners can only be effective against these vulnerabilities if they receive frequent updates to their plug-ins. Administrators should configure their scanners to retrieve new plug-ins on a regular basis, preferably daily. Fortunately, as shown in <a href="#c05-fig-0009" id="R_c05-fig-0009">Figure 5.9</a>, this process is easily automated.</p>
+<figure> <img alt="A snapshot of Nessus automatic updates. The page title is settings. The options include scanners, accounts, communications, and advanced. The update all component option is selected." class="center" src="images/c05f009.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-fig-0009" id="c05-fig-0009" role="doc-backlink"><b>FIGURE 5.9</b></a></span> Nessus Automatic Updates</p>
+</figcaption>
+</figure>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c05-fea-0002"/>
+<h3 id="head-2-48">Security Content Automation Protocol (SCAP)</h3>
+<section><span id="c05-sec-0017"/>
+<p>The <i>Security Content Automation Protocol (SCAP)</i> is an effort by the security community, led by the National Institute of Standards and Technology (NIST), to create a standardized approach for communicating security-related information. This standardization is important to the automation of interactions between security components. The SCAP standards include the following:</p>
+<ul class="none" id="c05-list-0013">
+<li id="c05-li-0034"><b>Common Configuration Enumeration (CCE)</b> Provides a standard nomenclature for discussing system configuration issues</li>
+<li id="c05-li-0035"><span aria-label="98" epub:type="pagebreak" id="Page_98" role="doc-pagebreak"/><b>Common Platform Enumeration (CPE)</b> Provides a standard nomenclature for describing product names and versions</li>
+<li id="c05-li-0036"><b>Common Vulnerabilities and Exposures (CVE)</b> Provides a standard nomenclature for describing security-related software flaws</li>
+<li id="c05-li-0037"><b>Common Vulnerability Scoring System (CVSS)</b> Provides a standardized approach for measuring and describing the severity of security-related software flaws</li>
+<li id="c05-li-0038"><b>Extensible Configuration Checklist Description Format (XCCDF)</b> A language for specifying checklists and reporting checklist results</li>
+<li id="c05-li-0039"><b>Open Vulnerability and Assessment Language (OVAL)</b> A language for specifying low-level testing procedures used by checklists</li>
+</ul>
+<p id="c05-para-0047">For more information on SCAP, see NIST SP 800-126 Rev 3: The Technical Specification for the Security Content Automation Protocol (SCAP): SCAP Version 1.3 (<code><a href="http://csrc.nist.gov/publications/detail/sp/800-126/rev-3/final">http://csrc.nist.gov/publications/detail/sp/800-126/rev-3/final</a></code>) or the SCAP website (<code><a href="http://csrc.nist.gov/projects/security-content-automation-protocol">csrc.nist.gov/projects/security-content-automation-protocol</a></code>).</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c05-fea-0003"/>
+<h3 id="head-2-49">Exam Note</h3>
+<section><span id="c05-sec-0018"/>
+<p id="c05-para-0048">At the time this book went to press, the CompTIA exam objectives referred to CVE as Common Vulnerability Enumeration. This is an older definition of the acronym CVE and most industry professionals use the term Common Vulnerabilities and Exposures, so that is what we use throughout this book. The difference in terminology isn't really significant as long as you remember the purpose of CVE is to provide a standard naming system for flaws.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+<section><span id="c05-sec-0019"/>
+<h3 id="head-3-35">Vulnerability Scanning Tools</h3>
+<p id="c05-para-0049">As you develop your cybersecurity toolkit, you will want to have a network vulnerability scanner, an application scanner, and a web application scanner available for use. Vulnerability scanners are often leveraged for preventive scanning and testing and are also found in penetration testers toolkits, where they help identify systems that testers can exploit. This fact also means they're a favorite tool of attackers!</p> <span aria-label="99" epub:type="pagebreak" id="Page_99" role="doc-pagebreak"/>
+<section><span id="c05-sec-0020"/>
+<h4 id="head-4-35">Infrastructure Vulnerability Scanning</h4>
+<p id="c05-para-0050">Network vulnerability scanners are capable of probing a wide range of network-connected devices for known vulnerabilities. They reach out to any systems connected to the network, attempt to determine the type of device and its configuration, and then launch targeted tests designed to detect the presence of any known vulnerabilities on those devices.</p>
+<p>The following tools are examples of network vulnerability scanners:</p>
+<ul class="square" id="c05-list-0014">
+<li id="c05-li-0040">Tenable's Nessus is a well-known and widely respected network vulnerability scanning product that was one of the earliest products in this field.</li>
+<li id="c05-li-0041">Qualys vulnerability scanner is a more recently developed commercial network vulnerability scanner that offers a unique deployment model using a software-as-a-service (SaaS) management console to run scans using appliances located both in on-premises datacenters and in the cloud.</li>
+<li id="c05-li-0042">Rapid7's Nexpose is another commercial vulnerability management system that offers capabilities similar to those of Nessus and Qualys.</li>
+<li id="c05-li-0043">The open source OpenVAS offers a free alternative to commercial vulnerability scanners.</li>
+</ul>
+<p id="c05-para-0052">These are four of the most commonly used network vulnerability scanners. Many other products are on the market today, and every mature organization should have at least one scanner in its toolkit. Many organizations choose to deploy two different vulnerability scanning products in the same environment as a defense-in-depth control.</p>
+</section>
+<section><span id="c05-sec-0021"/>
+<h4 id="head-4-36">Application Testing</h4>
+<p>Application testing tools are commonly used as part of the software development process. These tools analyze custom-developed software to identify common security vulnerabilities. Application testing occurs using three techniques:</p>
+<ul class="square" id="c05-list-0015">
+<li id="c05-li-0044"><i>Static testing</i> analyzes code without executing it. This approach points developers directly at vulnerabilities and often provides specific remediation suggestions.</li>
+<li id="c05-li-0045"><i>Dynamic testing</i> executes code as part of the test, running all the interfaces that the code exposes to the user with a variety of inputs, searching for vulnerabilities.</li>
+<li id="c05-li-0046"><i>Interactive testing</i> combines static and dynamic testing, analyzing the source code while testers interact with the application through exposed interfaces.</li>
+</ul>
+<p id="c05-para-0054">Application testing should be an integral part of the software development process. Many organizations introduce testing requirements into the software release process, requiring clean tests before releasing code into production.</p>
+</section>
+<section><span id="c05-sec-0022"/>
+<h4 id="head-4-37">Web Application Scanning</h4>
+<p id="c05-para-0055">Web application vulnerability scanners are specialized tools used to examine the security of web applications. These tools test for web-specific vulnerabilities, such as SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF) vulnerabilities. They work by combining traditional network scans of web servers with detailed probing of web <span aria-label="100" epub:type="pagebreak" id="Page_100" role="doc-pagebreak"/>applications using such techniques as sending known malicious input sequences and fuzzing in attempts to break the application.</p>
+<p id="c05-para-0056">Nikto is a popular web application scanning tool. It is an open source tool that is freely available for anyone to use. As shown in <a href="#c05-fig-0010" id="R_c05-fig-0010">Figure 5.10</a>, it uses a command-line interface and is somewhat difficult to use.</p>
+<figure> <img alt="A snapshot of the Nikto web application scanner. The illustration describes the scripts encoded by Microsoft in the Nikto web application scanners." class="center" src="images/c05f010.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-fig-0010" id="c05-fig-0010" role="doc-backlink"><b>FIGURE 5.10</b></a></span> Nikto web application scanner</p>
+</figcaption>
+</figure>
+<p id="c05-para-0057">Another open source tool available for web application scanning is Arachni. This tool, shown in <a href="#c05-fig-0011" id="R_c05-fig-0011">Figure 5.11</a>, is a packaged scanner available for Windows, macOS, and Linux operating systems.</p>
+<p id="c05-para-0058">Most organizations do use web application scanners, but they choose to use commercial products that offer advanced capabilities and user-friendly interfaces. Although there are dedicated web application scanners, such as Acunetix, on the market, many firms use the web application scanning capabilities of traditional network vulnerability scanners, such as Nessus, Qualys, and Nexpose.</p>
+<figure> <img alt="A snapshot of the Arachni web application scanner. The page title is Arachni. The options include overview, issues, root, action, and revision. The allowed H T T P methods option is selected." class="center" src="images/c05f011.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-fig-0011" id="c05-fig-0011" role="doc-backlink"><b>FIGURE 5.11</b></a></span> Arachni web application scanner</p>
+</figcaption>
+</figure>
+</section>
+</section> <span aria-label="101" epub:type="pagebreak" id="Page_101" role="doc-pagebreak"/>
+<section><span id="c05-sec-0023"/>
+<h3 id="head-3-36">Reviewing and Interpreting Scan Reports</h3>
+<p id="c05-para-0059">Vulnerability scan reports provide analysts with a significant amount of information that assists with the interpretation of the report. These reports provide detailed information about each vulnerability that they identify. <a href="#c05-fig-0012" id="R_c05-fig-0012">Figure 5.12</a> shows an example of a single vulnerability reported by the Nessus vulnerability scanner.</p>
+<p id="c05-para-0060">Let's take a look at this report, section by section, beginning in the top left and proceeding in a counterclockwise fashion.</p>
+<p id="c05-para-0061">At the very top of the report, we see two critical details: the <i>name of the vulnerability</i>, which offers a descriptive title, and the <i>overall severity</i> of the vulnerability, expressed as a general category, such as low, medium, high, or critical. In this example report, the scanner is reporting that a server is running an outdated and insecure version of the SSL protocol. It is assigned to the high severity category.</p>
+<p id="c05-para-0062">Next, the report provides a <i>detailed description</i> of the vulnerability. In this case, the report provides a detailed description of the flaws in the SSL protocol and explains that SSL is no longer considered acceptable for use.</p>
+<p id="c05-para-0063">The next section of the report provides a <i>solution</i> to the vulnerability. When possible, the scanner offers detailed information about how system administrators, security professionals, network engineers, and/or application developers may correct the vulnerability. In this case, the reader is instructed to disable SSL 2.0 and 3.0 and replace their use with a secure version of the TLS protocol. Due to security vulnerabilities in early versions of TLS, you should use TLS version 1.2 or higher.</p>
+<figure> <img alt="A snapshot of the Nessus vulnerability scan report. The page title is S S L version 2 and 3 protocol detection. The options include description, solution, see also, output, plugin details, risk, and vulnerable information. The output option is selected." class="center" src="images/c05f012.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-fig-0012" id="c05-fig-0012" role="doc-backlink"><b>FIGURE 5.12</b></a></span> Nessus vulnerability scan report</p>
+</figcaption>
+</figure>
+<p id="c05-para-0064"><span aria-label="102" epub:type="pagebreak" id="Page_102" role="doc-pagebreak"/>In the section of the report titled <i>“See Also,”</i> the scanner provides <i>references</i> where administrators can find more details on the vulnerability described in the report. In this case, the scanner refers the reader to several blog posts, Nessus documentation pages, and Internet Engineering Task Force (IETF) documents that provide more details on the vulnerability.</p>
+<p id="c05-para-0065">The <i>output</i> section of the report shows the detailed information returned by the remote system when probed for the vulnerability. This information can be extremely valuable to an analyst because it often provides the verbatim output returned by a command. Analysts can <span aria-label="103" epub:type="pagebreak" id="Page_103" role="doc-pagebreak"/>use this to better understand why the scanner is reporting a vulnerability, identify the location of a vulnerability, and potentially identify false positive reports. In this case, the output section shows the specific insecure ciphers being used.</p>
+<p id="c05-para-0066">The <i>port/hosts</i> section provides details on the server(s) that contain the vulnerability as well as the specific services on that server that have the vulnerability. In this case, the server's IP address is obscured for privacy reasons, but we can see that the server is running insecure versions of SSL on both ports 443 and 4433.</p>
+<p id="c05-para-0067">The <i>vulnerability information</i> section provides some miscellaneous information about the vulnerability. In this case, we see that the SSL vulnerability has appeared in news reports.</p>
+<p>The <i>risk information</i> section includes useful information for assessing the severity of the vulnerability. In this case, the scanner reports that the vulnerability has an overall risk factor of High (consistent with the tag next to the vulnerability title). It also provides details on how the vulnerability rates when using the Common Vulnerability Scoring System (CVSS). You'll notice that there are two different CVSS scores and vectors. We will use the CVSS version 3 information, as it is the more recent rating scale. In this case, the vulnerability has a CVSS base score of 7.5 and has the CVSS vector</p>
+<pre id="c05-code-0001"><code>CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</code>
+</pre>
+<p id="c05-para-0069">We'll discuss the details of CVSS scoring in the next section of this chapter.</p>
+<p id="c05-para-0070">The final section of the vulnerability report provides details on the vulnerability scanner plug-in that detected the issue. This vulnerability was reported by Nessus plug-in ID 20007, which was published in October 2005 and updated in March 2019.</p>
+<section><span id="c05-sec-0024"/>
+<h4 id="head-4-38">Understanding CVSS</h4>
+<p id="c05-para-0071">The <i>Common Vulnerability Scoring System (CVSS)</i> is an industry standard for assessing the severity of security vulnerabilities. It provides a technique for scoring each vulnerability on a variety of measures. Cybersecurity analysts often use CVSS ratings to prioritize response actions.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c05-fea-0004"/>
+<h3 id="head-2-50">Exam Note</h3>
+<section><span id="c05-sec-0025"/>
+<p id="c05-para-0072">Remember that CVSS is a component of SCAP. It is a publicly available framework that provides a score from 0 to 10 indicating the severity of a vulnerability. Also know that security analysts often refer to the Common Vulnerabilities and Exposures (CVE), which is a list of publicly known vulnerabilities that contain an ID number, description, and reference.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c05-para-0073">Analysts scoring a new vulnerability begin by rating the vulnerability on eight different measures. Each measure is given both a descriptive rating and a numeric score. The first four measures evaluate the exploitability of the vulnerability, whereas the last three evaluate the impact of the vulnerability. The eighth metric discusses the scope of the vulnerability.</p> <span aria-label="104" epub:type="pagebreak" id="Page_104" role="doc-pagebreak"/>
+<section><span id="c05-sec-0026"/>
+<h5 id="head-5-1">Attack Vector Metric</h5>
+<p id="c05-para-0074">The <i>attack vector metric</i> (AV) describes how an attacker would exploit the vulnerability and is assigned according to the criteria shown in <a href="#c05-tbl-0001" id="R_c05-tbl-0001">Table 5.1</a>.</p>
+<figure>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-tbl-0001" id="c05-tbl-0001" role="doc-backlink"><b>TABLE 5.1</b></a></span> CVSS attack vector metric</p>
+</figcaption>
+<table border="1">
+<thead>
+<tr>
+<th scope="col"><span class="left">Value</span></th>
+<th scope="col"><span class="left">Description</span></th>
+<th scope="col"><span class="left">Score</span></th> </tr> </thead>
+<tbody>
+<tr>
+<td class="left">Physical (P)</td>
+<td class="left">The attacker must physically touch the vulnerable device.</td>
+<td class="left">0.20</td> </tr>
+<tr>
+<td class="left">Local (L)</td>
+<td class="left">The attacker must have physical or logical access to the affected system.</td>
+<td class="left">0.55</td> </tr>
+<tr>
+<td class="left">Adjacent (A)</td>
+<td class="left">The attacker must have access to the local network that the affected system is connected to.</td>
+<td class="left">0.62</td> </tr>
+<tr>
+<td class="left">Network (N)</td>
+<td class="left">The attacker can exploit the vulnerability remotely over a network.</td>
+<td class="left">0.85</td> </tr> </tbody> </table>
+</figure>
+</section>
+<section><span id="c05-sec-0027"/>
+<h5 id="head-5-2">Attack Complexity Metric</h5>
+<p id="c05-para-0075">The <i>attack complexity metric</i> (AC) describes the difficulty of exploiting the vulnerability and is assigned according to the criteria shown in <a href="#c05-tbl-0002" id="R_c05-tbl-0002">Table 5.2</a>.</p>
+<figure>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-tbl-0002" id="c05-tbl-0002" role="doc-backlink"><b>TABLE 5.2</b></a></span> CVSS attack complexity metric</p>
+</figcaption>
+<table border="1">
+<thead>
+<tr>
+<th scope="col"><span class="left">Value</span></th>
+<th scope="col"><span class="left">Description</span></th>
+<th scope="col"><span class="left">Score</span></th> </tr> </thead>
+<tbody>
+<tr>
+<td class="left">High (H)</td>
+<td class="left">Exploiting the vulnerability requires “specialized” conditions that would be difficult to find.</td>
+<td class="left">0.44</td> </tr>
+<tr>
+<td class="left">Low (L)</td>
+<td class="left">Exploiting the vulnerability does not require any specialized conditions.</td>
+<td class="left">0.77</td> </tr> </tbody> </table>
+</figure>
+</section>
+<section><span id="c05-sec-0028"/>
+<h5 id="head-5-3">Privileges Required Metric</h5>
+<p id="c05-para-0076">The <i>privileges required metric</i> (PR) describes the type of account access that an attacker would need to exploit a vulnerability and is assigned according to the criteria in <a href="#c05-tbl-0003" id="R_c05-tbl-0003">Table 5.3</a>.</p> <span aria-label="105" epub:type="pagebreak" id="Page_105" role="doc-pagebreak"/>
+<figure>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-tbl-0003" id="c05-tbl-0003" role="doc-backlink"><b>TABLE 5.3</b></a></span> CVSS privileges required metric</p>
+</figcaption>
+<table border="1">
+<thead>
+<tr>
+<th scope="col"><span class="left">Value</span></th>
+<th scope="col"><span class="left">Description</span></th>
+<th scope="col"><span class="left">Score</span></th> </tr> </thead>
+<tbody>
+<tr>
+<td class="left">High (H)</td>
+<td class="left">Attackers require administrative privileges to conduct the attack.</td>
+<td class="left">0.270 (or 0.50 if Scope is Changed)</td> </tr>
+<tr>
+<td class="left">Low (L)</td>
+<td class="left">Attackers require basic user privileges to conduct the attack.</td>
+<td class="left">0.62 (or 0.68 if Scope is Changed)</td> </tr>
+<tr>
+<td class="left">None (N)</td>
+<td class="left">Attackers do not need to authenticate to exploit the vulnerability.</td>
+<td class="left">0.85</td> </tr> </tbody> </table>
+</figure>
+</section>
+<section><span id="c05-sec-0029"/>
+<h5 id="head-5-4">User Interaction Metric</h5>
+<p id="c05-para-0077">The <i>user interaction metric</i> (UI) describes whether the attacker needs to involve another human in the attack. The user interaction metric is assigned according to the criteria in <a href="#c05-tbl-0004" id="R_c05-tbl-0004">Table 5.4</a>.</p>
+<figure>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-tbl-0004" id="c05-tbl-0004" role="doc-backlink"><b>TABLE 5.4</b></a></span> CVSS user interaction metric</p>
+</figcaption>
+<table border="1">
+<thead>
+<tr>
+<th scope="col"><span class="left">Value</span></th>
+<th scope="col"><span class="left">Description</span></th>
+<th scope="col"><span class="left">Score</span></th> </tr> </thead>
+<tbody>
+<tr>
+<td class="left">None (N)</td>
+<td class="left">Successful exploitation does not require action by any user other than the attacker.</td>
+<td class="left">0.85</td> </tr>
+<tr>
+<td class="left">Required (R)</td>
+<td class="left">Successful exploitation does require action by a user other than the attacker.</td>
+<td class="left">0.62</td> </tr> </tbody> </table>
+</figure>
+</section>
+<section><span id="c05-sec-0030"/>
+<h5 id="head-5-5">Confidentiality Metric</h5>
+<p id="c05-para-0078">The <i>confidentiality metric</i> (C) describes the type of information disclosure that might occur if an attacker successfully exploits the vulnerability. The confidentiality metric is assigned according to the criteria in <a href="#c05-tbl-0005" id="R_c05-tbl-0005">Table 5.5</a>.</p> <span aria-label="106" epub:type="pagebreak" id="Page_106" role="doc-pagebreak"/>
+<figure>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-tbl-0005" id="c05-tbl-0005" role="doc-backlink"><b>TABLE 5.5</b></a></span> CVSS confidentiality metric</p>
+</figcaption>
+<table border="1">
+<thead>
+<tr>
+<th scope="col"><span class="left">Value</span></th>
+<th scope="col"><span class="left">Description</span></th>
+<th scope="col"><span class="left">Score</span></th> </tr> </thead>
+<tbody>
+<tr>
+<td class="left">None (N)</td>
+<td class="left">There is no confidentiality impact.</td>
+<td class="left">0.00</td> </tr>
+<tr>
+<td class="left">Low (L)</td>
+<td class="left">Access to some information is possible, but the attacker does not have control over what information is compromised.</td>
+<td class="left">0.22</td> </tr>
+<tr>
+<td class="left">High (H)</td>
+<td class="left">All information on the system is compromised.</td>
+<td class="left">0.56</td> </tr> </tbody> </table>
+</figure>
+</section>
+<section><span id="c05-sec-0031"/>
+<h5 id="head-5-6">Integrity Metric</h5>
+<p id="c05-para-0079">The <i>integrity metric</i> (I) describes the type of information alteration that might occur if an attacker successfully exploits the vulnerability. The integrity metric is assigned according to the criteria in <a href="#c05-tbl-0006" id="R_c05-tbl-0006">Table 5.6</a>.</p>
+<figure>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-tbl-0006" id="c05-tbl-0006" role="doc-backlink"><b>TABLE 5.6</b></a></span> CVSS integrity metric</p>
+</figcaption>
+<table border="1">
+<thead>
+<tr>
+<th scope="col"><span class="left">Value</span></th>
+<th scope="col"><span class="left">Description</span></th>
+<th scope="col"><span class="left">Score</span></th> </tr> </thead>
+<tbody>
+<tr>
+<td class="left">None (N)</td>
+<td class="left">There is no integrity impact.</td>
+<td class="left">0.00</td> </tr>
+<tr>
+<td class="left">Low (L)</td>
+<td class="left">Modification of some information is possible, but the attacker does not have control over what information is modified.</td>
+<td class="left">0.22</td> </tr>
+<tr>
+<td class="left">High (H)</td>
+<td class="left">The integrity of the system is totally compromised, and the attacker may change any information at will.</td>
+<td class="left">0.56</td> </tr> </tbody> </table>
+</figure>
+</section>
+<section><span id="c05-sec-0032"/>
+<h5 id="head-5-7">Availability Metric</h5>
+<p id="c05-para-0080">The <i>availability metric</i> (A) describes the type of disruption that might occur if an attacker successfully exploits the vulnerability. The availability metric is assigned according to the criteria in <a href="#c05-tbl-0007" id="R_c05-tbl-0007">Table 5.7</a>.</p> <span aria-label="107" epub:type="pagebreak" id="Page_107" role="doc-pagebreak"/>
+<figure>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-tbl-0007" id="c05-tbl-0007" role="doc-backlink"><b>TABLE 5.7</b></a></span> CVSS availability metric</p>
+</figcaption>
+<table border="1">
+<thead>
+<tr>
+<th scope="col"><span class="left">Value</span></th>
+<th scope="col"><span class="left">Description</span></th>
+<th scope="col"><span class="left">Score</span></th> </tr> </thead>
+<tbody>
+<tr>
+<td class="left">None (N)</td>
+<td class="left">There is no availability impact.</td>
+<td class="left">0.00</td> </tr>
+<tr>
+<td class="left">Low (L)</td>
+<td class="left">The performance of the system is degraded.</td>
+<td class="left">0.22</td> </tr>
+<tr>
+<td class="left">High (H)</td>
+<td class="left">The system is completely shut down.</td>
+<td class="left">0.56</td> </tr> </tbody> </table>
+</figure>
+</section>
+<section><span id="c05-sec-0033"/>
+<h5 id="head-5-8">Scope Metric</h5>
+<p id="c05-para-0081">The <i>scope metric</i> (S) describes whether the vulnerability can affect system components beyond the scope of the vulnerability. The scope metric is assigned according to the criteria in <a href="#c05-tbl-0008" id="R_c05-tbl-0008">Table 5.8</a>. Note that the scope metric table does not contain score information. The value of the scope metric is reflected in the values for the privileges required metric, shown earlier in <a href="#c05-tbl-0003">Table 5.3</a>.</p>
+<figure>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-tbl-0008" id="c05-tbl-0008" role="doc-backlink"><b>TABLE 5.8</b></a></span> CVSS scope metric</p>
+</figcaption>
+<table border="1">
+<thead>
+<tr>
+<th scope="col"><span class="left">Value</span></th>
+<th scope="col"><span class="left">Description</span></th> </tr> </thead>
+<tbody>
+<tr>
+<td class="left">Unchanged (U)</td>
+<td class="left">The exploited vulnerability can only affect resources managed by the same security authority.</td> </tr>
+<tr>
+<td class="left">Changed (C)</td>
+<td class="left">The exploited vulnerability can affect resources beyond the scope of the security authority managing the component containing the vulnerability.</td> </tr> </tbody> </table>
+</figure>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c05-para-0083"><img alt="" role="presentation" src="images/note.png"/> The current version of CVSS is version 3.1, which is a minor update from version 3.0. You will find that attack vectors normally cite version 3.0. This chapter uses CVSS version 3.1 as the basis of our conversation, but 3.0 and 3.1 are functionally equivalent for our purposes. You may still find documentation that references CVSS version 2, which uses a similar methodology but has different ratings and only six metrics.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c05-sec-0035"/>
+<h5 id="head-5-9">Interpreting the CVSS Vector</h5>
+<p>The <i>CVSS vector</i> uses a single-line format to convey the ratings of a vulnerability on all eight of the metrics described in the preceding sections. For example, recall the CVSS vector for the vulnerability presented in <a href="#c05-fig-0012">Figure 5.12</a>:</p>
+<pre id="c05-code-0002"><code>CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</code>
+</pre>
+<p><span aria-label="108" epub:type="pagebreak" id="Page_108" role="doc-pagebreak"/>This vector contains nine components. The first section, “CVSS:3.0,” simply informs the reader (human or system) that the vector was composed using CVSS version 3. The next eight sections correspond to each of the eight CVSS metrics. In this case, the SSL vulnerability in <a href="#c05-fig-0012">Figure 5.12</a> received the following ratings:</p>
+<ul class="square" id="c05-list-0016">
+<li id="c05-li-0047">Attack Vector: Network (score: 0.85)</li>
+<li id="c05-li-0048">Attack Complexity: Low (score: 0.77)</li>
+<li id="c05-li-0049">Privileges Required: None (score: 0.85)</li>
+<li id="c05-li-0050">User Interaction: None (score: 0.85)</li>
+<li id="c05-li-0051">Scope: Unchanged</li>
+<li id="c05-li-0052">Confidentiality: High (score: 0.56)</li>
+<li id="c05-li-0053">Integrity: None (score: 0.00)</li>
+<li id="c05-li-0054">Availability: None (score: 0.00)</li>
+</ul>
+</section>
+<section><span id="c05-sec-0036"/>
+<h5 id="head-5-10">Summarizing CVSS Scores</h5>
+<p id="c05-para-0086">The CVSS vector provides good detailed information on the nature of the risk posed by a vulnerability, but the complexity of the vector makes it difficult to use in prioritization exercises. For this reason, analysts can calculate the <i>CVSS base score</i>, which is a single number representing the overall risk posed by the vulnerability. Arriving at the base score requires first calculating some other CVSS component scores.</p>
+<section><span id="c05-sec-0037"/>
+<h6 id="head-6-1">CALCULATING THE IMPACT SUB-SCORE (ISS)</h6>
+<p>The first calculation analysts perform is computing the impact sub-score (ISS). This metric summarizes the three impact metrics using the formula</p>
+<div class="informalEquation" id="c05-disp-0001"><img alt="upper I upper S upper S equals 1 en-dash left-bracket left-parenthesis 1 en-dash upper C o n f i d e n t i a l i t y right-parenthesis times left-parenthesis 1 en-dash upper I n t e g r i t y right-parenthesis times left-parenthesis 1 en-dash upper A v a i l a b i l i t y right-parenthesis right-bracket" src="images/c05-disp-0001.png" style="vertical-align:middle;height:1.82em;"/><!--<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi mathvariant="normal">ISS</mi><mo>=</mo><mn>1</mn><mo>&#8211;</mo><mrow><mo>[</mo><mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>&#8211;</mo><mi mathvariant="normal">Confidentiality</mi></mrow><mo>)</mo></mrow><mo>&#215;</mo><mrow><mo>(</mo><mrow><mn>1</mn><mo>&#8211;</mo><mi mathvariant="normal">Integrity</mi></mrow><mo>)</mo></mrow><mo>&#215;</mo><mrow><mo>(</mo><mrow><mn>1</mn><mo>&#8211;</mo><mi mathvariant="normal">Availability</mi></mrow><mo>)</mo></mrow></mrow><mo>]</mo></mrow></mrow></math>--></div>
+<p>Plugging in the values for our SSL vulnerability, we obtain</p>
+<div class="informalEquation" id="c05-disp-0002"><img alt="upper I upper S upper S equals 1 en-dash left-bracket left-parenthesis 1 en-dash 0.56 right-parenthesis times left-parenthesis 1 en-dash 0.000 right-parenthesis times left-parenthesis 1 en-dash 0.00 right-parenthesis right-bracket" src="images/c05-disp-0002.png" style="vertical-align:middle;height:1.82em;"/><!--<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi mathvariant="normal">ISS</mi><mo>=</mo><mn>1</mn><mo>&#8211;</mo><mrow><mo>[</mo><mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>&#8211;</mo><mn>0.56</mn></mrow><mo>)</mo></mrow><mo>&#215;</mo><mrow><mo>(</mo><mrow><mn>1</mn><mo>&#8211;</mo><mn>0.000</mn></mrow><mo>)</mo></mrow><mo>&#215;</mo><mrow><mo>(</mo><mrow><mn>1</mn><mo>&#8211;</mo><mn>0.00</mn></mrow><mo>)</mo></mrow></mrow><mo>]</mo></mrow></mrow></math>--></div>
+<div class="informalEquation" id="c05-disp-0003"><img alt="upper I upper S upper S equals 1 en-dash left-bracket 0.44 times 1.00 times 1.00 right-bracket" src="images/c05-disp-0003.png" style="vertical-align:middle;height:1.59em;"/><!--<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi mathvariant="normal">ISS</mi><mo>=</mo><mn>1</mn><mo>&#8211;</mo><mrow><mo>[</mo><mrow><mn>0.44</mn><mo>&#215;</mo><mn>1.00</mn><mo>&#215;</mo><mn>1.00</mn></mrow><mo>]</mo></mrow></mrow></math>--></div>
+<div class="informalEquation" id="c05-disp-0004"><img alt="upper I upper S upper S equals 1 en-dash 0.44" src="images/c05-disp-0004.png" style="vertical-align:middle;height:0.94em;"/><!--<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi mathvariant="normal">ISS</mi><mo>=</mo><mn>1</mn><mo>&#8211;</mo><mn>0.44</mn></mrow></math>--></div>
+<div class="informalEquation" id="c05-disp-0005"><img alt="upper I upper S upper S equals 0.56" src="images/c05-disp-0005.png" style="vertical-align:middle;height:0.94em;"/><!--<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi mathvariant="normal">ISS</mi><mo>=</mo><mn>0.56</mn></mrow></math>--></div>
+</section> <span aria-label="109" epub:type="pagebreak" id="Page_109" role="doc-pagebreak"/>
+<section><span id="c05-sec-0038"/>
+<h6 id="head-6-2">CALCULATING THE IMPACT SCORE </h6>
+<p>To obtain the impact score from the impact sub-score, we must take the value of the scope metric into account. If the scope metric is Unchanged, as it is in our example, we multiply the ISS by 6.42:</p>
+<div class="informalEquation" id="c05-disp-0006"><img alt="upper I m p a c t equals 6.42 times upper I upper S upper S" src="images/c05-disp-0006.png" style="vertical-align:middle;height:1.24em;"/><!--<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi mathvariant="normal">Impact</mi><mo>=</mo><mn>6.42</mn><mo>&#215;</mo><mi mathvariant="normal">ISS</mi></mrow></math>--></div>
+<div class="informalEquation" id="c05-disp-0007"><img alt="upper I m p a c t equals 6.42 times 0.56" src="images/c05-disp-0007.png" style="vertical-align:middle;height:1.24em;"/><!--<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi mathvariant="normal">Impact</mi><mo>=</mo><mn>6.42</mn><mo>&#215;</mo><mn>0.56</mn></mrow></math>--></div>
+<div class="informalEquation" id="c05-disp-0008"><img alt="upper I m p a c t equals 3.60" src="images/c05-disp-0008.png" style="vertical-align:middle;height:1.24em;"/><!--<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi mathvariant="normal">Impact</mi><mo>=</mo><mn>3.60</mn></mrow></math>--></div>
+<p>If the scope metric is Changed, we use a more complex formula:</p>
+<div class="informalEquation" id="c05-disp-0009"><img alt="Impact equals 7.52 times left-parenthesis ISS en-dash 0.029 right-parenthesis en-dash 3.25 times left-parenthesis ISS en-dash 0.02 right-parenthesis Superscript 15" src="images/c05-disp-0009.png" style="vertical-align:middle;height:2.35em;"/><!--<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mtext>Impact</mtext><mo>=</mo><mn>7.52</mn><mo>&#215;</mo><mrow><mo>(</mo><mrow><mtext>ISS</mtext><mo>&#8211;</mo><mn>0.029</mn></mrow><mo>)</mo></mrow><mo>&#8211;</mo><mn>3.25</mn><mo>&#215;</mo><msup><mrow><mrow><mo>(</mo><mrow><mtext>ISS</mtext><mo>&#8211;</mo><mn>0.02</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>15</mn></mrow></msup></mrow></math>--></div>
+</section>
+<section><span id="c05-sec-0039"/>
+<h6 id="head-6-3">CALCULATING THE EXPLOITABILITY SCORE </h6>
+<p>Analysts may calculate the exploitability score for a vulnerability using this formula:</p>
+<div class="informalEquation" id="c05-disp-0010"><img alt="StartLayout 1st Row upper E x p l o i t a b i l i t y equals 8.22 times upper A t t a c k upper V e c t o r times upper A t t a c k upper C o m p l e x i t y 2nd Row times upper P r i v i l e g e s upper R e q u i r e d times upper U s e r upper I n t e r a c t i o n EndLayout" src="images/c05-disp-0010.png" style="vertical-align:middle;height:3.29em;"/><!--<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mtable columnalign="left"><mtr><mtd><mi mathvariant="normal">Exploitability</mi><mo>=</mo><mn>8.22</mn><mo>&#215;</mo><mi mathvariant="normal">AttackVector</mi><mo>&#215;</mo><mi mathvariant="normal">AttackComplexity</mi></mtd></mtr><mtr><mtd><mspace width="0.25em"/><mspace width="0.25em"/><mspace width="0.25em"/><mi mathvariant="normal">&#9;</mi><mo>&#215;</mo><mspace width="0.25em"/><mi mathvariant="normal">PrivilegesRequired</mi><mo>&#215;</mo><mi mathvariant="normal">UserInteraction</mi></mtd></mtr></mtable></math>--></div>
+<p>Plugging in values for our SSL vulnerability, we get</p>
+<div class="informalEquation" id="c05-disp-0011"><img alt="upper E x p l o i t a b i l i t y equals 8.22 times 0.85 times 0.77 times 0.85 times 0.85" src="images/c05-disp-0011.png" style="vertical-align:middle;height:1.35em;"/><!--<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi mathvariant="normal">Exploitability</mi><mo>=</mo><mn>8.22</mn><mo>&#215;</mo><mn>0.85</mn><mo>&#215;</mo><mn>0.77</mn><mo>&#215;</mo><mn>0.85</mn><mo>&#215;</mo><mn>0.85</mn></mrow></math>--></div>
+<div class="informalEquation" id="c05-disp-0012"><img alt="upper E x p l o i t a b i l i t y equals 3.89" src="images/c05-disp-0012.png" style="vertical-align:middle;height:1.35em;"/><!--<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi mathvariant="normal">Exploitability</mi><mo>=</mo><mn>3.89</mn></mrow></math>--></div>
+</section>
+<section><span id="c05-sec-0040"/>
+<h6 id="head-6-4">CALCULATING THE BASE SCORE </h6>
+<p>With all of this information at hand, we can now determine the CVSS base score using the following rules:</p>
+<ul class="square" id="c05-list-0017">
+<li id="c05-li-0055">If the impact is 0, the base score is 0.</li>
+<li id="c05-li-0056">If the scope metric is Unchanged, calculate the base score by adding together the impact and exploitability scores.</li>
+<li id="c05-li-0057">If the scope metric is Changed, calculate the base score by adding together the impact and exploitability scores and multiplying the result by 1.08.</li>
+<li id="c05-li-0058">The highest possible base score is 10. If the calculated value is greater than 10, set the base score to 10.</li>
+</ul>
+<p><span aria-label="110" epub:type="pagebreak" id="Page_110" role="doc-pagebreak"/>In our example, the impact score is 3.60 and the exploitability score rounds to 3.9. Adding these together, we get a base score of 7.5, which is the same value found in <a href="#c05-fig-0012">Figure 5.12</a>.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c05-para-0107"><img alt="" role="presentation" src="images/note.png"/> Now that you understand the math behind CVSS scores, the good news is that you don't need to perform these calculations by hand. NIST offers a CVSS calculator at <code><a href="http://www.first.org/cvss/calculator/3.1">www.first.org/cvss/calculator/3.1</a></code>, where you can easily compute the CVSS base score for a vulnerability.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c05-sec-0042"/>
+<h6 id="head-6-5">CATEGORIZING CVSS BASE SCORES </h6>
+<p id="c05-para-0108">Many vulnerability scanning systems further summarize CVSS results by using risk categories rather than numeric risk ratings. These are usually based on the CVSS Qualitative Severity Rating Scale, shown in <a href="#c05-tbl-0009" id="R_c05-tbl-0009">Table 5.9</a>.</p>
+<figure>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-tbl-0009" id="c05-tbl-0009" role="doc-backlink"><b>TABLE 5.9</b></a></span> CVSS Qualitative Severity Rating Scale</p>
+</figcaption>
+<table border="1">
+<thead>
+<tr>
+<th scope="col"><span class="left">CVSS score</span></th>
+<th scope="col"><span class="left">Rating</span></th> </tr> </thead>
+<tbody>
+<tr>
+<td class="left">0.0</td>
+<td class="left">None</td> </tr>
+<tr>
+<td class="left">0.1–3.9</td>
+<td class="left">Low</td> </tr>
+<tr>
+<td class="left">4.0–6.9</td>
+<td class="left">Medium</td> </tr>
+<tr>
+<td class="left">7.0–8.9</td>
+<td class="left">High</td> </tr>
+<tr>
+<td class="left">9.0–10.0</td>
+<td class="left">Critical</td> </tr> </tbody> </table>
+</figure>
+<p id="c05-para-0109">Continuing with the SSL vulnerability example from <a href="#c05-fig-0012">Figure 5.12</a>, we calculated the CVSS score for this vulnerability as 7.5. This places it into the High risk category, as shown in the header of <a href="#c05-fig-0012">Figure 5.12</a>.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c05-fea-0005"/>
+<h3 id="head-2-51">Exam Note</h3>
+<section><span id="c05-sec-0043"/>
+<p id="c05-para-0110">Be sure you are familiar with the CVSS severity rating scale for the exam. These scores are a common topic for exam questions!</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+</section>
+</section> <span aria-label="111" epub:type="pagebreak" id="Page_111" role="doc-pagebreak"/>
+<section><span id="c05-sec-0044"/>
+<h3 id="head-3-37">Confirmation of Scan Results</h3>
+<p id="c05-para-0111">Cybersecurity analysts interpreting reports often perform their own investigations to confirm the presence and severity of vulnerabilities. These investigations may include the use of external data sources that supply additional information valuable to the analysis.</p>
+<section><span id="c05-sec-0045"/>
+<h4 id="head-4-39">False Positives</h4>
+<p id="c05-para-0112">Vulnerability scanners are useful tools, but they aren't foolproof. Scanners do sometimes make mistakes for a variety of reasons. The scanner might not have sufficient access to the target system to confirm a vulnerability, or it might simply have an error in a plug-in that generates an erroneous vulnerability report. When a scanner reports a vulnerability that does not exist, this is known as a <i>false positive error</i>.</p>
+<p id="c05-para-0113">When a vulnerability scanner reports a vulnerability, this is known as a <i>positive report</i>. This report may either be accurate (a <i>true positive</i> report) or inaccurate (a <i>false positive</i> report). Similarly, when a scanner reports that a vulnerability is not present, this is a <i>negative report</i>. The negative report may either be accurate (a <i>true negative</i> report) or inaccurate (a <i>false negative</i> report).</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c05-fea-0006"/>
+<h3 id="head-2-52">Exam Note</h3>
+<section><span id="c05-sec-0046"/>
+<p id="c05-para-0114">As you prepare for the exam, focus on the topics of false positives and false negatives. You must understand the types of errors that might occur in vulnerability reports and be prepared to identify them in scenarios on the exam.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c05-para-0115">Cybersecurity analysts should confirm each vulnerability reported by a scanner. In some cases, this may be as simple as verifying that a patch is missing or an operating system is outdated. In other cases, verifying a vulnerability requires a complex manual process that simulates an exploit. For example, verifying a SQL injection vulnerability may require actually attempting an attack against a web application and verifying the result in the backend database.</p>
+<p id="c05-para-0116">When verifying a vulnerability, analysts should draw on their own expertise as well as the subject matter expertise of others throughout the organization. Database administrators, system engineers, network technicians, software developers, and other experts have domain knowledge that is essential to the evaluation of a potential false positive report.</p>
+</section>
+<section><span id="c05-sec-0047"/>
+<h4 id="head-4-40">Reconciling Scan Results with Other Data Sources</h4>
+<p>Vulnerability scans should never take place in a vacuum. Cybersecurity analysts interpreting these reports should also turn to other sources of security information as they perform their analysis. Valuable information sources for this process include the following:<span aria-label="112" epub:type="pagebreak" id="Page_112" role="doc-pagebreak"/></p>
+<ul class="square" id="c05-list-0018">
+<li id="c05-li-0059"><i>Log reviews</i> from servers, applications, network devices, and other sources that might contain information about possible attempts to exploit detected vulnerabilities</li>
+<li id="c05-li-0060"><i>Security information and event management (SIEM)</i> systems that correlate log entries from multiple sources and provide actionable intelligence</li>
+<li id="c05-li-0061"><i>Configuration management systems</i> that provide information on the operating system and applications installed on a system</li>
+</ul>
+<p id="c05-para-0118">Each of these information sources can prove invaluable when an analyst attempts to reconcile a scan report with the reality of the organization's computing environment.</p>
+</section>
+</section>
+</section>
+<section aria-labelledby="head-2-53"><span id="c05-sec-0048"/>
+<h2 id="head-2-53">Vulnerability Classification</h2>
+<p id="c05-para-0119">Each vulnerability scanning system contains plug-ins able to detect thousands of possible vulnerabilities, ranging from major SQL injection flaws in web applications to more mundane information disclosure issues with network devices. Though it's impossible to discuss each of these vulnerabilities in a book of any length, cybersecurity analysts should be familiar with the most commonly detected vulnerabilities and some of the general categories that cover many different vulnerability variants.</p>
+<section><span id="c05-sec-0049"/>
+<h3 id="head-3-38">Patch Management</h3>
+<p id="c05-para-0120">Applying security patches to systems should be one of the core practices of any information security program, but this routine task is often neglected due to a lack of resources for preventive maintenance. One of the most common alerts from a vulnerability scan is that one or more systems on the network are running an outdated version of an operating system or application and require security patches.</p>
+<p id="c05-para-0121"><a href="#c05-fig-0013" id="R_c05-fig-0013">Figure 5.13</a> shows an example of one of these scan results. The server in this report has a remote code execution vulnerability. Though the scan result is fairly brief, it does contain quite a bit of helpful information.</p>
+
+<p id="c05-para-0122">Fortunately, there is an easy way to fix this problem. The Solution section tells us that Microsoft corrected the issue with app version 2.0.32791.0 or later, and the See Also section provides a direct link to the Microsoft security bulletin (CVE-2022-44687) that describes the issue and solution in greater detail.</p>
+<p id="c05-para-0123">The vulnerability shown in <a href="#c05-fig-0013">Figure 5.13</a> highlights the importance of operating a <i>patch management</i> program that routinely patches security issues. The issue shown in <a href="#c05-fig-0013">Figure 5.13</a> exposes improper or weak patch management at the operating system level, but these weaknesses can also exist in applications and firmware.</p>
+<figure> <img alt="A snapshot of the missing patch vulnerability. The page title is Microsoft Windows Raw Image Extensions Library R C E. The options include description, solution, see also, synopsis, and plugin details." class="center" src="images/c05f013.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-fig-0013" id="c05-fig-0013" role="doc-backlink"><b>FIGURE 5.13</b></a></span> Missing patch vulnerability</p>
+</figcaption>
+</figure>
+</section> <span aria-label="113" epub:type="pagebreak" id="Page_113" role="doc-pagebreak"/>
+<section><span id="c05-sec-0050"/>
+<h3 id="head-3-39">Legacy Platforms</h3>
+<p id="c05-para-0124">Software vendors eventually discontinue support for every product they make. This is true for operating systems as well as applications. Once they announce the final end of support for a product, organizations that continue running the outdated software put themselves at a significant risk of attack. The vendor simply will not investigate or correct security flaws that arise in the product after that date. Organizations continuing to run the unsupported product are on their own from a security perspective, and unless you happen to maintain a team of operating system developers, that's not a good situation to find yourself in.</p>
+<p id="c05-para-0125">Perhaps the most famous end of support for a major operating system occurred in July 2015 when Microsoft discontinued support for the more than two decades old Windows Server 2003. <a href="#c05-fig-0014" id="R_c05-fig-0014">Figure 5.14</a> shows an example of the report generated by Nessus when it identifies a server running this outdated operating system.</p>
+<p>We can see from this report that the scan detected two servers on the network running Windows Server 2003. The description of the vulnerability provides a stark assessment of what lies in store for organizations continuing to run any unsupported operating system:</p>
+<blockquote class="extract">
+<p id="c05-para-0127">Lack of support implies that no new security patches for the product will be released by the vendor. As a result, it is likely to contain security vulnerabilities. Furthermore, Microsoft is unlikely to investigate or acknowledge reports of vulnerabilities.</p></blockquote>
+<figure> <img alt="A snapshot of the Unsupported operating system vulnerability. The page title is Microsoft Windows Server 20 03 unsupported installation detection. The options include description, solution, see also, and output. The no output recorded option is selected." class="center" src="images/c05f014.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-fig-0014" id="c05-fig-0014" role="doc-backlink"><b>FIGURE 5.14</b></a></span> Unsupported operating system vulnerability</p>
+</figcaption>
+</figure>
+<p id="c05-para-0128"><span aria-label="114" epub:type="pagebreak" id="Page_114" role="doc-pagebreak"/>The solution for organizations running unsupported operating systems is simple in its phrasing but complex in implementation. “Upgrade to a version of Windows that is currently supported” is a pretty straightforward instruction, but it may pose a significant challenge for organizations running applications that simply can't be upgraded to newer versions of Windows. In cases where the organization simply must continue using an unsupported operating system, best practice dictates isolating the system as much as possible, preferably not connecting it to any network, and applying as many compensating security controls as possible, such as increased monitoring and implementing strict network firewall rules.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c05-fea-0007"/>
+<h3 id="head-2-54">Exam Note</h3>
+<section><span id="c05-sec-0051"/>
+<p id="c05-para-0129">Remember that good vulnerability response and remediation practices include patching, insurance, segmentation, compensating controls, exceptions, and exemptions.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section> <span aria-label="115" epub:type="pagebreak" id="Page_115" role="doc-pagebreak"/>
+<section><span id="c05-sec-0052"/>
+<h3 id="head-3-40">Weak Configurations</h3>
+<p>Vulnerability scans may also highlight weak configuration settings on systems, applications, and devices. These weak configurations may include the following:</p>
+<ul class="square" id="c05-list-0019">
+<li id="c05-li-0062">The use of default settings that pose a security risk, such as administrative setup pages that are meant to be disabled before moving a system to production.</li>
+<li id="c05-li-0063">The presence of default credentials or unsecured accounts, including both normal user accounts and unsecured root accounts with administrative privileges. Accounts may be considered unsecured when they either lack strong authentication or use default passwords.</li>
+<li id="c05-li-0064">Open service ports that are not necessary to support normal system operations. This will vary based on the function of a server or device but, in general, a system should expose only the minimum number of services necessary to carry out its function.</li>
+<li id="c05-li-0065">Open permissions that allow users access that violates the principle of least privilege.</li>
+</ul>
+<p id="c05-para-0131">These are just a few examples of the many weak configuration settings that may jeopardize security. You'll want to carefully read the results of vulnerability scans to identify other issues that might arise in your environment.</p>
+</section>
+<section><span id="c05-sec-0053"/>
+<h3 id="head-3-41">Error Messages</h3>
+<p id="c05-para-0132">Many application development platforms support <i>debug modes</i> that give developers crucial error information needed to troubleshoot applications in the development process. Debug mode typically provides detailed information on the inner workings of an application and server, as well as supporting databases. Although this information can be useful to developers, it can inadvertently assist an attacker seeking to gain information about the structure of a database, authentication mechanisms used by an application, or other details. For this reason, vulnerability scans do alert on the presence of debug mode on scanned servers. <a href="#c05-fig-0015" id="R_c05-fig-0015">Figure 5.15</a> shows an example of this type of scan result.</p>
+<p id="c05-para-0133">In this example, the target system appears to be a Windows Server supporting the ASP.NET development environment. The Output section of the report demonstrates that the server responds when sent a DEBUG request by a client.</p>
+<p id="c05-para-0134">Solving this issue requires the cooperation of developers and disabling debug modes on systems with public exposure. In mature organizations, software development should always take place in a dedicated development environment that is only accessible from private networks. Developers should be encouraged (or ordered!) to conduct their testing only on systems dedicated to that purpose, and it would be entirely appropriate to enable debug mode on those servers. There should be no need for supporting this capability on public-facing systems.</p>
+<figure> <img alt="A snapshot of the debug mode vulnerability. The page title is A S P dot N E T Debug method enabled. The options include description, solution, see also, and output. The output option is highlighted." class="center" src="images/c05f015.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-fig-0015" id="c05-fig-0015" role="doc-backlink"><b>FIGURE 5.15</b></a></span> Debug mode vulnerability</p>
+</figcaption>
+</figure>
+</section> <span aria-label="116" epub:type="pagebreak" id="Page_116" role="doc-pagebreak"/>
+<section><span id="c05-sec-0054"/>
+<h3 id="head-3-42">Insecure Protocols</h3>
+<p id="c05-para-0135">Many of the older protocols used on networks in the early days of the Internet were designed without security in mind. They often failed to use encryption to protect usernames, passwords, and the content sent over an open network, exposing the users of the protocol to eavesdropping attacks. Telnet is one example of an insecure protocol used to gain command-line access to a remote server. The File Transfer Protocol (FTP) provides the ability to transfer files between systems but does not incorporate security features. <a href="#c05-fig-0016" id="R_c05-fig-0016">Figure 5.16</a> shows an example of a scan report that detected a system that supports the insecure FTP protocol.</p>
+<p id="c05-para-0136">The solution for this issue is to simply switch to a more secure protocol. Fortunately, encrypted alternatives exist for both Telnet and FTP. System administrators can use Secure Shell (SSH) as a secure replacement for Telnet when seeking to gain command-line access to a remote system. Similarly, the Secure File Transfer Protocol (SFTP) and FTP-Secure (FTPS) both provide a secure method to transfer files between systems.</p>
+<figure> <img alt="A snapshot of the F T P cleartext authentication vulnerability. The page title is F T P Support cleartext authentication. The options include description, solution, and output. The output option is selected." class="center" src="images/c05f016.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-fig-0016" id="c05-fig-0016" role="doc-backlink"><b>FIGURE 5.16</b></a></span> FTP cleartext authentication vulnerability</p>
+</figcaption>
+</figure>
+</section> <span aria-label="117" epub:type="pagebreak" id="Page_117" role="doc-pagebreak"/>
+<section><span id="c05-sec-0055"/>
+<h3 id="head-3-43">Weak Encryption</h3>
+<p id="c05-para-0137">Encryption is a crucial security control used in every cybersecurity program to protect stored data and data in transit over networks. As with any control, however, encryption must be configured securely to provide adequate protection. You'll learn more about securely implementing encryption in <a href="c07.xhtml">Chapter 7</a>, “Cryptography and the PKI.”</p>
+<p>When you implement encryption, you have two important choices to make:</p>
+<ul class="square" id="c05-list-0020">
+<li id="c05-li-0066">The algorithm to use to perform encryption and decryption</li>
+<li id="c05-li-0067">The encryption key to use with that algorithm</li>
+</ul>
+<p id="c05-para-0139">The choices that you make for both of these characteristics may have a profound impact on the security of your environment. If you use a weak encryption algorithm, it may be easily defeated by an attacker. If you choose an encryption key that is easily guessable because of its length or composition, an attacker may find it using a cryptographic attack. For example, <a href="#c05-fig-0017" id="R_c05-fig-0017">Figure 5.17</a> shows a scan report from a system that supports the insecure RC4 cipher. This system should be updated to support a secure cipher, such as the Advanced Encryption Standard (AES).</p> <span aria-label="118" epub:type="pagebreak" id="Page_118" role="doc-pagebreak"/>
+<figure> <img alt="A snapshot of the insecure S S L cipher vulnerability. The page title is S S L R C 4 cipher suites supported. The options include description, solution, see also, and output. The output option is highlighted." class="center" src="images/c05f017.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-fig-0017" id="c05-fig-0017" role="doc-backlink"><b>FIGURE 5.17</b></a></span> Insecure SSL cipher vulnerability</p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section aria-labelledby="head-2-55"><span id="c05-sec-0056"/>
+<h2 id="head-2-55">Penetration Testing</h2>
+<p id="c05-para-0140"><i>Penetration testing</i> seeks to bridge the gap between the rote use of technical tools to test an organization's security and the power of those tools when placed in the hands of a skilled and determined attacker. Penetration tests are authorized, legal attempts to defeat an organization's security controls and perform unauthorized activities. These tests are time-consuming and require staff who are as equally skilled and determined as the real-world attackers that will attempt to compromise the organization. However, they're also the most effective way for an organization to gain a complete picture of their security vulnerability.</p> <span aria-label="119" epub:type="pagebreak" id="Page_119" role="doc-pagebreak"/>
+<section><span id="c05-sec-0057"/>
+<h3 id="head-3-44">Adopting the Hacker Mindset</h3>
+<p id="c05-para-0141">In <a href="c01.xhtml">Chapter 1</a>, “Today's Security Professional,” you learned about the CIA triad and how the goals of confidentiality, integrity, and availability are central to the field of cybersecurity. Cybersecurity defenders do spend the majority of their time thinking in these terms, designing controls and defenses to protect information and systems against a wide array of known and unknown threats to confidentiality, integrity, and availability.</p>
+<p id="c05-para-0142">Penetration testers must take a very different approach in their thinking. Instead of trying to defend against all possible threats, they only need to find a single vulnerability that they might exploit to achieve their goals. To find these flaws, they must think like the adversary who might attack the system in the real world. This approach is commonly known as adopting the <i>hacker mindset</i>.</p>
+<p>Before we explore the hacker mindset in terms of technical systems, let's explore it using an example from the physical world. If you were responsible for the physical security of an electronics store, you might consider a variety of threats and implement controls designed to counter those threats. You'd be worried about shoplifting, robbery, and employee embezzlement, among other threats, and you might build a system of security controls that seeks to prevent those threats from materializing. These controls might include the following:</p>
+<ul class="square" id="c05-list-0021">
+<li id="c05-li-0068">Security cameras in high-risk areas</li>
+<li id="c05-li-0069">Auditing of cash register receipts</li>
+<li id="c05-li-0070">Theft detectors at the main entrance/exit to the store</li>
+<li id="c05-li-0071">Exit alarms on emergency exits</li>
+<li id="c05-li-0072">Burglar alarm wired to detect the opening of doors outside business hours</li>
+</ul>
+<p id="c05-para-0144">Now, imagine that you've been engaged to conduct a security assessment of this store. You'd likely examine each one of these security controls and assess its ability to prevent each of the threats identified in your initial risk assessment. You'd also look for gaps in the existing security controls that might require supplementation. Your mandate is broad and high-level.</p>
+<p id="c05-para-0145">Penetration tests, on the other hand, have a much more focused mandate. Instead of adopting the approach of a security professional, you adopt the mindset of an attacker. You don't need to evaluate the effectiveness of each one of these security controls. You simply need to find either one flaw in the existing controls or one scenario that was overlooked in planning those controls.</p>
+<p id="c05-para-0146">In this example, a penetration tester might enter the store during business hours and conduct reconnaissance, gathering information about the security controls that are in place and the locations of critical merchandise. They might notice that, though the burglar alarm is tied to the doors, it does not include any sensors on the windows. The tester might then return in the middle of the night, smash a window, and grab valuable merchandise. Recognizing that the store has security cameras in place, the attacker might wear a mask and park a vehicle outside of the range of the cameras. That's the hacker mindset. You need to think like a criminal.</p>
+<p id="c05-para-0147"><span aria-label="120" epub:type="pagebreak" id="Page_120" role="doc-pagebreak"/>There's an important corollary to the hacker mindset that is important for both attackers and defenders to keep in mind. When conducting a penetration test (or a real-world attack), the attacker needs to win only once. They might attempt hundreds or thousands of potential attacks against a target. The fact that an organization's security defenses block 99.99 percent of those attacks is irrelevant if one of the attacks succeeds. Cybersecurity professionals need to win <i>every</i> time; attackers need to win only once.</p>
+</section>
+<section><span id="c05-sec-0058"/>
+<h3 id="head-3-45">Reasons for Penetration Testing</h3>
+<p id="c05-para-0148">The modern organization dedicates extensive time, energy, and funding to a wide variety of security controls and activities. We install firewalls, intrusion prevention systems, security information and event management systems, vulnerability scanners, and many other tools. We equip and staff 24-hour security operations centers (SOCs) to monitor those technologies and watch our systems, networks, and applications for signs of compromise. There's more than enough work to completely fill our days twice over. Why on earth would we want to take on the additional burden of performing penetration tests? After all, they are time-consuming to perform internally and expensive to outsource.</p>
+<p id="c05-para-0149">The answer to this question is that penetration testing provides us with visibility into the organization's security posture that simply isn't available by other means. Penetration testing does not seek to replace all the other cybersecurity activities of the organization. Instead, it complements and builds on those efforts. Penetration testers bring their unique skills and perspectives to the table and can take the output of security tools and place them within the attacker's mindset, asking the question, “If I were an attacker, how could I use this information to my advantage?”</p>
+</section>
+<section><span id="c05-sec-0059"/>
+<h3 id="head-3-46">Benefits of Penetration Testing</h3>
+<p id="c05-para-0150">We've already discussed <i>how</i> a penetration tester carries out their work at a high level, and the remainder of this book is dedicated to exploring penetration testing tools and techniques in great detail. Before we dive into that exploration, let's take a moment to consider <i>why</i> we conduct penetration testing. What benefits does it bring to the organization?</p>
+<p id="c05-para-0151">First and foremost, penetration testing provides us with knowledge that we can't obtain elsewhere. By conducting thorough penetration tests, we learn whether an attacker with the same knowledge, skills, and information as our testers would likely be able to penetrate our defenses. If they can't gain a foothold, we can then be reasonably confident that our networks are secure against attack by an equivalently talented attacker under the present circumstances.</p>
+<p id="c05-para-0152">Second, in the event that attackers are successful, penetration testing provides us with an important blueprint for remediation. Cybersecurity professionals can trace the actions of the testers as they progressed through the different stages of the attack and close the series of open doors that the testers passed through. This provides us with a more robust defense against future attacks.</p>
+<p id="c05-para-0153"><span aria-label="121" epub:type="pagebreak" id="Page_121" role="doc-pagebreak"/>Finally, penetration tests can provide us with essential, focused information on specific attack targets. We might conduct a penetration test prior to the deployment of a new system that is specifically focused on exercising the security features of that new environment. Unlike the broad nature of an open-ended penetration test, these focused tests can drill into the defenses around a specific target and provide actionable insight that can prevent a vulnerability from initial exposure.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c05-fea-0008"/>
+<h3 id="head-2-56">Threat Hunting</h3>
+<section><span id="c05-sec-0060"/>
+<p id="c05-para-0154">The discipline of <i>threat hunting</i> is closely related to penetration testing but has a separate and distinct purpose. As with penetration testing, cybersecurity professionals engaged in threat hunting seek to adopt the attacker's mindset and imagine how hackers might seek to defeat an organization's security controls. The two disciplines diverge in what they accomplish with this information.</p>
+<p id="c05-para-0155">Although penetration testers seek to evaluate the organization's security controls by testing them in the same manner as an attacker might, threat hunters use the attacker mindset to search the organization's technology infrastructure for the artifacts of a successful attack. They ask themselves what a hacker might do and what type of evidence they might leave behind and then go in search of that evidence.</p>
+<p id="c05-para-0156">Threat hunting builds on a cybersecurity philosophy known as the “presumption of compromise.” This approach assumes that attackers have already successfully breached an organization and searches out the evidence of successful attacks. When threat hunters discover a potential compromise, they then kick into incident handling mode, seeking to contain, eradicate, and recover from the compromise. They also conduct a postmortem analysis of the factors that contributed to the compromise in an effort to remediate deficiencies. This post-event remediation is another similarity between penetration testing and threat hunting: organizations leverage the output of both processes in similar ways.</p>
+<p id="c05-para-0157">Threat hunters work with a variety of intelligence sources, using the concept of intelligence fusion to combine information from threat feeds, security advisories and bulletins, and other sources. They then seek to trace the path that an attacker followed as they maneuver through a target network.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c05-sec-0061"/>
+<h3 id="head-3-47">Penetration Test Types</h3>
+<p>There are four major categories of penetration testing:</p>
+<ul class="square" id="c05-list-0022">
+<li id="c05-li-0073"><i>Physical penetration testing</i> focuses on identifying and exploiting vulnerabilities in an organization's physical security controls. This can include breaking into buildings, <span aria-label="122" epub:type="pagebreak" id="Page_122" role="doc-pagebreak"/>bypassing access control systems, or compromising surveillance systems. The primary objective of physical penetration testing is to assess the effectiveness of an organization's physical security measures in preventing unauthorized access to their facilities, equipment, and sensitive information.</li>
+<li id="c05-li-0074"><i>Offensive penetration testing</i> is a proactive approach where security professionals act as attackers to identify and exploit vulnerabilities in an organization's networks, systems, and applications. The goal of offensive penetration testing is to simulate real-world cyberattacks and determine how well an organization can detect, respond to, and recover from these attacks.</li>
+<li id="c05-li-0075"><i>Defensive penetration testing</i> focuses on evaluating an organization's ability to defend against cyberattacks. Unlike offensive penetration testing, which aims to exploit vulnerabilities, defensive penetration testing involves assessing the effectiveness of security policies, procedures, and technologies in detecting and mitigating threats.</li>
+<li id="c05-li-0076"><i>Integrated penetration testing</i> combines aspects of both offensive and defensive testing to provide a comprehensive assessment of an organization's security posture. This approach involves close collaboration between offensive and defensive experts to identify vulnerabilities, simulate attacks, and evaluate the effectiveness of defensive measures.</li>
+</ul>
+<p>Once the type of assessment is known, one of the first things to decide about a penetration test is how much knowledge testers will have about the environment. Three typical classifications are used to describe this:</p>
+<ul class="square" id="c05-list-0023">
+<li id="c05-li-0077"><i>Known environment</i> tests are tests performed with full knowledge of the underlying technology, configurations, and settings that make up the target. Testers will typically have such information as network diagrams, lists of systems and IP network ranges, and even credentials to the systems they are testing. Known environment tests allow for effective testing of systems without requiring testers to spend time identifying targets and determining which may be a way in. This means that a known environment test is often more complete, since testers can get to every system, service, or other target that is in scope, and will have credentials and other materials that will allow them to be tested. Of course, since testers can see everything inside an environment, they may not provide an accurate view of what an external attacker would see, and controls that would have been effective against most attackers may be bypassed.</li>
+<li id="c05-li-0078"><i>Unknown environment</i> tests are intended to replicate what an attacker would encounter. Testers are not provided with access to or information about an environment, and instead, they must gather information, discover vulnerabilities, and make their way through an infrastructure or systems like an attacker would. This approach can be time-consuming, but it can help provide a reasonably accurate assessment of how secure the target is against an attacker of similar or lesser skill. It is important to note that the quality and skillset of your penetration tester or team is very important when conducting an unknown environment penetration test—if the threat actor you expect to target your organization is more capable, a tester can't provide you with a realistic view of what they could do.</li>
+<li id="c05-li-0079"><span aria-label="123" epub:type="pagebreak" id="Page_123" role="doc-pagebreak"/><i>Partially known environment</i> tests are a blend of known and unknown environment testing. A partially known environment test may provide some information about the environment to the penetration testers without giving full access, credentials, or configuration details. A partially known environment test can help focus penetration testers’ time and effort while also providing a more accurate view of what an attacker would actually encounter.</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c05-fea-0009"/>
+<h3 id="head-2-57">Exam Note</h3>
+<section><span id="c05-sec-0062"/>
+<p id="c05-para-0160">Be sure that you can differentiate and explain the four major categories and three classification types of penetration testing. The categories are physical penetration testing, offensive penetration testing, defensive penetration testing, and integrated penetration testing. The classification types are known environment tests, unknown environment tests, and partially known environment tests. You should be able to read a scenario describing a test and identify the type(s) of test being discussed.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c05-sec-0063"/>
+<h3 id="head-3-48">Rules of Engagement</h3>
+<p>Once you have determined the type of assessment and the level of knowledge testers will have about the target, the rest of the <i>rules of engagement</i> (RoE) can be written. Key elements include the following:</p>
+<ul class="square" id="c05-list-0024">
+<li id="c05-li-0080">The <i>timeline</i> for the engagement and when testing can be conducted. Some assessments will intentionally be scheduled for noncritical timeframes to minimize the impact of potential service outages, whereas others may be scheduled during normal business hours to help test the organization's reaction to attacks.</li>
+<li id="c05-li-0081">What <i>locations, systems, applications, or other potential targets</i> are included or excluded. This also often includes discussions about third-party service providers that may be impacted by the test, such as Internet services providers, software-as-a-service (SaaS) or other cloud service providers, or outsourced security monitoring services. Any special technical constraints should also be discussed in the RoE.</li>
+<li id="c05-li-0082"><i>Data handling requirements</i> for information gathered during the penetration test. This is particularly important when engagements cover sensitive organizational data or systems. Requirements for handling often include confidentiality requirements for the findings, such as encrypting data during and after the test, and contractual requirements for disposing of the penetration test data and results after the engagement is over.</li>
+<li id="c05-li-0083">What <i>behaviors</i> to expect from the target. Defensive behaviors like shunning, deny listing, or other active defenses may limit the value of a penetration test. If the test is meant to evaluate defenses, this may be useful. If the test is meant to test a complete <span aria-label="124" epub:type="pagebreak" id="Page_124" role="doc-pagebreak"/>infrastructure, shunning or blocking the penetration testing team's efforts can waste time and resources.</li>
+<li id="c05-li-0084">What <i>resources</i> are committed to the test. In known environment and partially known environment testing scenarios, time commitments from the administrators, developers, and other experts on the targets of the test are not only useful, they can be necessary for an effective test.</li>
+<li id="c05-li-0085"><i>Legal concerns</i> should also be addressed, including a review of the laws that cover the target organization, any remote locations, and any service providers who will be in scope.</li>
+<li id="c05-li-0086">When and how <i>communications</i> will occur. Should the engagement include daily or weekly updates regardless of progress, or will the penetration testers simply report when they are done with their work? How should the testers respond if they discover evidence of a current compromise?</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c05-fea-0010"/>
+<h3 id="head-2-58">Permission</h3>
+<section><span id="c05-sec-0064"/>
+<p id="c05-para-0162">The tools and techniques we cover in this book are the bread and butter of a penetration tester's job, but they can also be illegal to use without permission. Before you plan (and especially before you execute) a penetration test, you should have appropriate permission. In most cases, you should be sure to have appropriate documentation for that permission in the form of a signed agreement, a memo from senior management, or a similar “get out of jail free” card from a person or people in the target organization with the rights to give you permission.</p>
+<p id="c05-para-0163">Why is it called a “get out of jail free” card? It's the document that you would produce if something went wrong. Permission from the appropriate party can help you stay out of trouble if something goes wrong!</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c05-para-0164">Scoping agreements and the rules of engagement must define more than just what will be tested. In fact, documenting the limitations of the test can be just as important as what will be included. The testing agreement or scope documentation should contain disclaimers explaining that the test is valid only at the point in time that it is conducted, and that the scope and methodology chosen can impact the comprehensiveness of the test. After all, a known-environment penetration test is far more likely to find issues buried layers deep in a design than an unknown-environment test of well-secured systems!</p>
+<p id="c05-para-0165">Problem handling and resolution is another key element of the rules of engagement. Although penetration testers and clients always hope that the tests will run smoothly and won't cause any disruption, testing systems and services, particularly in production environments using actual attack and exploit tools, can cause outages and other problems. In those cases, having a clearly defined communication, notification, and escalation path on both <span aria-label="125" epub:type="pagebreak" id="Page_125" role="doc-pagebreak"/>sides of the engagement can help minimize downtime and other issues for the target organization. Penetration testers should carefully document their responsibilities and limitations of liability, and ensure that clients know what could go wrong and that both sides agree on how it should be handled. That way, both the known and unknown impacts of the test can be addressed appropriately.</p>
+</section>
+<section><span id="c05-sec-0065"/>
+<h3 id="head-3-49">Reconnaissance</h3>
+<p id="c05-para-0166">Penetration tests begin with a reconnaissance phase, where the testers seek to gather as much information as possible about the target organization. In a known-environment test, the testers enter the exercise with significant knowledge, but they still seek to supplement this knowledge with additional techniques.</p>
+<p id="c05-para-0167"><i>Passive reconnaissance</i> techniques seek to gather information without directly engaging with the target. <a href="c02.xhtml">Chapter 2</a>, “Cybersecurity Threat Landscape,” covered a variety of open source intelligence (OSINT) techniques that fit into the category of passive reconnaissance. Common passive reconnaissance techniques include performing lookups of domain information using DNS and WHOIS queries, performing web searches, reviewing public websites, and similar tactics.</p>
+<p id="c05-para-0168"><i>Active reconnaissance</i> techniques directly engage the target in intelligence gathering. These techniques include the use of port scanning to identify open ports on systems, <i>footprinting</i> to identify the operating systems and applications in use, and vulnerability scanning to identify exploitable vulnerabilities.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c05-fea-0011"/>
+<h3 id="head-2-59">Exam Note</h3>
+<section><span id="c05-sec-0066"/>
+<p id="c05-para-0169">Know the difference between passive and active reconnaissance techniques. Passive techniques do not directly engage the target, whereas active reconnaissance directly engages the target.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c05-para-0170">One common goal of penetration testers is to identify wireless networks that may present a means of gaining access to an internal network of the target without gaining physical access to the facility. Testers use a technique called <i>war driving</i>, where they drive by facilities in a car equipped with high-end antennas and attempt to eavesdrop on or connect to wireless networks. Recently, testers have expanded this approach to the use of drones and unmanned aerial vehicles (UAVs) in a technique known as <i>war flying</i>.</p>
+</section>
+<section><span id="c05-sec-0067"/>
+<h3 id="head-3-50">Running the Test</h3>
+<p>During the penetration test, the testers follow the same process used by attackers. You'll learn more about this process in the discussion of the Cyber Kill Chain in <a href="c14.xhtml">Chapter 14</a>, <span aria-label="126" epub:type="pagebreak" id="Page_126" role="doc-pagebreak"/>“Monitoring and Incident Response.” However, you should be familiar with some key phases of the test as you prepare for the exam:</p>
+<ul class="square" id="c05-list-0025">
+<li id="c05-li-0087"><i>Initial access</i> occurs when the attacker exploits a vulnerability to gain access to the organization's network.</li>
+<li id="c05-li-0088"><i>Privilege escalation</i> uses hacking techniques to shift from the initial access gained by the attacker to more advanced privileges, such as root access on the same system.</li>
+<li id="c05-li-0089"><i>Pivoting</i>, or <i>lateral movement</i>, occurs as the attacker uses the initial system compromise to gain access to other systems on the target network.</li>
+<li id="c05-li-0090">Attackers establish <i>persistence</i> on compromised networks by installing backdoors and using other mechanisms that will allow them to regain access to the network, even if the initial vulnerability is patched.</li>
+</ul>
+<p id="c05-para-0172">Penetration testers make use of many of the same tools used by real attackers as they perform their work. <i>Exploitation frameworks</i>, such as Metasploit, simplify the use of vulnerabilities by providing a modular approach to configuring and deploying vulnerability exploits.</p>
+</section>
+<section><span id="c05-sec-0068"/>
+<h3 id="head-3-51">Cleaning Up</h3>
+<p id="c05-para-0173">At the conclusion of a penetration test, the testers conduct close-out activities that include presenting their results to management and cleaning up the traces of their work. Testers should remove any tools that they installed on systems as well as any persistence mechanisms that they put in place. The close-out report should provide the target with details on the vulnerabilities discovered during the test and advice on improving the organization's cybersecurity posture.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-60"><span id="c05-sec-0069"/>
+<h2 id="head-2-60">Audits and Assessments</h2>
+<p id="c05-para-0174">The cornerstone maintenance activity for an information security team is their security assessment and testing program. This program includes tests, assessments, and audits that regularly verify that an organization has adequate security controls and that those security controls are functioning properly and effectively safeguarding information assets.</p>
+<p>In this section, you will learn about the three major components of a security assessment program:</p>
+<ul class="square" id="c05-list-0026">
+<li id="c05-li-0091">Security tests</li>
+<li id="c05-li-0092">Security assessments</li>
+<li id="c05-li-0093">Security audits</li>
+</ul> <span aria-label="127" epub:type="pagebreak" id="Page_127" role="doc-pagebreak"/>
+<section><span id="c05-sec-0070"/>
+<h3 id="head-3-52">Security Tests</h3>
+<p><i>Security tests</i> verify that a control is functioning properly. These tests include automated scans, tool-assisted penetration tests, and manual attempts to undermine security. Security testing should take place on a regular schedule, with attention paid to each of the key security controls protecting an organization. When scheduling security controls for review, information security managers should consider the following factors:</p>
+<ul class="square" id="c05-list-0027">
+<li id="c05-li-0094">Availability of security testing resources</li>
+<li id="c05-li-0095">Criticality of the systems and applications protected by the tested controls</li>
+<li id="c05-li-0096">Sensitivity of information contained on tested systems and applications</li>
+<li id="c05-li-0097">Likelihood of a technical failure of the mechanism implementing the control</li>
+<li id="c05-li-0098">Likelihood of a misconfiguration of the control that would jeopardize security</li>
+<li id="c05-li-0099">Risk that the system will come under attack</li>
+<li id="c05-li-0100">Rate of change of the control configuration</li>
+<li id="c05-li-0101">Other changes in the technical environment that may affect the control performance</li>
+<li id="c05-li-0102">Difficulty and time required to perform a control test</li>
+<li id="c05-li-0103">Impact of the test on normal business operations</li>
+</ul>
+<p>After assessing each of these factors, security teams design and validate a comprehensive assessment and testing strategy. This strategy may include frequent automated tests supplemented by infrequent manual tests. For example, a credit card processing system may undergo automated vulnerability scanning on a nightly basis with immediate alerts to administrators when the scan detects a new vulnerability. The automated scan requires no work from administrators once it is configured, so it is easy to run quite frequently. The security team may wish to complement those automated scans with a manual penetration test performed by an external consultant for a significant fee. Those tests may occur on an annual basis to minimize costs and disruption to the business.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c05-para-0178"><img alt="" role="presentation" src="images/warn.png"/> Many security testing programs begin on a haphazard basis, with security professionals simply pointing their fancy new tools at whatever systems they come across first. Experimentation with new tools is fine, but security testing programs should be carefully designed and include rigorous, routine testing of systems using a risk-prioritized approach.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c05-para-0179">Of course, it's not sufficient to simply perform security tests. Security professionals must also carefully review the results of those tests to ensure that each test was successful. In some cases, these reviews consist of manually reading the test output and verifying that the test completed successfully. Some tests require human interpretation and must be performed by trained analysts.</p>
+<p id="c05-para-0180"><span aria-label="128" epub:type="pagebreak" id="Page_128" role="doc-pagebreak"/>Other reviews may be automated, performed by security testing tools that verify the successful completion of a test, log the results, and remain silent unless there is a significant finding. When the system detects an issue requiring administrator attention, it may trigger an alert, send an email or text message, or automatically open a trouble ticket, depending on the severity of the alert and the administrator's preference.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c05-fea-0012"/>
+<h3 id="head-2-61">Responsible Disclosure Programs</h3>
+<section><span id="c05-sec-0072"/>
+<p id="c05-para-0181">Responsible disclosure programs allow security researchers to securely share information about vulnerabilities in a product with the vendor responsible for that product. The purpose of the program is to create a collaborative environment between the organization and the security community, allowing for the timely identification, reporting, and remediation of security vulnerabilities. These programs provide organizations with an opportunity to benefit from the wisdom and talent of cybersecurity professionals outside their own teams.</p>
+<p id="c05-para-0182">Bug bounty programs are a type of responsible disclosure program that incentivizes responsible disclosure submissions by offering financial rewards (or “bounties”) to testers who successfully discover vulnerabilities.</p>
+<p id="c05-para-0183">Supporters of bug bounty programs often point out that outsiders will probe your security whether you like it or not. Running a formal bug bounty program provides them with the incentive to let you know when they discover security issues.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c05-sec-0073"/>
+<h3 id="head-3-53">Security Assessments</h3>
+<p id="c05-para-0184"><i>Security assessments</i> are comprehensive reviews of the security of a system, application, or other tested environment. During a security assessment, a trained information security professional performs a risk assessment that identifies vulnerabilities in the tested environment that may allow a compromise and makes recommendations for remediation, as needed.</p>
+<p id="c05-para-0185">Security assessments normally include the use of security testing tools but go beyond automated scanning and manual penetration tests. They also include a thoughtful review of the threat environment, current and future risks, and the value of the targeted environment.</p>
+<p id="c05-para-0186">The main work product of a security assessment is normally an assessment report addressed to management that contains the results of the assessment in nontechnical language and concludes with specific recommendations for improving the security of the tested environment.</p>
+<p id="c05-para-0187">Assessments may be conducted by an internal team, or they may be outsourced to a third-party assessment team with specific expertise in the areas being assessed.</p>
+</section> <span aria-label="129" epub:type="pagebreak" id="Page_129" role="doc-pagebreak"/>
+<section><span id="c05-sec-0074"/>
+<h3 id="head-3-54">Security Audits</h3>
+<p id="c05-para-0188"><i>Security audits</i> use many of the same techniques followed during security assessments but must be performed by independent auditors. While an organization's security staff may routinely perform security tests and assessments, this is not the case for audits. Assessment and testing results are meant for internal use only and are designed to evaluate controls with an eye toward finding potential improvements. Audits, on the other hand, are formal examinations performed with the purpose of demonstrating the effectiveness of controls to a third party. The staff who design, implement, and monitor controls for an organization have an inherent conflict of interest when evaluating the effectiveness of those controls.</p>
+<p id="c05-para-0189">Auditors provide an impartial, unbiased view of the state of security controls. They write reports that are quite similar to security assessment reports, but those reports are intended for different audiences that may include an organization's board of directors, government regulators, and other third parties.</p>
+<p id="c05-para-0190">One of the primary outcomes of an audit is an <i>attestation</i> by the auditor. This is a formal statement that the auditors have reviewed the controls and found that they are both adequate to meet the control objectives and working properly.</p>
+<p id="c05-para-0191">There are three main types of audits: internal audits, external audits, and third-party audits.</p>
+<section><span id="c05-sec-0075"/>
+<h4 id="head-4-41">Internal Audits</h4>
+<p id="c05-para-0192"><i>Internal audits</i> are performed by an organization's internal audit staff and are typically intended for internal audiences. The internal audit staff performing these audits normally have a reporting line that is completely independent of the functions they evaluate. In many organizations, the chief audit executive reports directly to the president, chief executive officer (CEO), or similar role. The chief audit executive (CAE) may also have reporting responsibility directly to the organization's governing board and/or the <i>audit committee</i> of that board.</p>
+<p id="c05-para-0193">Internal audits may be conducted for a variety of reasons. Often, management or the board would like to obtain reassurance that the organization is meeting its <i>compliance obligations</i>. In addition, the internal audit team may lead a series of <i>self-assessments</i> designed to identify control gaps in advance of a more formal external audit.</p>
+</section>
+<section><span id="c05-sec-0076"/>
+<h4 id="head-4-42">External Audits</h4>
+<p><i>External audits</i> are performed by an outside auditing firm who serves as an independent third party. These audits have a high degree of external validity because the auditors performing the assessment theoretically have no conflict of interest with the organization itself. There are thousands of firms who perform external audits, but most people place the highest credibility with the so-called Big Four audit firms:</p>
+<ul class="square" id="c05-list-0028">
+<li id="c05-li-0104">Ernst &amp; Young</li>
+<li id="c05-li-0105">Deloitte</li>
+<li id="c05-li-0106">PricewaterhouseCoopers (PwC)</li>
+<li id="c05-li-0107">KPMG</li>
+</ul>
+<p id="c05-para-0195"><span aria-label="130" epub:type="pagebreak" id="Page_130" role="doc-pagebreak"/>Audits performed by these firms are generally considered acceptable by most investors and governing body members.</p>
+</section>
+<section><span id="c05-sec-0077"/>
+<h4 id="head-4-43">Independent Third-Party Audits</h4>
+<p id="c05-para-0196"><i>Independent third-party audits</i> are conducted by, or on behalf of, another organization. For example, a regulatory body might have the authority to initiate an audit of a regulated firm under contract or law. In the case of an independent third-party audit, the organization initiating the audit generally selects the auditors and designs the scope of the audit.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c05-fea-0013"/>
+<h3 id="head-2-62">Exam Note</h3>
+<section><span id="c05-sec-0078"/>
+<p id="c05-para-0197">Independent third-party audits are a subcategory of external audits—the only difference is who is requesting the audit. For an external audit, the request comes from the organization or its governing body. For an independent third-party audit, the request comes from a regulator, customer, or other outside entity.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c05-para-0198">Organizations that provide services to other organizations are frequently asked to participate in independent third-party audits. This can be quite a burden on the audited organization if they have a large number of clients. The American Institute of Certified Public Accountants (AICPA) released a standard designed to alleviate this burden. The Statement on Standards for Attestation Engagements document 18 (<i>SSAE 18</i>), titled <i>Reporting on Controls</i>, provides a common standard to be used by auditors performing assessments of service organizations with the intent of allowing the organization to conduct an external assessment instead of multiple third-party assessments and then sharing the resulting report with customers and potential customers.</p>
+<p id="c05-para-0199">SSAE 18 engagements are commonly referred to as <i>service organization controls (SOC)</i> audits.</p>
+</section>
+<section><span id="c05-sec-0079"/>
+<h4 id="head-4-44">Auditing Standards</h4>
+<p id="c05-para-0200">When conducting an audit or assessment, the team performing the review should be clear about the standard that they are using to assess the organization. The standard provides the description of control objectives that should be met, and then the audit or assessment is designed to ensure that the organization properly implemented controls to meet those objectives.</p>
+<p id="c05-para-0201">One common framework for conducting audits and assessments is the <i>Control Objectives for Information and related Technologies (COBIT)</i>. COBIT describes the common requirements that organizations should have in place surrounding their information systems. The COBIT framework is maintained by the Information Systems Audit and Control Association (ISACA), the creators of the Certified Information Systems Auditor (CISA), and Certified Information Security Manager (CISM) certifications.</p>
+<p id="c05-para-0202"><span aria-label="131" epub:type="pagebreak" id="Page_131" role="doc-pagebreak"/>The International Organization for Standardization (ISO) also publishes a set of standards related to information security. ISO 27001 describes a standard approach for setting up an information security management system, while ISO 27002 goes into more detail on the specifics of information security controls. These internationally recognized standards are widely used within the security field, and organizations may choose to become officially certified as compliant with ISO 27001.</p>
+</section>
+</section>
+</section>
+<section aria-labelledby="head-2-63"><span id="c05-sec-0080"/>
+<h2 id="head-2-63">Vulnerability Life Cycle</h2>
+<p id="c05-para-0203">Now that you've learned about many of the activities involved in vulnerability management, let's take a look at the entire vulnerability life cycle and how these pieces fit together, as shown in <a href="#c05-fig-0018" id="R_c05-fig-0018">Figure 5.18</a>.</p>
+<figure> <img alt="A flow diagram of the vulnerability life cycle. The steps include Identification, Analysis, Response&#10;and Remediation, Validation of Remediation, and Reporting. It is a circular flow chart." class="center" src="images/c05f018.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c05-fig-0018" id="c05-fig-0018" role="doc-backlink"><b>FIGURE 5.18</b></a></span> Vulnerability life cycle</p>
+</figcaption>
+</figure>
+<section><span id="c05-sec-0081"/>
+<h3 id="head-3-55">Vulnerability Identification</h3>
+<p>During the first stage in the process, the organization becomes aware of a vulnerability that exists within their environment. This identification may come from many different sources, including:</p>
+<ul class="square" id="c05-list-0029">
+<li id="c05-li-0108">Vulnerability scans run by the organization or outside assessors</li>
+<li id="c05-li-0109">Penetration tests of the organization's environment</li>
+<li id="c05-li-0110"><span aria-label="132" epub:type="pagebreak" id="Page_132" role="doc-pagebreak"/>Reports from responsible disclosure or bug bounty programs</li>
+<li id="c05-li-0111">Results of system and process audits</li>
+</ul>
+</section>
+<section><span id="c05-sec-0082"/>
+<h3 id="head-3-56">Vulnerability Analysis</h3>
+<p>After identifying a possible vulnerability in the organization's environment, cybersecurity professionals next perform an analysis of that report. This includes several core tasks:</p>
+<ul class="square" id="c05-list-0030">
+<li id="c05-li-0112">Confirming that the vulnerability exists and is not the result of a false positive report</li>
+<li id="c05-li-0113">Prioritizing and categorizing the vulnerability using tools such as CVSS and CVE that provide an external assessment of the vulnerability</li>
+<li id="c05-li-0114">Supplementing the external analysis of the vulnerability with organization specific details, such as the organization's <i>exposure factor</i> to the vulnerability, <i>environmental variables</i>, industry and organizational impact, and the organization's <i>risk tolerance</i></li>
+</ul>
+</section>
+<section><span id="c05-sec-0083"/>
+<h3 id="head-3-57">Vulnerability Response and Remediation</h3>
+<p>The outcome of the vulnerability analysis should guide the organization to identify the vulnerabilities that are most in need of <i>remediation</i>. At this point, cybersecurity professionals should respond to the vulnerability in one or more of the following ways:</p>
+<ul class="square" id="c05-list-0031">
+<li id="c05-li-0115">Apply a patch or other corrective measure to correct the vulnerability.</li>
+<li id="c05-li-0116">Use network segmentation to isolate the affected system so that the probability of an exploit becomes remote.</li>
+<li id="c05-li-0117">Implement other compensating controls, such as application firewalls or intrusion prevention systems, to reduce the likelihood that an attempted exploit will be successful.</li>
+<li id="c05-li-0118">Purchase insurance to transfer the financial risk of the vulnerability to an insurance provider.</li>
+<li id="c05-li-0119">Grant an exception or exemption to the system as part of a formal risk acceptance strategy</li>
+</ul>
+</section>
+<section><span id="c05-sec-0084"/>
+<h3 id="head-3-58">Validation of Remediation</h3>
+<p id="c05-para-0207">After completing a vulnerability remediation effort, cybersecurity professionals should perform a validation that the vulnerability is no longer present. This is typically done by rescanning the affected system and verifying that the vulnerability no longer appears in scan results. In the case of more serious vulnerabilities, internal or external auditors may perform this validation to provide independent assurance that the issue is resolved.</p>
+</section> <span aria-label="133" epub:type="pagebreak" id="Page_133" role="doc-pagebreak"/>
+<section><span id="c05-sec-0085"/>
+<h3 id="head-3-59">Reporting</h3>
+<p>The final stage in the vulnerability life cycle is reporting, which involves communicating the findings, actions taken, and lessons learned to relevant stakeholders within the organization. This step ensures that decision-makers are informed about the current state of the organization's security posture and the effectiveness of the vulnerability management program. Reporting may include:</p>
+<ul class="square" id="c05-list-0032">
+<li id="c05-li-0120">Summarizing the vulnerabilities identified, analyzed, and remediated, along with their initial severity and impact on the organization</li>
+<li id="c05-li-0121">Providing details on the remediation actions taken, including patches applied, compensating controls implemented, and risk acceptance decisions made</li>
+<li id="c05-li-0122">Highlighting any trends, patterns, or areas requiring further attention, such as recurring vulnerabilities or systems that are particularly susceptible to exploitation</li>
+<li id="c05-li-0123">Offering recommendations for improvements in the vulnerability management process, security policies, or employee training programs based on the findings and experiences throughout the life cycle</li>
+</ul>
+<p id="c05-para-0209">Regular and comprehensive reporting not only demonstrates the organization's commitment to cybersecurity but also enables continuous improvement by identifying potential gaps in the vulnerability management process and fostering a proactive approach to addressing security risks.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-64"><span id="c05-sec-0086"/>
+<h2 id="head-2-64">Summary</h2>
+<p id="c05-para-0210">Security assessment and testing plays a crucial role in the ongoing management of a cybersecurity program. The techniques discussed in this chapter help cybersecurity professionals maintain effective security controls and stay abreast of changes in their environment that might alter their security posture.</p>
+<p id="c05-para-0211">Vulnerability scanning identifies potential security issues in systems, applications, and devices, providing teams with the ability to remediate those issues before they are exploited by attackers. The vulnerabilities that may be detected during these scans include improper patch management, weak configurations, default accounts, and the use of insecure protocols and ciphers.</p>
+<p id="c05-para-0212">Penetration testing puts security professionals in the role of attackers and asks them to conduct offensive operations against their targets in an effort to discover security issues. The results of penetration tests provide a roadmap for improving security controls.</p>
+</section> <span aria-label="134" epub:type="pagebreak" id="Page_134" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-65"><span id="c05-sec-0087"/>
+<h2 id="head-2-65">Exam Essentials</h2>
+<p id="c05-li-0124"><b>Many vulnerabilities exist in modern computing environments.</b> Cybersecurity professionals should remain aware of the risks posed by vulnerabilities both on-premises and in the cloud. Improper or weak patch management can be the source of many of these vulnerabilities, providing attackers with a path to exploit operating systems, applications, and firmware. Weak configuration settings that create vulnerabilities include open permissions, unsecured root accounts, errors, weak encryption settings, insecure protocol use, default settings, and open ports and services. When a scan detects a vulnerability that does not exist, the report is known as a false positive. When a scan does not detect a vulnerability that actually exists, the report is known as a false negative.</p>
+<p id="c05-li-0125"><b>Threat hunting discovers existing compromises.</b> Threat hunting activities presume that an organization is already compromised and search for indicators of those compromises. Threat hunting efforts include the use of advisories, bulletins, and threat intelligence feeds in an intelligence fusion program. They search for signs that attackers gained initial access to a network and then conducted maneuver activities on that network.</p>
+<p id="c05-li-0126"><b>Vulnerability scans probe systems, applications, and devices for known security issues.</b> Vulnerability scans leverage application, network, and web application testing to check for known issues. These scans may be conducted in a credentialed or noncredentialed fashion and may be intrusive or nonintrusive, depending on the organization's needs. Analysts reviewing scans should also review logs and configurations for additional context. Vulnerabilities are described consistently using the Common Vulnerabilities and Exposures (CVE) standard and are rated using the Common Vulnerability Scoring System (CVSS). CVE and CVSS are components of the Security Content Automation Protocol (SCAP).</p>
+<p id="c05-li-0127"><b>Penetration testing places security professionals in the role of attackers.</b> Penetration tests may be conducted in a manner that provides the testers with full access to information before the test (known environment), no information at all (unknown environment), or somewhere in between those two extremes (partially known environment). Testers conduct tests within the rules of engagement and normally begin with reconnaissance efforts, including war driving, war flying, footprinting, and open source intelligence (OSINT). They use this information to gain initial access to a system. From there, they seek to conduct privilege escalation to increase their level of access and lateral movement/pivoting to expand their access to other systems. They seek to achieve persistence to allow continued access after the vulnerability they initially exploited is patched. At the conclusion of the test, they conduct cleanup activities to restore systems to normal working order and remove traces of their activity.</p>
+<p id="c05-li-0128"><b>Bug bounty programs incentivize vulnerability reporting.</b> Bug bounty programs allow external security professionals to probe the security of an organization's public-facing systems. Testers who discover vulnerabilities are provided with financial rewards for their participation. This approach is a good way to motivate hackers to work for good, rather than using discovered vulnerabilities against a target.</p>
+<p id="c05-li-0129"><span aria-label="135" epub:type="pagebreak" id="Page_135" role="doc-pagebreak"/><b>Recognize the purpose and types of security audits.</b> Audits are formal examinations of an organization's security controls. They may be performed by internal audit teams or independent third-party auditors. At the conclusion of an audit, the audit team makes an attestation about the adequacy and effectiveness of the organization's security controls.</p>
+<p id="c05-li-0130"><b>Understand the stages of the vulnerability life cycle.</b> The stages of the vulnerability life cycle are vulnerability identification, analysis, response and remediation, validation of remediation, and reporting. Vulnerability identification can come from scans, penetration tests, responsible disclosure or bug bounty programs, and audit results. Analysis involves confirming the vulnerability, prioritizing it using CVSS and CVE, and considering organization-specific factors. Responses include applying patches, isolating affected systems, implementing compensating controls, transferring risk through insurance, or formally accepting the risk. Validation ensures the vulnerability is no longer present, and reporting informs stakeholders about the findings, actions, trends, and recommendations for improvement.</p>
+
+</section> <span aria-label="136" epub:type="pagebreak" id="Page_136" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-66"><span id="c05-sec-0088"/>
+<h2 id="head-2-66">Review Questions</h2>
+<section><span id="c05-exsec-0001"/>
+<ol class="decimal">
+<li id="c05-ex-0001">Which one of the following security assessment techniques assumes that an organization has already been compromised and searches for evidence of that compromise?
+<ol class="upper-alpha">
+<li>Vulnerability scanning</li>
+<li>Penetration testing</li>
+<li>Threat hunting</li>
+<li>War driving</li>
+</ol>
+</li>
+<li id="c05-ex-0002">Renee is configuring her vulnerability management solution to perform credentialed scans of servers on her network. What type of account should she provide to the scanner?
+<ol class="upper-alpha">
+<li>Domain administrator</li>
+<li>Local administrator</li>
+<li>Root</li>
+<li>Read-only</li>
+</ol>
+</li>
+<li id="c05-ex-0003">Ryan is planning to conduct a vulnerability scan of a business-critical system using dangerous plug-ins. What would be the best approach for the initial scan?
+<ol class="upper-alpha">
+<li>Run the scan against production systems to achieve the most realistic results possible.</li>
+<li>Run the scan during business hours.</li>
+<li>Run the scan in a test environment.</li>
+<li>Do not run the scan to avoid disrupting the business.</li>
+</ol>
+</li>
+<li id="c05-ex-0004">Which one of the following values for the CVSS attack complexity metric would indicate that the specified attack is simplest to exploit?
+<ol class="upper-alpha">
+<li>High</li>
+<li>Medium</li>
+<li>Low</li>
+<li>Severe</li>
+</ol>
+</li>
+<li id="c05-ex-0005">Tara recently analyzed the results of a vulnerability scan report and found that a vulnerability reported by the scanner did not exist because the system was actually patched as specified. What type of error occurred?
+<ol class="upper-alpha">
+<li>False positive</li>
+<li>False negative</li>
+<li>True positive</li>
+<li>True negative</li>
+</ol>
+</li>
+<li id="c05-ex-0006"><span aria-label="137" epub:type="pagebreak" id="Page_137" role="doc-pagebreak"/> Brian ran a penetration test against a school's grading system and discovered a flaw that would allow students to alter their grades by exploiting a SQL injection vulnerability. What type of control should he recommend to the school's cybersecurity team to prevent students from engaging in this type of activity?
+<ol class="upper-alpha">
+<li>Confidentiality</li>
+<li>Integrity</li>
+<li>Alteration</li>
+<li>Availability</li>
+</ol>
+</li>
+<li id="c05-ex-0007">Which one of the following security assessment tools is least likely to be used during the reconnaissance phase of a penetration test?
+<ol class="upper-alpha">
+<li>Nmap</li>
+<li>Nessus</li>
+<li>Metasploit</li>
+<li>Nslookup</li>
+</ol>
+</li>
+<li id="c05-ex-0008">During a vulnerability scan, Brian discovered that a system on his network contained this vulnerability:
+<figure><img alt="A note with four titles. 1. Threat. 2. Impact. 3. Solution. 4. Patch. Following are links for downloading patches to fix the vulnerabilities." class="center" src="images/c05uf001.png"/>
+</figure>
+<p class="listPara1" id="c05-para-0257"><b/>What security control, if deployed, would likely have addressed this issue?</p>
+<ol class="upper-alpha">
+<li>Patch management</li>
+<li>File integrity monitoring</li>
+<li>Intrusion detection</li>
+<li>Threat hunting</li>
+</ol>
+</li>
+<li id="c05-ex-0010">Which one of the following tools is most likely to detect an XSS vulnerability?
+<ol class="upper-alpha">
+<li>Static application test</li>
+<li>Web application vulnerability scanner</li>
+<li>Intrusion detection system</li>
+<li>Network vulnerability scanner</li>
+</ol>
+</li>
+<li id="c05-ex-0011"><span aria-label="138" epub:type="pagebreak" id="Page_138" role="doc-pagebreak"/> During a penetration test, Patrick deploys a toolkit on a compromised system and uses it to gain access to other systems on the same network. What term best describes this activity?
+<ol class="upper-alpha">
+<li>Lateral movement</li>
+<li>Privilege escalation</li>
+<li>Footprinting</li>
+<li>OSINT</li>
+</ol>
+</li>
+<li id="c05-ex-0012">Zian is a cybersecurity leader who is coordinating the activities of a security audit. The audit is being done to validate the organization's financial statements to investors and involves a review of cybersecurity controls. What term best describes this audit?
+<ol class="upper-alpha">
+<li>External audit</li>
+<li>Penetration test</li>
+<li>Internal audit</li>
+<li>Informal audit</li>
+</ol>
+</li>
+<li id="c05-ex-0013">Which one of the following assessment techniques is designed to solicit participation from external security experts and reward them for discovering vulnerabilities?
+<ol class="upper-alpha">
+<li>Threat hunting</li>
+<li>Penetration testing</li>
+<li>Bug bounty</li>
+<li>Vulnerability scanning</li>
+</ol>
+</li>
+<li id="c05-ex-0014">Kyle is conducting a penetration test. After gaining access to an organization's database server, he installs a backdoor on the server to grant himself access in the future. What term best describes this action?
+<ol class="upper-alpha">
+<li>Privilege escalation</li>
+<li>Lateral movement</li>
+<li>Maneuver</li>
+<li>Persistence</li>
+</ol>
+</li>
+<li id="c05-ex-0015">Which one of the following techniques would be considered passive reconnaissance?
+<ol class="upper-alpha">
+<li>Port scans</li>
+<li>Vulnerability scans</li>
+<li>WHOIS lookups</li>
+<li>Footprinting</li>
+</ol>
+</li>
+<li id="c05-ex-0016">Which element of the SCAP framework can be used to consistently describe vulnerabilities?
+<ol class="upper-alpha">
+<li>CPE</li>
+<li>CVE</li>
+<li>CVSS</li>
+<li>CCE</li>
+</ol>
+</li>
+<li id="c05-ex-0017"><span aria-label="139" epub:type="pagebreak" id="Page_139" role="doc-pagebreak"/> Bruce is conducting a penetration test for a client. The client provided him with full details of their systems in advance. What type of test is Bruce conducting?
+<ol class="upper-alpha">
+<li>Partially known environment test</li>
+<li>Detailed environment test</li>
+<li>Known environment test</li>
+<li>Unknown environment test</li>
+</ol>
+</li>
+<li id="c05-ex-0018">Lila is working on a penetration testing team and she is unsure whether she is allowed to conduct social engineering as part of the test. What document should she consult to find this information?
+<ol class="upper-alpha">
+<li>Contract</li>
+<li>Statement of work</li>
+<li>Rules of engagement</li>
+<li>Lessons learned report</li>
+</ol>
+</li>
+<li id="c05-ex-0019">Grace would like to determine the operating system running on a system that she is targeting in a penetration test. Which one of the following techniques will most directly provide her with this information?
+<ol class="upper-alpha">
+<li>Port scanning</li>
+<li>Footprinting</li>
+<li>Vulnerability scanning</li>
+<li>Packet capture</li>
+</ol>
+</li>
+<li id="c05-ex-0020">Kevin recently identified a new security vulnerability and computed its CVSS base score as 6.5. Which risk category would this vulnerability fall into?
+<ol class="upper-alpha">
+<li>Low</li>
+<li>Medium</li>
+<li>High</li>
+<li>Critical</li>
+</ol>
+</li>
+<li id="c05-ex-0021">Which one of the CVSS metrics would contain information about the type of account access that an attacker must have to execute an attack?
+<ol class="upper-alpha">
+<li>AV</li>
+<li>C</li>
+<li>PR</li>
+<li>AC</li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+</section>
+</body>
+</html>

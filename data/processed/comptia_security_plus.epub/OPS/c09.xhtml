@@ -1,0 +1,662 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:svg="http://www.w3.org/2000/svg" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+<head>
+<title>Chapter 9 Resilience and Physical Security</title>
+<link href="WileyTemplate_v5.5.css" rel="stylesheet" type="text/css"/>
+<meta content="urn:uuid:57d469d3-a1d3-48bd-8447-18ce82f57cc2" name="Adept.expected.resource"/>
+</head>
+<body epub:type="bodymatter">
+<section aria-labelledby="c09_1" epub:type="chapter" role="doc-chapter">
+<header>
+<h1 id="c09_1"><span aria-label="269" epub:type="pagebreak" id="Page_269" role="doc-pagebreak"/><span id="c09"/><span class="chapterNumber">Chapter 9</span><br/><span class="chapterTitle">Resilience and Physical Security</span></h1>
+</header>
+<section aria-label="chapter opening"><span id="c09-sec-0001"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c09-para-0002"><b>THE COMPTIA SECURITY+ EXAM OBJECTIVES COVERED IN THIS CHAPTER INCLUDE:</b></p>
+<ul class="check1" id="c09-list-0001">
+<li id="c09-li-0001"><b>Domain 1.0: General Security Concepts</b>
+<ul class="square1" id="c09-list-0002">
+<li id="c09-li-0002">1.2. Summarize fundamental security concepts.
+<ul class="square1" id="c09-list-0003">
+<li id="c09-li-0003">Physical security (Bollards, Access control vestibule, Fencing, Video surveillance, Security guard, Access badge, Lighting, Sensors)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="c09-li-0004"><b>Domain 2.0: Threats, Vulnerabilities, and Mitigations</b>
+<ul class="square1" id="c09-list-0004">
+<li id="c09-li-0005">2.4. Given a scenario, analyze indicators of malicious activity.
+<ul class="square1" id="c09-list-0005">
+<li id="c09-li-0006">Physical attacks (Brute force, Radio frequency identification (RFID) cloning, Environmental)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="c09-li-0007"><b>Domain 3.0: Security Architecture</b>
+<ul class="square1" id="c09-list-0006">
+<li id="c09-li-0008">3.1. Compare and contrast security implications of different architecture models.
+<ul class="square1" id="c09-list-0007">
+<li id="c09-li-0009">Considerations (Availability, Resilience, Cost, Responsiveness, Scalability, Ease of deployment, Risk transference, Ease of recovery, Patch availability, Inability to patch, Power, Compute)</li>
+</ul>
+</li>
+<li id="c09-li-0010">3.4. Explain the importance of resilience and recovery in security architecture.
+<ul class="square1" id="c09-list-0008">
+<li id="c09-li-0011">High availability (Load balancing vs. clustering)</li>
+<li id="c09-li-0012">Site considerations (Hot, Cold, Warm, Geographic dispersion)</li>
+<li id="c09-li-0013">Platform diversity</li>
+<li id="c09-li-0014">Multi-cloud systems</li>
+<li id="c09-li-0015">Continuity of operations</li>
+<li id="c09-li-0016">Capacity planning (People, Technology, Infrastructure)</li>
+<li id="c09-li-0017"><span aria-label="270" epub:type="pagebreak" id="Page_270" role="doc-pagebreak"/>Testing (Tabletop exercises, Fail over, Simulation, Parallel processing)</li>
+<li id="c09-li-0018">Backups (Onsite/offsite, Frequency, Encryption, Snapshots, Recovery, Replication, Journaling)</li>
+<li id="c09-li-0019">Power (Generators, Uninterruptible power supply (UPS))</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<span aria-label="271" epub:type="pagebreak" id="Page_271" role="doc-pagebreak"/>
+<p id="c09-para-0011">Building a resilient, secure infrastructure requires an understanding of the risks that your organization may face. Natural and human-created disasters, physical attacks, and even accidents can all have a serious impact on your organization's ability to function. Resilience and the ability to recover from issues is part of the foundation of the availability leg of the CIA triad, and this chapter explores resilience as a key part of availability.</p>
+<p id="c09-para-0012">In this chapter you will explore common elements of resilient design, ranging from geographic diversity and site design and why they are important considerations to high-availability design elements, load balancing, and clustering. You will learn about various backup and recovery techniques to ensure that data isn't lost and that services remain online despite failures.</p>
+<p id="c09-para-0013">Next, you will learn about response and recovery controls, the controls that help to ensure that your organization can remain online and recover from issues. You will explore hot, cold, and warm sites; how to establish restoration order for systems and devices and why doing so is important; and why response and recovery processes may vary from day-to-day operations.</p>
+<p id="c09-para-0014">Physical security can help provide greater resilience as well as protect data and systems. Physical access to systems, networks, and devices is one of the easiest ways to bypass or overcome security controls, making physical security a key design element for secure organizations. In the last section of this chapter, you will learn about common physical security controls, design elements, and technologies, ranging from security guards and sensors to bollards, fences, and lighting.</p>
+</section>
+<section aria-labelledby="head-2-133"><span id="c09-sec-0003"/>
+<h2 id="head-2-133">Resilience and Recovery in Security Architectures</h2>
+<p id="c09-para-0015">In the CIA triad of confidentiality, integrity, and availability, a sometimes neglected element of availability is resilience and the ability to recover. Availability is a critical part of an organization's security, because systems that are offline or otherwise unavailable are not meeting business needs. No matter how strong your confidentiality and integrity controls are, your organization will be in trouble if your systems, networks, and services are not available when they are needed.</p>
+<p id="c09-para-0016">Over the next few pages, we will explore key concepts and practices that are part of the design for resilient and recoverable systems in support of continuity of operations. <span aria-label="272" epub:type="pagebreak" id="Page_272" role="doc-pagebreak"/><i>Continuity of operations</i>, or ensuring that operations will continue even if issues ranging from single system failures to wide-scale natural disasters occur, is a design target for many organizations. Not every organization or implementation will use all, or even many, of these design elements. Each control adds complexity and expense, which means that knowing when and where to implement each of these solutions is an important skill for cybersecurity practitioners. Cost, maintenance requirements, suitability to the risks that your organization faces, and other factors are considerations you must take into account when building cybersecurity resilience.</p>
+<p id="c09-para-0017">One of the most common ways to build resilience is through redundancy—in other words, having more than one of a system, service, device, or other component. As you read through these solutions, bear in mind that designing for resilience requires thinking through the entire environment that a resilient system or service resides in. Power, environmental controls, hardware and software failures, network connectivity, and any other factors that can fail or be disrupted must be assessed. Single points of failure—places where the failure of a single device, connection, or other element could disrupt or stop the system from functioning—must be identified and either compensated for or documented in the design.</p>
+<p id="c09-para-0018">After all your assessment work has been completed, a design is created that balances business needs, design requirements and options, and the cost to build and operate the environment. Designs often have compromises made in them to meet cost, complexity, staffing, or other limitations based on the overall risk and likelihood of occurrence for the risks that were identified in the assessment and design phases.</p>
+<p>Common elements in designs for redundancy include the following:</p>
+<ul class="square" id="c09-list-0009">
+<li id="c09-li-0020"><i>Geographic dispersion</i> of systems ensures that a single disaster, attack, or failure cannot disable or destroy them. For datacenters and other facilities, a common rule of thumb is to place datacenters at least 90 miles apart, preventing most common natural disasters from disabling both (or more!) datacenters. This also helps ensure that facilities will not be impacted by issues with the power grid, network connectivity, and other similar issues.</li>
+<li id="c09-li-0021">Separation of servers and other devices in datacenters is also commonly used to avoid a single rack being a point of failure. Thus, systems may be placed in two or more racks in case of a single-point failure of a power distribution unit (PDU) or even something as simple as a leak that drips down into the rack.
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c09-para-0021"><img alt="" role="presentation" src="images/note.png"/> Although most disasters won't impact something 90 miles away, hurricanes are a major example of a type of disaster that can have very broad impacts on multiple locations along their paths. Designers who build facilities in hurricane-prone regions tend to plan for resilience by placing backup facilities outside those hurricane-prone regions, typically by moving them farther inland. They will also invest in hurricane-proofing their critical infrastructure.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section></li>
+<li id="c09-li-0022">Use of multiple network paths (multipath) solutions ensures that a severed cable or failed device will not cause a loss of connectivity.</li>
+<li id="c09-li-0023">Redundant network devices, including multiple routers, security devices like firewalls and intrusion prevention systems, or other security appliances, are also commonly <span aria-label="273" epub:type="pagebreak" id="Page_273" role="doc-pagebreak"/>implemented to prevent a single point of failure and as part of <i>high availability</i> designs. Here are examples of ways to implement this:
+<ul class="square" id="c09-list-0010">
+<li id="c09-li-0024"><i>Load balancing</i>, which makes multiple systems or services appear to be a single resource, allowing both redundancy and increased ability to handle loads by distributing them to more than one system. Load balancers are also commonly used to allow system upgrades by redirecting traffic away from systems that will be upgraded and then returning that traffic after they are patched or upgraded.</li>
+<li id="c09-li-0025"><i>Clustering</i> describes groups of computers connected together to perform the same task. A cluster of computers might provide the web front-end for an application or serve as worker nodes in a supercomputer. Clustering essentially makes multiple systems appear like a single, larger system and provides redundancy through scale.</li>
+</ul>
+</li>
+<li id="c09-li-0026">Protection of power, through the use of <i>uninterruptible power supply (UPS)</i> systems that provide battery or other backup power options for short periods of time; <i>generator</i> systems that are used to provide power for longer outages; and design elements, such as <i>dual-supply</i> or multisupply hardware, ensures that a power supply failure won't disable a server. <i>Managed power distribution units (PDUs)</i> are also used to provide intelligent power management and remote control of power delivered inside server racks and other environments.</li>
+<li id="c09-li-0027">Systems and storage redundancy helps ensure that failed disks, servers, or other devices do not cause an outage.</li>
+<li id="c09-li-0028"><i>Platform diversity</i>, or diversity of technologies and vendors, is another way to build resilience into an infrastructure. Using different vendors, cryptographic solutions, platforms, and controls can make it more difficult for a single attack or failure to have system- or organization-wide impacts. There is a real cost to using different technologies, such as additional training, the potential for issues when integrating disparate systems, and the potential for human error that increases as complexity increases.</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c09-fea-0001"/>
+<h3 id="head-2-134">Exam Note</h3>
+<section><span id="c09-sec-0005"/>
+<p id="c09-para-0023">Important topics for the exam from this section include understanding high availability, including the differences between and advantages of load balancing and clustering. You'll also want to be ready to answer questions about site considerations, platform diversity, and continuity of operations. Modern architectures also rely on multicloud systems, and you'll want to be able to explain how multicloud works and the issues it can create.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section><span id="c09-sec-0006"/>
+<h3 id="head-3-138">Architectural Considerations and Security</h3>
+<p>The Security+ exam outline includes a number of specific concerns that must be accounted for when you're considering architectural design:</p>
+<ul class="square" id="c09-list-0011">
+<li id="c09-li-0029"><i>Availability</i> targets should be set and designed for based on organization requirements balanced against the other considerations.</li>
+<li id="c09-li-0030"><span aria-label="274" epub:type="pagebreak" id="Page_274" role="doc-pagebreak"/><i>Resilience</i>, which is a component of availability that determines what type and level of potential disruptions the service or system can handle without an availability issue.</li>
+<li id="c09-li-0031"><i>Cost</i>, including financial, staffing, and other costs.</li>
+<li id="c09-li-0032"><i>Responsiveness</i>, or the ability of the system or service to respond in a timely manner as desired or required to function as designed.</li>
+<li id="c09-li-0033"><i>Scalability</i> either vertically (bigger) or horizontally (more) as needed to support availability, resilience, and responsiveness goals.</li>
+<li id="c09-li-0034"><i>Ease of deployment</i>, which describes the complexity and work required to deploy the solution that often factors into initial costs and that may have impacts on ongoing costs if the system or service is frequently redeployed.</li>
+<li id="c09-li-0035"><i>Risk transference</i> through insurance, contracts, or other means is assessed as part of architectural design and cost modeling.</li>
+<li id="c09-li-0036"><i>Ease of recovery</i> is considered part of availability, resilience, and ease of deployment as complex solutions may have high costs that mean additional investments should be made to avoid recovery scenarios.</li>
+<li id="c09-li-0037"><i>Patch availability</i> and <i>vendor support</i> are both commonly assessed to determine both how often patching will be required and if the vendor is appropriately supporting the solution.</li>
+<li id="c09-li-0038"><i>Inability to patch</i> is a consideration when high availability is required and other factors like scalability do not allow for the system to be patched without downtime or other interruptions.</li>
+<li id="c09-li-0039"><i>Power consumption</i> drives ongoing costs and is considered part of datacenter design.</li>
+<li id="c09-li-0040"><i>Compute requirements</i> also drive ongoing costs in the cloud and up-front and recurring replacement costs for on-premises solutions.</li>
+</ul>
+<p id="c09-para-0025">While this list doesn't include every possible consideration you should bear in mind as you think about security solutions, it provides a good set of starting points to take into account from a business perspective as you assess effective security solutions. As you read the rest of this chapter, think about how these considerations might impact the solution you'd choose for each of the options discussed.</p>
+</section>
+<section><span id="c09-sec-0007"/>
+<h3 id="head-3-139">Storage Resiliency</h3>
+<p id="c09-para-0026">The use of redundant arrays of inexpensive disks (RAID) is a common solution that uses multiple disks with data either striped (spread across disks) or mirrored (completely duplicated), and technology to ensure that data is not corrupted or lost (parity). RAID ensures that an array can handle one or more disk failures without losing data. <a href="#c09-tbl-0001" id="R_c09-tbl-0001">Table 9.1</a> shows the most common RAID solutions with their advantages and disadvantages.</p> <span aria-label="275" epub:type="pagebreak" id="Page_275" role="doc-pagebreak"/>
+<figure>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c09-tbl-0001" id="c09-tbl-0001" role="doc-backlink"><b>TABLE 9.1</b></a></span> RAID levels, advantages, and disadvantages</p>
+</figcaption>
+<table border="1">
+<thead>
+<tr>
+<th scope="col"><span class="left">RAID description</span></th>
+<th scope="col"><span class="left">Description</span></th>
+<th scope="col"><span class="left">Advantage</span></th>
+<th scope="col"><span class="left">Disadvantage</span></th> </tr> </thead>
+<tbody>
+<tr>
+<td class="left">RAID 0 – Striping</td>
+<td class="left">Data is spread across all drives in the array.</td>
+<td>Better I/O performance (speed); all capacity used.</td>
+<td>Not fault tolerant—all data lost if a drive is lost.</td> </tr>
+<tr>
+<td class="left">RAID 1 – Mirroring</td>
+<td class="left">All data is duplicated to another drive or drives.</td>
+<td>High read speeds from multiple drives; data available if a drive fails.</td>
+<td>Uses twice the storage for the same amount of data.</td> </tr>
+<tr>
+<td class="left">RAID 5 – Striping with parity</td>
+<td class="left">Data is striped across drives, with one drive used for parity (checksum) of the data. Parity is spread across drives as well as data.</td>
+<td>Data reads are fast; data writes are slightly slower. Drive failures can be rebuilt as long as only a single drive fails.</td>
+<td>Can tolerate only a single drive failure at a time. Rebuilding arrays after a drive loss can be slow and impact performance.</td> </tr>
+<tr>
+<td class="left">RAID 10 – Mirroring and striping</td>
+<td class="left">Requires at least four drives, with drives added in pairs. Data is mirrored, then striped across drives.</td>
+<td>Combines the advantages and disadvantages of both RAID 0 and RAID 1.</td>
+<td>Combines the advantages and disadvantages of both RAID 0 and RAID 1. Sometimes written as RAID 1+0.</td> </tr> </tbody> </table>
+</figure>
+<p id="c09-para-0027">In addition to disk-level protections, backups and replication are frequently used to ensure that data loss does not impact an organization. Backups are a copy of the live storage system: a full backup, which copies the entire device or storage system; an incremental backup, which captures the changes since the last backup and is faster to back up but slower to recover; or a differential backup, which captures the changes since the last full backup and is faster to recover but slower to back up. Running a full backup each time a backup is required requires far more space than an incremental backup, but incremental backups need to be layered with each set of changes applied to get back to a full backup if a complete restoration is required. Since most failures are not a complete storage failure and the cost of space for multiple full backups is much higher, most organizations choose to implement incremental backups, typically with a full backup on a periodic basis.</p>
+<p id="c09-para-0028"><i>Replication</i> focuses on using either synchronous or asynchronous methods to copy live data to another location or device. Unlike backups that occur periodically in most designs, <span aria-label="276" epub:type="pagebreak" id="Page_276" role="doc-pagebreak"/>replication is always occurring as changes are made. Replication helps with multisite, multisystem designs, ensuring that changes are carried over to all systems or clusters that are part of an architecture. In synchronous replication designs, that occurs in real time, but a backup cluster may rely on asynchronous replication that occurs after the fact, but typically much more regularly than a backup. In either design, replication can help with disaster recovery, availability, and load balancing.</p>
+<p id="c09-para-0029">Another data protection option is <i>journaling</i>, which creates a log of changes that can be reapplied if an issue occurs. Journaling is commonly used for databases and similar technologies that combine frequent changes with an ability to restore to a point in time. Journaling also has a role to play in virtual environments where journal-based solutions allow virtual machines to be restored to a point in time rather than to a fixed snapshot.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c09-fea-0002"/>
+<h3 id="head-2-135">Why journaling isn't always the answer</h3>
+<section><span id="c09-sec-0008"/>
+<p id="c09-para-0030">Journaling sounds great, so why not use it instead of all other sorts of backups? A journal still needs to be backed up somewhere else! If a journal is simply maintained on the source system, a single failure can cause data loss. Backing up a journal can help address that issue and can also help prevent malicious or inadvertent changes to the journal causing issues.</p>
+<p id="c09-para-0031">Why not simply journal everything as a default option? Once again that may not be the best option depending on an organization's needs. Restoring journaled transactions can slow down recovery processes as the journal must be replayed and applied to the target dataset or system. Journaling isn't an ideal solution when time to recover may be an important consideration. Thus, like any resilience solution journaling should be one tool among many that is applied when it is appropriate and useful to do so.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c09-para-0032">Backup frequency is another key design consideration. Some backups for frequently changing data may need to be continuous, such as for database transactions. Other backups may happen daily, weekly, or monthly depending on the data rate of change, the organization or function's ability to tolerate data loss if the production system was lost and backups had to be restored, and the cost of the selected backup frequency. Backup frequency also drives the amount of effort that will be required to restore data after an issue occurs. If there are constant incremental backups being made, a restoration process may require a full backup restoration, and then a series of incremental backups may need to be applied in order to get back to the point in time that the issue occurred.</p>
+<p id="c09-para-0033">The ability to recover from backups as well as the organization's needs for that <i>recovery</i> process drive both design decisions and organizational processes. Organizations will create recovery point objectives (RPOs) and recovery time objectives (RTOs) that determine how much data loss, if any, is acceptable and how long a recovery can take without causing significant damage to the organization. RPOs determine how often backups are taken and <span aria-label="277" epub:type="pagebreak" id="Page_277" role="doc-pagebreak"/>thus balance cost for storage versus the potential for data loss. Shorter RTOs mean the organization needs to make choices that allow for faster restoration, which may also drive costs as well as require designs that allow for quick restoration, thus also influencing costs. You'll find additional coverage of RTOs and RPOs in <a href="c17.xhtml">Chapter 17</a>, “Risk Management and Privacy.”</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c09-fea-0003"/>
+<h3 id="head-2-136">Exam Note</h3>
+<section><span id="c09-sec-0009"/>
+<p id="c09-para-0034">As you prepare for the exam, make sure you understand recovery, replication, and journaling. What is involved in recovery processes, and what impacts them? What is the difference between replication and journaling, and where would each be used?</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c09-para-0035">In addition to full and incremental backups, many organizations use a type of backup called a <i>snapshot</i>. A snapshot captures the full state of a system or device at the time the backup is completed. Snapshots are common for virtual machines (VMs), where they allow the machine state to be restored at the point in time that the snapshot was taken. Snapshots can be useful to clone systems, to go back in time to a point before a patch or upgrade was installed, or to restore a system state to a point before some other event occurred. Since they're taken live, they can also be captured while the system is running, often without significant performance impact. Like a full backup, a snapshot can consume quite a bit of space, but most virtualization systems that perform enterprise snapshots are equipped with compression and deduplication technology that helps to optimize space usage for snapshots.</p>
+<p>Images are a similar concept to snapshots, but most often they refer to a complete copy of a system or server, typically down to the bit level for the drive. This means that a restored image is a complete match to the system at the moment it was imaged. Images are a backup method of choice for servers where complex configurations may be in use, and where cloning or restoration in a short time frame may be desired. Full backups, snapshots, and images can all mean similar things, so it is good to determine the technology and terminology in use as well as the specific implications of that technology and the decisions made for its implementation in any given system or architecture.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c09-para-0037"><img alt="" role="presentation" src="images/note.png"/> Forensic images use essentially the same technology to capture a bitwise copy of an entire storage device, although they have stronger requirements around data validation and proof of secure handling.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c09-para-0038">Virtualization systems and virtual desktop infrastructure (VDI) also use images to create nonpersistent systems, which are run using a “gold master” image. The gold master image is not modified when the nonpersistent system is shut down, thus ensuring that the next user has the same expected experience.</p>
+<p id="c09-para-0039">In addition to these types of backups, copies of individual files can be made to retain specific individual files or directories of files. Ideally, a backup copy will be validated when <span aria-label="278" epub:type="pagebreak" id="Page_278" role="doc-pagebreak"/>it is made to ensure that the backup matches the original file. Like any of the other backup methods we have discussed, safe storage of the media that the backup copy is made on is an important element in ensuring that the backup is secure and usable.</p>
+<p>Backup media is also an important decision that organizations must make. Backup media decisions involve capacity, reliability, speed, cost, expected lifespan while storing data, how often it can be reused before wearing out, and other factors, all of which can influence the backup solution that an organization chooses. Common choices include the following:</p>
+<ul class="square" id="c09-list-0012">
+<li id="c09-li-0041">Tape has historically been one of the lowest-cost-per-capacity options for large-scale backups. While many organizations have moved to using cloud backup options, magnetic tape remains in use in large enterprises, often in the form of tape robot systems that can load and store very large numbers of tapes using a few drives and several cartridge storage slots.</li>
+<li id="c09-li-0042">Disks, either in magnetic or solid-state drive form, are typically more expensive for the same backup capacity as tape but are often faster. Disks are often used in large arrays in either a network-attached storage (NAS) device or a storage area network (SAN).</li>
+<li id="c09-li-0043">Optical media like Blu-ray discs and DVDs, as well as specialized optical storage systems, remain in use in some circumstances, but for capacity reasons they are not in common use as a large-scale backup tool.</li>
+<li id="c09-li-0044">Flash media like microSD cards and USB thumb drives continue to be used in many places for short-term copies and even longer-term backups. Though they aren't frequently used at an enterprise scale, they are important to note as a type of media that may be used for some backups.</li>
+</ul>
+<p id="c09-para-0041">The decision between cloud, tape, and disk storage at the enterprise level also raises the question of whether backups will be online and thus always available or if they will be offline or cloud backups and need to be retrieved from a storage location before they can be accessed. The advantage of online backups is in quick retrieval and accessibility, whereas offline backups can be kept in a secure location without power and other expenses required for their active maintenance and cloud backups can be maintained without infrastructure but with the cost and time constraints created by bringing data back through an Internet connection. Offline backups are often used to ensure that an organization cannot have a total data loss, whereas online backups help you respond to immediate issues and maintain operations.</p>
+<p id="c09-para-0042">You may also encounter the term “nearline” backups—backup storage that is not immediately available but that can be retrieved within a reasonable period of time, usually without a human involved. Tape robots are a common example of nearline storage, with backup tapes accessed and their contents provided on demand by the robot.</p>
+<p id="c09-para-0043">Cloud backups like Amazon's S3 Glacier and Google's Coldline Storage provide lower prices for slower access times and provide what is essentially offline storage with a nearline access model. These long-term archival storage models are used for data that is unlikely to be needed, and thus very slow and potentially costly retrieval is acceptable as long as bulk storage is inexpensive and reliable.</p> <span aria-label="279" epub:type="pagebreak" id="Page_279" role="doc-pagebreak"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c09-fea-0004"/>
+<h3 id="head-2-137">The Changing Model for Backups</h3>
+<section><span id="c09-sec-0011"/>
+<p id="c09-para-0044">As industry moves to a software-defined infrastructure model, including the use of virtualization, cloud infrastructure, and containers, systems that would have once been backed up are no longer being backed up. Instead, the code that defines them is backed up, as well as the key data that they are designed to provide or to access. This changes the equation for server and backup administrators, and methods of acquiring and maintaining backup storage are changing. It means that you, as a security professional, need to review organizational habits for backups to see if they match the new models, or if old habits may be having strange results—like backups being made of ephemeral machines, or developers trusting that a service provider will never experience data loss and thus not ensuring that critical data is backed up outside of that lone provider.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c09-para-0045">Some organizations choose to utilize <i>off-site</i> storage for their backup media, either at a site they own and operate or through a third-party service like Iron Mountain, which specializes in storage of secure backups in environmentally controlled facilities. Off-site storage, a form of geographic diversity, helps ensure that a single disaster cannot destroy an organization's data entirely. As in our earlier discussion of geographic diversity, distance considerations are also important to ensure that a single regional disaster is unlikely to harm the off-site storage.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c09-fea-0005"/>
+<h3 id="head-2-138">Off-site Storage Done Badly</h3>
+<section><span id="c09-sec-0012"/>
+<p id="c09-para-0046">The authors of this book encountered one organization that noted in an audit response that they used secure off-site storage. When the vendor was actually assessed, their off-site storage facility was a senior member of the organization's house, with drives taken home in that person's car periodically. Not only was their house close to the vendor's offices (rather than 90+ miles away in case of disaster), but the only security was that the drives were locked into a consumer-level personal safe. They were not secured during transit, nor were they encrypted. The vendor had met the letter of the requirement but not the spirit of secure off-site storage!</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>Although traditional backup methods have used <i>on-site</i> storage options like tape drives, storage area networks (SANs), and network-attached storage (NAS) devices, cloud and third-party off-site backup options have continued to become increasingly common. A few important considerations come into play with cloud and off-site third-party backup options:</p>
+<ul class="square" id="c09-list-0013">
+<li id="c09-li-0045"><i>Bandwidth requirements for both the backups themselves and restoration time if the backup needs to be restored partially or fully</i>. Organizations with limited bandwidth or <span aria-label="280" epub:type="pagebreak" id="Page_280" role="doc-pagebreak"/>locations with low bandwidth are unlikely to be able to perform a timely restoration. This fact makes off-site options less attractive if quick restoration is required, but they remain attractive from a disaster recovery perspective to ensure that data is not lost completely.</li>
+<li id="c09-li-0046"><i>Time to retrieve files and cost to retrieve files</i>. Solutions like Amazon’s S3 Glacier storage permit low cost storage with higher costs for retrieval and slower retrieval time as an option. Administrators need to understand storage tiering for speed, cost, and other factors, but they must also take these costs and technical capabilities into account when planning for the use of third-party and cloud backup capabilities.</li>
+<li id="c09-li-0047"><i>Reliability</i>. Many cloud providers have extremely high advertised reliability rates for their backup and storage services, and these rates may actually beat the expected durability of local tape or disk options.</li>
+<li id="c09-li-0048"><i>New security models required for backups</i>. Separation of accounts, additional controls, and encryption of data in the remote storage location are all common considerations for use of third-party services.</li>
+</ul>
+<p id="c09-para-0048">Regardless of the type of backup you select, securing the backup when it is in storage and in transit using <i>encryption</i> is an important consideration. Backups are commonly encrypted at rest, with encryption keys required for restoration, and are also typically protected by transport layer encryption when they are transferred across a network. The security and accessibility of the keys during recovery operations is an absolutely critical design element, as organizations that cannot recover the keys to their backups have effectively lost the backups and will be unable to return to normal operation.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-139"><span id="c09-sec-0013"/>
+<h2 id="head-2-139">Response and Recovery Controls</h2>
+<p id="c09-para-0049">When failures do occur, organizations need to respond and then recover. Response controls are controls used to allow organizations to respond to an issue, whether it is an outage, a compromise, or a disaster. Recovery controls and techniques focus on returning to normal operations. Because of this, controls that allow a response to compromise or other issues that put systems into a nontrusted or improperly configured state are important to ensure that organizations maintain service availability. The Security+ exam focuses on a handful of common response and recovery controls, which you should make sure you are familiar with.</p>
+<p id="c09-para-0050">An important response control in that list is the concept of nonpersistence. This means the ability to have systems or services that are spun up and shut down as needed. Some systems are configured to revert to a known state when they are restarted; this is common in cloud environments where a code-defined system will be exactly the same as any other created and run with that code. Reversion to a known state is also possible by using snapshots in a virtualization environment or by using other tools that track changes or that use a system image or build process to create a known state at startup.</p>
+<p id="c09-para-0051">One response control is the ability to return to a last-known good configuration. Windows systems build this in for the patching process, allowing a return to a System Restore <span aria-label="281" epub:type="pagebreak" id="Page_281" role="doc-pagebreak"/>point before a patch was installed. Change management processes often rely on a last-known good configuration checkpoint, via backups, snapshots, or another technology, to handle misconfigurations, bad patches, or other issues.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c09-fea-0006"/>
+<h3 id="head-2-140">When You Can't Trust the System</h3>
+<section><span id="c09-sec-0014"/>
+<p id="c09-para-0052">When a system has been compromised, or when the operating system has been so seriously impacted by an issue that it cannot properly function, one alternative is to use live boot media. This is a bootable operating system that can run from removable media like a thumb drive or DVD. Using live boot media means that you can boot a full operating system that can see the hardware that a system runs on and that can typically mount and access drives and other devices. This means that repair efforts can be run from a known good, trusted operating system. Boot sector and memory-resident viruses, bad OS patches and driver issues, and a variety of other issues can be addressed using this technique.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>When loads on systems and services become high or when components in an infrastructure fail, organizations need a way to respond. High-availability solutions like those we discussed earlier in the chapter, including load balancing, content distribution networks, and clustered systems, provide the ability to respond to high-demand scenarios as well as to failures in individual systems. <i>Scalability</i> is a common design element and a useful response control for many systems in modern environments, where services are designed to scale across many servers instead of requiring a larger server to handle more workload. You should consider two major categories of scalability:</p>
+<ul class="square" id="c09-list-0014">
+<li id="c09-li-0049">Vertical scalability requires a larger or more powerful system or device. Vertical scalability can help when all tasks or functions need to be handled on the same system or infrastructure. Vertical scalability can be very expensive to increase, particularly if the event that drives the need to scale is not ongoing or frequent. There are, however, times when vertical scalability is required, such as for every large memory footprint application that cannot be run on smaller, less capable systems.</li>
+<li id="c09-li-0050">Horizontal scaling uses smaller systems or devices but adds more of them. When designed and managed correctly, a horizontally scaled system can take advantage of the ability to transparently add and remove more resources, allowing it to adjust as needs grow or shrink. This approach also provides opportunities for transparent upgrades, patching, and even incident response.</li>
+</ul>
+<p id="c09-para-0054">Moves to the cloud and virtualization have allowed scaling to be done more easily. Many environments support horizontal scaling with software-defined services and systems that can scale at need to meet demand while also allowing safer patching capabilities and the ability to handle failed systems by simply replacing them with another identical replacement as needed.</p>
+<p id="c09-para-0055">Not every environment can be built using horizontally scalable systems, and not every software or hardware solution is well suited to those scenarios. At the same time, natural <span aria-label="282" epub:type="pagebreak" id="Page_282" role="doc-pagebreak"/>and human-created disasters, equipment failures, and a host of other issues can impact the ability of an organization to operate its facilities and datacenters.</p>
+<p>When an organization needs to plan for how it would operate if its datacenter or other infrastructure hosting locations were offline, it considers site resilience options as a response control. Site resiliency has historically been part of <i>site considerations</i> for organizations, and for some it remains a critical design element. Three major types of disaster recovery sites are used for site resilience:</p>
+<ul class="square" id="c09-list-0015">
+<li id="c09-li-0051"><i>Hot sites</i> have all the infrastructure and data needed to operate the organization. Because of this, some organizations operate them full time, splitting traffic and load between multiple sites to ensure that the sites are performing properly. This approach also ensures that staff are in place in case of an emergency.</li>
+<li id="c09-li-0052"><i>Warm sites</i> have some or all of the systems needed to perform the work required by the organization, but the live data is not in place. Warm sites are expensive to maintain because of the hardware costs, but they can reduce the total time to restoration because systems can be ready to go and mostly configured. They balance costs and capabilities between hot sites and cold sites.</li>
+<li id="c09-li-0053"><i>Cold sites</i> have space, power, and often network connectivity but they are not prepared with systems or data. This means that in a disaster an organization knows they would have a place to go but would have to bring or acquire systems. Cold sites are challenging because some disasters will prevent the acquisition of hardware, and data will have to be transported from another facility where it is stored in case of disaster. However, cold sites are also the least expensive option to maintain of the three types.</li>
+</ul>
+<p>In each of these scenarios, the restoration order needs to be considered. Restoration order decisions balance the criticality of systems and services to the operation of the organization against the need for other infrastructure to be in place and operational to allow each component to be online, secure, and otherwise running properly. A site restoration order might include a list like the following:</p>
+<ol class="decimal" id="c09-list-0016">
+<li id="c09-li-0054">Restore network connectivity and a bastion or shell host.</li>
+<li id="c09-li-0055">Restore network security devices (firewalls, IPS).</li>
+<li id="c09-li-0056">Restore storage and database services.</li>
+<li id="c09-li-0057">Restore critical operational servers.</li>
+<li id="c09-li-0058">Restore logging and monitoring service.</li>
+<li id="c09-li-0059">Restore other services as possible.</li>
+</ol>
+<p id="c09-para-0058">Each organization and infrastructure design will have slightly different restoration order decisions to make based on criticality to the organization's functional requirements and dependencies in the datacenter's or service's operating environment.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c09-fea-0007"/>
+<h3 id="head-2-141">What Happens When the Staff Are Gone?</h3>
+<section><span id="c09-sec-0015"/>
+<p id="c09-para-0059">In the aftermath of the 9/11 terrorist attacks in New York, some organizations found that they were unable to operate despite having disaster recovery facilities because their staff had <span aria-label="283" epub:type="pagebreak" id="Page_283" role="doc-pagebreak"/>died in the attacks. This horrific example pointed out a key issue in many resiliency plans that focused on technical capabilities but that did not include a plan for ensuring staff were available to operate the technology. Disaster recovery planning needs to take into account the fact that the staff for a facility may be impacted if a disaster occurs.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>An increasing number of designs use the cloud to replace or work in tandem with existing recovery sites. Major cloud infrastructure vendors design across multiple geographic regions and often have multiple datacenters linked inside a region as well. This means that rather than investing in a hot site, organizations can build and deploy their infrastructure in a cloud-hosted environment, and then either use tools to replicate their environment to another region or architect (or rearchitect) their design to take advantage of multiple regions from the start. Since cloud services are typically priced on a usage basis, designing and building an infrastructure that can be spun up in another location as needed can help with both capacity and disaster recovery scenarios.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c09-para-0061"><img alt="" role="presentation" src="images/note.png"/> While it's relatively rare now, multicloud systems can also help address this resilience need. Large-scale organizations that need continuous operations may opt to use multiple cloud vendors to help ensure that their systems will continue to operate even if a cloud vendor has a problem. That's a level of investment that's beyond most organizations, but it is becoming more accessible as multicloud management and deployment tools mature.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c09-para-0062">The concept of geographic dispersion is important for many reasons. While organizations that maintain their own datacenters are often worried about natural and human-made disasters, cloud operations have also taught organizations that cloud providers experience issues in availability zones that may not always impact other zones. That means that building your IaaS infrastructure across multiple geographic regions can have benefits even in the cloud!</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c09-fea-0008"/>
+<h3 id="head-2-142">Exam Note</h3>
+<section><span id="c09-sec-0017"/>
+<p id="c09-para-0063">Be sure to know what hot, warm, and cold sites are as you prepare for the exam as well as why an organization might select each based on cost versus functionality. You'll also want to be able to explain geographic dispersion and why organizations choose their locations to avoid disasters impacting multiple sites at the same time.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section><span id="c09-sec-0018"/>
+<h3 id="head-3-140">Capacity Planning for Resilience and Recovery</h3>
+<p id="c09-para-0064">Resilience requires capacity planning to ensure that capacity—including staff, technology, and infrastructure—is available when needed. Historically, this required significant <span aria-label="284" epub:type="pagebreak" id="Page_284" role="doc-pagebreak"/>investment in physical infrastructure to handle increased load or to ensure disaster recovery activities could succeed even if a primary location or datacenter were taken offline. Cloud services have allowed many organizations to be more flexible by relying on third-party solutions to address technology and infrastructure needs.</p>
+<p>The Security+ exam outline focuses on three areas for capacity planning:</p>
+<ul class="square" id="c09-list-0017">
+<li id="c09-li-0060"><i>People</i>, where staffing and skillsets are necessary to deal with increased scale and disasters. Capacity planning for staff can be challenging since quickly staffing up in an emergency is hard. Instead, organizations typically ensure that they have sufficient staff to ensure that appropriate coverage levels exist. They may also hire staff in multiple locations to ensure coverage exists throughout their business day, with large organizations having global staffing.
+<p class="listPara1" id="c09-para-0067">That doesn't mean that it isn't possible to address staffing capacity through third parties. Support contracts, consultants, and even using cloud services that support technologies instead of requiring in-house staff are all options that organizations commonly put into place to handle capacity needs.</p></li>
+<li id="c09-li-0061"><i>Technology</i> capacity planning focuses on understanding the technologies that an organization has deployed and its ability to scale as needed. An example of a technology-based capacity planning exercise might include the capacity capabilities of a web server tool, a load balancer, or a storage device's throughput and read/write rates. This is tightly tied to infrastructure capacity planning and may be difficult to distinguish in many cases.</li>
+<li id="c09-li-0062"><i>Infrastructure</i>, where underlying systems and networks may need to scale. This can include network connectivity, throughput, storage, and any other element of infrastructure that may be needed to handle either changing loads or to support disaster recovery and business continuity efforts.</li>
+</ul>
+</section>
+<section><span id="c09-sec-0019"/>
+<h3 id="head-3-141">Testing Resilience and Recovery Controls and Designs</h3>
+<p>Once you've implemented resilience and recovery controls, it is important to test and validate them. Four common methods of doing this are covered by the Security+ exam outline. You need to be aware of these methods, which are listed here in order of how much potential they have to disrupt an organization's operations as part of the testing:</p>
+<ul class="square" id="c09-list-0018">
+<li id="c09-li-0063"><i>Tabletop exercises</i> use discussions between personnel assigned roles needed for the plan to validate the plan. This helps to determine if there are missing components or processes. Tabletop exercises are the least potentially disruptive of the testing methods but also have the least connection to reality and may not detect issues that other methods would.</li>
+<li id="c09-li-0064"><i>Simulation exercises</i> are drills or practices in which personnel simulate what they would do in an actual event. It is important to ensure that all staff know that the exercise is a simulation, as performing actual actions may cause disruptions.</li>
+<li id="c09-li-0065"><i>Parallel processing exercises</i> move processing to a hot site or alternate/backup system or facility to validate that the backup can perform as expected. This has the potential <span aria-label="285" epub:type="pagebreak" id="Page_285" role="doc-pagebreak"/>for disruption if the processing is not properly separated and the parallel system or site attempts to take over for the primary's data processing.</li>
+<li id="c09-li-0066"><i>Failover exercises</i> test full failover to an alternate site or system, and they have the greatest potential for disruption but also provide the greatest chance to fully test in a real-world scenario.</li>
+</ul>
+<p id="c09-para-0069">Regardless of the type of testing that an organization conducts, it is important to take notes, review what was done, what worked and did not work properly, and to apply lessons learned to resilience and recovery controls, processes, and procedures to improve them.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c09-fea-0009"/>
+<h3 id="head-2-143">Exam Note</h3>
+<section><span id="c09-sec-0020"/>
+<p id="c09-para-0070">As you prepare for the exam, make sure you can explain the importance and know the differences between the various testing exercises, including tabletop, failover, simulation, and parallel processing.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+<section aria-labelledby="head-2-144"><span id="c09-sec-0021"/>
+<h2 id="head-2-144">Physical Security Controls</h2>
+<p id="c09-para-0071">Chapter 1, “Today's Security Professional,” introduced physical security controls like fences, lighting, and locks. While security practitioners often focus on technical controls, one of the most important lines of defense for an organization is the set of physical controls that it puts in place. Physical access to systems, facilities, and networks is one of the easiest ways to circumvent technical controls, whether by directly accessing a machine, stealing drives or devices, or plugging into a trusted network to bypass layers of network security control keeping it safe from the outside world.</p>
+<section><span id="c09-sec-0022"/>
+<h3 id="head-3-142">Site Security</h3>
+<p id="c09-para-0072">The first step in preventing physical access is by implementing a site security plan. Site security looks at the entire facility or facilities used by an organization and implements a security plan based on the threats and risks that are relevant to each specific location. That means that facilities used by an organization in different locations, or as part of different business activities, will typically have different site security plans and controls in place.</p>
+<p>Some organizations use industrial camouflage to help protect them. A common example is the nondescript location that companies pick for their call centers. Rather than making the call center a visible location for angry customers to seek out, many are largely unmarked and otherwise innocuous. Although security through obscurity is not a legitimate technical <span aria-label="286" epub:type="pagebreak" id="Page_286" role="doc-pagebreak"/>control, in the physical world being less likely to be noticed can be helpful in preventing many intrusions that might not otherwise happen.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c09-para-0074"><img alt="" role="presentation" src="images/note.png"/> Security through obscurity is the belief that hiding resources and data will prevent or persuade malicious actors from attacking. Changing the names of important files and folders to something less obvious or replacing traditional usernames and passwords with uncommon or randomly generated passphrases are examples of security through obscurity. Although it's not a preferred control, it can be useful under some circumstances—but it shouldn't be relied on to stop attackers!</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c09-para-0075">Many facilities use fencing as a first line of defense. <i>Fences</i> act as a deterrent by both making it look challenging to access a facility and as an actual physical defense. Highly secure facilities will use multiple lines of fences, barbed wire or razor wire at the top, and other techniques to increase the security provided by the fence. Fence materials, the height of the fence, where entrances are placed and how they are designed, and a variety of other factors are all taken into consideration for security fencing.</p>
+<p id="c09-para-0076">A second common physical control is the placement of <i>bollards</i>. Bollards are posts or obstacles like those shown in <a href="#c09-fig-0001" id="R_c09-fig-0001">Figure 9.1</a> that prevent vehicles from moving through an area. Bollards may look like posts, pillars, or even planters, but their purpose remains the same: preventing vehicle access. Some bollards are designed to be removable or even mechanically actuated so that they can be raised and lowered as needed. Many are placed in front of entrances to prevent both accidents and intentional attacks using vehicles.</p>
+<p id="c09-para-0077"><i>Lighting</i> plays a part in exterior and interior security. Bright lighting that does not leave shadowed or dark areas is used to discourage intruders and to help staff feel safer. Automated lighting can also help indicate where staff are active, allowing security guards and other staff members to know where occupants are.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c09-fea-0010"/>
+<h3 id="head-2-145">Drone Defense</h3>
+<section><span id="c09-sec-0024"/>
+<p id="c09-para-0078">A newer concern for organizations is the broad use of drones and unmanned aerial vehicles (UAVs). Drones can be used to capture images of a site, to deliver a payload, or even to take action like cutting a wire or blocking a camera. Although drone attacks aren't a critical concern for most organizations, they are increasingly an element that needs to be considered. Antidrone systems include systems that can detect the wireless signals and electromagnetic emissions of drones, or the heat they produce via infrared sensors, acoustic systems that listen for the sounds of drones, radar that can detect the signature of a drone flying in the area, and, of course, optical systems that can recognize drones. Once they are spotted, a variety of techniques may be used against drones, ranging from kinetic systems that seek to shoot down or disable drones, to drone-jamming systems that try to block their control signals or even hijack them.</p>
+<p id="c09-para-0079">Of course, laws also protect drones as property, and shooting down or disabling a drone on purpose may have expensive repercussions for the organization or individual who does so. This is a quickly changing threat for organizations, and one that security professionals will have to keep track of on an ongoing basis.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<figure> <img alt="A photograph of a bollard. Bollards are posts or obstacles that prevent vehicles from moving through an area." class="center" src="images/c09f001.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c09-fig-0001" id="c09-fig-0001" role="doc-backlink"><b>FIGURE 9.1</b></a></span> A bollard</p>
+</figcaption>
+</figure>
+<p id="c09-para-0080"><span aria-label="287" epub:type="pagebreak" id="Page_287" role="doc-pagebreak"/>Inside a facility, physical security is deployed in layers much like you would find in a technical security implementation. Many physical controls can be used; the Security+ exam outline includes specific examples that you will need to be familiar with for the test. Over the next few pages, we will explore each of those topics.</p>
+<p id="c09-para-0081"><i>Access badges</i> can play a number of roles in physical security. In addition to being used for entry access via magnetic stripe and radio frequency ID (RFID) access systems, badges often include a picture and other information that can quickly allow personnel and guards to determine if the person is who they say they are, what areas or access they should have, and if they are an employee or a guest. This also makes badges a target for social engineering attacks by attackers who want to acquire, copy, or falsify a badge as part of their attempts to get past security. Badges are often used with proximity readers, which use RFID to query a badge without requiring it to be inserted or swiped through a magnetic stripe reader.</p>
+<p id="c09-para-0082">Some organizations use access control vestibules (often called mantraps) as a means to ensure that only authorized individuals gain access to secure areas and that attackers do not <span aria-label="288" epub:type="pagebreak" id="Page_288" role="doc-pagebreak"/>use piggybacking attacks to enter places they shouldn't be. An access control vestibule is a pair of doors that both require some form of authorized access to open (see <a href="#c09-fig-0002" id="R_c09-fig-0002">Figure 9.2</a>). The first door opens after authorization and closes, and only after it is closed can the person who wants to enter provide their authorization to open the second door. That way, a person following behind (piggybacking) will be noticed and presumably will be asked to leave or will be reported.</p>
+<figure> <img alt="An illustration of an access control vestibule. It includes a Lower security area, an Access control vestibule, and a Secure Facility." class="center" src="images/c09f002.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c09-fig-0002" id="c09-fig-0002" role="doc-backlink"><b>FIGURE 9.2</b></a></span> An access control vestibule</p>
+</figcaption>
+</figure>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c09-fea-0011"/>
+<h3 id="head-2-146">Other Common Physical Security Elements</h3>
+<section><span id="c09-sec-0025"/>
+<p id="c09-para-0083">The Security+ exam outline doesn't cover a few common elements that you'll want to keep in mind outside of the exam. These include alarms, fire suppression systems, and locks.</p>
+<p id="c09-para-0084">Alarms and alarm systems are used to detect and alert about issues, including unauthorized access, environmental problems, and fires. Alarm systems may be locally or remotely monitored, and they can vary significantly in complexity and capabilities. Much like alerts from computer-based systems, alarms that alert too often or with greater frequency are likely to be ignored, disabled, or worked around by staff. In fact, some penetration testers will even find ways to cause alarms to go off repeatedly so that when they conduct a penetration test and the alarm goes off staff will not be surprised and won't investigate the alarm that the penetration tester actually caused!</p>
+<p id="c09-para-0085">Fire suppression systems are an important part of safety systems and help with resilience by reducing the potential for disastrous fires. One of the most common types of fire suppression system is sprinkler systems. There are four major types, including wet sprinkler systems, which have water in them all the time; dry sprinklers, which are empty until needed; pre-action sprinklers, which fill when a potential fire is detected and then release at specific sprinkler heads as they are activated by heat; and deluge sprinklers, which are empty, with open sprinkler heads, until they are activated and then cover an entire area.</p>
+<p id="c09-para-0086">Water-based sprinkler systems are not the only type of fire suppression system in common use. Gaseous agents, which displace oxygen, reduce heat, or help prevent the ability of <span aria-label="289" epub:type="pagebreak" id="Page_289" role="doc-pagebreak"/>oxygen and materials to combust, are often used in areas such as datacenters, vaults, and art museums where water might not be a viable or safe option. Chemical agents, including both wet and dry agents, are used as well; examples are foam-dispensing systems used in airport hangars and dry chemical fire extinguishers used in home and other places.</p>
+<p id="c09-para-0087">Locks are one of the most common physical security controls you will encounter. A variety of lock types are commonly deployed, ranging from traditional physical locks that use a key, push buttons, or other code entry mechanisms, to locks that use biometric identifiers such as fingerprints, to electronic mechanisms connected to computer systems with card readers or passcodes associated with them. Locks can be used to secure spaces and devices or to limit access to those who can unlock them. Cable locks are a common solution to ensure that devices like computers or other hardware are not removed from a location.</p>
+<p id="c09-para-0088">Although locks are heavily used, they are also not a real deterrent for most determined attackers. Locks can be bypassed, picked, or otherwise disabled if attackers have time and access to the lock. Thus, locks are not considered a genuine physical security control. A common phrase among security professionals is, “Locks keep honest people honest.”</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section><span id="c09-sec-0026"/>
+<h4 id="head-4-83">Guards</h4>
+<p id="c09-para-0089"><i>Security guards</i> are used in areas where human interaction is either necessary or helpful. Guards can make decisions that technical control systems cannot, and they can provide additional capabilities by offering both detection and response capabilities. Guards are commonly placed in reception areas, deployed to roam around facilities, and stationed in security monitoring centers with access to cameras and other sensors.</p>
+<p id="c09-para-0090">Visitor logs are a common control used in conjunction with security guards. A guard can validate an individual's identity, ensure that they enter only the areas they are supposed to, and ensure that they have signed a visitor log and that their signature matches a signature on file or on their ID card. Each of these can be faked; however, an alert security guard can significantly increase the security of a facility.</p>
+<p id="c09-para-0091">Security guards also bring their own challenges; humans can be fallible, and social engineering attempts can persuade guards to violate policies or even to provide attackers with assistance. Guards are also relatively expensive, requiring ongoing pay, whereas technical security controls are typically installed and maintained at lower costs. Consequently, guards are a solution that is deployed only where there is a specific need for their capabilities in most organizations.</p>
+</section>
+<section><span id="c09-sec-0027"/>
+<h4 id="head-4-84">Video Surveillance, Cameras, and Sensors</h4>
+<p>Camera systems used for <i>video surveillance</i> are a common form of physical security control, allowing security practitioners and others to observe what is happening in real time and to capture video footage of areas for future use when conducting investigations or for other reasons. Cameras come in a broad range of types, including black and white, infrared, and color cameras, with each type suited to specific scenarios. In addition to the type of camera, <span aria-label="290" epub:type="pagebreak" id="Page_290" role="doc-pagebreak"/>the resolution of the camera, whether it is equipped with zoom lenses, and whether it has a pan/tilt/zoom (PTZ) capability are all factors in how well it works for its intended purpose and how much it will cost. Two common features for modern camera systems are motion and object detection:</p>
+<ul class="square" id="c09-list-0019">
+<li id="c09-li-0067">Motion recognition cameras activate when motion occurs. These types of camera are particularly useful in areas where motion is relatively infrequent. Motion recognition cameras, which can help conserve storage space, will normally have a buffer that will be retrieved when motion is recognized so that they will retain a few seconds of video before the motion started; that way, you can see everything that occurred.</li>
+<li id="c09-li-0068">Object detection cameras and similar technologies can detect specific objects, or they have areas that they watch for changes. These types of camera can help ensure that an object is not moved and can detect specific types of objects like a gun or a laptop.
+</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c09-fea-0012"/>
+<h3 id="head-2-147">What about face recognition?</h3>
+<section><span id="c09-sec-0028"/>
+<p id="c09-para-0094">The Security+ exam objectives do not currently include face recognition technologies—which not only capture video but can help recognize individuals—but we are mentioning facial recognition here because of its increasing role in modern security systems. You should be aware that facial recognition deployments may have privacy concerns in addition to technical concerns. A variety of factors can play into their accuracy, including the sets of faces they were trained on, the use of masks, or even the application of “dazzle paint” designed to confuse cameras.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c09-para-0095">Another form of camera system is a <i>closed-circuit television (CCTV)</i>, which displays what the camera is seeing on a screen. Some CCTV systems include recording capabilities as well, and the distinction between camera systems and CCTV systems is increasingly blurry as technologies converge.</p>
+<p id="c09-para-0096">Cameras are not the only type of sensor system that organizations and individuals will deploy. Common sensor systems include motion, noise, moisture, and temperature detection sensors. Motion and noise sensors are used as security sensors, or to turn on or off environment control systems based on occupancy. Temperature and moisture sensors help maintain datacenter environments and other areas that require careful control of the environment, as well as for other monitoring purposes.</p>
+<p><i>Sensors</i> are another way to provide security monitoring. The Security+ exam outline covers four specific types of sensors that you'll need to be aware of:</p>
+<ul class="square" id="c09-list-0020">
+<li id="c09-li-0069"><i>Infrared sensors</i> rely on infrared light, or heat radiation. They look for changes in infrared radiation in a room or space and alert when that change occurs. They are inexpensive and commonly deployed in well-controlled, smaller indoor spaces.</li>
+<li id="c09-li-0070"><i>Pressure sensors</i> detect a change in pressure. While not commonly deployed in most environments, they may be used when an organization needs to detect an object being <span aria-label="291" epub:type="pagebreak" id="Page_291" role="doc-pagebreak"/>moved or when someone is moving through an area using a pressure-plate or pad. While less common now, pressure sensors were commonly used to activate exit doors in the past.</li>
+<li id="c09-li-0071"><i>Microwave sensors</i> use a baseline for a room or space that is generated by detecting normal responses when the space is at a baseline. When those responses to the microwaves sent out by the sensor change, they will trigger. They are generally more sensitive and more capable than infrared sensors. They can detect motion through materials that infrared sensors cannot and since they're not heat-based they can work through a broader range of temperatures. This means that they're typically more expensive and that they're often more error prone than infrared due to their additional sensitivity.</li>
+<li id="c09-li-0072"><i>Ultrasonic sensors</i> are uncommon in commercial security systems but may be used in specific circumstances. Ultrasonic sensors can be set off by machinery or other vibrations, and they can have environmental effects on human occupants. Ultrasonic sensors are more commonly used in applications where proximity detection is required.</li>
+</ul>
+</section>
+</section>
+<section><span id="c09-sec-0029"/>
+<h3 id="head-3-143">Detecting Physical Attacks</h3>
+<p>Indicators of malicious activity for physical attacks are different from those used for network-based attacks. In many cases, they require in-person observation or detection using a camera system rather than using sensors or automated detection capabilities. The Security+ exam outline calls out three specific types of physical attacks to consider:</p>
+<ul class="square" id="c09-list-0021">
+<li id="c09-li-0073"><i>Brute-force</i> attacks, which include breaking down doors, cutting off locks, or other examples of the simple application of force or determination to physical entry.</li>
+<li id="c09-li-0074"><i>Radio frequency identification (RFID) cloning</i> attacks work by cloning an RFID tag or card. This can be difficult to catch if the RFID is the only identifier used. Without physical observation or automated systems that pay attention to unusual activity and access and flag it for review, RFID cloning may go unnoticed.</li>
+<li id="c09-li-0075"><i>Environmental attacks</i> include attacks like targeting an organization's heating and cooling systems, maliciously activating a sprinkler system, and similar actions. These are more likely to be detected as issues or problems than as attacks, and determining if issues were caused by a malicious attack can be difficult.</li>
+</ul>
+</section>
+</section>
+<section aria-labelledby="head-2-148"><span id="c09-sec-0030"/>
+<h2 id="head-2-148">Summary</h2>
+<p id="c09-para-0099">Building a resilient infrastructure with the ability to recover from issues is a key part of ensuring the availability of your systems and services. Redundant systems, networks, and other infrastructure and capabilities help provide that resilience. At the same time, techniques like the use of geographic dispersal, power protection, and even diversity of technologies and vendors can play a critical role in keeping your organization online and operational.</p>
+<p id="c09-para-0100"><span aria-label="292" epub:type="pagebreak" id="Page_292" role="doc-pagebreak"/>Resilience relies on a variety of technical and procedural design elements. Geographic diversity helps ensure that a natural disaster or human-caused issue doesn't take down your organization. High-availability designs using clustering and load balancing handle both scaling and system and component failures. Multicloud systems and platform diversity are used to avoid a vendor's outage or failure from causing broader issues. Backup power from generators and UPS systems helps control power-related events.</p>
+<p id="c09-para-0101">Backups, whether to tape, disk, or third-party storage services, help ensure that data is not lost if something happens to systems or drives. You should know the difference between a full backup, a differential backup, and an incremental backup. Snapshots, which copy the state of a system at a point in time, and images, which are used to copy a complete system, are also used as ways to both back up and clone systems. Journaling records changes, allowing for them to be replicated if needed.</p>
+<p id="c09-para-0102">How you respond to an outage or issue and how you recover from it can make the difference between being back online quickly or being offline for an extended period of time. Capacity planning, testing, and designing for continuity of operations are all key parts of being ready for an issue and handling it appropriately.</p>
+<p id="c09-para-0103">Disaster recovery sites are used to return to operation, with hot sites built and fully ready to go, warm sites waiting for data and staff to operate, and cold sites providing power and connectivity but needing significant effort and deployment of technology to come online. In any restoration event, knowing the restoration order will help bring systems and services online in an order that makes sense based on dependencies and criticality.</p>
+<p id="c09-para-0104">Keeping organizations physically secure also helps protect them. Site security involves using controls to make facilities less likely to be targeted, using controls like fences, bollards, lighting, access badges, and entry access systems to dissuade potential bad actors. Sensors are used to detect issues and events and to trigger responses. Detecting physical attacks requires additional care because they may not be easily detected by automated or electronic means.</p>
+</section>
+<section aria-labelledby="head-2-149"><span id="c09-sec-0031"/>
+<h2 id="head-2-149">Exam Essentials</h2>
+<p id="c09-li-0076"><b>Redundancy builds resilience.</b> Redundant systems, networks, and even datacenters are a key element in ensuring availability. Redundant designs need to address the organizational risks and priorities that your organization faces to ensure the best trade-offs between cost and capabilities. Geographic dispersal; load balancers and clustering; power protection and redundancy; RAID; backups; and diversity of technologies, systems, cloud service providers, and platforms are all ways to build and ensure resiliency. Considerations include availability, resilience, cost, responsiveness, scalability, ease of deployment, risk transference, ease of recovery, patch availability, inability to patch, power, and compute. Capacity planning helps to ensure that there is enough capacity to handle issues and outages including ensuring you have enough people, technology, and infrastructure to recover. Multicloud environments as well as platform diversity can help ensure that a single technology or provider's outage or issue does not take your organization offline, but they create additional complexity and costs.</p>
+<p id="c09-li-0077"><span aria-label="293" epub:type="pagebreak" id="Page_293" role="doc-pagebreak"/><b>Backups help ensure organizations can recover from events and issues.</b> Backups are designed to meet an organization's restoration needs, including how long it takes to recover from an issue and how much data may be lost between backups. Backup locations and frequency are determined based on the organization's risk profile and recovery needs, with offsite backups being a preferred solution to avoid losing backups in the same disaster as the source systems. Snapshots, journaling, and replication each have roles to play in ensuring data is available and accessible. Encryption is used to keep backups secure both in-transit and at rest.</p>
+<p id="c09-li-0078"><b>Response and recovery are critical when failures occur.</b> Failures will occur, so you need to know how to respond. Having a disaster recovery location, like a hot, warm, or cold site or a redundant cloud or hosted location, can help ensure that your organization can return to operations more quickly. Having a predetermined restoration order provides a guideline on what needs to be brought back online first due to either dependencies or importance to the organization. Testing, including tabletop exercises, failover testing, simulations, and parallel processing, are all common ways to ensure response and recovery will occur as planned.</p>
+<p id="c09-li-0079"><b>Physical security controls are a first line of defense.</b> Keeping your site secure involves security controls like fences, lighting, alarms, bollards, access control vestibules, cameras, and other sensors. Ensuring that only permitted staff are allowed in using locks, badges, and guards helps prevent unauthorized visitors. Sensors must be selected to match the environment and needs of the organization. Infrared, ultrasonic, pressure, and microwave sensors have different capabilities and costs. Brute-force attacks, as well as attacks against RFID and environmental attacks, need to be considered in physical security design.</p>
+</section>
+<span aria-label="294" epub:type="pagebreak" id="Page_294" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-150"><span id="c09-sec-0032"/>
+<h2 id="head-2-150">Review Questions</h2>
+<section><span id="c09-exsec-0001"/>
+<ol class="decimal">
+<li id="c09-ex-0001">Naomi wants to handle increasing load by scaling cloud-hosted resources as needed while having the change remain transparent to users. She also wants to allow for upgrades and system replacements transparently. What solution should she select?
+<ol class="upper-alpha">
+<li>Load balancing</li>
+<li>Clustering</li>
+<li>Geographic diversity</li>
+<li>A hot site</li>
+</ol>
+</li>
+<li id="c09-ex-0002">Rick performs a backup that captures the changes since the last full backup. What type of backup has he performed?
+<ol class="upper-alpha">
+<li>A new full backup</li>
+<li>A snapshot</li>
+<li>An incremental backup</li>
+<li>A differential backup</li>
+</ol>
+</li>
+<li id="c09-ex-0003">What type of recovery site has some or most systems in place but does not have the data needed to take over operations?
+<ol class="upper-alpha">
+<li>A hot site</li>
+<li>A warm site</li>
+<li>A cloud site</li>
+<li>A cold site</li>
+</ol>
+</li>
+<li id="c09-ex-0004">Ben wants to test his warm site to verify that it will take over operations successfully. What type of testing is this?
+<ol class="upper-alpha">
+<li>Parallel processing</li>
+<li>Simulation</li>
+<li>Failover</li>
+<li>A tabletop exercise</li>
+</ol>
+</li>
+<li id="c09-ex-0005">Felix wants to clone a virtual machine. What should he do to capture a live machine, including the machine state?
+<ol class="upper-alpha">
+<li>A full backup</li>
+<li>A snapshot</li>
+<li>A differential backup</li>
+<li>Live boot media</li>
+</ol>
+</li>
+<li id="c09-ex-0006"><span aria-label="295" epub:type="pagebreak" id="Page_295" role="doc-pagebreak"/> Sally is working to restore her organization's operations after a disaster took her datacenter offline. What critical document should she refer to as she restarts systems?
+<ol class="upper-alpha">
+<li>The restoration order documentation</li>
+<li>The TOTP documentation</li>
+<li>The HOTP documentation</li>
+<li>The last-known good configuration documentation</li>
+</ol>
+</li>
+<li id="c09-ex-0007">Mike wants to stop vehicles from traveling toward the entrance of his building. What physical security control should he implement?
+<ol class="upper-alpha">
+<li>An air gap</li>
+<li>A hot aisle</li>
+<li>A robotic sentry</li>
+<li>A bollard</li>
+</ol>
+</li>
+<li id="c09-ex-0008">Alecia wants to ensure that her backups cannot be accessed by third parties while stored in an offsite storage location. What should she do to secure her backups?
+<ol class="upper-alpha">
+<li>Hash the backup data.</li>
+<li>Avoid the use of offsite storage locations.</li>
+<li>Employ security guards.</li>
+<li>Encrypt the backup data.</li>
+</ol>
+</li>
+<li id="c09-ex-0009">Fred wants to be able to recover his database transactions at any point in time if a physical disaster occurs involving his datacenter. His organization uses daily backups. What additional solution should he select to support this need?
+<ol class="upper-alpha">
+<li>Onsite journaling</li>
+<li>Onsite snapshots</li>
+<li>Offsite journaling</li>
+<li>Offsite snapshots</li>
+</ol>
+</li>
+<li id="c09-ex-0010">Ellen is concerned about her company's resilience and wants to ensure it can handle either changing loads or support disaster recovery and business continuity efforts if a primary location or datacenter were taken offline. Which of the following should she primarily focus on during her capacity planning?
+<ol class="upper-alpha">
+<li>People, technology, and infrastructure</li>
+<li>A generator and a UPS</li>
+<li>RAID 0, 1, 5, and 10</li>
+<li>Incremental, differential, and full backups</li>
+</ol>
+</li>
+<li id="c09-ex-0011"><span aria-label="296" epub:type="pagebreak" id="Page_296" role="doc-pagebreak"/> Madhuri has deployed a replication tool that copies data over to a secondary hot site in real time. What type of replication has she deployed?
+<ol class="upper-alpha">
+<li>Synchronous replication</li>
+<li>Journaled replication</li>
+<li>Asynchronous replication</li>
+<li>Snapshot-based replication</li>
+</ol>
+</li>
+<li id="c09-ex-0012">What factor is a major reason organizations do not use security guards?
+<ol class="upper-alpha">
+<li>Reliability</li>
+<li>Training</li>
+<li>Cost</li>
+<li>Social engineering</li>
+</ol>
+</li>
+<li id="c09-ex-0013">Megan wants to deploy a sensor that is inexpensive, yet will allow her to detect humans entering and moving in a secured room. Which of the following should she select?
+<ol class="upper-alpha">
+<li>An infrared sensor</li>
+<li>A microwave sensor</li>
+<li>An ultrasonic sensor</li>
+<li>A pressure sensor</li>
+</ol>
+</li>
+<li id="c09-ex-0014">Kathleen wants to discourage potential attackers from entering the facility she is responsible for. Which of the following is <i>not</i> a common control used for this type of preventive defense?
+<ol class="upper-alpha">
+<li>Fences</li>
+<li>Lighting</li>
+<li>Platform diversity</li>
+<li>Video surveillance</li>
+</ol>
+</li>
+<li id="c09-ex-0015">How does technology diversity help ensure cybersecurity resilience?
+<ol class="upper-alpha">
+<li>It ensures that a vulnerability in a single company's product will not impact the entire infrastructure.</li>
+<li>If a single vendor goes out of business, the company does not need to replace its entire infrastructure.</li>
+<li>It means that a misconfiguration will not impact the company's entire infrastructure.</li>
+<li>All of the above.</li>
+</ol>
+</li>
+<li id="c09-ex-0016">Scott sends his backups to a company that keeps them in a secure vault. What type of backup solution has he implemented?
+<ol class="upper-alpha">
+<li>Nearline</li>
+<li>Safe</li>
+<li>Onsite</li>
+<li>Offsite</li>
+</ol>
+</li>
+<li id="c09-ex-0017"><span aria-label="297" epub:type="pagebreak" id="Page_297" role="doc-pagebreak"/> Gabby wants to detect physical brute-force attempts against her organization. What solution is best suited to this?
+<ol class="upper-alpha">
+<li>Security guards</li>
+<li>Locks</li>
+<li>Access badges</li>
+<li>An intrusion detection system (IDS)</li>
+</ol>
+</li>
+<li id="c09-ex-0018">Florian wants to test his high-availability designs but does not want to interrupt his organization's normal work. Which of the following is the least disruptive testing scenario?
+<ol class="upper-alpha">
+<li>A failover exercise</li>
+<li>A tabletop exercise</li>
+<li>A partial failover exercise</li>
+<li>A simulation</li>
+</ol>
+</li>
+<li id="c09-ex-0019">What type of physical security control is shown here?
+<figure><img alt="An illustration of a security control. It includes Door 1, Door 2, and Secure Area." class="center" src="images/c09uf001.png"/>
+</figure>
+<ol class="upper-alpha">
+<li>A Faraday cage</li>
+<li>An access control vestibule</li>
+<li>A bollard</li>
+<li>An air gap</li>
+</ol>
+</li>
+<li id="c09-ex-0020">Gurvinder identifies a third-party datacenter provider over 90 miles away to run his redundant datacenter operations. Why has he placed the datacenter that far away?
+<ol class="upper-alpha">
+<li>Because it is required by law</li>
+<li>Network traffic latency concerns</li>
+<li>Geographic dispersion</li>
+<li>Geographic tax reasons</li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+</section>
+</body>
+</html>

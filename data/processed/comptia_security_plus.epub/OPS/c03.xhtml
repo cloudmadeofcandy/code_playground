@@ -1,0 +1,513 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:svg="http://www.w3.org/2000/svg" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+<head>
+<title>Chapter 3 Malicious Code</title>
+<link href="WileyTemplate_v5.5.css" rel="stylesheet" type="text/css"/>
+<meta content="urn:uuid:57d469d3-a1d3-48bd-8447-18ce82f57cc2" name="Adept.expected.resource"/>
+</head>
+<body epub:type="bodymatter">
+<section aria-labelledby="c03_1" epub:type="chapter" role="doc-chapter">
+<header>
+<h1 id="c03_1"><span aria-label="49" epub:type="pagebreak" id="Page_49" role="doc-pagebreak"/><span id="c03"/><span class="chapterNumber">Chapter 3</span><br/><span class="chapterTitle">Malicious Code</span></h1>
+</header>
+<section aria-label="chapter opening"><span id="c03-sec-0001"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p><b>THE COMPTIA SECURITY+ EXAM OBJECTIVES COVERED IN THIS CHAPTER INCLUDE:</b></p>
+<ul class="check1" id="c03-list-0002">
+<li id="c03-li-0002"><b>Domain 2.0: Threats, Vulnerabilities, and Mitigations</b>
+<ul class="square1" id="c03-list-0003">
+<li id="c03-li-0003">2.4. Given a scenario, analyze indicators of malicious activity.
+<ul class="square1" id="c03-list-0004">
+<li id="c03-li-0004">Malware attacks (Ransomware, Trojan, Worm, Spyware, Bloatware, Virus, Keylogger, Logic bomb, Rootkit)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<span aria-label="50" epub:type="pagebreak" id="Page_50" role="doc-pagebreak"/>
+<p id="c03-para-0006">Malware comes in many forms, from ransomware and worms to spyware, viruses, keyloggers, and rootkits that help ensure that attackers can retain access to systems once they've gained a foothold.</p>
+<p id="c03-para-0007">In this chapter, you will explore the various types of malware, as well as the distinguishing elements, behaviors, and traits of each malware type. You will learn about the indicators that you should look for, and the response methods that organizations use to deal with each type of malware, as well as controls that can help protect against them.</p>
+</section>
+<section aria-labelledby="head-2-30"><span id="c03-sec-0002"/>
+<h2 id="head-2-30">Malware</h2>
+<p id="c03-para-0008">The term <i>malware</i> describes a wide range of software that is intentionally designed to cause harm to systems and devices, networks, or users. Malware can also gather information, provide illicit access, and take a broad range of actions that the legitimate owner of a system or network may not want to occur. The SY0-701 Security+ exam objectives include a number of the most common types of malware, and you will need to be familiar with each of them, how to tell them apart, how you can identify them, and common techniques used in combatting them.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c03-fea-0001"/>
+<h3 id="head-2-31">Exam Note</h3>
+<section><span id="c03-sec-0003"/>
+<p id="c03-para-0009">This objective introduces many types of malware and asks you to analyze potential indicators to determine the type of attack. When you tackle malware-based questions, you will need to know the distinctive characteristics of each type of malware, and what might help you tell them apart. For example, a Trojan is disguised as legitimate software, whereas ransomware is aimed at getting payment from a victim. As you read this section, remember to pay attention to the differences between each type of malware, what common indicators of compromise are associated with them, and how you would answer questions about them on the exam!</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section> <span aria-label="51" epub:type="pagebreak" id="Page_51" role="doc-pagebreak"/>
+<section><span id="c03-sec-0004"/>
+<h3 id="head-3-21">Ransomware</h3>
+<p id="c03-para-0010"><i>Ransomware</i> is malware that takes over a computer and then demands a ransom. There are many types of ransomware, including crypto malware, which encrypts files and then holds them hostage until a ransom is paid. Other ransomware techniques include threatening to report the user to law enforcement due to pirated software or pornography, or threatening to expose sensitive information or pictures from the victim's hard drive or device.</p>
+<p id="c03-para-0011">A significant portion of ransomware attacks are driven by phishing campaigns, with unsuspecting victims installing malware delivered via phishing emails or links in the email. That's not the only way that ransomware is delivered as malicious actors continue to use direct attack methods like Remote Desktop Protocol, vulnerable services, or front-facing applications that they can compromise.</p>
+<p>Indicators of compromise (IoCs) for ransomware include, but are not limited to:</p>
+<ul class="square" id="c03-list-0005">
+<li id="c03-li-0005">Command and control (C&amp;C) traffic and/or contact to known malicious IP addresses</li>
+<li id="c03-li-0006">Use of legitimate tools in abnormal ways to retain control of the compromised system</li>
+<li id="c03-li-0007">Lateral movement processes that seek to attack or gain information about other systems or devices inside the same trust boundaries</li>
+<li id="c03-li-0008">Encryption of files</li>
+<li id="c03-li-0009">Notices to end users of the encryption process with demands for ransom</li>
+<li id="c03-li-0010">Data exfiltration behaviors, including large file transfers</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c03-para-0013"><img alt="" role="presentation" src="images/note.png"/> You can read an example of a ransomware advisory provided by the U.S. Cybersecurity &amp; Infrastructure Security Agency (CISA) about the Royal Ransomware variant, including a detailed list of specific IoCs, at <code><a href="http://www.cisa.gov/news-events/cybersecurity-advisories/aa23-061a">www.cisa.gov/news-events/cybersecurity-advisories/aa23-061a</a></code>.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>One of the most important defenses against ransomware is an effective backup system that stores files in a separate location that will not be impacted if the system or device it backs up is infected and encrypted by ransomware. Organizations that are preparing to deal with ransomware need to determine what their response will be; in some cases, paying ransoms has resulted in files being returned, and in others attackers merely demanded more money.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c03-para-0015"><img alt="" role="presentation" src="images/note.png"/> Some ransomware has been defeated, and defenders may be able to use a preexisting decryption tool to restore files. Antivirus and antimalware providers as well as others in the security community provide anti-ransomware tools.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<span aria-label="52" epub:type="pagebreak" id="Page_52" role="doc-pagebreak"/>
+</section>
+<section><span id="c03-sec-0007"/>
+<h3 id="head-3-22">Trojans</h3>
+<p id="c03-para-0016"><i>Trojans</i>, or Trojan horses, are a type of malware that is typically disguised as legitimate software. They are called Trojan horses because they rely on unsuspecting individuals running them, thus providing attackers with a path into a system or device. <a href="#c03-fig-0001" id="R_c03-fig-0001">Figure 3.1</a> shows an example of a Trojan infection path starting with a user downloading an application from the Android app store that appears to be legitimate through automated download of malicious add-ons and remote control of the device.</p>
+<figure> <img alt="A set of four diagrams illustrates the download and process of the Trojan application. 1. The user searches the app store for an application and inadvertently finds a malicious version. 2. The user downloads the application and runs it. 3. Malicious application provides user and device information to the command and control server, then downloads additional malicious plugins. 4. A remote server can execute commands on the device and gather information." class="center" src="images/c03f001.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c03-fig-0001" id="c03-fig-0001" role="doc-backlink"><b>FIGURE 3.1</b></a></span> Trojan application download and infection process</p>
+</figcaption>
+</figure>
+<p id="c03-para-0017">An example of this type of malware is the Triada Trojan, which is often distributed in the guise of a modified, feature-enhanced WhatsApp version. When the application is launched, the Trojan gathers information about the host device including device IDs, subscriber IDs, and the device's hardware address. This information is used to register the device with a remote server. With that information ready, the Trojan is downloaded, decrypted, and run, allowing further actions to take place depending on what the malicious actor wants to occur. <span aria-label="53" epub:type="pagebreak" id="Page_53" role="doc-pagebreak"/>Those activities include everything from displaying ads to signing up for paid subscriptions to services.</p>
+<p>Indicators of compromise for Trojans often include:</p>
+<ul class="square" id="c03-list-0006">
+<li id="c03-li-0011">Signatures for the specific malware applications or downloadable files</li>
+<li id="c03-li-0012">Command and control system hostnames and IP addresses</li>
+<li id="c03-li-0013">Folders or files created on target devices</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c03-para-0019"><img alt="" role="presentation" src="images/note.png"/> A full writeup about the Triada Trojan that was deployed via modified WhatsApp versions can be found at:</p>
+<p id="c03-para-0020"><code><a href="https://securelist.com/triada-trojan-in-whatsapp-mod/103679">https://securelist.com/triada-trojan-in-whatsapp-mod/103679</a></code></p>
+<p id="c03-para-0021">And additional detail can be found here:</p>
+<p id="c03-para-0022"><code><a href="https://securelist.com/malicious-whatsapp-mod-distributed-through-legitimate-apps/107690/">https://securelist.com/malicious-whatsapp-mod-distributed-through-legitimate-apps/107690</a></code></p>
+<p id="c03-para-0023">In addition to traditional Trojans, remote access Trojans (RATs) provide attackers with remote access to systems. Some legitimate remote access tools are used as RATs, which can make it difficult to identify whether a tool is a legitimate remote support tool or a tool being used for remote access by an attacker. Antimalware tools may also cause false positives when they find remote access tools that may be used as RATs, but disabling this detection can then result in RATs not being detected. Security practitioners often combat Trojans and RATs using a combination of security awareness training to encourage users not to download untrusted software and antimalware or endpoint detection and response (EDR) tools that detect Trojan and RAT-like behavior and known malicious files.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c03-para-0024">Mitigation practices for Trojans typically starts with awareness practices that help ensure that downloading and running Trojans are less likely. Controlling the software and applications that users can acquire can be a helpful option in many cases, but is often balanced with the need to allow for flexibility for users. Anti-malware, EDR, and other tools used to identify and stop malicious software from running or which can discover it based on behavior and stop it are also commonly used as a final line of defense.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c03-fea-0002"/>
+<h3 id="head-2-32">Bots, Botnets, and Command and Control</h3>
+<section><span id="c03-sec-0009"/>
+<p id="c03-para-0025">Many types of malware use command and control (C&amp;C) techniques and systems to allow attackers to tell them what to do. These groups of systems that are under central command are called <i>botnets</i>, and individual systems are called <i>bots</i>.</p>
+<p id="c03-para-0026"><span aria-label="54" epub:type="pagebreak" id="Page_54" role="doc-pagebreak"/>C&amp;C increasingly uses encrypted HTTP connections, which are then used to connect to a frequently changing set of remote hosts to attempt to avoid observation, but use of Internet Relay Chat (IRC) via port 6667 and similar techniques remain popular too. As a defender you'll need to know how to search for C&amp;C communications and to identify why a system reaching out to unknown hosts may be a sign of a system you're responsible for being part of a botnet.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c03-sec-0010"/>
+<h3 id="head-3-23">Worms</h3>
+<p id="c03-para-0027">Unlike Trojans that require user interaction, <i>worms</i> spread themselves. While worms are often associated with spreading via attacks on vulnerable services, any type of spread via automated means is possible, meaning that worms can spread via email attachments, network file shares, vulnerable devices like IoT (Internet of Things) and phones, or other methods as well. Worms also self-install, rather than requiring users to click on them, making them quite dangerous.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c03-fea-0003"/>
+<h3 id="head-2-33">Stuxnet: Nation-State-Level Worm Attacks</h3>
+<section><span id="c03-sec-0011"/>
+<p id="c03-para-0028">The 2010 Stuxnet attack is generally recognized as the first implementation of a worm as a cyber weapon. The worm was aimed at the Iranian nuclear program, and copied itself to thumb drives to bypass air-gapped (physically separated systems without a network connection) computers. Stuxnet took advantage of a number of advanced techniques for its time, including using a trusted digital certificate, searching for specific industrial control systems (ICSs) that were known to be used by the Iranian nuclear program, and specific programming to attack and damage centrifuges while providing false monitoring data to controllers to ensure that the damage would not be noticed until it was too late.</p>
+<p id="c03-para-0029">While Stuxnet was specifically designed to bypass physically separated networks, firewalls and network-level controls remain one of the best ways to mitigate worm attacks. If compromised devices cannot communicate with other vulnerable devices, the infection can't spread!</p>
+<p id="c03-para-0030">You can read about Stuxnet in more depth at</p>
+<p id="c03-para-0031"><code><a href="http://www.wired.com/2014/11/countdown-to-zero-day-stuxnet">www.wired.com/2014/11/countdown-to-zero-day-stuxnet</a></code></p>
+<p id="c03-para-0032"><code><a href="https://spectrum.ieee.org/the-real-story-of-stuxnet">https://spectrum.ieee.org/the-real-story-of-stuxnet</a></code></p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c03-para-0033"><span aria-label="55" epub:type="pagebreak" id="Page_55" role="doc-pagebreak"/>An example of a modern worm is Raspberry Robin, a worm that is used as part of pre-ransomware activity. Raspberry Robin's spread was initially through infected USB drives using a LNK file. Once running, it uses built-in Windows tools to accomplish further tasks and to obtain persistency, ensuring it will survive past reboots.</p>
+<p>Common IoCs for worms like Raspberry Robin include:</p>
+<ul class="square" id="c03-list-0007">
+<li id="c03-li-0014">Known malicious files</li>
+<li id="c03-li-0015">Downloads of additional components from remote systems</li>
+<li id="c03-li-0016">Command and control contact to remote systems</li>
+<li id="c03-li-0017">Malicious behaviors using system commands for injection and other activities, including use of <code>cmd.exe</code>, <code>msiexec.exe</code>, and others</li>
+<li id="c03-li-0018">Hands-on-keyboard attacker activity</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c03-para-0035"><img alt="" role="presentation" src="images/note.png"/> Microsoft provides a detailed write-up of the Raspberry Robin worm, including recommendations for defensive actions to be taken, at</p>
+<p id="c03-para-0036"><code><a href="http://www.microsoft.com/en-us/security/blog/2022/10/27/raspberry-robin-worm-part-of-larger-ecosystem-facilitating-pre-ransomware-activity">www.microsoft.com/en-us/security/blog/2022/10/27/raspberry-robin-worm-part-of-larger-ecosystem-facilitating-pre-ransomware-activity</a></code></p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c03-para-0037">Mitigating worm infections frequently starts with effective network-level controls focused on preventing infection traffic. Firewalls, IPS devices, network segmentation, and similar controls are the first layer of defense. Patching and configuring services to limit attack surfaces is also a best practice for preventing worms. After an infection responses may include use of antimalware, EDR, and similar tools to stop and potentially remove infections. Depending on the complexity of the malware, removal may be nearly impossible, and as with many types of malware reinstallation or resetting to original firmware may be required for some devices.</p>
+</section>
+<section><span id="c03-sec-0013"/>
+<h3 id="head-3-24">Spyware</h3>
+<p id="c03-para-0038"><i>Spyware</i> is malware that is designed to obtain information about an individual, organization, or system. Various types of spyware exist, with different types of information targeted by each. Many spyware packages track users' browsing habits, installed software, or similar information and report it back to central servers. Some spyware is relatively innocuous, but malicious spyware exists that targets sensitive data, allows remote access to web cameras, or otherwise provides illicit or undesirable access to the systems it is installed on. Spyware is associated with identity theft and fraud, advertising and redirection of traffic, digital rights management (DRM) monitoring, and with <i>stalkerware</i>, a type of spyware used to illicitly monitor partners in relationships.</p>
+<p id="c03-para-0039"><span aria-label="56" epub:type="pagebreak" id="Page_56" role="doc-pagebreak"/>Spyware is most frequently combated using antimalware tools, although user awareness can help prevent the installation of spyware that is included in installers for software (thus acting as a form of Trojan), or through other means where spyware may appear to be a useful tool or innocuous utility.</p>
+<p>Spyware comes in many forms, which means that its IoCs can be very similar to other malicious software types. Common examples of spyware IoCs include:</p>
+<ul class="square" id="c03-list-0008">
+<li id="c03-li-0019">Remote-access and remote-control-related indicators</li>
+<li id="c03-li-0020">Known software file fingerprints</li>
+<li id="c03-li-0021">Malicious processes, often disguised as system processes</li>
+<li id="c03-li-0022">Injection attacks against browsers</li>
+</ul>
+<p id="c03-para-0041">Since spyware uses techniques from other types of malware, defining software as spyware typically requires understanding its use and motivations rather than just its behavior. Thus, spyware may use Trojan, worm, or virus-style propagation methods in some cases, but the intent is to gather information about a user or system, with the methods used being less important than the goal.</p>
+<p>Mitigation practices for spyware focus on awareness, control of the software that is allowed on devices and systems, and antispyware capabilities built into antimalware tools. Since spyware is generally perceived as less of a threat than many types of malware, it is commonly categorized separately and may require specific configuration to identify and remove it.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c03-para-0043"><img alt="" role="presentation" src="images/note.png"/> An example of a commercialized spyware tool is NSO Group's Pegasus spyware tool. Amnesty International provides a thorough write-up of indicators and actions taken by Pegasus here:</p>
+<p id="c03-para-0044"><code><a href="http://www.amnesty.org/en/latest/research/2021/07/forensic-methodology-report-how-to-catch-nso-groups-pegasus">www.amnesty.org/en/latest/research/2021/07/forensic-methodology-report-how-to-catch-nso-groups-pegasus</a></code></p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c03-sec-0015"/>
+<h3 id="head-3-25">Bloatware</h3>
+<p id="c03-para-0045">If you have ever purchased a new computer and discovered preinstalled applications that you didn't want on it, you've encountered <i>bloatware</i>. The term bloatware is an all-encompassing term used to describe unwanted applications installed on systems by manufacturers. They may be part of a commercial relationship the manufacturer has, they may be programs the manufacturer themselves provide, or they may come later and be part of installer packages for other applications.</p>
+<p id="c03-para-0046">Unlike the other malicious software categories listed in this chapter, bloatware isn't usually intentionally malicious. It may, however, be poorly written, may call home with information about your system or usage, or may prove to be vulnerable to exploitation, <span aria-label="57" epub:type="pagebreak" id="Page_57" role="doc-pagebreak"/>adding another attack surface to otherwise secure devices. Uninstalling bloatware or using a clean operating system image are common practices for organizations as well as individuals.</p>
+<p id="c03-para-0047">Since bloatware isn't really malicious software, it isn't typically associated with IoCs. Instead it should simply be removed to prevent issues—including simply taking up disk space, memory, and CPU cycles without providing any benefit. Mitigation techniques for bloatware focus on awareness and uninstallation or removal of the software.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c03-fea-0004"/>
+<h3 id="head-2-34">Exam Note</h3>
+<section><span id="c03-sec-0016"/>
+<p id="c03-para-0048">The Security+ exam outline calls out spyware and bloatware, but they can sometimes be difficult to tell apart since manufacturers who install bloatware often have call-home functionality built into the bloatware. The key differentiator is that spyware's primary intention is to gather information about the user, their use of the system and Internet, and the configuration of the system, whereas bloatware is simply unwanted programs.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c03-sec-0017"/>
+<h3 id="head-3-26">Viruses</h3>
+<p>Computer viruses are malicious programs that self-copy and self-replicate once they are activated. Unlike worms, they don't spread themselves via vulnerable services and networks. Viruses require one or more infection mechanisms that they use to spread themselves, like copying to a thumb drive or network share, and that mechanism is typically paired with some form of search capability to find new places to spread to once they are run. Viruses also typically have both a <i>trigger</i>, which sets the conditions for when the virus will execute, and a <i>payload</i>, which is what the virus does, delivers, or the actions it performs. Viruses come in many varieties, including:</p>
+<ul class="square" id="c03-list-0009">
+<li id="c03-li-0023">Memory-resident viruses, which remain in memory while the system of the device is running</li>
+<li id="c03-li-0024">Non-memory-resident viruses, which execute, spread, and then shut down</li>
+<li id="c03-li-0025">Boot sector viruses, which reside inside the boot sector of a drive or storage media</li>
+<li id="c03-li-0026">Macro viruses, which use macros or code inside word processing software or other tools to spread</li>
+<li id="c03-li-0027">Email viruses that spread via email either as email attachments or as part of the email itself using flaws inside email clients</li>
+</ul>
+<p id="c03-para-0050">Fileless virus attacks are similar to traditional viruses in a number of critical ways. They spread via methods like spam email and malicious websites and exploit flaws in browser plug-ins and web browsers themselves. Once they successfully find a way into a system, they inject themselves into memory and conduct further malicious activity, including adding <span aria-label="58" epub:type="pagebreak" id="Page_58" role="doc-pagebreak"/>the ability to reinfect the system via the same process at reboot through a Registry entry or other technique. At no point do they require local file storage, as they remain memory resident throughout their entire active life—in fact, the only stored artifact of many fileless attacks would be the artifacts of their persistence techniques like the Registry entry shown in <a href="#c03-fig-0002" id="R_c03-fig-0002">Figure 3.2</a>.</p>
+<figure> <img alt="A schematic illustration of fileless virus attack chain. The steps involved are as follows. 1. Email link to a malicious website. 2. Website exploits browser plugin vulnerability. 3. Shell code runs command line script to download and execute&#10;the payload. 4. Payload runs in memory and executes further attacks. 5. Registry entry created to repeat shell code download and execution at boot." class="center" src="images/c03f002.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c03-fig-0002" id="c03-fig-0002" role="doc-backlink"><b>FIGURE 3.2</b></a></span> Fileless virus attack chain</p>
+</figcaption>
+</figure>
+<p id="c03-para-0051">As you might expect from the infection flow diagram in <a href="#c03-fig-0002">Figure 3.2</a>, fileless attacks require a vulnerability to succeed, so ensuring that browsers, plug-ins, and other software that might be exploited by attackers are up to date and protected can prevent most attacks. Using antimalware tools that can detect unexpected behavior from scripting tools like Microsoft PowerShell can also help stop fileless viruses. Finally, network level defenses like intrusion prevention systems (IPSs), as well as reputation-based protection systems can prevent potentially vulnerable systems from browsing known malicious sites.</p>
+<p id="c03-para-0052">IoCs related to viruses are often available in threat feeds from organizations like VirusTotal, where recently discovered viruses and their behaviors are analyzed and indexed to create IoC feeds. You can find examples of VirusTotal's crowdsourced YARA rules in their support article about their community YARA feed dashboard at <code><a href="https://support.virustotal.com/hc/en-us/articles/9853517705117-Crowdsourced-YARA-rules-dashboard">https://support.virustotal.com/hc/en-us/articles/9853517705117-Crowdsourced-YARA-rules-dashboard</a></code>.</p>
+<p>Mitigation for viruses includes both awareness that helps to prevent users from clicking on and activating viruses as well as antimalware tools that can detect them and prevent them both on-disk and in-memory or as they are being executed. Removal varies, with some viruses easy to remove using antimalware tools or dedicated, virus-specific utilities while some may require more significant action.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c03-para-0054"><img alt="" role="presentation" src="images/note.png"/> Removing malware can be a challenging task. It can be nearly impossible to determine if every part of a complex infection has been removed. Although it may be tempting to rely on your antivirus or other security tools to remove the infection, that often isn't sufficient.</p><span aria-label="59" epub:type="pagebreak" id="Page_59" role="doc-pagebreak"/>
+<p id="c03-para-0055">Due to this, many organizations have a standard practice of wiping the drive of an infected machine and restoring it from a known good backup or reinstalling/reimaging it. While there are some scenarios where even that won't be enough, such as with BIOS/UEFI resident malware, in most common scenarios a complete wipe and reinstallation or reimaging will ensure the malware is gone.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c03-sec-0019"/>
+<h3 id="head-3-27">Keyloggers</h3>
+<p id="c03-para-0056"><i>Keyloggers</i> are programs that capture keystrokes from a keyboard, although keylogger applications may also capture other input such as mouse movement, touchscreen inputs, or credit card swipes from attached devices. Keyloggers work in a multitude of ways, ranging from tools that capture data from the kernel, via APIs or scripts, or even directly from memory. Regardless of how they capture data, the goal of a keylogger is to capture user input to be analyzed and used by an attacker.</p>
+<p id="c03-para-0057">Preventing software keylogging typically focuses on normal security best practices to ensure that malware containing a keylogger is not installed, including patching and systems management, as well as use of antimalware tools. Since many keyloggers are aimed at acquiring passwords, use of multifactor authentication can help limit the impact of a keylogger, even if it cannot defeat the keylogger itself.</p>
+<p id="c03-para-0058">In more complex security environments where underlying systems cannot be trusted, use of bootable USB drives can prevent use of a potentially compromised underlying operating system.</p>
+<p>Much like other malicious software intended to gather information, IoCs related to keyloggers are commonly:</p>
+<ul class="square" id="c03-list-0010">
+<li id="c03-li-0028">File hashes and signatures</li>
+<li id="c03-li-0029">Exfiltration activity to command and control systems</li>
+<li id="c03-li-0030">Process names</li>
+<li id="c03-li-0031">Known reference URLs</li>
+</ul>
+<p>An example of an analysis of keylogger delivery campaign via PDFs can be found at <code><a href="http://www.socinvestigation.com/pdf-campaign-delivering-snake-keylogger">www.socinvestigation.com/pdf-campaign-delivering-snake-keylogger</a></code>.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c03-para-0061"><img alt="" role="presentation" src="images/note.png"/> In addition to the software-based keyloggers we discussed here, hardware keyloggers are also available and inexpensive. The authors of this book have encountered them on college campuses where students tried to acquire (and in some cases succeeded) credentials for their instructors so that they could change their grades.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c03-para-0060"><span aria-label="60" epub:type="pagebreak" id="Page_60" role="doc-pagebreak"/></p>
+</section>
+<section><span id="c03-sec-0021"/>
+<h3 id="head-3-28">Logic Bombs</h3>
+<p id="c03-para-0062"><i>Logic bombs</i>, unlike the other types of malware described here, are not independent malicious programs. Instead, they are functions or code placed inside other programs that will activate when set conditions are met. Some other types of malware may use this type of code as part of their function as well. While relatively rare compared to other types of malware, logic bombs are a consideration in software development and systems management, and can have a significant impact if they successfully activate.</p>
+<p id="c03-para-0063">Since logic bombs are found in code, IoCs for logic bombs are less common—they require analysis of the code or logic in the application, meaning that mitigation processes are also primarily focused on code review.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c03-fea-0005"/>
+<h3 id="head-2-35">Analyzing Malware</h3>
+<section><span id="c03-sec-0022"/>
+<p>A number of techniques are commonly used to analyze malware:</p>
+<ul class="square" id="c03-list-0011">
+<li id="c03-li-0032">Online analysis tools like VirusTotal can be used to check whether the malware is a known tool and to see what it is identified as by multiple AV tools.</li>
+<li id="c03-li-0033">Sandbox tools can be used to analyze malware behavior in a protected environment.</li>
+<li id="c03-li-0034">Manual code analysis is common, particularly with scripts and interpreted code like Python and Perl.</li>
+<li id="c03-li-0035">Malware can be analyzed using tools like <code>string</code>s to look for recoverable artifacts that may be useful for the analysis</li>
+</ul>
+<p id="c03-para-0066">Many other tools and techniques are used to analyze malicious code and software, but these are a good starting point for security analysts who need to determine whether a given executable or block of code might be malicious.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c03-sec-0023"/>
+<h3 id="head-3-29">Rootkits</h3>
+<p id="c03-para-0067"><i>Rootkits</i> are malware that is specifically designed to allow attackers to access a system through a backdoor. Many modern rootkits also include capabilities that work to conceal the rootkit from detection through any of a variety of techniques, ranging from hooking filesystem drivers to ensure that users cannot see the rootkit files to infecting startup code in the Master Boot Record (MBR) of a disk, allowing attacks against full-disk encryption systems.</p>
+<p id="c03-para-0068">Rootkit detection can be challenging, because a system infected with malware like this cannot be trusted. That means that the best way to detect a rootkit is to test the suspected system from a trusted system or device. In cases where that isn't possible, rootkit detection tools look for behaviors and signatures that are typical of rootkits. Techniques like integrity checking and data validation against expected responses can also be useful for rootkit detection, and anti-rootkit tools often use a combination of these techniques to detect complex rootkits.</p>
+<p><span aria-label="61" epub:type="pagebreak" id="Page_61" role="doc-pagebreak"/>Once a rootkit is discovered, removal can be challenging. While some antimalware and anti-rootkit tools are able to remove specific rootkits, the most common recommendation whenever possible is to rebuild the system or to restore it from a known good backup. As virtual machines, containers, system imaging, and software-defined environments have become more common, this has simplified restoration processes, and in many cases may be as fast, or faster than ensuring that a system infected with a rootkit has been properly and fully cleaned.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c03-para-0070"><img alt="" role="presentation" src="images/note.png"/> Some rootkits are intentionally installed, either as part of DRM systems or as part of anti-cheating toolkits for games, or because they are part of a tool used to defeat copy protection mechanisms. While these tools are technically rootkits, you will normally be focused on tools used by malicious actors instead of intentional installation for purposes like these.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c03-para-0071">Like many of the other malware types, the best way to prevent rootkits is to use normal security practices, including patching, use of secure configurations, and ensuring that privilege management is used. Tools like Secure Boot and techniques that can validate live systems and files can also be used to help prevent rootkits from being successfully installed or remaining resident.</p>
+<p>Common IoCs for rootkits include:</p>
+<ul class="square" id="c03-list-0012">
+<li id="c03-li-0036">File hashes and signatures</li>
+<li id="c03-li-0037">Command and control domains, IP addresses, and systems</li>
+<li id="c03-li-0038">Behavior-based identification like the creation of services, executables, configuration changes, file access, and command invocation</li>
+<li id="c03-li-0039">Opening ports or creation of reverse proxy tunnels</li>
+</ul>
+<p id="c03-para-0073">An example of a rootkit used on automatic teller machines (ATMs) with example indicators can be found here:</p>
+<p id="c03-para-0074"><code><a href="http://www.socinvestigation.com/unc2891-atm-rootkit-mandiant-advanced-practices-team-tracks-latest-indicators">www.socinvestigation.com/unc2891-atm-rootkit-mandiant-advanced-practices-team-tracks-latest-indicators</a></code></p>
+<p>Since rootkits are specifically designed to avoid detection, mitigation can be particularly challenging. While antimalware and similar tools can sometimes gain an edge in detecting rootkits, detection and removal can be difficult to ensure. Preventing rootkits from being installed by taking proactive action to secure systems and prevent malicious activity is a key element of rootkit mitigation.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c03-para-0076"><img alt="" role="presentation" src="images/note.png"/> Since rootkits often invade operating systems and use hooks to make the operating system help hide them, one technique that can help to find them is to remove the drive and connect it to another system. This means that the infected operating system won't be running and that the tool may be revealed. Similar techniques can be accomplished through system images or snapshots of virtual machines.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<span aria-label="62" epub:type="pagebreak" id="Page_62" role="doc-pagebreak"/>
+</section>
+</section>
+<section aria-labelledby="head-2-36"><span id="c03-sec-0026"/>
+<h2 id="head-2-36">Summary</h2>
+<p id="c03-para-0077">Security professionals need to be aware of the most common forms of malware. This includes understanding how to identify common indicators of malicious activity related to malware attacks and malware itself.</p>
+<p id="c03-para-0078">The Security+ exam objectives focus on a few different types of malware. These include ransomware, which most frequently targets victims by encrypting files and holding them for ransoms paid via cryptocurrency. Trojans are malware that is disguised to look like legitimate software but that takes malicious action once downloaded and run.</p>
+<p id="c03-para-0079">Worms are malware that spread themselves on networks via vulnerable services, email, or file shares. Viruses are similar but only infect local systems and often require user action like running an application to infect a system.</p>
+<p id="c03-para-0080">Spyware is malicious software that is intended to gather information about users, systems, and networks. It then sends that information back to remote systems or command and control servers. Keyloggers are a specialized type of spyware that capture keystrokes, allowing malicious actors to know what you've typed. Keyloggers exist in both software and hardware form, although the Security+ exam focuses on them as malware.</p>
+<p id="c03-para-0081">Rootkits are used to retain access to a system and are commonly part of an attacker's toolkits as well as being used together with other malware to help keep a foothold on a compromised system. Rootkits are designed to conceal malicious action and to counter protective measures like antivirus, antimalware, and endpoint detection and response tools.</p>
+<p id="c03-para-0082">Logic bombs are code that executes under a specific condition or conditions, taking unwanted action. Unlike the other malware on this list, logic bombs typically need to be identified by reviewing source code or scripts.</p>
+<p id="c03-para-0083">Bloatware is simply unwanted software installed on systems by vendors or as part of software packages. Bloatware takes up resources like disk space, memory, and CPU cycles. It isn't truly malicious software but is often vulnerable to attack and can allow actual malicious software to gain access to systems. Bloatware is typically removed by uninstalling it.</p>
+<p id="c03-para-0084">Finally, there are many ways to fight malware, from antivirus and endpoint detection and response tools to configuration and patching. Awareness is often the most effective tool in an organization's arsenal as it can help prevent attacks, can allow responses to occur more quickly, and can help limit the impact of human mistakes throughout malware life cycles and attacks.</p>
+</section>
+<section aria-labelledby="head-2-37"><span id="c03-sec-0027"/>
+<h2 id="head-2-37">Exam Essentials</h2>
+<p id="c03-li-0040"><b>Understand and explain the different types of malware.</b> Malware includes ransomware, Trojans, worms, spyware, bloatware, viruses, keyloggers, logic bombs, and rootkits. Each type of malware has distinctive elements, and security analysts need to know what identifies each type of malware, how to identify it, what controls are commonly deployed against it, and what to do if you encounter it.</p>
+<p id="c03-li-0041"><span aria-label="63" epub:type="pagebreak" id="Page_63" role="doc-pagebreak"/><b>Explain common indicators of malicious activity associated with malware types.</b> Indicators of compromise associated with malware vary based on the type of malware and how it is designed and used. Common examples of IoCs associated with malware include command and control (C&amp;C) traffic patterns, IP addresses, hostnames, and domains. Use of system utilities in unexpected ways, lateral movement between systems, creation of files and directories, encryption of files, and data exfiltration are also commonly seen, particularly with Trojans and rootkits. Signatures for malware are commonly used to identify specific files associated with given malware packages although malware writers use defensive techniques intended to make this harder.</p>
+<p id="c03-li-0042"><b>Understand the methods to mitigate malware.</b> Malware may require specialized techniques and processes to remove it or to deal with the impact of the malware. Techniques range from manual removal to the use of tools to identify and remove malicious files, and often rely on reinstallation of a system or restoration from a known good backup to ensure all malware is removed.</p>
+
+</section> <span aria-label="64" epub:type="pagebreak" id="Page_64" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-38"><span id="c03-sec-0028"/>
+<h2 id="head-2-38">Review Questions</h2>
+<section><span id="c03-exsec-0001"/>
+<ol class="decimal">
+<li id="c03-ex-0001">Ryan wants to prevent logic bombs created by insider threats from impacting his organization. What technique will most effectively limit the likelihood of logic bombs being put in place?
+<ol class="upper-alpha">
+<li>Deploying antivirus software</li>
+<li>Using a code review process</li>
+<li>Deploying endpoint detection and response (EDR) software</li>
+<li>Disabling autorun for USB drives</li>
+</ol>
+</li>
+<li id="c03-ex-0002">Yasmine believes that her organization may be dealing with an advanced rootkit and wants to write IoC definitions for it. Which of the following is not likely to be a useful IoC for a rootkit?
+<ol class="upper-alpha">
+<li>File hashes</li>
+<li>Command and control domains</li>
+<li>Pop-ups demanding a ransom</li>
+<li>Behavior-based identifiers</li>
+</ol>
+</li>
+<li id="c03-ex-0003">Nathan works at a school and notices that one of his staff appears to have logged in and changed grades for a single student to higher grades, even in classes that staff member is not responsible for. When asked, the staff member says that they did not perform the action. Which of the following is the most likely way that a student could have gotten access to the staff member's password?
+<ol class="upper-alpha">
+<li>A keylogger</li>
+<li>A rootkit</li>
+<li>Spyware</li>
+<li>A logic bomb</li>
+</ol>
+</li>
+<li id="c03-ex-0004">Amanda notices traffic between her systems and a known malicious host on TCP port 6667. What type of traffic is she most likely detecting?
+<ol class="upper-alpha">
+<li>Command and control</li>
+<li>Spyware</li>
+<li>A worm</li>
+<li>A hijacked web browser</li>
+</ol>
+</li>
+<li id="c03-ex-0005">Mike discovers that attackers have left software that allows them to have remote access to systems on a computer in his company's network. How should he describe or classify this malware?
+<ol class="upper-alpha">
+<li>A worm</li>
+<li>Crypto malware</li>
+<li>A trojan</li>
+<li>A backdoor</li>
+</ol>
+</li>
+<li id="c03-ex-0006"><span aria-label="65" epub:type="pagebreak" id="Page_65" role="doc-pagebreak"/> What is the primary impact of bloatware?
+<ol class="upper-alpha">
+<li>Consuming resources</li>
+<li>Logging keystrokes</li>
+<li>Providing information about users and devices to third parties</li>
+<li>Allowing unauthorized remote access</li>
+</ol>
+</li>
+<li id="c03-ex-0007">What type of malware is used to gather information about a user's browsing habits and system?
+<ol class="upper-alpha">
+<li>A Trojan</li>
+<li>Bloatware</li>
+<li>Spyware</li>
+<li>A rootkit</li>
+</ol>
+</li>
+<li id="c03-ex-0008">Matt uploads a malware sample to a third-party malware scanning site that uses multiple antimalware and antivirus engines to scan the sample. He receives multiple different answers for what the malware package is. What has occurred?
+<ol class="upper-alpha">
+<li>The package contains more than one piece of malware.</li>
+<li>The service is misconfigured.</li>
+<li>The malware is polymorphic and changed while being tested.</li>
+<li>Different vendors use different names for malware packages.</li>
+</ol>
+</li>
+<li id="c03-ex-0009">Nancy is concerned that there is a software keylogger on the system she's investigating. What best describes data that may have been stolen?
+<ol class="upper-alpha">
+<li>All files on the system</li>
+<li>All keyboard input</li>
+<li>All files the user accessed while the keylogger was active</li>
+<li>Keyboard and other input from the user</li>
+</ol>
+</li>
+<li id="c03-ex-0010">A system in Elaine's company has suddenly displayed a message demanding payment in Bitcoin and claiming that the data from the system has been encrypted. What type of malware has Elaine likely encountered?
+<ol class="upper-alpha">
+<li>Worms</li>
+<li>A virus</li>
+<li>Ransomware</li>
+<li>Rootkit</li>
+</ol>
+</li>
+<li id="c03-ex-0011"><span aria-label="66" epub:type="pagebreak" id="Page_66" role="doc-pagebreak"/> Rick believes that a system he is responsible for has been compromised with malware that uses a rootkit to obtain and retain access to the system. When he runs an antimalware tool's scanner, the system doesn't show any malware. If he has other data that indicates the system is infected, what should his next step be if he wants to determine what malware may be on the system?
+<ol class="upper-alpha">
+<li>Rerun the antimalware scan.</li>
+<li>Mount the drive on another system and scan it that way.</li>
+<li>Disable the systems antivirus because it may be causing a false negative.</li>
+<li>The system is not infected and he should move on.</li>
+</ol>
+</li>
+<li id="c03-ex-0012">A recently terminated developer from Jaya's organization has contacted the organization claiming that they left code in an application that they wrote that will delete files and bring the application down if they are not employed by the company. What type of malware is this?
+<ol class="upper-alpha">
+<li>Ransomware</li>
+<li>Extortionware</li>
+<li>A logic bomb</li>
+<li>A Trojan</li>
+</ol>
+</li>
+<li id="c03-ex-0013">Selah wants to ensure that malware is completely removed from a system. What should she do to ensure this?
+<ol class="upper-alpha">
+<li>Run multiple antimalware tools and use them to remove all detections.</li>
+<li>Wipe the drive and reinstall from known good media.</li>
+<li>Use the delete setting in her antimalware software rather than the quarantine setting.</li>
+<li>There is no way to ensure the system is safe and it should be destroyed.</li>
+</ol>
+</li>
+<li id="c03-ex-0014">What is the key difference between a worm and a virus?
+<ol class="upper-alpha">
+<li>What operating system they run on</li>
+<li>How they spread</li>
+<li>What their potential impact is</li>
+<li>The number of infections</li>
+</ol>
+</li>
+<li id="c03-ex-0015">Ben wants to analyze Python code that he believes may be malicious code written by an employee of his organization. What can he do to determine if the code is malicious?
+<ol class="upper-alpha">
+<li>Run a decompiler against it to allow him to read the code</li>
+<li>Open the file using a text editor to review the code</li>
+<li>Test the code using an antivirus tool</li>
+<li>Submit the Python code to a malware testing website</li>
+</ol>
+</li>
+<li id="c03-ex-0016"><span aria-label="67" epub:type="pagebreak" id="Page_67" role="doc-pagebreak"/> Which of the following defenses is most likely to prevent Trojan installation?
+<ol class="upper-alpha">
+<li>Installing patches for known vulnerabilities</li>
+<li>Preventing downloads from application stores</li>
+<li>Preventing the use of USB drives</li>
+<li>Disabling autorun from USB drives</li>
+</ol>
+</li>
+<li id="c03-ex-0017">Jason's security team reports that a recent WordPress vulnerability seems to have been exploited by malware and that their organization's entire WordPress service cluster has been infected. What type of malware is most likely involved if a vulnerability in the software was exploited over the network?
+<ol class="upper-alpha">
+<li>A logic bomb</li>
+<li>A Trojan</li>
+<li>A worm</li>
+<li>A rootkit</li>
+</ol>
+</li>
+<li id="c03-ex-0018">Hui's organization recently purchased new Windows computers from an office supply store. The systems have a number of unwanted programs on them that load at startup that were installed by the manufacturer. What type of software is this?
+<ol class="upper-alpha">
+<li>Viruses</li>
+<li>Trojans</li>
+<li>Spyware</li>
+<li>Bloatware</li>
+</ol>
+</li>
+<li id="c03-ex-0019">What type of malware connects to a command and control system, allowing attackers to manage, control, and update it remotely?
+<ol class="upper-alpha">
+<li>A bot</li>
+<li>A drone</li>
+<li>A vampire</li>
+<li>A worm</li>
+</ol>
+</li>
+<li id="c03-ex-0020">Randy believes that a system that he is responsible for was infected after a user picked up a USB drive and plugged it in. The user claims that they only opened one file on the drive to see who might own it. What type of malware is most likely involved?
+<ol class="upper-alpha">
+<li>A virus</li>
+<li>A worm</li>
+<li>A trojan</li>
+<li>A spyware tool</li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+</section>
+</body>
+</html>

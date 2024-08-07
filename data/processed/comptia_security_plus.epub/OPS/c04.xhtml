@@ -1,0 +1,412 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:svg="http://www.w3.org/2000/svg" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+<head>
+<title>Chapter 4 Social Engineering and Password Attacks</title>
+<link href="WileyTemplate_v5.5.css" rel="stylesheet" type="text/css"/>
+<meta content="urn:uuid:57d469d3-a1d3-48bd-8447-18ce82f57cc2" name="Adept.expected.resource"/>
+</head>
+<body epub:type="bodymatter">
+<section aria-labelledby="c04_1" epub:type="chapter" role="doc-chapter">
+<header>
+<h1 id="c04_1"><span aria-label="69" epub:type="pagebreak" id="Page_69" role="doc-pagebreak"/><span id="c04"/><span class="chapterNumber">Chapter 4</span><br/><span class="chapterTitle">Social Engineering and Password Attacks</span></h1>
+</header>
+<section aria-label="chapter opening"><span id="c04-sec-0001"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p><b>THE COMPTIA SECURITY+ EXAM OBJECTIVES COVERED IN THIS CHAPTER INCLUDE:</b></p>
+<ul class="check1" id="c04-list-0002">
+<li id="c04-li-0002"><b>Domain 2.0: Threats, Vulnerabilities, and Mitigations</b>
+<ul class="square1" id="c04-list-0003">
+<li id="c04-li-0003">2.2. Explain common threat vectors and attack surfaces.
+<ul class="square1">
+<li>Human vectors/social engineering (Phishing, Vishing, Smishing, Misinformation/disinformation, Impersonation, Business email compromise, Pretexting, Watering hole, Brand impersonation, Typosquatting).</li>
+</ul></li>
+<li id="c04-li-0004">2.4. Given a scenario, analyze indicators of malicious activity.
+<ul class="square1" id="c04-list-0004">
+<li id="c04-li-0005">Password attacks (Spraying, Brute force)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c04-para-0001"><span aria-label="70" epub:type="pagebreak" id="Page_70" role="doc-pagebreak"/></p>
+<p id="c04-para-0006">Social engineering techniques focus on the human side of information security. Using social engineering techniques, security professionals and attackers can accomplish a variety of tasks ranging from acquiring information to gaining access to buildings, systems, and networks.</p>
+<p id="c04-para-0007">This chapter explores social engineering techniques and related practices, from phishing to typosquatting. We discuss the principles that underlie social engineering attacks, as well as how modern influence campaigns use social engineering concepts and social media to sway opinions and reactions. Social engineering and phishing attacks often precede password attacks, and later in this chapter you will review password attack methods like brute-force attacks and password spraying.</p>
+</section>
+<section aria-labelledby="head-2-39"><span id="c04-sec-0002"/>
+<h2 id="head-2-39">Social Engineering and Human Vectors</h2>
+<p id="c04-para-0008">Social engineering is the practice of manipulating people through a variety of strategies to accomplish desired actions. Social engineers work to influence their targets to take actions that they might not otherwise have taken.</p>
+<p>A number of key principles are leveraged to successfully social engineer an individual. Although the list of principles and their names vary depending on the source you read, a few of the most common are:</p>
+<ul class="square" id="c04-list-0005">
+<li id="c04-li-0006">Authority, which relies on the fact that most people will obey someone who appears to be in charge or knowledgeable, regardless of whether or not they actually are. A social engineer using the principle of authority may claim to be a manager, a government official, or some other person who would have authority in the situation they are operating in.</li>
+<li id="c04-li-0007">Intimidation relies on scaring or bullying an individual into taking a desired action. The individual who is targeted will feel threatened and respond by doing what the social engineer wants them to do.</li>
+<li id="c04-li-0008">Consensus-based social engineering uses the fact that people tend to want to do what others are doing to persuade them to take an action. A consensus-based social engineering attack might point out that everyone else in a department had already clicked on a link, or might provide fake testimonials about a product making it look safe. Consensus is called “social proof” in some categorization schemes.</li>
+<li id="c04-li-0009"><span aria-label="71" epub:type="pagebreak" id="Page_71" role="doc-pagebreak"/>Scarcity is used for social engineering in scenarios that make something look more desirable because it may be the last one available.</li>
+<li id="c04-li-0010">Familiarity-based attacks rely on you liking the individual or even the organization the individual is claiming to represent.</li>
+<li id="c04-li-0011">Trust, much like familiarity, relies on a connection with the individual they are targeting. Unlike with familiarity, which relies on targets thinking that something is normal and thus familiar, social engineers who use this technique work to build a connection with their targets so that they will take the actions that they want them to take.</li>
+<li id="c04-li-0012">Urgency relies on creating a feeling that the action must be taken quickly due to some reason or reasons.</li>
+</ul>
+<p id="c04-para-0010">You may have noticed that each of these social engineering principles works because it causes the target to react to a situation and that many make the target nervous or worried about a result or scenario. Social engineering relies on human reactions, and we are most vulnerable when we are responding instead of thinking clearly.</p>
+<p id="c04-para-0011">Many, if not most, social engineering efforts in the real world combine multiple principles into a single attack. If a penetration tester calls, claiming to be a senior leader's assistant in another part of your company (thus leading authority and possibly familiarity responses), and then insists that that senior leader has an urgent need (urgency) and informs their target that they could lose their job if they don't do something immediately (intimidation), they are more likely to be successful in many cases than if they only used one principle. A key part of social engineering is understanding the target, how humans react, and how stress reactions can be leveraged to meet a goal.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c04-fea-0001"/>
+<h3 id="head-2-40">Exam Note</h3>
+<section><span id="c04-sec-0003"/>
+<p id="c04-para-0012">The Security+ exam doesn't expect you to be able to categorize attacks based on the principles they rely on, but those principles are extremely helpful as a tool to think about why an attack might succeed and how it can be prevented or limited.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section><span id="c04-sec-0004"/>
+<h3 id="head-3-30">Social Engineering Techniques</h3>
+<p id="c04-para-0013">Social engineering involves more than the principles you just read. There are both technical and nontechnical attacks that leverage those principles to get results that are desired by both attackers and penetration testers. As a security professional, you need to be aware of these techniques, what they involve, and what makes each of them different from the others.</p> <span aria-label="72" epub:type="pagebreak" id="Page_72" role="doc-pagebreak"/>
+<section><span id="c04-sec-0005"/>
+<h4 id="head-4-20">Phishing</h4>
+<p id="c04-para-0014"><i>Phishing</i> is a broad term used to describe the fraudulent acquisition of information, often focused on credentials like usernames and passwords, as well as sensitive personal information like credit card numbers and related data. Phishing is most often done via email, but a wide range of phishing techniques exist, including things like <i>smishing</i>, which is phishing via SMS (text) messages, and <i>vishing</i>, or phishing via telephone.</p>
+<p id="c04-para-0015">Specific terms are also used for specific targeting of phishing attempts. <i>Spear phishing</i> targets specific individuals or groups in an organization in an attempt to gather desired information or access. <i>Whaling</i>, much like spear phishing, targets specific people, but whaling is aimed at senior employees like CEOs and CFOs—“big fish” in the company, thus the term whaling.</p>
+<p id="c04-para-0016">Like most social engineering techniques, one of the most common defenses against phishing of all types is awareness. Teaching staff members about phishing and how to recognize and respond to phishing attacks, and even staging periodic exercises, are all common means of decreasing the risk of successful phishing attacks. Technical means also exist, including filtering that helps prevent phishing using reputation tools, keyword and text pattern matching, and other technical methods of detecting likely phishing emails, calls, or texts.</p>
+</section>
+<section><span id="c04-sec-0006"/>
+<h4 id="head-4-21">Vishing</h4>
+<p id="c04-para-0017"><i>Vishing</i> is phishing accomplished via voice or voicemail messages. Vishing attacks rely on phone calls to social-engineer targets into disclosing personal, financial, or other useful information, or to send funds. Common vishing scams include requests to help a relative or friend in another country, leading to wire fraud; various tax scams, particularly during tax season in the United States; threats of law enforcement action; and requests for a staff member to perform a task for a senior executive.</p>
+<p id="c04-para-0018">Like many social engineering efforts, vishing often relies on a sense of urgency, with an imminent threat or issue that needs to be resolved. Vishers may attempt to acquire personal information, and frequently present themselves as authorities.</p>
+</section>
+<section><span id="c04-sec-0007"/>
+<h4 id="head-4-22">Smishing</h4>
+<p id="c04-para-0019"><i>Smishing</i> relies on text messages as part of the phishing scam. Whereas other scams often rely on targets disclosing information via social engineering, smishing scams frequently attempt to get users to click on a link in a text message. The link may take them to a fake site to capture credentials, may attempt to infect the recipient's phone with malware, may request multifactor authentication (MFA) information like an SMS code, or could target some other information or action.</p>
+<p id="c04-para-0020">Smishing attacks rely on similar pretexts to many other phishing attacks with attempts to build trust or urgency, or to establish authority often included as part of the messages.</p>
+</section>
+<section><span id="c04-sec-0008"/>
+<h4 id="head-4-23">Misinformation and Disinformation</h4>
+<p id="c04-para-0021">As cyberwarfare and traditional warfare have continued to cross over in deeper and more meaningful ways, online influence campaigns—which have traditionally focused on social media, email, and other online-centric mediums—have become common and have <span aria-label="73" epub:type="pagebreak" id="Page_73" role="doc-pagebreak"/>increasingly been used by governments and other groups as part of <i>misinformation</i> and <i>disinformation</i> campaigns. A very visible example was the influence campaigns targeting political campaigns that were a major topic in the U.S. 2016 and 2020 elections, resulting in a growing public awareness of the issue.</p>
+<p id="c04-para-0022">It can be a bit confusing distinguishing between misinformation and disinformation. Remember that misinformation is incorrect information, often resulting from getting facts wrong. Disinformation is incorrect, inaccurate, or outright false information that is intentionally provided to serve an individual or organization's goals.</p>
+<p>Individuals and organizations conduct influence campaigns to turn public opinion in directions of their choosing. Even advertising campaigns can be considered a form of influence campaign, but in general, most influence campaigns in the context of the Security+ exam are associated with disinformation and misinformation campaigns.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c04-para-0024"><img alt="" role="presentation" src="images/note.png"/> Another term you may encounter in this context is “malinformation.” These three types of information are sometimes abbreviated as “MDM” or misinformation, disinformation, and malinformation. CISA provides a guide on them at <code><a href="http://www.cisa.gov/sites/default/files/publications/mdm-incident-response-guide_508.pdf">www.cisa.gov/sites/default/files/publications/mdm-incident-response-guide_508.pdf</a></code>.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>The CISA recommends a five-step “TRUST” process to counter misinformation and disinformation campaigns:</p>
+<ol class="decimal" id="c04-list-0006">
+<li id="c04-li-0013">Tell your story.</li>
+<li id="c04-li-0014">Ready your team.</li>
+<li id="c04-li-0015">Understand and assess MDM.</li>
+<li id="c04-li-0016">Strategize response.</li>
+<li id="c04-li-0017">Track outcomes.</li>
+</ol>
+<p id="c04-para-0026">Misinformation campaigns can appear quickly, and their source can be hard to identify. That means that organizations must monitor for misinformation and be ready to counter them using actions like those described in the TRUST model. The CISA's recommendations for preparedness include assessing the information environment, identifying vulnerabilities, fortifying communication channels, engaging in proactive communications, and developing an incident response plan.</p>
+</section>
+<section><span id="c04-sec-0010"/>
+<h4 id="head-4-24">Impersonation</h4>
+<p id="c04-para-0027">Pretending to be someone else, or <i>impersonation</i>, is a key tool in a social engineer's toolkit, and like all of the other social engineering techniques we have discussed, it can be used for malicious purposes. Each of these techniques combines the willingness of the target or targets to believe the impersonator with the principles of social engineering to create a scenario where the social engineer will get the access, data, or other results they desire.</p>
+<p id="c04-para-0028">Identity fraud, or identity theft, is the use of someone else's identity. Although identity fraud is typically used for financial gain by malicious actors, identity fraud may be used as <span aria-label="74" epub:type="pagebreak" id="Page_74" role="doc-pagebreak"/>part of penetration tests or other security efforts as well. In fact, in some cases impersonation, where you act as if you are someone else, can be a limited form of identity fraud. In other cases, impersonation is less specific, and the social engineer or attacker who uses it may simply pretend to be a delivery driver or an employee of a service provider rather than claiming a specific identity.</p>
+</section>
+<section><span id="c04-sec-0011"/>
+<h4 id="head-4-25">Business Email Compromises</h4>
+<p><i>Business email compromise</i>, often called BEC, relies on using apparently legitimate email addresses to conduct scams and other attacks. Common examples of this include invoice scams, gift card scams, data theft, and account compromise/account access attacks. As with other types of email-focused scams and attacks, there are multiple methods that may be used to create legitimate appearing email, including:</p>
+<ul class="square" id="c04-list-0007">
+<li id="c04-li-0018">Using compromised accounts</li>
+<li id="c04-li-0019">Sending spoofed emails</li>
+<li id="c04-li-0020">Using common fake but similar domain techniques</li>
+<li id="c04-li-0021">Using malware or other tools</li>
+</ul>
+<p>Microsoft provides a detailed writeup on BEC as part of their Security 101 at <code><a href="http://www.microsoft.com/en-us/security/business/security-101/what-is-business-email-compromise-bec">www.microsoft.com/en-us/security/business/security-101/what-is-business-email-compromise-bec</a></code>.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c04-para-0031"><img alt="" role="presentation" src="images/note.png"/> You may sometimes find BEC called EAC, or email account compromise, a less specific term than business email compromise.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c04-para-0032">Mitigation methods for business email compromise commonly involve multifactor authentication, awareness training, and policies that help to support appropriate use and behaviors.</p>
+</section>
+<section><span id="c04-sec-0013"/>
+<h4 id="head-4-26">Pretexting</h4>
+<p id="c04-para-0033"><i>Pretexting</i> is the process of using a made-up scenario to justify why you are approaching an individual. Pretexting is often used as part of impersonation efforts to make the impersonator more believable. An aware target can ask questions or require verification that can help defeat pretexting and impersonation attacks. In many cases, simply making a verification call can defeat such attempts.</p>
+</section>
+<section><span id="c04-sec-0014"/>
+<h4 id="head-4-27">Watering Hole Attacks</h4>
+<p id="c04-para-0034"><i>Watering hole</i> attacks use websites that targets frequent to attack them. These frequently visited sites act like a watering hole for animals and allow the attackers to stage an attack, knowing that the victims will visit the site. Once they know what site their targets will use, attackers can focus on compromising it, either by targeting the site or deploying malware through other means such as an advertising network.</p>
+</section> <span aria-label="75" epub:type="pagebreak" id="Page_75" role="doc-pagebreak"/>
+<section><span id="c04-sec-0015"/>
+<h4 id="head-4-28">Brand Impersonation</h4>
+<p id="c04-para-0035">Another type of phishing attack is <i>brand impersonation</i> or brand spoofing. This common form of attack uses emails that are intended to appear to be from a legitimate brand, relying on name recognition and even using email templates used by the brand itself.</p>
+<p id="c04-para-0036">Brand impersonation is often used in attempts to get users to log into their existing accounts, particularly for stores and banks. They may also request payment, gather passwords or other sensitive information, or may simply have malware attached with instructions to access a file or run an executable.</p>
+<p id="c04-para-0037">As with scam email of all sorts the quality of brand impersonation email varies from email that is indistinguishable from legitimate messages to poorly constructed scams like the PayPal scam shown in <a href="#c04-fig-0001" id="R_c04-fig-0001">Figure 4.1</a>.</p>
+<figure> <img alt="A snapshot of brand impersonation email. The text reads Congratulations, A balance of 1000 dollars, a PayPal gift card is waiting for you. This transaction may only appear on your account after validating your info." class="center" src="images/c04f001.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c04-fig-0001" id="c04-fig-0001" role="doc-backlink"><b>FIGURE 4.1</b></a></span> Brand impersonation email</p>
+</figcaption>
+</figure>
+</section>
+<section><span id="c04-sec-0016"/>
+<h4 id="head-4-29">Typosquatting</h4>
+<p>Typosquatters use misspelled and slightly off but similar to the legitimate site URLs to conduct <i>typosquatting</i> attacks. Typosquatters rely on the fact that people will mistype URLs and end up on their sites, thus driving ad traffic or even sometimes using the typo-based website to drive sales of similar but not legitimate products.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c04-para-0039"><img alt="" role="presentation" src="images/note.png"/> Typosquatting is hard to prevent, but organizations often register the most common typos for their domains if they're concerned about it. You can see an example of this by visiting <code><a href="http://amason.com">amason.com</a></code>, which redirects to <code><a href="http://amazon.com">Amazon.com</a></code>!</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c04-para-0040">A related form of attack is known as <i>pharming</i>. Unlike typosquatting, pharming relies either on changing a system's hosts file (which is the first reference a system checks when <span aria-label="76" epub:type="pagebreak" id="Page_76" role="doc-pagebreak"/>looking up DNS entries), or on active malware on the system that changes the system's DNS servers. A successful pharming attack using a hosts-file-based technique will modify a host’s file and redirect unsuspecting victims to a lookalike site.</p>
+</section>
+</section>
+</section>
+<section aria-labelledby="head-2-41"><span id="c04-sec-0018"/>
+<h2 id="head-2-41">Password Attacks</h2>
+<p id="c04-para-0041">Although social engineering is often used to acquire passwords or access, there are other ways to attack passwords as well. Everything from trying password after password in a brute-force attack, to technical attacks that leverage precomputed password hashes in lookup systems to check acquired password hashes against a known database, can help attackers and penetration testers attack passwords.</p>
+<p>The Security+ exam focuses on two password-related attacks:</p>
+<ul class="square" id="c04-list-0008">
+<li id="c04-li-0022"><i>Brute-force attacks</i>, which iterate through passwords until they find one that works. Actual brute-force methods can be more complex than just using a list of passwords and often involve word lists that use common passwords, words specifically picked as likely to be used by the target, and modification rules to help account for complexity rules. Regardless of how elegant or well thought out their input is, in the end, brute force is simply a process that involves trying different variations until it succeeds.</li>
+<li id="c04-li-0023"><i>Password spraying attacks</i> are a form of brute-force attack that attempts to use a single password or small set of passwords against many accounts. This approach can be particularly effective if you know that a target uses a specific default password or a set of passwords. For example, if you were going to attack a sports team's fan website, common chants for the fans, names of well-known players, and other common terms related to the team might be good candidates for a password spraying attack.</li>
+<li id="c04-li-0024"><i>Dictionary attacks</i> are yet another form of brute-force attack that uses a list of words for their attempts. Commonly available brute-force dictionaries exist, and tools like John the Ripper, a popular open source password cracking tool, have word lists (dictionaries) built in. Many penetration testers build their own custom dictionaries as part of their intelligence gathering and reconnaissance processes.</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c04-fea-0002"/>
+<h3 id="head-2-42">Exam Note</h3>
+<section><span id="c04-sec-0019"/>
+<p id="c04-para-0043">The SY0-701 Exam Outline focuses on just two types of password attacks: spraying and brute force. Dictionary attacks and the use of rainbow tables remain common as well, and help provide context for password attacks in general. We've included them here so you'll have the full picture—they just shouldn't show up on the exam.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p><span aria-label="77" epub:type="pagebreak" id="Page_77" role="doc-pagebreak"/>Regardless of the password attack mechanism, an important differentiator between attack methods is whether they occur online, and thus against a live system that may have defenses in place, or if they are offline against a compromised or captured password store. If you can capture hashed passwords from a password store, tools like <i>rainbow tables</i> can be very useful and will typically be far faster than brute-force attacks. Rainbow tables are an easily searchable database of precomputed hashes using the same hashing methodology as the captured password file. Thus, if you captured a set of passwords that were hashed using MD5 you could use a pre-computed hash rainbow table to allow you to simply look up the hashed passwords.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c04-para-0045"><img alt="" role="presentation" src="images/note.png"/> If you're not familiar with the concept of hashing, now is a good time to review it. A <i>hash</i> is a one-way cryptographic function that takes an input and generates a unique and repeatable output from that input. No two inputs should ever generate the same hash, and a hash should not be reversible so that the original input can be derived from the hash. Of course hash collisions do occur, which leads to new hashing algorithms being designed and used. Rainbow tables don't allow you to break hashes, but they brute-force the solution by using computational power to create a database where hashes and the value that created them can be looked up. You still aren't reversing the hash, but you are able to figure out what plain text leads to that hash being created!</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c04-para-0046">If you have captured a password file, you can also use a password cracker against it. Password crackers like John the Ripper, shown in <a href="#c04-fig-0002" id="R_c04-fig-0002">Figure 4.2</a>, attempt to crack passwords by trying brute-force and dictionary attacks against a variety of common password storage formats.</p>
+<figure> <img alt="A snapshot of a format. It has nine steps. The first and last four are as follows. 1. root at demo colon hashtag john format equals raw M D 5 hash underscore example dot hash. 6. S P L O P. 7. S O A R A N. 8. S W 1 2 8 4. 9. S G R F 1." class="center" src="images/c04f002.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c04-fig-0002" id="c04-fig-0002" role="doc-backlink"><b>FIGURE 4.2</b></a></span> John the Ripper</p>
+</figcaption>
+</figure>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c04-para-0048"><img alt="" role="presentation" src="images/tip.png"/> Learning how to use tools like John the Ripper can help you understand both password cracking and how passwords are stored. You can find a variety of exercises at <code><a href="http://openwall.info/wiki/john/tutorials">https://openwall.info/wiki/john/tutorials</a></code> that will get you started.</p> <span aria-label="78" epub:type="pagebreak" id="Page_78" role="doc-pagebreak"/>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c04-para-0049">Password cracking tools like John the Ripper can also be used as password assessment tools. Some organizations continue to periodically test for weak and easily cracked passwords by using a password cracker on their password stores. In many cases, use of MFA paired with password complexity requirements have largely replaced this assessment process, and that trend is likely to continue.</p>
+<p>Of course, not every system is well maintained, and a penetration tester or attacker's favorite opportunity is finding plain-text or unencrypted passwords to acquire. Without some form of protection, passwords that are just maintained in a list can be easily acquired and reused by even the most casual of attackers. As noted earlier, using a strong password hashing mechanism, as well as techniques like using a salt and a pepper (additional data added to passwords before they are hashed, making it harder to use tools like rainbow tables) can help protect passwords. In fact, best practices for password storage don't rely on encryption; they rely on passwords never being stored and instead using a well-constructed password hash to verify passwords at login.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c04-para-0051"><img alt="" role="presentation" src="images/tip.png"/> If you want to learn more about secure password storage, OWASP maintains a great cheat sheet at <code><a href="http://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html</a></code>.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section aria-labelledby="head-2-43"><span id="c04-sec-0023"/>
+<h2 id="head-2-43">Summary</h2>
+<p id="c04-para-0052">Social engineering techniques focus on human reactions and psychology to gather information and to perform attacks against individuals and organizations. A broad range of human vectors are used to accomplish attackers' goals.</p>
+<p id="c04-para-0053">Security professionals need to be aware of how social engineering is leveraged in attacks like phishing, impersonation, misinformation and disinformation, and other efforts. Each technique has its own distinctive set of social engineering techniques and impacts that help make it unique. Test takers need to be familiar with phishing, vishing, business email compromise, pretexting, watering hole, brand impersonation, and typosquatting attacks as well as the broad categories of phishing and impersonation, and misinformation.</p>
+<p id="c04-para-0054">Test takers need to be aware of brute-force password attacks that try repeatedly using a variety of usernames and passwords until they succeed. You'll also need to know about spraying, a type of brute-force attack that uses a list of usernames and common passwords to try to gain access to accounts.</p>
+</section>
+<section aria-labelledby="head-2-44"><span id="c04-sec-0024"/>
+<h2 id="head-2-44">Exam Essentials</h2>
+
+<p id="c04-li-0025"><b>Many techniques are used for social engineering.</b> Many adversarial and security techniques rely on social engineering. Phishing and its related techniques of smishing and vishing seek to gain information using social engineering techniques. Misinformation and disinformation <span aria-label="79" epub:type="pagebreak" id="Page_79" role="doc-pagebreak"/>campaigns are used to change opinions and to shift narratives. Malicious actors will impersonate whomever they need to acquire information, to gain access or credentials, or to persuade individuals to take action. Pretexting is often used with impersonation to provide a believable reason for the action or request. Business email compromise and brand impersonation are both used to make malicious emails and other communications appear legitimate and thus more likely to fool targets into taking desired action. Watering hole attacks focus on sites that target frequently visit, while typosquatters rely on users who make typos while entering URLs.</p>
+<p id="c04-li-0026"><b>Passwords can be acquired and cracked in many ways.</b> Password attacks can be conducted both online against live systems and offline using captured password stores. Brute-force attacks like spraying and dictionary attacks as well as password cracking can recover passwords in many circumstances. Unencrypted or plain-text passwords and improper or unsecure storage methods like the use of MD5 hashes make attacks even easier for attackers who can access them.</p>
+
+</section> <span aria-label="80" epub:type="pagebreak" id="Page_80" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-45"><span id="c04-sec-0025"/>
+<h2 id="head-2-45">Review Questions</h2>
+<section><span id="c04-exsec-0001"/>
+<ol class="decimal">
+<li id="c04-ex-0001">Joseph receives an email notifying him that he needs to change his password due to a recent account issue. He notices that the email links him to a website using the domain <code><a href="http://amaz0n.com">amaz0n.com</a></code>. What type of attack should he describe this as?
+<ol class="upper-alpha">
+<li>Typosquatting</li>
+<li>Phishing</li>
+<li>Smishing</li>
+<li>A watering hole attack</li>
+</ol>
+</li>
+<li id="c04-ex-0002">When you combine phishing with voicemail, it is known as:
+<ol class="upper-alpha">
+<li>Whaling</li>
+<li>Spoofing</li>
+<li>Spooning</li>
+<li>Vishing</li>
+</ol>
+</li>
+<li id="c04-ex-0003">While reviewing her logs, Michele notices that a remote system has attempted to log into her server via SSH using the username admin and a variety of passwords like “password” and “ninja.” What type of attack has Michele noticed?
+<ol class="upper-alpha">
+<li>A brute-force attack</li>
+<li>Shoulder surfing</li>
+<li>An on-path attack</li>
+<li>Pretexting</li>
+</ol>
+</li>
+<li id="c04-ex-0004">Joanna wants to detect password spraying attacks. What type of rule should she deploy through her security systems?
+<ol class="upper-alpha">
+<li>Match attempts to log into many systems with the same username and password.</li>
+<li>Match multiple attempts to log into the same user account using different passwords.</li>
+<li>Match repeated use of the same password during failed login attempts for multiple usernames.</li>
+<li>Match all attempts to use passwords with slight changes for the same account.</li>
+</ol>
+</li>
+<li id="c04-ex-0005">One of the staff at Susan's organization has reported that a critical vendor has contacted them about an unpaid invoice. After Susan investigates, she discovers that the invoice was sent from an email account that was not typically a contact and that the invoice requested payment to a PayPal account. What type of social engineering attack has Susan most likely discovered?
+<ol class="upper-alpha">
+<li>Smishing</li>
+<li>Business email compromise</li>
+<li>Disinformation</li>
+<li>Typosquatting</li>
+</ol>
+</li>
+<li id="c04-ex-0006"><span aria-label="81" epub:type="pagebreak" id="Page_81" role="doc-pagebreak"/> Selah infects the ads on a website that users from her target company frequently visit with malware as part of her penetration test. What technique has she used?
+<ol class="upper-alpha">
+<li>A watering hole attack</li>
+<li>Vishing</li>
+<li>Whaling</li>
+<li>Typosquatting</li>
+</ol>
+</li>
+<li id="c04-ex-0007">Ben wants to determine if brute-force password attacks are being used against his company. What log information is least likely to be useful when working to detect brute-force attacks?
+<ol class="upper-alpha">
+<li>Source IP address or hostname</li>
+<li>Failed login logs</li>
+<li>The password that was used for each attempt</li>
+<li>The geographic location of system being logged into</li>
+</ol>
+</li>
+<li id="c04-ex-0008">Melissa receives a call and the caller informs her a senior manager in her organization needs her to buy gift cards for an event that starts in an hour. The caller says that the senior leader forgot to get the cards, and that the event is critical to her organization. Melissa buys the cards and sends them to the Gmail address the caller says that the senior leader needs them sent to. What type of attack has Melissa fallen for?
+<ol class="upper-alpha">
+<li>Phishing</li>
+<li>Pretexting</li>
+<li>Business email compromise</li>
+<li>Carding</li>
+</ol>
+</li>
+<li id="c04-ex-0009">Alaina wants to determine if a password spraying attack was used against her organization. Which of the following indicators would be most useful as part of her investigation?
+<ol class="upper-alpha">
+<li>The time the login attempts happened</li>
+<li>The passwords used for failed attempts</li>
+<li>The source IP address of the attempts</li>
+<li>The number of failed attempts for each user</li>
+</ol>
+</li>
+<li id="c04-ex-0010">Which of the following human vectors is primarily associated with nation-state actors?
+<ol class="upper-alpha">
+<li>Misinformation campaigns</li>
+<li>Watering hole attacks</li>
+<li>Business email compromise</li>
+<li>Password spraying</li>
+</ol>
+</li>
+<li id="c04-ex-0011">Nicole accidentally types <code><a href="http://www.smazon.com">www.smazon.com</a></code> into her browser and discovers that she is directed to a different site loaded with ads and pop-ups. Which of the following is the most accurate description of the attack she has experienced?
+<ol class="upper-alpha">
+<li>DNS hijacking</li>
+<li>Pharming</li>
+<li>Typosquatting</li>
+<li>Hosts file compromise</li>
+</ol>
+</li>
+<li id="c04-ex-0012"><span aria-label="82" epub:type="pagebreak" id="Page_82" role="doc-pagebreak"/> Devon is a penetration tester and sets up malicious tools on his target organization's primary internal website. What type of attack is he conducting?
+<ol class="upper-alpha">
+<li>A misinformation campaign</li>
+<li>A watering hole attack</li>
+<li>A typosquatting attack</li>
+<li>A disinformation campaign</li>
+</ol>
+</li>
+<li id="c04-ex-0013">Phishing emails sent pretending to be from a company that recipients are familiar with and likely to respond to is what type of attack?
+<ol class="upper-alpha">
+<li>Phishing</li>
+<li>Pharming</li>
+<li>Brand impersonation</li>
+<li>Pretexting</li>
+</ol>
+</li>
+<li id="c04-ex-0014">When a caller was recently directed to Amanda, who is a junior IT employee at her company, the caller informed her that they were the head of IT for her organization and that she needed to immediately disable the organization's firewall. After Amanda made the change, she discovered that the caller was not the head of IT, and that they were actually a penetration tester hired by her company. What social engineering attack best describes this?
+<ol class="upper-alpha">
+<li>Smishing</li>
+<li>Pretexting</li>
+<li>Impersonation</li>
+<li>Vishing</li>
+</ol>
+</li>
+<li id="c04-ex-0015">Fred is concerned about text message–based attacks. Which of the following attacks relies on text messages as its primary focus?
+<ol class="upper-alpha">
+<li>Impersonation</li>
+<li>Watering hole attacks</li>
+<li>Smishing</li>
+<li>Business email compromise</li>
+</ol>
+</li>
+<li id="c04-ex-0016">Sharif notices that his authentication logs have many different usernames showing failed logins with the same password. What type of attack has he discovered?
+<ol class="upper-alpha">
+<li>Credential harvesting</li>
+<li>Impersonation</li>
+<li>BEC</li>
+<li>Spraying</li>
+</ol>
+</li>
+<li id="c04-ex-0017">Naomi receives a report of smishing. What type of attack should she be looking for?
+<ol class="upper-alpha">
+<li>Compressed files in phishing</li>
+<li>Text message–based phishing</li>
+<li>Voicemail-based phishing</li>
+<li>Server-based phishing</li>
+</ol>
+</li>
+<li id="c04-ex-0018"><span aria-label="83" epub:type="pagebreak" id="Page_83" role="doc-pagebreak"/> Jack's organization wants to prevent typosquatting. What option should he select to address this issue?
+<ol class="upper-alpha">
+<li>Copyright the domain name</li>
+<li>Purchase the most common typos for his organization's domain</li>
+<li>Trademark the domain name</li>
+<li>Disable typo resolution for the domain</li>
+</ol>
+</li>
+<li id="c04-ex-0019">Gwyne's company has been contacted by customers asking about a new social media account operating under the company's brand. The social media account is advertising cryptocurrency, which Gwyne's organization does not sell or work with. What type of attack best describes what Gwyne's organization has encountered?
+<ol class="upper-alpha">
+<li>Impersonation</li>
+<li>Brand impersonation</li>
+<li>Mis-branding</li>
+<li>Crypto-phishing</li>
+</ol>
+</li>
+<li id="c04-ex-0020">Nation-state-driven social media campaigns about the trustworthiness of the U.S. election in 2016 are an example of what type of social engineering?
+<ol class="upper-alpha">
+<li>Smishing</li>
+<li>Pretexting</li>
+<li>Disinformation</li>
+<li>Spraying</li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+</section>
+</body>
+</html>

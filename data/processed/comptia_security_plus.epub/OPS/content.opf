@@ -1,0 +1,290 @@
+<package xmlns="http://www.idpf.org/2007/opf" xmlns:epub="http://www.idpf.org/2007/ops" unique-identifier="isbn-id" version="3.0" xml:lang="en">
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+<dc:title id="t1">CompTIA Security+ Study Guide with over 500 Practice Test Questions</dc:title>
+<meta property="title-type" refines="#t1">main</meta>
+<meta property="display-seq" refines="#t1">1</meta>
+<dc:title id="t2">Ninth Edition</dc:title>
+<meta property="title-type" refines="#t2">edition</meta>
+<meta property="display-seq" refines="#t2">2</meta>
+<dc:title id="t3">Exam SY0-701</dc:title>
+<meta property="title-type" refines="#t3">subtitle</meta>
+<meta property="display-seq" refines="#t3">3</meta>
+<dc:creator id="creator1">Mike Chapple</dc:creator>
+<meta id="role1" property="role" refines="#creator1" scheme="marc:relators">aut</meta>
+<meta property="file-as" refines="#creator1">Chapple, Mike</meta>
+<meta property="display-seq" refines="#creator1">1</meta>
+<dc:creator id="creator2">David Seidl</dc:creator>
+<meta id="role2" property="role" refines="#creator2" scheme="marc:relators">aut</meta>
+<meta property="file-as" refines="#creator2">Seidl, David</meta>
+<meta property="display-seq" refines="#creator2">2</meta>
+<dc:language>en-US</dc:language>
+<meta property="dcterms:publisher">John Wiley &amp; Sons</meta>
+<dc:identifier id="isbn-id">urn:isbn:9781394211425</dc:identifier>
+<meta property="identifier-type" refines="#isbn-id" scheme="onix:codelist5">15</meta>
+<meta property="source-of" refines="#src-id">pagination</meta>
+<dc:source id="src-id">urn:isbn:9781394211418</dc:source>
+<meta property="identifier-type" refines="#src-id" scheme="onix:codelist5">15</meta>
+<meta content="cover-image" name="cover"/>
+<meta property="dcterms:modified">2023-10-24T20:00:52Z</meta>
+<dc:date>2023-12-07T00:00:00Z</dc:date>
+<meta property="schema:accessibilitySummary">This publication contains well-structured HTML with page mapping and alt text. There are no extended descriptions of images. There is no MathML, and math is captured as images.</meta>
+<meta property="schema:accessMode">textual</meta>
+<meta property="schema:accessMode">visual</meta>
+<meta property="schema:accessModeSufficient">textual</meta>
+<meta property="schema:accessModeSufficient">visual</meta>
+<meta property="schema:accessibilityFeature">structuralNavigation</meta>
+<meta property="schema:accessibilityFeature">alternativeText</meta>
+<meta property="schema:accessibilityFeature">printPageNumbers</meta>
+<meta property="schema:accessibilityFeature">displayTransformability</meta>
+<meta property="schema:accessibilityFeature">readingOrder</meta>
+<meta property="schema:accessibilityFeature">index</meta>
+<meta property="schema:accessibilityFeature">tableOfContents</meta>
+<meta property="schema:accessibilityHazard">none</meta>
+<description xmlns="http://purl.org/dc/elements/1.1/">&lt;p&gt;&lt;b&gt;Discover key exam objectives and crucial cybersecurity concepts for the CompTIA Security+ SY0-701 exam, along with an online test bank with hundreds of practice questions and flashcards&lt;/b&gt;&lt;/p&gt; &lt;p&gt;In the newly revised ninth edition of &lt;i&gt;CompTIA Security+ Study Guide: Exam SY0-701&lt;/i&gt;, veteran cybersecurity professionals and educators Mike Chapple and David Seidl deliver easy-to-follow coverage of the security fundamentals tested by the challenging CompTIA SY0-701 exam. You'll explore general security concepts, threats, vulnerabilities, mitigations, security architecture and operations, as well as security program management and oversight.&lt;/p&gt; &lt;p&gt;You'll get access to the information you need to start a new career—or advance an existing one—in cybersecurity, with efficient and accurate content. You'll also find:&lt;/p&gt; &lt;li&gt;Practice exams that get you ready to succeed on your first try at the real thing and help you conquer test anxiety&lt;/li&gt; &lt;li&gt;Hundreds of review questions that...</description>
+<publisher xmlns="http://purl.org/dc/elements/1.1/">Wiley</publisher>
+</metadata>
+<manifest>
+<item href="images/9781394211425.jpg" id="cover-image" media-type="image/jpeg" properties="cover-image"/>
+<item href="images/ad01.png" id="Aad01" media-type="image/png"/>
+<item href="images/bapp01uf001.png" id="Abapp01uf001" media-type="image/png"/>
+<item href="images/c01f001.png" id="Ac01f001" media-type="image/png"/>
+<item href="images/c01f002.png" id="Ac01f002" media-type="image/png"/>
+<item href="images/c01uf001.png" id="Ac01uf001" media-type="image/png"/>
+<item href="images/c01uf002.png" id="Ac01uf002" media-type="image/png"/>
+<item href="images/c02f001.png" id="Ac02f001" media-type="image/png"/>
+<item href="images/c02f002.png" id="Ac02f002" media-type="image/png"/>
+<item href="images/c02f003.png" id="Ac02f003" media-type="image/png"/>
+<item href="images/c02f004.png" id="Ac02f004" media-type="image/png"/>
+<item href="images/c03f001.png" id="Ac03f001" media-type="image/png"/>
+<item href="images/c03f002.png" id="Ac03f002" media-type="image/png"/>
+<item href="images/c04f001.png" id="Ac04f001" media-type="image/png"/>
+<item href="images/c04f002.png" id="Ac04f002" media-type="image/png"/>
+<item href="images/c05-disp-0001.png" id="Ac05-disp-0001" media-type="image/png"/>
+<item href="images/c05-disp-0002.png" id="Ac05-disp-0002" media-type="image/png"/>
+<item href="images/c05-disp-0003.png" id="Ac05-disp-0003" media-type="image/png"/>
+<item href="images/c05-disp-0004.png" id="Ac05-disp-0004" media-type="image/png"/>
+<item href="images/c05-disp-0005.png" id="Ac05-disp-0005" media-type="image/png"/>
+<item href="images/c05-disp-0006.png" id="Ac05-disp-0006" media-type="image/png"/>
+<item href="images/c05-disp-0007.png" id="Ac05-disp-0007" media-type="image/png"/>
+<item href="images/c05-disp-0008.png" id="Ac05-disp-0008" media-type="image/png"/>
+<item href="images/c05-disp-0009.png" id="Ac05-disp-0009" media-type="image/png"/>
+<item href="images/c05-disp-0010.png" id="Ac05-disp-0010" media-type="image/png"/>
+<item href="images/c05-disp-0011.png" id="Ac05-disp-0011" media-type="image/png"/>
+<item href="images/c05-disp-0012.png" id="Ac05-disp-0012" media-type="image/png"/>
+<item href="images/c05f001.png" id="Ac05f001" media-type="image/png"/>
+<item href="images/c05f002.png" id="Ac05f002" media-type="image/png"/>
+<item href="images/c05f003.png" id="Ac05f003" media-type="image/png"/>
+<item href="images/c05f004.png" id="Ac05f004" media-type="image/png"/>
+<item href="images/c05f005.png" id="Ac05f005" media-type="image/png"/>
+<item href="images/c05f006.png" id="Ac05f006" media-type="image/png"/>
+<item href="images/c05f007.png" id="Ac05f007" media-type="image/png"/>
+<item href="images/c05f008.png" id="Ac05f008" media-type="image/png"/>
+<item href="images/c05f009.png" id="Ac05f009" media-type="image/png"/>
+<item href="images/c05f010.png" id="Ac05f010" media-type="image/png"/>
+<item href="images/c05f011.png" id="Ac05f011" media-type="image/png"/>
+<item href="images/c05f012.png" id="Ac05f012" media-type="image/png"/>
+<item href="images/c05f013.png" id="Ac05f013" media-type="image/png"/>
+<item href="images/c05f014.png" id="Ac05f014" media-type="image/png"/>
+<item href="images/c05f015.png" id="Ac05f015" media-type="image/png"/>
+<item href="images/c05f016.png" id="Ac05f016" media-type="image/png"/>
+<item href="images/c05f017.png" id="Ac05f017" media-type="image/png"/>
+<item href="images/c05f018.png" id="Ac05f018" media-type="image/png"/>
+<item href="images/c05uf001.png" id="Ac05uf001" media-type="image/png"/>
+<item href="images/c06f001.png" id="Ac06f001" media-type="image/png"/>
+<item href="images/c06f002.png" id="Ac06f002" media-type="image/png"/>
+<item href="images/c06f003.png" id="Ac06f003" media-type="image/png"/>
+<item href="images/c06f004.png" id="Ac06f004" media-type="image/png"/>
+<item href="images/c06f005.png" id="Ac06f005" media-type="image/png"/>
+<item href="images/c06f006.png" id="Ac06f006" media-type="image/png"/>
+<item href="images/c06f007.png" id="Ac06f007" media-type="image/png"/>
+<item href="images/c06f008.png" id="Ac06f008" media-type="image/png"/>
+<item href="images/c06f009.png" id="Ac06f009" media-type="image/png"/>
+<item href="images/c06f010.png" id="Ac06f010" media-type="image/png"/>
+<item href="images/c06f011.png" id="Ac06f011" media-type="image/png"/>
+<item href="images/c06f012.png" id="Ac06f012" media-type="image/png"/>
+<item href="images/c06f013.png" id="Ac06f013" media-type="image/png"/>
+<item href="images/c06f014.png" id="Ac06f014" media-type="image/png"/>
+<item href="images/c06f015.png" id="Ac06f015" media-type="image/png"/>
+<item href="images/c07-disp-0001.png" id="Ac07-disp-0001" media-type="image/png"/>
+<item href="images/c07-disp-0002.png" id="Ac07-disp-0002" media-type="image/png"/>
+<item href="images/c07f001.png" id="Ac07f001" media-type="image/png"/>
+<item href="images/c07f002.png" id="Ac07f002" media-type="image/png"/>
+<item href="images/c07f003.png" id="Ac07f003" media-type="image/png"/>
+<item href="images/c07f004.png" id="Ac07f004" media-type="image/png"/>
+<item href="images/c07f005.png" id="Ac07f005" media-type="image/png"/>
+<item href="images/c07f006.png" id="Ac07f006" media-type="image/png"/>
+<item href="images/c07f007.png" id="Ac07f007" media-type="image/png"/>
+<item href="images/c07f008.png" id="Ac07f008" media-type="image/png"/>
+<item href="images/c08f001.png" id="Ac08f001" media-type="image/png"/>
+<item href="images/c08f002.png" id="Ac08f002" media-type="image/png"/>
+<item href="images/c08f003.png" id="Ac08f003" media-type="image/png"/>
+<item href="images/c08f004.png" id="Ac08f004" media-type="image/png"/>
+<item href="images/c08f005.png" id="Ac08f005" media-type="image/png"/>
+<item href="images/c08f006.png" id="Ac08f006" media-type="image/png"/>
+<item href="images/c08f007.png" id="Ac08f007" media-type="image/png"/>
+<item href="images/c08f008.png" id="Ac08f008" media-type="image/png"/>
+<item href="images/c08f009.png" id="Ac08f009" media-type="image/png"/>
+<item href="images/c08f010.png" id="Ac08f010" media-type="image/png"/>
+<item href="images/c08f011.png" id="Ac08f011" media-type="image/png"/>
+<item href="images/c09f001.png" id="Ac09f001" media-type="image/png"/>
+<item href="images/c09f002.png" id="Ac09f002" media-type="image/png"/>
+<item href="images/c09uf001.png" id="Ac09uf001" media-type="image/png"/>
+<item href="images/c10f001.png" id="Ac10f001" media-type="image/png"/>
+<item href="images/c10f002.png" id="Ac10f002" media-type="image/png"/>
+<item href="images/c10f003.png" id="Ac10f003" media-type="image/png"/>
+<item href="images/c10f004.png" id="Ac10f004" media-type="image/png"/>
+<item href="images/c10f005.png" id="Ac10f005" media-type="image/png"/>
+<item href="images/c10f006.png" id="Ac10f006" media-type="image/png"/>
+<item href="images/c10f007.png" id="Ac10f007" media-type="image/png"/>
+<item href="images/c10f008.png" id="Ac10f008" media-type="image/png"/>
+<item href="images/c10f009.png" id="Ac10f009" media-type="image/png"/>
+<item href="images/c10f010.png" id="Ac10f010" media-type="image/png"/>
+<item href="images/c10f011.png" id="Ac10f011" media-type="image/png"/>
+<item href="images/c10f012.png" id="Ac10f012" media-type="image/png"/>
+<item href="images/c10f013.png" id="Ac10f013" media-type="image/png"/>
+<item href="images/c10f014.png" id="Ac10f014" media-type="image/png"/>
+<item href="images/c10f015.png" id="Ac10f015" media-type="image/png"/>
+<item href="images/c10f016.png" id="Ac10f016" media-type="image/png"/>
+<item href="images/c10f017.png" id="Ac10f017" media-type="image/png"/>
+<item href="images/c10f018.png" id="Ac10f018" media-type="image/png"/>
+<item href="images/c10f019.png" id="Ac10f019" media-type="image/png"/>
+<item href="images/c10f020.png" id="Ac10f020" media-type="image/png"/>
+<item href="images/c11f001.png" id="Ac11f001" media-type="image/png"/>
+<item href="images/c11f002.png" id="Ac11f002" media-type="image/png"/>
+<item href="images/c11f003.png" id="Ac11f003" media-type="image/png"/>
+<item href="images/c11f004.png" id="Ac11f004" media-type="image/png"/>
+<item href="images/c11f005.png" id="Ac11f005" media-type="image/png"/>
+<item href="images/c11f006.png" id="Ac11f006" media-type="image/png"/>
+<item href="images/c12f001.png" id="Ac12f001" media-type="image/png"/>
+<item href="images/c12f002.png" id="Ac12f002" media-type="image/png"/>
+<item href="images/c12f003.png" id="Ac12f003" media-type="image/png"/>
+<item href="images/c12f004.png" id="Ac12f004" media-type="image/png"/>
+<item href="images/c12f005.png" id="Ac12f005" media-type="image/png"/>
+<item href="images/c12f006.png" id="Ac12f006" media-type="image/png"/>
+<item href="images/c12uf001.png" id="Ac12uf001" media-type="image/png"/>
+<item href="images/c12uf002.png" id="Ac12uf002" media-type="image/png"/>
+<item href="images/c12uf003.png" id="Ac12uf003" media-type="image/png"/>
+<item href="images/c13f001.png" id="Ac13f001" media-type="image/png"/>
+<item href="images/c13f002.png" id="Ac13f002" media-type="image/png"/>
+<item href="images/c13f003.png" id="Ac13f003" media-type="image/png"/>
+<item href="images/c13f004.png" id="Ac13f004" media-type="image/png"/>
+<item href="images/c14f001.png" id="Ac14f001" media-type="image/png"/>
+<item href="images/c14f002.png" id="Ac14f002" media-type="image/png"/>
+<item href="images/c14f003.png" id="Ac14f003" media-type="image/png"/>
+<item href="images/c14f004.png" id="Ac14f004" media-type="image/png"/>
+<item href="images/c14f005.png" id="Ac14f005" media-type="image/png"/>
+<item href="images/c14f006.png" id="Ac14f006" media-type="image/png"/>
+<item href="images/c14f007.png" id="Ac14f007" media-type="image/png"/>
+<item href="images/c14f008.png" id="Ac14f008" media-type="image/png"/>
+<item href="images/c14uf001.png" id="Ac14uf001" media-type="image/png"/>
+<item href="images/c15f001.png" id="Ac15f001" media-type="image/png"/>
+<item href="images/c15f002.png" id="Ac15f002" media-type="image/png"/>
+<item href="images/c15f003.png" id="Ac15f003" media-type="image/png"/>
+<item href="images/c15f004.png" id="Ac15f004" media-type="image/png"/>
+<item href="images/c15f005.png" id="Ac15f005" media-type="image/png"/>
+<item href="images/c15f006.png" id="Ac15f006" media-type="image/png"/>
+<item href="images/c15f007.png" id="Ac15f007" media-type="image/png"/>
+<item href="images/c15f008.png" id="Ac15f008" media-type="image/png"/>
+<item href="images/c15f009.png" id="Ac15f009" media-type="image/png"/>
+<item href="images/c16f001.png" id="Ac16f001" media-type="image/png"/>
+<item href="images/c16f002.png" id="Ac16f002" media-type="image/png"/>
+<item href="images/c16f003.png" id="Ac16f003" media-type="image/png"/>
+<item href="images/c16f004.png" id="Ac16f004" media-type="image/png"/>
+<item href="images/c16f005.png" id="Ac16f005" media-type="image/png"/>
+<item href="images/c16f006.png" id="Ac16f006" media-type="image/png"/>
+<item href="images/c16f007.png" id="Ac16f007" media-type="image/png"/>
+<item href="images/c16f008.png" id="Ac16f008" media-type="image/png"/>
+<item href="images/c16f009.png" id="Ac16f009" media-type="image/png"/>
+<item href="images/c17-disp-0001.png" id="Ac17-disp-0001" media-type="image/png"/>
+<item href="images/c17f001.png" id="Ac17f001" media-type="image/png"/>
+<item href="images/c17f002.png" id="Ac17f002" media-type="image/png"/>
+<item href="images/c17f003.png" id="Ac17f003" media-type="image/png"/>
+<item href="images/c17f004.png" id="Ac17f004" media-type="image/png"/>
+<item href="images/c17f005.png" id="Ac17f005" media-type="image/png"/>
+<item href="images/c17f006.png" id="Ac17f006" media-type="image/png"/>
+<item href="images/ffirsuf001.png" id="Affirsuf001" media-type="image/png"/>
+<item href="images/fintrouf001.png" id="Afintrouf001" media-type="image/png"/>
+<item href="images/logo.png" id="Alogo" media-type="image/png"/>
+<item href="images/note.png" id="Anote" media-type="image/png"/>
+<item href="images/square1.png" id="Asquare1" media-type="image/png"/>
+<item href="images/tick.png" id="Atick" media-type="image/png"/>
+<item href="images/tip.png" id="Atip" media-type="image/png"/>
+<item href="images/titpg.png" id="Atitpg" media-type="image/png"/>
+<item href="images/warn.png" id="Awarn" media-type="image/png"/>
+<item href="WileyTemplate_v5.5.css" id="Awileytemplate_v5.5.css" media-type="text/css"/>
+<item href="index.css" id="Aindex.css" media-type="text/css"/>
+<item href="cover.xhtml" id="Acover" media-type="application/xhtml+xml"/>
+<item href="navigation.xhtml" id="Anavigation" media-type="application/xhtml+xml" properties="nav"/>
+<item href="f01.xhtml" id="Af01" media-type="application/xhtml+xml"/>
+<item href="f02.xhtml" id="Af02" media-type="application/xhtml+xml"/>
+<item href="f03.xhtml" id="Af03" media-type="application/xhtml+xml"/>
+<item href="f04.xhtml" id="Af04" media-type="application/xhtml+xml"/>
+<item href="f05.xhtml" id="Af05" media-type="application/xhtml+xml"/>
+<item href="f06.xhtml" id="Af06" media-type="application/xhtml+xml"/>
+<item href="f07.xhtml" id="Af07" media-type="application/xhtml+xml"/>
+<item href="f08.xhtml" id="Af08" media-type="application/xhtml+xml"/>
+<item href="f09.xhtml" id="Af09" media-type="application/xhtml+xml"/>
+<item href="c01.xhtml" id="Ac01" media-type="application/xhtml+xml"/>
+<item href="c02.xhtml" id="Ac02" media-type="application/xhtml+xml"/>
+<item href="c03.xhtml" id="Ac03" media-type="application/xhtml+xml"/>
+<item href="c04.xhtml" id="Ac04" media-type="application/xhtml+xml"/>
+<item href="c05.xhtml" id="Ac05" media-type="application/xhtml+xml"/>
+<item href="c06.xhtml" id="Ac06" media-type="application/xhtml+xml"/>
+<item href="c07.xhtml" id="Ac07" media-type="application/xhtml+xml"/>
+<item href="c08.xhtml" id="Ac08" media-type="application/xhtml+xml"/>
+<item href="c09.xhtml" id="Ac09" media-type="application/xhtml+xml"/>
+<item href="c10.xhtml" id="Ac10" media-type="application/xhtml+xml"/>
+<item href="c11.xhtml" id="Ac11" media-type="application/xhtml+xml"/>
+<item href="c12.xhtml" id="Ac12" media-type="application/xhtml+xml"/>
+<item href="c13.xhtml" id="Ac13" media-type="application/xhtml+xml"/>
+<item href="c14.xhtml" id="Ac14" media-type="application/xhtml+xml"/>
+<item href="c15.xhtml" id="Ac15" media-type="application/xhtml+xml"/>
+<item href="c16.xhtml" id="Ac16" media-type="application/xhtml+xml"/>
+<item href="c17.xhtml" id="Ac17" media-type="application/xhtml+xml"/>
+<item href="b01.xhtml" id="Ab01" media-type="application/xhtml+xml"/>
+<item href="b02.xhtml" id="Ab02" media-type="application/xhtml+xml"/>
+<item href="b03.xhtml" id="Ab03" media-type="application/xhtml+xml"/>
+<item href="b04.xhtml" id="Ab04" media-type="application/xhtml+xml"/>
+<item href="eula.xhtml" id="Aeula" media-type="application/xhtml+xml"/>
+<item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml"/>
+</manifest>
+<spine toc="ncx">
+<itemref idref="Acover"/>
+<itemref idref="Anavigation"/>
+<itemref idref="Af01"/>
+<itemref idref="Af02"/>
+<itemref idref="Af03"/>
+<itemref idref="Af04"/>
+<itemref idref="Af05"/>
+<itemref idref="Af06"/>
+<itemref idref="Af07"/>
+<itemref idref="Af08"/>
+<itemref idref="Af09"/>
+<itemref idref="Ac01"/>
+<itemref idref="Ac02"/>
+<itemref idref="Ac03"/>
+<itemref idref="Ac04"/>
+<itemref idref="Ac05"/>
+<itemref idref="Ac06"/>
+<itemref idref="Ac07"/>
+<itemref idref="Ac08"/>
+<itemref idref="Ac09"/>
+<itemref idref="Ac10"/>
+<itemref idref="Ac11"/>
+<itemref idref="Ac12"/>
+<itemref idref="Ac13"/>
+<itemref idref="Ac14"/>
+<itemref idref="Ac15"/>
+<itemref idref="Ac16"/>
+<itemref idref="Ac17"/>
+<itemref idref="Ab01"/>
+<itemref idref="Ab02"/>
+<itemref idref="Ab03"/>
+<itemref idref="Ab04"/>
+<itemref idref="Aeula"/>
+</spine>
+<guide>
+<reference href="cover.xhtml" title="Cover" type="cover"/>
+<reference href="navigation.xhtml" title="Table of Contents" type="toc"/>
+</guide>
+</package>

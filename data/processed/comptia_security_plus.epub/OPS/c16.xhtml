@@ -1,0 +1,1017 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:svg="http://www.w3.org/2000/svg" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+<head>
+<title>Chapter 16 Security Governance and Compliance</title>
+<link href="WileyTemplate_v5.5.css" rel="stylesheet" type="text/css"/>
+<meta content="urn:uuid:57d469d3-a1d3-48bd-8447-18ce82f57cc2" name="Adept.expected.resource"/>
+</head>
+<body epub:type="bodymatter">
+<section aria-labelledby="c16_1" epub:type="chapter" role="doc-chapter">
+<header>
+<h1 id="c16_1"><span aria-label="515" epub:type="pagebreak" id="Page_515" role="doc-pagebreak"/><span id="c16"/><span class="chapterNumber">Chapter 16</span><br/><span class="chapterTitle">Security Governance and Compliance</span></h1>
+</header>
+<section aria-label="chapter opening"><span id="c16-sec-0001"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p><b>THE COMPTIA SECURITY+ EXAM OBJECTIVES COVERED IN THIS CHAPTER INCLUDE:</b></p>
+<ul class="check1" id="c16-list-0002">
+<li id="c16-li-0002"><b>Domain 1.0: General Security Concepts</b>
+<ul class="square1" id="c16-list-0003">
+<li id="c16-li-0003">1.3. Explain the importance of change management processes and the impact to security.
+<ul class="square1" id="c16-list-0004">
+<li id="c16-li-0004">Business processes impacting security operation (Approval process, Ownership, Stakeholders, Impact analysis, Test results, Backout plan, Maintenance window, Standard operating procedure)</li>
+<li id="c16-li-0005">Technical implications (Allow lists/deny lists, Restricted activities, Downtime, Service restart, Application restart, Legacy applications, Dependencies)</li>
+<li id="c16-li-0006">Documentation (Updating diagrams, Updating policies/procedures)</li>
+<li id="c16-li-0007">Version control</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="c16-li-0008"><b>Domain 2.0: Threats, Vulnerabilities, and Mitigations</b>
+<ul class="square1" id="c16-list-0005">
+<li id="c16-li-0009">2.5. Explain the purpose of mitigation techniques used to secure the enterprise.
+<ul class="square1" id="c16-list-0006">
+<li id="c16-li-0010">Least privilege</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="c16-li-0011"><b>Domain 5.0: Security Program Management and Oversight</b>
+<ul class="square1" id="c16-list-0007">
+<li id="c16-li-0012">5.1. Summarize elements of effective security governance.
+<ul class="square1" id="c16-list-0008">
+<li id="c16-li-0013">Guidelines</li>
+<li id="c16-li-0014">Policies (Acceptable use policy (AUP), Information security policies, Business continuity, Disaster recovery, Incident response, Software development lifecycle (SDLC), Change management)</li>
+<li id="c16-li-0015">Standards (Password, Access control, Physical security, Encryption)</li>
+<li id="c16-li-0016"><span aria-label="516" epub:type="pagebreak" id="Page_516" role="doc-pagebreak"/>Procedures (Change management, Onboarding/offboarding, Playbooks)</li>
+<li id="c16-li-0017">External considerations (Regulatory, Legal, Industry, Local/regional, National, Global)</li>
+<li id="c16-li-0018">Monitoring and revision</li>
+<li id="c16-li-0019">Types of governance structures (Boards, Committees, Government entities, Centralized/decentralized)</li>
+</ul>
+</li>
+<li id="c16-li-0020">5.3. Explain the processes associated with third-party risk assessment and management.
+<ul class="square1" id="c16-list-0009">
+<li id="c16-li-0021">Vendor assessment (Penetration testing, Right-to-audit clause, Evidence of internal audits, Independent assessments, Supply chain analysis)</li>
+<li id="c16-li-0022">Vendor selection (Due diligence, Conflict of interest)</li>
+<li id="c16-li-0023">Agreement types (Service-level agreement (SLA), Memorandum of agreement (MOA), Memorandum of understanding (MOU), Master service agreement (MSA), Work order (WO)/Statement of Work (SOW), Non-disclosure agreement (NDA), Business partners agreement (BPA))</li>
+<li id="c16-li-0024">Vendor monitoring</li>
+<li id="c16-li-0025">Questionnaires</li>
+<li id="c16-li-0026">Rules of engagement</li>
+</ul>
+</li>
+<li id="c16-li-0027">5.4. Summarize elements of effective security compliance.
+<ul class="square1" id="c16-list-0010">
+<li id="c16-li-0028">Compliance reporting (Internal, External)</li>
+<li id="c16-li-0029">Consequences of non-compliance (Fines, Sanctions, Reputational damage, Loss of license, Contractual impacts)</li>
+<li id="c16-li-0030">Compliance monitoring (Due diligence/care, Attestation and acknowledgement, Internal and external, Automation)</li>
+</ul>
+</li>
+<li id="c16-li-0031">5.6. Given a scenario, implement security awareness practices.<span aria-label="517" epub:type="pagebreak" id="Page_517" role="doc-pagebreak"/>
+<ul class="square1" id="c16-list-0011">
+<li id="c16-li-0032">Phishing (Campaigns, Recognizing a phishing attempt, Responding to reported suspicious messages)</li>
+<li id="c16-li-0033">Anomalous behavior recognition (Risky, Unexpected, Unintentional)</li>
+<li id="c16-li-0034">User guidance and training (Policy/handbooks, Situational awareness, Insider threat, Password management, Removable media and cables, Social engineering, Operational security, Hybrid/remote work environments)</li>
+<li id="c16-li-0035">Reporting and monitoring (Initial, Recurring)</li>
+<li id="c16-li-0036">Development</li>
+<li id="c16-li-0037">Execution</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul> <span aria-label="518" epub:type="pagebreak" id="Page_518" role="doc-pagebreak"/>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c16-para-0013">Governance structures ensure that organizations achieve their strategic objectives while complying with their obligations. Policy serves as one of the primary governance tools for any cybersecurity program, setting out the principles and rules that guide the execution of security efforts throughout the enterprise. Often, organizations base these policies on best practice frameworks developed by industry groups, such as the National Institute of Standards and Technology (NIST) or the International Organization for Standardization (ISO). In many cases, organizational policies are also influenced and directed by external compliance obligations that regulators impose on the organization. In this chapter, you will learn about good governance practices and the important elements of the cybersecurity policy framework.</p>
+</section>
+<section aria-labelledby="head-2-257"><span id="c16-sec-0002"/>
+<h2 id="head-2-257">Security Governance</h2>
+<p id="c16-para-0014"><i>Governance</i> programs are the sets of procedures and controls put in place to allow an organization to effectively direct its work. Without governance, running a large organization would be virtually impossible. Imagine if thousands of employees throughout the organization each had to make their own determinations about which work was most important, who should carry out each function, and how the organization would conduct its work. The organization would quickly find itself in a state of unmanageable chaos. Governance efforts function at all layers of an organization to coordinate the development and execution of strategic plans. This ensures that every aspect of an organization's work aligns with the organization's strategy and goals.</p>
+<section><span id="c16-sec-0003"/>
+<h3 id="head-3-226">Corporate Governance</h3>
+<p id="c16-para-0015">At the highest levels of the organization, corporate governance programs ensure that the organization sets an appropriate strategic direction, develops a plan to implement that strategy, and then executes its strategic plan. This is done through a hierarchical model, such as the one shown in <a href="#c16-fig-0001" id="R_c16-fig-0001">Figure 16.1</a>, which is the common governance model for publicly traded corporations.</p>
+<p id="c16-para-0017">This approach is designed for use in an environment where the owners are so numerous or unengaged that they are unable to carry out day-to-day oversight of the company. This is the situation where a publicly traded company typically finds itself. The owners of that company's stock own the corporation, but they may number in the thousands or millions <span aria-label="519" epub:type="pagebreak" id="Page_519" role="doc-pagebreak"/>and their membership may change on a daily basis. It would quickly cripple a public corporation if all of its shareholders were required to vote on every action taken by the company. To alleviate this burden, the shareholders of the company conduct regular meetings where they elect a group of individuals to direct the actions of the corporation on their behalf. This group, known as the <i>board of directors</i>, has ultimate authority over the organization as the owners' representatives.</p>
+<p id="c16-para-0018">These directors are typically drawn from the major shareholders and have expertise in corporate governance, perhaps having served as senior corporate executives themselves. Although some members of the board may also be employed as senior leaders within the organization, it is considered a best practice in corporate governance for a majority of the members of the board to be <i>independent directors</i>, meaning that they have no significant relationship with the company other than their board membership. In fact, the major stock exchanges each have requirements about the number of independent directors that a corporation must have to qualify for listing on the exchange.</p>
+<figure> <img alt="A flowchart of a typical corporate governance model. It includes Shareholders, the Board of Directors, the Chief Executive Officer, and the Management Team." class="center" src="images/c16f001.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c16-fig-0001" id="c16-fig-0001" role="doc-backlink"><b>FIGURE 16.1</b></a></span> Typical corporate governance model</p>
+</figcaption>
+</figure>
+<p id="c16-para-0019">Boards typically meet on a fairly infrequent basis, perhaps monthly or quarterly, so it is not practical for a board to dictate the day-to-day operations of the company. Instead, they hire a <i>chief executive officer (CEO)</i> who manages the company's operations. The CEO is hired by the board, may be dismissed by the board, and has their performance reviews and compensation determined by the board.</p>
+<p>Of course, the CEO also can't control every single function of the organization, so they must hire a team of executives, managers, and individual contributors to perform this work. Once again, the flow of governance cascades downward. The shareholder owners of the company delegate authority to run the organization to their elected board of directors. The board then hires and manages the CEO, who then hires and manages other senior executives, who hire and manage middle managers, who hire and manage teams of individual contributors. The size of the management hierarchy depends on the size of the organization and is intended to preserve a reasonable number of direct subordinates for each manager.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c16-para-0021"><img alt="" role="presentation" src="images/note.png"/> The governance model described here is the one used for publicly traded companies. Nonprofit organizations follow a similar model, with the major difference being that the board members are either elected by the membership of the organization or elected in a “self-perpetuating” <span aria-label="520" epub:type="pagebreak" id="Page_520" role="doc-pagebreak"/>model, where current board members vote to elect new board members. Privately owned organizations may follow many different governance models. For example, the sole owner of a corporation may also serve as the CEO or carry out the functions of a board on their own. Alternatively, multiple owners of a corporation may each appoint a number of board members proportional to their ownership stake. There are many possible variations on this model, but the key point is that the owners control the organization either directly or through a board that they control.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c16-sec-0005"/>
+<h3 id="head-3-227">Governance, Risk, and Compliance Programs</h3>
+<p>Organizations carry out the work of governance through the creation and implementation of a <i>governance, risk, and compliance (GRC) program</i>. GRC programs integrate three related tasks:</p>
+<ul class="square" id="c16-list-0012">
+<li id="c16-li-0038"><i>Governance</i> of the organization, as discussed in this chapter</li>
+<li id="c16-li-0039"><i>Risk management</i>, as discussed in <a href="c17.xhtml">Chapter 17</a>, “Risk Management and Privacy”</li>
+<li id="c16-li-0040"><i>Compliance</i>, as discussed later in this chapter</li>
+</ul>
+</section>
+<section><span id="c16-sec-0006"/>
+<h3 id="head-3-228">Information Security Governance</h3>
+<p id="c16-para-0023">Information security governance is a natural extension of corporate governance. The board delegates operational authority to the CEO, who then delegates specific areas of authority to subordinate executives. For example, the CEO might delegate financial authority to the chief financial officer (CFO) and operational authority to the chief operations officer (COO). Similarly, the CEO delegates information security responsibility to the chief information security officer (CISO) or other responsible executive.</p>
+<p id="c16-para-0024">This hierarchical approach to governance helps ensure that information security governance efforts are integrated into corporate governance efforts, ensuring that the organization's information security program supports broader organizational goals and objectives. The CISO and CEO must work together to ensure the proper alignment of the information security program with corporate governance.</p>
+<p id="c16-para-0025">The CISO then works with other peers on the senior management team to design and implement an information security governance framework that guides the activity of the information security function and ensures alignment with the organization's information security strategy. This governance framework may take many different forms. It normally involves the establishment of a management structure for the cybersecurity team that aligns with management approaches used elsewhere in the organization.</p>
+<p id="c16-para-0026">The information security governance framework should also include the mechanisms that the security team will use to enforce security requirements across the organization. This is particularly important because the CISO does not exercise operational control over the entire organization but needs management leverage to ensure the organization meets its <span aria-label="521" epub:type="pagebreak" id="Page_521" role="doc-pagebreak"/>cybersecurity requirements. This is normally done through the creation of policies that apply to the entire organization, as discussed later in this chapter.</p>
+<p id="c16-para-0027">The lines of authority for the cybersecurity function flow through the defined corporate governance mechanisms of the organization. The CISO and other security leaders should use existing reporting and communications channels when available and establish new channels when necessary. They should also include escalation procedures in the event that the cybersecurity team requires management assistance getting traction in other areas of the organization.</p>
+</section>
+<section><span id="c16-sec-0007"/>
+<h3 id="head-3-229">Types of Governance Structures</h3>
+<p>The governance model described in this chapter is the one most commonly used in for-profit businesses, but many organizations have their own unique approaches to security governance. These approaches fit into two major categories:</p>
+<ul class="square" id="c16-list-0013">
+<li id="c16-li-0041"><i>Centralized governance models</i> use a top-down approach where a central authority creates policies and standards, which are then enforced throughout the organization.</li>
+<li id="c16-li-0042"><i>Decentralized governance models</i> use a bottom-up approach, where individual business units are delegated the authority to achieve cybersecurity objectives and then may do so in the manner they see fit.</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c16-fea-0001"/>
+<h3 id="head-2-258">Exam Note</h3>
+<section><span id="c16-sec-0008"/>
+<p id="c16-para-0029">Be able to tell the difference between centralized and decentralized governance models. These topics come directly from the SY0-701 exam objectives!</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c16-para-0030">In addition to using a formal board of directors, governance structures may incorporate a variety of internal committees consisting of subject matter experts (SMEs) and managers. Government entities, such as regulatory agencies, may also play a role in the governance of some organizations. For example, banks may be regulated by the U.S. Treasury Department or similar agencies in other countries.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-259"><span id="c16-sec-0009"/>
+<h2 id="head-2-259">Understanding Policy Documents</h2>
+<p>An organization's <i>information security policy framework</i> contains a series of documents designed to describe the organization's cybersecurity program. The scope and complexity of these documents vary widely, depending on the nature of the organization and its information resources. These frameworks generally include four types of document:<span aria-label="522" epub:type="pagebreak" id="Page_522" role="doc-pagebreak"/></p>
+<ul class="square" id="c16-list-0014">
+<li id="c16-li-0043">Policies</li>
+<li id="c16-li-0044">Standards</li>
+<li id="c16-li-0045">Procedures</li>
+<li id="c16-li-0046">Guidelines</li>
+</ul>
+<p id="c16-para-0032">In the remainder of this section, you'll learn the differences between each of these document types. However, keep in mind that the definitions of these categories vary significantly from organization to organization and it is very common to find the lines between them blurred. Though at first glance that may seem incorrect, it's a natural occurrence as security theory meets the real world. As long as the documents are achieving their desired purpose, there's no harm and no foul.</p>
+<p>As you prepare the documents in your policy framework, you should not only take into account your organization's business objectives but also consider external considerations that may impact your policies. These include:</p>
+<ul class="square" id="c16-list-0015">
+<li id="c16-li-0047">Regulatory and legal requirements that mandate the use of certain controls</li>
+<li id="c16-li-0048">Industry-specific considerations that may alter your approach to information security</li>
+<li id="c16-li-0049">Jurisdiction-specific considerations based on global, national, and/or local/regional issues in the areas where you operate</li>
+</ul>
+<section><span id="c16-sec-0010"/>
+<h3 id="head-3-230">Policies</h3>
+<p><i>Policies</i> are high-level statements of management intent. Compliance with policies is mandatory. An information security policy will generally contain broad statements about cybersecurity objectives, including the following:</p>
+<ul class="square" id="c16-list-0016">
+<li id="c16-li-0050">A statement of the importance of cybersecurity to the organization</li>
+<li id="c16-li-0051">Requirements that all staff and contractors take measures to protect the confidentiality, integrity, and availability of information and information systems</li>
+<li id="c16-li-0052">Statement on the ownership of information created and/or possessed by the organization</li>
+<li id="c16-li-0053">Designation of the CISO or other individual as the executive responsible for cybersecurity issues</li>
+<li id="c16-li-0054">Delegation of authority granting the CISO the ability to create standards, procedures, and guidelines that implement the policy</li>
+</ul>
+<p>In many organizations, the process to create a policy is laborious and requires very high-level approval, often from the CEO. Keeping policy statements at a high level provides the CISO with the flexibility to adapt and change specific security requirements with changes in the business and technology environments. For example, the five-page information security policy at the University of Notre Dame simply states:</p>
+<blockquote>
+<p id="c16-para-0036">The Information Governance Committee will create handling standards for each Highly Sensitive data element. Data stewards may create standards for other data elements under their stewardship. These information handling standards will specify controls to manage risks to University information and related assets based on their classification. All individuals at the University are responsible for complying with these controls.</p><span aria-label="523" epub:type="pagebreak" id="Page_523" role="doc-pagebreak"/>
+</blockquote>
+<p>By way of contrast, the federal government's Centers for Medicare &amp; Medicaid Services (CMS) has a 95-page information security policy. This mammoth document contains incredibly detailed requirements, such as:</p>
+<blockquote>
+<p id="c16-para-0038">A record of all requests for monitoring must be maintained by the CMS CIO along with any other summary results or documentation produced during the period of monitoring. The record must also reflect the scope of the monitoring by documenting search terms and techniques. All information collected from monitoring must be controlled and protected with distribution limited to the individuals identified in the request for monitoring and other individuals specifically designated by the CMS Administrator or CMS CIO as having a specific need to know such information.</p>
+</blockquote>
+<p id="c16-para-0039">The CMS document even goes so far as to include a complex chart describing the many cybersecurity roles held by individuals throughout the agency. An excerpt from that chart appears in <a href="#c16-fig-0002" id="R_c16-fig-0002">Figure 16.2</a>.</p>
+<figure> <img alt="An illustration of C M S roles and responsibilities. It includes general roles, C M S federal executives, information security and privacy officers, program and information system roles, privilege users, agency security O P S, and C M S governance board." class="center" src="images/c16f002.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c16-fig-0002" id="c16-fig-0002" role="doc-backlink"><b>FIGURE 16.2</b></a></span> Excerpt from CMS roles and responsibilities chart</p>
+<p class="source">Source: Centers for Medicare and Medicaid Services Information Systems Security and Privacy Policy, May 21, 2019. (<code><a href="http://www.cms.gov/Research-Statistics-Data-and-Systems/CMS-Information-Technology/InformationSecurity/Downloads/CMS-IS2P2.pdf">www.cms.gov/Research-Statistics-Data-and-Systems/CMS-Information-Technology/InformationSecurity/Downloads/CMS-IS2P2.pdf</a></code>)</p>
+</figcaption>
+</figure>
+<p id="c16-para-0040">This approach may meet the needs of CMS, but it is hard to imagine the long-term maintenance of that document. Lengthy security policies often quickly become outdated as <span aria-label="524" epub:type="pagebreak" id="Page_524" role="doc-pagebreak"/>necessary changes to individual requirements accumulate and become neglected because staff are weary of continually publishing new versions of the policy.</p>
+<p>Organizations commonly include the following documents in their information security policy library:</p>
+<ul class="square" id="c16-list-0017">
+<li id="c16-li-0055"><i>Information security policy</i> that provides high-level authority and guidance for the security program</li>
+<li id="c16-li-6656"><i>Incident response policy</i> that describes how the organization will respond to security incidents</li>
+<li id="c16-li-0056"><i>Acceptable use policy (AUP)</i> that provides network and system users with clear direction on permissible uses of information resources</li>
+<li id="c16-li-0057"><i>Business continuity and disaster recovery policies</i> that outline the procedures and strategies to ensure that essential business functions continue to operate during and after a disaster, and that data and assets are recovered and protected</li>
+<li id="c16-li-0058"><i>Software development life cycle (SDLC) policy</i> that establishes the processes and standards for developing and maintaining software, ensuring that security is considered and integrated at every stage of development</li>
+<li id="c16-li-0059"><i>Change management and change control policies</i> that describe how the organization will review, approve, and implement proposed changes to information systems in a manner that manages both cybersecurity and operational risk</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c16-fea-0002"/>
+<h3 id="head-2-260">Exam Note</h3>
+<section><span id="c16-sec-0011"/>
+<p id="c16-para-0042">The policies listed here are specifically mentioned in the SY0-701 exam objectives. Be sure that you're familiar with the nature and purpose of policies related to information security, incident response, acceptable use, business continuity, disaster recovery, SDLC, and change management as you prepare for the exam.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c16-sec-0012"/>
+<h3 id="head-3-231">Standards</h3>
+<p id="c16-para-0043"><i>Standards</i> provide mandatory requirements describing how an organization will carry out its information security policies. These may include the specific configuration settings used for a common operating system, the controls that must be put in place for highly sensitive information, or any other security objective. Standards are typically approved at a lower organizational level than policies and, therefore, may change more regularly.</p>
+<p id="c16-para-0044">For example, the University of California at Berkeley maintains a detailed document titled the <i>Minimum Security Standards for Electronic Information</i>, available at <code><a href="https://security.berkeley.edu/minimum-security-standards-electronic-information">https://security.berkeley.edu/minimum-security-standards-electronic-information</a></code>. This document divides information into four data protection levels (DPLs) and then describes what controls are required, optional, and not required for data at different levels, using a detailed matrix. An excerpt from this matrix appears in <a href="#c16-fig-0003" id="R_c16-fig-0003">Figure 16.3</a>.</p> <span aria-label="525" epub:type="pagebreak" id="Page_525" role="doc-pagebreak"/>
+<figure> <img alt="A snapshot of U C Berkeley Minimum Security Standards for Electronic Information. It includes the removal of non-required covered data, covered system inventory, covered system registration, annual registration renewal, and management software inventory." class="center" src="images/c16f003.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c16-fig-0003" id="c16-fig-0003" role="doc-backlink"><b>FIGURE 16.3</b></a></span> Excerpt from UC Berkeley Minimum Security Standards for Electronic Information</p>
+<p class="source">Source: University of California at Berkeley Minimum Security Standards for Electronic Information</p>
+</figcaption>
+</figure>
+<p>The standard then provides detailed descriptions for each of these requirements with definitions of the terms used in the requirements. For example, requirement 3.1 in <a href="#c16-fig-0003">Figure 16.3</a> simply reads “Secure configurations.” Later in the document, UC Berkeley expands this to read “Resource Custodians must utilize well-managed security configurations for hardware, software, and operating systems based on industry standards.” It goes on to define “well-managed” as including the following:</p>
+<ul class="square" id="c16-list-0018">
+<li id="c16-li-0060">Devices must have secure configurations in place prior to deployment.</li>
+<li id="c16-li-0061">Any deviations from defined security configurations must be approved through a change management process and documented. A process must exist to annually review deviations from the defined security configurations for continued relevance.</li>
+<li id="c16-li-0062">A process must exist to regularly check configurations of devices and alert the Resource Custodian of any changes.</li>
+</ul>
+<p>This approach provides a document hierarchy that is easy to navigate for the reader and provides access to increasing levels of detail as needed. Notice also that many of the requirement lines in <a href="#c16-fig-0003">Figure 16.3</a> provide links to guidelines. Clicking those links leads to advice to organizations subject to this policy that begins with this text:</p>
+<blockquote>
+<p id="c16-para-0047">UC Berkeley security policy mandates compliance with Minimum Security Standard for Electronic Information for devices handling covered data. The recommendations below are provided as optional guidance.</p><span aria-label="526" epub:type="pagebreak" id="Page_526" role="doc-pagebreak"/>
+</blockquote>
+<p id="c16-para-0048">This is a perfect example of three elements of the information security policy framework working together. Policy sets out the high-level objectives of the security program and requires compliance with standards, which include details of required security controls. Guidelines provide advice to organizations seeking to comply with the policy and standards.</p>
+<p id="c16-para-0049">In some cases, organizations may operate in industries that have commonly accepted standards that the organization either must follow or chooses to follow as a best practice. Failure to follow industry best practices may be seen as negligence and can cause legal liability for the organization. Many of these industry standards are expressed in the standard frameworks discussed later in this chapter.</p>
+<p>As you prepare your organization's standards, you should pay particular attention to four types of standards:</p>
+<ul class="square" id="c16-list-0019">
+<li id="c16-li-0063"><i>Password standards</i> set forth requirements for password length, complexity, reuse, and similar issues.</li>
+<li id="c16-li-0064"><i>Access control standards</i> describe the account life cycle from provisioning through active use and decommissioning. This policy should include specific requirements for personnel who are employees of the organization as well as third-party contractors. It should also include requirements for credentials used by devices, service accounts, and administrator/root accounts.</li>
+<li id="c16-li-0065"><i>Physical security standards</i> establish the guidelines for securing the physical premises and assets of the organization. This includes security measures like access control systems, surveillance cameras, security personnel, and policies regarding visitor access, protection of sensitive areas, and handling of physical security breaches.</li>
+<li id="c16-li-0066"><i>Encryption standards</i> specify the requirements for encrypting data both in transit and at rest. This includes the selection of encryption algorithms, key management practices, and the conditions under which data must be encrypted to protect the confidentiality and integrity of information.</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c16-fea-0003"/>
+<h3 id="head-2-261">Exam Note</h3>
+<section><span id="c16-sec-0013"/>
+<p id="c16-para-0051">The standards listed here are specifically mentioned in the SY0-701 exam objectives. Be sure that you're familiar with the nature and purpose of standards related to passwords, access control, physical security, and encryption as you prepare for the exam.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c16-sec-0014"/>
+<h3 id="head-3-232">Procedures</h3>
+<p id="c16-para-0052"><i>Procedures</i> are detailed, step-by-step processes that individuals and organizations must follow in specific circumstances. Similar to checklists, procedures ensure a consistent process for achieving a security objective. Organizations may create procedures for building new <span aria-label="527" epub:type="pagebreak" id="Page_527" role="doc-pagebreak"/>systems, releasing code to production environments, responding to security incidents, and many other tasks. Compliance with procedures is mandatory.</p>
+<p>For example, Visa publishes a document titled <i>What to Do if Compromised</i> (<code><a href="https://usa.visa.com/dam/VCOM/download/merchants/cisp-what-to-do-if-compromised.pdf">https://usa.visa.com/dam/VCOM/download/merchants/cisp-what-to-do-if-compromised.pdf</a></code>) that lays out a mandatory process that merchants suspecting a credit card compromise must follow. Although the document doesn't contain the word <i>procedure</i> in the title, the introduction clearly states that the document “establishes procedures and timelines for reporting and responding to a suspected or confirmed Compromise Event.” The document provides requirements covering the following areas of incident response:</p>
+<ul class="square" id="c16-list-0020">
+<li id="c16-li-0067">Notify Visa of the incident within three days</li>
+<li id="c16-li-0068">Provide Visa with an initial investigation report</li>
+<li id="c16-li-0069">Provide notice to other relevant parties</li>
+<li id="c16-li-0070">Provide exposed payment account data to Visa</li>
+<li id="c16-li-0071">Conduct PCI forensic investigation</li>
+<li id="c16-li-0072">Conduct independent investigation</li>
+<li id="c16-li-0073">Preserve evidence</li>
+</ul>
+<p>Each of these sections provides detailed information on how Visa expects merchants to handle incident response activities. For example, the forensic investigation section describes the use of Payment Card Industry Forensic Investigators (PFIs) and reads as follows:</p>
+<blockquote>
+<p>Upon discovery of an account data compromise, or receipt of an independent forensic investigation notification, an entity must:</p>
+<ul class="square" id="c16-list-0021">
+<li id="c16-li-0074">Engage a PFI (or sign a contract) within five (5) business days.</li>
+<li id="c16-li-0075">Provide Visa with the initial forensic (i.e., preliminary) report within ten (10) business days from when the PFI is engaged (or the contract is signed).</li>
+<li id="c16-li-0076">Provide Visa with a final forensic report within ten (10) business days of the completion of the review.</li>
+</ul>
+</blockquote>
+<p id="c16-para-0057">There's not much room for interpretation in this type of language. Visa is laying out a clear and mandatory procedure describing what actions the merchant must take, the type of investigator they should hire, and the timeline for completing different milestones.</p>
+<p>Organizations commonly include the following procedures in their policy frameworks:</p>
+<ul class="square" id="c16-list-0022">
+<li id="c16-li-0077"><i>Change management procedures</i> that describe how the organization will perform change management activities that comply with the organization's change management policy, including the possible use of version control and other tools</li>
+<li id="c16-li-0078"><i>Onboarding and offboarding procedures</i> that describe how the organization will add new user accounts as employees join the organization and how those accounts will be removed when no longer needed</li>
+<li id="c16-li-0079"><i>Playbooks</i> that describe the actions that the organization's incident response team will take when specific types of incidents occur</li>
+</ul>
+<p id="c16-para-0059"><span aria-label="528" epub:type="pagebreak" id="Page_528" role="doc-pagebreak"/>Of course, cybersecurity teams may decide to include many other types of procedures in their frameworks, as dictated by the organization's operational needs.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c16-fea-0004"/>
+<h3 id="head-2-262">Exam Note</h3>
+<section><span id="c16-sec-0015"/>
+<p id="c16-para-0060">The procedures listed here are specifically mentioned in the SY0-701 exam objectives. Be sure that you're familiar with the nature and purpose of procedures related to change management, onboarding, offboarding, and playbooks as you prepare for the exam.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c16-sec-0016"/>
+<h3 id="head-3-233">Guidelines</h3>
+<p id="c16-para-0061"><i>Guidelines</i> provide best practices and recommendations related to a given concept, technology, or task. Compliance with guidelines is not mandatory, and guidelines are offered in the spirit of providing helpful advice. That said, the “optionality” of guidelines may vary significantly depending on the organization's culture.</p>
+<p>In April 2016, the chief information officer (CIO) of the state of Washington published a 25-page document providing guidelines on the use of electronic signatures by state agencies. The document is not designed to be obligatory but, rather, offers advice to agencies seeking to adopt electronic signature technology. The document begins with a purpose section that outlines three goals of the guideline:</p>
+<ol class="decimal" id="c16-list-0023">
+<li id="c16-li-0080">Help agencies determine if and to what extent their agency will implement and rely on electronic records and electronic signatures.</li>
+<li id="c16-li-0081">Provide agencies with information they can use to establish policy or rule governing their use and acceptance of digital signatures.</li>
+<li id="c16-li-0082">Provide direction to agencies for sharing of their policies with the Office of the Chief Information Officer (OCIO) pursuant to state law.</li>
+</ol>
+<p id="c16-para-0063">The first two stated objectives align completely with the guideline functions. Phrases like “help agencies determine” and “provide agencies with information” are common in guideline documents. There is nothing mandatory about them, and in fact, the guidelines explicitly state that Washington state law “does not mandate that any state agency accept or require electronic signatures or records.”</p>
+<p>The third objective might seem a little strange to include in a guideline. Phrases like “provide direction” are more commonly found in policies and procedures. Browsing through the document, the text relating to this objective is only a single paragraph within a 25-page document:<span aria-label="529" epub:type="pagebreak" id="Page_529" role="doc-pagebreak"/></p>
+<blockquote>
+<p id="c16-para-0065">The Office of the Chief Information Officer maintains a page on the <code><a href="http://ocio.wa.gov">OCIO.wa.gov</a></code> website listing links to individual agency electronic signature and record submission policies. As agencies publish their policies, the link and agency contact information should be emailed to the OCIO Policy Mailbox. The information will be added to the page within 5 working days. Agencies are responsible for notifying the OCIO if the information changes.</p>
+</blockquote>
+<p>Reading this paragraph, the text does appear to clearly outline a mandatory procedure and would not be appropriate in a guideline document that fits within the strict definition of the term. However, it is likely that the committee drafting this document thought it would be much more convenient to the reader to include this explanatory text in the related guideline rather than drafting a separate procedure document for a fairly mundane and simple task.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c16-para-0067"><img alt="" role="presentation" src="images/note.png"/> The full Washington state document, <i>Electronic Signature Guidelines</i>, is available for download from the Washington State CIO's website at <code><a href="https://ocio.wa.gov/sites/default/files/Electronic_Signature_Guidelines_FINAL.pdf">https://ocio.wa.gov/sites/default/files/Electronic_Signature_Guidelines_FINAL.pdf</a></code>.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c16-sec-0018"/>
+<h3 id="head-3-234">Exceptions and Compensating Controls</h3>
+<p id="c16-para-0068">When adopting new security policies, standards, and procedures, organizations should also provide a mechanism for exceptions to those rules. Inevitably, unforeseen circumstances will arise that require a deviation from the requirements. The policy framework should lay out the specific requirements for receiving an exception and the individual or committee with the authority to approve exceptions.</p>
+<p>The state of Washington uses an exception process that requires the requestor document the following information:</p>
+<ul class="square" id="c16-list-0024">
+<li id="c16-li-0083">Standard/requirement that requires an exception</li>
+<li id="c16-li-0084">Reason for noncompliance with the requirement</li>
+<li id="c16-li-0085">Business and/or technical justification for the exception</li>
+<li id="c16-li-0086">Scope and duration of the exception</li>
+<li id="c16-li-0087">Risks associated with the exception</li>
+<li id="c16-li-0088">Description of any supplemental controls that mitigate the risks associated with the exception</li>
+<li id="c16-li-0089">Plan for achieving compliance</li>
+<li id="c16-li-0090">Identification of any unmitigated risks</li>
+</ul>
+<p><span aria-label="530" epub:type="pagebreak" id="Page_530" role="doc-pagebreak"/>Many exception processes require the use of <i>compensating controls</i> to mitigate the risk associated with exceptions to security standards. The Payment Card Industry Data Security Standard (PCI DSS) includes one of the most formal compensating control processes in use today. It sets out five criteria that must be met for a compensating control to be satisfactory:</p>
+<ol class="decimal" id="c16-list-0025">
+<li id="c16-li-0091">The control must meet the intent and rigor of the original requirement.</li>
+<li id="c16-li-0092">The control must provide a similar level of defense as the original requirement, such that the compensating control sufficiently offsets the risk that the original PCI DSS requirement was designed to defend against.</li>
+<li id="c16-li-0093">The control must be “above and beyond” other PCI DSS requirements.</li>
+<li id="c16-li-4493">The control must address the additional risk imposed by not adhering to the PCI DSS requirement.</li>
+<li id="c16-li-7793">The control must address the requirement currently and in the future.</li>
+</ol>
+<p id="c16-para-0071">For example, an organization might find that it needs to run an outdated version of an operating system on a specific machine because the software necessary to run the business will only function on that operating system version. Most security policies would prohibit using the outdated operating system because it might be susceptible to security vulnerabilities. The organization could choose to run this system on an isolated network with either very little or no access to other systems as a compensating control.</p>
+<p id="c16-para-0072">The general idea is that a compensating control finds alternative means to achieve an objective when the organization cannot meet the original control requirement. Although PCI DSS offers a very formal process for compensating controls, the use of compensating controls is a common strategy in many different organizations, even those not subject to PCI DSS. Compensating controls balance the fact that it simply isn't possible to implement every required security control in every circumstance with the desire to manage risk to the greatest feasible degree.</p>
+<p id="c16-para-0073">In many cases, organizations adopt compensating controls to address a temporary exception to a security requirement. In those cases, the organization should also develop remediation plans designed to bring the organization back into compliance with the letter and intent of the original control.</p>
+</section>
+<section><span id="c16-sec-0019"/>
+<h3 id="head-3-235">Monitoring and Revision</h3>
+<p id="c16-para-0074">Policy monitoring is an ongoing process that involves regularly evaluating the implementation and efficacy of an organization's information security policies. Through the use of tools like security information and event management (SIEM) systems, as well as by conducting periodic audits and assessments, organizations can assess how well policies are being adhered to and whether they continue to align with current security needs, regulatory requirements, and technological changes. Effective monitoring also includes gathering feedback from staff members who are integral to policy implementation.</p>
+<p id="c16-para-0075">When inconsistencies or areas for improvement are identified, policy revision becomes necessary. This involves updating policies to address any shortcomings and adapting to new challenges or requirements. It is important that revised policies are promptly communicated <span aria-label="531" epub:type="pagebreak" id="Page_531" role="doc-pagebreak"/>to all relevant personnel and, if necessary, that training is provided to ensure effective compliance. Regular monitoring and timely revision are crucial for maintaining an adaptive and robust security posture.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-263"><span id="c16-sec-0020"/>
+<h2 id="head-2-263">Change Management</h2>
+<p id="c16-para-0076">Deploying systems in a secure state is important. However, it's also essential to ensure that systems retain that same level of security. <i>Change management</i> helps reduce unanticipated outages caused by unauthorized changes.</p>
+<p id="c16-para-0077">The primary goal of change management is to ensure that changes do not cause outages. Change management processes ensure that appropriate personnel review and approve changes before implementation and ensure that personnel test and document the changes.</p>
+<p id="c16-para-0078">Changes often create unintended side effects that can cause outages. For example, an administrator can change one system to resolve a problem but unknowingly cause a problem in other systems. Consider <a href="#c16-fig-0004" id="R_c16-fig-0004">Figure 16.4</a>. The web server is accessible from the Internet and accesses the database on the internal network. Administrators have configured appropriate ports on Firewall 1 to allow Internet traffic to the web server and appropriate ports on Firewall 2 to allow the web server to access the database server.</p>
+<figure> <img alt="A flow diagram of the Web server and database server. It includes the internet, firewall 1, web server, firewall 2, and data base server." class="center" src="images/c16f004.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c16-fig-0004" id="c16-fig-0004" role="doc-backlink"><b>FIGURE 16.4</b></a></span> Web server and database server</p>
+</figcaption>
+</figure>
+<p>A well-meaning firewall administrator may see an unrecognized open port on Firewall 2 and decide to close it in the interest of security. Unfortunately, the web server needs this port open to communicate with the database server, so when the port is closed the web server will begin having problems. The help desk is soon flooded with requests to fix the web server, and people begin troubleshooting it. They ask the web server programmers for help, and after some troubleshooting, the developers realize that the database server isn't answering queries. They then call in the database administrators to troubleshoot the database server. After a bunch of hooting, hollering, blamestorming, and finger-pointing, someone realizes that a needed port on Firewall 2 is closed. They open the port and resolve the problem—at least until this well-meaning firewall administrator closes it again or starts tinkering with Firewall 1.<span aria-label="532" epub:type="pagebreak" id="Page_532" role="doc-pagebreak"/></p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c16-para-0080"><img alt="" role="presentation" src="images/note.png"/> Organizations constantly seek the best balance between security and usability. There are instances when an organization makes conscious decisions to improve the performance or usability of a system by weakening security. However, change management helps ensure that an organization takes the time to evaluate the risk of weakening security and compare it to the benefits of increased usability.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c16-para-0081">Unauthorized changes directly affect the <i>A</i> in the CIA triad—availability. However, change management processes allow various IT experts to review proposed changes for unintended side effects before implementing the changes. These processes also give administrators time to check their work in controlled environments before implementing changes in production environments.</p>
+<p id="c16-para-0082">Additionally, some changes can weaken or reduce security. Imagine an organization isn't using an effective access control model to grant access to users. Administrators may not be able to keep up with the requests for additional access. Frustrated administrators may decide to add a group of users to an Administrators group within the network. Users will now have all the access they need, improving their ability to use the network, and they will no longer bother the administrators with access requests. However, granting administrator access in this way directly violates the least privilege principle and significantly weakens security.</p>
+<section><span id="c16-sec-0022"/>
+<h3 id="head-3-236">Change Management Processes and Controls</h3>
+<p id="c16-para-0083">A change management process ensures that personnel can perform a security <i>impact analysis</i>. Experts evaluate changes to identify any security impacts before personnel deploy the changes in a production environment.</p>
+<p id="c16-para-0084">Change management controls provide a process to control, document, track, and audit all system changes. This includes changes to any aspect of a system, including hardware and software configuration. Organizations implement change management processes through the life cycle of any system.</p>
+<section><span id="c16-sec-0023"/>
+<h4 id="head-4-163">Standard Operating Procedures for Changes</h4>
+<p>Common tasks within a change management process are as follows:</p>
+<ol class="decimal" id="c16-list-0026">
+<li id="c16-li-0094"><b>Request the change.</b> Once personnel identify desired changes, they request the change. Some organizations use internal websites, allowing personnel to submit change requests via a web page. The website automatically logs the request in a database, which allows personnel to track the changes. It also allows anyone to see the status of a change request.</li>
+<li id="c16-li-0095"><b>Review the change.</b> Experts within the organization review the change. Personnel reviewing a change are typically from several different areas within the organization. These should be identified through a complete impact analysis performed in consultation with the owners of the change and the various stakeholders in the change. In some cases, stakeholders may quickly complete the review and approve or reject the change. <span aria-label="533" epub:type="pagebreak" id="Page_533" role="doc-pagebreak"/>In other cases, the change may require approval at a formal change review board or change advisory board (CAB) after extensive testing. Board members are the personnel that review the change request.</li>
+<li id="c16-li-0096"><b>Approve/reject the change.</b> Based on the review, these experts then approve or reject the change. They also record the response in the change management documentation. For example, if the organization uses an internal website, someone will document the results in the website's database. In some cases, the change review board might require the creation of a rollback or backout plan. This ensures that personnel can return the system to its original condition if the change results in a failure.</li>
+<li id="c16-li-0097"><b>Test the change.</b> Once the change is approved, it should be tested, preferably on a nonproduction server. Testing helps verify that the change doesn't cause an unanticipated problem. Test results should be included in the change documentation.</li>
+<li id="c16-li-0098"><b>Schedule and implement the change.</b> The change is scheduled so that it can be implemented with the least impact on the system and the system's customers. This may require scheduling the change during off-duty or nonpeak hours. Testing should discover any problems, but it's still possible that the change causes unforeseen problems. Because of this, it's important to have a <i>backout plan</i>. This allows personnel to undo the change and return the system to its previous state if necessary.
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c16-fea-0005"/>
+<h3 id="head-2-264">Exam Note</h3>
+<section><span id="c16-sec-0024"/>
+<p id="c16-para-0087">Changes should be performed at a scheduled and coordinated time to avoid undesirable or unexpected impacts on operations. Many organizations use scheduled <i>maintenance windows</i> to coordinate changes to information systems. These windows are preplanned and announced times when all non-emergency changes will take place and often occur on evenings and weekends.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section></li>
+<li id="c16-li-0099"><b>Document the change.</b> The last step is the documentation of the change to ensure that all interested parties are aware of it. This step often requires a change in the configuration management documentation. If an unrelated disaster requires administrators to rebuild the system, the change management documentation provides them with information on the change. This ensures that they can return the system to the state it was in before the change.</li>
+</ol>
+<p id="c16-para-0088">There may be instances when an emergency change is required. For example, if an attack or malware infection takes one or more systems down, an administrator may need to make changes to a system or network to contain the incident. In this situation, the administrator still needs to document the changes. This ensures that the change review board can review the change for potential problems. Additionally, documenting the emergency change ensures that the affected system will include the new configuration if it needs to be rebuilt.</p>
+<p id="c16-para-0089"><span aria-label="534" epub:type="pagebreak" id="Page_534" role="doc-pagebreak"/>When the change management process is enforced, it creates documentation for all changes to a system. This provides a trail of information if personnel need to reverse the change. If personnel have to implement the same change on other systems, the documentation also provides a road map or procedure to follow.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c16-fea-0006"/>
+<h3 id="head-2-265">Technical Impact of Changes</h3>
+<section><span id="c16-sec-0025"/>
+<p id="c16-para-0090">The technical impacts of a change may be far-reaching. As organizations consider the potential for a change to disrupt other processes, they should consider all of those potential impacts. It's very important to involve a diverse set of technical stakeholders in this analysis because most organizations have a complex technical environment that no single person understands completely.</p>
+<p>Some of the issues you should consider are:</p>
+<ul class="square" id="c16-list-0027">
+<li id="c16-li-0100">Whether the change will require any modifications to security controls, such as firewall rules, allow lists, or deny lists</li>
+<li id="c16-li-0101">Whether any other business or technical activities need to be restricted during or after the change</li>
+<li id="c16-li-0102">Whether the change will cause downtime for critical systems</li>
+<li id="c16-li-0103">Whether the change will require restarting any services or applications</li>
+<li id="c16-li-0104">Whether the change involves any legacy applications that lack vendor support</li>
+<li id="c16-li-0105">Whether all possible dependencies have been identified and documented</li>
+</ul>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+<section><span id="c16-sec-0026"/>
+<h3 id="head-3-237">Version Control</h3>
+<p id="c16-para-0092"><i>Version control</i> ensures that developers and users have access to the latest versions of software and that changes are carefully managed throughout the release process. A labeling or numbering system differentiates between different software sets and configurations across multiple machines or at different points in time on a single machine. For example, the first version of an application may be labeled as 1.0. The first minor update would be labeled as 1.1, and the first major update would be 2.0. This helps keep track of changes over time to deployed software.</p>
+<p id="c16-para-0093">Although most established software developers recognize the importance of versioning and revision control with applications, many new web developers don't recognize its importance. These web developers have learned some excellent skills they use to create awesome websites but don't always recognize the importance of underlying principles such as <span aria-label="535" epub:type="pagebreak" id="Page_535" role="doc-pagebreak"/>version control. If they don't control changes through some type of version control system, they can implement a change that effectively breaks the website.</p>
+</section>
+<section><span id="c16-sec-0027"/>
+<h3 id="head-3-238">Documentation</h3>
+<p id="c16-para-0094">Documentation identifies the current configuration of systems. It identifies who is responsible for the system and its purpose and lists all changes applied to the baseline. Years ago, many organizations used simple paper notebooks to record this information for servers, but today it is much more common to store this information in a formal configuration management system.</p>
+<p id="c16-para-0095">Keeping this documentation current is a crucial step when completing a change. Before closing out a change management task, be sure that any related documentation, diagrams, policies, and procedures are updated to reflect the impact of the change.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-266"><span id="c16-sec-0028"/>
+<h2 id="head-2-266">Personnel Management</h2>
+<p id="c16-para-0096">An organization's employees require access to information and systems to carry out their assigned job functions. With this access comes the risk that an employee will, through intentional or accidental action, become the source of a cybersecurity incident. Organizations that follow personnel management best practices can reduce the likelihood and impact of employee-centered security risks.</p>
+<section><span id="c16-sec-0029"/>
+<h3 id="head-3-239">Least Privilege</h3>
+<p id="c16-para-0097">The principle of <i>least privilege</i> says that individuals should be granted only the minimum set of permissions necessary to carry out their job functions. Least privilege is simple in concept but sometimes challenging to implement in practice. It requires careful attention to the privileges necessary to perform specific jobs and ongoing attention to avoid security issues. Privilege creep, one of these issues, occurs when an employee moves from job to job within the organization, accumulating new privileges, but never has the privileges associated with past duties revoked.</p>
+</section>
+<section><span id="c16-sec-0030"/>
+<h3 id="head-3-240">Separation of Duties</h3>
+<p id="c16-para-0098">Organizations may implement <i>separation of duties</i> for extremely sensitive job functions. Separation of duties takes two different tasks that, when combined, have great sensitivity and creates a rule that no single person may have the privileges required to perform both tasks.</p>
+<p id="c16-para-0099">The most common example of separation of duties comes in the world of accounting. Individuals working in accounting teams pose a risk to the organization should they decide to steal funds. They might carry out this theft by creating a new vendor in the accounting <span aria-label="536" epub:type="pagebreak" id="Page_536" role="doc-pagebreak"/>system with the name of a company that they control and then issuing checks to that vendor through the normal check-writing process.</p>
+<p id="c16-para-0100">An organization might manage this risk by recognizing that the ability to create a new vendor and issue a check is sensitive when used in combination and implement separation of duties for them. In that situation, no single individual would have the permission to both create a new vendor and issue a check. An accounting employee seeking to steal funds in this manner would now need to solicit the collusion of at least one other employee, reducing the risk of fraudulent activity.</p>
+<p id="c16-para-0101"><i>Two-person control</i> is a concept that is similar to separation of duties but with an important difference: instead of preventing the same person from holding two different privileges that are sensitive when used together, two-person control requires the participation of two people to perform a single sensitive action.</p>
+</section>
+<section><span id="c16-sec-0031"/>
+<h3 id="head-3-241">Job Rotation and Mandatory Vacations</h3>
+<p id="c16-para-0102">Organizations also take other measures to reduce the risk of fraudulent activity by a single employee. Two of these practices focus on uncovering fraudulent actions after they occur by exposing them to other employees.</p>
+<p id="c16-para-0103"><i>Job rotation</i> practices take employees with sensitive roles and move them periodically to other positions in the organization. The motivating force behind these efforts is that many types of fraud require ongoing concealment activities. If an individual commits fraud and is then rotated out of their existing assignment, they may not be able to continue those concealment activities due to changes in privileges and their replacement may discover the fraud themselves.</p>
+<p id="c16-para-0104"><i>Mandatory vacations</i> serve a similar purpose by forcing employees to take annual vacations of a week or more consecutive time and revoking their access privileges during that vacation period.</p>
+</section>
+<section><span id="c16-sec-0032"/>
+<h3 id="head-3-242">Clean Desk Space</h3>
+<p id="c16-para-0105"><i>Clean desk policies</i> are designed to protect the confidentiality of sensitive information by limiting the amount of paper left exposed on unattended employee desks. Organizations implementing a clean desk policy require that all papers and other materials be secured before an employee leaves their desk.</p>
+</section>
+<section><span id="c16-sec-0033"/>
+<h3 id="head-3-243">Onboarding and Offboarding</h3>
+<p id="c16-para-0106">Organizations should have standardized processes for <i>onboarding</i> new employees upon hire and <i>offboarding</i> employees who are terminated or resign. These processes ensure that the organization retains control of its assets and handles the granting and revocation of credentials and privileges in an orderly manner.</p>
+<p id="c16-para-0107">New hire processes should also include <i>background checks</i> designed to uncover any criminal activity or other past behavior that may indicate that a potential employee poses an undetected risk to the organization.</p>
+</section> <span aria-label="537" epub:type="pagebreak" id="Page_537" role="doc-pagebreak"/>
+<section><span id="c16-sec-0034"/>
+<h3 id="head-3-244">Nondisclosure Agreements</h3>
+<p id="c16-para-0108">Nondisclosure agreements (NDAs) require that employees protect any confidential information that they gain access to in the course of their employment. Organizations normally ask new employees to sign an NDA upon hire and periodically remind employees of their responsibilities under the NDA. Offboarding processes often involve exit interviews that include a final reminder of the employee's responsibility to abide by the terms of the NDA even after the end of their affiliation with the organization.</p>
+</section>
+<section><span id="c16-sec-0035"/>
+<h3 id="head-3-245">Social Media</h3>
+<p id="c16-para-0109">Organizations may choose to adopt social media policies that constrain the behavior of employees on social media. Social media analysis performed by the organization may include assessments of both personal and professional accounts, because that activity may reflect positively or negatively upon the organization. Organizations should make their expectations and practices clear in a social media policy.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-267"><span id="c16-sec-0036"/>
+<h2 id="head-2-267">Third-Party Risk Management</h2>
+<p id="c16-para-0110">Many risks facing an organization come from third-party organizations with whom the organization does business. These risks may be the result of a vendor relationship that arises somewhere along the organization's supply chain, or they may be the result of other business partnerships.</p>
+<section><span id="c16-sec-0037"/>
+<h3 id="head-3-246">Vendor Selection</h3>
+<p id="c16-para-0111">Organizations choosing vendors should take special care to evaluate the vendor thoroughly during the selection process. This is especially true if the vendor will be involved in critical business processes or handle sensitive information for the organization.</p>
+<p id="c16-para-0112"><i>Due diligence</i> involves thoroughly vetting potential vendors to ensure that they meet the organization's standards and requirements. This process should include an evaluation of the vendor's financial stability, business reputation, quality of products or services, and compliance with relevant regulations. You should also examine the vendor's security practices and data handling procedures, especially when they will be dealing with sensitive or proprietary information.</p>
+<p id="c16-para-0113">Another essential aspect of vendor selection is identifying and mitigating <i>conflicts of interest</i>. A conflict of interest arises when a vendor has a competing interest that could influence their behavior in a way that is not aligned with the best interests of the organization. For example, a vendor might have financial ties with a competitor or may be offering similar products or services. In such cases, the organization must assess the nature and extent of these conflicts and take the necessary steps to manage them. This may involve adding clauses in the contract that limit the vendor's engagement with competitors, or in some cases, it may lead to the decision to not engage with the vendor at all.</p>
+</section> <span aria-label="538" epub:type="pagebreak" id="Page_538" role="doc-pagebreak"/>
+<section><span id="c16-sec-0038"/>
+<h3 id="head-3-247">Vendor Assessment</h3>
+<p id="c16-para-0114">After the initial selection process, organizations should continuously assess the chosen vendors to ensure they maintain the expected quality, security, and performance levels. One method to evaluate a vendor's security is through <i>penetration testing</i>, where authorized simulated attacks are carried out to identify vulnerabilities in the vendor's systems.</p>
+<p id="c16-para-0115">Vendor agreements should include a <i>right-to-audit clause</i> that allows the customer to conduct or commission audits on the vendor's operations and practices to ensure compliance with terms and conditions, as well as regulatory requirements.</p>
+<p id="c16-para-0116">Furthermore, organizations should request evidence of internal audits conducted by the vendor. These audits can provide insights into the vendor's internal controls, compliance, and risk management practices.</p>
+<p id="c16-para-0117">Independent assessments are also an essential tool. They may involve bringing in third-party experts to objectively evaluate the vendor's practices and systems. These assessments can include certification verifications, such as ISO 27001 or SOC reports.</p>
+<p id="c16-para-0118"><i>Supply chain analysis</i> is vital in understanding the risks associated with the vendor's supply chain. This includes assessing the vendor's suppliers and understanding the interdependencies and risks that could impact the vendor's ability to deliver products or services.</p>
+<p id="c16-para-0119">Organizations can employ <i>questionnaires</i> to collect information regarding the vendor's practices and performance regularly. These questionnaires can be tailored to focus on specific areas of concern, such as security policies, data handling procedures, and business continuity planning.</p>
+</section>
+<section><span id="c16-sec-0039"/>
+<h3 id="head-3-248">Vendor Agreements</h3>
+<p>Organizations may deploy some standard agreements and practices to manage third-party vendor risks. Commonly used agreements include the following:</p>
+<ul class="square" id="c16-list-0028">
+<li id="c16-li-0106"><i>Master service agreements (MSAs)</i> provide an umbrella contract for the work that a vendor does with an organization over an extended period of time. The MSA typically includes detailed security and privacy requirements. Each time the organization enters into a new project with the vendor, they may then create a <i>work order (WO)</i> or a <i>statement of work (SOW)</i> that contains project-specific details and references the MSA.</li>
+<li id="c16-li-0107"><i>Service level agreements (SLAs)</i> are written contracts that specify the conditions of service that will be provided by the vendor and the remedies available to the customer if the vendor fails to meet the SLA. SLAs commonly cover issues such as system availability, data durability, and response time.</li>
+<li id="c16-li-0108">A <i>memorandum of understanding (MOU)</i> is a letter written to document aspects of the relationship. MOUs are an informal mechanism that allows the parties to document their relationship to avoid future misunderstandings. MOUs are commonly used in cases where an internal service provider is offering a service to a customer that is in a different business unit of the same company.</li>
+<li id="c16-li-0109"><span aria-label="539" epub:type="pagebreak" id="Page_539" role="doc-pagebreak"/>A <i>memorandum of agreement (MOA)</i> is a formal document that outlines the terms and details of an agreement between parties, establishing a mutual understanding of the roles and responsibilities in fulfilling specific objectives. MOAs are generally more detailed than MOUs and may include clauses regarding resource allocation, risk management, and performance metrics.</li>
+<li id="c16-li-0110"><i>Business partners agreements (BPAs)</i> exist when two organizations agree to do business with each other in a partnership. For example, if two companies jointly develop and market a product, the BPA might specify each partner's responsibilities and the division of profits.</li>
+</ul>
+<p id="c16-para-0121">Organizations will need to select the agreement type(s) most appropriate for their specific circumstances.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c16-fea-0007"/>
+<h3 id="head-2-268">Exam Note</h3>
+<section><span id="c16-sec-0040"/>
+<p id="c16-para-0122">For the exam, be sure you know the differences between the various agreement types, including SLA, MOA, MOU, MSA, NDA, WO/SOW, and BPA.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c16-sec-0041"/>
+<h3 id="head-3-249">Vendor Monitoring</h3>
+<p id="c16-para-0123">Effective <i>vendor monitoring</i> is crucial for managing and mitigating third-party risks. It involves the continuous observation and analysis of a vendor's performance and compliance to ensure that they adhere to the contractual obligations and meet the organization's expectations.</p>
+<p id="c16-para-0124">One of the critical aspects of vendor monitoring is establishing <i>rules of engagement</i>. These rules define the boundaries within which the vendor should operate. They normally include setting clear communication protocols, defining responsibilities, and establishing processes for issue resolution. By setting these rules, organizations can ensure that both parties are on the same page regarding expectations and obligations, which can help in preventing misunderstandings and disputes.</p>
+<p id="c16-para-0125"><i>Performance monitoring</i> is a central component of vendor monitoring. Organizations should establish <i>key performance indicators (KPIs)</i> that quantitatively measure the vendor's performance. Regularly monitoring these metrics allows organizations to ensure that vendors are meeting the agreed-upon standards.</p>
+<p id="c16-para-0126">In addition, security monitoring should be performed to ensure that the vendor maintains adequate security practices. This involves monitoring the vendor's security posture, checking for any data breaches or security incidents, and ensuring that they are in compliance with relevant security standards and regulations.</p>
+<p id="c16-para-0127"><span aria-label="540" epub:type="pagebreak" id="Page_540" role="doc-pagebreak"/>Compliance monitoring is also essential, particularly for vendors handling sensitive data or operating in highly regulated industries. Organizations should ensure that vendors are in compliance with legal and regulatory requirements and that they have the necessary certifications and accreditations.</p>
+<p id="c16-para-0128">Financial monitoring involves evaluating the vendor's financial health to ensure they remain a viable partner. This is particularly important for long-term contracts where the organization might be dependent on the vendor's services for an extended period.</p>
+<p id="c16-para-0129">In cases where issues are identified through monitoring, organizations should have a process in place for addressing these issues with the vendor. This may include formal meetings, corrective action plans, and in extreme cases, considering termination of the contract.</p>
+</section>
+<section><span id="c16-sec-0042"/>
+<h3 id="head-3-250">Winding Down Vendor Relationships</h3>
+<p id="c16-para-0130">All things come to an end, and third-party relationships are no exception. Organizations should take steps to ensure that they have an orderly transition when a vendor relationship ends or the vendor is discontinuing a product or service on which the organization depends. This should include specific steps that both parties will follow to have an orderly transition when the vendor announces a product's <i>end of life (EOL)</i> or a service's <i>end of service life (EOSL)</i>. These same steps may be followed if the organization chooses to stop using the product or service on its own.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c16-fea-0008"/>
+<h3 id="head-2-269">Exam Note</h3>
+<section><span id="c16-sec-0043"/>
+<p id="c16-para-0131">We discussed nondisclosure agreements (NDAs) earlier in this chapter in the context of employee relationships, but employees are not the only individuals with access to sensitive information about your organization. Vendor agreements should also include NDA terms, and organizations should ensure that vendors ask their own employees to sign NDAs if they will have access to your sensitive information.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+<section aria-labelledby="head-2-270"><span id="c16-sec-0044"/>
+<h2 id="head-2-270">Complying with Laws and Regulations</h2>
+<p id="c16-para-0132">Legislators and regulators around the world take an interest in cybersecurity due to the potential impact of cybersecurity shortcomings on individuals, government, and society. Whereas the European Union (EU) has a broad-ranging data protection regulation, cybersecurity analysts in the United States are forced to deal with a patchwork of security regulations covering different industries and information categories.</p> <span aria-label="541" epub:type="pagebreak" id="Page_541" role="doc-pagebreak"/>
+<section><span id="c16-sec-0045"/>
+<h3 id="head-3-251">Common Compliance Requirements</h3>
+<p>Some of the major information security regulations facing organizations include the following:</p>
+<ul class="square" id="c16-list-0029">
+<li id="c16-li-0111">The <i>Health Insurance Portability and Accountability Act (HIPAA)</i> includes security and privacy rules that affect health-care providers, health insurers, and health information clearinghouses in the United States.</li>
+<li id="c16-li-0112">The <i>Payment Card Industry Data Security Standard (PCI DSS)</i> provides detailed rules about the storage, processing, and transmission of credit and debit card information. PCI DSS is not a law but rather a contractual obligation that applies to credit card merchants and service providers worldwide.</li>
+<li id="c16-li-0113">The <i>Gramm–Leach–Bliley Act (GLBA)</i> covers U.S. financial institutions, broadly defined. It requires that those institutions have a formal security program and designate an individual as having overall responsibility for that program.</li>
+<li id="c16-li-0114">The <i>Sarbanes–Oxley (SOX) Act</i> applies to the financial records of U.S. publicly traded companies and requires that those companies have a strong degree of assurance for the IT systems that store and process those records.</li>
+<li id="c16-li-0115">The <i>General Data Protection Regulation (GDPR)</i> implements security and privacy requirements for the personal information of European Union residents worldwide.</li>
+<li id="c16-li-0116">The <i>Family Educational Rights and Privacy Act (FERPA)</i> requires that U.S. educational institutions implement security and privacy controls for student educational records.</li>
+<li id="c16-li-0117">Various <i>data breach notification laws</i> describe the requirements that individual states place on organizations that suffer data breaches regarding notification of individuals affected by the breach.</li>
+</ul>
+<p id="c16-para-0134">Remember that this is only a brief listing of security regulations. There are many other laws and obligations that apply to specific industries and data types. You should always consult your organization's legal counsel and subject matter experts when designing a compliance strategy for your organization. You'll need to understand the various national, territory, and state laws that apply to your operations, and the advice of a well-versed attorney is crucial when interpreting and applying cybersecurity regulations to your specific business and technical environment.</p>
+</section>
+<section><span id="c16-sec-0046"/>
+<h3 id="head-3-252">Compliance Reporting</h3>
+<p id="c16-para-0135">Organizations need to engage in both internal and external <i>compliance reporting</i> to ensure that they meet the regulatory requirements and maintain transparency within the organization and with external stakeholders. Internal compliance reporting is a vital component in maintaining an organization's security posture and ensuring adherence to various laws and regulations. Internal reporting typically involves regular reports to the management or the board, highlighting the state of compliance, identifying gaps, and providing <span aria-label="542" epub:type="pagebreak" id="Page_542" role="doc-pagebreak"/>recommendations for improvement. These reports are essential for decision-makers within the organization to understand the compliance landscape, allocate resources effectively, and ensure that compliance objectives align with the organization's strategic goals.</p>
+<p id="c16-para-0136">External compliance reporting, on the other hand, is mandated by regulatory bodies or as a part of contractual obligations. It involves providing necessary documentation and evidence to external entities to demonstrate that the organization is in compliance with relevant laws and regulations. For instance, organizations handling credit card data might need to submit compliance reports to the Payment Card Industry Security Standards Council (PCI SSC), and those under GDPR must be ready to provide compliance evidence to data protection authorities. External compliance reporting is crucial for maintaining good standing with regulatory authorities, avoiding penalties, and building trust with customers and partners by demonstrating a commitment to security and privacy.</p>
+</section>
+<section><span id="c16-sec-0047"/>
+<h3 id="head-3-253">Consequences of Noncompliance</h3>
+<p id="c16-para-0137">Failure to comply with laws and regulations can have severe consequences for organizations, ranging from financial penalties to reputational damage and loss of business.</p>
+<p id="c16-para-0138">One of the most immediate impacts of noncompliance is the imposition of fines and sanctions. Regulatory bodies have the authority to levy significant fines on organizations that fail to comply with the required standards. For instance, under the GDPR, companies can be fined up to 4 percent of their annual global turnover, or €20 million, whichever is higher, for serious infringements.</p>
+<p id="c16-para-0139">Additionally, noncompliance can lead to nonfinancial sanctions, which may include restrictions on business operations. In some cases, regulatory authorities might suspend or revoke licenses that are critical to the organization's operations. For example, a financial institution that fails to comply with anti-money-laundering regulations could lose its banking license, which is essential for its core business activities.</p>
+<p id="c16-para-0140">Reputational damage is another critical consequence of noncompliance. When news of noncompliance, especially involving data breaches or privacy violations, becomes public, it can severely tarnish the image of the organization. Customers and partners may lose trust in the organization's ability to safeguard their information and might choose to take their business elsewhere.</p>
+<p id="c16-para-0141">Loss of business and contractual impacts are also significant consequences. Noncompliance can lead to the termination of contracts, especially when compliance with specific standards is a prerequisite for engaging in business relationships. This can result in lost revenue and additional costs associated with finding and establishing relationships with new partners.</p>
+<p id="c16-para-0142">In some cases, noncompliance can also lead to legal action. Individuals or entities affected by an organization's noncompliance may sue for damages. This not only leads to potential monetary losses but also consumes time and resources, as the organization has to deal with legal proceedings.</p>
+<p id="c16-para-0143">Given the potential severity of these consequences, it is essential for organizations to invest in compliance management and ensure that they are aware of and adhere to all <span aria-label="543" epub:type="pagebreak" id="Page_543" role="doc-pagebreak"/>relevant laws and regulations. Regular audits, training, and effective communication channels are critical components in maintaining compliance and mitigating the risks associated with noncompliance.</p>
+</section>
+<section><span id="c16-sec-0048"/>
+<h3 id="head-3-254">Compliance Monitoring</h3>
+<p id="c16-para-0144">Effective compliance monitoring is a cornerstone in ensuring that organizations adhere to the various laws, regulations, and contractual obligations. An essential aspect of this monitoring involves <i>due diligence</i>, which is the process of continuously researching and understanding the legal and regulatory requirements that pertain to the organization. It is crucial to stay abreast of evolving laws and ensure that the organization has the necessary policies and controls in place.</p>
+<p id="c16-para-0145"><i>Due care</i>, a complementary concept, refers to the ongoing efforts to ensure that the implemented policies and controls are effective and continuously maintained. This means regularly reviewing and updating policies and taking proactive steps to ensure compliance. Part of due care involves attestation and acknowledgment. <i>Acknowledgment</i> means ensuring that employees and business partners state that they are aware of the compliance requirements. <i>Attestation</i> means that they are aware of these requirements but have also confirmed that their practices adhere to these policies.</p>
+<p id="c16-para-0146">Internal and external monitoring mechanisms play a pivotal role in compliance monitoring. <i>Internal monitoring</i> includes internal audits, reviews, and checks to ensure that the organization follows its policies and meeting legal requirements. <i>External monitoring</i>, on the other hand, involves third-party audits and assessments, which provide an unbiased view of the organization's compliance status.</p>
+<p id="c16-para-0147">Automation is an invaluable tool in compliance monitoring, especially for larger organizations with complex compliance requirements. Automated compliance solutions can track changes in regulations, monitor for violations, and ensure that policies are consistently applied. This not only saves time and resources but also reduces the risk of human error and helps in generating detailed reports that can be used for further analysis and improvement.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c16-fea-0009"/>
+<h3 id="head-2-271">Exam Note</h3>
+<section><span id="c16-sec-0049"/>
+<p id="c16-para-0148">Be ready to summarize the elements of effective security compliance, including compliance reporting, the consequences of noncompliance, and compliance monitoring.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+<section aria-labelledby="head-2-272"><span id="c16-sec-0050"/>
+<h2 id="head-2-272">Adopting Standard Frameworks</h2>
+<p id="c16-para-0149">Developing a cybersecurity program from scratch is a formidable undertaking. Organizations will have a wide variety of control objectives and tools at their disposal to meet those objectives. Teams facing the task of developing a new security program or evaluating an <span aria-label="544" epub:type="pagebreak" id="Page_544" role="doc-pagebreak"/>existing program may find it challenging to cover a large amount of ground without a roadmap. Fortunately, several standard security frameworks are available to assist with this task and provide a standardized approach to developing cybersecurity programs.</p>
+<section><span id="c16-sec-0051"/>
+<h3 id="head-3-255">NIST Cybersecurity Framework</h3>
+<p id="c16-para-0150">The National Institute of Standards and Technology (NIST) is responsible for developing cybersecurity standards across the U.S. federal government. The guidance and standard documents they produce in this process often have wide applicability across the private sector and are commonly referred to by nongovernmental security analysts due to the fact that they are available in the public domain and are typically of very high quality.</p>
+<p>In 2018, NIST released version 1.1 of a Cybersecurity Framework (CSF) designed to assist organizations attempting to meet one or more of the following five objectives:</p>
+<ul class="square" id="c16-list-0030">
+<li id="c16-li-0118">Describe their current cybersecurity posture.</li>
+<li id="c16-li-0119">Describe their target state for cybersecurity.</li>
+<li id="c16-li-0120">Identify and prioritize opportunities for improvement within the context of a continuous and repeatable process.</li>
+<li id="c16-li-0121">Assess progress toward the target state.</li>
+<li id="c16-li-0122">Communicate among internal and external stakeholders about cybersecurity risk.</li>
+</ul>
+<p>The NIST framework includes three components:</p>
+<ul class="square" id="c16-list-0031">
+<li id="c16-li-0123">The Framework Core, shown in <a href="#c16-fig-0005" id="R_c16-fig-0005">Figure 16.5</a>, is a set of five security functions that apply across all industries and sectors: identify, protect, detect, respond, and recover. The framework then divides these functions into categories, subcategories, and informative references. <a href="#c16-fig-0006" id="R_c16-fig-0006">Figure 16.6</a> shows a small excerpt of this matrix in completed form, looking specifically at the Identify (ID) function and the Asset Management category. If you would like to view a fully completed matrix, see the NIST document <i>Framework for Improving Critical Infrastructure Cybersecurity</i>.</li>
+<li id="c16-li-0124">The Framework Implementation Tiers assess how an organization is positioned to meet cybersecurity objectives. <a href="#c16-tbl-0001" id="R_c16-tbl-0001">Table 16.1</a> shows the framework implementation tiers and their criteria. This approach is an example of a <i>maturity model</i> that describes the current and desired positioning of an organization along a continuum of progress. In the case of the NIST maturity model, organizations are assigned to one of four maturity model tiers.</li>
+<li id="c16-li-0125">Framework profile describes how a specific organization might approach the security functions covered by the Framework Core. An organization might use a framework profile to describe its current state and then a separate profile to describe its desired future state.</li>
+</ul>
+<span aria-label="545" epub:type="pagebreak" id="Page_545" role="doc-pagebreak"/>
+<span aria-label="546" epub:type="pagebreak" id="Page_546" role="doc-pagebreak"/>
+<figure> <img alt="A snapshot of N I S T Cybersecurity Framework Core Structure. It includes frame network functions like identify I D, protect P R, detect D E, respond R S, and recover R C." class="center" src="images/c16f005.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c16-fig-0005" id="c16-fig-0005" role="doc-backlink"><b>FIGURE 16.5</b></a></span> NIST Cybersecurity Framework Core Structure</p>
+<p class="source">Source: Framework for Improving Critical Infrastructure Cybersecurity Version 1.1, National Institute of Standards and Technology (<code><a href="http://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">http://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf</a></code>)</p>
+</figcaption>
+</figure>
+<figure>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c16-tbl-0001" id="c16-tbl-0001" role="doc-backlink"><b>TABLE 16.1</b></a></span> NIST Cybersecurity Framework implementation tiers</p>
+<p class="source">Source: Framework for Improving Critical Infrastructure Cybersecurity Version 1.1, National Institute of Standards and Technology</p>
+</figcaption>
+<table border="1">
+<thead>
+<tr>
+<th scope="col"><span class="left">Tier</span></th>
+<th scope="col"><span class="left">Risk management process</span></th>
+<th scope="col"><span class="left">Integrated risk management program</span></th>
+<th scope="col"><span class="left">External participation</span></th> </tr> </thead>
+<tbody>
+<tr>
+<td class="left">Tier 1: Partial</td>
+<td class="left">Organizational cybersecurity risk management practices are not formalized, and risk is managed in an ad hoc and sometimes reactive manner.</td>
+<td class="left">There is limited awareness of cybersecurity risk at the organizational level. The organization implements cybersecurity risk management on an irregular, case-by-case basis due to varied experience or information gained from outside sources.</td>
+<td class="left">The organization does not understand its role in the larger ecosystem with respect to either its dependencies or dependents.</td> </tr>
+<tr>
+<td class="left">Tier 2: Risk Informed</td>
+<td class="left">Risk management practices are approved by management but may not be established as organization-wide policy.</td>
+<td class="left">There is an awareness of cybersecurity risk at the organizational level, but an organization-wide approach to managing cybersecurity risk has not been established.</td>
+<td class="left">Generally, the organization understands its role in the larger ecosystem with respect to either its own dependencies or dependents, but not both.</td> </tr>
+<tr>
+<td class="left">Tier 3: Repeatable</td>
+<td class="left">The organization's risk management practices are formally approved and expressed as policy.</td>
+<td class="left">There is an organization-wide approach to manage cybersecurity risk.</td>
+<td class="left">The organization understands its role, dependencies, and dependents in the larger ecosystem and may contribute to the community's broader understanding of risks.</td> </tr>
+<tr>
+<td class="left">Tier 4: Adaptive</td>
+<td class="left">The organization adapts its cybersecurity practices based on previous and current cybersecurity activities, including lessons learned and predictive indicators.</td>
+<td class="left">There is an organization-wide approach to managing cybersecurity risk that uses risk-informed policies, processes, and procedures to address potential cybersecurity events.</td>
+<td class="left">The organization understands its role, dependencies, and dependents in the larger ecosystem and contributes to the community's broader understanding of risks.</td> </tr> </tbody> </table>
+</figure>
+<p>The NIST Cybersecurity Framework provides organizations with a sound approach to developing and evaluating the state of their cybersecurity programs.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c16-para-0155"><img alt="" role="presentation" src="images/note.png"/> At the time this book went to press, NIST was working on the development of their Cybersecurity Framework 2.0. The new framework is expected to be released in 2024. More information is available at <code><a href="https://www.nist.gov/cyberframework/updating-nist-cybersecurity-framework-journey-csf-20">www.nist.gov/cyberframework/updating-nist-cybersecurity-framework-journey-csf-20</a></code>.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c16-sec-0053"/>
+<h3 id="head-3-256">NIST Risk Management Framework</h3>
+<p id="c16-para-0156">In addition to the CSF, NIST publishes a Risk Management Framework (RMF). The RMF is a mandatory standard for federal agencies that provides a formalized process that federal agencies must follow to select, implement, and assess risk-based security and privacy controls. <a href="#c16-fig-0007" id="R_c16-fig-0007">Figure 16.7</a> provides an overview of the NIST RMF process. More details may be found in NIST SP 800-37, <i>Risk Management Framework for Information Systems and Organizations</i> (<code><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-37r2.pdf">http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-37r2.pdf</a></code>)</p> <span aria-label="547" epub:type="pagebreak" id="Page_547" role="doc-pagebreak"/>
+<figure> <img alt="A snapshot of Asset Management Cybersecurity Framework. It includes function, categories, subcategories, and informative reference of identity I D." class="center" src="images/c16f006.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c16-fig-0006" id="c16-fig-0006" role="doc-backlink"><b>FIGURE 16.6</b></a></span> Asset Management Cybersecurity Framework</p>
+<p class="source">Source: Framework for Improving Critical Infrastructure Cybersecurity Version 1.1, National Institute of Standards and Technology (<code><a href="http://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">http://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf</a></code>)</p>
+</figcaption>
+</figure>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c16-para-0158"><img alt="" role="presentation" src="images/note.png"/> NIST publishes both the NIST CSF and RMF, and it can be a little confusing to keep them straight. The RMF is a formal process for implementing security controls and authorizing system use, whereas the CSF provides a broad structure for cybersecurity controls. It's important to understand that, although both the CSF and RMF are mandatory for government agencies, only the CSF is commonly used in private industry.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c16-sec-0055"/>
+<h3 id="head-3-257">ISO Standards</h3>
+<p id="c16-para-0159">The <i>International Organization for Standardization (ISO)</i> publishes a series of standards that offer best practices for cybersecurity and privacy. As you prepare for the Security+ exam, you should be familiar with four specific ISO standards: ISO 27001, ISO 27002, ISO 27701, and ISO 31000.</p> <span aria-label="548" epub:type="pagebreak" id="Page_548" role="doc-pagebreak"/>
+<figure> <img alt="A snapshot of N I S T Risk Management Framework. The preparation includes a categories system, select controls, implement controls, access controls, authorized system, and monitor controls." class="center" src="images/c16f007.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c16-fig-0007" id="c16-fig-0007" role="doc-backlink"><b>FIGURE 16.7</b></a></span> NIST Risk Management Framework</p>
+<p class="source">Source: FISMA Implementation Project Risk Management Framework (RMF) Overview, National Institute of Standards and Technology <code><a href="http://csrc.nist.gov/projects/risk-management/rmf-overview">http://csrc.nist.gov/projects/risk-management/rmf-overview</a></code></p>
+</figcaption>
+</figure>
+<section><span id="c16-sec-0056"/>
+<h4 id="head-4-164">ISO 27001</h4>
+<p><i>ISO 27001</i> is a standard document titled “Information security management systems.” This standard includes control objectives covering 14 categories:</p>
+<ul class="square" id="c16-list-0032">
+<li id="c16-li-0126">Information security policies</li>
+<li id="c16-li-0127">Organization of information security</li>
+<li id="c16-li-0128">Human resource security</li>
+<li id="c16-li-0129">Asset management</li>
+<li id="c16-li-0130">Access control</li>
+<li id="c16-li-0131">Cryptography</li>
+<li id="c16-li-0132">Physical and environmental security</li>
+<li id="c16-li-0133">Operations security</li>
+<li id="c16-li-0134">Communications security</li>
+<li id="c16-li-0135"><span aria-label="549" epub:type="pagebreak" id="Page_549" role="doc-pagebreak"/>System acquisition, development, and maintenance</li>
+<li id="c16-li-0136">Supplier relationships</li>
+<li id="c16-li-0137">Information security incident management</li>
+<li id="c16-li-0138">Information security aspects of business continuity management</li>
+<li id="c16-li-0139">Compliance with internal requirements, such as policies, and with external requirements, such as laws</li>
+</ul>
+<p id="c16-para-0161">The ISO 27001 standard was once the most commonly used information security standard, but it is declining in popularity outside of highly regulated industries that require ISO compliance. Organizations in those industries may choose to formally adopt ISO 27001 and pursue certification programs, where an external assessor validates their compliance with the standard and certifies them as operating in accordance with ISO 27001.</p>
+</section>
+<section><span id="c16-sec-0057"/>
+<h4 id="head-4-165">ISO 27002</h4>
+<p>The <i>ISO 27002</i> standard goes beyond control objectives and describes the actual controls that an organization may implement to meet cybersecurity objectives. ISO designed this supplementary document for organizations that wish to</p>
+<ul class="square" id="c16-list-0033">
+<li id="c16-li-0140">Select information security controls</li>
+<li id="c16-li-0141">Implement information security controls</li>
+<li id="c16-li-0142">Develop information security management guidelines</li>
+</ul>
+</section>
+<section><span id="c16-sec-0058"/>
+<h4 id="head-4-166">ISO 27701</h4>
+<p>Whereas ISO 27001 and ISO 27002 focus on cybersecurity controls, <i>ISO 27701</i> contains standard guidance for managing privacy controls. ISO views this document as an extension to their ISO 27001 and ISO 27002 security standards.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c16-para-0164"><img alt="" role="presentation" src="images/note.png"/> Be careful with the numbering of the ISO standards, particularly ISO 27001 and ISO 27701. They look nearly identical, but it is important to remember that ISO 27001 covers cybersecurity and ISO 27701 covers privacy.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c16-sec-0060"/>
+<h4 id="head-4-167">ISO 31000</h4>
+<p id="c16-para-0165"><i>ISO 31000</i> provides guidelines for risk management programs. This document is not specific to cybersecurity or privacy but covers risk management in a general way so that it may be applied to any risk.</p>
+</section>
+</section>
+<section><span id="c16-sec-0061"/>
+<h3 id="head-3-258">Benchmarks and Secure Configuration Guides</h3>
+<p id="c16-para-0166">The NIST and ISO frameworks are high-level descriptions of cybersecurity and risk management best practices. They don't offer practical guidance on actually implementing <span aria-label="550" epub:type="pagebreak" id="Page_550" role="doc-pagebreak"/>security controls. However, government agencies, vendors, and industry groups publish a variety of benchmarks and secure configuration guides that help organizations understand how they can securely operate commonly used platforms, including operating systems, web servers, application servers, and network infrastructure devices.</p>
+<p id="c16-para-0167">These benchmarks and configuration guides get down into the nitty-gritty details of securely operating commonly used systems. For example, <a href="#c16-fig-0008" id="R_c16-fig-0008">Figure 16.8</a> shows an excerpt from a security configuration benchmark for Windows Server 2022.</p>
+<figure> <img alt="A snapshot of Windows Server 20 22 Security Benchmark Excerpt. It includes minimum password length of profile applicability and descriptions." class="center" src="images/c16f008.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c16-fig-0008" id="c16-fig-0008" role="doc-backlink"><b>FIGURE 16.8</b></a></span> Windows Server 2022 Security Benchmark Excerpt</p>
+<p class="source">Source: Center for Internet Security (CIS) (<code><a href="http://cisecurity.org/cis-benchmarks">http://cisecurity.org/cis-benchmarks</a></code>)</p>
+</figcaption>
+</figure>
+<p id="c16-para-0168">The excerpt shown in <a href="#c16-fig-0008">Figure 16.8</a> comes from the <i>Center for Internet Security (CIS)</i>, an industry organization that publishes hundreds of benchmarks for commonly used platforms. To give you a sense of the level of detail involved, <a href="#c16-fig-0008">Figure 16.8</a> shows a portion of one page from a document that contains 642 pages detailing appropriate security settings for Windows Server 2022.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-273"><span id="c16-sec-0062"/>
+<h2 id="head-2-273">Security Awareness and Training</h2>
+<p id="c16-para-0169">The success of a security program depends on the behavior (both actions and inaction) of many different people. Security training and awareness programs help ensure that employees and other stakeholders are aware of their information security responsibilities and that those responsibilities remain top-of-mind. Information security managers are responsible for <span aria-label="551" epub:type="pagebreak" id="Page_551" role="doc-pagebreak"/>establishing, promoting, and maintaining an information security training and awareness program to foster an effective security culture in their organizations.</p>
+<section><span id="c16-sec-0063"/>
+<h3 id="head-3-259">User Training</h3>
+<p id="c16-para-0170">Users within your organization should receive regular <i>security training</i> to ensure that they understand the risks associated with your computing environment and their role in minimizing those risks. Strong training programs take advantage of a diversity of training techniques, including the use of <i>computer-based training (CBT)</i>.</p>
+<section><span id="c16-sec-0064"/>
+<h4 id="head-4-168">Role-Based Training</h4>
+<p id="c16-para-0171">Not every user requires the same level of training. Organizations should use <i>role-based training</i> to make sure that individuals receive the appropriate level of training based on their job responsibilities. For example, a systems administrator should receive detailed and highly technical training, whereas a customer service representative requires less technical training with a greater focus on social engineering and pretexting attacks that they may encounter in their work.</p>
+</section>
+<section><span id="c16-sec-0065"/>
+<h4 id="head-4-169">User Guidance and Training</h4>
+<p id="c16-para-0172">Phishing attacks often target users at all levels of the organization, and every security awareness program should include specific antiphishing campaigns designed to help users recognize suspicious messages and respond to phishing attempts appropriately. These campaigns often involve the use of <i>phishing simulations</i>, which send users fake phishing messages to test their skills. Users who click on the simulated phishing message are sent to a training program designed to help them better recognize fraudulent messages.</p>
+<p id="c16-para-0173"><i>Anomalous behavior recognition</i> is also an important component of security awareness training. Employees should be able to recognize when risky, unexpected, and/or unintentional behavior takes place. The insider threat posed by employees with legitimate access permissions is significant, and other employees may be the first to notice the signs of anomalous behavior that could be a security concern.</p>
+<p>Other topics that should be included in end-user security training programs include:</p>
+<ul class="none" id="c16-list-0034">
+<li id="c16-li-0143"><b>Security Policies and Handbooks</b> Provide users with information about where they can find critical security documents.</li>
+<li id="c16-li-0144"><b>Situational Awareness</b> Update users on the security threats facing the organization and how they can recognize suspicious activity.</li>
+<li id="c16-li-0145"><b>Insider Threats</b> Remind users that employees, contractors, and other insiders may pose a security risk and that they should be alert for anomalous behavior.</li>
+<li id="c16-li-0146"><b>Password Management</b> Educate users about your organization's password standards and the importance of not reusing passwords across multiple sites.</li>
+<li id="c16-li-0147"><span aria-label="552" epub:type="pagebreak" id="Page_552" role="doc-pagebreak"/><b>Removable Media and Cables</b> Inform users of the risks associated with the use of USB drives, external hard drives, and other removable media, as well as unfamiliar cables. Educate them on the policies for using these devices and the importance of scanning for malware before accessing files.</li>
+<li id="c16-li-0148"><b>Social Engineering</b> Train users to recognize and respond to social engineering attacks. Teach them to be skeptical of unsolicited communications, especially those that create a sense of urgency or require sensitive information.</li>
+<li id="c16-li-0149"><b>Operational Security</b> Educate users on the importance of protecting sensitive information during day-to-day operations. This includes understanding the importance of access controls, not discussing sensitive information in public or unsecured areas, and being vigilant about who has access to sensitive data.</li>
+<li id="c16-li-0150"><b>Hybrid/Remote Work Environments</b> Instruct users on best practices for securing data and maintaining privacy when working remotely or in hybrid environments. This includes the use of VPNs, secure Wi-Fi networks, ensuring physical security of devices, and understanding the specific policies and procedures that are in place for remote work.</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c16-fea-0010"/>
+<h3 id="head-2-274">Exam Note</h3>
+<section><span id="c16-sec-0066"/>
+<p id="c16-para-0183">The SY0-701 exam objectives call out specific security awareness practices for phishing, anomalous behavior recognition, user guidance and training, reporting and monitoring, development, and execution. Given a scenario, be ready to implement security awareness best practices.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c16-sec-0067"/>
+<h4 id="head-4-170">Training Frequency</h4>
+<p id="c16-para-0184">You'll also want to think about the frequency of your training efforts. You'll need to balance the time required to conduct training with the benefit from reminding users of their responsibilities. One approach used by many organizations is to conduct initial training whenever an employee joins the organization or assumes new job responsibilities and then use annual refresher trainings to cover the same material and update users on new threats and controls.</p>
+</section> <span aria-label="553" epub:type="pagebreak" id="Page_553" role="doc-pagebreak"/>
+<section><span id="c16-sec-0068"/>
+<h4 id="head-4-171">Development and Execution</h4>
+<p id="c16-para-0185">The development of security training programs begins with a thorough assessment of the organization's security landscape and identifying potential risks and threats. Based on this assessment, the team can develop tailored content that addresses the unique challenges of the organization.</p>
+<p id="c16-para-0186">It's helpful to incorporate real-world examples and interactive elements to keep participants engaged. Aligning the training with the organization's policies and procedures ensures consistency and relevance.</p>
+<p id="c16-para-0187">The execution phase should include a variety of training methods, such as workshops, e-learning modules, and simulations, catering to different learning preferences. An essential aspect of execution is to make training accessible and regular for all employees. Create a schedule that includes initial training for new employees and periodic refreshers to keep knowledge current.</p>
+</section>
+<section><span id="c16-sec-0069"/>
+<h4 id="head-4-172">Reporting and Monitoring</h4>
+<p id="c16-para-0188">Reporting and monitoring are crucial components of security training programs. Administrators should track participation in training programs and assess user knowledge through quizzes and other means. You should also collect feedback from employees to understand their perspectives and make necessary adjustments to the program.</p>
+<p id="c16-para-0189">It's helpful to provide decision-makers with regular reports that provide both detailed data for technical stakeholders and high-level trends for management. Over time, an analysis of trends in knowledge levels and security incidents is essential for understanding the long-term impact of the training program.</p>
+<p id="c16-para-0190">The team responsible for providing security training should review materials on a regular basis to ensure that the content remains relevant. Changes in the security landscape and the organization's business may require updating the material to remain fresh and relevant.</p>
+</section>
+</section>
+<section><span id="c16-sec-0070"/>
+<h3 id="head-3-260">Ongoing Awareness Efforts</h3>
+<p id="c16-para-0191">In addition to formal training programs, an information security program should include <i>security awareness</i> efforts. These are less formal efforts that are designed to remind employees about the security lessons they've already learned. Unlike security training, awareness efforts don't require a commitment of time to sit down and learn new material. Instead, they use posters, videos, email messages, and similar techniques to keep security top-of-mind for those who've already learned the core lessons.</p>
+<p id="c16-para-0192"><a href="#c16-fig-0009" id="R_c16-fig-0009">Figure 16.9</a> shows an example of a security awareness poster developed by the U.S. Department of Energy.</p> <span aria-label="554" epub:type="pagebreak" id="Page_554" role="doc-pagebreak"/>
+<figure> <img alt="A snapshot of a poster about security awareness. The text reads your technology may not be what you think it is." class="center" src="images/c16f009.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c16-fig-0009" id="c16-fig-0009" role="doc-backlink"><b>FIGURE 16.9</b></a></span> Security awareness poster</p>
+<p class="source">Source: U.S. Department of Energy</p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section aria-labelledby="head-2-275"><span id="c16-sec-0071"/>
+<h2 id="head-2-275">Summary</h2>
+<p id="c16-para-0193">Policies form the basis of every strong information security program. A solid policy framework consists of policies, standards, procedures, and guidelines that work together to describe the security control environment of an organization. In addition to complying with internally developed policies, organizations often must comply with externally imposed <span aria-label="555" epub:type="pagebreak" id="Page_555" role="doc-pagebreak"/>compliance obligations. Security frameworks, such as the NIST Cybersecurity Framework and ISO 27001, provide a common structure for security programs based on accepted industry best practices. Organizations should implement and test security controls to achieve security control objectives that are developed based on the business and technical environment of the organization.</p>
+</section>
+<section aria-labelledby="head-2-276"><span id="c16-sec-0072"/>
+<h2 id="head-2-276">Exam Essentials</h2>
+<p id="c16-li-0151"><b>Security governance practices ensure that organizations achieve their strategic objectives.</b> Governance programs are the sets of procedures and controls put in place to allow an organization to effectively direct its work. Governance programs may involve the participation of a variety of boards, committees, and government regulators. Centralized governance models use a top-down approach that dictates how subordinate units meet security objectives, whereas decentralized governance models delegate the authority for meeting security objectives as the subordinate units see fit.</p>
+<p id="c16-li-0152"><b>Policy frameworks consist of policies, standards, procedures, and guidelines.</b> Policies are high-level statements of management intent for the information security program. Standards describe the detailed implementation requirements for policy. Procedures offer step-by-step instructions for carrying out security activities. Compliance with policies, standards, and procedures is mandatory. Guidelines offer optional advice that complements other elements of the policy framework.</p>
+<p id="c16-li-0153"><b>Organizations often adopt a set of security policies covering different areas of their security programs.</b> Common policies used in security programs include an information security policy, an acceptable use policy, a data ownership policy, a data retention policy, an account management policy, and a password policy. The specific policies adopted by any organization will depend on that organization's culture and business needs.</p>
+<p id="c16-li-0154"><b>Policy documents should include exception processes.</b> Exception processes should outline the information required to receive an exception to security policy and the approval authority for each exception. The process should also describe the requirements for compensating controls that mitigate risks associated with approved security policy exceptions.</p>
+<p id="c16-li-0155"><b>Change management is crucial to ensuring the availability of systems and applications.</b> The primary goal of change management is to ensure that changes do not cause outages. Change management processes ensure that appropriate personnel review and approve changes before implementation and ensure that personnel test and document the changes. Change review processes should carefully evaluate the potential impact of any change.</p>
+<p id="c16-li-0156"><b>Organizations face a variety of security compliance requirements.</b> Merchants and credit card service providers must comply with the Payment Card Industry Data Security Standard (PCI DSS). Organizations handling the personal information of European Union residents <span aria-label="556" epub:type="pagebreak" id="Page_556" role="doc-pagebreak"/>must comply with the EU General Data Protection Regulation (GDPR). All organizations should be familiar with the national, territory, and state laws that affect their operations.</p>
+<p id="c16-li-0157"><b>Standards frameworks provide an outline for structuring and evaluating cybersecurity programs.</b> Organizations may choose to base their security programs on a framework, such as the NIST Cybersecurity Framework (CSF) or International Organization for Standardization (ISO) standards. U.S. federal government agencies and contractors should also be familiar with the NIST Risk Management Framework (RMF). These frameworks sometimes include maturity models that allow an organization to assess its progress. Some frameworks also offer certification programs that provide independent assessments of an organization's progress toward adopting a framework.</p>
+<p id="c16-li-0158"><b>Security training and awareness ensures that individuals understand their responsibilities.</b> Security training programs impart new knowledge on employees and other stakeholders. They should be tailored to meet the specific requirements of an individual's role in the organization. Security awareness programs seek to remind users of the information they have already learned, keeping their security responsibilities top-of-mind.</p>
+
+</section> <span aria-label="557" epub:type="pagebreak" id="Page_557" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-277"><span id="c16-sec-0073"/>
+<h2 id="head-2-277">Review Questions</h2>
+<section><span id="c16-exsec-0001"/>
+<ol class="decimal">
+<li id="c16-ex-0001">Joe is authoring a document that explains to system administrators one way in which they might comply with the organization's requirement to encrypt all laptops. What type of document is Joe writing?
+<ol class="upper-alpha">
+<li>Policy</li>
+<li>Guideline</li>
+<li>Procedure</li>
+<li>Standard</li>
+</ol>
+</li>
+<li id="c16-ex-0002">Which one of the following statements is not true about compensating controls under PCI DSS?
+<ol class="upper-alpha">
+<li>Controls used to fulfill one PCI DSS requirement may be used to compensate for the absence of a control needed to meet another requirement.</li>
+<li>Controls must meet the intent of the original requirement.</li>
+<li>Controls must meet the rigor of the original requirement.</li>
+<li>Compensating controls must provide a similar level of defense as the original requirement.</li>
+</ol>
+</li>
+<li id="c16-ex-0003">What law creates privacy obligations for those who handle the personal information of European Union residents?
+<ol class="upper-alpha">
+<li>HIPAA</li>
+<li>FERPA</li>
+<li>GDPR</li>
+<li>PCI DSS</li>
+</ol>
+</li>
+<li id="c16-ex-0004">Which one of the following is <i>not</i> one of the five core security functions defined by the NIST Cybersecurity Framework?
+<ol class="upper-alpha">
+<li>Identify</li>
+<li>Contain</li>
+<li>Respond</li>
+<li>Recover</li>
+</ol>
+</li>
+<li id="c16-ex-0005">What ISO standard provides guidance on privacy controls?
+<ol class="upper-alpha">
+<li>27002</li>
+<li>27001</li>
+<li>27701</li>
+<li>31000</li>
+</ol>
+</li>
+<li id="c16-ex-0006"><span aria-label="558" epub:type="pagebreak" id="Page_558" role="doc-pagebreak"/> Which one of the following documents must normally be approved by the CEO or similarly high-level executive?
+<ol class="upper-alpha">
+<li>Standard</li>
+<li>Procedure</li>
+<li>Guideline</li>
+<li>Policy</li>
+</ol>
+</li>
+<li id="c16-ex-0007">Greg would like to create an umbrella agreement that provides the security terms and conditions for all future work that his organization does with a vendor. What type of agreement should Greg use?
+<ol class="upper-alpha">
+<li>BPA</li>
+<li>MOU</li>
+<li>MSA</li>
+<li>SLA</li>
+</ol>
+</li>
+<li id="c16-ex-0008">What organization is known for creating independent security benchmarks covering hardware and software platforms from many different vendors?
+<ol class="upper-alpha">
+<li>Microsoft</li>
+<li>Center for Internet Security</li>
+<li>Cloud Security Alliance</li>
+<li>Cisco</li>
+</ol>
+</li>
+<li id="c16-ex-0009">What do many organizations use to schedule and coordinate changes for information systems?
+<ol class="upper-alpha">
+<li>Impact analysis</li>
+<li>Backout plans</li>
+<li>Maintenance windows</li>
+<li>Version control</li>
+</ol>
+</li>
+<li id="c16-ex-0010">Which one of the following would <i>not</i> normally be found in an organization's information security policy?
+<ol class="upper-alpha">
+<li>Statement of the importance of cybersecurity</li>
+<li>Requirement to use AES-256 encryption</li>
+<li>Delegation of authority</li>
+<li>Designation of responsible executive</li>
+</ol>
+</li>
+<li id="c16-ex-0011">Alice, an IT security manager at Acme Corporation, decides to conduct an exercise to test the employees' ability to recognize phishing emails. She creates fake phishing messages and sends them to the employees. When employees click on the links in the fake messages, they are redirected to a training program. What is the primary purpose of the exercise that Alice is conducting?
+<ol class="upper-alpha">
+<li>To penalize the employees who click on the phishing links</li>
+<li>To reward employees who identify the fake phishing messages <span aria-label="559" epub:type="pagebreak" id="Page_559" role="doc-pagebreak"/></li>
+<li>To test employees' ability to recognize phishing messages and help them improve</li>
+<li>To gather data for a report on the most gullible departments</li>
+</ol>
+</li>
+<li id="c16-ex-0012">Tonya discovers that an employee is running a side business from his office, using company technology resources. What policy would most likely contain information relevant to this situation?
+<ol class="upper-alpha">
+<li>NDA</li>
+<li>AUP</li>
+<li>Data ownership</li>
+<li>Data classification</li>
+</ol>
+</li>
+<li id="c16-ex-0013">What compliance obligation applies to merchants and service providers who work with credit card information?
+<ol class="upper-alpha">
+<li>FERPA</li>
+<li>SOX</li>
+<li>HIPAA</li>
+<li>PCI DSS</li>
+</ol>
+</li>
+<li id="c16-ex-0014">Mike is an information security manager at TechRise Solutions. The company has been experiencing an increase in security incidents, and senior management is concerned about the security posture of the organization. They have asked Mike to take proactive measures to strengthen the company's security culture. What should be Mike's primary role in enhancing the security awareness and training at TechRise Solutions?
+<ol class="upper-alpha">
+<li>To delegate all security responsibilities to the HR department</li>
+<li>To establish, promote, and maintain security training and awareness programs</li>
+<li>To create and distribute security awareness posters</li>
+<li>To personally conduct security training sessions for all employees</li>
+</ol>
+</li>
+<li id="c16-ex-0015">Colin would like to implement a security control in his accounting department that is specifically designed to detect cases of fraud that are able to occur despite the presence of other security controls. Which one of the following controls is best suited to meet Colin's need?
+<ol class="upper-alpha">
+<li>Separation of duties</li>
+<li>Least privilege</li>
+<li>Dual control</li>
+<li>Mandatory vacations</li>
+</ol>
+</li>
+<li id="c16-ex-0016">Which one of the following security policy framework components does not contain mandatory guidance for individuals in the organization?
+<ol class="upper-alpha">
+<li>Policy</li>
+<li>Standard</li>
+<li>Procedure</li>
+<li>Guideline</li>
+</ol>
+</li>
+<li id="c16-ex-0017"><span aria-label="560" epub:type="pagebreak" id="Page_560" role="doc-pagebreak"/> Rachel is the Head of Security at WebCraft Inc. She wants to create both security training and awareness programs. Which statement best captures the difference between these programs?
+<ol class="upper-alpha">
+<li>Security training requires time to learn new material, whereas awareness efforts use techniques like posters and emails to remind employees of security lessons.</li>
+<li>Security training involves giving rewards to employees, whereas awareness efforts involve punishments.</li>
+<li>There is no difference; both terms can be used interchangeably.</li>
+<li>Security training is for security team members only, whereas security awareness is for all employees.</li>
+</ol>
+</li>
+<li id="c16-ex-0018">Allan is developing a document that lists the acceptable mechanisms for securely obtaining remote administrative access to servers in his organization. What type of document is Allan writing?
+<ol class="upper-alpha">
+<li>Policy</li>
+<li>Standard</li>
+<li>Guideline</li>
+<li>Procedure</li>
+</ol>
+</li>
+<li id="c16-ex-0019">Which one of the following is not a common use of the NIST Cybersecurity Framework?
+<ol class="upper-alpha">
+<li>Describe the current cybersecurity posture of an organization.</li>
+<li>Describe the target future cybersecurity posture of an organization.</li>
+<li>Communicate with stakeholders about cybersecurity risk.</li>
+<li>Create specific technology requirements for an organization.</li>
+</ol>
+</li>
+<li id="c16-ex-0020">Which one of the following items is <i>not</i> normally included in a request for an exception to security policy?
+<ol class="upper-alpha">
+<li>Description of a compensating control</li>
+<li>Description of the risks associated with the exception</li>
+<li>Proposed revision to the security policy</li>
+<li>Business justification for the exception</li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+</section>
+</body>
+</html>

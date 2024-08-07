@@ -1,0 +1,903 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:svg="http://www.w3.org/2000/svg" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+<head>
+<title>Chapter 11 Endpoint Security</title>
+<link href="WileyTemplate_v5.5.css" rel="stylesheet" type="text/css"/>
+<meta content="urn:uuid:57d469d3-a1d3-48bd-8447-18ce82f57cc2" name="Adept.expected.resource"/>
+</head>
+<body epub:type="bodymatter">
+<section aria-labelledby="c11_1" epub:type="chapter" role="doc-chapter">
+<header>
+<h1 id="c11_1"><span aria-label="337" epub:type="pagebreak" id="Page_337" role="doc-pagebreak"/><span id="c11"/><span class="chapterNumber">Chapter 11</span><br/><span class="chapterTitle">Endpoint Security</span></h1>
+</header>
+<section aria-label="chapter opening"><span id="c11-sec-0001"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c11-para-0002"><b>THE COMPTIA SECURITY+ EXAM OBJECTIVES COVERED IN THIS CHAPTER INCLUDE:</b></p>
+<ul class="check1" id="c11-list-0001">
+<li id="c11-li-0001"><b>Domain 1.0: General Security Concepts</b>
+<ul class="square1" id="c11-list-0002">
+<li id="c11-li-0002">1.4. Explain the importance of using appropriate cryptographic solutions.
+<ul class="square1" id="c11-list-0003">
+<li id="c11-li-0003">Tools (Trusted Platform Module (TPM), Hardware security module (HSM), Key management system, Secure enclave)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="c11-li-0004"><b>Domain 2.0: Threats, Vulnerabilities, and Mitigations</b>
+<ul class="square1" id="c11-list-0004">
+<li id="c11-li-0005">2.3. Explain various types of vulnerabilities.
+<ul class="square1" id="c11-list-0005">
+<li id="c11-li-0006">Operating system (OS)-based</li>
+<li id="c11-li-0007">Hardware (Firmware, End-of-life, Legacy)</li>
+<li id="c11-li-0008">Misconfiguration</li>
+</ul>
+</li>
+<li id="c11-li-0009">2.5. Explain the purpose of mitigation techniques used to secure the enterprise.
+<ul class="square1" id="c11-list-0006">
+<li id="c11-li-0010">Patching</li>
+<li id="c11-li-0011">Encryption</li>
+<li id="c11-li-0012">Configuration enforcement</li>
+<li id="c11-li-0013">Decommissioning</li>
+<li id="c11-li-0014">Hardening techniques (Encryption, Installation of endpoint protection, Host-based firewall, Host-based intrusion prevention system (HIPS), Disabling ports/protocols, Default password changes, Removal of unnecessary software)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="c11-li-0015"><b>Domain 3.0: Security Architecture</b>
+<ul class="square1" id="c11-list-0007">
+<li id="c11-li-0016">3.1. Compa<b>r</b>e and contrast security implications of different architecture models.
+<ul class="square1" id="c11-list-0008">
+<li id="c11-li-0017">Architecture and infrastructure concepts (IoT, Industrial control systems (ICS)/supervisory control and data <span aria-label="338" epub:type="pagebreak" id="Page_338" role="doc-pagebreak"/>acquisition (SCADA), Real-time operating system (RTOS), Embedded systems)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="c11-li-0018"><b>Domain 4.0: Security Operations</b>
+<ul class="square1" id="c11-list-0009">
+<li id="c11-li-0019">4.1. Given a scenario apply common security techniques to computing resources.
+<ul class="square1" id="c11-list-0010">
+<li id="c11-li-0020">Secure baselines (Establish, Deploy, Maintain)</li>
+<li id="c11-li-0021">Hardening targets (Workstations, Servers, ICS/SCADA, Embedded systems, RTOS, IoT devices)</li>
+</ul>
+</li>
+<li id="c11-li-0022">4.2. Explain the security implications of proper hardware, software, and data asset management.
+<ul class="square1" id="c11-list-0011">
+<li id="c11-li-0023">Acquisition/procurement process</li>
+<li id="c11-li-0024">Assignment/accounting (Ownership, Classification)</li>
+<li id="c11-li-0025">Monitoring/asset tracking (Inventory, Enumeration)</li>
+<li id="c11-li-0026">Disposal/decommissioning (Sanitization, Destruction, Certification, Data retention)</li>
+</ul>
+</li>
+<li id="c11-li-0027">4.4. Explain security alerting and monitoring concepts and tools.
+<ul class="square1">
+<li id="c11-li-0028">Tools (Antivirus, Data loss prevention (DLP))</li>
+</ul></li>
+<li id="c11-li-0029">4.5. Given a scenario, modify enterprise capabilities to enhance security.
+<ul class="square1" id="c11-list-0012">
+<li id="c11-li-0030">Operating system security (Group Policy, SELinux)</li>
+<li id="c11-li-0031">Endpoint detection and response (EDR)/extended detection and response (XDR)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c11-para-0001"><span aria-label="339" epub:type="pagebreak" id="Page_339" role="doc-pagebreak"/></p>
+<p id="c11-para-0015">Protecting endpoints in your organization is a major portion of the daily tasks for many security professionals. For most organizations, endpoints significantly outnumber the servers and network devices, and since end users control or use them, they also have a wide variety of threats that they face that a server is unlikely to deal with.</p>
+<p id="c11-para-0016">In this chapter, you will start by learning about operating system and hardware vulnerabilities to provide context for how and why endpoints, servers, and devices need protection. Next, you'll explore endpoint protection techniques, including how to secure a system's boot process, how modern endpoint detection and response tools are used to catch malware before it can take over systems, and how antimalware and antivirus tools detect, prevent, and remediate malware infections. You'll also learn about concepts like data loss prevention, network defense technologies, and what system and service hardening involves. Operating system security, configuration standards, and what to do with disks and removable media when they're being reused or removed from service are also part of the hardening and system protection process.</p>
+<p id="c11-para-0017">The next portion of the chapter focuses on embedded and specialized systems, which are common endpoint devices that have different security requirements than traditional desktop and mobile operating systems. You'll learn about a few embedded platforms and the real-time operating systems and hardware that help drive their specialized requirements, as well as systems that they are integrated into, such as SCADA and ICS systems used for industrial automation and management. You'll explore the Internet of Things and what implications it and other specialized systems have for security.</p>
+<p id="c11-para-0018">Finally, you'll finish the chapter with an exploration of the asset and data management in the context of security. You'll review procurement, asset tracking and accounting, and how asset inventories play a role in organizational security operations.</p>
+</section>
+<section aria-labelledby="head-2-165"><span id="c11-sec-0003"/>
+<h2 id="head-2-165">Operating System Vulnerabilities</h2>
+<p id="c11-para-0019">One of the key elements in security operations is properly securing operating systems. Whether they're workstations, mobile devices, servers, or another type of device, the underlying operating system has a big impact on your ability to secure your organization.</p>
+<p>There are a number of ways that operating systems can be vulnerable:</p>
+<ul class="square" id="c11-list-0013">
+<li id="c11-li-0032">Vulnerabilities in the operating system itself can be exploited by attackers. This drives ongoing operating system patching as well as configuring systems to minimize their attack footprint, or the number of services that are exposed and can thus potentially be targeted.</li>
+<li id="c11-li-0033"><span aria-label="340" epub:type="pagebreak" id="Page_340" role="doc-pagebreak"/>Defaults like default passwords and insecure settings are potential paths for attackers as well. As you read further in this chapter, you'll explore configuration baselines and security practices intended to avoid insecure defaults.</li>
+<li id="c11-li-0034">Configurations can also introduce vulnerabilities. Unlike defaults, configurations are intentional but may be insecure. That means that security tools that support concepts like mandatory access control that limit the potential for configuration issues are useful security controls.</li>
+<li id="c11-li-0035">Misconfiguration, unlike configuration and defaults, occurs when a mistake is made. Human error remains a consistent way for attackers to successfully overcome default operating system and application security.</li>
+</ul>
+<p id="c11-para-0021">As you read further in this chapter, you'll explore many of the most common ways that organizations attempt to address these issues for operating systems, services, and software.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c11-fea-0001"/>
+<h3 id="head-2-166">Exam Note</h3>
+<section><span id="c11-sec-0004"/>
+<p id="c11-para-0022">The Security+ exam outline is vague about operating system–based vulnerabilities—unlike other topics, it just lists “OS-based.” As you're studying, you'll want to think about how your choice of operating system, its defaults, security configuration, and support model all impact your organization's security.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section aria-labelledby="head-2-167"><span id="c11-sec-0005"/>
+<h2 id="head-2-167">Hardware Vulnerabilities</h2>
+<p id="c11-para-0023">Endpoints also face hardware vulnerabilities that require consideration in security designs. While many hardware vulnerabilities are challenging or even impossible to deal with directly, compensating controls can be leveraged to help ensure that the impact of hardware vulnerabilities are limited.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c11-fea-0002"/>
+<h3 id="head-2-168">Exam Note</h3>
+<section><span id="c11-sec-0006"/>
+<p id="c11-para-0024">The Security+ exam outline notes that test takers should be able to explain various types of vulnerabilities, including hardware vulnerabilities related to firmware, end-of-life hardware, and legacy hardware.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c11-para-0025"><i>Firmware</i> is the embedded software that allows devices to function. It is tightly connected to the hardware of a device and may or may not be possible to update depending on the design and implementation of the device's hardware. Computer and mobile device firmware is typically capable of being updated but may require manual updates rather than being part of an automated update process.</p>
+<p id="c11-para-0026"><span aria-label="341" epub:type="pagebreak" id="Page_341" role="doc-pagebreak"/>Firmware attacks may occur through any path that allows access to the firmware. That includes through executable updates, user downloads of malicious firmware that appears to be legitimate, and even remote network-enabled updates for devices that provide networked access to their firmware or management tools.</p>
+<p id="c11-para-0027">Since firmware is embedded in the device, firmware vulnerabilities are a particular concern because reinstalling an operating system or other software will not remove malicious firmware. An example of this is 2022's MoonBounce malware, which is remotely installable and targets a computer's Serial Peripheral Interface (SPI) flash memory. Once there, it will persist through reboots and reinstallations of the operating system. You can read more about MoonBounce at <code><a href="http://www.tomshardware.com/news/moonbounce-malware-hides-in-your-bios-chip-persists-after-drive-formats">www.tomshardware.com/news/moonbounce-malware-hides-in-your-bios-chip-persists-after-drive-formats</a></code>. PC UEFI attacks aren't the only firmware attacks in the wild, however. News broke in 2023 of millions of infected Android devices that were shipped with malware in their firmware, meaning that purchasers couldn't trust their brand-new devices!</p>
+<p id="c11-para-0028">This means that firmware validation remains an important tool for security practitioners. The techniques we'll discuss later in this chapter, like trusted boot, are increasingly critical security controls.</p>
+<p><i>End-of-life</i> or <i>legacy</i> hardware drives concerns around lack of support. Once a device or system has reached end-of-life, they typically will also reach the end of their support from the manufacturer. Without further updates such as security fixes, you will be unable to address security problems directly and will need compensating controls, which may or may not be usable and appropriate for customer organizations.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p><img alt="" role="presentation" src="images/note.png"/> Vendors use a number of terms to describe their sales and support life cycles. Common terms and definitions include the following, but each vendor may have their own interpretation of what they mean!</p>
+<ul class="square" id="c11-list-0014">
+<li id="c11-li-0036">End of sales: The last date at which a specific model or device will be sold, although devices often remain in the supply chain through resellers for a period of time.</li>
+<li id="c11-li-0037">End of life: While the equipment or device is no longer sold, it remains supported. End-of-life equipment should typically be on a path to retirement, but it has some usable lifespan left.</li>
+<li id="c11-li-0038">End of support: The last date on which the vendor will provide support and/or updates.</li>
+<li id="c11-li-0039">Legacy: This term is less well defined but typically is used to describe hardware, software, or devices that are unsupported.</li>
+</ul>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section aria-labelledby="head-2-169"><span id="c11-sec-0008"/>
+<h2 id="head-2-169">Protecting Endpoints</h2>
+<p id="c11-para-0031">As a security professional, you'll be asked to recommend, implement, manage, or assess security solutions intended to protect desktops, mobile devices, servers, and a variety of other systems found in organizations. These devices are often called <i>endpoints</i>, meaning they're an endpoint of a network, whether that is a wired or a wireless network.</p>
+<p id="c11-para-0032"><span aria-label="342" epub:type="pagebreak" id="Page_342" role="doc-pagebreak"/>With such a broad range of potential endpoints, the menu of security options is also very broad. As a security practitioner, you need to know what options exist, where and how they are commonly deployed, and what considerations you need to take into account.</p>
+<section><span id="c11-sec-0009"/>
+<h3 id="head-3-163">Preserving Boot Integrity</h3>
+<p id="c11-para-0033">Keeping an endpoint secure while it is running starts as it boots up. If untrusted or malicious components are inserted into the boot process, the system cannot be trusted. Security practitioners in high-security environments need a means of ensuring that the entire boot process is provably secure.</p>
+<p id="c11-para-0034">Fortunately, modern Unified Extensible Firmware Interface (UEFI) firmware (the replacement for the traditional Basic Input/Output System [BIOS]) can leverage two different techniques to ensure that the system is secure. <i>Secure boot</i> ensures that the system boots using only software that the original equipment manufacturer (OEM) trusts. To perform a secure boot operation, the system must have a signature database listing the secure signatures of trusted software and firmware for the boot process (see <a href="#c11-fig-0001" id="R_c11-fig-0001">Figure 11.1</a>).</p>
+<figure> <img alt="A flow diagram of U E F I Secure boot high-level process. The steps involve the system being turned on, the platform key used to validate signature databases, the Signature database and revoked signatures database checked against U E F I applications and drivers, Untrusted firmware found, an attempt to restore trusted firmware, and Boot proceeds including loading antimalware software, kernel drivers, and the rest of the O S." class="center" src="images/c11f001.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c11-fig-0001" id="c11-fig-0001" role="doc-backlink"><b>FIGURE 11.1</b></a></span> UEFI Secure boot high-level process</p>
+</figcaption>
+</figure>
+<p>The second security feature intended to help prevent boot-level malware is <i>measured boot</i>. These boot processes measure each component, starting with the firmware and ending with the boot start drivers. Measured boot does not validate against a known good list of signatures before booting; instead, it relies on the UEFI firmware to hash the firmware, bootloader, drivers, and anything else that is part of the boot process. The data gathered is stored in the <i>Trusted Platform Module (TPM</i>), and the logs can be validated remotely to let security administrators know the boot state of the system. This boot attestation process allows <span aria-label="343" epub:type="pagebreak" id="Page_343" role="doc-pagebreak"/>comparison against known good states, and administrators can take action if the measured boot shows a difference from the accepted or secure known state. This process allows the remote server to make decisions about the state of the system based on the information it provides, allowing access control and quarantine options.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c11-para-0036"><img alt="" role="presentation" src="images/tip.png"/> You can read more about Microsoft's Windows 10/11 implementation of the secure boot process at <code><a href="http://docs.microsoft.com/en-us/windows/security/information-protection/secure-the-windows-10-boot-process#">http://docs.microsoft.com/en-us/windows/security/information-protection/secure-the-windows-10-boot-process#</a></code>. For a deeper dive into UEFI and TPM, read the Infosec Institute's write-up at <code><a href="http://resources.infosecinstitute.com/uefi-and-tpm">http://resources.infosecinstitute.com/uefi-and-tpm</a></code>. Windows has a Trusted Boot process that allows the operating system to check the integrity of the components involved in the startup process.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>In both cases, boot integrity begins with the hardware root of trust. The hardware root of trust for a system contains the cryptographic keys that secure the boot process. This means that the system or device inherently trusts the hardware root of trust and that it needs to be secure. One common implementation of a hardware root of trust is the TPM chip built into many computers. TPM chips are frequently used to provide built-in encryption, and they provide three major functions, which you may remember from <a href="c01.xhtml">Chapter 1</a>, “Today's Security Professional”:</p>
+<ul class="square" id="c11-list-0015">
+<li id="c11-li-0040">Remote attestation, allowing hardware and software configurations to be verified</li>
+<li id="c11-li-0041">Binding, which encrypts data</li>
+<li id="c11-li-0042">Sealing, which encrypts data and sets requirements for the state of the TPM chip before decryption</li>
+</ul>
+<p>TPM chips are one common solution; others include serial numbers that cannot be modified or cloned, and physically unclonable functions (PUFs), which are unique to the specific hardware device that provide a unique identifier or digital fingerprint for the device.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c11-para-0039"><img alt="" role="presentation" src="images/note.png"/> A physically unclonable function is based on the unique features of a microprocessor that are created when it is manufactured and is not intentionally created or replicated.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c11-para-0040">Similar techniques are used for Apple's <i>Secure Enclave</i>, a dedicated secure element that is built into Apple's system on chip (SoC) modules. They provide hardware key management, which is isolated from the main CPU, protecting keys throughout their life cycle and usage. Other vendors have similar capabilities, including Google's Titan M and Samsung's TrustZone and Knox functionality.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c11-fea-0003"/>
+<h3 id="head-2-170">Protecting the Keys to the Kingdom</h3>
+<section><span id="c11-sec-0012"/>
+<p id="c11-para-0041">A related technology is <i>hardware security modules</i> (<i>HSM</i>s). Hardware security modules are typically external devices or plug-in cards used to create, store, and manage digital keys for cryptographic functions and authentication, as well as to offload cryptographic processing. <span aria-label="344" epub:type="pagebreak" id="Page_344" role="doc-pagebreak"/>HSMs are often used in high-security environments and are normally certified to meet standards like Federal Information Processing Standards (FIPS) 140 or Common Criteria (ISO/IEC 15408).</p>
+<p id="c11-para-0042">Cryptographic <i>key management systems</i> are used to store keys and certificates as well as to manage them centrally. This allows organizations to effectively control and manage their secrets while also enforcing policies. Cloud providers frequently provide KMS as a service for their environments as part of their offerings.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c11-fea-0004"/>
+<h3 id="head-2-171">Exam Note</h3>
+<section><span id="c11-sec-0013"/>
+<p id="c11-para-0043">As you prepare for the exam, keep in mind the roles that TPMs, HSMs, key management services (KMSs) and secure enclaves play in system security and organization operations. Remember that TPMs are used for system security; HSMs are used to create, store, and manage keys for multiple systems; and a KMS is a service used to manage secrets.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c11-sec-0014"/>
+<h3 id="head-3-164">Endpoint Security Tools</h3>
+<p id="c11-para-0044">Once a system is running, ensuring that the system itself is secure is a complex task. Many types of security tools are available for endpoint systems, and the continuously evolving market for solutions means that traditional tool categories are often blurry. Despite that, a few common concepts and categories exist that are useful to help describe capabilities and types of tools.</p>
+<section><span id="c11-sec-0015"/>
+<h4 id="head-4-96">Antivirus and Antimalware</h4>
+<p>One of the most common security tools is antivirus and antimalware software. Although more advanced antidetection, obfuscation, and other defensive tools are always appearing in new malware packages, using antimalware packages in enterprise environments remains a useful defensive layer in many situations.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c11-para-0046"><img alt="" role="presentation" src="images/note.png"/> For ease of reference, we will refer to the broad category of antivirus and antimalware tools as antimalware tools.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>Tools like these work to detect malicious software and applications through a variety of means. Here are the most common methods:</p>
+<ul class="square" id="c11-list-0016">
+<li id="c11-li-0043">Signature-based detection, which uses a hash or pattern-based signature detection method to identify files or components of the malware that have been previously <span aria-label="345" epub:type="pagebreak" id="Page_345" role="doc-pagebreak"/>observed. Traditional antimalware tools often relied on signature-based detection as the first line of defense for systems, but attackers have increasingly used methods like polymorphism that change the malware every time it is installed, as well as encryption and packing to make signatures less useful.</li>
+<li id="c11-li-0044">Heuristic-, or behavior-based detection, looks at what actions the malicious software takes and matches them to profiles of unwanted activities. Heuristic-based detection systems can identify new malware based on what it is doing, rather than just looking for a match to a known fingerprint.</li>
+<li id="c11-li-0045">Artificial intelligence (AI) and machine learning (ML) systems are increasingly common throughout the security tools space. They leverage large amounts of data to find ways to identify malware that may include heuristic, signature, and other detection capabilities.</li>
+<li id="c11-li-0046">Sandboxing is used by some tools and by the antimalware vendors themselves to isolate and run sample malicious code. A sandbox is a protected environment where unknown, untrusted, potentially dangerous, or known malicious code can be run to observe it. Sandboxes are instrumented to allow all the actions taken by the software to be documented, providing the ability to perform in-depth analysis.</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c11-fea-0005"/>
+<h3 id="head-2-172">Playing In a Sandbox</h3>
+<section><span id="c11-sec-0017"/>
+<p id="c11-para-0048">The term <i>sandbox</i> describes an isolated environment where potentially dangerous or problematic software can be run. Major antimalware sites, tools, and vendors all use sandboxing techniques to test potential malware samples. Some use multiple antimalware tools running in virtual environments to validate samples, and others use highly instrumented sandboxes to track every action taken by malware once it is run. Of course, there is a constant battle between malware authors and antimalware companies as malware creators look for ways to detect sandboxes so that they can prevent their tools from being analyzed and as antimalware companies develop new tools to defeat those techniques.</p>
+<p id="c11-para-0049">Commercial and open source sandbox technologies are available, including Cuckoo sandbox, an automated malware analysis tool. You can read more about Cuckoo at <code><a href="http://cuckoosandbox.org">http://cuckoosandbox.org</a></code>. You'll also find sandboxing capabilities built into advanced antimalware tools, so you may already have sandboxing available to your organization.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c11-para-0050">Antimalware tools can be installed on mobile devices, desktops, and other endpoints like the devices and systems that handle network traffic and email, and anywhere else that malicious software could attack or be detected. Using an antimalware package has been a consistent recommendation from security professionals for years since it is a last line of defense against systems being infected or compromised. That also means that attackers have focused on bypassing and defeating antimalware programs, including using the same tools as part of their testing for new malicious software.</p>
+<p id="c11-para-0051"><span aria-label="346" epub:type="pagebreak" id="Page_346" role="doc-pagebreak"/>As you consider deploying antimalware tools, it is important to keep a few key decisions in mind. First, you need to determine what threats you are likely to face and where they are likely to be encountered. In many organizations, a majority of malicious software threats are encountered on individual workstations and laptops, or are sent and received via email. Antimalware product deployments are thus focused on those two areas.</p>
+<p id="c11-para-0052">Second, management, deployment, and monitoring for tools is critical in an enterprise environment. Antimalware tools that allow central visibility and reporting integrate with other security tools for an easy view of the state of your systems and devices. Third, the detection capabilities you deploy and the overall likelihood of your antimalware product to detect, stop, and remove malicious software plays a major role in decision processes. Since malware is a constantly evolving threat, many organizations choose to deploy more than one antimalware technology, hoping to increase the likelihood of detection.</p>
+</section>
+<section><span id="c11-sec-0018"/>
+<h4 id="head-4-97">Allow Lists and Deny Lists</h4>
+<p id="c11-para-0053">One way to prevent malicious software from being used on systems is to control the applications that can be installed or used. That's where the use of allow list and deny or block list tools come in. Allow list tools allow you to build a list of software, applications, and other system components that are allowed to exist and run on a system. If they are not on the list, they will be removed or disabled, or they will not be able to be installed. Block lists, or deny lists, are lists of software or applications that cannot be installed or run, rather than a list of what is allowed. The choice between the solutions depends on what administrators and security professionals want to accomplish. If a system requires extremely high levels of security, an allow list will provide greater security than a block or deny list, but if specific programs are considered undesirable, a block list is less likely to interfere with unknown or new applications or programs.</p>
+<p id="c11-para-0054">Although these tools may sound appealing, they do not see widespread deployment in most organizations because of the effort required to maintain the lists. Limited deployments and specific uses are more common throughout organizations, and other versions of allow and block lists are implemented in the form of firewalls and similar protective technologies.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c11-fea-0006"/>
+<h3 id="head-2-173">Exam Note</h3>
+<section><span id="c11-sec-0019"/>
+<p id="c11-para-0055">The Security+ exam uses the terms <i>allow list</i> and <i>deny list</i> or <i>block list</i>. You may also still encounter the terms <i>whitelist</i> used to describe allow lists and <i>blacklist</i> used to describe deny or block lists, since these terms have been in broad use, and changing terminology across the industry will take some time.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c11-sec-0020"/>
+<h4 id="head-4-98">Endpoint Detection and Response and Extended Detection and Response</h4>
+<p id="c11-para-0056">When antimalware tools are not sufficient, <i>endpoint detection and response</i> (<i>EDR</i>) tools can be deployed. EDR tools combine monitoring capabilities on endpoint devices and systems using a client or software agent with network monitoring and log analysis capabilities to <span aria-label="347" epub:type="pagebreak" id="Page_347" role="doc-pagebreak"/>collect, correlate, and analyze events. Key features of EDR systems are the ability to search and explore the collected data and to use it for investigations as well as the ability to detect suspicious data.</p>
+<p id="c11-para-0057">With the continued growth of security analytics tools, EDR systems tend to look for anomalies and indicators of compromise (IoCs) using automated rules and detection engines as well as allowing manual investigation. The power of an EDR system comes in its ability to make this detection and reporting capability accessible and useful for organizations that are dealing with very large quantities of security data.</p>
+<p id="c11-para-0058">If you are considering an EDR deployment, you will want to pay attention to organizational needs like the ability to respond to incidents; the ability to handle threats from a variety of sources, ranging from malware to data breaches; and the ability to filter and review large quantities of endpoint data in the broader context of your organizations.</p>
+<p id="c11-para-0059">In addition to EDR, <i>extended detection and response</i> (<i>XDR</i>) tools are increasingly commonly deployed by organizations. XDR is similar to EDR but has a broader perspective considering not only endpoints but the full breadth of an organization's technology stack, including cloud services, security services and platforms, email, and similar components. They ingest logs and other information from the broad range of components, then use detection algorithms as well as artificial intelligence and machine learning to analyze the data to find issues and help security staff respond to them.</p>
+</section>
+<section><span id="c11-sec-0021"/>
+<h4 id="head-4-99">Data Loss Prevention</h4>
+<p id="c11-para-0060">Protecting organizational data from both theft and inadvertent exposure drives the use of <i>data loss prevention</i> (<i>DLP</i>) tools like the tools and systems introduced in <a href="c01.xhtml">Chapter 1</a>, “Today’s Security Professional.” DLP tools may be deployed to endpoints in the form of clients or applications. These tools also commonly have network and server-resident components to ensure that data is managed throughout its life cycle and various handling processes.</p>
+<p id="c11-para-0061">Key elements of DLP systems include the ability to classify data so that organizations know which data should be protected; data labeling or tagging functions, to support classification and management practices; policy management and enforcement functions used to manage data to the standards set by the organization; and monitoring and reporting capabilities, to quickly notify administrators or security practitioners about issues or potential problems.</p>
+<p id="c11-para-0062">Some DLP systems also provide additional functions that encrypt data when it is sent outside of protected zones. In addition, they may include capabilities intended to allow sharing of data without creating potential exposure, either tokenizing, wiping, or otherwise modifying data to permit its use without violation of the data policies set in the DLP environment.</p>
+<p id="c11-para-0063">Mapping your organization's data, and then applying appropriate controls based on a data classification system or policy, is critical to success with a DLP system. Much like antimalware and EDR systems, some DLP systems also track user behaviors to identify questionable behavior or common mistakes like assigning overly broad permissions on a file or sharing a sensitive document via email or a cloud file service.</p>
+<p id="c11-para-0064">Of course, even with DLP in place there are likely to be ways around the system. Taking a picture of a screen, cutting and pasting, or printing sensitive data can all allow malicious or careless users to extract data from an environment even if effective and well-managed data <span aria-label="348" epub:type="pagebreak" id="Page_348" role="doc-pagebreak"/>loss prevention tools are in place. Thus, DLP systems are part of a layered security infrastructure that combines technical and administrative solutions such as data loss prevention with policies, awareness, and other controls based on the risks that the organization and its data face.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c11-fea-0007"/>
+<h3 id="head-2-174">Exam Note</h3>
+<section><span id="c11-sec-0022"/>
+<p id="c11-para-0065">The Security+ exam outline leans into detection tools via EDR and its broad-based relative, XDR. EDR or XDR is increasingly found in most organizations due to the significant threats posed by ransomware and other malicious software that exceed the capabilities of traditional antivirus to counter. You'll also need to know about data loss prevention (DLP) as a tool to ensure that data doesn't leave the organization.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c11-sec-0023"/>
+<h4 id="head-4-100">Network Defenses</h4>
+<p id="c11-para-0066">Protecting endpoints from network attacks can be done with a host-based firewall that can stop unwanted traffic. <i>Host-based firewalls</i> are built into most modern operating systems and are typically enabled by default. Of course, host-based firewalls don't provide much insight into the traffic they are filtering since they often simply block or allow specific applications, services, ports, or protocols. More advanced filtering requires greater insight into what the traffic being analyzed is, and that's where a host intrusion prevention or intrusion detection system comes in.</p>
+<p id="c11-para-0067">A <i>host-based intrusion prevention system</i> (<i>HIPS</i>) analyzes traffic before services or applications on the host process it. A HIPS can take action on that traffic, including filtering out malicious traffic or blocking specific elements of the data that is received. A HIPS will look at traffic that is split across multiple packets or throughout an entire series of communications, allowing it to catch malicious activity that may be spread out or complex. Since a HIPS can actively block traffic, misidentification of traffic as malicious, misconfiguration, or other issues can cause legitimate traffic to be blocked, potentially causing an outage. If you choose to deploy a HIPS or any other tool that can actively block traffic, you need to consider what would happen if something did go wrong.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c11-fea-0008"/>
+<h3 id="head-2-175">When the HIPS Blocks Legitimate Traffic</h3>
+<section><span id="c11-sec-0024"/>
+<p id="c11-para-0068">The authors of this book encountered exactly the situation described here after a HIPS tool was deployed to Windows systems in a datacenter. The HIPS had a module that analyzed Microsoft-specific protocols looking for potential attacks, and a Windows update introduced new flags and other elements to the protocol used by the Windows systems as part of their normal communication. Since the HIPS wasn't updated to know about those changes, it blocked the backend traffic between Windows systems in the domain. Unfortunately, that <span aria-label="349" epub:type="pagebreak" id="Page_349" role="doc-pagebreak"/>meant that almost the entire Windows domain went offline since the HIPS blocked much of the communication it relied on. The issue left the systems administrators with a negative feeling for the HIPS, and it was removed from service. It took years until the organization was comfortable deploying a HIPS-style security tool in the datacenter again.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c11-para-0069">A host-based intrusion detection system (HIDS) performs similar functions, but, like a network-based intrusion detection system (IDS), it cannot take action to block traffic. Instead, a HIDS can only report and alert on issues. Therefore, a HIDS has limited use for real-time security, but it has a much lower likelihood of causing issues.</p>
+<p id="c11-para-0070">Before deploying and managing host-based firewalls, HIPSs, or HIDSs, determine how you will manage them, how complex the individual configurations will be, and what would happen if the host-based protections had problems. That doesn't mean you shouldn't deploy them! Granular controls are an important part of a zero-trust design, and armoring hosts helps ensure that a compromised system behind a security boundary does not result in broader issues for organizations.</p>
+<p id="c11-para-0071"><a href="#c11-fig-0002" id="R_c11-fig-0002">Figure 11.2</a> shows typical placement of a host-based firewall, a HIPS, and a HIDS, as well as where a network firewall or IPS/IDS device might be placed. Note that traffic can move from system to system behind the network security devices without those devices seeing it due to the network switch that the traffic flows through. In organizational networks, these security boundaries may be for very large network segments, with hundreds or even thousands of systems that could potentially communicate without being filtered by a network security device.</p> <span aria-label="350" epub:type="pagebreak" id="Page_350" role="doc-pagebreak"/>
+<figure> <img alt="A diagram of Host firewalls and I P S systems versus network firewalls and I P S systems. It includes Network firewall filters along with a switch connected to a Host firewall, Host-based&#10;intrusion, and Host firewall plus host-based&#10;intrusion." class="center" src="images/c11f002.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c11-fig-0002" id="c11-fig-0002" role="doc-backlink"><b>FIGURE 11.2</b></a></span> Host firewalls and IPS systems vs. network firewalls and IPS systems</p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+<section aria-labelledby="head-2-176"><span id="c11-sec-0025"/>
+<h2 id="head-2-176">Hardening Techniques</h2>
+<p id="c11-para-0072">Ensuring that a system has booted securely is just the first step in keeping it secure. Hardening endpoints and other systems relies on a variety of techniques that protect the system and the software that runs on it.</p>
+<section><span id="c11-sec-0026"/>
+<h3 id="head-3-165">Hardening</h3>
+<p id="c11-para-0073">Hardening a system or application involves changing settings on the system to increase its overall level of security and reduce its vulnerability to attack. The concept of a system's attack surface, or the places where it could be attacked, is important when performing system hardening. Hardening tools and scripts are a common way to perform basic hardening processes on systems, and organizations like the Center for Internet Security (CIS), found at <code><a href="http://www.cisecurity.org/cis-benchmarks">www.cisecurity.org/cis-benchmarks</a></code>, and the National Institute of Standards and Technology, found at <code><a href="https://ncp.nist.gov/repository">https://ncp.nist.gov/repository</a></code>, provide hardening guides for operating systems, browsers, and a variety of other hardening targets.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c11-fea-0009"/>
+<h3 id="head-2-177">Exam Note</h3>
+<section><span id="c11-sec-0027"/>
+<p id="c11-para-0074">The Security+ exam outline lists encryption, installing endpoint protection, host-based firewalls and host-based intrusion prevention systems, disabling ports and protocols, changing default passwords, and removing unnecessary software as key hardening items you should be able to explain.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c11-sec-0028"/>
+<h3 id="head-3-166">Service Hardening</h3>
+<p id="c11-para-0075">One of the fastest ways to decrease the attack surface of a system is to reduce the number of open ports and services that it provides by <i>disabling ports and protocols</i>. After all, if attackers cannot connect to the system remotely, they'll have a much harder time exploiting the system directly. Port scanners are commonly used to quickly assess which ports are open on systems on a network, allowing security practitioners to identify and prioritize hardening targets. The easy rule of thumb for hardening is that only services and ports that must be available to provide necessary services should be open, and that those ports and services should be limited to only the networks or systems that they need to interact with. Unfortunately for many servers, this may mean that the systems need to be open to the world.</p>
+<p><a href="#c11-tbl-0001" id="R_c11-tbl-0001">Table 11.1</a> lists some of the most common ports and services that are open for both Linux and Windows systems.<span aria-label="351" epub:type="pagebreak" id="Page_351" role="doc-pagebreak"/></p>
+<figure>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c11-tbl-0001" id="c11-tbl-0001" role="doc-backlink"><b>TABLE 11.1</b></a></span> Common ports and services</p>
+</figcaption>
+<table border="1">
+<thead>
+<tr>
+<th scope="col"><span class="left">Port and protocol</span></th>
+<th scope="col"><span class="left">Windows</span></th>
+<th scope="col"><span class="left">Linux</span></th> </tr> </thead>
+<tbody>
+<tr>
+<td class="left"><b>22/TCP—Secure Shell (SSH)</b></td>
+<td class="left">Uncommon</td>
+<td class="left">Common</td> </tr>
+<tr>
+<td class="left"><b>53/TCP and UDP—DNS</b></td>
+<td class="left">Common (servers)</td>
+<td class="left">Common (servers)</td> </tr>
+<tr>
+<td class="left"><b>80/TCP—HTTP</b></td>
+<td class="left">Common (servers)</td>
+<td class="left">Common (servers)</td> </tr>
+<tr>
+<td class="left"><b>125-139/TCP and UDP—NetBIOS</b></td>
+<td class="left">Common</td>
+<td class="left">Occasional</td> </tr>
+<tr>
+<td class="left"><b>389/TCP and UDP—LDAP</b></td>
+<td class="left">Common (servers)</td>
+<td class="left">Common (servers)</td> </tr>
+<tr>
+<td class="left"><b>443/TCP—HTTPS</b></td>
+<td class="left">Common (servers)</td>
+<td class="left">Common (servers)</td> </tr>
+<tr>
+<td class="left"><b>3389/TCP and UDP—Remote Desktop Protocol</b></td>
+<td class="left">Common</td>
+<td class="left">Uncommon</td> </tr> </tbody> </table>
+</figure>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c11-para-0077"><img alt="" role="presentation" src="images/tip.png"/> We talked more about services and ports in <a href="c05.xhtml">Chapter 5</a>, “Security Assessment and Testing.” Make sure you can identify common services by their ports and understand the basics concepts behind services, ports, and protocols.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c11-para-0078">Although blocking a service using a firewall is a viable option, the best option for unneeded services is to disable them entirely. In Windows you can use the <code>Services.msc</code> console shown in <a href="#c11-fig-0003" id="R_c11-fig-0003">Figure 11.3</a> to disable or enable services. Note that here, the Remote Desktop Services is set to start manually, meaning that it will not be accessible unless the system’s user starts it.</p> <span aria-label="352" epub:type="pagebreak" id="Page_352" role="doc-pagebreak"/>
+<figure> <img alt="A snapshot of a Remote Desktop Services set to manual. The remote desktop service properties are general, logon, recovery, and dependencies." class="center" src="images/c11f003.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c11-fig-0003" id="c11-fig-0003" role="doc-backlink"><b>FIGURE 11.3</b></a></span> <code>Services.msc</code> showing Remote Desktop Services set to manual</p>
+</figcaption>
+</figure>
+<p id="c11-para-0079">Starting and stopping services in Linux requires knowing how your Linux distribution handles services. For an Ubuntu Linux system, checking which services are running can be accomplished by using the <code>service--status-all</code> command. Starting and stopping services can be done in a number of ways, but the <code>service</code> command is an easy method. Issuing the <code>sudo service [<i>service name</i>] stop</code> or <code>start</code> command will start or stop a service simply by using the information provided by the <code>service--status-all command</code> to identify the service you want to shut down. Permanently stopping services, however, will require you to make other changes. For Ubuntu, the <code>update-rc.d</code> script is called, whereas RedHat systems use <code>chkconfig</code>.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c11-fea-0010"/>
+<h3 id="head-2-178">Exam Note</h3>
+<section><span id="c11-sec-0030"/>
+<p id="c11-para-0080">Fortunately, for the Security+ exam you shouldn't need to know OS-specific commands. Instead, you should understand the concept of disabling services to reduce the attack surface of systems and that ongoing review and maintenance is required to ensure that new services and applications do not appear over time.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c11-sec-0031"/>
+<h3 id="head-3-167">Network Hardening</h3>
+<p id="c11-para-0081">A common technique used in hardening networks is the use of VLANs (virtual local area networks) to segment different trust levels, user groups, or systems. Placing IoT devices on a separate, protected VLAN with appropriate access controls or dedicated network security protections can help to ensure that frequently vulnerable devices are more protected. Using a VLAN for guest networks or to isolate VoIP phones from workstations is also a common practice.</p>
+</section>
+<section><span id="c11-sec-0032"/>
+<h3 id="head-3-168">Default Passwords</h3>
+<p id="c11-para-0082">Changing default passwords is a common hardening practice and should be a default practice for any organization. Since default passwords, which you first encountered in <a href="c06.xhtml">Chapter 6</a>, “Application Security,” are typically documented and publicly available, any use of default passwords creates significant risk for organizations.</p>
+<p>There are databases of default passwords easily available, including the version provided by <code><a href="http://cirt.net">CIRT.net</a></code>: <code><a href="https://cirt.net/passwords">https://cirt.net/passwords</a></code>.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c11-para-0084"><img alt="" role="presentation" src="images/tip.png"/> Vulnerability scanners will frequently note default passwords that they discover as part of their scanning process, but detecting them this way means something else has already gone wrong! Default passwords shouldn't be left on systems and devices.</p><span aria-label="353" epub:type="pagebreak" id="Page_353" role="doc-pagebreak"/>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c11-sec-0034"/>
+<h3 id="head-3-169">Removing Unnecessary Software</h3>
+<p id="c11-para-0085">Another key practice in hardening efforts for many systems and devices is removing unnecessary software. While disabling services, ports, and protocols can be helpful, removing software that isn't needed removes the potential for a disabled tool to be reenabled. It also reduces the amount of patching and monitoring that will be required for the system.</p>
+<p id="c11-para-0086">Many systems arrive with unwanted and unneeded software preinstalled. Organizations often build their own system images and reinstall a fresh operating system image without unwanted software installed to simplify the process while also allowing them to deploy the software that they do want and need for business purposes.</p>
+<p id="c11-para-0087">Cell phones and other mobile devices suffer from the same issues, particularly with vendor-supplied tools. Mobile device management platforms can help with this, but personally owned devices remain challenging to address.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-179"><span id="c11-sec-0035"/>
+<h2 id="head-2-179">Operating System Hardening</h2>
+<p id="c11-para-0088">Hardening operating systems relies on changing settings to match the desired security stance for a given system. Popular benchmarks and configuration standards can be used as a base and modified to an organization's needs, allowing tools like the Center for Internet Security (CIS) benchmarks to be used throughout an organization. Fortunately, tools and scripts exist that can help make applying those settings much easier.</p>
+<p>Examples of the type of configuration settings recommended by the CIS benchmarks for Windows include the following:</p>
+<ul class="square" id="c11-list-0017">
+<li id="c11-li-0047">Setting the password history to remember 24 or more passwords</li>
+<li id="c11-li-0048">Setting maximum passwords age to “365 or fewer days, but not 0,” preventing users from simply changing their passwords 24 times to get back to the same password while requiring password changes every year</li>
+<li id="c11-li-0049">Setting the minimum password length to 14 or more characters</li>
+<li id="c11-li-0050">Requiring password complexity</li>
+<li id="c11-li-0051">Disabling the storage of passwords using reversible encryption</li>
+</ul>
+<p id="c11-para-0091"><a href="#c11-fig-0004" id="R_c11-fig-0004">Figure 11.4</a> shows how these settings can be set locally using the Local Security Policy. In addition to local settings, these can also be set with Group Policy.</p>
+<p id="c11-para-0092">This list is a single section in a document with over 1,300 pages of information about how to lock down Windows, which includes descriptions of every setting, the rationale for the recommendation, what the impact of the recommended setting is, and information on how to both set and audit the setting. The good news is that you don't need to know all the details of how to harden Windows, Linux, or macOS for the Security+ exam. What you do need to know is that operating system hardening uses system settings to reduce the attack surface for your operating system; that tools and standards exist to help with that process; and that assessing, auditing, and maintaining OS hardening for your organization is part of the overall security management process.</p>
+<figure> <img alt="A snapshot of Windows Local Security Policy. The security setting option holds the key password policy. It includes security settings and policies." class="center" src="images/c11f004.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c11-fig-0004" id="c11-fig-0004" role="doc-backlink"><b>FIGURE 11.4</b></a></span> Windows Local Security Policy</p>
+</figcaption>
+</figure>
+<section><span id="c11-sec-0036"/> <span aria-label="354" epub:type="pagebreak" id="Page_354" role="doc-pagebreak"/>
+<section><span id="c11-sec-0037"/>
+<h4 id="head-4-101">Hardening the Windows Registry</h4>
+<p>The Windows Registry is the core of how Windows tracks what is going on. The Registry is thus an important target for attackers, who can use it to automatically start programs, gather information, or otherwise take malicious action on a target machine. Hardening the Windows Registry involves configuring permissions for the Registry, disallowing remote Registry access if it isn't required for a specific need, and limiting access to Registry tools like regedit so that attackers who do gain access to a system will be less likely to be able to change or view the Registry.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c11-para-0094"><img alt="" role="presentation" src="images/tip.png"/> If you want to experiment with Registry modifications or you're actually making these changes to production systems, you'll likely want to back up the Registry first in case something goes wrong. You can read more about that at <code><a href="https://support.microsoft.com/en-gb/topic/how-to-back-up-and-restore-the-registry-in-windows-855140ad-e318-2a13-2829-d428a2ab0692#ID0EBD=Windows_11">https://support.microsoft.com/en-gb/topic/how-to-back-up-and-restore-the-registry-in-windows-855140ad-e318-2a13-2829-d428a2ab0692#ID0EBD=Windows_11</a></code>.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c11-sec-0039"/>
+<h4 id="head-4-102">Windows Group Policy and Hardening</h4>
+<p id="c11-para-0095">Windows <i>Group Policy</i> provides Windows systems and domains with the ability to control settings through Group Policy Objects (GPOs). GPOs can define a wide range of options from disabling guest accounts and setting password minimum lengths to restricting software installations. GPOs can be applied locally or via Active Directory, allowing for large-scale managed deployments of GPOs.</p>
+<p id="c11-para-0096">Microsoft provides the Security Compliance Toolkit (SCT), which is a set of tools that work with Microsoft's security configuration baselines for Windows and other Microsoft <span aria-label="355" epub:type="pagebreak" id="Page_355" role="doc-pagebreak"/>applications. The toolkit can compare deployed GPOs to the baseline as well as allow editing and deployment through Active Directory or as a local policy. You can read more about the Security Compliance Toolkit at <code><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-security-configuration-framework/security-compliance-toolkit-10">https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-security-configuration-framework/security-compliance-toolkit-10</a></code>. <a href="#c11-fig-0005" id="R_c11-fig-0005">Figure 11.5</a> shows Policy Analyzer, part of the SCT run against a workstation using the Microsoft baseline.</p>
+<figure> <img alt="A snapshot of a policy analyzer using Microsoft against a Windows system. The column headers are policy type, policy group or registry key, policy setting, baselines, and effective sides." class="center" src="images/c11f005.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c11-fig-0005" id="c11-fig-0005" role="doc-backlink"><b>FIGURE 11.5</b></a></span> Policy Analyzer using Microsoft's baseline against a default Windows system</p>
+</figcaption>
+</figure>
+</section>
+<section><span id="c11-sec-0040"/>
+<h4 id="head-4-103">Hardening Linux: SELinux</h4>
+<p id="c11-para-0097">The Security+ exam outline specifically calls out one Linux hardening option, <i>SELinux</i>, or Security-Enhanced Linux. SELinux is a Linux kernel-based security module that provides additional security capabilities and options on top of existing Linux distributions. Among <span aria-label="356" epub:type="pagebreak" id="Page_356" role="doc-pagebreak"/>those capabilities are mandatory access control (MAC) that can be enforced at the user, file, system service, and network layer as part of its support for least privilege-based security implementations.</p>
+<p id="c11-para-0098">SELinux enforces user rights based on a username, role, and type or domain for each entity. Similarly, files and other resources like network ports are labeled using a name, role, and type defined by policies that describe permissions and requirements to use the resource.</p>
+<p>SELinux has been implemented for multiple Linux distributions and has been implemented in Android, where it is frequently used in both mobile and embedded device applications.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c11-para-0100"><img alt="" role="presentation" src="images/note.png"/> If you're investigating how to harden Linux environments, you'll also likely run into AppArmor, which also implements mandatory access controls for Linux. AppArmor is broadly supported by popular Linux distributions. You can read more about it at <code><a href="https://apparmor.net">https://apparmor.net</a></code>.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+<section><span id="c11-sec-0042"/>
+<h3 id="head-3-171">Configuration, Standards, and Schemas</h3>
+<p id="c11-para-0101">To harden systems in an enterprise environment, you'll need to manage the configuration of systems through your organization. In fact, <i>configuration management</i> tools are one of the most powerful options security professionals and system administrators have to ensure that the multitude of systems in their organizations have the right security settings and to help keep them safe. A third-party configuration management system like Jamf Pro for macOS, a vendor-supplied tool like Configuration Manager for Windows, or even open source configuration management tools like CFEngine help enforce standards, manage systems, and report on areas where systems do not match expected settings.</p>
+<p id="c11-para-0102">Configuration management tools often start with <i>baseline configurations</i> for representative systems or operating system types throughout an organization. For example, you might choose to configure a baseline configuration for Windows 11 desktops, Windows 11 laptops, and macOS laptops. Those standards can then be modified for specific groups, teams, divisions, or even individual users as needed by placing them in groups that have those modified settings. Baseline configurations are an ideal starting place to build from to help reduce complexity and make configuration management and system hardening possible across multiple machines—even thousands of them. Once baselines are set, tools support <i>configuration enforcement</i>, a process that not only monitors for changes but makes changes to system configurations as needed to ensure that the configuration remains in its desired state.</p>
+<p>The Security+ exam outline considers baselines through three phases of a baseline's life cycle:</p>
+<ul class="square" id="c11-list-0018">
+<li id="c11-li-0052"><i>Establishing</i> a baseline, which is most often done using an existing industry standard like the CIS benchmarks with modifications and adjustments made to fit the organization's needs</li>
+<li id="c11-li-0053"><i>Deploying</i> the security baseline using central management tools or even manually depending on the scope, scale, and capabilities of the organization</li>
+<li id="c11-li-0054"><i>Maintaining</i> the baseline by using central management tools and enforcement capabilities as well as making adjustments to the organization's baseline if required by functional needs or other changes</li>
+</ul> <span aria-label="357" epub:type="pagebreak" id="Page_357" role="doc-pagebreak"/>
+<section><span id="c11-sec-0043"/>
+<h4 id="head-4-104">Patching and Patch Management</h4>
+<p id="c11-para-0104">Ensuring that systems and software are up to date helps ensure endpoint security by removing known vulnerabilities. Timely <i>patching</i> decreases how long exploits and flaws can be used against systems, but patching also has its own set of risks. Patches may introduce new flaws, or the patching process itself can sometimes cause issues. The importance of patching, as well as the need to make sure that patching is controlled and managed, is where patch management comes in.</p>
+<p id="c11-para-0105">A significant proportion of modern software, including software, browsers, office suites, and many other packages, has built-in automatic update tools. These tools check for an update and either notify the user requesting permission to install the updates or automatically install the update. Although this model is useful for individual devices, an enterprise solution makes sense for organizations.</p>
+<p>Patch management for operating systems can be done using tools like Microsoft's Configuration Manager for Windows, but third-party tools provide support for patch management across a wide variety of software applications. Tracking versions and patch status using a systems management tool can be important for organizational security, particularly because third-party updates for the large numbers of applications and packages that organizations are likely to have deployed can be a daunting task.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c11-para-0107"><img alt="" role="presentation" src="images/tip.png"/> A common practice for many organizations is to delay the installation of a patch for a period of a few days from its release date. That allows the patch to be installed on systems around the world, hopefully providing insight into any issues the patch may create. In cases where a known exploit exists, organizations have to choose between the risk of patching and the risk of not patching and having the exploit used against them. Testing can help, but many organizations don't have the resources to do extensive patch testing.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c11-para-0108">Managing software for mobile devices remains a challenge, but mobile device management tools also include the ability to validate software versions. These tools often have the ability to update applications, and apply patches and software updates to the device operating system in addition to controlling security settings.</p>
+<p id="c11-para-0109">As you consider endpoint security, think about how you will update your endpoint devices, the software and applications they run, and what information you would need to know that patching was consistent and up-to-date. Key features like reporting, the ability to determine which systems or applications get updates and when, the ability to block an update, and of course being able to force updates to be installed are all critical to enterprise patch management over the many different types of devices in our organizations today.</p>
+</section>
+</section>
+<section><span id="c11-sec-0045"/>
+<h3 id="head-3-172">Encryption</h3>
+<p id="c11-para-0110">Keeping the contents of disks secure protects data in the event that a system or disk is lost or stolen. That's where disk encryption comes in. <i>Full-disk encryption (FDE)</i> encrypts the disk and requires that the bootloader or a hardware device provide a decryption key and software or hardware to decrypt the drive for use. One of the most common implementations of this type of encryption is transparent encryption (sometimes called on-the-fly, or real-time, <span aria-label="358" epub:type="pagebreak" id="Page_358" role="doc-pagebreak"/>encryption). Transparent encryption implementations are largely invisible to the user, with the drive appearing to be unencrypted during use. This also means that the simplest attack against a system that uses transparent FDE is to gain access to the system while the drive is unlocked.</p>
+<p id="c11-para-0111">Volume encryption (sometimes called filesystem-level encryption) protects specific volumes of the drive, allowing different trust levels and additional security beyond that provided by encrypting the entire disk with a single key. File and folder encryption methods can also be used to protect specific data, again allowing for different trust levels as well as transfer of data in secure ways.</p>
+<p id="c11-para-0112">Full-disk encryption can be implemented at the hardware level using a <i>self-encrypting drive (SED)</i>. Self-encrypting drives implement encryption capabilities in their hardware and firmware. Systems equipped with a self-encrypting drive require a key to boot from the drive, which may be entered manually or provided by a hardware token or device. Since this is a form of full-disk encryption, the same sort of attack methods work—simply find a logged-in system or one that is in sleep mode.</p>
+<p id="c11-para-0113">Disk encryption does bring potential downfalls. If the encryption key is lost, the data on the drive will likely be unrecoverable since the same strong encryption that protects it will make it very unlikely that you will be able to brute-force the key and acquire the data. Technical support can be more challenging, and data corruption or other issues can have a larger impact, resulting in unrecoverable data. Despite these potential downfalls, the significant advantage of full-disk encryption is that a lost or stolen system with a fully encrypted drive can often be handled as a loss of the system instead of a loss or breach of the data that system contained.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-180"><span id="c11-sec-0046"/>
+<h2 id="head-2-180">Securing Embedded and Specialized Systems</h2>
+<p id="c11-para-0114">Security practitioners encounter traditional computers and servers every day, but as smart devices, embedded systems, and other specialized systems continue to be built into everything from appliances, to buildings, to vehicles, and even clothing, the attack surface for organizations is growing in new ways. Wherever these systems appear, they need to be considered as part of an organization's overall security posture.</p>
+<section><span id="c11-sec-0047"/>
+<h3 id="head-3-173">Embedded Systems</h3>
+<p id="c11-para-0115"><i>Embedded systems</i> are computer systems that are built into other devices. Industrial machinery, appliances, and cars are all places where you may have encountered embedded systems. Embedded systems are often highly specialized, running customized operating systems and with very specific functions and interfaces that they expose to users. In a growing number of cases, however, they may embed a relatively capable system with Wi-Fi, cellular, or other wireless access that runs Linux or a similar, more familiar operating system.</p>
+<p id="c11-para-0116"><span aria-label="359" epub:type="pagebreak" id="Page_359" role="doc-pagebreak"/>Many embedded systems use a <i>real-time operating system (RTOS)</i>. An RTOS is an operating system that is used when priority needs to be placed on processing data as it comes in, rather than using interrupts for the operating system or waiting for tasks being processed to be handled before data is processed. Since embedded systems are widely used for industrial processes where responses must be quick, real-time operating systems are used to minimize the amount of variance in how quickly the OS accepts data and handles tasks.</p>
+<p id="c11-para-0117">Embedded systems come in many types and can be so fully embedded that you may not realize that there is a system embedded in the device you are looking at. As a security professional, you need to be able to assess embedded system security and identify ways to ensure that they remain secure and usable for their intended purpose without causing the system itself to malfunction or suffer from unacceptable degradations in performance.</p>
+<p>Assessing embedded systems can be approached much as you would a traditional computer system:</p>
+<ol class="decimal" id="c11-list-0019">
+<li id="c11-li-0055">Identify the manufacturer or type of embedded system and acquire documentation or other materials about it.</li>
+<li id="c11-li-0056">Determine how the embedded system interfaces with the world: does it connect to a network, to other embedded devices, or does it only have a keyboard or other physical interface?</li>
+<li id="c11-li-0057">If the device does provide a network connection, identify any services or access to it provided through that network connection, and how you can secure those services or the connection itself.</li>
+<li id="c11-li-0058">Learn about how the device is updated, if patches are available, and how and when those patches should be installed; then ensure a patching cycle is in place that matches the device's threat model and usage requirements.</li>
+<li id="c11-li-0059">Document what your organization would do in the event that the device has a security issue or compromise. Could you return to normal? What would happen if the device were taken offline due to that issue? Are there critical health, safety, or operational issues that might occur if the device failed or needed to be removed from service?</li>
+<li id="c11-li-0060">Document your findings and ensure that appropriate practices are included in your organization's operational procedures.</li>
+</ol>
+<p>As more and more devices appear, this effort requires more and more time. Getting ahead of the process so that security is considered as part of the acquisitions process can help, but many devices may simply show up as part of other purchases, including things like the following:</p>
+<ul class="square" id="c11-list-0020">
+<li id="c11-li-0061">Medical systems, including devices found in hospitals and at doctors’ offices, may be network connected or have embedded systems. Medical devices like pacemakers, insulin pumps, and other external or implantable systems can also be attacked, with exploits for pacemakers via Bluetooth already existing in the wild.</li>
+<li id="c11-li-0062">Smart meters are deployed to track utility usage and bring with them a wireless control network managed by the utility. Since the meters are now remotely accessible and controllable, they provide a new attack surface that could interfere with power, water, or other utilities, or that could provide information about the facility or building.</li>
+<li id="c11-li-0063"><span aria-label="360" epub:type="pagebreak" id="Page_360" role="doc-pagebreak"/>Vehicles ranging from cars to aircraft and even ships at sea are now network connected, and frequently are directly Internet connected. If they are not properly secured, or if the backend servers and infrastructure that support them are vulnerable, attackers can take control, monitor, or otherwise seriously impact them.</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c11-fea-0011"/>
+<h3 id="head-2-181">Your Car as an Internet-Connected Device</h3>
+<section><span id="c11-sec-0048"/>
+<p id="c11-para-0121">Vehicles are increasingly networked, including cellular connections that allow them to stay connected to the manufacturer for emergency services and even updates. Vehicles also rely on controller area network (CAN) buses, which provide communication between microcontrollers, sensors, and other devices that make up a car's systems. As with any other network, cars can be attacked and potentially compromised.</p>
+<p id="c11-para-0122">Stories like <code><a href="http://www.wired.com/story/car-hack-shut-down-safety-features">www.wired.com/story/car-hack-shut-down-safety-features</a></code> demonstrate that attacks against vehicles are possible and that the repercussions of a compromised vehicle may be significant. Shutting down safety features, or potentially taking complete control of a self-driving car, are within the realm of possibility!</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<ul class="square" id="c11-list-6020">
+<li id="c11-li-0064">Drones and autonomous vehicles (AVs), as well as similar vehicles, may be controlled from the Internet or through wireless command channels. Encrypting their command-and-control channels and ensuring that they have appropriate controls if they are Internet or network connected are critical to their security.</li>
+<li id="c11-li-0065">VoIP systems include both backend servers as well as the VoIP phones and devices that are deployed to desks and work locations throughout an organization. The phones themselves are a form of embedded system, with an operating system that can be targeted and may be vulnerable to attack. Some phones also provide interfaces that allow direct remote login or management, making them vulnerable to attack from VoIP networks. Segmenting networks to protect potentially vulnerable VoIP devices, updating them regularly, and applying baseline security standards for the device help keep VoIP systems secure.</li>
+<li id="c11-li-0066">Printers, including multifunction printers (MFPs), frequently have network connectivity built in. Wireless and wired network interfaces provide direct access to the printers, and many printers have poor security models. Printers have been used as access points to protected networks, to reflect and amplify attacks, and as a means of gathering information. In fact, MFPs, copiers, and other devices that scan and potentially store information from faxes, printouts, and copies make these devices a potentially significant data leakage risk in addition to the risk they can create as vulnerable networked devices that can act as reflectors and amplifiers in attacks, or as pivot points for attackers.</li>
+<li id="c11-li-0067">Surveillance systems like camera systems and related devices that are used for security but that are also networked can provide attackers with a view of what is occurring inside a facility or organization. Cameras provide embedded interfaces that are commonly accessible via a web interface.</li>
+</ul>
+<p id="c11-para-0123"><span aria-label="361" epub:type="pagebreak" id="Page_361" role="doc-pagebreak"/>Default configurations, vulnerabilities, lack of patching, and similar issues are common with specialized systems, much the same as with other embedded systems. When you assess specialized systems, consider both how to limit the impact of these potential problems and the management, administration, and incident response processes that you would need to deal with them for your organization.</p>
+</section>
+<section><span id="c11-sec-0049"/>
+<h3 id="head-3-174">SCADA and ICS</h3>
+<p id="c11-para-0124">Industrial and manufacturing systems are often described using one of two terms. <i>Industrial controls systems (ICSs)</i> is a broad term for industrial automation, and <i>Supervisory Control and Data Acquisition (SCADA)</i> often refers to large systems that run power and water distribution or other systems that cover large areas. Since the terms overlap, they are often used interchangeably.</p>
+<p id="c11-para-0125">SCADA is a type of system architecture that combines data acquisition and control devices, computers, communications capabilities, and an interface to control and monitor the entire architecture. SCADA systems are commonly found running complex manufacturing and industrial processes, where the ability to monitor, adjust, and control the entire process is critical to success.</p>
+<p><a href="#c11-fig-0006" id="R_c11-fig-0006">Figure 11.6</a> shows a simplified overview of a SCADA system. You'll see that there are remote telemetry units (RTUs) that collect data from sensors and programmable logic controllers (PLCs) that control and collect data from industrial devices like machines or robots. Data is sent to the system control and monitoring controls, allowing operators to see what is going on and to manage the SCADA system. These capabilities mean that SCADA systems are in common use in industrial and manufacturing environments, as well as in the energy industry to monitor plants and even in the logistics industry tracking packages and complex sorting and handling systems.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c11-para-0127"><img alt="" role="presentation" src="images/note.png"/> There are multiple meanings for the acronym RTU, including remote terminal unit, remote telemetry unit, and remote telecontrol unit. You won't need to know the differences for the exam, but you should be aware that your organization or vendor may use RTU to mean one or more of those things. Regardless of which term is in use, an RTU will use a microprocessor to control a device or to collect data from it to pass on to an ICS or SCADA system.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c11-para-0128">ICS and SCADA can also be used to control and manage facilities, particularly when the facility requires management of things like heating, ventilation, and air-conditioning (HVAC) systems to ensure that the processes or systems are at the proper temperature and humidity.</p>
+<p id="c11-para-0129">Since ICS and SCADA systems combine general-purpose computers running commodity operating systems with industrial devices with embedded systems and sensors, they present a complex security profile for security professionals to assess. In many cases, they must be addressed as individual components to identify their unique security needs, including things like customized industrial communication protocols and proprietary interfaces. Once those individual components are mapped and understood, their interactions and security models for the system as a whole or as major components can be designed and managed.</p>
+<figure> <img alt="A network diagram of an S C A D A system with P L C and R T U. It includes a System control interface and monitoring with branches of two Programmable Logic Controllers and a Remote Telemetry Unit." class="center" src="images/c11f006.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c11-fig-0006" id="c11-fig-0006" role="doc-backlink"><b>FIGURE 11.6</b></a></span> A SCADA system showing PLCs and RTUs with sensors and equipment</p>
+</figcaption>
+</figure>
+<p id="c11-para-0130"><span aria-label="362" epub:type="pagebreak" id="Page_362" role="doc-pagebreak"/>A key thing to remember when securing complex systems like this is that they are often designed without security in mind. That means that adding security may interfere with their function or that security devices may not be practical to add to the environment. In some cases, isolating and protecting ICS, SCADA, and embedded systems is one of the most effective security measures that you can adopt.</p>
+</section>
+<section><span id="c11-sec-0051"/>
+<h3 id="head-3-175">Securing the Internet of Things</h3>
+<p id="c11-para-0131">The Internet of Things (IoT) is a broad term that describes network-connected devices that are used for automation, sensors, security, and similar tasks. IoT devices are typically a type of embedded system, but many leverage technologies like machine learning (ML), AI, cloud services, and similar capabilities to provide “smart” features.</p>
+<p>IoT devices bring a number of security and privacy concerns, and security analysts must be aware of these common issues:</p>
+<ul class="square" id="c11-list-0021">
+<li id="c11-li-0068">Poor security practices, including weak default settings, lack of network security (firewalls), exposed or vulnerable services, lack of encryption for data transfer, weak authentication, use of embedded credentials, insecure data storage, and a wide range of other poor practices.</li>
+<li id="c11-li-0069">Short support lifespans—IoT devices may not be patched or updated, leaving them potentially vulnerable for most of their deployed lifespan.</li>
+<li id="c11-li-0070">Vendor data-handling practice issues, including licensing and data ownership concerns, as well as the potential to reveal data to both employees and partners of the vendor and to government and other agencies without the device owner being aware.</li>
+</ul>
+<p id="c11-para-0133">Despite these security concerns, IoT devices like sensors, building and facility automation devices, wearables, and other smart devices continue to grow in popularity. Security <span aria-label="363" epub:type="pagebreak" id="Page_363" role="doc-pagebreak"/>professionals must account for both the IoT devices that their organization procures and that staff and visitors in their facilities may bring with them.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c11-fea-0012"/>
+<h3 id="head-2-182">When Fitness Trackers Reveal Too Much</h3>
+<section><span id="c11-sec-0052"/>
+<p id="c11-para-0134">In 2018, the United States military banned the use of fitness tracker and cellphone location data reporting applications in war zones and sensitive facilities. Although the devices themselves weren't banned, applications and features that reported GPS data and exercise details were due to what was described as significant risk to the users of the devices.</p>
+<p id="c11-para-0135">The issue behind the ban was the data itself. Fitness and GPS data revealed both the routes and times that the users moved through the facilities and bases and could be used to help map the facilities. This meant that publicly available data via social media–enabled fitness applications could result in the leakage of information that would be useful to adversaries and that could allow targeted and timed attacks.</p>
+<p id="c11-para-0136">As sensors, wearable devices, and other IoT and embedded systems continue to become more common, this type of exposure will increasingly be a concern. Understanding the implications of the data they gather, who has access to it, and who owns it is critical to organizational security.</p>
+<p id="c11-para-0137">You can read more of the story at <code><a href="http://apnews.com/d29c724e1d72460fbf7c2e999992d258">http://apnews.com/d29c724e1d72460fbf7c2e999992d258</a></code>.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c11-fea-0013"/>
+<h3 id="head-2-183">Exam Note</h3>
+<section><span id="c11-sec-0053"/>
+<p id="c11-para-0138">As you prepare for the exam consider how you would secure IoT, embedded devices, SCADA and ICS, and similar devices. Make sure you're aware of the challenges of protecting low-power, specialized devices that may not receive patches or support and that can have very long lifespans.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c11-sec-0054"/>
+<h3 id="head-3-176">Communication Considerations</h3>
+<p id="c11-para-0139">Many embedded and specialized systems operate in environments where traditional wired and wireless networks aren't available. As a security professional, you may need to account for different types of connectivity that are used for embedded systems.</p>
+<p id="c11-para-0140">Cellular connectivity, including both existing LTE and other fourth-generation technologies as well as newer 5G network connectivity, can provide high-bandwidth access to embedded systems in many locations where a Wi-Fi network wouldn't work. Since <span aria-label="364" epub:type="pagebreak" id="Page_364" role="doc-pagebreak"/>third-party cellular providers are responsible for connectivity, embedded systems that use cellular connectivity need to be secured so that the cellular network does not pose a threat to their operation. Ensuring that they do not expose vulnerable services or applications via their cellular connections is critical to their security. Building in protections to prevent network exploits from traversing internal security boundaries such as those between wireless connectivity and local control buses is also a needed design feature.</p>
+<p id="c11-para-0141">Physically securing the subscriber identity module (SIM) built into cellular-enabled devices can be surprisingly important. Documented examples of SIMs being removed and repurposed, including running up significant bills for data use after they were acquired, appear regularly in the media. SIM cloning attacks can also allow attackers to present themselves as the embedded system, allowing them to both send and receive information as a trusted system.</p>
+<p id="c11-para-0142">Embedded systems may also take advantage of radio frequency protocols specifically designed for them. Zigbee is one example of a network protocol that is designed for personal area networks like those found in houses for home automation. Protocols like Zigbee and Z-wave provide low-power, peer-to-peer communications for devices that don't need the bandwidth and added features provided by Wi-Fi and Bluetooth. That means that they have limitations on range and how much data they can transfer, and that since they are designed for home automation and similar uses they do not have strong security models. As a security practitioner, you should be aware that devices that communicate using protocols like Zigbee may be deployed as part of building monitoring or other uses and are unlikely to have enterprise management, monitoring, or security capabilities.</p>
+</section>
+<section><span id="c11-sec-0055"/>
+<h3 id="head-3-177">Security Constraints of Embedded Systems</h3>
+<p id="c11-para-0143">Embedded systems have a number of constraints that security solutions need to take into account. Since embedded systems may have limited capabilities, differing deployment and management options, and extended life cycles, they require additional thought to secure.</p>
+<p>When you consider security for embedded systems, you should take the following into account:</p>
+<ul class="square" id="c11-list-0022">
+<li id="c11-li-0071">The overall computational power and capacity of embedded systems is usually much lower than a traditional PC or mobile device. Although this may vary, embedded systems may use a low-power processor, have less memory, and have very limited storage space. That means that the compute power needed for cryptographic processing may not exist, or it may have to be balanced with other needs for CPU cycles. At the same time, limited memory and storage capacity mean that there may not be capacity to run additional security tools like a firewall, antimalware tools, or other security tools you're used to including in a design.</li>
+<li id="c11-li-0072">Embedded systems may not connect to a network. They may have no network connectivity, or they may have it but due to environmental, operational, or security concerns it may not be enabled or used. In fact, since many embedded systems are deployed outside of traditional networks, or in areas where connectivity may be limited, even if they have <span aria-label="365" epub:type="pagebreak" id="Page_365" role="doc-pagebreak"/>a built-in wireless network capability, they may not have the effective range to connect to a viable network. Thus, you may encounter an inability to patch, monitor, or maintain the devices remotely. Embedded devices may need to be secured as an independent unit.</li>
+<li id="c11-li-0073">Without network connectivity, CPU and memory capacity, and other elements, authentication is also likely to be impossible. In fact, authenticating to an embedded system may not be desirable due to safety or usability factors. Many of the devices you will encounter that use embedded systems are built into industrial machinery, sensors and monitoring systems, or even household appliances. Without authentication, other security models need to be identified to ensure that changes to the embedded system are authorized.</li>
+<li id="c11-li-0074">Embedded systems may be very low cost, but many are effectively very high cost because they are a component in a larger industrial or specialized device. So, simply replacing a vulnerable device can be impossible, requiring compensating controls or special design decisions to be made to ensure that the devices remain secure and do not create issues for their home organization.</li>
+</ul>
+<p id="c11-para-0145">Because of all these limitations, embedded devices may rely on implied trust. They presume that operators and those who interact with them will be doing so because they are trusted and that physical access to the device means that the user is authorized to use and potentially change settings, update the device, or otherwise modify it. The implied trust model that goes with physical access for embedded devices makes them a potential vulnerability for organizations and one that must be reviewed and designed for before they are deployed.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-184"><span id="c11-sec-0056"/>
+<h2 id="head-2-184">Asset Management</h2>
+<p id="c11-para-0146">Whenever an asset like hardware, software, or data is acquired or created, organizations need to ensure that a complete asset management life cycle is followed to ensure the security of the asset.</p>
+<p id="c11-para-0147">Acquisition and procurement processes should involve security best practices and assessment to ensure that assets have appropriate security controls or features, that the companies that provide them have appropriate controls and practices themselves, and that contracts and agreements support the acquiring organization's needs.</p>
+<p id="c11-para-0148">Once assets have been acquired, they need to be added to asset inventories and tracked through their lifespan. This typically includes identifying owners or managers for devices, systems, software, and data. It may also include classification efforts, particularly for data and systems that contain data that the organization considers more sensitive or valuable. Knowing that a system contains, processes, and handles sensitive data is critical during incident response processes as well as during normal operations. Inventories of systems, asset tagging, inventory checking, and related management practices are commonly used to <span aria-label="366" epub:type="pagebreak" id="Page_366" role="doc-pagebreak"/>track assets. Adding systems and devices to management tools and adding asset inventory information to the tools is also a common practice for organizations to help them understand the assets, their classification, and ownership.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c11-fea-0501"/>
+<h3 id="head-2-185">Exam Note</h3>
+<section><span id="c11-sec-5004"/>
+<p id="c11-para-0149">The Security+ exam outline mentions “enumeration” as well as asset inventory. <i>Enumeration</i> is typically associated with scanning to identify assets, and some organizations use port and vulnerability scans to help identify systems that aren't part of their inventory.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c11-para-0150">If organizations do not maintain asset inventories, it can be very difficult to know what the organization has, what may be missing or lost, and where things are. It can also create significant risks as acquisition of assets may be uncontrolled and invisible to the organization, allowing risks to grow without visibility. In organizations that do not maintain asset inventories and that don't have strong asset management practices, it isn't uncommon to discover that an incident happened and nobody knew about it simply because nobody knew the asset was compromised, stolen, or disposed of with sensitive data intact.</p>
+<section><span id="c11-sec-0058"/>
+<section><span id="c11-sec-0059"/>
+<h4 id="head-4-105">Decommissioning</h4>
+<p id="c11-para-0151">When systems and devices are at the end of their useful life cycle, organizations need to establish a <i>decommissioning</i> process. Decommissioning typically involves removing a device or system from service, removing it from inventory, and ensuring that no sensitive data remains on the system. In many cases that means dealing with the storage media or drive that the system relies on, but it may also mean dealing with the entire device or removable media. Ensuring that a disk is securely wiped when it is no longer needed and is being retired or when it will be reused is an important part of the lifespan for drives. Sanitizing drives or media involves one of two processes: wiping the data or destroying the media.</p>
+<p id="c11-para-0152">Tapes and similar magnetic media have often been wiped using a degausser, which exposes the magnetic media to very strong electromagnetic fields, scrambling the patterns of bits written to the tape or drive. Degaussers are a relatively quick way to destroy the data on magnetic media. SSDs, optical media and drives, and flash drives, however, require different handling.</p>
+<p id="c11-para-0153">Wiping media overwrites or discards the data in a nonrecoverable way. For hard drives and other magnetic media, this may be accomplished with a series of writes, typically of 1s or 0s, to every storage location (bit) on the drive. Various tools like Darik's Boot and Nuke (DBAN) will perform multiple passes over an entire disk to attempt to ensure that no data remains. In fact, data remanence, or data that is still on a disk after the fact, is a significant concern, particularly with SSD and other flash media that uses wear-leveling algorithms to spread wear and tear on the drive over more space than the listed capacity. Wiping SSDs using a traditional drive wipe utility that writes to all accessible locations will miss sections of the disk where copies of data may remain due to the wear-leveling process.</p>
+<p id="c11-para-0154"><span aria-label="367" epub:type="pagebreak" id="Page_367" role="doc-pagebreak"/>Fortunately, tools that can use the built-in secure Erase command for drives like these can help make sure remnant data is not an issue. An even better solution in many cases is to use full-disk encryption for the full life of a drive and then simply discard the encryption key when the data is ready to be retired. Unless your organization faces advanced threats, this approach is likely to keep the data from being recoverable by even reasonably advanced malicious actors.</p>
+<p id="c11-para-0155">Since wiping drives can have problems, destroying drives is a popular option for organizations that want to eliminate the risk of data loss or exposure. Shredding, pulverizing, or incinerating drives so that no data could possibly be recovered is an option, and third-party vendors specialize in providing services like these with a documented trail for each asset (drive or system) that is destroyed. Although this does cause a loss of some potential recoverable value, the remaining value of older drives is much less than the cost of a single breach in the risk equations for organizations that make this decision.</p>
+<p id="c11-para-0156">An important step for many organizations is <i>certification</i>. Certification processes are used to document that assets were decommissioned, including certification processes for vendors who destroy devices and media. Certificates of destruction are provided as proof that assets were properly disposed of.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c11-fea-0014"/>
+<h3 id="head-2-186">Using Someone Else's Hand-Me-Downs</h3>
+<section><span id="c11-sec-0060"/>
+<p id="c11-para-0157">What happens when drives aren't wiped? One of the authors of this book encountered exactly that situation. A system belonging to a department head was retired from their daily use and handed off to a faculty member in a department on a college campus. That faculty member used the system for some time, and after they were done with it the system was handed down again to a graduate student. Over time, multiple graduate students were issued the system and they used it until the system was compromised. At that point, the incident response team learned that all of the data from the department head, faculty member, and multiple graduate students was accessible on the system and that no data had ever been removed during its lifespan. Sensitive documents, personal email, and a variety of other information was all accessible on the system! Fortunately, although the incident response team found that the system had malware, the malware was not a type that would have leaked the data. If the system had been wiped and reinstalled at any time during its many years of service, the potential significant incident could have been avoided entirely. The department now has strong rules against hand-me-down systems and wipes and reinstalls any system before it is handed to another user.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c11-sec-0061"/>
+<h4 id="head-4-106">Retention</h4>
+<p id="c11-para-0158">While decommissioning and disposal are important, organizations often have to retain data or systems as well. <i>Retention</i> may be required for legal purposes with set retention periods determined by law, or retention may be associated with a legal case due to a legal hold. Retention may also serve business purposes, or have a compliance or audit component.</p>
+<p id="c11-para-0159"><span aria-label="368" epub:type="pagebreak" id="Page_368" role="doc-pagebreak"/>All of this means that disposal processes need to be linked to and aware of retention policies, procedures, and categorization to ensure that data, media, and devices that are subject to retention requirements are kept and that assets that are past their retention period are properly disposed of. Retaining assets longer than the organization intends to or is required to can also lead to risks ranging from data breaches to more data being available during legal cases that would otherwise have been disposed of!</p>
+</section>
+</section>
+</section>
+<section aria-labelledby="head-2-187"><span id="c11-sec-0062"/>
+<h2 id="head-2-187">Summary</h2>
+<p id="c11-para-0160">Endpoints are the most common devices in most organizations, and they are also the most varied. Therefore, you must pay particular attention to how they are secured from the moment they boot up. You can do this by using secure boot techniques built into the firmware of the systems themselves to preserve boot integrity while leveraging TPMs, hardware security modules, key management systems, and secure enclaves to properly handle secrets.</p>
+<p id="c11-para-0161">Understanding operating system vulnerabilities and their impact in endpoint security is critical for security professionals. You also need to be aware of and understand the impact of hardware life cycles, including firmware updates and end-of-life and legacy hardware considerations.</p>
+<p id="c11-para-0162">As a security professional, you need to know about the many common types of endpoint protection options that are available, as well as when and how to use them. Antivirus/antimalware software helps prevent malware infection. Host-based firewalls and IPSs, disabling ports and protocols, changing default passwords and other settings, and using security baselines are all common techniques used as part of endpoint protection. Tools like Group Policy and SELinux help to enforce and improve security baselines and capabilities. EDR and XDR tools add another layer to the set of security protections for endpoint devices by combining detection and monitoring tools with central reporting and incident response capabilities. Finally, data loss prevention (DLP) tools are deployed to ensure that data isn't inadvertently or intentionally exposed.</p>
+<p id="c11-para-0163">Drive encryption keeps data secure if drives are stolen or lost. At the end of their life cycle, when devices are retired or fail, or when media needs to be reused, sanitization procedures are employed to ensure that remnant data doesn't leak. Wiping drives as well as physical destruction are both common options. It is critical to choose a sanitization method that matches the media and security level required by the data stored on the media or drive.</p>
+<p id="c11-para-0164">Another important element in endpoint security is how organizations secure specialized and embedded systems. Internet of Things, SCADA, ICS, and other devices using real-time operating systems are everywhere throughout organizations in medical systems, smart meters, vehicles, industrial processes and manufacturing equipment, drones, smart devices, and a multitude of other locations. With often limited capabilities, different security models, and a host of other special requirements, securing embedded systems takes additional focus and planning to ensure they remain secure.</p>
+<p id="c11-para-0165">Asset management starts with the procurement process when security considerations are taken into account and assets, including hardware, software, and data are all added to inventories and management systems when they are acquired. Ensuring that assets have an <span aria-label="369" epub:type="pagebreak" id="Page_369" role="doc-pagebreak"/>owner or responsible party and that they are classified based on the sensitivity of the services or data that they support or contain is part of the asset management process for security. Ensuring that assets are inventoried and accounted for throughout their life cycle, and that they are properly disposed of, finishes the life cycle.</p>
+</section>
+<section aria-labelledby="head-2-188"><span id="c11-sec-0063"/>
+<h2 id="head-2-188">Exam Essentials</h2>
+<p id="c11-li-0075"><b>Understand operating system and hardware vulnerabilities.</b> Operating systems may be vulnerable, host vulnerable services or applications, or may have weak or insecure configurations that need to be addressed. Patching, configuration management, and security baselines all play a role in operating system security. Hardware security frequently focuses on firmware updates and security as well as life cycle management to properly address end-of-life and legacy hardware issues.</p>
+<p id="c11-li-0076"><b>Hardening and protecting systems relies on security tools and technology to keep systems secure.</b> Securing endpoint devices requires considering the entire device: how it boots, how data is secured, how it is configured, what services it provides, if its communications are secure, and how it is protected against network threats. Fortunately, security professionals have a wide range of tools, including secure and trusted boot, to protect against attacks on the boot process or drivers. Antivirus, antimalware, EDR, XDR, and data loss prevention tools provide insight into what systems are doing and where issues may exist while adding more controls that administrators and security professionals can use to keep systems and data secure. Network security tools like host intrusion prevention and detection systems, host firewalls, and similar tools can detect and often stop attacks from the network.</p>
+<p id="c11-li-0077"><b>Hardening endpoints also relies on configuration, settings, policies, and standards to ensure system security.</b> Although tools and technology are important to protect endpoints, configuration and settings are also an important part of the process. Disabling unnecessary services, changing default passwords, applying settings in the Windows Registry or operating systems settings in Linux, and otherwise using built-in and add-on configuration options to match security configurations to the device's risk profile is critical. Finally, patch management for the operating system and the applications installed on devices protects against known vulnerabilities and issues.</p>
+<p id="c11-li-0078"><b>Specialized systems like SCADA, ICS, and IoT systems exist throughout your organization and require unique security solutions.</b> SCADA and ICS or industrial control systems are used to manage and monitor factories, power plants, and many other major components of modern companies. IoT systems are Internet-connected devices that perform a wide variety of tasks, from monitoring to home automation and more. They may be controlled by third parties or have other security implications that must be addressed as part of a security plan to keep each endpoint secure.</p>
+<p id="c11-li-0079"><b>Explain the importance of asset management for software, data, and hardware.</b> Assets must be managed from acquisition through their life cycle until disposal or decommissioning. Proper management includes ensuring that ownership and classification are maintained and <span aria-label="370" epub:type="pagebreak" id="Page_370" role="doc-pagebreak"/>tracked, and that inventories of assets are up to date and include appropriate information to support operations, security, and incident response needs.</p>
+<p id="c11-li-0080"><b>Drive encryption and sanitization help prevent data exposure.</b> Encrypting drives and media helps keep them secure if they are stolen or lost. Full-disk encryption covers the entire drive, whereas volume or file encryption protects portions of the contents. Sanitizing drives and media involves wiping them using a secure deletion process, or their destruction to ensure that the data cannot be recovered. Using appropriate processes based on the security requirements for the data and the type of drive or media involved is critical to making sure that the data is properly removed.</p>
+
+</section> <span aria-label="371" epub:type="pagebreak" id="Page_371" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-189"><span id="c11-sec-0064"/>
+<h2 id="head-2-189">Review Questions</h2>
+<section><span id="c11-exsec-0001"/>
+<ol class="decimal">
+<li id="c11-ex-0001">Lin's hardware manufacturer has stopped selling the model of device that Lin's organization uses and has also stopped providing security or other updates. What phase of the hardware life cycle is the device in?
+<ol class="upper-alpha">
+<li>End-of-life</li>
+<li>Legacy</li>
+<li>End-of-sales</li>
+<li>Senescence</li>
+</ol>
+</li>
+<li id="c11-ex-0002">Naomi has discovered the following TCP ports open on a system she wants to harden. Which ports are used for unsecure services and thus should be disabled to allow their secure equivalents to continue to be used?
+<ol class="upper-alpha">
+<li>21, 22, and 80</li>
+<li>21 and 80</li>
+<li>21, 23, and 80</li>
+<li>22 and 443</li>
+</ol>
+</li>
+<li id="c11-ex-0003">Frank's organization is preparing to deploy a data loss prevention (DLP) system. What key process should they undertake before they deploy it?
+<ol class="upper-alpha">
+<li>Define data life cycles for all nonsensitive data.</li>
+<li>Encrypt all sensitive data.</li>
+<li>Implement and use a data classification scheme.</li>
+<li>Tag all data by creator or owner.</li>
+</ol>
+</li>
+<li id="c11-ex-0004">Oliver wants to store and manage secrets in his cloud service provider's environment. What type of solution should he look for as part of their offerings?
+<ol class="upper-alpha">
+<li>A TPM</li>
+<li>A secure enclave</li>
+<li>A KMS</li>
+<li>A Titan M</li>
+</ol>
+</li>
+<li id="c11-ex-0005">What is the key difference between EDR and XDR solutions?
+<ol class="upper-alpha">
+<li>The variety of malware it can detect</li>
+<li>The number of threat feeds that are used</li>
+<li>The breadth of the technology stack that is covered</li>
+<li>The volume of logs that can be processed</li>
+</ol>
+</li>
+<li id="c11-ex-0006"><span aria-label="372" epub:type="pagebreak" id="Page_372" role="doc-pagebreak"/> Michelle wants to prevent unauthorized applications from being installed on a Windows system. What type of tool can she use to stop applications from being installed?
+<ol class="upper-alpha">
+<li>Antivirus</li>
+<li>A GPO</li>
+<li>An EDR</li>
+<li>A HIPS</li>
+</ol>
+</li>
+<li id="c11-ex-0007">What term is used to describe tools focused on detecting and responding to suspicious activities occurring on endpoints like desktops, laptops, and mobile devices?
+<ol class="upper-alpha">
+<li>EDR</li>
+<li>IAM</li>
+<li>FDE</li>
+<li>ESC</li>
+</ol>
+</li>
+<li id="c11-ex-0008">Fred has recently purchased a network router and is preparing to deploy it. Which of the following is a common step in deploying new routers?
+<ol class="upper-alpha">
+<li>Disabling unwanted services</li>
+<li>Removing unnecessary software</li>
+<li>Installing antivirus</li>
+<li>Changing default passwords</li>
+</ol>
+</li>
+<li id="c11-ex-0009">Charlene wants to prevent attacks against her system that leverage flaws in the services that it provides while still keeping the services accessible. What hardening technique should she use?
+<ol class="upper-alpha">
+<li>A host-based firewall</li>
+<li>A host-based IPS</li>
+<li>Encryption</li>
+<li>An EDR</li>
+</ol>
+</li>
+<li id="c11-ex-0010">Allan is preparing to harden his organization's network switches. Which of the following is not a common hardening technique for network devices?
+<ol class="upper-alpha">
+<li>Removing unnecessary software</li>
+<li>Installing patches</li>
+<li>Administrative VLANs</li>
+<li>Changing default passwords</li>
+</ol>
+</li>
+<li id="c11-ex-0011">Helen's organization is planning to deploy IoT devices across their buildings as part of a HVAC system. Helen knows that the vendor for the IoT devices does not provide regular security updates to the device's web interfaces that are used to manage the devices. What security control should she recommend to help protect the devices on the network?
+<ol class="upper-alpha">
+<li>Install host-based firewalls.</li>
+<li>Deploy the IoT devices to a protected VLAN.</li>
+<li>Install host-based IPS.</li>
+<li>Disable the web interfaces for the IoT devices.</li>
+</ol>
+</li>
+<li id="c11-ex-0012"><span aria-label="373" epub:type="pagebreak" id="Page_373" role="doc-pagebreak"/> What is the primary reason to remove unnecessary software during hardening efforts?
+<ol class="upper-alpha">
+<li>To reduce the attack footprint of the device</li>
+<li>To reduce the number of patches that are installed</li>
+<li>To reduce the number of firewall rules required for the device</li>
+<li>To support incident response (IR) activities</li>
+</ol>
+</li>
+<li id="c11-ex-0013">Brian has deployed a system that monitors sensors and uses that data to manage the power distribution for the power company that he works for. Which of the following terms is commonly used to describe this type of control and monitoring solution?
+<ol class="upper-alpha">
+<li>SCADA</li>
+<li>SIM</li>
+<li>HVAC</li>
+<li>AVAD</li>
+</ol>
+</li>
+<li id="c11-ex-0014">The organization that Lynn works for wants to deploy an embedded system that needs to process data as it comes in to the device without processing delays or other interruptions. What type of solution does Lynn's company need to deploy?
+<ol class="upper-alpha">
+<li>An MFP</li>
+<li>A HIPS</li>
+<li>An SoC</li>
+<li>An RTOS</li>
+</ol>
+</li>
+<li id="c11-ex-0015">Which of the following is not a common constraint of an embedded system?
+<ol class="upper-alpha">
+<li>Compute</li>
+<li>Cost</li>
+<li>Network</li>
+<li>Authentication</li>
+</ol>
+</li>
+<li id="c11-ex-0016">Jim configures a Windows machine with the built-in BitLocker full-disk encryption tool that uses a TPM chip. When is the machine least vulnerable to having data stolen from it?
+<ol class="upper-alpha">
+<li>When the machine is off</li>
+<li>When the machine is booted and logged in but is locked</li>
+<li>When the machine is booted and logged in but is unlocked</li>
+<li>When the machine is booted and logged in but is asleep</li>
+</ol>
+</li>
+<li id="c11-ex-0017">Olivia wants to install a host-based security package that can detect attacks against the system coming from the network, but she does not want to take the risk of blocking the attacks since she fears that she might inadvertently block legitimate traffic. What type of tool could she install that will meet this requirement?
+<ol class="upper-alpha">
+<li>A host firewall</li>
+<li>A host-based intrusion detection system</li>
+<li>A host-based intrusion prevention system</li>
+<li>A data loss prevention tool</li>
+</ol>
+</li>
+<li id="c11-ex-0018"><span aria-label="374" epub:type="pagebreak" id="Page_374" role="doc-pagebreak"/> Anita wants to enforce security settings across her organization's Windows Active Directory domain. What tool can she use to do this?
+<ol class="upper-alpha">
+<li>EDR</li>
+<li>Group Policy</li>
+<li>XDR</li>
+<li>SELinux</li>
+</ol>
+</li>
+<li id="c11-ex-0019">Chris wants systems that connect to his network to report their boot processes to a server where they can be validated before being permitted to join the network. What technology should he use to do this on the workstations?
+<ol class="upper-alpha">
+<li>UEFI/Trusted boot</li>
+<li>BIOS/Trusted boot</li>
+<li>UEFI/Measured boot</li>
+<li>BIOS/Measured boot</li>
+</ol>
+</li>
+<li id="c11-ex-0020">Elaine wants to securely erase the contents of a tape used for backups in her organization's tape library. What is the fastest secure erase method available to her that will allow the tape to be reused?
+<ol class="upper-alpha">
+<li>Using a degausser</li>
+<li>Wiping the tape by writing a random pattern of 1s and 0s to it</li>
+<li>Incinerating the tape</li>
+<li>Wiping the tape by writing all 1s or all 0s to it</li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+</section>
+</body>
+</html>

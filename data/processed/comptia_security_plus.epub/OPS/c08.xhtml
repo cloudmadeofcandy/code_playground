@@ -1,0 +1,701 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:svg="http://www.w3.org/2000/svg" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+<head>
+<title>Chapter 8 Identity and Access Management</title>
+<link href="WileyTemplate_v5.5.css" rel="stylesheet" type="text/css"/>
+<meta content="urn:uuid:57d469d3-a1d3-48bd-8447-18ce82f57cc2" name="Adept.expected.resource"/>
+</head>
+<body epub:type="bodymatter">
+<section aria-labelledby="c08_1" epub:type="chapter" role="doc-chapter">
+<header>
+<h1 id="c08_1"><span aria-label="237" epub:type="pagebreak" id="Page_237" role="doc-pagebreak"/><span id="c08"/><span class="chapterNumber">Chapter 8</span><br/><span class="chapterTitle">Identity and Access Management</span></h1>
+</header>
+<section aria-label="chapter opening"><span id="c08-sec-0001"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c08-para-0002"><b>THE COMPTIA SECURITY+ EXAM OBJECTIVES COVERED IN THIS CHAPTER INCLUDE:</b></p>
+<ul class="check1" id="c08-list-0001">
+<li id="c08-li-0001"><b>Domain 1.0: General Security Concepts</b>
+<ul class="square1" id="c08-list-0002">
+<li id="c08-li-0002">1.2. Summarize fundamental security concepts.
+<ul class="square1" id="c08-list-0003">
+<li id="c08-li-0003">Authentication, Authorization, and Accounting (AAA) (Authenticating people, Authenticating systems, Authorization models)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="c08-li-0004"><b>Domain 2.0: Threats, Vulnerabilities, and Mitigations</b>
+<ul class="square1" id="c08-list-0004">
+<li id="c08-li-0005">2.5. Explain the purpose of mitigation techniques used to secure the enterprise.
+<ul class="square1" id="c08-list-0005">
+<li id="c08-li-0006">Access control (Access control list (ACL), Permissions)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="c08-li-0007"><b>Domain 4.0: Security Operations</b>
+<ul class="square1" id="c08-list-0006">
+<li id="c08-li-0008">4.6. Given a scenario, implement and maintain identity and access management.
+<ul class="square1" id="c08-list-0007">
+<li id="c08-li-0009">Provisioning/de-provisioning user accounts</li>
+<li id="c08-li-0010">Permission assignments and implications</li>
+<li id="c08-li-0011">Identity proofing</li>
+<li id="c08-li-0012">Federation</li>
+<li id="c08-li-0013">Single sign-on (SSO) (Lightweight Directory Access Protocol (LDAP)), Open authorization (OAuth), Security Assertions Markup Language (SAML)</li>
+<li id="c08-li-0014">Interoperability</li>
+<li id="c08-li-0015">Attestation</li>
+<li id="c08-li-0016"><span aria-label="238" epub:type="pagebreak" id="Page_238" role="doc-pagebreak"/>Access controls (Mandatory, Discretionary, Role-based, Rule-based, Attribute-based, Time-of-day restrictions, Least privilege)</li>
+<li id="c08-li-0017">Multifactor authentication (Implementations (Biometrics, Hard/soft authentication tokens, Security keys), Factors (Something you know, Something you have, Something you are, Somewhere you are))</li>
+<li id="c08-li-0018">Password concepts (Password best practices (length, complexity, reuse, expiration, age), Password managers, Passwordless)</li>
+<li id="c08-li-0019">Privileged access management tools (Just-in-time permissions, password vaulting, ephemeral credentials)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<span aria-label="239" epub:type="pagebreak" id="Page_239" role="doc-pagebreak"/>
+<p id="c08-para-0010">Identities are one of the most important security layers in modern organizations. Identities and the accounts they are connected to allow organizations to control who has access to their systems and services; to identify the actions that users, systems, and services are performing; and to control the rights that those accounts have and don't have. All of that means that a well-designed identity and access management architecture and implementation is critical to how organizations work.</p>
+<p id="c08-para-0011">This chapter begins by introducing you to the concept of identity, the set of claims made about a subject. Identities are claimed through an authentication process that proves that the identity belongs to the user who is claiming it. That user is then authorized to perform actions based on the rights and privileges associated with their user account. You will learn how privileged access management ensures that superusers and other privileged accounts have proper controls and monitoring in place. Along the way, you will learn about authentication methods, frameworks, and technologies, as well as key details about their implementation and how to secure them.</p>
+<p id="c08-para-0012">Once you have explored identity and authentication, authorization, and accounting (AAA), you will learn about identity life cycles, including provisioning, identity proofing, federation, single sign-on, and multifactor authentication. You will also explore the concept of interoperability between authentication and authorization services. Finally, you will look at how filesystem permissions work with accounts to control which files users can read, write, and execute.</p>
+</section>
+<section aria-labelledby="head-2-120"><span id="c08-sec-0003"/>
+<h2 id="head-2-120">Identity</h2>
+<p>Identities are the sets of claims made about a subject. Subjects are typically people, applications, devices, systems, or organizations, but the most common application of <i>identity</i> is to individuals. Identities are typically linked to information about the subject, including details that are important to the use of their identity. This information includes attributes or information about the subject. Attributes can include a broad range of information, from name, age, location, or job title, to physical attributes like hair and eye color or height.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c08-para-0014"><img alt="" role="presentation" src="images/note.png"/> Attributes are sometimes differentiated from traits. When used this way, attributes are changeable things, like the subject's title or address, whereas traits are inherent to the subject, such as height, eye color, or place of birth.</p><span aria-label="240" epub:type="pagebreak" id="Page_240" role="doc-pagebreak"/>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>When a subject wants to use their identity, they need to use one of a number of common ways to assert or claim an identity:</p>
+<ul class="square" id="c08-list-0008">
+<li id="c08-li-0020"><i>Usernames</i>, the most commonly used means of claiming an identity. It is important to remember that usernames are associated with an identity and are not an authentication factor themselves.</li>
+<li id="c08-li-0021"><i>Certificates</i>, which can be stored on a system or paired with a storage device or security token and are often used to identify systems or devices as well as individuals.</li>
+<li id="c08-li-0022"><i>Tokens</i>, a physical device that may generate a code, plug in via USB, or connect via Bluetooth or other means to present a certificate or other information.</li>
+<li id="c08-li-0023"><i>SSH keys</i>, which are cryptographic representations of identity that replace a username and password.</li>
+<li id="c08-li-0024"><i>Smartcards</i> use an embedded chip. Both contactless and physical chip reader–capable cards as well as hybrid cards are broadly deployed, and cryptographic smartcards often have the ability to generate key pairs on the card itself.</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c08-fea-0001"/>
+<h3 id="head-2-121">Lost Key Pairs</h3>
+<section><span id="c08-sec-0005"/>
+<p id="c08-para-0016">Exposed or lost key pairs can be a major security hassle. Uploading private keys to public code repositories is a relatively common issue, and poor practices around passphrase management for the key pairs or even using a blank password or passphrase for SSH keys is unfortunately common.</p>
+<p id="c08-para-0017">Although cloud service providers actively monitor for both key pair uploads to common third-party hosting services and for the exploits that quickly follow such exposures, ensuring that your organization trains developers and administrators on proper handling and management practices is an important security layer.</p>
+<p id="c08-para-0018">If you're wondering about smartcards and their use of key pairs, well-designed smartcards typically generate key pairs on the card to prevent copies of the key pair from being stored in another location. This means that the security of the card and its key generation and storage are critical to keeping the key pairs safe.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section aria-labelledby="head-2-122"><span id="c08-sec-0006"/>
+<h2 id="head-2-122">Authentication and Authorization</h2>
+<p id="c08-para-0019">When a subject wants to claim an identity, they need to prove that the identity is theirs. That means they need to authenticate. Authentication technologies like authentication protocols, servers, and standards all serve to ensure that the subject is who they claim that they are, <span aria-label="241" epub:type="pagebreak" id="Page_241" role="doc-pagebreak"/>that the authentication process remains safe and secure, and that capabilities like the ability to use <i>single sign-on</i> (<i>SSO</i>) work.</p>
+<p id="c08-para-0020">Authorization verifies what you have access to. When combined, authentication and authorization first verify who you are, and then allow you to access resources, systems, or other objects based on what you are authorized to use.</p>
+<section><span id="c08-sec-0007"/>
+<h3 id="head-3-130">Authentication and Authorization Technologies</h3>
+<p id="c08-para-0021">A broad range of authentication and authorization technologies are in current use for authentication and authorization. While the Security+ exam doesn't require you to know these specifically, the exam expects you to understand how identity and access management works, which means you'll need to understand that there are many authentication frameworks and that they have different uses, features, and challenges.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c08-fea-0002"/>
+<h3 id="head-2-123">Exam Note</h3>
+<section><span id="c08-sec-0008"/>
+<p id="c08-para-0022">The current version of the Security+ exam outline focuses on SSO-related technologies—LDAP, OAuth, and SAML—as well as 802.1x and EAP, which will be covered in <a href="c12.xhtml">Chapter 12</a>, “Network Security.”</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c08-para-0023">The Extensible Authentication Protocol (EAP) is an authentication framework that is commonly used for wireless networks. Many different implementations exist that use the EAP framework, including vendor-specific and open methods like EAP-TLS, LEAP, and EAP-TTLS. Each of these protocols implements EAP messages using that protocol's messaging standards. EAP is commonly used for wireless network authentication. We'll cover EAP in more depth in <a href="c12.xhtml">Chapter 12</a> as part of network security as well.</p>
+<p id="c08-para-0024">Challenge Handshake Authentication Protocol (CHAP) is an authentication protocol designed to provide more security than earlier protocols like PAP. CHAP uses an encrypted challenge and three-way handshake to send credentials, as shown in <a href="#c08-fig-0001" id="R_c08-fig-0001">Figure 8.1</a>.</p>
+<p id="c08-para-0025">802.1X is an IEEE standard for network access control (NAC), and it is used for authentication for devices that want to connect to a network. In 802.1X systems, supplicants send authentication requests to authenticators such as network switches, access points, or wireless controllers. Those controllers connect to an authentication server, typically via RADIUS. The RADIUS servers may then rely on a backend directory using LDAP or Active Directory as a source of identity information. <a href="#c08-fig-0002" id="R_c08-fig-0002">Figure 8.2</a> shows an example of a common 802.1X architecture design using EAP, RADIUS, and LDAP.</p>
+<p>Remote Authentication Dial-In User Service <i>(RADIUS)</i> is one of the most common authentication, authorization, and accounting (AAA) systems for network devices, wireless networks, and other services. RADIUS can operate via TCP or UDP and operates in a client-server model. RADIUS sends passwords that are obfuscated by a shared secret and <span aria-label="242" epub:type="pagebreak" id="Page_242" role="doc-pagebreak"/>MD5 hash, meaning that its password security is not very strong. RADIUS traffic between the RADIUS network access server and the RADIUS server is typically encrypted using IPSec tunnels or other protections to protect the traffic.</p>
+<figure> <img alt="An illustration of the C H A P challenge and response sequence. It includes Challenge, C H A P Server, Client, Response including Username and password, and Accept or Reject response." class="center" src="images/c08f001.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c08-fig-0001" id="c08-fig-0001" role="doc-backlink"><b>FIGURE 8.1</b></a></span> CHAP challenge and response sequence</p>
+</figcaption>
+</figure>
+<figure> <img alt="An illustration of architecture with E A P, R A D I U S, and L D A P. It includes Supplicant, Authenticator, Authentication Server, and Directory Services." class="center" src="images/c08f002.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c08-fig-0002" id="c08-fig-0002" role="doc-backlink"><b>FIGURE 8.2</b></a></span> 802.1X authentication architecture with EAP, RADIUS, and LDAP</p>
+</figcaption>
+</figure>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c08-para-0027"><img alt="" role="presentation" src="images/note.png"/> RADIUS is often associated with AAA (authentication, authorization, and accounting) systems. In an AAA system, users must first authenticate, typically with a username and password. The system then allows them to perform actions they are authorized to by policies or permission settings. Accounting tracks resource utilization like time, bandwidth, or CPU utilization.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c08-para-0028">Terminal Access Controller Access Control System Plus (TACACS+) is a Cisco-designed extension to TACACS, the Terminal Access Controller Access Control System. TACACS+ uses TCP traffic to provide authentication, authorization, and accounting services. It provides full-packet encryption as well as granular command controls, allowing individual commands to be secured as needed.</p>
+<p id="c08-para-0029"><span aria-label="243" epub:type="pagebreak" id="Page_243" role="doc-pagebreak"/>Kerberos is a protocol for authenticating service requests between trusted hosts across an untrusted network like the Internet. Kerberos is designed to operate on untrusted networks and uses authentication to shield its authentication traffic. Kerberos users are composed of three main elements: the primary, which is typically the username; the instance, which helps to differentiate similar primaries; and realms, which consist of groups of users. Realms are typically separated by trust boundaries and have distinct Kerberos key distribution centers (KDCs). <a href="#c08-fig-0003" id="R_c08-fig-0003">Figure 8.3</a> demonstrates a basic Kerberos authentication flow.</p>
+<figure> <img alt="An illustration of the Kerberos authentication process. It includes an Authentication request, T G S Session Key, requested service Authenticator, Client-to-server ticket or Client-server session key, Client-to-server ticket Authenticator, and Timestamp for verification." class="center" src="images/c08f003.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c08-fig-0003" id="c08-fig-0003" role="doc-backlink"><b>FIGURE 8.3</b></a></span> Kerberos authentication process</p>
+</figcaption>
+</figure>
+<p>When a client wants to use Kerberos to access a service, the client requests an authentication ticket, or ticket-granting ticket (TGT). An authentication server checks the client's credentials and responds with the TGT, which is encrypted using the secret key of the ticket-granting service (TGS). When the client wants to use a service, the client sends the TGT to the TGS (which is usually also the KDC) and includes the name of the resource it wants to use. The TGS sends back a valid session key for the service, and the client presents the key to the service to access it.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c08-para-0031"><img alt="" role="presentation" src="images/note.png"/> As you can see, authentication systems and processes can be complex, with a focus on ensuring that account holders are properly authenticated and that they are then given access to the specific resources or privileges that they should have. In modern zero-trust environments where continuous authorization checks are normal, this places an even heavier load on identity and authorization infrastructure.</p><span aria-label="244" epub:type="pagebreak" id="Page_244" role="doc-pagebreak"/>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section><span id="c08-sec-0011"/>
+<h4 id="head-4-78">Single Sign-On</h4>
+<p id="c08-para-0032"><i>Single sign-on (SSO)</i> systems allow a user to log in with a single identity and then use multiple systems or services without reauthenticating. SSO systems provide significant advantages because they simplify user interactions with authentication and authorization systems, but they require a trade-off in the number of identity-based security boundaries that are in place. This means that many organizations end up implementing SSO for many systems but may require additional authentication steps or use of an additional privileged account for high-security environments.</p>
+<p id="c08-para-0033">You're likely using SSO every day. If you log into a Google service like Gmail, you're also automatically authenticated to YouTube and other Google-owned applications. You're also likely to encounter it in enterprise environments where it is commonly enabled to smooth out work processes.</p>
+<p id="c08-para-0034">Directory services like the <i>Lightweight Directory Access Protocol</i> (<i>LDAP</i>) are commonly deployed as part of an identity management infrastructure and offer hierarchically organized information about the organization. They are frequently used to make available an organizational directory for email and other contact information. <a href="#c08-fig-0004" id="R_c08-fig-0004">Figure 8.4</a> shows an example of an LDAP directory hierarchy for <code><a href="http://inc.com">Inc.com</a></code>, where there are two organizational units (Ous): security and human resources. Each of those units includes a number of entries labeled with a common name (CN). In addition to the structure shown in the diagram, each entry would have additional information not shown in this simplified diagram, including a distinguished name, an email address, phone numbers, office location, and other details.</p>
+<figure> <img alt="A flow chart of L D A P organizational hierarchy. It includes dc equals example, dc equals com, ou equals security, cn equals red team, cn equals blue team, cn equals ops, ou equals hr, cn equals payroll, and cn equals benefits." class="center" src="images/c08f004.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c08-fig-0004" id="c08-fig-0004" role="doc-backlink"><b>FIGURE 8.4</b></a></span> LDAP organizational hierarchy</p>
+</figcaption>
+</figure>
+<p>Since directories contain significant amounts of organizational data and may be used to support a range of services, including directory-based authentication, they must be well protected. The same set of needs often means that directory servers must be publicly exposed to provide services to systems or business partners who need to access the directory information. In those cases, additional security, tighter access controls, or even an entirely separate public directory service may be required.<span aria-label="245" epub:type="pagebreak" id="Page_245" role="doc-pagebreak"/></p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c08-para-0036"><img alt="" role="presentation" src="images/note.png"/> The Security+ exam outline doesn't focus on directory services like LDAP as directory services. Instead, it lists LDAP under the heading of single sign-on. While LDAP is commonly used as part of SSO infrastructures, it's important to remember that it is a directory service as well.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>Internet-based systems and architectures often rely on a number of core technologies to accomplish authentication and authorization that can also be used for single sign-on. These include the following:</p>
+<ul class="square" id="c08-list-0009">
+<li id="c08-li-0025"><i>Security Assertion Markup Language (SAML)</i> is an XML-based open standard for exchanging authentication and authorization information. SAML is often used between identity providers and service providers for web-based applications. Using SAML means that service providers can accept SAML assertions from a range of identity providers, making it a common solution for federated environments like those we will discuss later in this chapter.</li>
+<li id="c08-li-0026">OpenID is an open standard for decentralized authentication. OpenID identity providers can be leveraged for third-party sites using established identities. A common example of this is the “Log in with Google” functionality that many websites provide, but Google is not the only example of a major OpenID identity provider. Microsoft, Amazon, and many other organizations are OpenID identity providers (IdPs). Relying parties (RPs) redirect authentication requests to the IdP and then receive a response with an assertion that the user is who they claim to be due to successful authentication, and the user is logged in using the OpenID for that user.</li>
+<li id="c08-li-0027"><i>OAuth</i> is an open standard for authorization used by many websites. OAuth provides a method for users to determine what information to provide to third-party applications and sites without sharing credentials. You may have experienced this with tools like Google Drive plug-ins that request access to your files or folders, or when you use a web conferencing tool that requests access to a Google calendar with a list of permissions it needs or wants to perform the requested function.</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c08-para-0038"><img alt="" role="presentation" src="images/note.png"/> The Security+ exam outline does not include OpenID, but it is a commonly deployed technology. We've included it here so you'll be aware of it if you run into it outside of the exam.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c08-para-0039">These technologies are a major part of the foundation for many web-based SSO and federation implementations. Outside of web-based environments, single sign-on is commonly implemented using LDAP and Kerberos, such as in Windows domains and Linux infrastructures.</p>
+</section>
+<section><span id="c08-sec-0014"/>
+<h4 id="head-4-79">Federation</h4>
+<p id="c08-para-0040">In many organizations, identity information is handled by an <i>identity provider (IdP)</i>. Identity providers manage the life cycle of digital identities from creation through maintenance to eventual retirement of the identity in the systems and services it supports. Identity providers <span aria-label="246" epub:type="pagebreak" id="Page_246" role="doc-pagebreak"/>are often part of federated identity deployments, where they are paired with relying parties, which trust the identity provider to handle authentication and then rely on that authentication to grant access to services. <i>Federation</i> is commonly used for many web services, but other uses are also possible.</p>
+<p>Here are a number of terms commonly used in federated environments that you should be aware of:</p>
+<ul class="square" id="c08-list-0010">
+<li id="c08-li-0028">The principal, typically a user</li>
+<li id="c08-li-0029">Identity providers (IdPs), who provide identity and authentication services via an <i>attestation</i> process in which the IdP validates that the user is who they claim to be</li>
+<li id="c08-li-0030">Service providers (SPs), who provide services to users whose identities have been attested to by an identity provider and then perform the requested function</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c08-para-0042"><img alt="" role="presentation" src="images/note.png"/> Attestation is a formal verification that something is true—thus, an IdP can attest that a user is who they say they are because they have presented an identifier and have been authorized by the IdP, which then provides the attestation.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c08-para-0043">In addition, the term <i>relying party (RP)</i> is sometimes used, with a similar meaning to a service party. An RP will require authentication and identity claims from an IdP.</p>
+<p id="c08-para-0044">As you might expect, given the broad range of identity management and authentication and authorization systems we have looked at thus far in the chapter, <i>interoperability</i> is a key concern when connecting different organizations together. Fortunately, SAML, OAuth, OpenID, and similar technologies help to ensure that standards-based interoperability is possible. In those scenarios, OpenID Connect and SAML are both used for federated authentication, whereas OAuth is used to handle authorization of access to protected resources.</p>
+<p id="c08-para-0045">Many cloud service providers support some form of identity federation to allow easier onboarding to their service. In addition, cloud services typically have some form of internal identity and authorization management capability that allows organizations that adopt their tools to manage users. Since organizations often use multiple cloud services, using federated identity management is common to allow management of users across multiple services.</p>
+</section>
+</section>
+</section>
+<section aria-labelledby="head-2-124"><span id="c08-sec-0016"/>
+<h2 id="head-2-124">Authentication Methods</h2>
+<p id="c08-para-0046">Once you've claimed an identity by providing a username, a certificate, or some other means, your next step is to prove that the identity belongs to you. That process is the core of the authentication process.</p>
+<p id="c08-para-0047">Using a password remains the most common means of authentication, but passwords have a number of flaws. The first, and most important, is that passwords can be stolen and used by third parties with relative ease. Unless the owner of the password changes it, the <span aria-label="247" epub:type="pagebreak" id="Page_247" role="doc-pagebreak"/>password will remain usable by attackers. Passwords are also susceptible to brute-force attacks, allowing a determined attacker, who can spend enough time freely using them to eventually break into a system. This has led to the use of multiple factors, preventing a lost or stolen password from allowing easy account compromise.</p>
+<section><span id="c08-sec-0017"/>
+<h3 id="head-3-131">Passwords</h3>
+<p id="c08-para-0048">The Security+ exam outline focuses on a number of password best practices and configuration settings.</p>
+<p>Password best practices vary. NIST provides a set of recommendations that are broadly adopted as part of NIST SP 800-63B as part of their Digital Identity Guidelines. Their best practices include using Show Password to prevent typos, using password managers, ensuring secrets are stored securely using salting and secure hashing methods, locking accounts after multiple attempts, and employing multifactor authentication.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c08-para-0050"><img alt="" role="presentation" src="images/note.png"/> You can read NIST 800-63A, B, and C at <code><a href="https://pages.nist.gov/800-63-3">https://pages.nist.gov/800-63-3</a></code>. 63A includes information on enrollment and identity proofing, 63B focuses on authentication and life cycle management, and 63C tackles federation and assertions.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>In addition to those broad recommendations, NIST specifically suggests that modern password practices follow a few guidelines:</p>
+<ul class="square" id="c08-list-0011">
+<li id="c08-li-0031">Reducing password complexity requirements and instead emphasizing length</li>
+<li id="c08-li-0032">Not requiring special characters</li>
+<li id="c08-li-0033">Allowing ASCII and Unicode characters in passwords</li>
+<li id="c08-li-0034">Allowing pasting into password fields to allow password managers to work properly</li>
+<li id="c08-li-0035">Monitoring new passwords to ensure that easily compromised passwords are not used</li>
+<li id="c08-li-0036">Eliminating password hints</li>
+</ul>
+<p id="c08-para-0052">NIST also recommends that organizations and security practitioners understand threats to authentication, since defenses and controls need to address the risks that the organization itself faces and that may change over time.</p>
+<p>Setting password requirements was historically one of the few controls available to help protect passwords from brute-force attacks and to help handle the issue of stolen, reused, or otherwise exposed passwords. Common password settings found in most operating systems and many services support configuration options for passwords, including:</p>
+<ul class="square" id="c08-list-0012">
+<li id="c08-li-0037">Length, which has typically been one of the best controls to prevent passwords brute forcing.</li>
+<li id="c08-li-0038">Complexity, which influences password attacks by ensuring that larger character sets are required for brute-force attacks and in many implementations, also prevents the use of common words or a series of repeated characters.</li>
+<li id="c08-li-0039"><span aria-label="248" epub:type="pagebreak" id="Page_248" role="doc-pagebreak"/>Reuse limitations are set to ensure that users don't simply set their password to a previous password, which may have been exposed, reused, or compromised.</li>
+<li id="c08-li-0040">Expiration dates are set to ensure that passwords are not used for extended periods of time. Expiration dates often create additional support work for help desks, which means many organizations have moved to not requiring password changes as frequently—or ever—if they have multifactor authentication (MFA) in place.</li>
+<li id="c08-li-0041">Age settings for passwords are used to ensure that users do not simply reset their passwords over and over until they bypass reuse limitations, allowing them to return to their former password.</li>
+</ul>
+<p id="c08-para-0054"><a href="#c08-fig-0005" id="R_c08-fig-0005">Figure 8.5</a> shows Windows local password setting options that support these configuration options.</p>
+<figure> <img alt="A snapshot of Windows local password policy options. The options include file, action, view, and help. The policy and security settings are highlighted." class="center" src="images/c08f005.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c08-fig-0005" id="c08-fig-0005" role="doc-backlink"><b>FIGURE 8.5</b></a></span> Windows local password policy options</p>
+</figcaption>
+</figure>
+<p>Some of these settings conflict with NIST's current recommendations, and you may encounter organizational policies, practices, or technical implementations that limit the options you can use in each scenario. That means that you'll have to determine the best balance of password requirements based on the technical capabilities and policies your organization has in place.<span aria-label="249" epub:type="pagebreak" id="Page_249" role="doc-pagebreak"/></p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c08-para-0056"><img alt="" role="presentation" src="images/note.png"/> Since Microsoft has gone to great lengths to ensure backward compatibility for Windows systems and servers, insecure password options have existed for years. One of the most common password length setting requirements for many organizations was driven by the LAN Manager (LM) hash. This short hash was generated if passwords had less than 15 characters in them, resulting in many organizations setting their password requirement to 15 or more characters to prevent insecure hash storage and usage.</p>
+<p id="c08-para-0057">You can read more about this at <code><a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/windows-security/prevent-windows-store-lm-hash-password">https://learn.microsoft.com/en-us/troubleshoot/windows-server/windows-security/prevent-windows-store-lm-hash-password</a></code>.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section><span id="c08-sec-0020"/>
+<h4 id="head-4-80">Password Managers</h4>
+<p id="c08-para-0058">Password managers like 1Password and Bitwarden are designed to help users create secure passwords, then store and manage them along with related data like notes, URLs, or other important information associated along with the secrets they're used to store.</p>
+<p id="c08-para-0059">Windows, macOS, and even browsers also provide password managers. Windows Credential Manager can store and manage both web and Windows credentials, as shown in <a href="#c08-fig-0006" id="R_c08-fig-0006">Figure 8.6</a>. Apple's Keychain syncs to Apple's iCloud and synchronizes passwords and other secure information across Apple devices.</p>
+<figure> <img alt="A snapshot of Windows credential manager. It is situated inside the control panel, all control panel items, and the credential manager. The web credential option is highlighted." class="center" src="images/c08f006.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c08-fig-0006" id="c08-fig-0006" role="doc-backlink"><b>FIGURE 8.6</b></a></span> Windows Credential Manager</p>
+</figcaption>
+</figure>
+<p id="c08-para-0060">Use of password managers for both individuals and organizations is common, and using a password manager is a common recommendation due to reduction in password reuse and the greater likelihood of using complex and long passwords when password managers are available and easy to use.</p> <span aria-label="250" epub:type="pagebreak" id="Page_250" role="doc-pagebreak"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c08-fea-0003"/>
+<h3 id="head-2-125">What Happens When Your Password Manager Is Breached?</h3>
+<section><span id="c08-sec-0021"/>
+<p id="c08-para-0061">In December 2022, LastPass, one of the most commonly used password managers, announced that they had suffered two security incidents. LastPass noted in a post in March 2023 that the first incident led to a second incident in which software repositories, backups of customer vault data, and MFA authenticator seeds as well as phone numbers used for MFA backup options were exposed along with other data.</p>
+<p id="c08-para-0062">The exposure resulted in recommendations for customers to take actions like resetting master passwords in some scenarios, regenerating MFA shared secrets in some cases, and various other actions. Since LastPass had customer secrets in databases that were exposed, and there were concerns about how those secrets were protected, organizations and individuals faced concerns about the ongoing security of the passwords stored by the tool.</p>
+<p id="c08-para-0063">You can read the post with information about the breaches and recommendations for customer action for both individuals and enterprise customers at <code><a href="https://blog.lastpass.com/2023/03/security-incident-update-recommended-actions">https://blog.lastpass.com/2023/03/security-incident-update-recommended-actions</a></code>.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c08-sec-0022"/>
+<h4 id="head-4-81">Passwordless</h4>
+<p id="c08-para-0064"><i>Passwordless authentication</i> is becoming increasingly common, with authentication relying on something you have—security tokens, one-time password applications, or certificates—or something that you are, like biometric factors.</p>
+<p>For individuals, one option that provides a high level of security is a <i>security key</i>. These are hardware devices that support things like one-time passwords, public key cryptography for security certificates, and various security protocols like FIDO and Universal 2nd Factor (U2F). They're available in a variety of form factors and with different types of connectivity; most provide USB and/or Bluetooth.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c08-para-0066"><img alt="" role="presentation" src="images/note.png"/> We cover biometric factors a few pages from now—for now, just keep in mind that they're factors that rely on your body like your fingerprint, the sound of your voice, or even vein patterns under your skin!</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c08-para-0067">In a typical passwordless authentication scenario, a user might present a USB FIDO2-enabled security key. The key has previously been provisioned as part of the user's enterprise environment and is plugged into the system the user wants to log in with. The key interacts with the authentication system as part of the login and will require a user to enter a PIN or use a fingerprint to unlock the key, and the user is logged in without typing in a password or other factor.</p>
+<p>Passwordless authentication is intended to reduce the friction and risks that are associated with passwords.<span aria-label="251" epub:type="pagebreak" id="Page_251" role="doc-pagebreak"/></p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c08-para-0069"><img alt="" role="presentation" src="images/note.png"/> The Security+ exam outline doesn't mention FIDO2, but it's a standard you're likely to run into in this context. FIDO2 is an open authentication standard that supports both the W3C Web Authentication specification and the Client to Authenticator Protocol (CTAP), which is used to communicate between browsers, operating systems, and similar clients and the FIDO2 device.</p>
+<p id="c08-para-0070">FIDO2 authentication relies on key pairs, with a public key sent to services and private keys that remain on the device.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+<section><span id="c08-sec-0025"/>
+<h3 id="head-3-132">Multifactor Authentication</h3>
+<p id="c08-para-0071">One way to ensure that a single compromised factor like a password does not create undue risk is to use <i>multifactor authentication (MFA)</i>. Multifactor authentication is becoming broadly available and in fact is increasingly a default option for more security-conscious organizations. Now, a phished account and password will not expose an individual or an organization to a potential data breach in most cases.</p>
+<p>The Security+ exam outline defines four factors:</p>
+<ul class="square" id="c08-list-0013">
+<li id="c08-li-0042"><i>Something you know</i>, including passwords, PINs, or the answer to a security question.</li>
+<li id="c08-li-0043"><i>Something you have</i> like a smartcard, USB or Bluetooth token, or another object or item that is in your possession, like the Titan security key shown in <a href="#c08-fig-0007" id="R_c08-fig-0007">Figure 8.7</a>.<span aria-label="252" epub:type="pagebreak" id="Page_252" role="doc-pagebreak"/>
+<figure> <img alt="A photograph of a Titan U S B security key. It is like a smart card or Bluetooth token." class="center" src="images/c08f007.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c08-fig-0007" id="c08-fig-0007" role="doc-backlink"><b>FIGURE 8.7</b></a></span> A Titan USB security key</p>
+</figcaption>
+</figure>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c08-para-0074"><img alt="" role="presentation" src="images/note.png"/> The Fast IDentity Online (FIDO) protocols provided by the FIDO Alliance use cryptographic techniques to provide strong authentication. If you're interested in using tokens or want to know more about how they are implemented for secure authentication using key pairs, you can read more at <code><a href="https://fidoalliance.org/how-fido-works">https://fidoalliance.org/how-fido-works</a></code>.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section></li>
+<li id="c08-li-0044"><i>Something you are</i>, which relies on a physical characteristic of the person who is authenticating themselves. Fingerprints, retina scans, voice prints, and even your typing speed and patterns are all included as options for this type of factor.
+</li>
+<li id="c08-li-0045"><i>Somewhere you are</i>, sometimes called a location factor, is based on your current location. GPS, network location, and other data can be used to ensure that only users who are in the location they should be can authenticate.</li>
+</ul>
+<p id="c08-para-0076">As with all security technologies, it is only a matter of time until new attacks against multifactor authentication compromise our MFA systems. Current attacks already focus on weak points in systems that use text messages for a second factor by cloning cellphones or redirecting SMS messages sent via VoIP systems. Targeted attacks that can steal and quickly use a second factor by infecting mobile phones and other similar techniques will continue to be increasingly necessary for attackers to succeed in compromising accounts, and thus will appear far more frequently in the near future.</p>
+</section>
+<section><span id="c08-sec-0027"/>
+<h3 id="head-3-133">One-Time Passwords</h3>
+<p id="c08-para-0077">A common implementation of a second factor is the use of <i>one-time passwords</i> (<i>OTP</i>). One-time passwords are an important way to combat password theft and other password-based attacks. As its name implies, a one-time password is usable only once. An attacker can obtain a one-time password but cannot continue using it, and it means that brute-force attacks will be constantly attempting to identify a constantly changing target. Though it is possible that a brute-force attack could randomly match a one-time password during the time that it is valid, the likelihood of an attack like that succeeding is incredibly small, and common controls that prevent brute-force attacks will make that type of success essentially impossible.</p>
+<p id="c08-para-0078">There are two primary models for generation of one-time passwords. The first is <i>time-based one-time passwords</i> (<i>TOTP</i>), which use an algorithm to derive a one-time password using the current time as part of the code-generation process. Authentication applications like Google Authenticator use TOTP, as shown in <a href="#c08-fig-0008" id="R_c08-fig-0008">Figure 8.8</a>. The code is valid for a set period of time and then moves on to the next time-based code, meaning that even if a code is compromised it will be valid for only a relatively short period of time.</p>
+<p id="c08-para-0079">The codes shown are valid for a set period of time, shown by the animation of a pie chart in the bottom-right corner, and in the application they turn red as they are about to expire and be replaced with a new code.</p>
+<p id="c08-para-0080">The other one-time password generation model is HMAC-based one-time password (HOTP). HMAC stands for hash-based message authentication codes. HOTP uses a seed value that both the token or HOTP code-generation application and the validation server use, as well as a moving factor. For HOTP tokens that work when you press a button, the <span aria-label="253" epub:type="pagebreak" id="Page_253" role="doc-pagebreak"/>moving factor is a counter, which is also stored on the token and the server. HOTP password generators, like the PayPal token shown in <a href="#c08-fig-0009" id="R_c08-fig-0009">Figure 8.9</a> rely on an event, such as pressing a button, to cause them to generate a code. Since the codes are iterative, they can be checked from the last known use of the token, with iterations forward until the current press is found. Like TOTP solutions, authentication applications can also implement HOTP and work the same way that a hardware token implementation does.</p>
+<figure> <img alt="A snapshot of Google authenticator showing T O T P code generation. The code is 701 237. The email I D is secplusbook@gmail.com." class="center" src="images/c08f008.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c08-fig-0008" id="c08-fig-0008" role="doc-backlink"><b>FIGURE 8.8</b></a></span> Google authenticator showing TOTP code generation</p>
+</figcaption>
+</figure>
+<figure> <img alt="A photograph of an H O T P PayPal token. It is version 10 protection." class="center" src="images/c08f009.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c08-fig-0009" id="c08-fig-0009" role="doc-backlink"><b>FIGURE 8.9</b></a></span> An HOTP PayPal token</p>
+</figcaption>
+</figure>
+<p id="c08-para-0081">In addition to application and hardware tokens, a third common implementation of a one-time password system is the use of codes based on the short message service (SMS), or text message. In this model, when a user attempts to authenticate, an SMS message is sent to their phone, and they then input that code as an additional factor for the authentication process.</p> <span aria-label="254" epub:type="pagebreak" id="Page_254" role="doc-pagebreak"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c08-fea-0004"/>
+<h3 id="head-2-126">Attacking One-Time Passwords</h3>
+<section><span id="c08-sec-0028"/>
+<p id="c08-para-0082">One-time passwords aren't immune to attack, although they can make traditional attacks on accounts that rely on acquiring passwords fail. TOTP passwords can be stolen by either tricking a user into providing them, gaining access to a device like a phone, where they are generated, or otherwise having near real-time access to them. This means that attackers must use a stolen TOTP password immediately. One-time passwords sent via SMS can be redirected using a cloned SIM, or if the phone is part of a VoIP network, by compromising the VoIP system or account and redirecting the SMS factor.</p>
+<p id="c08-para-0083">Attacks against SMS OTP as well as application-based OTP are on the rise as malicious actors recognize the need to overcome multifactor authentication. For now, however, one of the most successful attacks is simply overwhelming end users with repeated validation requests so that they enter an OTP value to make the requests stop!</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c08-para-0084">In situations where hardware and software tokens as well as SMS aren't suitable, some organizations will implement a phone call–based push notification. Push notifications are messages sent to a user to inform them of an event, in this case an authentication attempt. If users respond to the phone call with the requested validation—typically by pushing a specific button on the keypad—the authentication can proceed. Phone calls suffer from a number of issues as an authentication factor, including lower speed, which can cause issues with login timeouts; the potential for hijacking of calls via a variety of means; and additional costs for the implementing organization due to phone call costs.</p>
+<p id="c08-para-0085">Although one-time passwords that are dynamically generated as they are needed are more common, at times, there is a need for a one-time password that does not require a device or connectivity. In those cases, static codes remain a useful option. Static codes are also algorithmically generated like other one-time passwords but are pre-generated and often printed or stored in a secure location. This creates a new risk model, which is that the paper they are printed on could be stolen, or if they are stored electronically, the file they're stored in could be lost or accessed. This would be equivalent to losing a button-press activated token or an unlocked smartphone, so static codes can be dangerous if they are not secured properly.</p>
+</section>
+<section><span id="c08-sec-0029"/>
+<h3 id="head-3-134">Biometrics</h3>
+<p>Biometric factors are an example of the “something you are” factor, and they rely on the unique physiology of the user to validate their identity. Some biometric technologies also count as one of the factors that the Security+ exam outline describes, because they are something you are, like a voice print or gait. Some of the most common biometric technologies include the following:</p>
+<ul class="square" id="c08-list-0014">
+<li id="c08-li-0046">Fingerprints, which check the unique patterns of ridges and valleys on your fingertips using either optical, ultrasonic, or capacitive scanners. Fingerprint scanning has been <span aria-label="255" epub:type="pagebreak" id="Page_255" role="doc-pagebreak"/>broadly deployed within both Windows, using fingerprint scanners on laptops, and Android and Apple devices that use fingerprint readers.</li>
+<li id="c08-li-0047">Retina scanning uses the unique patterns of blood vessels in the retina to tell users apart.</li>
+<li id="c08-li-0048">Iris recognition systems use pattern recognition and infrared imaging to uniquely identify an individual's eyes. Iris recognition can be accomplished from farther away than retina scans, making it preferable in many circumstances.</li>
+<li id="c08-li-0049">Facial recognition techniques match specific features to an original image in a database. Facial recognition is widely used in Apple iPhone for Face ID, making it a broadly deployed biometric technology.</li>
+<li id="c08-li-0050">Voice recognition systems rely on patterns, rhythms, and the sounds of a user's voice itself to recognize the user.</li>
+<li id="c08-li-0051">Vein recognition, sometimes called vein matching or vascular technology, uses scanners that can see the pattern of veins, often in a user's finger or arm. Vein scanners do not need to touch the user, unlike fingerprint scanners, making them less likely to be influenced by things like dirt or skin conditions.</li>
+<li id="c08-li-0052">Gait analysis measures how a person walks to identify them.</li>
+</ul>
+<p id="c08-para-0087">Biometric technologies are assessed based on four major measures. The first is Type I errors, or the false rejection rate (FRR). False rejection errors mean that a legitimate biometric measure was presented and the system rejected it. Type II errors, or false acceptance errors, are measured as the false acceptance rate (FAR). These occur when a biometric factor is presented and is accepted when it shouldn't be. These are compared using a measure called the receiver operating characteristic (ROC). The ROC compares the FRR against the FAR of a system, typically as a graph. For most systems, as you decrease the likelihood of false rejection, you will increase the rate of false acceptance, and determining where the accuracy of a system should be set to minimize false acceptance and prevent false rejection is an important element in the configuration of biometric systems.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c08-fea-0005"/>
+<h3 id="head-2-127">Evaluating Biometrics</h3>
+<section><span id="c08-sec-0030"/>
+<p id="c08-para-0088">When you assess biometrics systems, knowing their FAR and FRR will help you determine their efficacy rates, or how effective they are at performing their desired function. The FIDO Alliance sets their FRR threshold for acceptance for certification for biometric factors at 3 percent of attempts and at .01 percent for FAR for their basic BioLevel1 requirement. They also add another metric that the Security+ exam outline doesn't: the Imposter Attack Presentation Match Rate (IAPMR), a measure that tackles the question of how often an attack will succeed. IAPMR is a challenging measure because it requires attacks that are designed to specifically take advantage of the weaknesses of any given biometric system.</p>
+<p id="c08-para-0089">In addition to measures like these, in the real world you have to assess the user acceptance of the biometric system. Retina scanners failed to take off because most people don't want <span aria-label="256" epub:type="pagebreak" id="Page_256" role="doc-pagebreak"/>to bend over and peer into a retina scanner. At the same time, early generations of fingerprint scanners had a tough time scanning many fingerprints, and even now people who have worn their fingerprints off through manual labor or due to chemical or other exposure can't use many fingerprint readers. That means that biometric systems must often be deployed with a backup method available for some percentage of the user population, even if they will consent to use the system.</p>
+<p id="c08-para-0090">Thus, deploying biometrics isn't as easy of a solution as it may sound up front. That doesn't mean they're not useful; the broad usage of Apple's Face ID and Touch ID, as well as Android's wide adoption of fingerprint readers, show that a biometric factor can be implemented successfully for many users in a reasonable way.</p>
+<p id="c08-para-0091">If you'd like to read more about this topic, Duo has an extensive and well-written explanation of multiple biometric technologies that you can check out at <code><a href="http://duo.com/labs/research/the-good-and-bad-of-biometrics">https://duo.com/labs/research/the-good-and-bad-of-biometrics</a></code>.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+<section aria-labelledby="head-2-128"><span id="c08-sec-0031"/>
+<h2 id="head-2-128">Accounts</h2>
+<p id="c08-para-0092">Claiming an identity and being authorized to access a system or service requires an account. Accounts contain the information about a user, including things like rights and permissions that are associated with the account.</p>
+<section><span id="c08-sec-0032"/>
+<h3 id="head-3-135">Account Types</h3>
+<p>There are many types of accounts, and they can almost all be described as one of a few basic account types:</p>
+<ul class="square" id="c08-list-0015">
+<li id="c08-li-0053"><i>User accounts</i>, which can run the gamut from basic access to systems, devices, or applications to power users with broad rights and privileges. A common example of a user account is a Windows Standard User account, which relies on User Account Control and an administrator password to be entered when installing applications, editing the Registry, or other privileged actions.</li>
+<li id="c08-li-0054"><i>Privileged or administrative accounts</i>, like the root account or members of the wheel group on Linux and Unix systems, and the Windows default Administrator account.</li>
+<li id="c08-li-0055"><i>Shared and generic accounts or credentials</i>, which are often prohibited by security policies. Although shared accounts can be useful, many organizations build delegation capabilities to allow multiple users to act in the same way or with the same rights to avoid shared account issues such as the inability to determine who was logged into the shared account or what actions each user who shares the account took.</li>
+<li id="c08-li-0056"><span aria-label="257" epub:type="pagebreak" id="Page_257" role="doc-pagebreak"/><i>Guest accounts</i>, which are provided to temporary users and which typically have very limited privileges, but are also likely to have far less information about the user who uses them, if any.</li>
+<li id="c08-li-0057"><i>Service accounts</i> associated with applications and services. Service accounts should not be used for interactive logins, and many organizations have specific security policies in place to ensure service account security.</li>
+</ul>
+</section>
+<section><span id="c08-sec-0033"/>
+<h3 id="head-3-136">Provisioning and Deprovisioning Accounts</h3>
+<p id="c08-para-0094">The user account life cycle includes many phases, but two of the most important are when accounts are <i>provisioned</i>, or created, and when they are <i>deprovisioned</i>, or terminated.</p>
+<p id="c08-para-0095">When an account is provisioned, it is created and resources, permissions, and other attributes are set for it. In many instances, provisioning an account may also involve <i>identity proofing</i>, which is the process of ensuring that the person who the account is being created for is the person who is claiming the account. Common examples include providing government-issued credentials to open bank accounts or to create an account for government-sponsored sites to pay taxes. Organizations often identity-proof using government IDs as well as personal information that is unlikely another individual would possess.</p>
+<p id="c08-para-0096">Account creation and identity proofing are commonly done during employee onboarding. Onboarding processes related to account creation include adding employees to groups and ensuring they have the right permissions to accomplish their role, as well as providing appropriate training to the employee.</p>
+<p id="c08-para-0097">Creating an account and ensuring the right individual gains access to it is important, but providing the account with appropriate rights and permissions is what allows the account to be useful. This permissions assignment and permission management is a critical task in organizations. The concept of least privilege is at the core of permission management, and organizations seek to ensure that roles are associated with privileges to make privilege management easier. Managing specific rights for every user in an organization is a complex and error-prone task even in relatively small organizations and is impossible at scale.</p>
+<p id="c08-para-0098">A key concern for organizations that manage permissions for users, groups, and roles over time is <i>permission creep</i>. Permission creep occurs when users take on new roles or are granted new permissions based on tasks they are doing. Over time, this tends to result in users accruing a broader set of permissions that may not match their current role. A common associated issue is that managers and others may request roles based on an individual with requests often phrased as “Give the new staff member permission that match the person who they are replacing.” If permission creep has occurred, that means the new individual will have the same overly broad permissions.</p>
+<p>Long-term permission management is a critical part of identity and access management systems and processes, and permission management with a least privilege approach is a key security control.<span aria-label="258" epub:type="pagebreak" id="Page_258" role="doc-pagebreak"/></p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c08-para-0100"><img alt="" role="presentation" src="images/note.png"/> In addition to this discussion of privileges at the conceptual level, we'll talk more about filesystem permissions a bit later in this chapter. For now, keep in mind the implication of permission assignment and long-term maintenance of permissions as employees and roles change in an organization.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c08-para-0101">When an account is terminated, a process known as <i>deprovisioning</i> occurs. This removes the account, permissions, and related data, files, or other artifacts as required by the organization's processes and procedures. Deprovisioning is an important step because it helps to ensure that dormant accounts are not available for attackers to compromise or co-opt. Limited deprovisioning tasks may also be associated with role changes where an account or group of accounts have rights and privileges removed when a change is made.</p>
+<p id="c08-para-0102">It may be tempting to simply disable an account in case it is needed again in the future. While disabling accounts may be done in specific circumstances, completely removing accounts removes the opportunity for attacks that reenable them or that use improperly disabled or improperly reenabled accounts. Thus, deletion of accounts is typically a preferred process in the deprovisioning process.</p>
+<section><span id="c08-sec-0035"/>
+<h4 id="head-4-82">Privileged Access Management</h4>
+<p id="c08-para-0103"><i>Privileged access management (PAM)</i> tools can be used to handle the administrative and privileged accounts you read about earlier in this section. PAM tools focus on ensuring that the concept of least privilege is maintained by helping administrators specify only the minimum set of privileges needed for a role or task. PAM tools often provide more detailed, granular controls; increased audit capabilities; and additional visibility and reporting on the state of privileged accounts.</p>
+<p>The Security+ exam outline addresses three specific features of PAM tools that you'll want to be aware of for the exam:</p>
+<ul class="square" id="c08-list-0016">
+<li id="c08-li-0058"><i>Just-in-time (JIT) permissions</i> are permissions that are granted and revoked only when needed. This is intended to prevent users from having ongoing access when they don't need that access on an ongoing basis. Users will typically use a console to “check out” permissions, which are then removed when the task is completed or a set time period expires. This helps to prevent privilege creep but does add an additional step for use of privileges.</li>
+<li id="c08-li-0059"><i>Password vaulting</i> is commonly used as part of PAM environments to allow users to access privileged accounts without needing to know a password. Much like JIT permissions, password vaulting often allows privileged credentials to be checked out as needed while creating a logged, auditable event related to the use of the credentials. Password vaults are also commonly used to ensure that passwords are available for emergencies and outages.</li>
+<li id="c08-li-0060"><i>Ephemeral accounts</i> are temporary accounts with limited lifespans. They may be used for guests or for specific purposes in an organization when a user needs access but should not have an account on an ongoing basis. Setting an appropriate lifespan and ensuring that the account is deprovisioned is key to the successful implementation of ephemeral accounts.</li>
+</ul>
+<p id="c08-para-0104"><span aria-label="259" epub:type="pagebreak" id="Page_259" role="doc-pagebreak"/></p>
+</section>
+</section>
+</section>
+<section aria-labelledby="head-2-129"><span id="c08-sec-0037"/>
+<h2 id="head-2-129">Access Control Schemes</h2>
+<p id="c08-para-0106">User accounts and account controls are important, but systems also implement <i>access control schemes</i> to determine which users, services, and programs can access various files or other objects that they host. The Security+ exam covers a number of common access control schemes, which we'll look at next.</p>
+<p id="c08-para-0107"><i>Mandatory access control (MAC)</i> systems rely on the operating system to enforce control as set by a security policy administrator. In a MAC implementation, users do not have the ability to grant access to files or otherwise change the security policies that are set centrally. MAC implementations were once only found in government and military systems, but now they can be found in specific high-security systems like SELinux and in Windows as Mandatory Integrity Control (MIC). MAC implementations remain relatively rare overall compared to discretionary access control.</p>
+<p id="c08-para-0108"><i>Discretionary access control (DAC)</i> is an access control scheme that many people are used to from their own home PCs. The most common type of discretionary access control assigns owners for objects like files and directories, and then allows the owner to delegate rights and permissions to those objects as they desire. Linux file permissions provide an easy example of this. The owner of a file (or directory) can set permissions that apply to the owner, the group, or the world, and they can choose to allow the file to be read, modified, or executed.</p>
+<p><i>Role-based access control (RBAC)</i> systems rely on roles that are then matched with privileges that are assigned to those roles. This makes RBAC a popular option for enterprises that can quickly categorize employees with roles like “cashier” or “database administrator” and provide users with the appropriate access to systems and data based on those roles. RBAC systems boil down to three primary rules:</p>
+<ul class="square" id="c08-list-0017">
+<li id="c08-li-0061"><i>Role assignment</i>, which states that subjects can use only permissions that match a role they have been assigned.</li>
+<li id="c08-li-0062"><i>Role authorization</i>, which states that the subject's active role must be authorized for the subject. This prevents subjects from taking on roles they shouldn't be able to.</li>
+<li id="c08-li-0063"><i>Permission authorization</i>, which states that subjects can use only permissions that their active role is allowed to use.</li>
+</ul>
+<p>Together, these three rules describe how permissions can be applied in an RBAC system. With these three rules, role hierarchies can be built that allow specific permissions to be available at the right levels based on roles in any given environment.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c08-para-0111"><img alt="" role="presentation" src="images/note.png"/> An important detail for RBAC systems is that many support multiple roles for subjects. That means that you may have an active role, as well as other roles you could use. A familiar example of this might be the ability to use the <code>sudo</code> command on a Linux system. Users have a role as themselves (a user role), and they can also assume a superuser (root) role. When the root, or superuser, role is active, they can perform actions that root is authorized to perform. When it is not, they cannot perform those actions or access objects that are restricted to access by the root role.</p><span aria-label="260" epub:type="pagebreak" id="Page_260" role="doc-pagebreak"/>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c08-para-0112"><i>Rule-based access control</i>, also sometimes called RBAC (and sometimes RuBAC to help differentiate it from role-based access control) is applied using a set of rules, or access control lists (ACLs), that apply to various objects or resources. When an attempt is made to access an object, the rule is checked to see if the access is allowed. A common example of a rule-based access control is a firewall ruleset.</p>
+<p id="c08-para-0113"><i>Attribute-based access control (ABAC)</i> relies on policies that are driven by attributes of the users. This allows for complex rulesets based on combinations of attributes that provide users with specific rights that match the attributes they have. Since attributes can be set in specific contexts, this also means that ABAC schemes can be very flexible. The downside of ABAC policies is that they can also be complex to manage well due to their flexibility.</p>
+<p id="c08-para-0114">Attribute-based access control schemes are useful for application security, where they are often used for enterprise systems that have complex user roles and rights that vary depending on the way and role that users interact with a system. They're also used with databases and content management systems, microservices, and APIs for similar reasons.</p>
+<p>In addition to these common access control schemes, the Security+ exam outline groups in two additional concepts under access controls:</p>
+<ul class="square" id="c08-list-0018">
+<li id="c08-li-0064"><i>Time-of-day restrictions</i>, which limit when activities can occur. An example in Windows is where logon hours can be set via Active Directory, defining the hours that a user or group of users can be logged onto a system. This can help prevent abuse of user accounts or system access when users have well-defined work hours.</li>
+<li id="c08-li-0065"><i>Least privilege</i>, the concept that accounts and users should only be given the minimum set of permissions and capabilities necessary to perform their role or job function. Least privilege is a common concept throughout information security practices and should be designed into any permissions or access scheme.</li>
+</ul>
+<section><span id="c08-sec-0039"/>
+<h3 id="head-3-137">Filesystem Permissions</h3>
+<p id="c08-para-0116">The final type of access controls that you will need to know for this section of the Security+ exam is filesystem controls. Filesystem controls determine which accounts, users, groups, or services can perform actions like reading, writing, and executing (running) files. Each operating system has its own set of filesystem permissions and capabilities for control, and you should make sure you are familiar with both Linux and Windows permissions for the exam.</p>
+<p>Linux filesystem permissions are shown in file listings with the letters <code>drwxrwxrwx</code>, indicating whether a file is a directory, and then displaying user, group, and world (sometimes called other) permissions. <a href="#c08-fig-0010" id="R_c08-fig-0010">Figure 8.10</a> shows how this is displayed and a chart describing the numeric representation of these settings that is frequently used for shorthand when using the <code>chmod</code> Linux command used to change permissions.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c08-para-0118"><img alt="" role="presentation" src="images/note.png"/> If you aren't familiar with Linux permissions and the <code>chmod</code> command, you should spend some time familiarizing yourself with both. You should know how to set and read permissions using both character and numeric representations; the order of user, group, and others rights; and what those rights mean for a given user based on their account's rights and group membership.</p><span aria-label="261" epub:type="pagebreak" id="Page_261" role="doc-pagebreak"/>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<figure> <img alt="A table of eight rows and three columns. The column headers are numeric representation, permission, and letter representation. The order of user, group, and other rights is given to the users based on their account rights and group membership." class="center" src="images/c08f010.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c08-fig-0010" id="c08-fig-0010" role="doc-backlink"><b>FIGURE 8.10</b></a></span> Linux/Unix file permissions</p>
+</figcaption>
+</figure>
+<p id="c08-para-0119">Windows file permissions can be set using the command line or the GUI. <a href="#c08-fig-0011" id="R_c08-fig-0011">Figure 8.11</a> shows the properties of a file using the GUI with administrators allowed full control including Modify, Read &amp; Execute, Read, and Write with no permissions denied. Note that the permissions are similar but not quite the same as those set in Linux. Windows provides full control (like rwx or 7 in Linux).</p>
+<figure> <img alt="A snapshot of Windows file permission. The permissions for administrators include full control, modify, read and execute, read, write, and special permission." class="center" src="images/c08f011.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c08-fig-0011" id="c08-fig-0011" role="doc-backlink"><b>FIGURE 8.11</b></a></span> Windows file permissions</p>
+</figcaption>
+</figure>
+<p id="c08-para-0121">The modify permission allows viewing as well as changing files or folders. Read and execute does not allow modification or changes but does allow the files to be run, whereas read and write work as you'd expect them to.</p>
+<p id="c08-para-0122">Filesystem permissions are an important control layer for systems, and improperly set or insecure permissions are often leveraged by attackers to acquire data and to run applications that they should not be able to. In fact, attacks we explore in other chapters like directory traversal attacks on web servers rely on weak filesystem permissions to allow attackers to access files outside of those that should be available to web servers on a properly secured system.</p>
+</section>
+</section> <span aria-label="262" epub:type="pagebreak" id="Page_262" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-130"><span id="c08-sec-0041"/>
+<h2 id="head-2-130">Summary</h2>
+<p id="c08-para-0123">Identity and access management is a key element in organizational security. Authentication is the process of proving your claim to an identity by providing one or more factors that include something you know, something you have, something you are, or somewhere you are. Authorization provides authenticated users with the privileges and rights they need to accomplish their roles. User accounts range from guest and normal users to service accounts and privileged administrative accounts. Account policies shape details and requirements for each account, including when accounts should be locked out or disabled.</p>
+<p id="c08-para-0124">There are a wide range of authentication methods and technologies deployed throughout organizations. In addition, technologies like RADIUS, LDAP, EAP and CHAP, OAuth, OpenID, and SAML are commonly used as part of single sign-on infrastructure. Single sign-on (SSO) allows users to log in once and use their identities throughout many systems, whereas federation uses identity providers to authenticate users, who can then use those identities at various service providers and relying party locations without having to have a distinct identity there. Interoperability between identity and authorization systems is enabled by standards and shared protocols, making federation possible. Attestation provides validation that a user or identity belongs to the user claiming it.</p>
+<p id="c08-para-0125">Multifactor authentication has helped limit the problems with passwords such as password theft, reuse, and brute-force attacks. Biometric authentication, which uses physical traits such as your fingerprint, retina print, or facial recognition, have become commonplace, but knowing how often they will incorrectly allow the wrong person in or reject a legitimate user is critical. Both hardware- and software-based authentication tokens are commonly used, with hardware security keys becoming increasingly common. Password vaults (or safes) provide cryptographically secured storage to keep passwords secure, and enterprise deployments support multiple users and controlled access schemes.</p>
+<p id="c08-para-0126">Password best practices have changed as multifactor authentication has become more common. While configurations still often allow settings for length, complexity, reuse, expiration, and age, NIST and other organizations have begun to focus on length as the primary control to avoid brute forcing. Passwordless authentication is becoming more common, replacing passwords with secure tokens or applications.</p>
+<p id="c08-para-0127">Access control schemes like attribute-based access control, discretionary access control, mandatory access control, and role-based access control all provide ways to determine which subjects can perform actions on objects. Privileged access management ensures that administrative users are well managed. Just-in-time permissions and ephemeral accounts are two of the many techniques that PAM systems employ to enable better control of privileged accounts.</p>
+</section>
+<section aria-labelledby="head-2-131"><span id="c08-sec-0042"/>
+<h2 id="head-2-131">Exam Essentials</h2>
+<p id="c08-li-0066"><b>Identities are the foundation of authentication and authorization.</b> Users claim an identity through an authentication process. In addition to usernames, identities are often claimed through the use of certificates, tokens, SSH keys, or smartcards, each of which provides <span aria-label="263" epub:type="pagebreak" id="Page_263" role="doc-pagebreak"/>additional capabilities or features that can help with security or other useful functions. Identities use attributes to describe the user, with various attributes like job, title, or even personal traits stored as part of that user's identity.</p>
+<p id="c08-li-0067"><b>Single sign-on and federation are core elements of many identity infrastructures.</b> Single sign-on (SSO) is widely used to allow users to log in once and use resources and services across an organization or federation. While there are many SSO technologies and implementations, LDAP, OAuth, and SAML are critical for many modern SSO designs.</p>
+<p id="c08-li-0068"><b>Passwords, passwordless authentication, and multifactor authentication all have roles to play in authentication systems.</b> Passwords best practices include configuration common settings like password length, complexity, reuse, expiration, and age. Understanding what each setting helps with and why it might be configured to specific settings is an important task for security professionals. Password managers help to limit password reuse and to manage passwords for organizations when implemented with enterprise solutions. Multifactor authentication relies on additional factors beyond passwords, including biometrics and hardware- and software-based tokens like security keys and authenticator applications. Multifactor requires the use of distinct factors: potential factors include something you know, something you have, something you are, or somewhere you are.</p>
+<p id="c08-li-0069"><b>Account types and account policies determine what users can do and privileged accounts must be managed and controlled.</b> Types of user accounts include users, guests, administrative (privileged) accounts, and service accounts. Provisioning and deprovisioning accounts as well as managing the account life cycle are key to ensuring that accounts have appropriate rights and that they do not remain after they are no longer needed. Privileged access management focuses on privileged accounts and rights, and leverages techniques like just-in-time permission granting and removal and short-lived, ephemeral accounts that exist just for the time needed to accomplish a task.</p>
+<p id="c08-li-0070"><b>Access control schemes determine what rights accounts have.</b> Important access control schemes include attribute-based access control (ABAC), which employs user attributes to determine what access the user should get. Role-based access control (RBAC) makes decisions based on roles, whereas rule-based access control (also sometimes called RBAC) uses rules to control access. In addition to knowing these access control schemes, be familiar with mandatory access control (MAC), which relies on the system administrator to control access, and discretionary access control (DAC), which allows users to make decisions about access to files and directories they have rights to. PAM (privileged access management) is focused on controlling administrative accounts. Finally, test takers also need to know how to use and apply common filesystem permissions.</p>
+</section>
+<span aria-label="264" epub:type="pagebreak" id="Page_264" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-132"><span id="c08-sec-0043"/>
+<h2 id="head-2-132">Review Questions</h2>
+<section><span id="c08-exsec-0001"/>
+<ol class="decimal">
+<li id="c08-ex-0001">Angela has chosen to federate with other organizations to allow use of services that each organization provides. What role does Angela's organization play when they authenticate their users and assert that those users are valid to other members of the federation?
+<ol class="upper-alpha">
+<li>Service provider</li>
+<li>Relying party</li>
+<li>Authentication provider</li>
+<li>Identity provider</li>
+</ol>
+</li>
+<li id="c08-ex-0002">Which of the following technologies is the least effective means of preventing shared accounts?
+<ol class="upper-alpha">
+<li>Password complexity requirements</li>
+<li>Requiring biometric authentication</li>
+<li>Requiring one-time passwords via a token</li>
+<li>Requiring a one-time password via an application</li>
+</ol>
+</li>
+<li id="c08-ex-0003">What major difference is likely to exist between on-premises identity services and those used in a cloud-hosted environment?
+<p class="listPara1" id="c08-para-0145">A.Account policy control will be set to the cloud provider's standards.</p>
+<p class="listPara1" id="c08-para-0146">B.The cloud service will provide account and identity management services.</p>
+<p class="listPara1" id="c08-para-0147">C.Multifactor authentication will not be supported by the cloud vendor.</p>
+<p class="listPara1" id="c08-para-0148">D.None of the above.</p></li>
+<li id="c08-ex-0004">Amitoj wants to ensure that her organization's password policy does not allow users to reset their password multiple times until they can reuse their current password. What setting is used to prevent this?
+<ol class="upper-alpha">
+<li>Complexity</li>
+<li>Length</li>
+<li>Expiration</li>
+<li>Age</li>
+</ol>
+</li>
+<li id="c08-ex-0005">Which type of multifactor authentication is considered the least secure?
+<ol class="upper-alpha">
+<li>HOTP</li>
+<li>SMS</li>
+<li>TOTP</li>
+<li>Biometric</li>
+</ol>
+</li>
+<li id="c08-ex-0006"><span aria-label="265" epub:type="pagebreak" id="Page_265" role="doc-pagebreak"/> Geeta has been issued a USB security key as part of her organization's multifactor implementation. What type of implementation is this?
+<ol class="upper-alpha">
+<li>A hard token</li>
+<li>A biometric token</li>
+<li>A soft token</li>
+<li>An attestation token</li>
+</ol>
+</li>
+<li id="c08-ex-0007">Michelle enables the Windows picture password feature to control logins for her laptop. Which type of attribute will it provide?
+<ol class="upper-alpha">
+<li>Somewhere you are</li>
+<li>Something you know</li>
+<li>Something you are</li>
+<li>Someone you know</li>
+</ol>
+</li>
+<li id="c08-ex-0008">What purpose would Linux file permissions set to <code>rw-r—r-- serve</code>?
+<ol class="upper-alpha">
+<li>To allow the owner to read and write the file, and for the owner's group and others to be able to read it</li>
+<li>To allow all users to read and write the file, and for the group and owner to be able to read it</li>
+<li>To allow system administrators to read and write the file, and for users and all others to be able to read it</li>
+<li>To prevent reading and writing for all users, and to prevent reading by groups and a specific user</li>
+</ol>
+</li>
+<li id="c08-ex-0009">Theresa wants to implement an access control scheme that sets permissions based on what the individual's job requires. Which of the following schemes is most suited to this type of implementation?
+<ol class="upper-alpha">
+<li>ABAC</li>
+<li>DAC</li>
+<li>RBAC</li>
+<li>MAC</li>
+</ol>
+</li>
+<li id="c08-ex-0010">Which of the following biometric technologies is most broadly deployed due to its ease of use and acceptance from end users?
+<ol class="upper-alpha">
+<li>Voice print recognition</li>
+<li>Gait recognition</li>
+<li>Retina scanners</li>
+<li>Fingerprint scanner</li>
+</ol>
+</li>
+<li id="c08-ex-0011"><span aria-label="266" epub:type="pagebreak" id="Page_266" role="doc-pagebreak"/> Adam want to increase his organization's passwords resistance to attacks in the event that the password hash database is stolen by attackers. Which of the following password security settings has the largest impact on password cracking if his organization's current passwords are 8 characters long?
+<ol class="upper-alpha">
+<li>Password complexity</li>
+<li>Password length</li>
+<li>Password reuse limitations</li>
+<li>Preventing the use of common words in passwords</li>
+</ol>
+</li>
+<li id="c08-ex-0012">A PIN is an example of what type of factor?
+<ol class="upper-alpha">
+<li>Something you know</li>
+<li>Something you are</li>
+<li>Something you have</li>
+<li>Something you set</li>
+</ol>
+</li>
+<li id="c08-ex-0013">Marie is implementing a PAM solution and wants to ensure that root passwords are available in the event of an outage. Which PAM-related tool is most likely to be useful in this situation?
+<ol class="upper-alpha">
+<li>Ephemeral accounts</li>
+<li>Just-in-time permissions</li>
+<li>Password vaulting</li>
+<li>Token-based authentication</li>
+</ol>
+</li>
+<li id="c08-ex-0014">Jill sets her files on a Windows file share to allow Fred to access the files. What type of access control system is she using?
+<ol class="upper-alpha">
+<li>Mandatory access control</li>
+<li>Rule-based access control</li>
+<li>Attribute-based access control</li>
+<li>Discretionary access control</li>
+</ol>
+</li>
+<li id="c08-ex-0015">Lisa sets up an account on a website that allows her to log in with Google. When she logs in, Google provides an access token to the website that confirms that she is who she says she is but doesn't provide the site with her password. Which of the following technologies has she used?
+<ol class="upper-alpha">
+<li>LDAP</li>
+<li>OAuth</li>
+<li>MITRE</li>
+<li>RADIUS</li>
+</ol>
+</li>
+<li id="c08-ex-0016"><span aria-label="267" epub:type="pagebreak" id="Page_267" role="doc-pagebreak"/> Kyle has been asked to provide his government-issued ID as part of the creation of his user account. What process should he assume it is being used for?
+<ol class="upper-alpha">
+<li>Biometric enrollment</li>
+<li>Just-in-time permission creation</li>
+<li>Identity proofing</li>
+<li>Federation</li>
+</ol>
+</li>
+<li id="c08-ex-0017">What key concept below best describes only providing the permissions necessary to perform a role?
+<ol class="upper-alpha">
+<li>Least privilege</li>
+<li>Best practice</li>
+<li>Ephemeral accounts</li>
+<li>Mandatory access control</li>
+</ol>
+</li>
+<li id="c08-ex-0018">Nina has recently left her organization. What should the organization do with her account?
+<ol class="upper-alpha">
+<li>Transfer it to her replacement.</li>
+<li>Reprovision it for another user.</li>
+<li>Deprovision her account.</li>
+<li>Change the password and preserve the account.</li>
+</ol>
+</li>
+<li id="c08-ex-0019">A person's name, age, location, or job title are all examples of what?
+<ol class="upper-alpha">
+<li>Biometric factors</li>
+<li>Identity factors</li>
+<li>Attributes</li>
+<li>Account permissions</li>
+</ol>
+</li>
+<li id="c08-ex-0020">What type of access control scheme best describes the Linux filesystem?
+<ol class="upper-alpha">
+<li>MAC</li>
+<li>RBAC</li>
+<li>DAC</li>
+<li>ABAC</li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+</section>
+</body>
+</html>

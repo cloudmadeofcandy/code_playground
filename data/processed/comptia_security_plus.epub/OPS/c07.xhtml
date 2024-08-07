@@ -1,0 +1,1179 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:svg="http://www.w3.org/2000/svg" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+<head>
+<title>Chapter 7 Cryptography and the PKI</title>
+<link href="WileyTemplate_v5.5.css" rel="stylesheet" type="text/css"/>
+<meta content="urn:uuid:57d469d3-a1d3-48bd-8447-18ce82f57cc2" name="Adept.expected.resource"/>
+</head>
+<body epub:type="bodymatter">
+<section aria-labelledby="c07_1" epub:type="chapter" role="doc-chapter">
+<header>
+<h1 id="c07_1"><span aria-label="189" epub:type="pagebreak" id="Page_189" role="doc-pagebreak"/><span id="c07"/><span class="chapterNumber">Chapter 7</span><br/><span class="chapterTitle">Cryptography and the PKI</span></h1>
+</header>
+<section aria-label="chapter opening"><span id="c07-sec-0001"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c07-para-0002"><b>THE COMPTIA SECURITY+ EXAM OBJECTIVES COVERED IN THIS CHAPTER INCLUDE:</b></p>
+<ul class="check1" id="c07-list-0001">
+<li id="c07-li-0001"><b>Domain 1.0: General Security Concepts </b>
+<ul class="square1" id="c07-list-0002">
+<li id="c07-li-0002">1.4. Explain the importance of using appropriate cryptographic solutions.
+<ul class="square1" id="c07-list-0003">
+<li id="c07-li-0003">Public key infrastructure (PKI) (Public key, Private key, Key escrow)</li>
+<li id="c07-li-0004">Encryption (Level (Full-disk, Partition, File, Volume, Database, Record), Transport/communication, Asymmetric, Symmetric, Key exchange, Algorithms, Key length)</li>
+<li id="c07-li-0005">Obfuscation (Steganography)</li>
+<li id="c07-li-0006">Hashing</li>
+<li id="c07-li-0007">Salting</li>
+<li id="c07-li-0008">Digital signatures</li>
+<li id="c07-li-0009">Key stretching</li>
+<li id="c07-li-0010">Blockchain</li>
+<li id="c07-li-0011">Open public ledger</li>
+<li id="c07-li-0012">Certificates (Certificate authorities, Certificate revocation lists (CRLs), Online Certificate Status Protocol (OCSP), Self-signed, Third-party, Root of trust, Certificate signing request (CSR) generation, Wildcard)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="c07-li-0013"><b>Domai 2.0: Threats, Vulnerabilities, and Mitigations</b>
+<ul class="square1" id="c07-list-0004">
+<li id="c07-li-0014">2.3. Explain various types of vulnerabilities.</li>
+<li id="c07-li-0015">Cryptographic</li>
+<li id="c07-li-0016">2.4. Given a scenario, analyze indicators of malicious activity.
+<ul class="square1" id="c07-list-0005">
+<li id="c07-li-0017">Cryptographic attacks (Downgrade, Collision, Birthday)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<span aria-label="190" epub:type="pagebreak" id="Page_190" role="doc-pagebreak"/>
+<p id="c07-para-0008"><i>Cryptography</i> is the practice of encoding information in a manner that it cannot be decoded without access to the required decryption key. Cryptography consists of two main operations: <i>encryption</i>, which transforms plain-text information into ciphertext using an encryption key, and <i>decryption</i>, which transforms ciphertext back into plain text using a decryption key.</p>
+<p>Cryptography has several important goals. First among these is the goal of <i>confidentiality</i>, which corresponds to one of the three legs of the CIA triad. Organizations use encryption to protect sensitive information from prying eyes. The second goal, <i>integrity</i>, also corresponds to one of the three elements of the CIA triad. Organizations use cryptography to ensure that data is not maliciously or unintentionally altered. When we get to the third goal, <i>authentication</i>, the goals of cryptography begin to differ from the CIA triad. Although authentication begins with the letter A, remember that the A in the CIA triad is “availability.” Authentication refers to uses of encryption to validate the identity of individuals. The fourth goal, <i>nonrepudiation</i>, ensures that individuals can prove to a third party that a message came from its purported sender. Different cryptographic systems are capable of achieving different goals, as you will learn in this chapter.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c07-para-0010"><img alt="" role="presentation" src="images/note.png"/> Many people, even many textbooks, tend to use the terms <i>cryptography</i> and <i>cryptology</i> interchangeably. You are not likely to be tested on the historical overview of cryptology. However, modern cryptography is considered a more challenging part of the exam and real-world security practitioners use cryptography on a regular basis to keep data confidential. So, it is important that you understand its background.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section aria-labelledby="head-2-92"><span id="c07-sec-0004"/>
+<h2 id="head-2-92">An Overview of Cryptography</h2>
+<p id="c07-para-0011">Cryptography is a field almost as old as humankind. The first recorded cryptographic efforts occurred 4,000 years ago. These early efforts included translating messages from one language into another or substituting characters. Since that time, cryptography has grown to include a plethora of possibilities. These early forays into cryptography focused exclusively on achieving the goal of confidentiality. Classic methods used relatively simple techniques that a human being could usually break in a reasonable amount of time. The obfuscation <span aria-label="191" epub:type="pagebreak" id="Page_191" role="doc-pagebreak"/>used in modern cryptography is much more sophisticated and can be unbreakable within a practical period of time.</p>
+<section><span id="c07-sec-0005"/>
+<h3 id="head-3-92">Historical Cryptography</h3>
+<p id="c07-para-0012">Historical methods of cryptography predate the modern computer age. These methods did not depend on mathematics, as many modern methods do, but rather on some technique for scrambling the text.</p>
+<p id="c07-para-0013">A <i>cipher</i> is a method used to scramble or obfuscate characters to hide their value. <i>Ciphering</i> is the process of using a cipher to do that type of scrambling to a message. The two primary types of nonmathematical cryptography, or ciphering methods, are <i>substitution</i> and <i>transposition</i>. We will discuss both of these methods in this section.</p>
+<section><span id="c07-sec-0006"/>
+<h4 id="head-4-66">Substitution Ciphers</h4>
+<p id="c07-para-0014">A <i>substitution cipher</i> is a type of coding or ciphering system that changes one character or symbol into another. Character substitution can be a relatively easy method of encrypting information. One of the oldest known substitution ciphers is called the <i>Caesar cipher</i>. It was purportedly used by Julius Caesar. The system involves simply shifting all letters a certain number of spaces in the alphabet. Supposedly, Julius Caesar used a shift of three to the right. This simply means that you turn the A's of a message into D's, the B's into E's, and so on. When you hit the end of the alphabet, you simply “wrap around” so that X's become A's, Y's become B's, and Z's become C's.</p>
+<p>Caesar was working in Latin, of course, but the same thing can be done with any language, including English. Here is an example:</p>
+<pre id="c07-code-0001"><code>[I WILL PASS THE EXAM]</code>
+</pre>
+<p>If you shift each letter three to the right, you get the following:</p>
+<pre id="c07-code-0002"><code>[L ZLOO SDVV WKH HADP]</code>
+</pre>
+<p id="c07-para-0017">Decrypting a message encrypted with the Caesar cipher follows the reverse process. Instead of shifting each letter three places to the right, decryption shifts each letter of the ciphertext three places to the left to restore the original plain-text character.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c07-fea-0001"/>
+<h3 id="head-2-93">ROT13</h3>
+<section><span id="c07-sec-0007"/>
+<p id="c07-para-0018">ROT13, or “rotate 13,” is another simple substitution cipher. The ROT13 cipher works the same way as the Caesar cipher but rotates every letter 13 places in the alphabet. Thus an <i>A</i> becomes an <i>N</i>, a <i>B</i> becomes an <i>O</i>, and so forth. Because the alphabet has 26 letters, you can use the same rotation of 13 letters to decrypt the message.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c07-para-0019"><span aria-label="192" epub:type="pagebreak" id="Page_192" role="doc-pagebreak"/>The Caesar cipher and ROT13 are very simple examples of substitution ciphers. They are far too simplistic to use today, as any cryptologist could break these ciphers, or any similar substitution, in a matter of seconds. However, the substitution operation forms the basis of many modern encryption algorithms. They just perform far more sophisticated substitutions and carry out those operations many times to add complexity and make the cipher harder to crack.</p>
+</section>
+<section><span id="c07-sec-0008"/>
+<h4 id="head-4-67">Polyalphabetic Substitution</h4>
+<p id="c07-para-0020">One of the problems with substitution ciphers is that they did not change the underlying letter and word frequency of the text. One way to combat this was to have multiple substitution alphabets for the same message. Ciphers using this approach are known as <i>polyalphabetic substitution ciphers</i>. For example, you might shift the first letter by three to the right, the second letter by two to the right, and the third letter by one to the left; then repeat this formula with the next three letters.</p>
+<p id="c07-para-0021">The most famous example of a polyalphabetic substitution from historical times was the <i>Vigenère cipher</i>. It used a keyword to look up the cipher text in a table, shown in <a href="#c07-fig-0001" id="R_c07-fig-0001">Figure 7.1</a>. The user would take the first letter in the text that they wanted to encrypt, go to the Vigenère table, and match that with the letter from the keyword in order to find the ciphertext letter. This would be repeated until the entire message was encrypted. Each letter in the keyword generated a different substitution alphabet.</p> <span aria-label="193" epub:type="pagebreak" id="Page_193" role="doc-pagebreak"/>
+<figure> <img alt="A table of 26 rows and 26 columns. Each column is filled with alphabets. It is known as the Vigenere cipher table." class="center" src="images/c07f001.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c07-fig-0001" id="c07-fig-0001" role="doc-backlink"><b>FIGURE 7.1</b></a></span> Vigenère cipher table</p>
+</figcaption>
+</figure>
+<p>For example, imagine that you wanted to use this cipher to encrypt the phrase “SECRET MESSAGE” using the keyword “APPLE.” You would begin by lining up the characters of the message with the characters of the keyword, repeating the keyword as many times as necessary:</p>
+<pre id="c07-code-0003"><code>S E C R E T M E S S A G E</code>
+<code>A P P L E A P P L E A P P</code>
+</pre>
+<p>Then you create the ciphertext by looking up each pair of plain-text and key characters in <a href="#c07-fig-0001">Figure 7.1</a>'s Vigenère table. The first letter of the plain text is “S” and the first letter of the key is “A,” so you go to the column for S in the table and then look at the row for A and find that the ciphertext value is “S.” Repeating this process for the second character, you look up the intersection of “E” and “P” in the table to get the ciphertext character “T.” As you work your way through this process, you get this encrypted message:</p>
+<pre id="c07-code-0004"><code>S T R C I T B T D W A V T</code>
+</pre>
+<p id="c07-para-0025">To decrypt the message, you reverse the process, finding the ciphertext character in the row for the key letter and then looking at the top of that column to find the plain text. For example, the first letter brings us to the row for “A,” where we find the ciphertext character “S” is in the “S” column. The second letter brings us to the row for “P,” where we find the ciphertext character “T” in the “E” column.</p>
+</section>
+<section><span id="c07-sec-0009"/>
+<h4 id="head-4-68">Transposition Ciphers</h4>
+<p id="c07-para-0026">A <i>transposition cipher</i> involves transposing or scrambling the letters in a certain manner. Typically, a message is broken into blocks of equal size, and each block is then scrambled. In the simple example shown in <a href="#c07-fig-0002" id="R_c07-fig-0002">Figure 7.2</a>, the characters are transposed by changing the ordering of characters within each group. In this case, the letters are rotated three places in the message. You could change the way Block 1 is transposed from Block 2 and make it a little more difficult, but it would still be relatively easy to decrypt.</p>
+<figure> <img alt="An example of a simple transposition cipher. The text reads moon beams are nice. In this example, the text is grouped into five-character blocks. In this example, each character, including the&#10;spaces are moved to the right three positions." class="center" src="images/c07f002.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c07-fig-0002" id="c07-fig-0002" role="doc-backlink"><b>FIGURE 7.2</b></a></span> A simple transposition cipher in action</p>
+</figcaption>
+</figure>
+<p>Columnar transposition is a classic example of a transposition cipher. With this cipher, you choose the number of rows in advance, which will be your encryption key. You then <span aria-label="194" epub:type="pagebreak" id="Page_194" role="doc-pagebreak"/>write your message by placing successive characters in the next row until you get to the bottom of a column. For example, if you wanted to encode the message</p>
+<pre id="c07-code-0005"><code>M E E T M E I N T H E S T O R E</code>
+</pre>
+<p>using a key of 4, you would write the message in four rows, like this:</p>
+<pre id="c07-code-0006"><code>M M T T</code>
+<code>E E H O</code>
+<code>E I E R</code>
+<code>T N S E</code>
+</pre>
+<p>Then, to get the ciphertext, you read across the rows instead of down the columns, giving you</p>
+<pre id="c07-code-0007"><code>M M T T E E H O E I E R T N S E</code>
+</pre>
+<p id="c07-para-0030">To decrypt this message, you must know that the message was encrypted using four rows, and then you use that information to re-create the matrix, writing the ciphertext characters across the rows. You then decrypt the message by reading down the columns instead of across the rows.</p>
+</section>
+<section><span id="c07-sec-0010"/>
+<h4 id="head-4-69">The Enigma Machine</h4>
+<p id="c07-para-0031">No discussion of the history of cryptography would be complete without discussing the Enigma machine. The <i>Enigma machine</i> was created by the German government during World War II to provide secure communications between military and political units. The machine, shown in <a href="#c07-fig-0003" id="R_c07-fig-0003">Figure 7.3</a>, looked like a typewriter with some extra features.</p>
+<p id="c07-para-0032">The operator was responsible for configuring the machine to use the code of the day by setting the rotary dials at the top of the machine and configuring the wires on the front of the machine. The inner workings of the machine implemented a polyalphabetic substitution, changing the substitution for each character of the message.</p>
+<p id="c07-para-0033">Once the machine was properly configured for the day, using it was straightforward. The sending operator pressed the key on the keyboard corresponding to a letter of the plain-text message. The corresponding ciphertext letter then lit up. The receiving operator followed the same process to convert back to plain text.</p>
+<p id="c07-para-0034">The Enigma machine vexed Allied intelligence officers, who devoted significant time and energy to a project called Ultra designed to defeat the machine. The effort to defeat Enigma was centered at Bletchley Park in the United Kingdom and was led by pioneering computer scientist Alan Turing. The efforts led to great success in deciphering German communication, and those efforts were praised by British Prime Minister Winston Churchill himself, who reportedly told King George VI that “it is thanks to [Ultra], put into use on all the fronts, that we won the war!”</p>
+<figure> <img alt="A photograph of an enigma machine. It resembles a simple typewriter with some extra features." class="center" src="images/c07f003.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c07-fig-0003" id="c07-fig-0003" role="doc-backlink"><b>FIGURE 7.3</b></a></span> Enigma machine from the National Security Agency's National Cryptologic Museum</p>
+<p class="source">Source: <code><a href="http://USA.gov">USA.gov</a></code></p>
+</figcaption>
+</figure>
+</section> <span aria-label="195" epub:type="pagebreak" id="Page_195" role="doc-pagebreak"/>
+<section><span id="c07-sec-0011"/>
+<h4 id="head-4-70">Steganography</h4>
+<p id="c07-para-0035"><i>Steganography</i> is the art of using cryptographic techniques to embed secret messages within another file. Steganographic algorithms work by making alterations to the least significant bits of the many bits that make up image files. The changes are so minor that there is no appreciable effect on the viewed image. This technique allows communicating parties to hide messages in plain sight—for example, they might embed a secret message within an illustration on an otherwise innocent web page.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c07-fea-0002"/>
+<h3 id="head-2-94">Exam Note</h3>
+<section><span id="c07-sec-0012"/>
+<p id="c07-para-0036">Remember that steganography is the practice of using cryptographic techniques to embed or conceal secret messages within another file. It can be used to hide images, text, audio, video, and many other forms of digital content.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c07-para-0037">Steganographers often embed their secret messages within images, video files, or audio files because these files are often so large that the secret message would easily be missed by <span aria-label="196" epub:type="pagebreak" id="Page_196" role="doc-pagebreak"/>even the most observant inspector. Steganography techniques are often used for illegal or questionable activities, such as espionage and child pornography.</p>
+<p id="c07-para-0038">Steganography can also be used for legitimate purposes, however. Adding digital watermarks to documents to protect intellectual property is accomplished by means of steganography. The hidden information is known only to the file's creator. If someone later creates an unauthorized copy of the content, the watermark can be used to detect the copy and (if uniquely watermarked files are provided to each original recipient) trace the offending copy back to the source.</p>
+<p id="c07-para-0039">Steganography is an extremely simple technology to use, with free tools openly available on the Internet. <a href="#c07-fig-0004" id="R_c07-fig-0004">Figure 7.4</a> shows the entire interface of one such tool, OpenStego. It simply requires that you specify a text file containing your secret message and an image file that you wish to use to hide the message. <a href="#c07-fig-0005" id="R_c07-fig-0005">Figure 7.5</a> shows an example of a picture with an embedded secret message; the message is impossible to detect with the human eye.</p>
+<figure> <img alt="A snapshot of the OpenStego steganography tool. The data storage includes hide data and extract data options. A text on the screen reads, hide data in harmless-looking files." class="center" src="images/c07f004.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c07-fig-0004" id="c07-fig-0004" role="doc-backlink"><b>FIGURE 7.4</b></a></span> OpenStego steganography tool</p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+<section aria-labelledby="head-2-95"><span id="c07-sec-0013"/>
+<h2 id="head-2-95">Goals of Cryptography</h2>
+<p id="c07-para-0040">Security practitioners use cryptographic systems to meet four fundamental goals: confidentiality, integrity, authentication, and non-repudiation. Achieving each of these goals requires the satisfaction of a number of design requirements, and not all cryptosystems are intended to achieve all four goals. In the following sections, we'll examine each goal in detail and give a brief description of the technical requirements necessary to achieve it.</p> <span aria-label="197" epub:type="pagebreak" id="Page_197" role="doc-pagebreak"/>
+<figure> <img alt="An example of a photograph with an embedded secret message. This message is impossible to detect with the human eye. The photograph has multiple flags." class="center" src="images/c07f005.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c07-fig-0005" id="c07-fig-0005" role="doc-backlink"><b>FIGURE 7.5</b></a></span> Image with embedded message</p>
+<p class="source">Source: vadiml/Adobe Stock Photos</p>
+</figcaption>
+</figure>
+<section><span id="c07-sec-0014"/>
+<h3 id="head-3-93">Confidentiality</h3>
+<p id="c07-para-0041"><i>Confidentiality</i> ensures that data remains private in three different situations: when it is at rest, when it is in transit, and when it is in use.</p>
+<p>Confidentiality is perhaps the most widely cited goal of cryptosystems—the preservation of secrecy for stored information or for communications between individuals and groups. Two main types of cryptosystems enforce confidentiality:</p>
+<ul class="square" id="c07-list-0006">
+<li id="c07-li-0018"><i>Symmetric cryptosystems</i> use a shared secret key available to all users of the cryptosystem.</li>
+<li id="c07-li-0019"><i>Asymmetric cryptosystems</i> use individual combinations of public and private keys for each user of the system. Both of these concepts are explored in the section “Modern Cryptography” later in this chapter.</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c07-fea-0003"/>
+<h3 id="head-2-96">Exam Tip</h3>
+<section><span id="c07-sec-0015"/>
+<p id="c07-para-0044">The concept of protecting data at rest, data in transit, and data in use is often covered on the Security+ exam. You should also know that data in transit is also commonly called data <i>on the wire</i>, referring to the network cables that carry data communications. If you're not familiar with these concepts, you might want to review their coverage in <a href="c01.xhtml">Chapter 1</a>.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p><span aria-label="198" epub:type="pagebreak" id="Page_198" role="doc-pagebreak"/>When developing a cryptographic system for the purpose of providing confidentiality, you must think about three types of data:</p>
+<ul class="square" id="c07-list-0007">
+<li id="c07-li-0020"><i>Data at rest</i>, or stored data, is that which resides in a permanent location awaiting access. Examples of data at rest include data stored on hard drives, backup tapes, cloud storage services, USB devices, and other storage media.</li>
+<li id="c07-li-0021"><i>Data in transit</i>, or data in transport/communication, is data being transmitted across a network between two systems. Data in transit might be traveling on a corporate network, a wireless network, or the public Internet. The most common way to protect network communications using sensitive data is with the <i>Transport Layer Security (TLS)</i> protocol.</li>
+<li id="c07-li-0022"><i>Data in use</i> is data that is stored in the active memory of a computer system where it may be accessed by a process running on that system.</li>
+</ul>
+<p id="c07-para-0046">Each of these situations poses different types of confidentiality risks that cryptography can protect against. For example, data in transit may be susceptible to eavesdropping attacks, whereas data at rest is more susceptible to the theft of physical devices. Data in use may be accessed by unauthorized processes if the operating system does not properly implement process isolation.</p>
+<p id="c07-para-0047"><i>Obfuscation</i> is a concept closely related to confidentiality. It is the practice of making it intentionally difficult for humans to understand how code works. This technique is often used to hide the inner workings of software, particularly when it contains sensitive intellectual property.</p>
+<section><span id="c07-sec-0016"/>
+<h4 id="head-4-71">Protecting Data at Rest with Different Levels of Encryption</h4>
+<p id="c07-para-0048">When you are protecting data at rest, you have several different options for applying encryption to that data.</p>
+<section><span id="c07-sec-0017"/>
+<h5 id="head-5-11">Encrypting Data on Disk</h5>
+<p id="c07-para-0049">Data that is stored directly on a disk may be managed with full-disk encryption, partition encryption, file encryption, and volume encryption.</p>
+<p id="c07-para-0050"><i>Full-disk encryption (FDE)</i> is a form of encryption where all the data on a hard drive is automatically encrypted, including the operating system and system files. The key advantage of FDE is that it requires no special attention from the user after initial setup. In the case of loss or theft, FDE can prevent unauthorized access to all data on the hard drive. However, once the system is booted, the entire disk is accessible, which means data is vulnerable if the system is compromised while running.</p>
+<p id="c07-para-0051"><i>Partition encryption</i> is similar to FDE but targets a specific partition of a hard drive instead of the entire disk. This allows for more flexibility, as you can choose which parts of your data to encrypt and which to leave unencrypted. Partition encryption is particularly useful when dealing with dual-boot systems or when segregating sensitive data.</p>
+<p id="c07-para-0052"><i>File-level encryption</i> focuses on individual files. This method allows users to encrypt specific files rather than entire drives or partitions. It is generally easier to set up and manage <span aria-label="199" epub:type="pagebreak" id="Page_199" role="doc-pagebreak"/>than FDE or partition encryption but may not be as secure since unencrypted and encrypted files may coexist on the same drive.</p>
+<p id="c07-para-0053"><i>Volume encryption</i> involves encrypting a set “volume” on a storage device, which could contain several folders and files. This is like a middle ground between partition encryption and file-level encryption. Volume encryption is useful when you want to encrypt a large amount of data at once but don't need to encrypt an entire disk or partition.</p>
+</section>
+<section><span id="c07-sec-0018"/>
+<h5 id="head-5-12">Encrypting Database Data</h5>
+<p id="c07-para-0054">Sensitive information may also be managed by a database, which is responsible for maintaining the confidentiality of sensitive information. When encrypting data in a database, you may choose to perform database-level encryption and/or record-level encryption.</p>
+<p id="c07-para-0055"><i>Database encryption</i> targets data at the database level. It's a method used to protect sensitive information stored in a database from access by unauthorized individuals. There are two primary types of database encryption: <i>Transparent Data Encryption (TDE)</i>, which encrypts the entire database, and <i>Column-level Encryption (CLE)</i>, which allows for specific columns within tables to be encrypted.</p>
+<p id="c07-para-0056"><i>Record-level encryption</i> is a more granular form of database encryption. It allows individual records within a database to be encrypted. This can provide more precise control over who can access what data, and it can be particularly useful in shared environments, where different users or user groups need access to different subsets of data.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c07-fea-0004"/>
+<h3 id="head-2-97">Exam Note</h3>
+<section><span id="c07-sec-0019"/>
+<p id="c07-para-0057">Be sure you know the differences between the various encryption levels; Full-disk, Partition, File, Volume, Database, and Record.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+</section>
+<section><span id="c07-sec-0020"/>
+<h3 id="head-3-94">Integrity</h3>
+<p id="c07-para-0058"><i>Integrity</i> ensures that data is not altered without authorization. If integrity mechanisms are in place, the recipient of a message can be certain that the message received is identical to the message that was sent. Similarly, integrity checks can ensure that stored data was not altered between the time it was created and the time it was accessed. Integrity controls protect against all forms of alteration, including intentional alteration by a third party attempting to insert false information, intentional deletion of portions of the data, and unintentional alteration by faults in the transmission process.</p>
+<p id="c07-para-0059">Message integrity is enforced through the use of encrypted message digests, known as <i>digital signatures</i>, created upon transmission of a message. The recipient of the message simply verifies that the message's digital signature is valid, ensuring that the message was not altered in transit. Integrity can be enforced by both public and secret key cryptosystems.</p>
+</section> <span aria-label="200" epub:type="pagebreak" id="Page_200" role="doc-pagebreak"/>
+<section><span id="c07-sec-0021"/>
+<h3 id="head-3-95">Authentication</h3>
+<p id="c07-para-0060"><i>Authentication</i> verifies the claimed identity of system users and is a major function of cryptosystems. For example, suppose that Bob wants to establish a communications session with Alice and they are both participants in a shared secret communications system. Alice might use a challenge-response authentication technique to ensure that Bob is who he claims to be.</p>
+<p id="c07-para-0061"><a href="#c07-fig-0006" id="R_c07-fig-0006">Figure 7.6</a> shows how this challenge-response protocol would work in action. In this example, the shared-secret code used by Alice and Bob is quite simple—the letters of each word are simply reversed. Bob first contacts Alice and identifies himself. Alice then sends a challenge message to Bob, asking him to encrypt a short message using the secret code known only to Alice and Bob. Bob replies with the encrypted message. After Alice verifies that the encrypted message is correct, she trusts that Bob himself is truly on the other end of the connection.</p>
+<figure> <img alt="An illustration of challenge-response authentication protocol. The conversations are as follows. Hi, I am Bob. Prove it by Encrypt Apple. Elppa. Hi Bob, good to talk to you again." class="center" src="images/c07f006.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c07-fig-0006" id="c07-fig-0006" role="doc-backlink"><b>FIGURE 7.6</b></a></span> Challenge-response authentication protocol</p>
+</figcaption>
+</figure>
+</section>
+<section><span id="c07-sec-0022"/>
+<h3 id="head-3-96">Non-repudiation</h3>
+<p id="c07-para-0062"><i>Non-repudiation</i> provides assurance to the recipient that the message was originated by the sender and not someone masquerading as the sender. It also prevents the sender from claiming that they never sent the message in the first place (also known as <i>repudiating</i> the message). Secret key, or symmetric key, cryptosystems (such as simple substitution ciphers) do not provide this guarantee of non-repudiation. If Jim and Bob participate in a secret key communication system, they can both produce the same encrypted message using their shared secret key. Non-repudiation is offered only by public key, or asymmetric, cryptosystems, a topic discussed later in this chapter.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-98"><span id="c07-sec-0023"/>
+<h2 id="head-2-98">Cryptographic Concepts</h2>
+<p id="c07-para-0063">As with any science, you must be familiar with certain terminology before studying cryptography. Let's take a look at a few of the key terms used to describe codes and ciphers. Before a message is put into a coded form, it is known as a <i>plain-text</i> message and is represented by <span aria-label="201" epub:type="pagebreak" id="Page_201" role="doc-pagebreak"/>the letter P when encryption functions are described. The sender of a message uses a cryptographic algorithm to <i>encrypt</i> the plain-text message and produce a <i>ciphertext</i> message, represented by the letter <i>C</i>. This message is transmitted by some physical or electronic means to the recipient. The recipient then uses a predetermined algorithm to decrypt the ciphertext message and retrieve the plain-text version.</p>
+<section><span id="c07-sec-0024"/>
+<h3 id="head-3-97">Cryptographic Keys</h3>
+<p id="c07-para-0064">All cryptographic algorithms rely on <i>keys</i> to maintain their security. For the most part, a key is nothing more than a number. It's usually a very large binary number, but it's a number nonetheless. Every algorithm has a specific <i>key space</i>. The key space is the range of values that are valid for use as a key for a specific algorithm. A key space is defined by its <i>key length</i>. Key length is nothing more than the number of binary bits (0s and 1s) in the key. The key space is the range between the key that has all 0s and the key that has all 1s. Or to state it another way, the key space is the range of numbers from 0 to 2<sup><i>n</i></sup>, where <i>n</i> is the bit size of the key. So, a 128-bit key can have a value from 0 to 2<sup>128</sup> (which is roughly 3.40282367 × 10<sup>38</sup>, a very big number!). It is absolutely critical to protect the security of secret keys. In fact, all of the security you gain from cryptography rests on your ability to keep secret keys secret.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c07-fea-0005"/>
+<h3 id="head-2-99">The Kerckhoffs’ Principle</h3>
+<section><span id="c07-sec-0025"/>
+<p id="c07-para-0065">All cryptography relies on algorithms. An <i>algorithm</i> is a set of rules, usually mathematical, that dictates how enciphering and deciphering processes are to take place. Most cryptographers follow the Kerckhoffs’ principle, a concept that makes algorithms known and public, allowing anyone to examine and test them. Specifically, the <i>Kerckhoffs’ principle</i> (also known as Kerckhoffs’ assumption) is that a cryptographic system should be secure even if everything about the system, except the key, is public knowledge. The principle can be summed up as “The enemy knows the system.”</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c07-para-0066">A large number of cryptographers adhere to this principle, but not all agree. In fact, some believe that better overall security can be maintained by keeping both the algorithm and the key private. Kerckhoffs’ adherents retort that the opposite approach includes the dubious practice of “security through obscurity” and believe that public exposure produces more activity and exposes more weaknesses more readily, leading to the abandonment of insufficiently strong algorithms and quicker adoption of suitable ones.</p>
+<p id="c07-para-0067">As you'll learn in this chapter, different types of algorithms require different types of keys. In private key (or secret key) cryptosystems, all participants use a single shared key. In public key cryptosystems, each participant has their own pair of keys. Cryptographic keys are sometimes referred to as <i>cryptovariables</i>.</p>
+<p id="c07-para-0068"><span aria-label="202" epub:type="pagebreak" id="Page_202" role="doc-pagebreak"/>The art of creating and implementing secret codes and ciphers is known as <i>cryptography</i>. This practice is paralleled by the art of <i>cryptanalysis</i>—the study of methods to defeat codes and ciphers. Together, cryptography and cryptanalysis are commonly referred to as <i>cryptology</i>. Specific implementations of a code or cipher in hardware and software are known as <i>cryptosystems</i>.</p>
+</section>
+<section><span id="c07-sec-0026"/>
+<h3 id="head-3-98">Ciphers</h3>
+<p><i>Ciphers</i> are the algorithms used to perform encryption and decryption operations. <i>Cipher suites</i> are the sets of ciphers and key lengths supported by a system. Modern ciphers fit into two major categories, describing their method of operation:</p>
+<ul class="square" id="c07-list-0008">
+<li id="c07-li-0023"><i>Block ciphers</i> operate on “chunks,” or blocks, of a message and apply the encryption algorithm to an entire message block at the same time. The transposition ciphers are examples of block ciphers. The simple algorithm used in the challenge-response algorithm takes an entire word and reverses its letters. The more complicated columnar transposition cipher works on an entire message (or a piece of a message) and encrypts it using the transposition algorithm and a secret keyword. Most modern encryption algorithms implement some type of block cipher.</li>
+<li id="c07-li-0024"><i>Stream ciphers</i> operate on one character or bit of a message (or data stream) at a time. The Caesar cipher is an example of a stream cipher. The one-time pad is also a stream cipher because the algorithm operates on each letter of the plain-text message independently. Stream ciphers can also function as a type of block cipher. In such operations there is a buffer that fills up to real-time data that is then encrypted as a block and transmitted to the recipient.</li>
+</ul>
+</section>
+</section>
+<section aria-labelledby="head-2-100"><span id="c07-sec-0027"/>
+<h2 id="head-2-100">Modern Cryptography</h2>
+<p id="c07-para-0070">Modern cryptosystems use computationally complex algorithms and long cryptographic keys to meet the cryptographic goals of confidentiality, integrity, authentication, and nonrepudiation. The following sections cover the roles cryptographic keys play in the world of data security and examine three types of algorithms commonly used today: symmetric key encryption algorithms, asymmetric key encryption algorithms, and hashing algorithms.</p>
+<section><span id="c07-sec-0028"/>
+<h3 id="head-3-99">Cryptographic Secrecy</h3>
+<p id="c07-para-0071">In the early days of cryptography, one of the predominant principles was “security through obscurity.” Some cryptographers thought the best way to keep an encryption algorithm secure was to hide the details of the algorithm from outsiders. Old cryptosystems required communicating parties to keep the algorithm used to encrypt and decrypt messages secret <span aria-label="203" epub:type="pagebreak" id="Page_203" role="doc-pagebreak"/>from third parties. Any disclosure of the algorithm could lead to compromise of the entire system by an adversary.</p>
+<p id="c07-para-0072">Modern cryptosystems do not rely on the secrecy of their algorithms. In fact, the algorithms for most cryptographic systems are widely available for public review in the accompanying literature and on the Internet. Opening algorithms to public scrutiny actually improves their security. Widespread analysis of algorithms by the computer security community allows practitioners to discover and correct potential security vulnerabilities and ensure that the algorithms they use to protect their communications are as secure as possible.</p>
+<p>Instead of relying on secret algorithms, modern cryptosystems rely on the secrecy of one or more cryptographic keys used to personalize the algorithm for specific users or groups of users. Recall from the discussion of transposition ciphers that a keyword is used with the columnar transposition to guide the encryption and decryption efforts. The algorithm used to perform columnar transposition is well known—you just read the details of it in this book! However, columnar transposition can be used to securely communicate between parties as long as a keyword is chosen that would not be guessed by an outsider. As long as the security of this keyword is maintained, it doesn't matter that third parties know the details of the algorithm.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c07-para-0074"><img alt="" role="presentation" src="images/note.png"/> Although the public nature of the algorithm does not compromise the security of columnar transposition, the method does possess several inherent weaknesses that make it vulnerable to cryptanalysis. It is therefore an inadequate technology for use in modern secure communication.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c07-para-0075">The length of a cryptographic key is an extremely important factor in determining the strength of the cryptosystem and the likelihood that the encryption will not be compromised through cryptanalytic techniques.</p>
+<p id="c07-para-0076">The rapid increase in computing power allows you to use increasingly long keys in your cryptographic efforts. However, this same computing power is also in the hands of cryptanalysts attempting to defeat the algorithms you use. Therefore, it's essential that you outpace adversaries by using sufficiently long keys that will defeat contemporary cryptanalysis efforts. Additionally, if you want to improve the chance that your data will remain safe from cryptanalysis some time into the future, you must strive to use keys that will outpace the projected increase in cryptanalytic capability during the entire time period the data must be kept safe. For example, the advent of quantum computing may transform cryptography, rendering current cryptosystems insecure, as discussed later in this chapter.</p>
+<p id="c07-para-0077">Several decades ago, when the Data Encryption Standard (DES) was created, a 56-bit key was considered sufficient to maintain the security of any data. However, the 56-bit DES algorithm is no longer secure because of advances in cryptanalysis techniques and supercomputing power. Modern cryptographic systems use at least a 128-bit key to protect data against prying eyes. Remember, the length of the key directly relates to the work function of the cryptosystem; for a secure cryptosystem, the longer the key, the harder it is to break the cryptosystem.</p>
+</section> <span aria-label="204" epub:type="pagebreak" id="Page_204" role="doc-pagebreak"/>
+<section><span id="c07-sec-0030"/>
+<h3 id="head-3-100">Symmetric Key Algorithms</h3>
+<p>Symmetric key algorithms rely on a “shared secret” encryption key that is distributed to all members who participate in the communications. This key is used by all parties to both encrypt and decrypt messages, so the sender and the receiver both possess a copy of the shared key. The sender encrypts with the shared secret key and the receiver decrypts with it. When large-sized keys are used, symmetric encryption is very difficult to break. It is primarily employed to perform bulk encryption and provides only for the security service of confidentiality. Symmetric key cryptography can also be called <i>secret key cryptography</i> and <i>private key cryptography</i>. <a href="#c07-fig-0007" id="R_c07-fig-0007">Figure 7.7</a> illustrates the symmetric key encryption and decryption processes.</p>
+<figure> <img alt="A set of two flow diagrams. 1. Sender. It includes P, Encryption Algorithm, C, and Secret Key. 2. Receiver. It includes C, Decryption Algorithm, P, and Secret Key." class="center" src="images/c07f007.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c07-fig-0007" id="c07-fig-0007" role="doc-backlink"><b>FIGURE 7.7</b></a></span> Symmetric key cryptography</p>
+</figcaption>
+</figure>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c07-para-0079"><img alt="" role="presentation" src="images/note.png"/> The use of the term <i>private key</i> can be tricky because it is part of three different terms that have two different meanings. The term <i>private key</i> by itself always means the private key from the key pair of public key cryptography (aka asymmetric). However, both <i>private key cryptography</i> and <i>shared private key</i> refer to symmetric cryptography. The meaning of the word <i>private</i> is stretched to refer to two people sharing a secret that they keep confidential. (The true meaning of <i>private is that only a single person</i> has a secret that's kept confidential.) Be sure to keep these confusing terms straight in your studies.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>Symmetric key cryptography has several weaknesses:</p>
+<ul class="none" id="c07-list-0009">
+<li id="c07-li-0025"><b>Key exchange is a major problem.</b> Parties must have a secure method of exchanging the secret key before establishing communications with a symmetric key protocol. If a secure electronic channel is not available, an offline key distribution method must often be used (that is, out-of-band exchange).</li>
+<li id="c07-li-0026"><b>Symmetric key cryptography does not implement non-repudiation.</b> Because any communicating party can encrypt and decrypt messages with the shared secret key, there is no way to prove where a given message originated.</li>
+<li id="c07-li-0027"><span aria-label="205" epub:type="pagebreak" id="Page_205" role="doc-pagebreak"/><b>The algorithm is not scalable.</b> It is extremely difficult for large groups to communicate using symmetric key cryptography. Secure private communication between individuals in the group could be achieved only if each possible combination of users shared a private key.</li>
+<li id="c07-li-0028"><b>Keys must be regenerated often.</b> Each time a participant leaves the group, all keys known by that participant must be discarded.</li>
+</ul>
+<p id="c07-para-0085">The major strength of symmetric key cryptography is the great speed at which it can operate. Symmetric key encryption is very fast, often 1,000 to 10,000 times faster than asymmetric algorithms. By nature of the mathematics involved, symmetric key cryptography also naturally lends itself to hardware implementations, creating the opportunity for even higher-speed operations.</p>
+<p id="c07-para-0086">The section “Symmetric Cryptography” later in this chapter provides a detailed look at the major secret key algorithms in use today.</p>
+</section>
+<section><span id="c07-sec-0032"/>
+<h3 id="head-3-101">Asymmetric Key Algorithms</h3>
+<p id="c07-para-0087"><i>Asymmetric key algorithms</i>, also known as <i>public key algorithms</i>, provide a solution to the weaknesses of symmetric key encryption. In these systems, each user has two keys: a public key, which is shared with all users, and a private key, which is kept secret and known only to the owner of the key pair. But here's a twist: opposite and related keys must be used in tandem to encrypt and decrypt. In other words, if the public key encrypts a message, then only the corresponding private key can decrypt it, and vice versa.</p>
+<p id="c07-para-0088"><a href="#c07-fig-0008" id="R_c07-fig-0008">Figure 7.8</a> shows the algorithm used to encrypt and decrypt messages in a public key cryptosystem. Consider this example. If Alice wants to send a message to Bob using public key cryptography, she creates the message and then encrypts it using Bob's public key. The only possible way to decrypt this ciphertext is to use Bob's private key, and the only user with access to that key is Bob. Therefore, Alice can't even decrypt the message herself after she encrypts it. If Bob wants to send a reply to Alice, he simply encrypts the message using Alice's public key, and then Alice reads the message by decrypting it with her private key.</p> <span aria-label="206" epub:type="pagebreak" id="Page_206" role="doc-pagebreak"/>
+<figure> <img alt="A set of two flow diagrams. 1. Sender. It includes P, the Encryption Algorithm, C, and the Receiver’s Public Key. 2. Receiver. It includes C, the Decryption Algorithm, P, and the Receiver’s Public Key." class="center" src="images/c07f008.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c07-fig-0008" id="c07-fig-0008" role="doc-backlink"><b>FIGURE 7.8</b></a></span> Asymmetric key cryptography</p>
+</figcaption>
+</figure>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c07-fea-0006"/>
+<h3 id="head-2-101">Key Requirements</h3>
+<section><span id="c07-sec-0033"/>
+<p id="c07-para-0089">In a class one of the authors of this book taught recently, a student wanted to see an illustration of the scalability issue associated with symmetric encryption algorithms. The fact that symmetric cryptosystems require each pair of potential communicators to have a shared private key makes the algorithm nonscalable. The total number of keys required to completely connect <i>n</i> parties using symmetric cryptography is given by the following formula:</p>
+</section>
+<section><span id="c07-sec-0034"/>
+<pre id="c07-code-0008"><code>Number of Keys = n(n–1) / 2</code></pre>
+</section>
+<section><span id="c07-sec-0035"/>
+<p id="c07-para-0091">Now, this might not sound so bad (and it's not for small systems), but consider the following figures. Obviously, the larger the population, the less likely a symmetric cryptosystem will be suitable to meet its needs.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<table border="1">
+<thead>
+<tr>
+<th class="left" scope="col"> Number of participants </th>
+<th class="left" scope="col"> Number of symmetric keys required </th>
+<th class="left" scope="col"> Number of asymmetric keys required </th> </tr> </thead>
+<tbody>
+<tr>
+<td class="left">2</td>
+<td class="left">1</td>
+<td class="left">4</td> </tr>
+<tr>
+<td class="left">3</td>
+<td class="left">3</td>
+<td class="left">6</td> </tr>
+<tr>
+<td class="left">4</td>
+<td class="left">6</td>
+<td class="left">8</td> </tr>
+<tr>
+<td class="left">5</td>
+<td class="left">10</td>
+<td class="left">10</td> </tr>
+<tr>
+<td class="left">10</td>
+<td class="left">45</td>
+<td class="left">20</td> </tr>
+<tr>
+<td class="left">100</td>
+<td class="left">4,950</td>
+<td class="left">200</td> </tr>
+<tr>
+<td class="left">1,000</td>
+<td class="left">499,500</td>
+<td class="left">2,000</td> </tr>
+<tr>
+<td class="left">10,000</td>
+<td class="left">49,995,000</td>
+<td class="left">20,000</td> </tr> </tbody> </table>
+<p id="c07-para-0094">Asymmetric key algorithms also provide support for digital signature technology. Basically, if Bob wants to assure other users that a message with his name on it was actually sent by him, he first creates a message digest by using a hashing algorithm (you'll find more on hashing algorithms in the next section). Bob then encrypts that digest using his private key. Any user who wants to verify the signature simply decrypts the message digest using Bob's public key and then verifies that the decrypted message digest is accurate.</p>
+<p>The following is a list of the major strengths of asymmetric key cryptography:</p>
+<ul class="none" id="c07-list-0010">
+<li id="c07-li-0029"><b>The addition of new users requires the generation of only one public-private key pair.</b> This same key pair is used to communicate with all users of the asymmetric cryptosystem. This makes the algorithm extremely scalable.</li>
+<li id="c07-li-0030"><span aria-label="207" epub:type="pagebreak" id="Page_207" role="doc-pagebreak"/><b>Users can be removed far more easily from asymmetric systems.</b> Asymmetric cryptosystems provide a key revocation mechanism that allows a key to be canceled, effectively removing a user from the system.</li>
+<li id="c07-li-0031"><b>Key regeneration is required only when a user's private key is compromised.</b> If a user leaves the community, the system administrator simply needs to invalidate that user's keys. No other keys are compromised and therefore key regeneration is not required for any other user.</li>
+<li id="c07-li-0032"><b>Asymmetric key encryption can provide integrity, authentication, and non-repudiation.</b> If a user does not share their private key with other individuals, a message signed by that user can be shown to be accurate and from a specific source and cannot be later repudiated.</li>
+<li id="c07-li-0033"><b>Key exchange is a simple process.</b> Users who want to participate in the system simply make their public key available to anyone with whom they want to communicate. There is no method by which the private key can be derived from the public key.</li>
+<li id="c07-li-0034"><b>No preexisting communication link needs to exist.</b> Two individuals can begin communicating securely from the start of their communication session. Asymmetric cryptography does not require a preexisting relationship to provide a secure mechanism for data exchange.</li>
+</ul>
+<p id="c07-para-0102">The major weakness of public key cryptography is its slow speed of operation. For this reason, many applications that require the secure transmission of large amounts of data use public key cryptography to establish a connection and then exchange a symmetric secret key. The remainder of the session then uses symmetric cryptography. <a href="#c07-tbl-0001" id="R_c07-tbl-0001">Table 7.1</a> compares the symmetric and asymmetric cryptography systems. Close examination of this table reveals that a weakness in one system is matched by a strength in the other.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c07-fea-0007"/>
+<h3 id="head-2-102">Exam Note</h3>
+<section><span id="c07-sec-0036"/>
+<p id="c07-para-0103">Exam objective 1.4 calls out Asymmetric, Symmetric, Key exchange, Algorithms, and Key length. Be sure you focus on each of these!</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section> <span aria-label="208" epub:type="pagebreak" id="Page_208" role="doc-pagebreak"/>
+<figure>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c07-tbl-0001" id="c07-tbl-0001" role="doc-backlink"><b>TABLE 7.1</b></a></span> Comparison of symmetric and asymmetric cryptography systems</p>
+</figcaption>
+<table border="1">
+<thead>
+<tr>
+<th scope="col"><span class="left">Symmetric</span></th>
+<th scope="col"><span class="left">Asymmetric</span></th> </tr> </thead>
+<tbody>
+<tr>
+<td class="left">Single shared key</td>
+<td class="left">Key pair sets</td> </tr>
+<tr>
+<td class="left">Out-of-band exchange</td>
+<td class="left">In-band exchange</td> </tr>
+<tr>
+<td class="left">Not scalable</td>
+<td class="left">Scalable</td> </tr>
+<tr>
+<td class="left">Fast</td>
+<td class="left">Slow</td> </tr>
+<tr>
+<td class="left">Bulk encryption</td>
+<td class="left">Small blocks of data, digital signatures, digital certificates</td> </tr>
+<tr>
+<td class="left">Confidentiality, integrity</td>
+<td class="left">Confidentiality, integrity, authentication, non-repudiation</td> </tr> </tbody> </table>
+</figure>
+</section>
+<section><span id="c07-sec-0037"/>
+<h3 id="head-3-102">Hashing Algorithms</h3>
+<p id="c07-para-0104">In the previous section, you learned that public key cryptosystems can provide digital signature capability when used in conjunction with a message digest. Message digests are summaries of a message's content (not unlike a file checksum) produced by a hashing algorithm. It's extremely difficult, if not impossible, to derive a message from an ideal hash function, and it's very unlikely that two messages will produce the same hash value. Cases where a hash function produces the same value for two different methods are known as <i>collisions</i>, and the existence of collisions typically leads to the deprecation of a hashing algorithm.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-103"><span id="c07-sec-0038"/>
+<h2 id="head-2-103">Symmetric Cryptography</h2>
+<p id="c07-para-0105">You've learned the basic concepts underlying symmetric key cryptography, asymmetric key cryptography, and hashing functions. In the following sections, we'll take an in-depth look at three common symmetric cryptosystems: the Data Encryption Standard (DES), Triple DES (3DES), and the Advanced Encryption Standard (AES).</p>
+<section><span id="c07-sec-0039"/>
+<h3 id="head-3-103">Data Encryption Standard</h3>
+<p id="c07-para-0106">The U.S. government published the Data Encryption Standard in 1977 as a proposed standard cryptosystem for all government communications. Because of flaws in the algorithm, cryptographers and the federal government no longer consider DES secure. It is widely believed that intelligence agencies routinely decrypt DES-encrypted information. DES was superseded by the Advanced Encryption Standard in December 2001.</p>
+<p id="c07-para-0107">An adapted version of DES, Triple DES (3DES), uses the same algorithm three different times with three different encryption keys to produce a more secure encryption. However, even the 3DES algorithm is now considered insecure, and it is scheduled to be deprecated in December 2023.</p>
+</section> <span aria-label="209" epub:type="pagebreak" id="Page_209" role="doc-pagebreak"/>
+<section><span id="c07-sec-0040"/>
+<h3 id="head-3-104">Advanced Encryption Standard</h3>
+<p id="c07-para-0108">In October 2000, the National Institute of Standards and Technology (NIST) announced that the Rijndael (pronounced “rhine-doll”) block cipher had been chosen as the replacement for DES. In November 2001, NIST released Federal Information Processing Standard (FIPS) 197, which mandated the use of AES/Rijndael for the encryption of all sensitive but unclassified data by the U.S. government.</p>
+<p>The AES cipher allows the use of three key strengths: 128 bits, 192 bits, and 256 bits. AES only allows the processing of 128-bit blocks, but Rijndael exceeded this specification, allowing cryptographers to use a block size equal to the key length. The number of encryption rounds depends on the key length chosen:</p>
+<ul class="square" id="c07-list-0011">
+<li id="c07-li-0035">128-bit keys require 10 rounds of encryption.</li>
+<li id="c07-li-0036">192-bit keys require 12 rounds of encryption.</li>
+<li id="c07-li-0037">256-bit keys require 14 rounds of encryption.</li>
+</ul>
+<p id="c07-para-0110">Today, AES is one of the most widely used encryption algorithms, and it plays an essential role in wireless network security, the Transport Layer Security (TLS) protocol, file/disk encryption, and many other applications that call for strong cryptography.</p>
+</section>
+<section><span id="c07-sec-0041"/>
+<h3 id="head-3-105">Symmetric Key Management</h3>
+<p id="c07-para-0111">Because cryptographic keys contain information essential to the security of the cryptosystem, it is incumbent upon cryptosystem users and administrators to take extraordinary measures to protect the security of the keying material. These security measures are collectively known as <i>key management practices</i>. They include safeguards surrounding the creation, distribution, storage, destruction, recovery, and escrow of secret keys.</p>
+<section><span id="c07-sec-0042"/>
+<h4 id="head-4-72">Creation and Distribution of Symmetric Keys</h4>
+<p>As previously mentioned, <i>key exchange</i> is one of the major problems underlying symmetric encryption algorithms. <i>Key exchange</i> is the secure distribution of the secret keys required to operate the algorithms. The three main methods used to exchange secret keys securely are offline distribution, public key encryption, and the Diffie–Hellman key exchange algorithm.</p>
+<ul class="none" id="c07-list-0012">
+<li id="c07-li-0038"><b>Offline Distribution</b> The most technically simple method involves the physical exchange of key material. One party provides the other party with a sheet of paper or piece of storage media containing the secret key. In many hardware encryption devices, this key material comes in the form of an electronic device that resembles an actual key that is inserted into the encryption device. However, every offline key distribution method has its own inherent flaws. If keying material is sent through the mail, it might be intercepted. Telephones can be wiretapped. Papers containing keys might be lost or thrown in the trash inadvertently.</li>
+<li id="c07-li-0039"><span aria-label="210" epub:type="pagebreak" id="Page_210" role="doc-pagebreak"/><b>Public Key Encryption</b> Many communicators want to obtain the speed benefits of secret key encryption without the hassles of key distribution. For this reason, many people use public key encryption to set up an initial communications link. Once the link is established successfully and the parties are satisfied as to each other's identity, they exchange a secret key over the secure public key link. They then switch communications from the public key algorithm to the secret key algorithm and enjoy the increased processing speed. In general, secret key encryption is thousands of times faster than public key encryption.</li>
+<li id="c07-li-0040"><b>Diffie–Hellman</b> In some cases, neither public key encryption nor offline distribution is sufficient. Two parties might need to communicate with each other, but they have no physical means to exchange key material, and there is no public key infrastructure in place to facilitate the exchange of secret keys. In situations like this, key exchange algorithms like the Diffie–Hellman algorithm prove to be extremely useful mechanisms.</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c07-fea-0008"/>
+<h3 id="head-2-104">About the Diffie–Hellman Algorithm</h3>
+<section><span id="c07-sec-0043"/>
+<p>The Diffie–Hellman algorithm represented a major advance in the state of cryptographic science when it was released in 1976. It's still in use today. The algorithm works as follows:</p>
+<ol class="decimal" id="c07-list-0013">
+<li id="c07-li-0041">The communicating parties (we'll call them Richard and Sue) agree on two large numbers: <i>p</i> (which is a prime number) and <i>g</i> (which is an integer) such that 1 &lt; g &lt; p.</li>
+<li id="c07-li-0042">Richard chooses a random large integer <i>r</i> and performs the following calculation:
+<pre id="c07-code-0009"><code>    R = g<sup>r</sup> mod p</code>
+</pre></li>
+<li id="c07-li-0043">Sue chooses a random large integer <i>s</i> and performs the following calculation:
+<pre id="c07-code-0010"><code>    S = g<sup>s</sup> mod p</code>
+</pre></li>
+<li id="c07-li-0044">Richard sends <i>R</i> to Sue and Sue sends <i>S</i> to Richard.</li>
+<li id="c07-li-0045">Richard then performs the following calculation:
+<pre id="c07-code-0011"><code>    K = S<sup>r</sup> mod p</code>
+</pre></li>
+<li id="c07-li-0046">Sue then performs the following calculation:
+<pre id="c07-code-0012"><code>    K = R<sup>s</sup> mod p</code>
+</pre></li>
+</ol>
+</section>
+<section><span id="c07-sec-0051"/>
+<p id="c07-para-0124">At this point, Richard and Sue both have the same value, <i>K</i>, and can use this for secret key communication between them.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section> <span aria-label="211" epub:type="pagebreak" id="Page_211" role="doc-pagebreak"/>
+<section><span id="c07-sec-0052"/>
+<h4 id="head-4-73">Storage and Destruction of Symmetric Keys</h4>
+<p>Another major challenge with the use of symmetric key cryptography is that all of the keys used in the cryptosystem must be kept secure. This includes following best practices surrounding the storage of encryption keys:</p>
+<ul class="square" id="c07-list-0017">
+<li id="c07-li-0047">Never store an encryption key on the same system where encrypted data resides. This just makes it easier for the attacker!</li>
+<li id="c07-li-0048">For sensitive keys, consider providing two different individuals with half of the key. They then must collaborate to re-create the entire key. This is known as the principle of <i>split knowledge</i>.</li>
+</ul>
+<p id="c07-para-0126">When a user with knowledge of a secret key leaves the organization or is no longer permitted access to material protected with that key, the keys must be changed, and all encrypted materials must be re-encrypted with the new keys. The difficulty of destroying a key to remove a user from a symmetric cryptosystem is one of the main reasons organizations turn to asymmetric algorithms.</p>
+</section>
+<section><span id="c07-sec-0053"/>
+<h4 id="head-4-74">Key Escrow and Recovery</h4>
+<p id="c07-para-0127">While cryptography offers tremendous security benefits, it can also be a little risky. If someone uses strong cryptography to protect data and then loses the decryption key, they won't be able to access their data again! Similarly, if an employee leaves the organization unexpectedly, coworkers may be unable to decrypt data that the user encrypted with a secret key.</p>
+<p id="c07-para-0128"><i>Key escrow</i> systems address this situation by having a third party store a protected copy of the key for use in an emergency. Organizations may have a formal <i>key recovery</i> policy that specifies the circumstances under which a key may be retrieved from escrow and used without a user's knowledge.</p>
+</section>
+</section>
+</section>
+<section aria-labelledby="head-2-105"><span id="c07-sec-0054"/>
+<h2 id="head-2-105">Asymmetric Cryptography</h2>
+<p id="c07-para-0129">Recall from earlier in this chapter that <i>public key cryptosystems</i> rely on pairs of keys assigned to each user of the cryptosystem. Every user maintains both a public key and a private key. As the names imply, public key cryptosystem users make their public keys freely available to anyone with whom they want to communicate. The mere possession of the public key by third parties does not introduce any weaknesses into the cryptosystem. The private key, on the other hand, is reserved for the sole use of the individual who owns the keys. It is never shared with any other cryptosystem user.</p>
+<p id="c07-para-0130">Normal communication between public key cryptosystem users is quite straightforward, and was illustrated in <a href="#c07-fig-0008">Figure 7.8</a>. Notice that the process does not require the sharing of <span aria-label="212" epub:type="pagebreak" id="Page_212" role="doc-pagebreak"/>private keys. The sender encrypts the plain-text message (<i>P</i>) with the recipient's public key to create the ciphertext message (<i>C</i>). When the recipient opens the ciphertext message, they decrypt it using their private key to recreate the original plain-text message.</p>
+<p id="c07-para-0131">Once the sender encrypts the message with the recipient's public key, no user (including the sender) can decrypt that message without knowing the recipient's private key (the second half of the public-private key pair used to generate the message). This is the beauty of public key cryptography—public keys can be freely shared using unsecured communications and then used to create secure communications channels between users previously unknown to each other.</p>
+<p id="c07-para-0132">Asymmetric cryptography entails a higher degree of computational complexity than symmetric cryptography. Keys used within asymmetric systems must be longer than those used in symmetric systems to produce cryptosystems of equivalent strengths.</p>
+<section><span id="c07-sec-0055"/>
+<h3 id="head-3-106">RSA</h3>
+<p id="c07-para-0133">The most famous public key cryptosystem is named after its creators. In 1977, Ronald Rivest, Adi Shamir, and Leonard Adleman proposed the <i>RSA public key algorithm</i> that remains a worldwide standard today. They patented their algorithm and formed a commercial venture known as RSA Security to develop mainstream implementations of their security technology. Today, the RSA algorithm has been released into the public domain and is widely used for secure communication.</p>
+<p id="c07-para-0134">The RSA algorithm depends on the computational difficulty inherent in factoring large prime numbers. Each user of the cryptosystem generates a pair of public and private keys using the algorithm. The specifics of key generation are beyond the scope of the exam, but you should remember that it is based on the complexity of factoring large prime numbers.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c07-fea-0009"/>
+<h3 id="head-2-106">Key Length</h3>
+<section><span id="c07-sec-0056"/>
+<p id="c07-para-0135">The length of the cryptographic key is perhaps the most important security parameter that can be set at the discretion of the security administrator. It's important to understand the capabilities of your encryption algorithm and choose a key length that provides an appropriate level of protection. This judgment can be made by weighing the difficulty of defeating a given key length (measured in the amount of processing time required to defeat the cryptosystem) against the importance of the data.</p>
+<p id="c07-para-0136">Generally speaking, the more critical your data, the stronger the key you use to protect it should be. Timeliness of the data is also an important consideration. You must take into account the rapid growth of computing power—Moore's law suggests that computing power doubles approximately every 2 years. If it takes current computers one year of processing time to break your code, it will take only 3 months if the attempt is made with contemporary technology about 4 years down the road. If you expect that your data will <span aria-label="213" epub:type="pagebreak" id="Page_213" role="doc-pagebreak"/>still be sensitive at that time, you should choose a much longer cryptographic key that will remain secure well into the future.</p>
+<p id="c07-para-0137">Also, as attackers are now able to leverage cloud computing resources, they are able to more efficiently attack encrypted data. The cloud allows attackers to rent scalable computing power, including powerful graphics processing units (GPUs) on a per-hour basis and offers significant discounts when using excess capacity during non-peak hours. This brings powerful computing well within reach of many attackers.</p>
+<p id="c07-para-0138">The strengths of various key lengths also vary greatly according to the cryptosystem you're using. For example, a 1,024-bit RSA key offers approximately the same degree of security as a 160-bit ECC key.</p>
+<p id="c07-para-0139">So, why not just always use an extremely long key? Longer keys are certainly more secure, but they also require more computational overhead. It's the classic trade-off of resources versus security constraints.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c07-sec-0057"/>
+<h3 id="head-3-107">Elliptic Curve</h3>
+<p>In 1985, two mathematicians, Neal Koblitz from the University of Washington, and Victor Miller from IBM, independently proposed the application of <i>elliptic curve cryptography</i> (ECC) theory to develop secure cryptographic systems.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c07-para-0141"><img alt="" role="presentation" src="images/note.png"/> The mathematical concepts behind elliptic curve cryptography are quite complex and well beyond the scope of this book. However, you should be generally familiar with the elliptic curve algorithm and its potential applications when preparing for the Security+ exam.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>Any elliptic curve can be defined by the following equation:</p>
+<pre id="c07-code-0013"><code>y<sup>2</sup> = x<sup>3</sup> + ax + b</code>
+</pre>
+<p>In this equation, <i>x</i>, <i>y</i>, <i>a</i>, and <i>b</i> are all real numbers. Each elliptic curve has a corresponding <i>elliptic curve group</i> made up of the points on the elliptic curve along with the point <i>O</i>, located at infinity. Two points within the same elliptic curve group (<i>P</i> and <i>Q</i>) can be added together with an elliptic curve addition algorithm. This operation is expressed as</p>
+<pre id="c07-code-0014"><code>P + Q</code>
+</pre>
+<p>This problem can be extended to involve multiplication by assuming that <i>Q</i> is a multiple of <i>P</i>, meaning the following:</p>
+<pre id="c07-code-0015"><code>Q = xP</code>
+</pre>
+<p id="c07-para-0145"><span aria-label="214" epub:type="pagebreak" id="Page_214" role="doc-pagebreak"/>Computer scientists and mathematicians believe that it is extremely hard to find <i>x</i>, even if <i>P</i> and <i>Q</i> are already known. This difficult problem, known as the elliptic curve discrete logarithm problem, forms the basis of elliptic curve cryptography. It is widely believed that this problem is harder to solve than both the prime factorization problem that the RSA cryptosystem is based on and the standard discrete logarithm problem utilized by Diffie–Hellman.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-107"><span id="c07-sec-0059"/>
+<h2 id="head-2-107">Hash Functions</h2>
+<p id="c07-para-0146">Later in this chapter, you'll learn how cryptosystems implement digital signatures to provide proof that a message originated from a particular user of the cryptosystem and to ensure that the message was not modified while in transit between the two parties. Before you can completely understand that concept, we must first explain the concept of <i>hash functions</i>, which we first visited in <a href="c04.xhtml">Chapter 4</a>, “Social Engineering and Password Attacks.” We will explore the basics of hash functions and look at several common hash functions used in modern digital signature algorithms.</p>
+<p id="c07-para-0147">Hash functions have a very simple purpose—they take a potentially long message and generate a unique output value derived from the content of the message. This value is commonly referred to as the <i>message digest</i>. Message digests can be generated by the sender of a message and transmitted to the recipient along with the full message for two reasons.</p>
+<p id="c07-para-0148">First, the recipient can use the same hash function to recompute the message digest from the full message. They can then compare the computed message digest to the transmitted one to ensure that the message sent by the originator is the same one received by the recipient. If the message digests do not match, that means the message was somehow modified while in transit. It is important to note that the messages must be <i>exactly</i> identical for the digests to match. If the messages have even a slight difference in spacing, punctuation, or content, the message digest values will be completely different. It is not possible to tell the degree of difference between two messages by comparing the digests. Even a slight difference will generate totally different digest values.</p>
+<p>Second, the message digest can be used to implement a digital signature algorithm. This concept is covered in the section “Digital Signatures” later in this chapter.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c07-para-0150"><img alt="" role="presentation" src="images/note.png"/> The term <i>message digest</i> is used interchangeably with a wide variety of synonyms, including <i>hash</i>, <i>hash value</i>, <i>hash total</i>, <i>CRC</i>, <i>fingerprint</i>, <i>checksum</i>, and <i>digital ID</i>.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>There are five basic requirements for a cryptographic hash function:</p>
+<ul class="square" id="c07-list-0018">
+<li id="c07-li-0049">They accept an input of any length.</li>
+<li id="c07-li-0050">They produce an output of a fixed length, regardless of the length of the input.</li>
+<li id="c07-li-0051">The hash value is relatively easy to compute.</li>
+<li id="c07-li-0052"><span aria-label="215" epub:type="pagebreak" id="Page_215" role="doc-pagebreak"/>The hash function is one-way (meaning that it is extremely hard to determine the input when provided with the output).</li>
+<li id="c07-li-0053">A secure hash function is <i>collision</i> free (meaning that it is extremely hard to find two messages that produce the same hash value).</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c07-fea-0010"/>
+<h3 id="head-2-108">Exam Note</h3>
+<section><span id="c07-sec-0061"/>
+<p id="c07-para-0152">Remember that a hash is a one-way cryptographic function that takes an input and generates a unique and repeatable output from that input. No two inputs should ever generate the same hash, and a hash should not be reversible so that the original input can be derived from the hash.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section><span id="c07-sec-0062"/>
+<h3 id="head-3-108">SHA</h3>
+<p id="c07-para-0153">The Secure Hash Algorithm (SHA), and its successors, SHA-1, SHA-2, and SHA-3, are government standard hash functions promoted by NIST and are specified in an official government publication—the Secure Hash Standard (SHS), also known as FIPS 180.</p>
+<p id="c07-para-0154">SHA-1 takes an input of virtually any length (in reality, there is an upper bound of approximately 2,097,152 terabytes on the algorithm) and produces a 160-bit message digest. The SHA-1 algorithm processes a message in 512-bit blocks. Therefore, if the message length is not a multiple of 512, the SHA algorithm pads the message with additional data until the length reaches the next highest multiple of 512.</p>
+<p>Cryptanalytic attacks demonstrated that there are weaknesses in the SHA-1 algorithm. This led to the creation of SHA-2, which has four variants:</p>
+<ul class="square" id="c07-list-0019">
+<li id="c07-li-0054">SHA-256 produces a 256-bit message digest using a 512-bit block size.</li>
+<li id="c07-li-0055">SHA-224 uses a truncated version of the SHA-256 hash to produce a 224-bit message digest using a 512-bit block size.</li>
+<li id="c07-li-0056">SHA-512 produces a 512-bit message digest using a 1,024-bit block size.</li>
+<li id="c07-li-0057">SHA-384 uses a truncated version of the SHA-512 hash to produce a 384-bit digest using a 1,024-bit block size.</li>
+</ul>
+<p id="c07-para-0156">The cryptographic community generally considers the SHA-2 algorithms secure, but they theoretically suffer from the same weakness as the SHA-1 algorithm. In 2015, the federal government announced the release of the Keccak algorithm as the SHA-3 standard. The SHA-3 suite was developed to serve as a drop-in replacement for the SHA-2 hash functions, offering the same variants and hash lengths using a more secure algorithm.</p>
+</section> <span aria-label="216" epub:type="pagebreak" id="Page_216" role="doc-pagebreak"/>
+<section><span id="c07-sec-0063"/>
+<h3 id="head-3-109">MD5</h3>
+<p id="c07-para-0157">In 1991, Ron Rivest released the next version of his message digest algorithm, which he called MD5. It also processes 512-bit blocks of the message, but it uses four distinct rounds of computation to produce a digest of the same length as the earlier MD2 and MD4 algorithms (128 bits).</p>
+<p id="c07-para-0158">MD5 implements security features that reduce the speed of message digest production significantly. Unfortunately, security researchers demonstrated that the MD5 protocol is subject to collisions, preventing its use for ensuring message integrity.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-109"><span id="c07-sec-0064"/>
+<h2 id="head-2-109">Digital Signatures</h2>
+<p>Once you have chosen a cryptographically sound hashing algorithm, you can use it to implement a <i>digital signature</i> system. Digital signature infrastructures have two distinct goals:</p>
+<ul class="square" id="c07-list-0020">
+<li id="c07-li-0058">Digitally signed messages assure the recipient that the message truly came from the claimed sender. They enforce non-repudiation (that is, they preclude the sender from later claiming that the message is a forgery).</li>
+<li id="c07-li-0059">Digitally signed messages assure the recipient that the message was not altered while in transit between the sender and recipient. This protects against both malicious modification (a third party altering the meaning of the message) and unintentional modification (because of faults in the communications process, such as electrical interference).</li>
+</ul>
+<p id="c07-para-0160">Digital signature algorithms rely on a combination of the two major concepts already covered in this chapter—public key cryptography and hashing functions.</p>
+<p>If Alice wants to digitally sign a message she's sending to Bob, she performs the following actions:</p>
+<ol class="decimal" id="c07-list-0021">
+<li id="c07-li-0060">Alice generates a message digest of the original plain-text message using one of the cryptographically sound hashing algorithms, such as SHA3-512.</li>
+<li id="c07-li-0061">Alice then encrypts only the message digest using her private key. This encrypted message digest is the digital signature.</li>
+<li id="c07-li-0062">Alice appends the signed message digest to the plain-text message.</li>
+<li id="c07-li-0063">Alice transmits the appended message to Bob.</li>
+</ol>
+<p>When Bob receives the digitally signed message, he reverses the procedure, as follows:</p>
+<ol class="decimal" id="c07-list-0022">
+<li id="c07-li-0064">Bob decrypts the digital signature using Alice's public key.</li>
+<li id="c07-li-0065">Bob uses the same hashing function to create a message digest of the full plain-text message received from Alice.</li>
+<li id="c07-li-0066">Bob then compares the decrypted message digest he received from Alice with the message digest he computed himself. If the two digests match, he can be assured that the <span aria-label="217" epub:type="pagebreak" id="Page_217" role="doc-pagebreak"/>message he received was sent by Alice. If they do not match, either the message was not sent by Alice or the message was modified while in transit.</li>
+</ol>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c07-para-0163"><img alt="" role="presentation" src="images/note.png"/> Digital signatures are used for more than just messages. Software vendors often use digital signature technology to authenticate code distributions that you download from the Internet, such as applets and software patches.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c07-para-0164">Note that the digital signature process does not provide any privacy in and of itself. It only ensures that the cryptographic goals of integrity, authentication, and non-repudiation are met. However, if Alice wanted to ensure the privacy of her message to Bob, she could add a step to the message creation process. After appending the signed message digest to the plain-text message, Alice could encrypt the entire message with Bob's public key. When Bob received the message, he would decrypt it with his own private key before following the steps just outlined.</p>
+<section><span id="c07-sec-0066"/>
+<h3 id="head-3-110">HMAC</h3>
+<p id="c07-para-0165">The Hash-Based Message Authentication Code (HMAC) algorithm implements a partial digital signature—it guarantees the integrity of a message during transmission, but it does not provide for non-repudiation.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c07-fea-0011"/>
+<h3 id="head-2-110">Which Key Should I Use?</h3>
+<section><span id="c07-sec-0067"/>
+<p>If you're new to public key cryptography, selecting the correct key for various applications can be quite confusing. Encryption, decryption, message signing, and signature verification all use the same algorithm with different key inputs. Here are a few simple rules to help keep these concepts straight in your mind when preparing for the exam:</p>
+<ul class="square" id="c07-list-0023">
+<li id="c07-li-0067">If you want to encrypt a message, use the recipient's public key.</li>
+<li id="c07-li-0068">If you want to decrypt a message sent to you, use your private key.</li>
+<li id="c07-li-0069">If you want to digitally sign a message you are sending to someone else, use your private key.</li>
+<li id="c07-li-0070">If you want to verify the signature on a message sent by someone else, use the sender's public key.</li>
+</ul>
+<p id="c07-para-0167">These four rules are the core principles of public key cryptography and digital signatures. If you understand each of them, you're off to a great start!</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c07-para-0168"><span aria-label="218" epub:type="pagebreak" id="Page_218" role="doc-pagebreak"/>HMAC can be combined with any standard message digest generation algorithm, such as SHA-3, by using a shared secret key. Therefore, only communicating parties who know the key can generate or verify the digital signature. If the recipient decrypts the message digest but cannot successfully compare it to a message digest generated from the plain-text message, that means the message was altered in transit.</p>
+<p id="c07-para-0169">Because HMAC relies on a shared secret key, it does not provide any non-repudiation functionality (as previously mentioned). However, it operates in a more efficient manner than the digital signature standard described in the following section and may be suitable for applications in which symmetric key cryptography is appropriate. In short, it represents a halfway point between unencrypted use of a message digest algorithm and computationally expensive digital signature algorithms based on public key cryptography.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-111"><span id="c07-sec-0069"/>
+<h2 id="head-2-111">Public Key Infrastructure</h2>
+<p id="c07-para-0172">The major strength of public key encryption is its ability to facilitate communication between parties previously unknown to each other. This is made possible by the <i>public key infrastructure (PKI)</i> hierarchy of trust relationships. These trusts permit combining asymmetric cryptography with symmetric cryptography along with hashing and digital certificates, giving us hybrid cryptography.</p>
+<p id="c07-para-0173">In the following sections, you'll learn the basic components of the public key infrastructure and the cryptographic concepts that make global secure communications possible. You'll learn the composition of a digital certificate, the role of certificate authorities, and the process used to generate and destroy certificates.</p>
+<section><span id="c07-sec-0070"/>
+<h3 id="head-3-111">Certificates</h3>
+<p id="c07-para-0174"><i>Digital certificates</i> provide communicating parties with the assurance that the people they are communicating with truly are who they claim to be. Digital certificates are essentially endorsed copies of an individual's public key. When users verify that a certificate was signed by a trusted certificate authority (CA), they know that the public key is legitimate.</p>
+<p>Digital certificates contain specific identifying information, and their construction is governed by an international standard—X.509. Certificates that conform to X.509 contain the following certificate attributes:</p>
+<ul class="square" id="c07-list-0025">
+<li id="c07-li-0074">Version of X.509 to which the certificate conforms</li>
+<li id="c07-li-0075">Serial number (from the certificate creator)</li>
+<li id="c07-li-0076">Signature algorithm identifier (specifies the technique used by the certificate authority to digitally sign the contents of the certificate)</li>
+<li id="c07-li-0077">Issuer name (identification of the certificate authority that issued the certificate)</li>
+<li id="c07-li-0078">Validity period (specifies the dates and times—a starting date and time and an expiration date and time—during which the certificate is valid)</li>
+<li id="c07-li-0079"><span aria-label="219" epub:type="pagebreak" id="Page_219" role="doc-pagebreak"/>Subject's <i>Common Name (CN)</i> that clearly describes the certificate owner (e.g., <code><a href="http://certmike.com">certmike.com</a></code>)</li>
+<li id="c07-li-0080">Certificates may optionally contain <i>Subject Alternative Names (SANs)</i> that allow you to specify additional items (IP addresses, domain names, and so on) to be protected by the single certificate</li>
+<li id="c07-li-0081">Subject's public key (the meat of the certificate—the actual public key the certificate owner used to set up secure communications)</li>
+</ul>
+<p id="c07-para-0176">The current version of X.509 (version 3) supports certificate extensions—customized variables containing data inserted into the certificate by the certificate authority to support tracking of certificates or various applications.</p>
+<p>Certificates may be issued for a variety of purposes. These include providing assurance for the public keys of:</p>
+<ul class="square" id="c07-list-0026">
+<li id="c07-li-0082">Computers/machines</li>
+<li id="c07-li-0083">Individual users</li>
+<li id="c07-li-0084">Email addresses</li>
+<li id="c07-li-0085">Developers (code-signing certificates)</li>
+</ul>
+<p>The subject of a certificate may include a wildcard in the certificate name, indicating that the certificate is good for subdomains as well. The <i>wildcard</i> is designated by an asterisk character. For example, a wildcard certificate issued to <code>*.</code><code><a href="http://certmike.com">certmike.com</a></code> would be valid for all of the following domains:</p>
+<ul class="square" id="c07-list-0027">
+<li id="c07-li-0086"><code><a href="http://certmike.com">certmike.com</a></code></li>
+<li id="c07-li-0087"><code><a href="http://www.certmike.com">www.certmike.com</a></code></li>
+<li id="c07-li-0088"><code><a href="http://mail.certmike.com">mail.certmike.com</a></code></li>
+<li id="c07-li-0089"><code><a href="http://secure.certmike.com">secure.certmike.com</a></code></li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c07-para-0179"><img alt="" role="presentation" src="images/note.png"/> Wildcard certificates are only good for one level of subdomain. Therefore, the <code>*.</code><code><a href="http://certmike.com">certmike.com</a></code> certificate would not be valid for the <code><a href="http://www.cissp.certmike.com">www.cissp.certmike.com</a></code> subdomain.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c07-sec-0072"/>
+<h3 id="head-3-112">Certificate Authorities</h3>
+<p><i>Certificate authorities</i> (CAs) are the glue that binds the public key infrastructure together. These neutral organizations offer notarization services for digital certificates. To obtain a digital certificate from a reputable CA, you must prove your identity to the satisfaction of the CA. The following list includes some of the major CAs who provide widely accepted digital certificates:</p>
+<ul class="square" id="c07-list-0028">
+<li id="c07-li-0090">IdenTrust</li>
+<li id="c07-li-0091">Amazon Web Services</li>
+<li id="c07-li-0092"><span aria-label="220" epub:type="pagebreak" id="Page_220" role="doc-pagebreak"/>DigiCert Group</li>
+<li id="c07-li-0093">Sectigo/Comodo</li>
+<li id="c07-li-0094">GlobalSign</li>
+<li id="c07-li-0095">Let's Encrypt</li>
+<li id="c07-li-0096">GoDaddy</li>
+</ul>
+<p id="c07-para-0181">Nothing is preventing any organization from simply setting up shop as a CA. However, the certificates issued by a CA are only as good as the trust placed in the CA that issued them. This is an important item to consider when receiving a digital certificate from a third party. If you don't recognize and trust the name of the CA that issued the certificate, you shouldn't place any trust in the certificate at all. PKI relies on a hierarchy of trust relationships. If you configure your browser to trust a CA, it will automatically trust all of the digital certificates issued by that CA. Browser developers preconfigure browsers to trust the major CAs to avoid placing this burden on users.</p>
+<p id="c07-para-0182"><i>Registration authorities</i> (RAs) assist CAs with the burden of verifying users' identities prior to issuing digital certificates. They do not directly issue certificates themselves, but they play an important role in the certification process, allowing CAs to remotely validate user identities.</p>
+<p id="c07-para-0183">Certificate authorities must carefully protect their own private keys to preserve their trust relationships. To do this, they often use an <i>offline CA</i> to protect their <i>root certificate</i>, the top-level certificate for their entire PKI that serves as the <i>root of trust</i> for all certificates issued by the CA. This offline root CA is disconnected from networks and powered down until it is needed. The offline CA uses the root certificate to create subordinate <i>intermediate CAs</i> that serve as the <i>online CAs</i> used to issue certificates on a routine basis.</p>
+<p id="c07-para-0184">In the CA trust model, the use of a series of intermediate CAs is known as <i>certificate chaining</i>. To validate a certificate, the browser verifies the identity of the intermediate CA(s) first and then traces the path of trust back to a known root CA, verifying the identity of each link in the chain of trust.</p>
+<p id="c07-para-0185">Certificate authorities do not need to be third-party service providers. Many organizations operate internal CAs that provide <i>self-signed certificates</i> for use inside an organization. These certificates won't be trusted by the browsers of external users, but internal systems may be configured to trust the internal CA, saving the expense of obtaining certificates from a third-party CA.</p>
+</section>
+<section><span id="c07-sec-0073"/>
+<h3 id="head-3-113">Certificate Generation and Destruction</h3>
+<p id="c07-para-0186">The technical concepts behind the public key infrastructure are relatively simple. In the following sections, we'll cover the processes used by certificate authorities to create, validate, and revoke client certificates.</p>
+<section><span id="c07-sec-0074"/>
+<h4 id="head-4-75">Enrollment</h4>
+<p id="c07-para-0187">When you want to obtain a digital certificate, you must first prove your identity to the CA in some manner; this process is called <i>enrollment</i>. As mentioned in the previous section, this <span aria-label="221" epub:type="pagebreak" id="Page_221" role="doc-pagebreak"/>sometimes involves physically appearing before an agent of the certification authority with the appropriate identification documents. Some certificate authorities provide other means of verification, including the use of credit report data and identity verification by trusted community leaders.</p>
+<p id="c07-para-0188">Once you've satisfied the certificate authority regarding your identity, you provide them with your public key in the form of a <i>Certificate Signing Request (CSR)</i>. The CA next creates an X.509 digital certificate containing your identifying information and a copy of your public key. The CA then digitally signs the certificate using the CA's private key and provides you with a copy of your signed digital certificate. You may then safely distribute this certificate to anyone with whom you want to communicate securely.</p>
+<p id="c07-para-0189">Certificate authorities issue different types of certificates depending on the level of identity verification that they perform. The simplest, and most common, certificates are <i>Domain Validation (DV) certificates</i>, where the CA simply verifies that the certificate subject has control of the domain name. <i>Extended Validation (EV) certificates</i> provide a higher level of assurance, and the CA takes steps to verify that the certificate owner is a legitimate business before issuing the certificate.</p>
+</section>
+<section><span id="c07-sec-0075"/>
+<h4 id="head-4-76">Verification</h4>
+<p>When you receive a digital certificate from someone with whom you want to communicate, you <i>verify</i> the certificate by checking the CA's digital signature using the CA's public key. Next, you must check and ensure that the certificate was not revoked using a <i>certificate revocation list</i> (CRL) or the <i>Online Certificate Status Protocol (OCSP)</i>. At this point, you may assume that the public key listed in the certificate is authentic, provided that it satisfies the following requirements:</p>
+<ul class="square" id="c07-list-0029">
+<li id="c07-li-0097">The digital signature of the CA is authentic.</li>
+<li id="c07-li-0098">You trust the CA.</li>
+<li id="c07-li-0099">The certificate is not listed on a CRL.</li>
+<li id="c07-li-0100">The certificate actually contains the data you are trusting.</li>
+</ul>
+<p id="c07-para-0191">The last point is a subtle but extremely important item. Before you trust an identifying piece of information about someone, be sure that it is actually contained within the certificate. If a certificate contains the email address (<code><a href="mailto:billjones@foo.com">billjones@foo.com</a></code>) but not the individual's name, you can be certain only that the public key contained therein is associated with that email address. The CA is not making any assertions about the actual identity of the <code><a href="mailto:billjones@foo.com">billjones@foo.com</a></code> email account. However, if the certificate contains the name Bill Jones along with an address and telephone number, the CA is vouching for that information as well.</p>
+<p id="c07-para-0192">Digital certificate verification algorithms are built into a number of popular web browsing and email clients, so you won't often need to get involved in the particulars of the process. However, it's important to have a solid understanding of the technical details taking place behind the scenes to make appropriate security judgments for your organization. It's also the reason that, when purchasing a certificate, you choose a CA that is widely trusted. If a CA is not included in, or is later pulled from, the list of CAs trusted by a major browser, it will greatly limit the usefulness of your certificate.</p>
+<p id="c07-para-0193"><span aria-label="222" epub:type="pagebreak" id="Page_222" role="doc-pagebreak"/>In 2017, a significant security failure occurred in the digital certificate industry. Symantec, through a series of affiliated companies, issued several digital certificates that did not meet industry security standards. In response, Google announced that the Chrome browser would no longer trust Symantec certificates. As a result, Symantec wound up selling off their certificate issuing business to DigiCert, who agreed to properly validate certificates prior to issuance. This demonstrates the importance of properly validating certificate requests. A series of seemingly small lapses in procedure can decimate a CA's business!</p>
+<p id="c07-para-0194"><i>Certificate pinning</i> approaches instruct browsers to attach a certificate to a subject for an extended period of time. When sites use certificate pinning, the browser associates that site with their public key. This allows users or administrators to notice and intervene if a certificate changes unexpectedly.</p>
+</section>
+<section><span id="c07-sec-0076"/>
+<h4 id="head-4-77">Revocation</h4>
+<p>Occasionally, a certificate authority needs to <i>revoke</i> a certificate. This might occur for one of the following reasons:</p>
+<ul class="square" id="c07-list-0030">
+<li id="c07-li-0101">The certificate was compromised (for example, the certificate owner accidentally gave away the private key).</li>
+<li id="c07-li-0102">The certificate was erroneously issued (for example, the CA mistakenly issued a certificate without proper verification).</li>
+<li id="c07-li-0103">The details of the certificate changed (for example, the subject's name changed).</li>
+<li id="c07-li-0104">The security association changed (for example, the subject is no longer employed by the organization sponsoring the certificate).</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c07-para-0197"><img alt="" role="presentation" src="images/tip.png"/> The revocation request grace period is the maximum response time within which a CA will perform any requested revocation. This is defined in the <i>certificate practice statement</i> (CPS). The CPS states the practices a CA employs when issuing or managing certificates.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>You can use three techniques to verify the authenticity of certificates and identify revoked certificates:</p>
+<ul class="none" id="c07-list-0031">
+<li id="c07-li-0105"><b>Certificate Revocation Lists</b> <i>Certificate revocation lists (CRLs)</i> are maintained by the various certificate authorities and contain the serial numbers of certificates that have been issued by a CA and have been revoked along with the date and time the revocation went into effect. The major disadvantage to certificate revocation lists is that they must be downloaded and cross-referenced periodically, introducing a period of latency between the time a certificate is revoked and the time end users are notified of the revocation.</li>
+<li id="c07-li-0106"><b>Online Certificate Status Protocol (OCSP)</b> This protocol eliminates the latency inherent in the use of certificate revocation lists by providing a means for real-time certificate verification. When a client receives a certificate, it sends an OCSP request to the <span aria-label="223" epub:type="pagebreak" id="Page_223" role="doc-pagebreak"/>CA's OCSP server. The server then responds with a status of good, revoked, or unknown. The browser uses this information to determine whether the certificate is valid.</li>
+<li id="c07-li-0107"><b>Certificate Stapling</b> The primary issue with OCSP is that it places a significant burden on the OCSP servers operated by certificate authorities. These servers must process requests from every single visitor to a website or other user of a digital certificate, verifying that the certificate is valid and not revoked.
+<p class="listPara1" id="c07-para-0202"><i>Certificate stapling</i> is an extension to the Online Certificate Status Protocol that relieves some of the burden placed upon certificate authorities by the original protocol. When a user visits a website and initiates a secure connection, the website sends its certificate to the end user, who would normally then be responsible for contacting an OCSP server to verify the certificate's validity. In certificate stapling, the web server contacts the OCSP server itself and receives a signed and timestamped response from the OCSP server, which it then attaches, or staples, to the digital certificate. Then, when a user requests a secure web connection, the web server sends the certificate with the stapled OCSP response to the user. The user's browser then verifies that the certificate is authentic and also validates that the stapled OCSP response is genuine and recent. Because the CA signed the OCSP response, the user knows that it is from the certificate authority, and the time stamp ensures the user that the CA recently validated the certificate. From there, communication may continue as normal.</p>
+<p class="listPara1" id="c07-para-0203">The time savings come when the next user visits the website. The web server can simply reuse the stapled certificate without recontacting the OCSP server. As long as the time stamp is recent enough, the user will accept the stapled certificate without needing to contact the CA's OCSP server again. It's common to have stapled certificates with a validity period of 24 hours. That reduces the burden on an OCSP server from handling one request per user over the course of a day, which could be millions of requests, to handling one request per certificate per day. That's a tremendous reduction.</p></li>
+</ul>
+</section>
+</section>
+<section><span id="c07-sec-0078"/>
+<h3 id="head-3-114">Certificate Formats</h3>
+<p>Digital certificates are stored in files, and those files come in a variety of formats, both binary and text-based:</p>
+<ul class="square" id="c07-list-0032">
+<li id="c07-li-0108">The most common binary format is the Distinguished Encoding Rules (DER) format. DER certificates are normally stored in files with the <code>.der</code>, <code>.crt</code>, or <code>.cer</code> extension.</li>
+<li id="c07-li-0109">The Privacy Enhanced Mail (PEM) certificate format is an ASCII text version of the DER format. PEM certificates are normally stored in files with the <code>.pem</code> or <code>.crt</code> extension.
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c07-para-0206"><img alt="" role="presentation" src="images/note.png"/> You may have picked up on the fact that the <code>.crt</code> file extension is used for both binary DER files and text PEM files. That's very confusing! You should remember that you can't tell whether a CRT certificate is binary or text without actually looking at the contents of the file.</p><span aria-label="224" epub:type="pagebreak" id="Page_224" role="doc-pagebreak"/>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section></li>
+<li id="c07-li-0110">The Personal Information Exchange (PFX) format is commonly used by Windows systems. PFX certificates may be stored in binary form, using either the <code>.pfx</code> or the <code>.p12</code> file extension.</li>
+<li id="c07-li-0111">Windows systems also use P7B certificates, which are stored in ASCII text format.</li>
+</ul>
+<p id="c07-para-0207"><a href="#c07-tbl-0002" id="R_c07-tbl-0002">Table 7.2</a> provides a summary of certificate formats.</p>
+<figure>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c07-tbl-0002" id="c07-tbl-0002" role="doc-backlink"><b>TABLE 7.2</b></a></span> Digital certificate formats</p>
+</figcaption>
+<table border="1">
+<thead>
+<tr>
+<th scope="col"><span class="left">Standard</span></th>
+<th scope="col"><span class="left">Format</span></th>
+<th scope="col"><span class="left">File extension(s)</span></th> </tr> </thead>
+<tbody>
+<tr>
+<td class="left">Distinguished Encoding Rules (DER)</td>
+<td class="left">Binary</td>
+<td class="left"><code>.der</code>, <code>.crt</code>, <code>.cer</code></td> </tr>
+<tr>
+<td class="left">Privacy Enhanced Mail (PEM)</td>
+<td class="left">Text</td>
+<td class="left"><code>.pem, .crt</code></td> </tr>
+<tr>
+<td class="left">Personal Information Exchange (PFX)</td>
+<td class="left">Binary</td>
+<td class="left"><code>.pfx</code>, <code>.p12</code></td> </tr>
+<tr>
+<td class="left">P7B</td>
+<td class="left">Text</td>
+<td class="left"><code>.p7b</code></td> </tr> </tbody> </table>
+</figure>
+</section>
+</section>
+<section aria-labelledby="head-2-112"><span id="c07-sec-0080"/>
+<h2 id="head-2-112">Asymmetric Key Management</h2>
+<p id="c07-para-0208">When you're working within the public key infrastructure, it's important that you comply with several best practice requirements to maintain the security of your communications.</p>
+<p id="c07-para-0209">First, choose your encryption system wisely. As you learned earlier, “security through obscurity” is not an appropriate approach. Choose an encryption system with an algorithm in the public domain that has been thoroughly vetted by industry experts. Be wary of systems that use a “black-box” approach and maintain that the secrecy of their algorithm is critical to the integrity of the cryptosystem.</p>
+<p id="c07-para-0210">You must also select your keys in an appropriate manner. Use a key length that balances your security requirements with performance considerations. Also, ensure that your key is truly random or, in cryptographic terms, that it has <i>sufficient entropy</i>. Any predictability within the key increases the likelihood that an attacker will be able to break your encryption and degrade the security of your cryptosystem. You should also understand the limitations of your cryptographic algorithm and avoid the use of any known weak keys.</p>
+<p id="c07-para-0211">When using public key encryption, keep your private key secret! Do not, under any circumstances, allow anyone else to gain access to your private key. Remember, allowing someone access even once permanently compromises all communications that take place (past, present, or future) using that key and allows the third party to impersonate you successfully.</p>
+<p id="c07-para-0212">Retire keys when they've served a useful life. Many organizations have mandatory key rotation requirements to protect against undetected key compromise. If you don't have a formal policy that you must follow, select an appropriate interval based on the frequency <span aria-label="225" epub:type="pagebreak" id="Page_225" role="doc-pagebreak"/>with which you use your key. Continued reuse of a key creates more encrypted material that may be used in cryptographic attacks. You might want to change your key pair every few months, if practical.</p>
+<p id="c07-para-0213">Back up your key! If you lose the file containing your private key because of data corruption, disaster, or other circumstances, you'll certainly want to have a backup available. You may want to either create your own backup or use a key escrow service that maintains the backup for you. In either case, ensure that the backup is handled in a secure manner.</p>
+<p id="c07-para-0214"><i>Hardware security modules (HSMs)</i> also provide an effective way to manage encryption keys. These hardware devices store and manage encryption keys in a secure manner that prevents humans from ever needing to work directly with the keys. HSMs range in scope and complexity from very simple devices, such as the YubiKey, that store encrypted keys on a USB drive for personal use, to more complex enterprise products that reside in a datacenter. Cloud providers, such as Amazon and Microsoft, also offer cloud-based HSMs that provide secure key management for infrastructure-as-a-service (IaaS) services.</p>
+</section>
+<section aria-labelledby="head-2-113"><span id="c07-sec-0081"/>
+<h2 id="head-2-113">Cryptographic Attacks</h2>
+<p id="c07-para-0215">If time has taught us anything, it is that people frequently do things that other people thought were impossible. Every time a new code or process is invented that is thought to be unbreakable, someone comes up with a method of breaking it.</p>
+<p id="c07-para-0216">Let's look at some common code-breaking techniques.</p>
+<section><span id="c07-sec-0082"/>
+<h3 id="head-3-115">Brute Force</h3>
+<p id="c07-para-0217">This method simply involves trying every possible key. It is guaranteed to work, but it is likely to take so long that it is not usable. For example, to break a Caesar cipher, there are only 26 possible keys, which you can try in a very short time. But even DES, which has a rather weak key, would take 2<sup>56</sup> different attempts. That is 72,057,594,037,927,936 possible DES keys. To put that in perspective, if you try 1 million keys per second, it would take you just a bit over 46,190,765 years to try them all.</p>
+</section>
+<section><span id="c07-sec-0083"/>
+<h3 id="head-3-116">Frequency Analysis</h3>
+<p id="c07-para-0218"><i>Frequency analysis</i> involves looking at the blocks of an encrypted message to determine if any common patterns exist. Initially, the analyst doesn't try to break the code but looks at the patterns in the message. In the English language, the letters <i>e</i> and <i>t</i> and words like <i>the</i>, <i>and</i>, <i>that</i>, <i>it</i>, and <i>is</i> are very common. Single letters that stand alone in a sentence are usually limited to <i>a</i> and <i>I</i>.</p>
+<p id="c07-para-0219">A determined cryptanalyst looks for these types of patterns and, over time, may be able to deduce the method used to encrypt the data. This process can sometimes be simple, or it may take a lot of effort. This method works only on the historical ciphers that we discussed at the beginning of this chapter. It does not work on modern algorithms.</p>
+</section> <span aria-label="226" epub:type="pagebreak" id="Page_226" role="doc-pagebreak"/>
+<section><span id="c07-sec-0084"/>
+<h3 id="head-3-117">Known Plain Text</h3>
+<p id="c07-para-0220">This attack relies on the attacker having pairs of known plain text along with the corresponding ciphertext. This gives the attacker a place to start attempting to derive the key. With modern ciphers, it would still take many billions of such combinations to have a chance at cracking the cipher. This method was, however, successful at cracking the German Naval Enigma. The code breakers at Bletchley Park in the UK realized that all German Naval messages ended with <i>Heil Hitler</i>. They used this known plain-text attack to crack the key.</p>
+</section>
+<section><span id="c07-sec-0085"/>
+<h3 id="head-3-118">Chosen Plain Text</h3>
+<p id="c07-para-0221">In this attack, the attacker obtains the ciphertexts corresponding to a set of plain texts of their own choosing. This allows the attacker to attempt to derive the key used and thus decrypt other messages encrypted with that key. This can be difficult, but it is not impossible. Advanced methods such as differential cryptanalysis are types of chosen plain-text attacks.</p>
+</section>
+<section><span id="c07-sec-0086"/>
+<h3 id="head-3-119">Related Key Attack</h3>
+<p id="c07-para-0222">This is like a chosen plain-text attack, except the attacker can obtain ciphertexts encrypted under two different keys. This is a useful attack if you can obtain the plain-text and matching ciphertext.</p>
+</section>
+<section><span id="c07-sec-0087"/>
+<h3 id="head-3-120">Birthday Attack</h3>
+<p>This is an attack on cryptographic hashes, based on something called the <i>birthday theorem</i>. The basic idea is this:</p>
+<blockquote>
+<p id="c07-para-0224">How many people would you need to have in a room to have a strong likelihood that two would have the same birthday (month and day, but not year)?</p>
+</blockquote>
+<p id="c07-para-0225">Obviously, if you put 367 people in a room, at least two of them must have the same birthday, since there are only 365 days in a year, plus one more in a leap year. The paradox is not asking how many people you need to guarantee a match—just how many you need to have a strong probability.</p>
+<p id="c07-para-0226">Even with 23 people in the room, you have a 50 percent chance that two will have the same birthday. The probability that the first person does not share a birthday with any previous person is 100 percent, because there are no previous people in the set. That can be written as 365/365.</p>
+<p>The second person has only one preceding person, and the odds that the second person has a birthday different from the first are 364/365. The third person might share a birthday with two preceding people, so the odds of having a birthday from either of the two <span aria-label="227" epub:type="pagebreak" id="Page_227" role="doc-pagebreak"/>preceding people are 363/365. Because each of these is independent, we can compute the probability as follows:</p>
+<div class="informalEquation" id="c07-disp-0001"><img alt="3 6 5 slash 3 6 5 times 3 6 4 slash 3 6 5 times 3 6 3 slash 3 6 5 times 3 6 2 slash 3 6 5 ellipsis times 3 4 2 slash 3 6 5" src="images/c07-disp-0001.png" style="vertical-align:middle;height:0.94em;"/><!--<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>3</mn><mn>6</mn><mn>5</mn><mo>/</mo><mn>3</mn><mn>6</mn><mn>5</mn><mo>&#215;</mo><mn>3</mn><mn>6</mn><mn>4</mn><mo>/</mo><mn>3</mn><mn>6</mn><mn>5</mn><mo>&#215;</mo><mn>3</mn><mn>6</mn><mn>3</mn><mo>/</mo><mn>3</mn><mn>6</mn><mn>5</mn><mo>&#215;</mo><mn>3</mn><mn>6</mn><mn>2</mn><mo>/</mo><mn>3</mn><mn>6</mn><mn>5</mn><mo>&#8230;</mo><mo>&#215;</mo><mn>3</mn><mn>4</mn><mn>2</mn><mo>/</mo><mn>3</mn><mn>6</mn><mn>5</mn></mrow></math>--></div>
+<p>(342 is the probability that the 23rd person shares a birthday with a preceding person.) When we convert these to decimal values, it yields (truncating at the third decimal point):</p>
+<div class="informalEquation" id="c07-disp-0002"><img alt="1 times 0.997 times 0.994 times 0.991 times 0.989 times 0.986 times ellipsis 0.936 equals 0.49 comma o r 49 p e r c e n t" src="images/c07-disp-0002.png" style="vertical-align:middle;height:1.24em;"/><!--<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>1</mn><mo>&#215;</mo><mn>0.997</mn><mo>&#215;</mo><mn>0.994</mn><mo>&#215;</mo><mn>0.991</mn><mo>&#215;</mo><mn>0.989</mn><mo>&#215;</mo><mn>0.986</mn><mo>&#215;</mo><mo>&#8230;</mo><mn>0.936</mn><mo>=</mo><mn>0.49</mn><mo>,</mo><mi mathvariant="normal">or</mi><mspace width="thickmathspace"/><mn>49</mn><mspace width="thickmathspace"/><mi mathvariant="normal">percent</mi></mrow></math>--></div>
+<p id="c07-para-0229">This 49 percent is the probability that 23 people will not have any birthdays in common; thus, there is a 51 percent (better than even odds) chance that two of the 23 will have a birthday in common.</p>
+<p id="c07-para-0230">The math works out to about 1.7 √ n to get a collision. Remember, a collision is when two inputs produce the same output. So for an MD5 hash, you might think that you need 2<sup>128</sup> +1 different inputs to get a collision—and for a guaranteed collision you do. That is an exceedingly large number: 3.4028236692093846346337460743177e+38.</p>
+<p id="c07-para-0231">But the Birthday paradox tells us that to just have a 51 percent chance of there being a collision with a hash you only need 1.7 √ n (n being 2<sup>128</sup>) inputs. That number is still very large: 31,359,464,925,306,237,747.2. But it is much smaller than the brute-force approach of trying every possible input.</p>
+</section>
+<section><span id="c07-sec-0088"/>
+<h3 id="head-3-121">Downgrade Attack</h3>
+<p id="c07-para-0232">A <i>downgrade attack</i> is sometimes used against secure communications such as TLS in an attempt to get the user or system to inadvertently shift to less secure cryptographic modes. The idea is to trick the user into shifting to a less secure version of the protocol, one that might be easier to break.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c07-fea-0012"/>
+<h3 id="head-2-114">Exam Note</h3>
+<section><span id="c07-sec-0089"/>
+<p id="c07-para-0233">As you prepare for the exam, be sure to understand the differences between downgrade attacks as well as the concept of collisions and birthday attacks, as these are specifically mentioned in the exam objectives!</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c07-sec-0090"/>
+<h3 id="head-3-122">Hashing, Salting, and Key Stretching</h3>
+<p id="c07-para-0234"><i>Rainbow table</i> attacks attempt to reverse hashed password values by precomputing the hashes of common passwords. The attacker takes a list of common passwords and runs them through the hash function to generate the rainbow table. They then search through lists of <span aria-label="228" epub:type="pagebreak" id="Page_228" role="doc-pagebreak"/>hashed values, looking for matches to the rainbow table. The most common approach to preventing these attacks is <i>salting</i>, which adds a randomly generated value to each password prior to hashing.</p>
+<p id="c07-para-0235"><i>Key stretching</i> is used to create encryption keys from passwords in a strong manner. Key stretching algorithms, such as the Password-Based Key Derivation Function v2 (PBKDF2), use thousands of iterations of salting and hashing to generate encryption keys that are resilient against attack.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c07-fea-0013"/>
+<h3 id="head-2-115">Exam Note</h3>
+<section><span id="c07-sec-0091"/>
+<p id="c07-para-0236">Hashing, salting, and key stretching are all specifically mentioned in the exam objectives. Be sure that you understand these concepts!</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c07-sec-0092"/>
+<h3 id="head-3-123">Exploiting Weak Keys</h3>
+<p id="c07-para-0237">There are also scenarios in which someone is using a good cryptographic algorithm (like AES) but has it implemented in a weak manner—for example, using weak key generation. A classic example is the Wireless Equivalent Privacy (WEP) protocol. This protocol uses an improper implementation of the RC4 encryption algorithm and has significant security vulnerabilities. That is why WEP should never be used on a modern network.</p>
+</section>
+<section><span id="c07-sec-0093"/>
+<h3 id="head-3-124">Exploiting Human Error</h3>
+<p id="c07-para-0238">Human error is one of the major causes of encryption vulnerabilities. If an email is sent using an encryption scheme, someone else may send it <i>in the clear</i> (unencrypted). If a cryptanalyst gets ahold of both messages, the process of decoding future messages will be simplified considerably. A code key might wind up in the wrong hands, giving insights into what the key consists of. Many systems have been broken into as a result of these types of accidents.</p>
+<p id="c07-para-0239">A classic example involved the transmission of a sensitive military-related message using an encryption system. Most messages have a preamble that informs the receiver who the message is for, who sent it, how many characters are in the message, the date and time it was sent, and other pertinent information. In this case, the preamble was sent in clear text, and this information was also encrypted and put into the message. As a result, the cryptanalysts gained a key insight into the message contents. They were given approximately 50 characters that were repeated in the message in code. This error caused a relatively secure system to be compromised.</p>
+<p id="c07-para-0240">Another error is to use weak or deprecated algorithms. Over time, some algorithms are no longer considered appropriate. This may be due to some flaw found in the algorithm. It can also be due to increasing computing power. For example, in 1976 DES was considered <span aria-label="229" epub:type="pagebreak" id="Page_229" role="doc-pagebreak"/>very strong. But advances in computer power have made its key length too short. Although the algorithm is sound, the key size makes DES a poor choice for modern cryptography, and that algorithm has been deprecated.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-116"><span id="c07-sec-0094"/>
+<h2 id="head-2-116">Emerging Issues in Cryptography</h2>
+<p id="c07-para-0241">As you prepare for the Security+ exam, you'll need to stay abreast of some emerging issues in cryptography and cryptographic applications. Let's review some of the topics covered in the Security+ exam objectives.</p>
+<section><span id="c07-sec-0095"/>
+<h3 id="head-3-125">Tor and the Dark Web</h3>
+<p id="c07-para-0242"><i>Tor</i>, formerly known as The Onion Router, provides a mechanism for anonymously routing traffic across the Internet using encryption and a set of relay nodes. It relies on a technology known as <i>perfect forward secrecy</i>, where layers of encryption prevent nodes in the relay chain from reading anything other than the specific information they need to accept and forward the traffic. By using perfect forward secrecy in combination with a set of three or more relay nodes, Tor allows for both anonymous browsing of the standard Internet, as well as the hosting of completely anonymous sites on the Dark Web.</p>
+</section>
+<section><span id="c07-sec-0096"/>
+<h3 id="head-3-126">Blockchain</h3>
+<p id="c07-para-0243">The <i>blockchain</i> is, in its simplest description, a distributed and immutable <i>open public ledger</i>. This means that it can store records in a way that distributes those records among many different systems located around the world and do so in manner that prevents anyone from tampering with those records. The blockchain creates a data store that nobody can tamper with or destroy.</p>
+<p id="c07-para-0244">The first major application of the blockchain is <i>cryptocurrency</i>. The blockchain was originally invented as a foundational technology for Bitcoin, allowing the tracking of Bitcoin transactions without the use of a centralized authority. In this manner, blockchain allows the existence of a currency that has no central regulator. Authority for Bitcoin transactions is distributed among all participants in the Bitcoin blockchain.</p>
+<p id="c07-para-0245">Although cryptocurrency is the blockchain application that has received the most attention, there are many other uses for a distributed immutable ledger—so much so that new applications of blockchain technology seem to be appearing every day. For example, property ownership records could benefit tremendously from a blockchain application. This approach would place those records in a transparent, public repository that is protected against intentional or accidental damage. Blockchain technology might also be used to track supply chains, providing consumers with confidence that their produce came from reputable sources and allowing regulators to easily track down the origin of recalled produce.</p>
+</section> <span aria-label="230" epub:type="pagebreak" id="Page_230" role="doc-pagebreak"/>
+<section><span id="c07-sec-0097"/>
+<h3 id="head-3-127">Lightweight Cryptography</h3>
+<p id="c07-para-0246">There are many specialized use cases for cryptography that you may encounter during your career where computing power and energy might be limited.</p>
+<p id="c07-para-0247">Some devices operate at extremely low power levels and put a premium on conserving energy. For example, imagine sending a satellite into space with a limited power source. Thousands of hours of engineering goes into getting as much life as possible out of that power source. Similar cases happen here on Earth, where remote sensors must transmit information using solar power, a small battery, or other circumstances.</p>
+<p id="c07-para-0248">Smartcards are another example of a low power environment. They must be able to communicate securely with smartcard readers, but only using the energy either stored on the card or transferred to it by a magnetic field.</p>
+<p id="c07-para-0249">In these cases, cryptographers often design specialized hardware that is purpose-built to implement lightweight cryptographic algorithms with as little power expenditure as possible. You won't need to know the details of how these algorithms work, but you should be familiar with the concept that specialized hardware can minimize power consumption.</p>
+<p id="c07-para-0250">Another specialized use case for cryptography are cases where you need very low latency. That simply means that the encryption and decryption should not take a long time. Encrypting network links is a common example of low latency cryptography. The data is moving across a network quickly and the encryption should be done as quickly as possible to avoid becoming a bottleneck.</p>
+<p id="c07-para-0251">Specialized encryption hardware also solves many low-latency requirements. For example, a dedicated VPN hardware device may contain cryptographic hardware that implements encryption and decryption operations in highly efficient form to maximize speed.</p>
+<p id="c07-para-0252">High resiliency requirements exist when it is extremely important that data be preserved and not destroyed accidentally during an encryption operation. In cases where resiliency is extremely important, the easiest way to address the issue is for the sender of data to retain a copy until the recipient confirms the successful receipt and decryption of the data.</p>
+</section>
+<section><span id="c07-sec-0098"/>
+<h3 id="head-3-128">Homomorphic Encryption</h3>
+<p id="c07-para-0253">Privacy concerns also introduce some specialized use cases for encryption. In particular, we sometimes have applications where we want to protect the privacy of individuals but still want to perform calculations on their data. <i>Homomorphic encryption</i> technology allows this, encrypting data in a way that preserves the ability to perform computation on that data. When you encrypt data with a homomorphic algorithm and then perform computation on that data, you get a result that, when decrypted, matches the result you would have received if you had performed the computation on the plain-text data in the first place.</p>
+</section>
+<section><span id="c07-sec-0099"/>
+<h3 id="head-3-129">Quantum Computing</h3>
+<p id="c07-para-0254"><i>Quantum computing</i> is an emerging field that attempts to use quantum mechanics to perform computing and communication tasks. It's still mostly a theoretical field, but if it advances to the point where that theory becomes practical to implement, quantum <span aria-label="231" epub:type="pagebreak" id="Page_231" role="doc-pagebreak"/>cryptography may be able to defeat cryptographic algorithms that depend on factoring large prime numbers.</p>
+<p id="c07-para-0255">At the same time, quantum computing may be used to develop even stronger cryptographic algorithms that would be far more secure than modern approaches. We'll have to wait and see how those develop to provide us with strong quantum communications in the postquantum era.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-117"><span id="c07-sec-0100"/>
+<h2 id="head-2-117">Summary</h2>
+<p id="c07-para-0256">Cryptography is one of the most important security controls in use today and it touches almost every other area of security, ranging from networking to software development. The use of cryptography supports the goals of providing confidentiality, integrity, authentication, and non-repudiation in a wide variety of applications.</p>
+<p id="c07-para-0257">Symmetric encryption technology uses shared secret keys to provide security for data at rest and data in motion. As long as users are able to overcome key exchange and maintenance issues, symmetric encryption is fast and efficient. Asymmetric cryptography and the public key infrastructure (PKI) provide a scalable way to securely communicate, particularly when the communicating parties do not have a prior relationship.</p>
+</section>
+<section aria-labelledby="head-2-118"><span id="c07-sec-0101"/>
+<h2 id="head-2-118">Exam Essentials</h2>
+<p id="c07-li-0112"><b>Understand the goals of cryptography.</b> The four goals of cryptography are confidentiality, integrity, authentication, and non-repudiation. Confidentiality is the use of encryption to protect sensitive information from prying eyes. Integrity is the use of cryptography to ensure that data is not maliciously or unintentionally altered. Authentication refers to uses of encryption to validate the identity of individuals. Non-repudiation ensures that individuals can prove to a third party that a message came from its purported sender.</p>
+<p id="c07-li-0113"><b>Explain the differences between symmetric and asymmetric encryption.</b> Symmetric encryption uses the same shared secret key to encrypt and decrypt information. Users must have some mechanism to exchange these shared secret keys. The Diffie–Hellman algorithm provides one approach. Asymmetric encryption provides each user with a pair of keys: a public key, which is freely shared, and a private key, which is kept secret. Anything encrypted with one key from the pair may be decrypted with the other key from the same pair.</p>
+<p id="c07-li-0114"><b>Explain how digital signatures provide non-repudiation.</b> Digital signatures provide non-repudiation by allowing a third party to verify the authenticity of a message. Senders create digital signatures by using a hash function to generate a message digest and then encrypting that digest with their own private key. Others may verify the digital signature by decrypting it with the sender's public key and comparing this decrypted message digest to one that they compute themselves using the hash function on the message.</p>
+<p id="c07-li-0115"><span aria-label="232" epub:type="pagebreak" id="Page_232" role="doc-pagebreak"/><b>Understand the purpose and use of digital certificates.</b> Digital certificates provide a trusted mechanism for sharing public keys with other individuals. Users and organizations obtain digital certificates from certificate authorities (CAs), who demonstrate their trust in the certificate by applying their digital signature. Recipients of the digital certificate can rely on the public key it contains if they trust the issuing CA and verify the CA's digital signature.</p>
+<p id="c07-li-0116"><b>Demonstrate familiarity with emerging issues in cryptography.</b> Tor uses perfect forward secrecy to allow anonymous communication over the Internet. The blockchain is an immutable distributed public ledger made possible through the use of cryptography.</p>
+
+</section> <span aria-label="233" epub:type="pagebreak" id="Page_233" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-119"><span id="c07-sec-0102"/>
+<h2 id="head-2-119">Review Questions</h2>
+<section><span id="c07-exsec-0001"/>
+<ol class="decimal">
+<li id="c07-ex-0001">Mike is sending David an encrypted message using a symmetric encryption algorithm. What key should he use to encrypt the message?
+<ol class="upper-alpha">
+<li>Mike's public key</li>
+<li>Mike's private key</li>
+<li>David's public key</li>
+<li>Shared secret key</li>
+</ol>
+</li>
+<li id="c07-ex-0002">Shahla recently discovered an attack where the attacker managed to force a network user to use weak encryption and was then able to decrypt that content. What term best describes this attack?
+<ol class="upper-alpha">
+<li>Downgrade</li>
+<li>Collision</li>
+<li>Homomorphic encryption</li>
+<li>Birthday attack</li>
+</ol>
+</li>
+<li id="c07-ex-0003">Norm is using full-disk encryption technology to protect the contents of laptops against theft. What goal of cryptography is he attempting to achieve?
+<ol class="upper-alpha">
+<li>Integrity</li>
+<li>Non-repudiation</li>
+<li>Authentication</li>
+<li>Confidentiality</li>
+</ol>
+</li>
+<li id="c07-ex-0004">Brian discovers that a user suspected of stealing sensitive information is posting many image files to a message board. What technique might the individual be using to hide sensitive information in those images?
+<ol class="upper-alpha">
+<li>Steganography</li>
+<li>Homomorphic encryption</li>
+<li>Replay attack</li>
+<li>Birthday attack</li>
+</ol>
+</li>
+<li id="c07-ex-0005">Which one of the following statements about cryptographic keys is incorrect?
+<ol class="upper-alpha">
+<li>All cryptographic keys should be kept secret.</li>
+<li>Longer keys are better than shorter keys when the same algorithm is used.</li>
+<li>Asymmetric algorithms generally use longer keys than symmetric algorithms.</li>
+<li>Digital certificates are designed to share public keys.</li>
+</ol>
+</li>
+<li id="c07-ex-0006"><span aria-label="234" epub:type="pagebreak" id="Page_234" role="doc-pagebreak"/> What type of cipher operates on one character of text at a time?
+<ol class="upper-alpha">
+<li>Block cipher</li>
+<li>Bit cipher</li>
+<li>Stream cipher</li>
+<li>Balanced cipher</li>
+</ol>
+</li>
+<li id="c07-ex-0007">Vince is choosing a symmetric encryption algorithm for use in his organization. He would like to choose the strongest algorithm from these choices. What algorithm should he choose?
+<ol class="upper-alpha">
+<li>DES</li>
+<li>3DES</li>
+<li>RSA</li>
+<li>AES</li>
+</ol>
+</li>
+<li id="c07-ex-0008">Kevin is configuring a web server to use digital certificates. What technology can he use to allow clients to quickly verify the status of those certificates without contacting a remote server?
+<ol class="upper-alpha">
+<li>CRL</li>
+<li>OCSP</li>
+<li>Certificate stapling</li>
+<li>Certificate pinning</li>
+</ol>
+</li>
+<li id="c07-ex-0009">Acme Widgets has 10 employees and they all need the ability to communicate with one another using a symmetric encryption system. The system should allow any two employees to securely communicate without other employees eavesdropping. If an 11th employee is added to the organization, how many new keys must be added to the system?
+<ol class="upper-alpha">
+<li>1</li>
+<li>2</li>
+<li>10</li>
+<li>11</li>
+</ol>
+</li>
+<li id="c07-ex-0010">Referring to the scenario in question 9, if Acme Widgets switched to an asymmetric encryption algorithm, how many keys would be required to add the 11th employee?
+<ol class="upper-alpha">
+<li>1</li>
+<li>2</li>
+<li>10</li>
+<li>11</li>
+</ol>
+</li>
+<li id="c07-ex-0011">What type of digital certificate provides the greatest level of assurance that the certificate owner is who they claim to be?
+<ol class="upper-alpha">
+<li>DV</li>
+<li>OV</li>
+<li>UV</li>
+<li>EV</li>
+</ol>
+</li>
+<li id="c07-ex-0012"><span aria-label="235" epub:type="pagebreak" id="Page_235" role="doc-pagebreak"/> Glenn recently obtained a wildcard certificate for <code>*.</code><code><a href="http://mydomain.com">mydomain.com</a></code>. Which one of the following domains would not be covered by this certificate?
+<ol class="upper-alpha">
+<li><code><a href="http://mydomain.com">mydomain.com</a></code></li>
+<li><code><a href="http://core.mydomain.com">core.mydomain.com</a></code></li>
+<li><code>dev.</code> <code><a href="http://www.mydomain.com">www.mydomain.com</a></code></li>
+<li><code><a href="http://mail.mydomain.com">mail.mydomain.com</a></code></li>
+</ol>
+</li>
+<li id="c07-ex-0013">Which one of the following servers is almost always an offline CA in a large PKI deployment?
+<ol class="upper-alpha">
+<li>Root CA</li>
+<li>Intermediate CA</li>
+<li>RA</li>
+<li>Internal CA</li>
+</ol>
+</li>
+<li id="c07-ex-0014">Which one of the following certificate formats is closely associated with Windows binary certificate files?
+<ol class="upper-alpha">
+<li>DER</li>
+<li>PEM</li>
+<li>PFX</li>
+<li>P7B</li>
+</ol>
+</li>
+<li id="c07-ex-0015">What type of security solution provides a hardware platform for the storage and management of encryption keys?
+<ol class="upper-alpha">
+<li>HSM</li>
+<li>IPS</li>
+<li>SIEM</li>
+<li>SOAR</li>
+</ol>
+</li>
+<li id="c07-ex-0016">What type of cryptographic attack attempts to force a user to reduce the level of encryption that they use to communicate with a remote server?
+<ol class="upper-alpha">
+<li>Birthday</li>
+<li>Frequency</li>
+<li>Downgrade</li>
+<li>Collision</li>
+</ol>
+</li>
+<li id="c07-ex-0017">David would like to send Mike a message using an asymmetric encryption algorithm. What key should he use to encrypt the message?
+<ol class="upper-alpha">
+<li>David's public key</li>
+<li>David's private key</li>
+<li>Mike's public key</li>
+<li>Mike's private key</li>
+</ol>
+</li>
+<li id="c07-ex-0018"><span aria-label="236" epub:type="pagebreak" id="Page_236" role="doc-pagebreak"/> When Mike receives the message that David encrypted for him, what key should he use to decrypt the message?
+<ol class="upper-alpha">
+<li>David's public key</li>
+<li>David's private key</li>
+<li>Mike's public key</li>
+<li>Mike's private key</li>
+</ol>
+</li>
+<li id="c07-ex-0019">If David wishes to digitally sign the message that he is sending Mike, what key would he use to create the digital signature?
+<ol class="upper-alpha">
+<li>David's public key</li>
+<li>David's private key</li>
+<li>Mike's public key</li>
+<li>Mike's private key</li>
+</ol>
+</li>
+<li id="c07-ex-0020">When Mike receives the digitally signed message from David, what key should he use to verify the digital signature?
+<ol class="upper-alpha">
+<li>David's public key</li>
+<li>David's private key</li>
+<li>Mike's public key</li>
+<li>Mike's private key</li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+</section>
+</body>
+</html>

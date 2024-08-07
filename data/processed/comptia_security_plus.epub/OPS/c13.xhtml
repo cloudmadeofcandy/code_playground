@@ -1,0 +1,746 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:svg="http://www.w3.org/2000/svg" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+<head>
+<title>Chapter 13 Wireless and Mobile Security</title>
+<link href="WileyTemplate_v5.5.css" rel="stylesheet" type="text/css"/>
+<meta content="urn:uuid:57d469d3-a1d3-48bd-8447-18ce82f57cc2" name="Adept.expected.resource"/>
+</head>
+<body epub:type="bodymatter">
+<section aria-labelledby="c13_1" epub:type="chapter" role="doc-chapter">
+<header>
+<h1 id="c13_1"><span aria-label="425" epub:type="pagebreak" id="Page_425" role="doc-pagebreak"/><span id="c13"/><span class="chapterNumber">Chapter 13</span><br/><span class="chapterTitle">Wireless and Mobile Security</span></h1>
+</header>
+<section aria-label="chapter opening"><span id="c13-sec-0001"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p><b>THE COMPTIA SECURITY+ EXAM OBJECTIVES COVERED IN THIS CHAPTER INCLUDE:</b></p>
+<ul class="check1" id="c13-list-0002">
+<li id="c13-li-0002"><b>Domain 2.0: Threats, Vulnerabilities, and Mitigations</b>
+<ul class="square1" id="c13-list-0003">
+<li id="c13-li-0003">2.3. Explain various types of vulnerabilities.
+<ul class="square1" id="c13-list-0004">
+<li id="c13-li-0004">Mobile device (Side loading, Jailbreaking)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="c13-li-0005"><b>Domain 3.0: Security Architecture</b>
+<ul class="square1" id="c13-list-0005">
+<li id="c13-li-0006">3.3. Compare and contrast concepts and strategies to protect data.
+<ul class="square1" id="c13-list-0006">
+<li id="c13-li-0007">General data considerations (Geolocation)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="c13-li-0008"><b>Domain 4.0: Security Operations</b>
+<ul class="square1" id="c13-list-0007">
+<li id="c13-li-0009">4.1. Given a scenario, apply common security techniques to computing resources.
+<ul class="square1" id="c13-list-0008">
+<li id="c13-li-0010">Hardening targets (Mobile devices, Workstations, Switches, Routers, Cloud infrastructure, Servers, ICS/SCADA, Embedded systems, RTOS, IoT devices).</li>
+<li id="c13-li-0011">Wireless devices (Installation considerations (Site surveys, Heat maps))</li>
+<li id="c13-li-0012">Mobile solutions (Mobile device management (MDM), Deployment models (Bring your own device (BYOD), Corporate-owned, personally enabled (COPE), Choose your own device (CYOD)), Connection methods (Cellular, Wi-Fi, Bluetooth))</li>
+<li id="c13-li-0013">Wireless security settings (Wi-Fi Protected Access 3 (WPA3), AAA/Remote Authentication Dial-in User Service (RADIUS), Cryptographic protocols, Authentication protocols)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<span aria-label="426" epub:type="pagebreak" id="Page_426" role="doc-pagebreak"/>
+<p id="c13-para-0010">Significant portions of the networks in most organizations are now wireless, and wireless networks have a number of security challenges that wired networks don't. They broadcast their signals and they are frequently accessible from outside of the spaces that organizations own and manage. Most cellular and point-to-point commercial wireless networks aren't even in the control of customers at all, which means that the traffic they carry may need to be treated as if it is traversing a potentially hostile network path.</p>
+<p id="c13-para-0011">In this chapter, you will learn about common wireless connectivity options—ranging from Bluetooth and cellular to Wi-Fi—and the network models and technologies they most often use. With that in mind, you will explore best practices for wireless network design and security. Along the way, you will also learn about wireless authentication, how EAP is used for wireless authentication, and how wireless controllers and access points are kept secure.</p>
+<p id="c13-para-0012">The latter portion of the chapter focuses on mobile device management. Mobile device deployment models like bring your own device (BOYD), choose your own device (CYOD), and corporate-owned, personally enabled (COPE) are key parts of organizational decisions about how to get devices into the hands of end users. Once those devices are deployed, you also need to manage them, and you will learn about mobile device management tools, common features, and important control capabilities. With careful planning, you can ensure that devices are secure when they are issued or enrolled, that they are well managed throughout their life cycles, and that you can handle theft, loss, or the end of their useful life cycle.</p>
+</section>
+<section aria-labelledby="head-2-212"><span id="c13-sec-0002"/>
+<h2 id="head-2-212">Building Secure Wireless Networks</h2>
+<p id="c13-para-0013">Wireless networks are found throughout our organizations. From enterprise networks that authenticate users and that are managed and monitored using powerful tools, to simple wireless routers used in homes and small businesses to provide connectivity to residents, customers, or guests, Wi-Fi is everywhere. Wi-Fi networks aren't the only type of network that you will encounter, however—Bluetooth, cellular, Zigbee, and other types of connectivity are also found in organizations. Unlike wired networks, these wireless networks don't stop outside the walls of your organization, making wireless network security a very different challenge to secure. The fact that many devices have the ability to create ad hoc wireless networks or to bridge their wired and wireless network connections means that devices throughout your organization may also end up being paths to the network or the device itself for malicious actors.</p> <span aria-label="427" epub:type="pagebreak" id="Page_427" role="doc-pagebreak"/>
+<section><span id="c13-sec-0003"/>
+<h3 id="head-3-196">Connection Methods</h3>
+<p id="c13-para-0014">Designing a secure network often starts with a basic understanding of the type of network connectivity that you will be deploying or securing. The Security+ exam outline lists a range of wireless connection types, which are covered in the following sections.</p>
+<section><span id="c13-sec-0004"/>
+<h4 id="head-4-137">Cellular</h4>
+<p id="c13-para-0015"><i>Cellular</i> networks provide connectivity for mobile devices like cell phones by dividing geographic areas into “cells” with tower coverage allowing wireless communications between devices and towers or cell sites. Modern cellular networks use technologies like LTE (long-term evolution) 4G and related technology and new 5G networks, which have been deployed widely in many countries. 5G requires much greater antenna density but also provides greater bandwidth and throughput. Whereas cellular providers and organizations that wanted cellular connectivity tended to place towers where coverage was needed for 4G networks, 5G networks require much more attention to antenna deployment, which means that organizations need to design around 5G antenna placement as part of their building and facility design efforts over time.</p>
+<p id="c13-para-0016">Cellular connectivity is normally provided by a cellular carrier rather than an organization, unlike Wi-Fi or other technologies that companies may choose to implement for themselves. That means that the cellular network is secure, managed, and controlled outside of your organization, and that traffic sent via a cellular connection goes through a third-party network. Cellular data therefore needs to be treated as you would an external network connection rather than your own corporate network.</p>
+</section>
+<section><span id="c13-sec-0005"/>
+<h4 id="head-4-138">Wi-Fi</h4>
+<p id="c13-para-0017">The term Wi-Fi covers a range of wireless protocols that are used to provide wireless networking. Wi-Fi primarily relies on the 2.4 GHz and 5 GHz radio bands and uses multiple channels within those bands to allow multiple networks to coexist. Wi-Fi signals can reach to reasonably long ranges, although the frequencies Wi-Fi operates on are blocked or impeded by common obstacles like walls and trees. Despite those impediments, one of the most important security concerns with Wi-Fi networks is that they travel beyond the spaces that organizations own or control.</p>
+<p id="c13-para-0018"><a href="#c13-tbl-0001" id="R_c13-tbl-0001">Table 13.1</a> lists current and historical Wi-Fi standards, ranging from 802.11b, which was the first broadly deployed Wi-Fi standard, to 802.11ac and 802.11ax, two recently broadly deployed standards. In many environments, 802.11n, 802.11g, or even older standards may still be encountered.</p>
+
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c13-para-0020"><img alt="" role="presentation" src="images/note.png"/> The earlier generations of Wi-Fi, including 802.11b to 802.11g, were not branded as Wi-Fi 1, Wi-Fi 2, and so on. More modern versions of Wi-Fi have been as the standard continues to evolve. You may hear more modern versions of Wi-Fi referred to by the standard or the generation name, depending on the context you're working in.</p> <span aria-label="428" epub:type="pagebreak" id="Page_428" role="doc-pagebreak"/>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<figure>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c13-tbl-0001" id="c13-tbl-0001" role="doc-backlink"><b>TABLE 13.1</b></a></span> Wi-Fi standards, maximum theoretical speed, and frequencies</p>
+</figcaption>
+<table border="1">
+<thead>
+<tr>
+<th scope="col"><span class="left">Wi-Fi standard</span></th>
+<th scope="col"><span class="left">Generation name</span></th>
+<th scope="col"><span class="left">Maximum speed</span></th>
+<th scope="col"><span class="left">Frequencies</span></th> </tr> </thead>
+<tbody>
+<tr>
+<td class="left">802.11b</td>
+<td class="left"/>
+<td class="left">11 Mbit/s</td>
+<td class="left">2.4 GHz</td> </tr>
+<tr>
+<td class="left">802.11a</td>
+<td class="left"/>
+<td class="left">54 Mbit/s</td>
+<td class="left">5 GHz</td> </tr>
+<tr>
+<td class="left">802.11g</td>
+<td class="left"/>
+<td class="left">54 Mbit/s</td>
+<td class="left">2.4 GHz</td> </tr>
+<tr>
+<td class="left">802.11n</td>
+<td class="left">Wi-Fi 4</td>
+<td class="left">600 Mbit/s</td>
+<td class="left">2.4 GHz and 5 GHz</td> </tr>
+<tr>
+<td class="left">802.11ac</td>
+<td class="left">Wi-Fi 5</td>
+<td class="left">6.9 Gbit/s</td>
+<td class="left">5 GHz</td> </tr>
+<tr>
+<td class="left">802.11ax</td>
+<td class="left">Wi-Fi 6 and Wi-Fi 6E</td>
+<td class="left">9.6 Gbit/s</td>
+<td class="left">2.4 GHz, 5 GHz, 6 GHz</td> </tr>
+<tr>
+<td class="left">802.11be</td>
+<td class="left">Wi-Fi 7</td>
+<td class="left">40+ Gbit/s</td>
+<td class="left">2.4 GHz, 5 GHz, 6 GHz</td> </tr> </tbody> </table>
+</figure>
+<p id="c13-para-0021">Fortunately, Wi-Fi protocols like WPA2 and WPA3 provide security features and functionality to help keep wireless signals secure. Those features include encryption options, protection for network frames, and authentication options.</p>
+<p id="c13-para-0022">Wi-Fi devices are most commonly deployed in either ad hoc mode, which allows devices to talk to each other directly, or infrastructure mode, which sends traffic through a base station, or access point. Wi-Fi networks use service set identifiers (SSIDs) to identify their network name. SSIDs can be broadcast or kept private.</p>
+</section>
+<section><span id="c13-sec-0007"/>
+<h4 id="head-4-139">Bluetooth</h4>
+<p id="c13-para-0023"><i>Bluetooth</i> is another commonly used wireless technology. Like Wi-Fi and many other technologies, it operates in the 2.4 GHz range, which is used for many different wireless protocols. Bluetooth is primarily used for low-power, short-range (less than 100 meters and typically 5–30 meters) connections that do not have very high bandwidth needs. Bluetooth devices are usually connected in a point-to-point rather than a client-server model. A typical Bluetooth connection is done by <i>pairing</i>, a process that searches for devices that are looking to connect. Once you connect, you may be asked for a PIN to validate the connection.</p>
+<p>Bluetooth uses four security modes:</p>
+<ul class="square" id="c13-list-0009">
+<li id="c13-li-0014">Security Mode 1: No security (non-secure)</li>
+<li id="c13-li-0015">Security Mode 2: Service-level enforced security</li>
+<li id="c13-li-0016">Security Mode 3: Link-level enforced security</li>
+<li>Security Mode 4: Standard pairing with Security Simple Pairing (SSP)</li>
+</ul>
+<p id="c13-para-0025">Since Bluetooth is designed and implemented to be easy to discover, configure, and use, it can also be relatively easy to attack. Bluetooth does support encryption, but the encryption relies on a PIN used by both devices. Fixed PINs for devices like headsets reduce the security of their connection. Attacks against authentication, as well as the negotiated encryption keys, mean that Bluetooth may be susceptible to eavesdropping as well as other attacks.</p>
+</section> <span aria-label="429" epub:type="pagebreak" id="Page_429" role="doc-pagebreak"/>
+<section><span id="c13-sec-0008"/>
+<h4 id="head-4-140">RFID </h4>
+<p id="c13-para-0026"><i>Radio frequency identification</i> (RFID) is a relatively short-range (from less than a foot of some passive tags to about 100 meters for active tags) wireless technology that uses a tag and a receiver to exchange information. RFID may be deployed using active tags, which have their own power source and always send signals to be read by a reader; semi-active tags, which have a battery to power their circuits but are activated by the reader; or passive tags, which are entirely powered by the reader.</p>
+<p id="c13-para-0027">RFID tags also use one of three frequency ranges. Low-frequency RFIDs are used for short-range, low-power tags and are commonly used for entry access and identification purposes, where they are scanned by a nearby reader. Low-frequency RFID is not consistent around the world, meaning that tags may not meet frequency or power requirements in other countries. High-frequency RFID tags have a longer readable range at up to a meter under normal circumstances and can communicate more quickly. In fact, high-frequency RFID is used for near-field communication, and many tags support read-only, write-only, and rewritable tags. The final frequency range is ultra-high-frequency RFID, the fastest to read and with the longest range. This means that ultra-high-frequency RFID tags are used in circumstances where readers need to be farther away. High-frequency tags have found broad implementation for inventory and antitheft purposes as well as a multitude of other uses where a tag that can be remotely queried from meters away can be useful.</p>
+<p id="c13-para-0028">Because of their small size and flexible form factor, RFID tags can be embedded in stickers, small implantable chips like those used to identify pets, and in the form of devices like tollway tags. RFID tags can be attacked in a multitude of ways, from simple destruction or damage of the tag so that it cannot be read to modification of tags, some of which can be reprogrammed. Tags can be cloned, modified, or spoofed; readers can be impersonated; and traffic can be captured.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c13-fea-0001"/>
+<h3 id="head-2-213">Rewriting RFID Tags</h3>
+<section><span id="c13-sec-0009"/>
+<p id="c13-para-0029">As RFID-based tolling systems spread across the United States, security researchers looked into vulnerabilities in the technology. In 2008, in California they discovered that the RFID tags used for the toll road system had not been locked after they were written, meaning that tags could be read and reprogrammed, changing the transponder ID. Since the RFID tag could be rewritten at a distance, this opened up a wide number of potential attacks. If this vulnerability was used for malicious purposes, it would have been possible for attackers to rewrite transponders, charge tolls to other vehicles, and otherwise wreak havoc on the toll system. This type of research emphasizes the need to understand the capabilities and implications of configuration choices used in any device deployment, and particularly with RFID tags. You can read more about the issue here: <code><a href="http://www.technologyreview.com/2008/08/25/96538/road-tolls-hacked">www.technologyreview.com/2008/08/25/96538/road-tolls-hacked</a></code>.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section> <span aria-label="430" epub:type="pagebreak" id="Page_430" role="doc-pagebreak"/>
+<section><span id="c13-sec-0010"/>
+<h4 id="head-4-141">GPS </h4>
+<p id="c13-para-0030">Global Positioning System (GPS), unlike the other technologies described so far, is not used to create a network where devices transmit. Instead, it uses a constellation of satellites that send out GPS signals, which are received by a compatible GPS receiver. While the U.S. GPS system is most frequently referred to, other systems, including the Russian GLONASS system and smaller regional systems, also exist. GPS navigation can help position devices to within a foot of their actual position, allowing highly accurate placement for geofencing and other GPS uses. GPS also provides a consistent time signal, meaning that GPS receivers may be integrated into network time systems.</p>
+<p id="c13-para-0031">Like other radio frequency–based systems, GPS signals can be jammed or spoofed, although attacks against GPS are uncommon in normal use. GPS jamming is illegal in the United States, but claims have been made that GPS spoofing has been used to target military drones, causing them to crash, and real-world proof-of-concept efforts have been demonstrated.</p>
+<p id="c13-para-0032">GPS technology is a major part of <i>geolocation</i> capabilities used to determine where a device is. Geolocation is used for location-aware authentication, geofencing, and many other functions. GPS is often combined with other location-centric data like Wi-Fi network names and Bluetooth connections. This can provide rich data about the location of devices and is increasingly leveraged by device manufacturers. Tools like Apple's Find My uses GPS, Wi-Fi, Bluetooth, and cellular as well as sensor information to locate devices, while Apple's AirTags leverage other Apple devices to help find them.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c13-fea-0002"/>
+<h3 id="head-2-214">Exam Note</h3>
+<section><span id="c13-sec-0011"/>
+<p id="c13-para-0033">The following technologies are not on the Security+ exam outline as topics, but remain in the glossary or have related items on the exam. We've included them because they're important in the context of overall wireless security practices and considerations, but you shouldn't have to know technical details of NFC and infrared for the exam.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c13-sec-0012"/>
+<h4 id="head-4-142">NFC </h4>
+<p id="c13-para-0034">Near-field communication (NFC<i>)</i> is used for very short-range communication between devices. You've likely seen NFC used for payment terminals using Apple Pay or Google Pay with cell phones. NFC is typically limited to less than 4 inches of range and often far shorter distances, meaning that it is not used to build networks of devices and instead is primarily used for low-bandwidth, device-to-device purposes. That doesn't mean that NFC can't be attacked, but it does mean that threats will typically be in close proximity to an NFC device. Intercepting NFC traffic, replay attacks, and spoofing attacks are all issues that NFC implementations need to account for. At the same time, NFC devices must ensure that they do not <span aria-label="431" epub:type="pagebreak" id="Page_431" role="doc-pagebreak"/>respond to queries except when desired so that an attacker cannot simply bring a receiver into range and activate an NFC transaction or response.</p>
+</section>
+<section><span id="c13-sec-0013"/>
+<h4 id="head-4-143">Infrared</h4>
+<p>Unlike the other wireless technologies in this chapter, infrared (IR) network connections only work in line of sight. IR networking specifications support everything from very low-bandwidth modes to gigabit speeds, including the following:</p>
+<ul class="square" id="c13-list-0010">
+<li id="c13-li-0017">SIR, 115 Kbit/s</li>
+<li id="c13-li-0018">MIR, 1.15 Mbit/s</li>
+<li id="c13-li-0019">FIR, 4 Mbit/s</li>
+<li id="c13-li-0020">VFIR, 16 Mbit/s</li>
+<li id="c13-li-0021">UFIR, 96 Mbit/s</li>
+<li id="c13-li-0022">GigaIR, 512 Mbit/s-1 Gbit/s</li>
+</ul>
+<p id="c13-para-0036">Since IR traffic can be captured by anything with a line of sight to it, it can be captured if a device is in the area. Of course, this also means that unlike Wi-Fi and Bluetooth traffic, devices that are outside of the line of sight of the device typically won't be able to capture IR traffic.</p>
+<p id="c13-para-0037">Infrared connections are most frequently used for point-to-point connections between individual devices, but IR technologies that exist to create networks and groups of devices do exist. Despite this, infrared connectivity is less frequently found in modern systems and devices, having largely been supplanted by Bluetooth and Wi-Fi.</p>
+</section>
+</section>
+<section><span id="c13-sec-0014"/>
+<h3 id="head-3-197">Wireless Network Models</h3>
+<p id="c13-para-0038">The wireless technologies we have described operate in one of four major connection models: point-to-point, point-to-multipoint, mesh, or broadcast. <a href="#c13-fig-0001" id="R_c13-fig-0001">Figure 13.1</a> shows both a point-to-point network between two systems or devices, and a point-to-multipoint network design that connects to multiple devices from a single location.</p>
+<p id="c13-para-0039">Each of these design models is simple to understand. A point-to-point network connects two nodes, and transmissions between them can only be received by the endpoints. Point-to-multipoint networks like Wi-Fi have many nodes receiving the information sent by a node. Broadcast designs send out information on many nodes and typically do not care about receiving a response. GPS and radio are both examples of broadcast models.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c13-fea-0003"/>
+<h3 id="head-2-215">Exam Note</h3>
+<section><span id="c13-sec-0015"/>
+<p id="c13-para-0040">The Security+ exam outline considers three major connection models: cellular, Wi-Fi, and Bluetooth. Make sure that you're aware of the major features, advantages, and disadvantages of each, and think about what they mean for the security of your organization.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<figure> <img alt="A diagrammatic representation of point-to-point wireless network and point-to-multipoint wireless network. 1. Two buildings are connected by direct antenna." class="center" src="images/c13f001.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c13-fig-0001" id="c13-fig-0001" role="doc-backlink"><b>FIGURE 13.1</b></a></span> Point-to-point and point-to-multipoint network designs</p>
+</figcaption>
+</figure>
+
+</section> <span aria-label="432" epub:type="pagebreak" id="Page_432" role="doc-pagebreak"/>
+<section><span id="c13-sec-0016"/>
+<h3 id="head-3-198">Attacks Against Wireless Networks and Devices</h3>
+<p id="c13-para-0041">One of the first things you need to consider when designing a secure network is how it could be attacked. Attackers may pose as legitimate wireless networks, add their own wireless devices to your network, interfere with the network, use protocol flaws or attacks, or take other steps to attack your network.</p>
+<section><span id="c13-sec-0017"/>
+<h4 id="head-4-144">Evil Twins and Rogue Access Points</h4>
+<p id="c13-para-0042">An <i>evil twin</i> is a malicious illegitimate access point that is set up to appear to be a legitimate, trusted network. <a href="#c13-fig-0002" id="R_c13-fig-0002">Figure 13.2</a> shows an evil twin attack where the client wireless device has opted for the evil twin access point (AP) instead of the legitimate access point. The attacker may have used a more powerful AP, placed the evil twin closer to the target, or used another technique to make the AP more likely to be the one the target will associate with.</p>
+<p id="c13-para-0043">Once a client connects to the evil twin, the attacker will typically provide Internet connectivity so that the victim does not realize that something has gone wrong. The attacker will then capture all of the victim's network traffic and look for sensitive data, passwords, or other information that they can use. Presenting false versions of websites, particularly login screens, can provide attackers who have successfully implemented an evil twin with a quick way to capture credentials.</p>
+<p id="c13-para-0044">Evil twins aren't the only type of undesirable access point that you may find on your network<i>. Rogue access points</i> are APs added to your network either intentionally or unintentionally. Once they are connected to your network, they can offer a point of entry to attackers or other unwanted users. Since many devices have built-in wireless connectivity and may show up as an accessible network, it is important to monitor your network and facilities for rogue access points.</p>
+<figure> <img alt="A diagrammatic representation of the evil twin pretending to be a legitimate access point for the client's wireless device." class="center" src="images/c13f002.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c13-fig-0002" id="c13-fig-0002" role="doc-backlink"><b>FIGURE 13.2</b></a></span> Evil twin pretending to be a legitimate access point</p>
+</figcaption>
+</figure>
+<p id="c13-para-0045"><span aria-label="433" epub:type="pagebreak" id="Page_433" role="doc-pagebreak"/>Most modern enterprise wireless controller systems have built-in functionality that allows them to detect new access points in areas where they are deployed. In addition, wireless intrusion detection systems or features can continuously scan for unknown access points and then determine if they are connected to your network by combining wireless network testing with wired network logs and traffic information. This helps separate out devices like mobile phones set up as hotspots and devices that may advertise a setup Wi-Fi network from devices that are plugged into your network and that may thus create a real threat.</p>
+</section>
+<section><span id="c13-sec-0018"/>
+<h4 id="head-4-145">Bluetooth Attacks</h4>
+<p id="c13-para-0046">There are two common methods of Bluetooth attack: bluejacking and bluesnarfing. <i>Bluejacking</i> sends unsolicited messages to Bluetooth-enabled devices. <i>Bluesnarfing</i> is unauthorized access to a Bluetooth device, typically aimed at gathering information like contact lists or other details the device contains. Unfortunately, there aren't many security steps that can be put in place for most Bluetooth devices.</p>
+<p id="c13-para-0047">Many simply require pairing using an easily guessed code (often 0000), and then proceed to establish a long-term key that is used to secure their communications. Unfortunately, that long-term key is used to generate session keys when combined with other public factors, thus making attacks against them possible.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c13-fea-0004"/>
+<h3 id="head-2-216">Bluetooth Impersonation Attacks</h3>
+<section><span id="c13-sec-0019"/>
+<p id="c13-para-0048">Bluetooth impersonation attacks (BIAs) take advantage of weaknesses in the Bluetooth specification, which means that all devices that implement Bluetooth as expected are likely to be vulnerable to them. They exploit a lack of mutual authentication, <span aria-label="434" epub:type="pagebreak" id="Page_434" role="doc-pagebreak"/>authentication procedure downgrade options, and the ability to switch roles. Although BIAs have not yet been seen in the wild, as of May 2020 information about them had been published, leading to widespread warnings that exploits were likely to be developed. You can read more about BIAs in the Health-ISAC's advisory here: <code><a href="http://h-isac.org/bluetooth-impersonation-attacks-bias">h-isac.org/bluetooth-impersonation-attacks-bias</a></code>.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c13-para-0049">Despite years of use of Bluetooth in everything from mobile devices to medical devices, wearables, and cars, the security model for Bluetooth has not significantly improved. Therefore, your best option to secure Bluetooth devices is to turn off Bluetooth if it is not absolutely needed and to leave it off except when in use. In addition, if devices allow a pairing code to be set, change it from the default pairing code and install all patches for Bluetooth devices. Unfortunately, this will leave many devices vulnerable, particularly those that are embedded or that are no longer supported by the software or hardware manufacturer.</p>
+</section>
+<section><span id="c13-sec-0020"/>
+<h4 id="head-4-146">RF and Protocol Attacks</h4>
+<p id="c13-para-0050">Attackers who want to conduct evil twin attacks, or who want systems to disconnect from a wireless network for any reason, have two primary options to help with that goal: disassociation attacks and jamming.</p>
+<p id="c13-para-0051"><i>Disassociation</i> describes what happens when a device disconnects from an access point. Many wireless attacks work better if the target system can be forced to disassociate from the access point that it is using when the attack starts. That will cause the system to attempt to reconnect, providing an attacker with a window of opportunity to set up a more powerful evil twin or to capture information as the system tries to reconnect.</p>
+<p id="c13-para-0052">The best way for attackers to force a system to disassociate is typically to send a deauthentication frame, a specific wireless protocol element that can be sent to the access point by spoofing the victim's wireless MAC address. When the AP receives it, it will disassociate the device, requiring it to then reconnect to continue. Since management frames for networks that are using WPA2 are often not encrypted, this type of attack is relatively easy to conduct. WPA3, however, requires protected management frames and will prevent this type of deauthentication attack from working.</p>
+<p id="c13-para-0053">Another means of attacking radio frequency networks like Wi-Fi and Bluetooth is to jam them. <i>Jamming</i> will block all the traffic in the range or frequency it is conducted against. Since jamming is essentially wireless interference, jamming may not always be intentional—in fact, running into devices that are sending out signals in the same frequency range as Wi-Fi devices isn't uncommon.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c13-fea-0005"/>
+<h3 id="head-2-217">Wi-Fi Jammers vs. Deauthers</h3>
+<section><span id="c13-sec-0021"/>
+<p id="c13-para-0054">Wi-Fi deauthers are often incorrectly called jammers. A deauther will send deauthentication frames, whereas a jammer sends out powerful traffic to drown out traffic. Jammers are <span aria-label="435" epub:type="pagebreak" id="Page_435" role="doc-pagebreak"/>generally prohibited in the United States by FCC regulations, whereas deauthers are not since they operate within typical wireless power and protocol norms. You can learn more about both in Seytonic's video: <code><a href="http://www.youtube.com/watch?v=6m2vY2HXU60">www.youtube.com/watch?v=6m2vY2HXU60</a></code>.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c13-sec-0022"/>
+<h4 id="head-4-147">Sideloading and Jailbreaks</h4>
+<p id="c13-para-0055"><i>Sideloading</i> is the process of transferring files to a mobile device, typically via a USB connection, a MicroSD card, or via Bluetooth in order to install applications outside of the official application store. While this is more common for Android devices, it is possible for both Android and iOS devices. Sideloading can allow users to install applications that are not available in their region, which are developed by the organization or others, or which aren't signed. Sideloading itself is not necessarily malicious and has legitimate uses, but it is often prohibited or prevented by organizations as part of their security policies.</p>
+<p id="c13-para-0056"><i>Jailbreaking</i> takes advantage of vulnerabilities or other weaknesses in a mobile device's operating system to conduct a privilege escalation attack and root the system, providing the user with more access than is typically allowed. Once a device is jailbroken, the user can perform actions like installing additional applications not available via the application store, changing settings or options that are not normally available to users, or installing custom elements of the operating system.</p>
+<p id="c13-para-0057">Both of these techniques can be used for malicious purposes, and we will revisit them in the context of mobile device management-based controls later in the chapter.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c13-fea-0006"/>
+<h3 id="head-2-218">Exam Note</h3>
+<section><span id="c13-sec-0023"/>
+<p id="c13-para-0058">As you consider this section, you'll want to focus on sideloading and jailbreaks. The current version of the Security+ exam outline focuses on protection methods, but knowing the attacks you may face is an important part of understanding wireless security and wireless security settings, which we cover next.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+<section><span id="c13-sec-0024"/>
+<h3 id="head-3-199">Designing a Network</h3>
+<p id="c13-para-0059">Designing your Wi-Fi network for usability, performance, and security requires careful wireless access point (WAP) placement as well as configuration. Tuning and placement are critical, because wireless access points have a limited number of channels to operate within, and multiple wireless access points using the same channel within range of each other can decrease the performance and overall usability of the network. At the same time, organizations typically don't want to extend signal to places where they don't intend their network <span aria-label="436" epub:type="pagebreak" id="Page_436" role="doc-pagebreak"/>to reach. That means your design may need to include AP placement options that limit how far wireless signal extends beyond your buildings or corporate premises.</p>
+<p id="c13-para-0060">An important part of designing a wireless network is to conduct a site survey. <i>Site surveys</i> involve moving throughout the entire facility or space to determine what existing networks are in place and to look at the physical structure for the location options for your access points. In new construction, network design is often included in the overall design for the facility. Since most deployments are in existing structures, however, walking through a site to conduct a survey is critical.</p>
+<p id="c13-para-0061">Site survey tools test wireless signal strength as you walk, allowing you to match location using GPS and physically marking your position on a floorplan or map as you go. They then show where wireless signal is, how strong it is, and what channel or channels each access point or device is on in the form of a <i>heatmap</i>. <a href="#c13-fig-0003" id="R_c13-fig-0003">Figure 13.3</a> shows an example of a heatmap for a building. Note that access points have a high signal area that drops off and that the heat maps aren't perfect circles. The building's construction and interference from other devices can influence how the wireless signal behaves.</p> <span aria-label="437" epub:type="pagebreak" id="Page_437" role="doc-pagebreak"/>
+<figure> <img alt="A topographic representation of a wireless heatmap illustrates the wireless signal available from an access point. The info table includes signal, channel, S S I D, M A C, and security." class="center" src="images/c13f003.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c13-fig-0003" id="c13-fig-0003" role="doc-backlink"><b>FIGURE 13.3</b></a></span> A wireless heatmap showing the wireless signal available from an access point</p>
+</figcaption>
+</figure>
+<p id="c13-para-0063">Determining which channels your access points will use is also part of this process. In the 2.4 GHz band, each channel is 20 MHz wide, with a 5 MHz space between. There are 11 channels for 2.4 GHz Wi-Fi deployments, resulting in overlap between channels in the 70 MHz of space allocated, as shown in <a href="#c13-fig-0003">Figure 13.3</a>. In most uses, this means that channels 1, 6, and 11 are used when it is possible to control channel usage in a space to ensure that there is no overlap and thus interference between channels. In dense urban areas or areas where other organizations may have existing Wi-Fi deployments, overlapping the channels in use onto your heatmap will help determine what channel each access point should use.</p>
+<p id="c13-para-0064"><a href="#c13-fig-0004" id="R_c13-fig-0004">Figure 13.4</a> shows the 2.4 GHz channels in use in North America. Additional channels are available in Japan, Indonesia, and outside of the United States, with those areas supporting channels 12 and 13 in addition to the 11 channels U.S. networks use. Note the overlap between the channels, which can cause interference if access points use overlapping channels within reach of each other.</p>
+<figure> <img alt="An illustration of a map of the North American 2.4 gigahertz Wi-Fi channels. It ranges from 2.412 gigahertz to 2.462 gigahertz." class="center" src="images/c13f004.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c13-fig-0004" id="c13-fig-0004" role="doc-backlink"><b>FIGURE 13.4</b></a></span> Overlap map of the North American 2.4 GHz Wi-Fi channels</p>
+</figcaption>
+</figure>
+<p id="c13-para-0065">Many access points will automatically select the best channel when they are deployed. Wireless network management software can monitor for interference and overlap problems and adjust your network using the same capabilities that they use to determine if there are new rogue access points or other unexpected wireless devices in their coverage area. These more advanced enterprise Wi-Fi controllers and management tools can also adjust broadcast power to avoid interference or even to overpower an unwanted device.</p>
+<p id="c13-para-0066">Figuring out what access points and other devices are already in place and what networks may already be accessible in a building or space that you intend to deploy a wireless network into can be a challenge. Fortunately, Wi-Fi analyzer software is used to gather all the data you need to survey and plan networks, create heatmaps, identify the best channel mapping <span aria-label="438" epub:type="pagebreak" id="Page_438" role="doc-pagebreak"/>to use in 2D and 3D models, conduct speed tests, and perform wireless client information, among other tasks. Although each analyzer tool may have different functionality and features, they are a critical part of the toolkit that network engineers and security professionals use to assess wireless networks.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c13-fea-0007"/>
+<h3 id="head-2-219">Exam Note</h3>
+<section><span id="c13-sec-0025"/>
+<p id="c13-para-0067">You'll need to be aware and able to explain the purpose of both heatmaps and site surveys for the exam.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c13-sec-0026"/>
+<h3 id="head-3-200">Controller and Access Point Security</h3>
+<p id="c13-para-0068">Enterprise networks rely on wireless local area network (WLAN) controllers to help manage access points and the organization's wireless network. They offer additional intelligence and monitoring; allow for software-defined wireless networks; and can provide additional services, such as blended Wi-Fi and 5G wireless roaming. Wireless controllers can be deployed as hardware devices, as a cloud service, or as a virtual machine or software package.</p>
+<p id="c13-para-0069">Not all organizations will deploy a wireless controller. Small and even mid-sized organizations may choose to deploy stand-alone access points to provide wireless network access.</p>
+<p id="c13-para-0070">In both of these scenarios, properly securing controllers and access points is an important part of wireless network security. Much like other network devices, both controllers and APs need to be configured to be secure by changing default settings, disabling insecure protocols and services, setting strong passwords, protecting their administrative interfaces by placing them on isolated VLANs or management networks, and ensuring that they are regularly patched and updated. In addition, monitoring and logging should be turned on and tuned to ensure that important information and events are logged both to the wireless controller or access point and to central management software or systems.</p>
+<p id="c13-para-0071">More advanced WLAN controllers and access points may also have advanced security features, such as threat intelligence, intrusion prevention, or other capabilities integrated into them. Depending on your network architecture and security design, you may want to leverage these capabilities, or you may choose to disable them because your network infrastructure implements those capabilities in another location or with another tool, or they do not match the needs of the network where you have them deployed.</p>
+</section>
+<section><span id="c13-sec-0027"/>
+<h3 id="head-3-201">Wi-Fi Security Standards</h3>
+<p id="c13-para-0072">Wi-Fi networks rely on security and certification standards to help keep them secure. In fact, modern wireless devices can't even display the Wi-Fi trademark without being certified to a current standard like WPA2 or WPA3.</p>
+<p><span aria-label="439" epub:type="pagebreak" id="Page_439" role="doc-pagebreak"/>WPA2, or Wi-Fi Protected Access 2, is a widely deployed and used standard that provides two major usage modes:</p>
+<ul class="square" id="c13-list-0011">
+<li id="c13-li-0023">WPA2-Personal, which uses a pre-shared key and is thus often called WPA2-PSK. This allows clients to authenticate without an authentication server infrastructure.</li>
+<li id="c13-li-0024">WPA2-Enterprise relies on a RADIUS authentication server as part of an 802.1X implementation for authentication. Users can thus have unique credentials and be individually identified.</li>
+</ul>
+<p id="c13-para-0074">WPA2 introduced the use of the Counter Mode Cipher Block Chaining Message Authentication Code Protocol (CCMP). CCMP uses Advanced Encryption Standard (AES) encryption to provide confidentiality, delivering much stronger encryption than older protocols like the Wired Equivalent Privacy (WEP) protocol, which was used prior to WPA2. In addition to confidentiality, CCMP provides authentication for the user and access control capabilities. You'll note that user authentication is provided but not network authentication—that is an important addition in WPA3.</p>
+<p id="c13-para-0075"><i>Wi-Fi Protected Access 3 (WPA3)</i>, the replacement for WPA2, has been required to be supported in all Wi-Fi devices since the middle of 2020. WPA3 deployments are increasingly common as WPA3 supplants WPA2 in common usage. WPA3 improves on WPA2 in a number of ways depending on whether it is used in Personal or Enterprise mode. WPA3-Personal provides additional protection for password-based authentication, using a process known as <i>Simultaneous Authentication of Equals (SAE)</i>. SAE replaces the pre-shared keys used in WPA2 and requires interaction between both the client and the network to validate both sides. That interaction slows down brute-force attacks and makes them less likely to succeed. WPA3-Personal also implements perfect forward secrecy, which ensures that the traffic sent between the client and network is secure even if the client's password has been compromised.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c13-fea-0008"/>
+<h3 id="head-2-220">Perfect Forward Secrecy</h3>
+<section><span id="c13-sec-0028"/>
+<p id="c13-para-0076">Perfect forward secrecy uses a process that changes the encryption keys on an ongoing basis so that a single exposed key won't result in the entire communication being exposed. Systems using perfect forward secrecy can refresh the keys they are using throughout a session at set intervals or every time a communication is sent.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>WPA3-Enterprise provides stronger encryption than WPA2, with an optional 192-bit security mode, and adds authenticated encryption and additional controls for deriving and authenticating keys and encrypting network frames. WPA3 thus offers numerous security advantages over existing WPA2 networks.<span aria-label="440" epub:type="pagebreak" id="Page_440" role="doc-pagebreak"/></p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c13-para-0078"><img alt="" role="presentation" src="images/note.png"/> As WPA3 slowly expands in usage, it is important to note the security improvements it brings. WPA3-Personal replaces the WPA2-PSK authentication mode SAE (simultaneous authentication of equals) and implements perfect forward secrecy to keep traffic secure. WPA3-Enterprise continues to use RADIUS but improves the encryption and key management features built into the protocol, and provides greater protection for wireless frames. Open Wi-Fi networks also get an upgrade with the Wi-Fi Enhanced Open certification, which uses opportunistic wireless encryption (OWE) to provide encrypted Wi-Fi on open networks when possible—a major upgrade from the unencrypted open networks used with WPA2.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c13-sec-0030"/>
+<h3 id="head-3-202">Wireless Authentication</h3>
+<p>Although the security protocols and standards that a network uses are important, it is also critical to control access to the network itself. Organizations have a number of choices when it comes to choosing how they provide access to their networks:</p>
+<ul class="square" id="c13-list-0012">
+<li id="c13-li-0025">Open networks, which do not require authentication but that often use a captive portal to gather some information from users who want to use them. Captive portals redirect traffic to a website or registration page before allowing access to the network. Open networks do not provide encryption, leaving user data at risk unless the traffic is sent via secure protocols like HTTPS.</li>
+<li id="c13-li-0026">Use of preshared keys (PSKs) requires a passphrase or key that is shared with anybody who wants to use the network. This allows traffic to be encrypted but does not allow users to be uniquely identified.</li>
+<li id="c13-li-0027">Enterprise authentication relies on a RADIUS server and utilizes an Extensible Authentication Protocol (EAP) for authentication.</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c13-para-0080"><img alt="" role="presentation" src="images/note.png"/> We talked about RADIUS more in <a href="c08.xhtml">Chapter 8</a>'s coverage of identity and access management, if you want to review RADIUS more in this context.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section><span id="c13-sec-0032"/>
+<h4 id="head-4-148">Wireless Authentication Protocols</h4>
+<p id="c13-para-0081">802.1X is an IEEE standard for access control and is used for both wired and wireless devices. In wireless networks, 802.1X is used to integrate with RADIUS servers, allowing enterprise users to authenticate and gain access to the network. Additional actions can be taken based on information about the users, such as placing them in groups or network zones, or taking other actions based on attributes once the user has been authenticated.</p>
+<p>Wi-Fi enterprise networks rely on IEEE 802.1X and various versions of <i>Extensible Authentication Protocol (EAP)</i>. EAP is used by 802.1X as part of the authentication process when devices are authenticating to a RADIUS server. There are many EAP variants because <span aria-label="441" epub:type="pagebreak" id="Page_441" role="doc-pagebreak"/>EAP was designed to be extended, as the name implies. Here are common EAP variants that you should be aware of:</p>
+<ul class="square" id="c13-list-0013">
+<li id="c13-li-0028">Protected EAP (PEAP) authenticates servers using a certificate and wraps EAP using a TLS tunnel to keep it secure. Devices on the network use unique encryption keys, and Temporal Key Integrity Protocol (TKIP) is implemented to replace keys on a regular basis.</li>
+<li id="c13-li-0029">EAP-Flexible Authentication via Secure Tunneling (EAP-FAST) is a Cisco-developed protocol that improved on vulnerabilities in the Lightweight Extensible Authentication Protocol (LEAP). EAP-FAST is focused on providing faster reauthentication while devices are roaming. EAP-FAST works around the public key exchanges that slow down PEAP and EAP-TLS by using a shared secret (symmetric) key for reauthentication. EAP-FAST can use either preshared keys or dynamic keys established using public key authentication.</li>
+<li id="c13-li-0030">EAP-Transport Layer Security (EAP-TLS) implements certificate-based authentication as well as mutual authentication of the device and network. It uses certificates on both client and network devices to generate keys that are then used for communication. EAP-TLS is used less frequently due to the certificate management challenges for deploying and managing certificates on large numbers of client devices.</li>
+<li id="c13-li-0031">EAP-Tunneled Transport Layer Security (EAP-TTLS) extends EAP-TLS, and unlike EAP-TLS, it does not require that client devices have a certificate to create a secure session. This removes the overhead and management effort that EAP-TLS requires to distribute and manage endpoint certificates while still providing TLS support for devices. A concern for EAP-TTLS deployments is that EAP-TTLS can require additional software to be installed on some devices, whereas PEAP, which provides similar functionality, does not. EAP-TTLS does provide support for some less secure authentication mechanisms, meaning that there are times where it may be implemented due to specific requirements.</li>
+</ul>
+<p id="c13-para-0083">When organizations want to work together, <i>RADIUS</i> (Remote Authentication Dial-in User Service) servers can be federated to allow individuals from other organizations to authenticate to remote networks using their home organization's accounts and credentials. Federating RADIUS servers like this requires trust to be established between the RADIUS servers as part of a federation. Many higher education institutions provide a federated authentication service for wireless called <i>eduroam</i>, which allows students, faculty, and staff from any eduroam institution (<code><a href="https://eduroam.org">https://eduroam.org</a></code>) to authenticate and use the networks at any other eduroam supporting organization. Of course, RADIUS servers can be federated in a single organization as well if there are multiple RADIUS domains.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c13-fea-0009"/>
+<h3 id="head-2-221">Exam Note</h3>
+<section><span id="c13-sec-0033"/>
+<p id="c13-para-0084">The Security+ exam outline focuses on WPA3, RADIUS, cryptographic protocols, and authentication protocols without going into specifics about cryptographic protocols and authentication protocols. As you prepare for the exam, you should consider the new <span aria-label="442" epub:type="pagebreak" id="Page_442" role="doc-pagebreak"/>security features of WPA3 as well as its newer security features over WPA2. You'll also want to have a general understanding of RADIUS and authentication protocols like PEAP and EAP.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+</section>
+<section aria-labelledby="head-2-222"><span id="c13-sec-0034"/>
+<h2 id="head-2-222">Managing Secure Mobile Devices</h2>
+<p id="c13-para-0085">Organizations use a wide variety of mobile devices, ranging from phones and tablets to more specialized devices. As you consider how your organization should handle them, you need to plan for your deployment and management model, whether you will use a mobile device management tool, and what security options and settings you will put in place.</p>
+<section><span id="c13-sec-0035"/>
+<h3 id="head-3-203">Mobile Device Deployment Methods</h3>
+<p id="c13-para-0086">When organizations use mobile devices, one important design decision is the deployment and management model that will be selected. The most common options are BYOD, or bring your own device; CYOD, or choose your own device; COPE, or corporate-owned, personally enabled; and fully corporate owned.</p>
+<p id="c13-para-0087">Each of these options has advantages and disadvantages, as outlined in <a href="#c13-tbl-0002" id="R_c13-tbl-0002">Table 13.2</a>.</p> <span aria-label="443" epub:type="pagebreak" id="Page_443" role="doc-pagebreak"/>
+<figure>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c13-tbl-0002" id="c13-tbl-0002" role="doc-backlink"><b>TABLE 13.2</b></a></span> Mobile device deployment and management options</p>
+</figcaption>
+<table border="1">
+<thead>
+<tr>
+<th scope="col"><span class="left"><b/></span></th>
+<th scope="col"><span class="left">Who owns the device</span></th>
+<th scope="col"><span class="left">Who controls and maintains the device</span></th>
+<th scope="col"><span class="left">Description</span></th> </tr> </thead>
+<tbody>
+<tr>
+<td class="left" colspan="4"><b>BYOD</b></td>
+</tr>
+<tr>
+<td class="left">Bring your own device</td>
+<td class="left">The user</td>
+<td class="left">The user</td>
+<td class="left">The user brings their own personally owned device. This provides more user freedom and lower cost to the organization, but greater risk since the organization does not control, secure, or manage the device.</td> </tr>
+<tr>
+<td class="left" colspan="4"><b>CYOD</b></td>
+</tr>
+<tr>
+<td class="left">Choose your own device</td>
+<td class="left">The organization</td>
+<td class="left">The organization</td>
+<td class="left">The organization owns and maintains the device, but allows the user to select it.</td> </tr>
+<tr>
+<td class="left" colspan="4"><b>COPE</b></td>
+</tr>
+<tr>
+<td class="left">Corporate-owned, personally enabled</td>
+<td class="left">The organization</td>
+<td class="left">The organization</td>
+<td class="left">Corporate-provided devices allow reasonable personal use while meeting enterprise security and control needs.</td> </tr>
+<tr>
+<td class="left">Corporate-owned</td>
+<td class="left">The organization</td>
+<td class="left">The organization</td>
+<td class="left">Corporate-owned provides the greatest control but least flexibility.</td> </tr> </tbody> </table>
+</figure>
+<p id="c13-para-0088">These options boil down to a few common questions. First, who owns, chooses, and pays for the device and its connectivity plans? Second, how is the device managed and supported? Third, how are data and applications managed, secured, and protected?</p>
+<p id="c13-para-0089"><i>BYOD</i> places the control in the hands of the end user since they select and manage their own device. In some BYOD models, the organization may use limited management capabilities, such as the ability to remotely wipe email or specific applications, but BYOD's control and management model is heavily based on the user. This option provides far less security and oversight for the organization.</p>
+<p id="c13-para-0090">In <i>CYOD</i> models, the organization pays for the device and typically for the cellular plan or other connectivity. The user selects the device, sometimes from a list of preferred options, rather than bringing whatever they would like to use. In a CYOD design of this type, support is easier since only a limited number of device types will be encountered, and that can make a security model easier to establish as well. Since CYOD continues to leave the device in the hands of the user, security and management is likely to remain less standardized, although this can vary.</p>
+<p id="c13-para-0091">In a <i>COPE</i> model, the device is company-owned and -managed. COPE recognizes that users are unlikely to want to carry two phones and thus allows reasonable personal use on corporate devices. This model allows the organization to control the device more fully while still allowing personal use.</p>
+<p id="c13-para-0092">A fully corporate-owned and -managed device is the most controlled environment and frequently more closely resembles corporate PCs with a complete control and management suite. This is the least user-friendly of the options since a corporate-chosen and -managed device will meet corporate needs but frequently lacks the flexibility of the more end user–centric designs.</p>
+<p>Although these are common descriptions, real-world implementations vary significantly, and the lines between each of these solutions can be blurry. Instead of hard-and-fast rules, these are examples of starting places for organizational mobile device deployment models and can help drive security, management, and operational practice discussions. The best way to look at these practices in real-world use is as part of a spectrum based on organizational needs, capabilities, and actual usage.<span aria-label="444" epub:type="pagebreak" id="Page_444" role="doc-pagebreak"/></p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c13-para-0094"><img alt="" role="presentation" src="images/note.png"/> There's one more acronym you are likely to encounter that the Security+ exam outline doesn't use: COBO, or company-owned business only. COBO is most frequently used to describe company-owned devices used only for business work. Devices used to scan tickets at events, tablets used by maintenance supervisors for work tracking, or inventory control devices all fit the COBO description. COBO doesn't leave a carve-out for personal use at all, so you should think of these as organization-purpose-specific mobile devices.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c13-para-0095">One key technology that can help make mobile device deployments more secure is the use of virtual desktop infrastructure (VDI) to allow relatively low-security devices to access a secured, managed environment. Using VDI allows device users to connect to the remote environment, perform actions, and then return to normal use of their device. Containerization tools can also help split devices between work and personal-use environments, allowing a work container or a personal container to be run on a device without mixing data and access.</p>
+</section>
+<section><span id="c13-sec-0037"/>
+<h3 id="head-3-204">Hardening Mobile Devices</h3>
+<p id="c13-para-0096">Mobile device hardening is often more challenging than enterprise desktop hardening. Mobile devices are not as well designed or prepared for central management and organizational level security in most cases, and there are fewer security options available to administrators. That doesn't mean they can't be hardened, however!</p>
+<p>Much like Windows and Linux, iOS and Android hardening benchmarks are available via the Center for Internet Security (CIS):</p>
+<ul class="square" id="c13-list-0014">
+<li id="c13-li-0032">iOS benchmark: <code><a href="http://www.cisecurity.org/benchmark/apple_ios">www.cisecurity.org/benchmark/apple_ios</a></code></li>
+<li id="c13-li-0033">Android benchmark: <code><a href="http://www.cisecurity.org/benchmark/google_android">www.cisecurity.org/benchmark/google_android</a></code></li>
+</ul>
+<p>Hardening techniques include typical practices like updating and patching the OS, enabling remote wipe functionality, requiring passcodes, setting automatic screen locks, wiping the device after excessive passcode failures, and turning off connectivity options like Bluetooth when not in use.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c13-para-0099"><img alt="" role="presentation" src="images/note.png"/> The National Security Agency (NSA) provides a mobile device best practices guide that includes tips on how to secure mobile devices in high-security environments: <code><a href="https://media.defense.gov/2021/Sep/16/2002855921/-1/-1/0/MOBILE_DEVICE_BEST_PRACTICES_FINAL_V3%20-%20COPY.PDF">https://media.defense.gov/2021/Sep/16/2002855921/-1/-1/0/MOBILE_DEVICE_BEST_PRACTICES_FINAL_V3%20-%20COPY.PDF</a></code>. The guide includes details of what each suggested practice helps to prevent.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c13-sec-0039"/>
+<h3 id="head-3-205">Mobile Device Management</h3>
+<p id="c13-para-0100">Mobile devices can be a challenge to manage, particularly due to operating system limitations, variability between hardware manufacturers, carrier settings, and operating system <span aria-label="445" epub:type="pagebreak" id="Page_445" role="doc-pagebreak"/>versions. Many mobile devices are intended to be used by individuals and don't have the broad set of built-in controls that more business-oriented devices and software typically have. When you add in the wide variety of device deployment models, security practitioners face real challenges in an increasingly mobile device–focused environment.</p>
+<p id="c13-para-0101">Thus, when administrators and security professionals need to manage mobile devices, they frequently turn to mobile device management (MDM) or unified endpoint management (UEM) tools. MDM tools specifically target devices like Android and iOS phones, tablets, and other similar systems. UEM tools combine mobile devices, desktops and laptops, and many other types of devices in a single management platform.</p>
+<p>Regardless of the type of tool you choose, there are a number of features your organization may use to ensure that your mobile devices and the data they contain are secure. Although the following list isn't a complete list of every feature available in MDM, UEM, and mobile application management (MAM) tools, you need to know about each of them, and why you might want to have it to be ready for the exam.</p>
+<ul class="square" id="c13-list-0015">
+<li id="c13-li-0034">Application management features are important to allow enterprise control of applications. These features may include deploying specific applications to all devices; limiting which applications can be installed; remotely adding, removing, or changing applications and settings for them; or monitoring application usage.</li>
+<li id="c13-li-0035">Content management (sometimes called MCM, or mobile content management) ensures secure access and control of organizational files, including documents and media on mobile devices. A major concern for mobile device deployments is the combination of organizational data and personal data on BYOD and shared-use devices. Content management features lock away business data in a controlled space and then help manage access to that data. In many cases, this requires use of the MDM's application on the mobile device to access and use the data.</li>
+<li id="c13-li-0036">Remote-wipe capabilities are used when a device is lost or stolen or when the owner is no longer employed by the organization. It is important to understand the difference between a full device wipe and wiping tools that can wipe only the organizational data and applications that have been deployed to the device. In environments where individuals own the devices, remote wipe can create liability and other issues if it is used and wipes the device. At the same time, remote wipe with a confirmation process that lets you know when it has succeeded is a big part of helping protect organizational data.
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c13-para-0104"><img alt="" role="presentation" src="images/note.png"/> Remote-wipe capabilities will work only if the device can receive the command to perform the wipe. This means that thieves and attackers who want to steal your data will immediately place the device in airplane mode or will isolate the phone using an RF-blocking bag or other container to ensure that the device can't send or receive Bluetooth, Wi-Fi, or cellular signals. A smart attacker can prevent remote wipes and may be able to gain access to your data. That's when device encryption, strong passcodes, and the underlying security of the operating system become even more important.</p><span aria-label="446" epub:type="pagebreak" id="Page_446" role="doc-pagebreak"/>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section></li>
+<li id="c13-li-0037">Geolocation and geofencing capabilities allow you to use the location of the phone to make decisions about its operation. Some organizations may only allow corporate tablets to be used inside corporate facilities to reduce the likelihood of theft or data access outside their buildings. Other organizations may want devices to wipe themselves if they leave a known area. Geolocation can also help locate lost devices, in addition to the many uses for geolocation that we are used to in our daily lives with mapping and similar tools.</li>
+<li id="c13-li-0038">Screen locks, passwords, and PINs are all part of normal device security models to prevent unauthorized access. Screen lock time settings are one of the most frequently set security options for basic mobile device security. Much like desktops and laptops, mobile device management tools also set things like password length, complexity, and how often passwords or PINs must be changed.</li>
+<li id="c13-li-0039">Biometrics are widely available on modern devices, with fingerprints and facial recognition the most broadly adopted and deployed. Biometrics can be integrated into mobile device management capabilities so that you can deploy biometric authentication for users to specific devices and leverage biometric factors for additional security or ease of use.</li>
+<li id="c13-li-0040">Context-aware authentication goes beyond PINs, passwords, and biometrics to better reflect user behavior. Context may include things like location, hours of use, and a wide range of other behavioral elements that can determine whether a user should be able to log in.</li>
+<li id="c13-li-0041">Containerization is an increasingly common solution to handling separation of work and personal-use contexts on devices. Using a secure container to run applications, store data, and otherwise keep the use of a device separate greatly reduces the risk of cross-contamination and exposure. In many MDM models, applications use wrappers to run them, helping keep them separate and secure. In others, a complete containerization environment is run as needed.</li>
+<li id="c13-li-0042">Storage segmentation can be used to keep personal and business data separate as well. This may be separate volumes or even separate encrypted volumes that require specific applications, wrappers, or containers to access them. In fact, storage segmentation and containerization or wrapper technology are often combined to better implement application and separation.</li>
+<li id="c13-li-0043">Full-device encryption (FDE) remains the best way to ensure that stolen or lost devices don't result in a data breach. When combined with remote-wipe capabilities and strong authentication requirements, FDE can provide the greatest chance of a device resisting data theft.</li>
+<li id="c13-li-0044">Push notifications may seem like an odd inclusion here, but sending messages to devices can be useful in a number of scenarios. You may need to alert a user to an issue or ask them to perform an action. Or you may want to communicate with someone who found a lost device or tell a thief that the device is being tracked! Thus, having the ability to send messages from a central location can be a useful tool in an MDM or UEM system.</li>
+</ul>
+<p><span aria-label="447" epub:type="pagebreak" id="Page_447" role="doc-pagebreak"/></p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c13-para-0105"><img alt="" role="presentation" src="images/note.png"/> UEM and MDM tools may also include features like per-application VPN to keep application data secure when that application is used, onboarding tools to help with BYOD environments, and advanced threat detection and response capabilities. Much like other classes of tools, the capabilities of MDM and UEM tools are continuing to overlap more and more every day, broadening the market but also making it more confusing. If you have to choose a tool in this space, it helps to focus on the specific requirements and features your organization needs and to choose your tool based on how those are implemented rather than the laundry list of features that many tools bring.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c13-para-0106">MDM and UEM tools also provide a rich set of controls for user behaviors. They can enable closed or managed third-party application stores or limit what your users can download and use from the application stores that are native to the operating system or device you have deployed. They can also monitor for firmware updates and versions, including whether firmware over-the-air (OTA) updates have been applied to ensure that patching occurs.</p>
+<p id="c13-para-0107">Of course, users may try to get around those controls by rooting their devices, or jailbreaking them so that they can sideload (manually install from a microSD card or via a USB cable) programs or even a custom firmware on the device. MDM and UEM tools will detect these activities by checking for known good firmware and software, and they can apply allow or block lists to the applications that the devices have installed.</p>
+<p>Controlling which services and device capabilities can be used, and even where they can be used, is also a feature that many organizations rely on. Limiting or prohibiting use of cameras and microphones as well as SMS, MMS, and rich communication services (RCS) messages can help prevent data leakage from secure areas. Limiting the use of external media and USB on-the-go (OTG) functionality that allows devices to act as hosts for USB external devices like cameras or storage can also help limit the potential for misuse of devices. MDM and UEM tools also typically allow administrators to control GPS tagging for photos and other documents that may be able to embed GPS data about where they were taken or created. The ability to use location data can be a useful privacy control or may be required by the organization as part of documentation processes.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c13-para-0109"><img alt="" role="presentation" src="images/note.png"/> Some organizations, such as contractors for the U.S. Department of Defense ban cell phones with cameras from their facilities. Although buying a cell phone without a camera used to be easy, finding one now is very difficult. That's where MDM features that can block camera use can be handy. Although there may be workarounds, having a software package with the ability to block features like a camera may be an acceptable and handy control for some organizations.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c13-para-0110">Administrators may also want to control how devices use their wireless connectivity. That can take the form of limiting which Wi-Fi networks devices can connect to, preventing them from forming or joining ad hoc wireless networks, and disabling tethering and the <span aria-label="448" epub:type="pagebreak" id="Page_448" role="doc-pagebreak"/>ability to become a wireless hotspot. Bluetooth and NFC controls can also help prevent the device from being used in ways that don't fit organizational security models, such as use as a payment method or access device.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c13-fea-0010"/>
+<h3 id="head-2-223">Exam Note</h3>
+<section><span id="c13-sec-0043"/>
+<p id="c13-para-0112">As you prepare for the exam, make sure you can outline the differences, benefits, and challenges of BYOD, COPE, and CYOD device models. Review hardening practices, including using standards like the CIS benchmarks for iOS and Android, and be prepared to leverage your understanding of mobile device management tools and techniques to secure organizational devices.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+<section aria-labelledby="head-2-224"><span id="c13-sec-0044"/>
+<h2 id="head-2-224">Summary</h2>
+<p id="c13-para-0113">Building a secure network starts with an understanding of the wireless connectivity options that organizations may choose to deploy. Wi-Fi, cellular, and Bluetooth are found almost everywhere and are key to how organizations connect devices and systems. Knowing which technologies are in play and how they connect devices is the first part of designing and securing your network.</p>
+<p id="c13-para-0114">Understanding common attacks against wireless networks and devices helps security professionals to design a wireless network. Network design is conducted and installation considerations are considered, including using site surveys to understand the environment that the network will be deployed into. Heatmaps show signal propagation and can help with device placement. How you will protect your controllers and access points also comes into play, with concerns ranging from patching and maintenance to secure remote access via protected channels or networks.</p>
+<p id="c13-para-0115">Once a network is designed, security and authentication options are the next layer in your design. WPA3 provides simultaneous authentication of equals (SAE) as well as enterprise models that connect to RADIUS servers to allow the use of organizational credentials. Authentication protocols like EAP and its many variants allow choices based on what your hardware supports and what specific authentication choices you need to make.</p>
+<p id="c13-para-0116">Finally, mobile devices must be secured. Deployment models range from BYOD processes that let users bring their own devices to entirely corporate-owned models that deploy locked-down devices for specific purposes into your end users' hands. Devices also need to be managed, which is where tools for mobile device management come into play. They provide a broad range of features you need to be aware of as a security professional.</p>
+</section> <span aria-label="449" epub:type="pagebreak" id="Page_449" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-225"><span id="c13-sec-0045"/>
+<h2 id="head-2-225">Exam Essentials</h2>
+<p id="c13-li-0045"><b>Modern enterprises rely on many types of wireless connectivity.</b> There are many wireless connectivity options for organizations and individuals. Devices may connect via cellular networks, which place the control of the network in the hands of cellular providers. Wi-Fi is widely used to connect devices to organizational networks at high speed, allowing ease of mobility while providing security using enterprise security protocols. Bluetooth provides connectivity between many devices and cellular is used to provide access from mobile devices and systems that can't connect to Wi-Fi or wired networks.</p>
+<p id="c13-li-0046"><b>Secure wireless network designs take existing networks and physical spaces into account.</b> Site surveys include physical tours of a facility using tools that can identify existing wireless networks and access points as well as signal strengths and other details that help map the location. Network designs take into account channel spacing, access point placement, and even the composition of the building when placing access points.</p>
+<p id="c13-li-0047"><b>Cryptographic and authentication protocols provide wireless security.</b> Both WPA2 and WPA3 are used in modern Wi-Fi networks. These protocols provide for both simple authentication protocols, like WPA2's preshared key mode, and for enterprise authentication models that rely on RADIUS servers to provide user login with organizational credentials. Both rely on cryptographic protocols to encrypt data in transit. Devices are frequently configured to use a variant of the Extensible Authentication Protocol (EAP) that supports the security needs of the organization and that is supported by the deployed wireless devices.</p>
+<p id="c13-li-0048"><b>Understand mobile device vulnerabilities.</b> Sideloading involves copying programs from an external device or system, allowing them to be added to a device and potentially bypassing the device's application store. Jailbreaking provides root access to devices providing greater control but also creating security concerns because it bypasses the device's native security model.</p>
+<p id="c13-li-0049"><b>Securing underlying wireless infrastructure requires strong network device administration and security practices.</b> Wireless controllers and access points must be protected, and installation considerations are important to consider for wireless devices. Like other network devices, controllers and APs need to be regularly patched and updated and must be configured securely. They also must have protected administrative interfaces and should be configured to log and report on the network, their own status, and security issues or potential problems. Heatmaps and site surveys help administrators understand the environment they are deploying into and operating in.</p>
+<p id="c13-li-0050"><b>Managing mobile devices relies on both deployment methods and administrative tools.</b> Deployment methods include bring your own device; choose your own device; corporate-owned, personally enabled; and corporate owned, business only. The risks and rewards for each method need to be assessed as organizations choose which model to deploy their devices in. Once that decision is made, tools like mobile device management or unified endpoint management can be used to configure, secure, manage, and control the devices in a wide range of ways, from deploying applications to securely wiping devices if they are lost or stolen. You need to understand the capabilities and limitations of MDM and UEM products as well as the devices and operating systems that they can manage.</p>
+
+</section> <span aria-label="450" epub:type="pagebreak" id="Page_450" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-226"><span id="c13-sec-0046"/>
+<h2 id="head-2-226">Review Questions</h2>
+<section><span id="c13-exsec-0001"/>
+<ol class="decimal">
+<li id="c13-ex-0001">Alyssa wants to harden iOS devices her organization uses. What set of guidelines can she follow to align to common industry security practices?
+<ol class="upper-alpha">
+<li>OWASP</li>
+<li>CIS benchmarks</li>
+<li>NIST 800-103</li>
+<li>NIST 800-111</li>
+</ol>
+</li>
+<li id="c13-ex-0002">Fred's company issues devices in a BYOD model. That means that Fred wants to ensure that corporate data and applications are kept separate from personal applications on the devices. What technology is best suited to meet this need?
+<ol class="upper-alpha">
+<li>Biometrics</li>
+<li>Full-device encryption</li>
+<li>Context-aware authentication</li>
+<li>Containerization</li>
+</ol>
+</li>
+<li id="c13-ex-0003">Michelle has deployed iPads to her staff who work her company's factory floor. She wants to ensure that the devices work only in the factory and that if they are taken home they cannot access business data or services. What type of solution is best suited to her needs?
+<ol class="upper-alpha">
+<li>Context-aware authentication</li>
+<li>Geofencing</li>
+<li>Geolocation</li>
+<li>Unified endpoint management (UEM)</li>
+</ol>
+</li>
+<li id="c13-ex-0004">Ivan is running an enterprise wireless network and his heatmap shows that two access points are likely conflicting with each other. What will the enterprise access controller most likely do to handle this conflict?
+<ol class="upper-alpha">
+<li>Increase the broadcast power of one of the access points.</li>
+<li>Change the SSID for one of the access points.</li>
+<li>Disable one of the access points.</li>
+<li>Decrease the broadcast power of the access points.</li>
+</ol>
+</li>
+<li id="c13-ex-0005">Chris wants to use geolocation technology to find where phones issued by his organization are located. Which of the following is not commonly used as part of geolocation techniques?
+<ol class="upper-alpha">
+<li>Bluetooth</li>
+<li>GPS</li>
+<li>NFC</li>
+<li>Wi-Fi</li>
+</ol>
+</li>
+<li id="c13-ex-0006"><span aria-label="451" epub:type="pagebreak" id="Page_451" role="doc-pagebreak"/> Daniel knows that WPA3 has added a method to ensure that brute-force attacks against weak preshared keys are less likely to succeed. What is this technology called?
+<ol class="upper-alpha">
+<li>SAE</li>
+<li>CCMP</li>
+<li>PSK</li>
+<li>WPS</li>
+</ol>
+</li>
+<li id="c13-ex-0007">Isabelle needs to select the EAP protocol that she will use with her wireless network. She wants to use a secure protocol that does not require client devices to have a certificate, but she does want to require mutual authentication. Which EAP protocol should she use?
+<ol class="upper-alpha">
+<li>EAP-FAST</li>
+<li>EAP-TTLS</li>
+<li>PEAP</li>
+<li>EAP-TLS</li>
+</ol>
+</li>
+<li id="c13-ex-0008">Theresa has implemented a technology that keeps data for personal use separate from data for her company on mobile devices used by members of her staff. What is this concept called?
+<ol class="upper-alpha">
+<li>Storage segmentation</li>
+<li>Multifactor storage</li>
+<li>Full-device encryption</li>
+<li>Geofencing</li>
+</ol>
+</li>
+<li id="c13-ex-0009">A member of Jake's team tells him that he sideloaded applications on his Android-based company owned phone. What has occurred?
+<ol class="upper-alpha">
+<li>Malware was installed on the phone.</li>
+<li>The phone was rooted to allow administrative access.</li>
+<li>Applications were installed by copying them instead of via an app store.</li>
+<li>The organization's MDM was disabled to avoid its management controls.</li>
+</ol>
+</li>
+<li id="c13-ex-0010">Madhuri disables SMS, MMS, and RCS on phones in her organization. What has she prevented from being sent?
+<ol class="upper-alpha">
+<li>Phone calls and texts</li>
+<li>Text messages and multimedia messages</li>
+<li>Text messages and firmware updates</li>
+<li>Phone calls and multimedia messages</li>
+</ol>
+</li>
+<li id="c13-ex-0011">What is the most frequent concern that leads to GPS tagging being disabled by some companies via an MDM tool?
+<ol class="upper-alpha">
+<li>Chain of custody</li>
+<li>The ability to support geofencing</li>
+<li>Privacy</li>
+<li>Context-aware authentication</li>
+</ol>
+</li>
+<li id="c13-ex-0012"><span aria-label="452" epub:type="pagebreak" id="Page_452" role="doc-pagebreak"/> Bart wants to use a cellular hotspot to provide Internet connectivity via Wi-Fi. What type of network has he set up for his laptop and phone to connect to?
+<ol class="upper-alpha">
+<li>Ad-hoc</li>
+<li>NFC</li>
+<li>Point-to-point</li>
+<li>RFID</li>
+</ol>
+</li>
+<li id="c13-ex-0013">Susan wants to ensure that the threat of a lost phone creating a data breach is minimized. What two technologies should she implement to do this?
+<ol class="upper-alpha">
+<li>Wi-Fi and NFC</li>
+<li>Remote wipe and FDE</li>
+<li>Containerization and NFC</li>
+<li>Geofencing and remote wipe</li>
+</ol>
+</li>
+<li id="c13-ex-0014">What are the two most commonly deployed biometric authentication solutions for mobile devices?
+<ol class="upper-alpha">
+<li>Voice recognition and face recognition</li>
+<li>Fingerprint recognition and gait recognition</li>
+<li>Face recognition and fingerprint recognition</li>
+<li>Voice recognition and fingerprint recognition</li>
+</ol>
+</li>
+<li id="c13-ex-0015">Alaina wants to modify operating system settings and features on her iOS device and to install applications that are not permitted or available via the Apple App Store. What would she need to do to accomplish this?
+<ol class="upper-alpha">
+<li>Deploy an MDM tool to the phone.</li>
+<li>Jailbreak the phone.</li>
+<li>Keymod the phone.</li>
+<li>Install a third-party operating system.</li>
+</ol>
+</li>
+<li id="c13-ex-0016">Jerome wants to allow guests to use his organization's wireless network, but he does not want to provide a preshared key. What solution can he deploy to gather information such as email addresses or other contact information before allowing users to access his open network?
+<ol class="upper-alpha">
+<li>WPS capture mode</li>
+<li>Kerberos</li>
+<li>WPA2</li>
+<li>A captive portal</li>
+</ol>
+</li>
+<li id="c13-ex-0017">Amanda wants to create a view of her buildings that shows Wi-Fi signal strength and coverage. What is this type of view called?
+<ol class="upper-alpha">
+<li>A channel overlay</li>
+<li>A PSK <span aria-label="453" epub:type="pagebreak" id="Page_453" role="doc-pagebreak"/></li>
+<li>A heatmap</li>
+<li>A SSID chart</li>
+</ol>
+</li>
+<li id="c13-ex-0018">Megan wants to prevent access to phones that are misplaced by members of her organization. Which of the following MDM control options is least likely to help her protect phones that are misplaced?
+<ol class="upper-alpha">
+<li>PINs</li>
+<li>Device encryption</li>
+<li>Remote wipe</li>
+<li>Application management</li>
+</ol>
+</li>
+<li id="c13-ex-0019">Gurvinder wants to select a mobile device deployment method that provides employees with devices that they can use as though they're personally owned to maximize flexibility and ease of use. Which deployment model should he select?
+<ol class="upper-alpha">
+<li>CYOD</li>
+<li>COPE</li>
+<li>BYOD</li>
+<li>MOTD</li>
+</ol>
+</li>
+<li id="c13-ex-0020">Octavia discovers that the contact list from her phone has been acquired via a wireless attack. Which of the following is the most likely culprit?
+<ol class="upper-alpha">
+<li>Bluejacking</li>
+<li>An evil maid</li>
+<li>Bluesnarfing</li>
+<li>An evil twin</li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+</section>
+</body>
+</html>

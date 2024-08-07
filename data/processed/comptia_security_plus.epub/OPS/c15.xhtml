@@ -1,0 +1,565 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:svg="http://www.w3.org/2000/svg" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+<head>
+<title>Chapter 15 Digital Forensics</title>
+<link href="WileyTemplate_v5.5.css" rel="stylesheet" type="text/css"/>
+<meta content="urn:uuid:57d469d3-a1d3-48bd-8447-18ce82f57cc2" name="Adept.expected.resource"/>
+</head>
+<body epub:type="bodymatter">
+<section aria-labelledby="c15_1" epub:type="chapter" role="doc-chapter">
+<header>
+<h1 id="c15_1"><span aria-label="489" epub:type="pagebreak" id="Page_489" role="doc-pagebreak"/><span id="c15"/><span class="chapterNumber">Chapter 15</span><br/><span class="chapterTitle">Digital Forensics</span></h1>
+</header>
+<section aria-label="chapter opening"><span id="c15-sec-0001"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p><b>THE COMPTIA SECURITY+ EXAM OBJECTIVES COVERED IN THIS CHAPTER INCLUDE:</b></p>
+<ul class="check1" id="c15-list-0002">
+<li id="c15-li-0002"><b>Domain 4.0: Security Operations</b>
+<ul class="square1" id="c15-list-0003">
+<li id="c15-li-0003">4.8. Explain appropriate incident response activities.
+<ul class="square1" id="c15-list-0004">
+<li id="c15-li-0004">Digital forensics (Legal hold, Chain of custody, Acquisition, Reporting, Preservation, E-discovery)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<span aria-label="490" epub:type="pagebreak" id="Page_490" role="doc-pagebreak"/>
+<p id="c15-para-0006">Digital forensics provides organizations with the investigation and analysis tools and techniques to determine what happened on a system or device. Digital forensics may be carried out to respond to legal holds and electronic discovery requirements in support of internal investigations or as part of an incident response process. Digital forensics even has a role to play in intelligence and counterintelligence efforts.</p>
+<p id="c15-para-0007">In this chapter, you will start by learning about digital forensics, what you need to do to provide quality forensic data, and some of the challenges that the cloud can create with these processes. First, you will learn about legal holds, the notifications sent by opposing counsel to preserve and retain data, and chain-of-custody practices and how they play into the electronic discovery process. After reviewing those common reasons for needing forensic capabilities, you will explore forensic data acquisition, including the order of volatility, which identifies the forensic artifacts at greatest risk of being lost and thus the elements that need to be captured first. Next, you will read about how to ensure that the data you capture is admissible in court and useful as evidence, what is required as part of digital forensic preservation efforts, and what tools and agreements you must have in place to handle the need for forensic data from cloud providers.</p>
+<p id="c15-para-0008">The next section of the chapter focuses on examples of acquisition of forensic images and the use of forensic tools, including acquisition tools like dd, FTK Imager, and WinHex. You will explore basic commands and practices and learn why validation is important as well as how to perform image validation manually. Finally, you will review what a forensic report needs to include and details about the role that forensics plays in intelligence and counterintelligence activities.</p>
+</section>
+<section aria-labelledby="head-2-242"><span id="c15-sec-0002"/>
+<h2 id="head-2-242">Digital Forensic Concepts</h2>
+<p id="c15-para-0009">Organizations use digital forensics techniques for tasks ranging from responding to legal cases to conducting internal investigations and supporting incident response processes. As a security professional, you need to know the basic concepts behind digital forensics; what digital forensics is capable of; and what tools, processes, and procedures organizations put in place to build a digital forensics capability.</p>
+<p id="c15-para-0010">A key element of digital forensics is the acquisition and analysis of digital forensic data. That data can be in the form of drives, files, copies of live memory, and any of the other multitude of digital artifacts that we create in the normal process of using computers and networks. Since forensic information can be found in many different places, planning forensic <span aria-label="491" epub:type="pagebreak" id="Page_491" role="doc-pagebreak"/>information gathering is crucial to having a complete and intact picture of what occurred. Gathering that forensic data is just the start of a process that involves careful documentation and detailed analysis.</p>
+<p id="c15-para-0011">Throughout the process, the creation of documentation—including what you have observed, what conclusions can be made from data, and what evidence exists to support those conclusions—is necessary in order to be successful. You will document timelines and sequences of events, looking for clues as to what occurred and why, and use time stamps, file metadata, event logs, and a multitude of clues to piece together a complete picture.</p>
+<p id="c15-para-0012">The human side of digital forensics can also be important; interviews with individuals involved in the activity can provide important clues. That means you can't merely be a technical forensics expert in some cases—instead, you have to leverage your knowledge of both technology and human behaviors to complete your forensic efforts.</p>
+<section><span id="c15-sec-0003"/>
+<h3 id="head-3-220">Legal Holds and e-Discovery</h3>
+<p>In many cases, forensics starts when litigation is pending or is anticipated. Legal counsel can send a <i>legal hold</i> or litigation hold, a notice that informs an organization that they must preserve data and records that might be destroyed or modified in the course of their normal operations. Backups, paper documents, and electronic files of all sorts must be preserved.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c15-para-0014"><img alt="" role="presentation" src="images/note.png"/> A key concept for legal holds and preservation is “spoliation of evidence,” which means intentionally, recklessly, or negligently altering, destroying, fabricating, hiding, or withholding evidence relevant to legal matters. A legal hold gives an organization notice that they must preserve that data. Ignoring the notice or mishandling data after the notice has been received can be a negative blow against an organization in court. Thus, having a strong legal hold process is important for organizations before a hold shows up.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>Legal holds are often one of the first parts of an electronic discovery or <i>e-discovery</i> process. Discovery processes allow each side of a legal case to obtain evidence from each other and other parties involved in the case, and e-discovery is simply an electronic discovery process. In addition to legal cases, discovery processes are also often used for public records, Freedom of Information Act requests, and investigations. It helps to view e-discovery using a framework, and the Electronic Discovery Reference Model (EDRM) is a useful model for this. The EDRM model uses nine stages to describe the discovery process:</p>
+<ol class="decimal" id="c15-list-0005">
+<li id="c15-li-0005">Information governance before the fact to assess what data exists and to allow scoping and control of what data needs to be provided</li>
+<li id="c15-li-0006">Identification of electronically stored information so that you know what you have and where it is</li>
+<li id="c15-li-0007">Preservation of the information to ensure that it isn't changed or destroyed</li>
+<li id="c15-li-0008"><span aria-label="492" epub:type="pagebreak" id="Page_492" role="doc-pagebreak"/>Collection of the information so that it can be processed and managed as part of the collection process</li>
+<li id="c15-li-0009">Processing of the data to remove unneeded or irrelevant information, as well as preparing it for review and analysis by formatting or collating it</li>
+<li id="c15-li-0010">Review of the data to ensure that it only contains what it is supposed to, and that information that should not be shared is not included</li>
+<li id="c15-li-0011">Analysis of the information to identify key elements like topics, terms, and individuals or organizations</li>
+<li id="c15-li-0012">Production of the data to provide the information to third parties or those involved in legal proceedings</li>
+<li id="c15-li-0013">Presentation of the data, both for testimony in court and for further analysis with experts or involved parties</li>
+</ol>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c15-para-0016"><img alt="" role="presentation" src="images/note.png"/> You can find a lot more information about the EDRM model, including a poster with process flows, self-assessment tools to determine your e-discovery maturity, and other useful information at <code><a href="http://edrm.net">http://edrm.net</a></code>.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c15-para-0017">One of the most important and simultaneously most challenging requirements in this process can be preservation of electronic information, particularly when data covered by a legal hold or discovery process is frequently used or modified by users in your organization. Electronic discovery and legal hold support tools exist that can help with abilities to capture data for users or groups under litigation hold. They often come with desktop, mobile device, and server agents that can gather data, track changes, and document appropriate data handling throughout the legal hold time frame. In organizations that are frequently operating under legal holds, it is not uncommon for frequent litigation targets like CEOs, presidents, and others to be in a near-constant state of legal hold and discovery.</p>
+<p id="c15-para-0018">Cloud operations have made e-discovery even more complex. Cloud vendors provide services to many customers and will not permit you to place an intrusive legal hold and discovery agent in their cloud service. That means that as you adopt cloud services, you must address how you would deal with legal holds for those services. Tools like Google's Vault provide both email archiving and discovery support, helping organizations meet their discovery requirements.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c15-fea-0001"/>
+<h3 id="head-2-243">Exam Note</h3>
+<section><span id="c15-sec-0006"/>
+<p id="c15-para-0019">The Security+ exam outline focuses on legal holds, chain of custody, and e-discovery-related activities in very broad terms. You should be prepared to explain each of these as well as how they are related to incident response.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section> <span aria-label="493" epub:type="pagebreak" id="Page_493" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-244"><span id="c15-sec-0007"/>
+<h2 id="head-2-244">Conducting Digital Forensics</h2>
+<p id="c15-para-0020">Forensic data is acquired using forensic tools like disk and memory imagers, image analysis and timelining tools, low-level editors that can display detailed information about the contents and structure of data on a disk, and other specialized tools. The Security+ Exam Outline includes acquisition, preservation, and reporting as well as legal holds and chain of custody and e-discovery-related activities.</p>
+<section><span id="c15-sec-0008"/>
+<h3 id="head-3-221">Acquiring Forensic Data</h3>
+<p id="c15-para-0021">When a forensic practitioner plans to acquire data, one of the first things they will review is the order of volatility. The <i>order of volatility</i> documents what data is most likely to be lost due to system operations or normal processes. <a href="#c15-fig-0001" id="R_c15-fig-0001">Figure 15.1</a> shows a typical order of volatility chart. Note that frequently changing information like the state of the CPU's registers and cache is first and thus most volatile, and that information about routes, processes, and kernel statistics follows. As the list proceeds, each item is less likely to disappear quickly, with backups being the least likely to change. Following the order of volatility for acquisitions—unless there is a compelling and immediate reason to differ from the list—will provide a forensic analyst with the greatest likelihood of capturing data intact. It is important to remember which items will disappear when a system is powered down or rebooted. In general, that occurs at position 4 for temporary files and swap space on this list. Recovering intact temporary files and data from swap space will depend on how the system was shut down and if it was rebooted successfully afterward.</p> <span aria-label="494" epub:type="pagebreak" id="Page_494" role="doc-pagebreak"/>
+<figure> <img alt="A flow chart of the order of volatility. The steps are as follows. 1. C P U cache and registers. 2. Routing table, A R P cache, process table, kernel statistics. 3. System memory R A M. 4. Temporary files and swap space. 5. Data on the hard disk. 6. Remote logs. 7. Backups." class="center" src="images/c15f001.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c15-fig-0001" id="c15-fig-0001" role="doc-backlink"><b>FIGURE 15.1</b></a></span> The order of volatility</p>
+</figcaption>
+</figure>
+<p>When you're considering digital forensics and how to preserve live data, it helps to keep the order of volatility in mind. If you ignore it, you can lose data due to your forensic work that cannot be recovered or replaced. Common forensic locations include the following:</p>
+<ul class="square" id="c15-list-0006">
+<li id="c15-li-0014">CPU cache and registers are rarely directly captured as part of a normal forensic effort. Although it is possible to capture some of this information using specialized hardware or software, most investigations do not need this level of detail. The CPU cache and registers are constantly changing as processing occurs, making them very volatile.</li>
+<li id="c15-li-0015">Ephemeral data such as the process table, kernel statistics, the system's ARP cache, and similar information can be captured through a combination of memory and disk acquisition, but it is important to remember that the capture will only be of the moment in time when the acquisition is done. If events occurred in the past, this data may not reflect the state that the system was in when the event occurred.</li>
+<li id="c15-li-0016">The content of random access memory (RAM) can be very helpful for both investigations and incident response. Memory can contain encryption keys, ephemeral data from applications, and information that may not be written to the disk but that can be useful to an investigation.</li>
+<li id="c15-li-0017">Swap and pagefile information is disk space used to supplement physical memory. Much like capturing information from RAM, capturing the swap and pagefile can provide insight into running processes. Since it is actively used by the system, particularly on machines with less memory, it also changes more quickly than many files on disk.</li>
+<li id="c15-li-0018">Files and data on a disk change more slowly but are the primary focus of many investigations. It is important to capture the entire disk rather than just copy files so that you can see deleted files and other artifacts that remain resident.</li>
+<li id="c15-li-0019">The operating system itself can contain useful information. The Windows Registry is a common target for analysis since many activities in Windows modify or update the Registry.</li>
+<li id="c15-li-0020">Devices such as smartphones, tablets, IoT devices, and embedded or specialized systems may contain data that can also be forensic targets.
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c15-fea-0002"/>
+<h3 id="head-2-245">Preventing Malicious USB Cloning and Data Acquisition</h3>
+<section><span id="c15-sec-0009"/>
+<p id="c15-para-0024">The ability to obtain data from devices isn't restricted to legitimate uses. In fact, some organizations that face targeted attacks focus on access to their devices when those devices are plugged into untrusted or unknown USB chargers and cables. In those circumstances, USB data blockers that prevent USB data signals from being transferred while still allowing USB charging can be an effective solution.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section></li>
+<li id="c15-li-0021"><span aria-label="495" epub:type="pagebreak" id="Page_495" role="doc-pagebreak"/>Firmware is a less frequently targeted forensic artifact, but knowing how to copy the firmware from a device can be necessary if the firmware was modified as part of an incident or if the firmware may have forensically relevant data. Firmware is often accessible using a hardware interface like a serial cable or direct USB connection or via memory forensic techniques.</li>
+<li id="c15-li-0022">Snapshots from virtual machines (VMs) are an increasingly common artifact that forensic practitioners must deal with.</li>
+<li id="c15-li-0023">Network traffic and logs can provide detailed information or clues about what was sent or received, when, and via what port and protocol, among other useful details.</li>
+<li id="c15-li-0024">Artifacts like devices, printouts, media, and other items related to investigations can all provide additional useful forensic data.</li>
+</ul>
+<p id="c15-para-0025">Regardless of the type of forensic data that is obtained or handled, it is important to maintain <i>chain-of-custody</i> documentation if the forensic case may result in a legal case. In fact, some organizations apply these rules regardless of the case to ensure that a case can be supported if it becomes necessary. Chain-of-custody forms are simple sign-off and documentation forms, as shown in <a href="#c15-fig-0002" id="R_c15-fig-0002">Figure 15.2</a>. Each time the drive, device, or artifact is accessed, transferred, or otherwise handled, it is documented as shown on the form.</p> <span aria-label="496" epub:type="pagebreak" id="Page_496" role="doc-pagebreak"/>
+<figure> <img alt="An illustration of a sample chain-of-custody form. It includes contents like case number, item number, evidence description, collection methods, evidence storage method, evidence secured, and the signature of the collector." class="center" src="images/c15f002.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c15-fig-0002" id="c15-fig-0002" role="doc-backlink"><b>FIGURE 15.2</b></a></span> A sample chain-of-custody form</p>
+</figcaption>
+</figure>
+<p id="c15-para-0026">Evidence in court cases is typically legally admissible if it is offered to prove the facts of a case, and it does not violate the law. To determine if evidence is admissible, criteria such as the relevance and reliability of the evidence, whether the evidence was obtained legally, and whether the evidence is authentic are applied. Evidence must be the best evidence available, and the process and procedures should stand up to challenges in court.</p>
+<p id="c15-para-0027">In addition to these requirements, <i>admissibility</i> for digital forensics requires that the data be intact and unaltered and have provably remained unaltered before and during the forensic process. Forensic analysts must be able to demonstrate that they have appropriate skills, that they used appropriate tools and techniques, and that they have documented their actions in a reliable and testable way via an auditable trail. Thus, their efforts and findings must be repeatable by a third party if necessary.</p>
+<section><span id="c15-sec-0010"/>
+<h4 id="head-4-160">Cloud Forensics</h4>
+<p>Although on-site forensics have made up the bulk of traditional forensic work, the widespread move to cloud services has created new challenges for forensic analysts. Along with the need for tools and capabilities that support discovery needs, organizations are increasingly ensuring that they have worked with their cloud providers. In cloud environments, you will often have to consider:</p>
+<ul class="square" id="c15-list-0007">
+<li id="c15-li-0025">Right-to-audit clauses, which are part of the contract between the cloud service and an organization. A right-to-audit clause provides either a direct ability to audit the cloud provider or an agreement to use a third-party audit agency. Many cloud providers use standard contracts and may not agree to right-to-audit clauses for smaller organizations. In those cases, they may instead provide access to regularly updated third-party audit statements, which may fit the needs of your organization. If you have specific audit requirements, you will need to address them in the contract if possible, and decide whether or not the ability to conduct the audit is a factor in your organization's decision to adopt the cloud provider's services.</li>
+<li id="c15-li-0026">Regulatory and jurisdiction concerns are also a significant element in the adoption of cloud services. Regulatory requirements may vary depending on where the cloud service provider operates and where it is headquartered. The law that covers your data, services, or infrastructure may not be the laws that you have in your locality, region, or country. In addition, jurisdictional concerns may extend beyond which laws cover the overall organization. Cloud providers often have sites around the world, and data replication and other service elements mean that your data or services may be stored or used in a similarly broad set of locations. Local jurisdictions may claim rights to access that data with a search warrant or other legal instrument. Organizations with significant concerns about this, typically address them with contractual terms, through service choices that providers make available to only host data or systems in specific areas or countries and by technical controls such as handling their own encryption keys to ensure they know if the data is accessed.</li>
+<li id="c15-li-0027">Data breach notification laws, like other regulatory elements, also vary from country to country, and in the United States, notably from state to state. Contracts often cover the maximum time that can elapse before customers are notified, and ensuring that you <span aria-label="497" epub:type="pagebreak" id="Page_497" role="doc-pagebreak"/>have an appropriate breach notification clause in place that meets your needs can be important. Some vendors delay for days, weeks, or even months, potentially causing significant issues for customers who are unaware of the breach.</li>
+</ul>
+<p id="c15-para-0029">These considerations mean that acquiring forensic data from a cloud provider is unlikely. Although you may be able to recover forensic data from logs or from systems and infrastructure you maintain in an infrastructure as a service provider's environment, forensic data from the service itself is rarely handed over to customers. Therefore, organizations that use cloud services must have a plan to handle potential incidents and investigations that doesn't rely on direct forensic techniques.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c15-fea-0003"/>
+<h3 id="head-2-246">Regulation and Jurisdiction Issues: Venue and Nexus</h3>
+<section><span id="c15-sec-0011"/>
+<p id="c15-para-0030">Although they aren't directly covered on the exam, regulatory and jurisdictional issues also come into play with two other legal concepts. The first is <i>venue</i>, which is the location where a case is heard. Many contracts will specify venue for cases, typically in a way that is beneficial to the service provider. If you sign a contract and don't pay attention to venue, legal cases might have to be handled far away in another state. At the same time, <i>nexus</i> is the concept of connection. A common example of nexus is found in the decision of whether a company has nexus in a state or locality and must charge tax there. For years, nexus was decided on whether the company had a physical location, distribution center, or otherwise did business physically in a state. Understanding how and why nexus may be decided can be important when you are considering laws and regulations that may impact your organization.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+<section><span id="c15-sec-0012"/>
+<h3 id="head-3-222">Acquisition Tools</h3>
+<p id="c15-para-0031">Acquiring a forensic copy of a drive or device requires a tool that can create a complete copy of the device at a bit-for-bit level. Over the next few pages you'll review examples of such tools, including dd, FTK Imager, and WinHex.</p>
+<p id="c15-para-0032">In Linux, dd is a command-line utility that allows you to create images for forensic or other purposes. The <code>dd</code> command line takes input such as an input location (<code>if</code>), an output location (<code>of</code>), and flags that describe what you want to do, such as create a complete copy despite errors.</p>
+<p>To copy a drive mounted as <code>/dev/sda</code> to a file called <code>example.img</code>, you can execute a command like the following:</p>
+<pre id="c15-code-0001"><code>dd if=/dev/sda of=example.img conv=noerror,sync</code>
+</pre>
+<p>Additional settings are frequently useful to get better performance, such as setting the block size appropriate for the drive. If you want to use dd for forensic purposes, it is worth investing additional time to learn how to adjust its performance using block size settings for the devices and interfaces that you use for your forensic workstation.<span aria-label="498" epub:type="pagebreak" id="Page_498" role="doc-pagebreak"/></p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p><img alt="" role="presentation" src="images/note.png"/> If you are creating a forensic image, you will likely want to create an MD5sum hash of the image as well. To do that, you can <code>use pipes</code>, the <code>tee</code> command, and <code>md5sum</code>:</p>
+<pre id="c15-code-0002"><code>dd if=/dev/sda bs=4k conv=sync,noerror | tee example.img | md5sum&gt; example.md5</code>
+</pre>
+<p id="c15-para-0037">This command will image the device at <code>/dev/sda</code> using a 4k block size, and will then run an <code>MD5sum</code> of the resulting image that will be saved as <code>example.md5</code>. Hashing the original drive (<code>/dev/sda</code>) and comparing the hashes will let you know if you have a valid forensic image.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c15-para-0038">FTK Imager is a free tool for creating forensic images. It supports raw (dd)-style format as well as SMART (ASR Data's format for their SMART forensic tool), E01 (EnCase), and AFF (Advanced Forensics Format) formats commonly used for forensic tools. Understanding what format you need to produce for your analysis tool and whether you may want to have copies in more than one format is important when designing your forensic process.</p>
+<p id="c15-para-0039">Physical drives, logical drives, image files, and folders, as well as multi-CD/DVD volumes are all supported by FTK Imager. In most cases, forensic capture is likely to come from a physical or logical drive. <a href="#c15-fig-0003" id="R_c15-fig-0003">Figure 15.3</a> shows a completed image creation from a physical drive using FTK Imager. Note the matching and validated MD5 and SHA1 hashes and confirmation that there were no bad blocks, which would indicate potential data loss or problems with the drive.</p> <span aria-label="499" epub:type="pagebreak" id="Page_499" role="doc-pagebreak"/>
+<figure> <img alt="A snapshot of output from a completed F T K Imager image. It includes topics like name, sector count, computed hash, report hash, verify result, and bad block list." class="center" src="images/c15f003.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c15-fig-0003" id="c15-fig-0003" role="doc-backlink"><b>FIGURE 15.3</b></a></span> Output from a completed FTK Imager image</p>
+</figcaption>
+</figure>
+<p id="c15-para-0040">In addition to drive imaging tools, forensic analysts are sometimes asked to capture live memory on a system. Along with drive images, FTK Imager can capture live memory from a system, as shown in <a href="#c15-fig-0004" id="R_c15-fig-0004">Figure 15.4</a>. Here, the simple GUI lets you select where the file will go, the filename, whether the system pagefile for virtual memory should be included, and whether to save it in the AD1 native FTK file format.</p>
+<figure> <img alt="A snapshot of F T K Imager Memory. It includes the destination path and destination file name, includes the page file, and creates an A D 1 file." class="center" src="images/c15f004.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c15-fig-0004" id="c15-fig-0004" role="doc-backlink"><b>FIGURE 15.4</b></a></span> FTK Imager's Memory Capture dialog box</p>
+</figcaption>
+</figure>
+<p>Another useful forensic tool is WinHex, a disk editing tool that can also acquire disk images in raw format, as well as its own dedicated WinHex format. WinHex is useful for directly reading and modifying data from a drive, memory, RAID arrays, and other filesystems.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c15-para-0042"><img alt="" role="presentation" src="images/note.png"/> If you have experience performing forensic analysis, you've likely noted that this set of tools is lacking major common tools, like EnCase, FTK, and the Volatility framework, as well as common open source forensic tools like the SANS SIFT distribution. You'll also notice a lack of network forensic access toolkits and information about containers and virtual machine capture in the exam outline. The Security+ exam focuses on broad concepts more than on specific tools, so we've focused on easily available tools for practitioners who want to gain some experience without licensing expensive commercial software.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section><span id="c15-sec-0016"/>
+<h4 id="head-4-161">Acquiring Network Forensic Data</h4>
+<p id="c15-para-0043">Not all forensic data can be found on disks or systems. Network forensics have an increasingly large role to play, whether they are for traditional wired and wireless networks, cellular networks, or others. Since network traffic is ephemeral, capturing traffic for forensic investigation often requires a direct effort to capture and log the data in advance. If network traffic <span aria-label="500" epub:type="pagebreak" id="Page_500" role="doc-pagebreak"/>isn't actively being logged, forensic artifacts like firewall logs, IDS and IPS logs, email server logs, authentication logs, and other secondary sources may provide information about when a device was on a network, what traffic it sent, and where it sent the traffic.</p>
+<p id="c15-para-0044">When forensic examiners do work with network traffic information, they will frequently use a packet analyzer like Wireshark to review captured network traffic. In-depth analysis of packets, traffic flows, and metadata can provide detailed information about network behaviors and content.</p>
+<p id="c15-para-0045">The same taps, span ports, and port mirrors used for network security devices can also be useful for network forensics, allowing copies of network traffic to be sent to collection servers. Although this can be useful, it can also result in massive amounts of data. Capturing all or selected network traffic is a process that most organizations reserve for specific purposes rather than a general practice. Instead, most organizations end up relying on logs, metadata, traffic flow information, and other commonly collected network information to support forensic activities.</p>
+</section>
+<section><span id="c15-sec-0017"/>
+<h4 id="head-4-162">Acquiring Forensic Information from Other Sources</h4>
+<p id="c15-para-0046">In addition to the forensic acquisition types you have learned about so far, two other specific types of acquisition are increasingly common. Acquisition from virtual machines requires additional planning. Unlike a server, desktop, or laptop, a VM is often running in a shared environment, where removal of the system would cause disruption to multiple other servers and services. At the same time, imaging the entire underlying virtualization host would include more data and systems than may be needed or appropriate for the forensic investigation that is in progress. Fortunately, a virtual machine snapshot will provide the information that forensic analysts need and can be captured and then imported into forensic tools using available tools.</p>
+<p>Containers have grown significantly in use and create new challenges for forensic examiners. Since containers are designed to be ephemeral, and their resources are often shared, they create fewer forensic artifacts than a virtual or physical machine. In fact, though containers can be paused, capturing them and returning them to a forensically sound state can be challenging. Container forensics require additional planning and forensic and incident response tools are becoming available to support these needs.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c15-para-0048"><img alt="" role="presentation" src="images/note.png"/> If you'd like to learn more about forensics in a containerized environment, you can find a great video about it at <code><a href="http://www.youtube.com/watch?v=MyXROAqO7YI">www.youtube.com/watch?v=MyXROAqO7YI</a></code>.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+<section><span id="c15-sec-0019"/>
+<h3 id="head-3-223">Validating Forensic Data Integrity</h3>
+<p id="c15-para-0049">Once you've acquired your forensic data, you need to make sure that you have a complete, accurate copy before you begin forensic analysis. At the same time, documenting the provenance of the data and ensuring that the data and process cannot be repudiated (nonrepudiation) are also important.</p>
+<p id="c15-para-0050"><span aria-label="501" epub:type="pagebreak" id="Page_501" role="doc-pagebreak"/>The most common way to validate that a forensic copy matches an original copy is to create a hash of the copy as well as a hash of the original drive, and then compare them. If the hashes match, the forensic copy is identical to the original. Although MD5 and SHA1 are both largely outmoded for purposes where attackers might be involved, they remain useful for quickly hashing forensic images. Providing an MD5 or SHA1 hash of both drives, along with documentation of the process and procedures used, is a common part of building the provenance of the copy. The hashes and other related information will be stored as part of the chain-of-custody and forensic documentation for the case.</p>
+<p>Manually creating a hash of an image file or drive is as simple as pointing the hashing tool to it. Here are examples of a hash for a drive mounted as <code>/dev/sdb</code> on a Linux system and an image file in the current directory. The filename selected for output is <code>drive1.hash</code>, but it could be any filename you choose.</p>
+<pre id="c15-code-0003"><code>md5sum /dev/sdb &gt; drive1.hash</code>
+</pre>
+<p>or</p>
+<pre id="c15-code-0004"><code>md5sum image_file.img &gt; drive1.hash</code>
+</pre>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c15-fea-0004"/>
+<h3 id="head-2-247">Forensic Copies vs. Logical Copies</h3>
+<section><span id="c15-sec-0020"/>
+<p id="c15-para-0053">Simply copying a file, folder, or drive will result in a logical copy. The data will be preserved, but it will not exactly match the state of the drive or device it was copied from. When you conduct forensic analysis, it is important to preserve the full content of the drive at a bit-by-bit level, preserving the exact structure of the drive with deleted file remnants, metadata, and time stamps. Forensic copies are therefore done differently than logical copies. Hashing a file may match, but hashing a logical copy and a forensic copy will provide different values, thus making logical copies inadmissible in many situations where forensic analysis may involve legal action or unusable when changes to the drive or metadata and deleted files are critical to the investigation.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c15-para-0054">The hash value for a drive or image can also be used as a <i>checksum</i> to ensure that it has not changed. Simply rehashing the drive or image and comparing the value produced will tell you if changes have occurred because the hash will be different.</p>
+<p id="c15-para-0055">Careful documentation for cases is a critical part of the forensic process, and <a href="#c15-fig-0005" id="R_c15-fig-0005">Figure 15.5</a> shows how tools like FTK Imager have built-in support for documentation. Associating images with case numbers and including details of which examiner created the file can help with forensic documentation.</p>
+<p id="c15-para-0056">Documenting the <i>provenance</i> or where an image or drive came from and what happened with it, is critical to the presentation of a forensic analysis. Forensic suites have built-in documentation processes to help with this, but manual processes that include pictures, written notes, and documentation about the chain of custody, processes, and steps made in the creation and analysis of forensic images can yield a strong set of documentation to provide <span aria-label="502" epub:type="pagebreak" id="Page_502" role="doc-pagebreak"/>appropriate provenance information. With documentation like this, you can help ensure that inappropriate handling or processes do not result in the repudiation of the images or process, resulting in the loss of a legal case or an inability to support criminal or civil charges.</p>
+<figure> <img alt="A snapshot of F T K Imager evidence item documentation. It includes case number, evidence number, unique description, examiner, and notes." class="center" src="images/c15f005.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c15-fig-0005" id="c15-fig-0005" role="doc-backlink"><b>FIGURE 15.5</b></a></span> FTK Imager's evidence item documentation</p>
+</figcaption>
+</figure>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c15-fea-0005"/>
+<h3 id="head-2-248">Making Sure the Data Doesn't Change</h3>
+<section><span id="c15-sec-0021"/>
+<p id="c15-para-0057">The Security+ exam outline doesn't require you to know about write blockers, but forensic practitioners who need to be able to create legally admissible forensic images and reports must ensure that their work doesn't alter the drives and images they work with. That's the role of a hardware or software write blocker. <i>Write blockers</i> allow a drive or image to be read and accessed without allowing any writes to it. That way, no matter what you do, you cannot alter the contents of the drive in any way while conducting a forensic examination. If you show up in court and the opposing counsel asks you how you did your work and you don't mention a write blocker, your entire set of forensic findings could be at risk!</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c15-sec-0022"/>
+<h3 id="head-3-224">Data Recovery</h3>
+<p id="c15-para-0058">In addition to forensic analysis, forensic techniques may be used to recover data from drives and devices. In fact, file recovery is a common need for organizations due to inadvertent deletions and system problems or errors.</p>
+<p id="c15-para-0059">The ability to recover data in many cases relies on the fact that deleting a file from a drive or device is nondestructive. In other words, when a file is deleted, the fastest way to make the <span aria-label="503" epub:type="pagebreak" id="Page_503" role="doc-pagebreak"/>space available is to simply delete the file's information from the drive's file index and allow the space to be reused when it is needed. Quick formatting a drive in Windows only deletes the file index instead of overwriting or wiping the drive, and other operating systems behave similarly. So, recovering files with a recovery tool or by manual means requires reviewing the drive, finding files based on headers or metadata, and then recovering those files and file fragments.</p>
+<p id="c15-para-0060">In cases where a file has been partially overwritten, it is still possible to recover fragments of the files. Files are stored in blocks, with block sizes depending on the drive and operating system. If a file that is 100 megabytes long is deleted then partially overwritten by a 25 megabyte file, 75 megabytes of the original file could potentially be recovered.</p>
+<p id="c15-para-0061">Forensic analysts rely on this when files have been intentionally deleted to try to hide evidence, and they refer to the open space on a drive as slack space. Slack space analysis is critical to forensic analysis because of the wealth of data about what has previously occurred on a drive that it can provide.</p>
+<p id="c15-para-0062">Antiforensic techniques and data security best practices are the same in this circumstance and suggest overwriting deleted data. Secure delete tools are built into many operating systems or are available as stand-alone tools. If a file has been deleted securely and thus overwritten, there is very little chance of recovery if the tool was successful.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c15-fea-0006"/>
+<h3 id="head-2-249">Flash Media and SSDs: What About Wear Leveling?</h3>
+<section><span id="c15-sec-0023"/>
+<p id="c15-para-0063">Completely removing data from devices like SSDs and flash media that have space they use for wear leveling can be far more difficult than with traditional magnetic media like hard drives. Since wear leveling will move data to less worn cells (blocks of reserved spare space) as needed, those cells that have been marked as unusable due to wear may still contain historic or current data on the drive. Large drives can contain a significant percentage of spare wear leveling capacity—up to double digit percentages—which means that attempts to securely delete information on an SSD may fail. Fortunately, techniques like using full-disk encryption can ensure that even if data remains, it cannot be easily recovered.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c15-sec-0024"/>
+<h3 id="head-3-225">Forensic Suites and a Forensic Case Example</h3>
+<p id="c15-para-0064">Forensic suites are complete forensic solutions designed to support forensic data acquisition, analysis, and reporting. FTK and EnCase are major commercial options, and Autopsy is an open source forensic suite with broad capabilities. Forensic activities with a tool like Autopsy will typically start creating a new case with information about the investigators, the case, and other details that are important to tracking investigations, and then import files into the case. For this example, the NIST Computer Forensic Reference Data Sets (CFReDS) Rhino hunt disk competition image was used. The Rhino hunt includes a small <span aria-label="504" epub:type="pagebreak" id="Page_504" role="doc-pagebreak"/>image file and three network traces that can be viewed in Wireshark. This example focuses on the disk image file. First, as shown in <a href="#c15-fig-0006" id="R_c15-fig-0006">Figure 15.6</a>, you will select the type of file you are importing. Note that you can import a variety of data sources including raw disks, images, and VMs.</p>
+<figure> <img alt="A snapshot of Selecting the type of image or data to import. It includes four steps. 1. Select the type of data and source to add. 2. Select the data source. 3. Configure ingest modules. 4. Add data source." class="center" src="images/c15f006.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c15-fig-0006" id="c15-fig-0006" role="doc-backlink"><b>FIGURE 15.6</b></a></span> Selecting the type of image or data to import</p>
+</figcaption>
+</figure>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c15-para-0066"><img alt="" role="presentation" src="images/note.png"/> If you want some forensic practice, the Computer Forensic Reference Data Sets (CFReDS) can be found at <code><a href="http://www.cfreds.nist.gov">www.cfreds.nist.gov</a></code>. They include solutions so that you can check your answers too.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c15-para-0067">With an image imported, you can select the modules that will be run against the file (<a href="#c15-fig-0007" id="R_c15-fig-0007">Figure 15.7</a>). Modules provide additional analysis capabilities, but they also take time to run. Fortunately, the Rhino Hunt is a small image, but disabling unnecessary modules is a good practice for larger images.</p>
+<p id="c15-para-0068">Once the modules have processed the file, you can then use Autopsy to analyze it. The modules can help with quick discovery of forensic artifacts. In fact, one of the rhinos associated with the hunt shows up immediately when the file discovery module is loaded, along with pictures of crocodiles inserted into the image as part of the exercise. <a href="#c15-fig-0008" id="R_c15-fig-0008">Figure 15.8</a> shows the images that the discovery tool found.</p>
+<span aria-label="505" epub:type="pagebreak" id="Page_505" role="doc-pagebreak"/>
+<span aria-label="506" epub:type="pagebreak" id="Page_506" role="doc-pagebreak"/>
+<figure> <img alt="A snapshot of Ingestion modules in Autopsy. It includes four steps. 1. Select the type of data and source to add. 2. Select the data source. 3. Configure ingest modules. 4. Add data source." class="center" src="images/c15f007.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c15-fig-0007" id="c15-fig-0007" role="doc-backlink"><b>FIGURE 15.7</b></a></span> Ingestion modules in Autopsy</p>
+</figcaption>
+</figure>
+<figure> <img alt="A snapshot of the Autopsy file discovery tool to identify images in an investigation. The steps involved are as follows. 1. Filter which images to show. 2. Choose display settings." class="center" src="images/c15f008.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c15-fig-0008" id="c15-fig-0008" role="doc-backlink"><b>FIGURE 15.8</b></a></span> Using the Autopsy file discovery tool to identify images in an investigation</p>
+</figcaption>
+</figure>
+<p id="c15-para-0069">Although there are many features with tools like this, timelines are very important, and Autopsy's timeline capability allows you to see when filesystem changes and events occurred. This is particularly useful if you know when an incident happened or you need to find events as part of an investigation. Once you know when a person was active or the events started, you can then review the timeline for changes that were made near that time. You can also use timelines to identify active times where other events were likely to be worth reviewing. <a href="#c15-fig-0009" id="R_c15-fig-0009">Figure 15.9</a> shows some of what the Autopsy timeline can help discover, with two file changes in the time frame shown. Further investigation of these times is likely to show activity related to the case.</p> <span aria-label="507" epub:type="pagebreak" id="Page_507" role="doc-pagebreak"/>
+<figure> <img alt="A snapshot of timelining in Autopsy to identify events related to the investigation. It gives a timeline concerning the local time and network with a bar graph." class="center" src="images/c15f009.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c15-fig-0009" id="c15-fig-0009" role="doc-backlink"><b>FIGURE 15.9</b></a></span> Timelining in Autopsy to identify events related to the investigation</p>
+</figcaption>
+</figure>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c15-para-0071"><img alt="" role="presentation" src="images/note.png"/> Timelining capabilities like these rely on accurate time data, and inaccurate time settings can cause problems for forensic timelines. Incorrect time settings, particularly in machines in the same environment, can cause one machine to appear to have been impacted an hour earlier than others, leading practitioners down an incorrect path. Always check to make sure that the time stamps for files and time settings for machines are what you expect them to be before jumping to conclusions about what happened at a specific time.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c15-para-0072">Forensic suites have many other useful features, from distributed cracking of encryption to hash cracking, steganographic encoding detection to find data hidden in images, and a host of other capabilities that are beyond the scope of the Security+ exam.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-250"><span id="c15-sec-0027"/>
+<h2 id="head-2-250">Reporting</h2>
+<p id="c15-para-0073">Although the analysis of digital artifacts and evidence is important to the forensic process, the report that is produced at the end is the key product. Reports need to be useful and contain the relevant information without delving into every technical nuance and detail that the analyst may have found during the investigation.</p>
+<p>A typical forensic report will include:</p>
+<ul class="square" id="c15-list-0008">
+<li id="c15-li-0028">A summary of the forensic investigation and findings.</li>
+<li id="c15-li-0029">An outline of the forensic process, including tools used and any assumptions that were made about the tools or process.</li>
+<li id="c15-li-0030">A series of sections detailing the findings for each device or drive. Accuracy is critical when findings are shared, and conclusions must be backed up with evidence and appropriate detail.</li>
+<li id="c15-li-0031">Recommendations or conclusions in more detail than the summary included.</li>
+</ul>
+<p id="c15-para-0075">Forensic practitioners may also provide a report with full detail of the analysis as part of their documentation package.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c15-fea-0007"/>
+<h3 id="head-2-251">Exam Note</h3>
+<section><span id="c15-sec-0028"/>
+<p id="c15-para-0076">The Security+ exam outline includes acquisition, preservation, and reporting aligned with incident response activities. As you review this section, focus on how acquisition and preservation processes work, how they would be used in an incident response scenario, what information would be needed, and how it would be used when reporting is done.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section> <span aria-label="508" epub:type="pagebreak" id="Page_508" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-252"><span id="c15-sec-0029"/>
+<h2 id="head-2-252">Digital Forensics and Intelligence</h2>
+<p id="c15-para-0077">Although digital forensics work in most organizations is primarily used for legal cases, internal investigations, and incident response (IR), digital forensics also plays a role in both strategic intelligence and counterintelligence efforts. The ability to analyze adversary actions and technology, including components and behaviors of advanced persistent threat tools and processes, has become a key tool in the arsenal for national defense and intelligence groups. At the same time, forensic capabilities can be used for intelligence operations when systems and devices are recovered or acquired, allowing forensic practitioners to recover data and provide it for analysis by intelligence organizations.</p>
+<p id="c15-para-0078">Many of the tools that are used by traditional forensic practitioners are also part of the toolset used by intelligence and counterintelligence organizations. In addition to those capabilities, they require advanced methods of breaking encryption, analyzing software and hardware, and recovering data from systems and devices that are designed to resist or entirely prevent tampering that would be part of a typical forensic process.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c15-fea-0008"/>
+<h3 id="head-2-253">Exam Note</h3>
+<section><span id="c15-sec-0030"/>
+<p id="c15-para-0079">The Security+ exam won't quiz you on specific intelligence and counterintelligence tools or techniques, but you should remember that forensic techniques play an important role in both communities.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section aria-labelledby="head-2-254"><span id="c15-sec-0031"/>
+<h2 id="head-2-254">Summary</h2>
+<p id="c15-para-0080">Digital forensics plays a role in legal cases, criminal investigations, internal investigations, incident responses, and intelligence activities. For most organizations, legal holds, e-discovery, internal investigations, and IR are the most common uses. Legal holds are a notice from opposing counsel to retain data that may be relevant to a current or pending case. Using a discovery model like the EDRM model can help ensure that your discovery and holds process is well planned and executed.</p>
+<p id="c15-para-0081">Forensic data acquisition can be time sensitive, so analysts must understand the order of volatility for systems, which identifies the targets most likely to change or lose data if they are not preserved first. Throughout acquisition and the forensic life cycle, maintaining a chain of custody helps ensure that evidence is admissible in court.</p>
+<p id="c15-para-0082">Cloud services have included additional complexity to forensic efforts. In addition to technical concerns that can make it impossible to conduct direct forensic investigations, contractual and policy considerations need to be taken into account. Many organizations now evaluate right-to-audit clauses, regulatory and jurisdictional concerns, and data breach notification time frames as part of their contracting process for new third-party and cloud services.</p>
+<p id="c15-para-0083"><span aria-label="509" epub:type="pagebreak" id="Page_509" role="doc-pagebreak"/>Acquisition tools and forensic suites provide the ability to collect forensic images and data and to analyze them using powerful capabilities like automatic recognition of images and documents, as well as timelining and other features. Hashing and validating ensures that acquired images are intact, and matching the source data helps ensure that the forensic data will be admissible in court.</p>
+<p id="c15-para-0084">Reporting occurs at the end of a forensic analysis and needs to be complete, with documented reasoning for each conclusion or statement made about the forensic evidence. A standard forensic reporting format helps ensure that readers know what to expect and that they can easily understand what is being presented.</p>
+<p id="c15-para-0085">Forensic techniques may be used for more than just investigations and incident response. They also have a role to play in both intelligence and counterintelligence activities. Intelligence organizations may acquire information using forensic techniques or work to combat other organizations' activities by examining the tools and artifacts that they leave behind.</p>
+</section>
+<section aria-labelledby="head-2-255"><span id="c15-sec-0032"/>
+<h2 id="head-2-255">Exam Essentials</h2>
+<p id="c15-li-0032"><b>Legal holds and e-discovery drive some forensic activities.</b> Organizations face legal cases and need to respond to legal holds, which require them to preserve and protect relevant information for the active or pending case. E-discovery processes also require forensic and other data to be provided as part of a legal case. Organizations must build the capability and technology to respond to these requirements in an appropriate manner to avoid losing cases in court and to support incident response processes.</p>
+<p id="c15-li-0033"><b>Acquisition techniques and procedures ensure usable and admissible forensic data.</b> Different system components and resources are more likely to be changed or lost during the time it takes for a forensic acquisition. Thus, forensic practitioners refer to the order of volatility to determine what is the most volatile and what is the least volatile. Your forensic acquisition process should take the order of volatility into account as well as the circumstances of your acquisition process as part of incident response or legal holds to determine what to capture first.</p>
+<p id="c15-li-0034"><b>There are many options for acquisition tools, and selecting the right tool combines technical needs and skillsets.</b> Image acquisition tools provide the ability to copy disks and volumes using a bit-by-bit method that will capture the complete image including unused or slack space. Acquisition processes vary based on where the data is located, including acquisition using snapshots of virtual machines, data volume copies for cloud environments, and disk images for workstations and mobile devices. Incident responders must bear in mind both maintaining a chain of custody and the specific technical requirements of the system or devices they are capturing data from.</p>
+<p id="c15-li-0035"><b>Validation and preservation of forensic data is a key part of the forensic process.</b> Hashing drives and images ensures that the acquired data matches its source. Forensic practitioners continue to commonly use MD5 or SHA1 despite issues with both hashing methods because adversarial techniques are rarely at play in forensic examinations. Checksums can be used <span aria-label="510" epub:type="pagebreak" id="Page_510" role="doc-pagebreak"/>to ensure that data is not changed, but they do not create the unique fingerprints that hashes are also used to provide for forensic artifacts. Preservation requires following chain-of-custody processes as well as forethought about the use of write blockers, forensic copies, and documented processes and procedures.</p>
+<p id="c15-li-0036"><b>Forensic reports must be well organized and to the point.</b> Forensic analysis doesn't end when the technical examination of devices and drives is over. Forensic reports summarize key findings, then explain the process, procedures and tools, and any limitations or assumptions that impact the investigation. Next, they detail the forensic findings with appropriate evidence and detail to explain how conclusions were reached. They conclude with recommendations or overall conclusions in more detail than the summary provided.</p>
+
+</section> <span aria-label="511" epub:type="pagebreak" id="Page_511" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-256"><span id="c15-sec-0033"/>
+<h2 id="head-2-256">Review Questions</h2>
+<section><span id="c15-exsec-0001"/>
+<ol class="decimal">
+<li id="c15-ex-0001">Felix wants to make an exact copy of a drive using a Linux command-line tool as part of a forensic acquisition process. What command should he use?
+<ol class="upper-alpha">
+<li><code>df</code></li>
+<li><code>cp</code></li>
+<li><code>dd</code></li>
+<li><code>ln</code></li>
+</ol>
+</li>
+<li id="c15-ex-0002">Greg is preparing a forensic report and needs to describe the tools that were used. What should he report about the tools in addition to their names?
+<ol class="upper-alpha">
+<li>The type of system the tools were installed or run on</li>
+<li>The training level or certifications of the team that uses the tools</li>
+<li>Any known limitations or issues with the tools</li>
+<li>The patch level or installed version of the tools</li>
+</ol>
+</li>
+<li id="c15-ex-0003">Gabby is preparing chain-of-custody documentation and identifies a gap in hand-off documentation for an original source forensic drive. What issue should she expect to encounter due to this gap?
+<ol class="upper-alpha">
+<li>The evidence may not be admissible in court.</li>
+<li>The forensic activities may need to be repeated.</li>
+<li>The staff involved may have to re-create the missed log.</li>
+<li>The chain of custody may need to be edited to note the problem.</li>
+</ol>
+</li>
+<li id="c15-ex-0004">Mike's organization has recently moved to a SaaS cloud service and needs to collect forensic data from the cloud service. What process can Mike use to gather the information he needs?
+<ol class="upper-alpha">
+<li>Install forensic imaging software on the cloud service's servers.</li>
+<li>Identify the log information available and request any other desired information from the cloud service provider.</li>
+<li>Engage law enforcement to acquire the forensic data.</li>
+<li>Request the forensic information from third-party auditors.</li>
+</ol>
+</li>
+<li id="c15-ex-0005">Charles wants to obtain a forensic copy of a running virtual machine. What technique should he use to capture the image?
+<ol class="upper-alpha">
+<li>Run <code>dd</code> from within the running machine.</li>
+<li>Use FTK Imager from the virtual machine host.</li>
+<li>Use the VM host to create a snapshot.</li>
+<li>Use WinHex to create a copy from within the running machine.</li>
+</ol>
+</li>
+<li id="c15-ex-0006"><span aria-label="512" epub:type="pagebreak" id="Page_512" role="doc-pagebreak"/> Melissa wants to capture network traffic for forensic purposes. What tool should she use to capture it?
+<ol class="upper-alpha">
+<li>A forensic suite</li>
+<li>Wireshark</li>
+<li>dd</li>
+<li>WinHex</li>
+</ol>
+</li>
+<li id="c15-ex-0007">Frank is concerned about the admissibility of his forensic data. Which of the following is not an element he should be concerned about?
+<ol class="upper-alpha">
+<li>Whether the forensic source data has remained unaltered</li>
+<li>Whether the practices and procedures would survive review by experts</li>
+<li>Whether the evidence is relevant to the case</li>
+<li>Whether the forensic information includes a time stamp</li>
+</ol>
+</li>
+<li id="c15-ex-0008">What is the document that tracks the custody or control of a piece of evidence called?
+<ol class="upper-alpha">
+<li>Evidence log</li>
+<li>Audit log</li>
+<li>Event report</li>
+<li>Chain of custody</li>
+</ol>
+</li>
+<li id="c15-ex-0009">Isaac is performing a forensic analysis on two systems that were compromised in the same event in the same facility. As he performs his analysis, he notices that the event appears to have happened almost exactly one hour earlier on one system than the other. What is the most likely issue he has encountered?
+<ol class="upper-alpha">
+<li>The attacker took an hour to get to the second system.</li>
+<li>One system is set to an incorrect time zone.</li>
+<li>The attacker changed the system clock to throw off forensic practitioners.</li>
+<li>The forensic tool is reading the time stamps incorrectly.</li>
+</ol>
+</li>
+<li id="c15-ex-0010">What legal concept determines the law enforcement agency or agencies that will be involved in a case based on location?
+<ol class="upper-alpha">
+<li>Nexus</li>
+<li>Nonrepudiation</li>
+<li>Jurisdiction</li>
+<li>Admissibility</li>
+</ol>
+</li>
+<li id="c15-ex-0011">Michael wants to acquire the firmware from a running device for analysis. What method is most likely to succeed?
+<ol class="upper-alpha">
+<li>Use forensic memory acquisition techniques.</li>
+<li>Use disk forensic acquisition techniques.</li>
+<li>Remove the firmware chip from the system.</li>
+<li>Shut down the system and boot to the firmware to copy it to a removable device.</li>
+</ol>
+</li>
+<li id="c15-ex-0012"><span aria-label="513" epub:type="pagebreak" id="Page_513" role="doc-pagebreak"/> Charles needs to know about actions an individual performed on a PC. What is the best starting point to help him identify those actions?
+<ol class="upper-alpha">
+<li>Review the system log.</li>
+<li>Review the event log.</li>
+<li>Interview the individual.</li>
+<li>Analyze the system's keystroke log.</li>
+</ol>
+</li>
+<li id="c15-ex-0013">Maria has acquired a disk image from a hard drive using dd, and she wants to ensure that her process is forensically sound. What should her next step be after completing the copy?
+<ol class="upper-alpha">
+<li>Securely wipe the source drive.</li>
+<li>Compare the hashes of the source and target drive.</li>
+<li>Securely wipe the target drive.</li>
+<li>Update her chain-of-custody document.</li>
+</ol>
+</li>
+<li id="c15-ex-0014">Alex has been handed a flash media device that was quick-formatted and has been asked to recover the data. What data will remain on the drive?
+<ol class="upper-alpha">
+<li>No data will remain on the drive.</li>
+<li>Files will remain but file indexes will not.</li>
+<li>File indexes will remain, but the files will be gone.</li>
+<li>Files and file indexes will remain on the drive.</li>
+</ol>
+</li>
+<li id="c15-ex-0015">Naomi is preparing to migrate her organization to a cloud service and wants to ensure that she has the appropriate contractual language in place. Which of the following is not a common item she should include?
+<ol class="upper-alpha">
+<li>Right-to-audit clauses</li>
+<li>Right to forensic examination</li>
+<li>Choice of jurisdiction</li>
+<li>Data breach notification timeframe</li>
+</ol>
+</li>
+<li id="c15-ex-0016">Alaina wants to maintain chain-of-custody documentation and has created a form. Which of the following is not a common element on a chain-of-custody form?
+<ol class="upper-alpha">
+<li>Item identifier number</li>
+<li>Signature of the person transferring the item</li>
+<li>Signature of the person receiving the item</li>
+<li>Method of transport</li>
+</ol>
+</li>
+<li id="c15-ex-0017">Henry is following the EDRM model and is preparing to review data. What two key tasks occur during this stage?
+<ol class="upper-alpha">
+<li>Validating that time stamps match between systems and that data is properly hashed to confirm that original data is sent</li>
+<li>Validating that the legal hold request is valid and that all documented items are included <span aria-label="514" epub:type="pagebreak" id="Page_514" role="doc-pagebreak"/></li>
+<li>Validating that the desired data is included and that information that should not be shared is not included</li>
+<li>Validating that chain of custody is ensured and that malicious files are not included</li>
+</ol>
+</li>
+<li id="c15-ex-0018">Theresa's organization has received a legal hold notice for their files and documents. Which of the following is <i>not</i> an action she needs to take?
+<ol class="upper-alpha">
+<li>Ensure that changes to existing documents related to the case are tracked and that originals can be provided.</li>
+<li>Preserve all existing documents relevant to the case.</li>
+<li>Delete all sensitive documents related to the case.</li>
+<li>Prevent backups that contain files related to the case from being overwritten on their normal schedule.</li>
+</ol>
+</li>
+<li id="c15-ex-0019">Gurvinder wants to follow the order of volatility to guide his forensic data acquisition. Which of the following is the least volatile?
+<ol class="upper-alpha">
+<li>RAM</li>
+<li>Data on the hard drive</li>
+<li>Backups</li>
+<li>Remote logs</li>
+</ol>
+</li>
+<li id="c15-ex-0020">What is the key difference between hashing and checksums?
+<ol class="upper-alpha">
+<li>Both can validate integrity, but a hash also provides a unique digital fingerprint.</li>
+<li>A hash can be reversed, and a checksum cannot be.</li>
+<li>Checksums provide greater security than hashing.</li>
+<li>Checksums have fewer message collisions than a hash.</li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+</section>
+</body>
+</html>

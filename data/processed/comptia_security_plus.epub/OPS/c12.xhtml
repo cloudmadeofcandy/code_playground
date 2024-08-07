@@ -1,0 +1,1222 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:svg="http://www.w3.org/2000/svg" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+<head>
+<title>Chapter 12 Network Security</title>
+<link href="WileyTemplate_v5.5.css" rel="stylesheet" type="text/css"/>
+<meta content="urn:uuid:57d469d3-a1d3-48bd-8447-18ce82f57cc2" name="Adept.expected.resource"/>
+</head>
+<body epub:type="bodymatter">
+<section aria-labelledby="c12_1" epub:type="chapter" role="doc-chapter">
+<header>
+<h1 id="c12_1"><span aria-label="375" epub:type="pagebreak" id="Page_375" role="doc-pagebreak"/><span id="c12"/><span class="chapterNumber">Chapter 12</span><br/><span class="chapterTitle">Network Security</span></h1>
+</header>
+<section aria-label="chapter opening"><span id="c12-sec-0001"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p><b>THE COMPTIA SECURITY+ EXAM OBJECTIVES COVERED IN THIS CHAPTER INCLUDE:</b></p>
+<ul class="check1" id="c12-list-0001">
+<li id="c12-li-0001"><b>Domain 1.0: General Security Concepts</b>
+<ul class="square1" id="c12-list-0002">
+<li id="c12-li-0002">1.2. Summarize fundamental security concepts.
+<ul class="square1" id="c12-list-0003">
+<li id="c12-li-0003">Zero Trust (Control plane (Adaptive identity, Threat scope reduction, Policy-driven access control, Policy Administrator, Policy Engine), Data Plane (Implicit trust zones, Subject/System, Policy Enforcement Point))</li>
+<li id="c12-li-0004">Deception and disruption technology (Honeypot, Honeynet, Honeyfile, Honeytoken)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="c12-li-0005"><b>Domain 2.0: Threats, Vulnerabilities, and Mitigations</b>
+<ul class="square1" id="c12-list-0004">
+<li id="c12-li-0006">2.4. Given a scenario, analyze indicators of malicious activity.
+<ul class="square1" id="c12-list-0005">
+<li id="c12-li-0007">Network attacks (Distributed denial-of-service (DDoS) (Amplified, Reflected), Domain Name System (DNS) attacks, Wireless, On-path, Credential replay, Malicious code)</li>
+</ul>
+</li>
+<li id="c12-li-0008">2.5. Explain the purpose of mitigation techniques used to secure the enterprise.
+<ul class="square1" id="c12-list-0006">
+<li id="c12-li-0009">Segmentation</li>
+<li id="c12-li-0010">Access control (Access control list (ACL))</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="c12-li-0011"><b>Domain 3.0: Security Architecture</b>
+<ul class="square1" id="c12-list-0007">
+<li id="c12-li-0012">3.1. Compare and contrast security implications of different architecture models.
+<ul class="square1" id="c12-list-0008">
+<li id="c12-li-0013">Architecture and infrastructure concepts (Network infrastructure (Physical isolation (Air-gapped), Logical segmentation, Software-defined networking (SDN)), High availability)</li>
+</ul>
+</li>
+<li id="c12-li-0014">3.2. Given a scenario, apply security principles to secure enterprise infrastructure.
+<ul class="square1" id="c12-list-0009">
+<li id="c12-li-0015">Infrastructure considerations (Device placement, Security zones, Attack surface, Connectivity, Failure modes (Fail-open, Fail-closed), Device attribute (Active vs. passive, Inline vs. tap/monitor), Network appliances (Jump server, Proxy server, Intrusion prevention system (IPS)/Intrusion <span aria-label="376" epub:type="pagebreak" id="Page_376" role="doc-pagebreak"/>detection system (IDS), Load balancer, Sensors), Port security (802.1X, Extensible Authentication Protocol (EAP)), Firewall types (Web application firewall (WAF), Unified threat management (UTM), Next-generation firewall (NGFW), Layer 4/Layer 7))</li>
+<li id="c12-li-0016">Secure communications/access (Virtual private network (VPN), Remote access, Tunneling, (Transport Layer Security (TLS), Internet protocol security (IPSec)) Software-defined wide area network (SD-WAN). Secure access service edge (SASE))</li>
+<li id="c12-li-0017">Selection of effective controls</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="c12-li-0018"><b>Domain 4.0: Security Operations</b>
+<ul class="square1" id="c12-list-0010">
+<li id="c12-li-0019">4.1. Given a scenario, apply common security techniques to computing resources.
+<ul class="square1" id="c12-list-0011">
+<li id="c12-li-0020">Hardening targets (Switches, Routers)</li>
+</ul>
+</li>
+<li id="c12-li-0021">4.4. Explain security alerting and monitoring concepts and tools.
+<ul class="square1" id="c12-list-0012">
+<li id="c12-li-0022">Tools (Simple Network Management Protocol (SNMP) traps)</li>
+</ul>
+</li>
+<li id="c12-li-0023">4.5. Given a scenario, modify enterprise capabilities to enhance security.
+<ul class="square1" id="c12-list-0013">
+<li id="c12-li-0024">Firewall (Rules, Access lists, Ports/protocols, Screened subnets)</li>
+<li id="c12-li-0025">IDS/IPS (Trends, Signatures)</li>
+<li id="c12-li-0026">Web filter (Agent-based, Centralized proxy, Universal Resource Locator (URL) scanning, Content categorization, Block rules, Reputation)</li>
+<li id="c12-li-0027">Implementation of secure protocols (Protocol selection, Port selection, Transport method)</li>
+<li id="c12-li-0028">DNS filtering</li>
+<li id="c12-li-0029">Email Security (Domain-based Message Authentication Reporting and Conformance (DMARC), DomainKeys Identified Mail (DKIM), Sender Policy Framework (SPF), Gateway)</li>
+<li id="c12-li-0030">File integrity monitoring</li>
+<li id="c12-li-0031">DLP</li>
+<li id="c12-li-0032">Network Access Control (NAC)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c12-para-0001"><span aria-label="377" epub:type="pagebreak" id="Page_377" role="doc-pagebreak"/></p>
+<p id="c12-para-0016">Networks are at the core of our organizations, transferring data and supporting the services that we rely on to conduct business. That makes them a key target for attackers and a crucial layer in defensive architecture and design.</p>
+<p id="c12-para-0017">In this chapter, you will consider network attack surfaces and learn about important concepts and elements in secure network design such as network segmentation and separation into security zones based on risk and security requirements. You will also explore protective measures like port security, how to secure network traffic using VPNs and tunneling even when traversing untrusted networks, and how software-defined networks and other techniques can be used to build secure, resilient networks.</p>
+<p id="c12-para-0018">Next, you will learn about network appliances and security devices. Jump servers, load balancers and their scheduling techniques and functional models, proxy servers, intrusion detection and prevention systems, and a variety of other network security tools and options make up the middle of this chapter.</p>
+<p id="c12-para-0019">With appliances and devices and design concepts in mind, you will move on to how networks are managed and hardened at the administrative level using out-of-band management techniques, access control lists, and other controls. You will then explore DNS and DNS filtering. In addition, you will review secure protocols and their uses and learn how to identify secure protocols based on their service ports and protocols, what they can and can't do, and how they are frequently used in modern networks. Next, you will learn about modern techniques to secure email.</p>
+<p id="c12-para-0020">Once you have covered tools and techniques, you will review common indicators of malicious activity related to networks, including attacks such as on-path attacks, DNS, layer 2, distributed denial-of-service (DDoS), and credential replay attacks and how they can be detected and sometimes stopped.</p>
+</section>
+<section aria-labelledby="head-2-190"><span id="c12-sec-0003"/>
+<h2 id="head-2-190">Designing Secure Networks</h2>
+<p id="c12-para-0021">As a security professional, you must understand and be able to implement key elements of design and architecture found in enterprise networks in order to properly secure them. You need to know what tools and systems are deployed and why, as well as how they can be deployed as part of a layered security design. <i>Selection of effective controls</i> is a key component in securing networks and requires both an understanding of threats and the controls that can address them.</p> <span aria-label="378" epub:type="pagebreak" id="Page_378" role="doc-pagebreak"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c12-fea-0001"/>
+<h3 id="head-2-191">Exam Note</h3>
+<section><span id="c12-sec-0004"/>
+<p id="c12-para-0022">The Security+ exam doesn't delve deeply into the underlying components of networking and instead focuses on implementing designs and explaining the importance of security concepts and components. For this exam, focus on the items listed in the exam outline, and consider how you would implement them and why they're important.</p>
+<p id="c12-para-0023">However, if you're not familiar with the basics of TCP/IP-based networks, you may want to spend some time familiarizing yourself with them in addition to the contents of this chapter as you progress in your career. Although you're unlikely to be asked to explain a three-way handshake for TCP traffic on the Security+ exam, if you don't know what the handshake is, you'll be missing important tools in your security toolkit. Many security analysts take both the Network+ and the Security+ exam for that reason.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c12-para-0024">Security designs in most environments have historically relied on the concept of defense-in-depth. In other words, they are built around multiple controls designed to ensure that a failure in a single control—or even multiple controls—is unlikely to cause a security breach. As you study for the exam, consider how you would build an effective defense-in-depth design using these components and how you would implement them to ensure that a failure or mistake would not expose your organization to greater risk.</p>
+<p id="c12-para-0025">With defense-in-depth in mind, it helps to understand that networks are also built in layers. The Open Systems Interconnection (OSI) model is used to conceptually describe how devices and software operate together through networks. Beyond the conceptual level, designers will create security zones using devices that separate networks at trust boundaries and will deploy protections appropriate to both the threats and security requirements of each security zone.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c12-fea-0002"/>
+<h3 id="head-2-192">Networking Concepts: The OSI Model</h3>
+<section><span id="c12-sec-0005"/>
+<p id="c12-para-0026">The OSI model describes networks using seven layers, as shown in the following graphic. Although you don't need to memorize the OSI model for the Security+ exam, it does help to put services and protocols into a conceptual model. You will also frequently encounter OSI model references, like “Layer 3 firewalls” or “That's a Layer 1 issue.”</p>
+<p id="c12-para-0028">The OSI model is made up of seven layers, typically divided into two groups: the host layers and the media layers. Layers 1–3, the Physical, Data Link, and Network layers, are considered media layers and are used to transmit the bits that make up network traffic, to transmit frames or logical groups of bits, and to make networks of systems or devices work properly using addressing, routing, and traffic control schemes.</p>
+<p>Layers 4–7, the host layers address things like reliable data transmission, session management, encryption, and translation of data from the application to the network and back works, and that APIs and other high-level tools work.<span aria-label="379" epub:type="pagebreak" id="Page_379" role="doc-pagebreak"/></p>
+<figure><img alt="An illustration with seven layers. 1. Physical Layer. 2. Data Link Layer. 3. Network Layer. 4. Transport Layer. 5. Session Layer. 6. Presentation Layer. 7. Application Layer." class="center" src="images/c12uf001.png"/>
+</figure>
+<p id="c12-para-0030">As you think about network design, remember that this is a logical model that can help you think about where network devices and security tools interact within the layers. You should also consider the layer at which a protocol or technology operates and what that means for what it can see and impact.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section> <span aria-label="380" epub:type="pagebreak" id="Page_380" role="doc-pagebreak"/>
+<section><span id="c12-sec-0006"/>
+<h3 id="head-3-179">Infrastructure Considerations</h3>
+<p id="c12-para-0031">As you prepare for the Security+ exam, you'll want to understand a number of infrastructure design considerations. These considerations can influence how organizations design their infrastructure by impacting cost, manageability, functionality, and availability.</p>
+<p id="c12-para-0032">The organization's <i>attack surface</i>, or a device's attack surface, consists of the points at which an unauthorized user could gain access. This includes services, management interfaces, and any other means that attackers could obtain access to or disrupt the organization. Understanding an organization's attack surface is a key part of security and infrastructure design.</p>
+<p id="c12-para-0033"><i>Device placement</i> is a key concern. Devices may be placed to secure a specific zone or network segment, to allow them to access traffic from a network segment, VLAN, or broader network, or may be placed due to capabilities like maximum throughput. Common placement options include at network borders, datacenter borders, and between network segments and VLANs, but devices may also be placed to protect specific infrastructure.</p>
+<p id="c12-para-0034"><i>Security zones</i> are frequently related to device placement. Security zones are network segments, physical or virtual network segments, or other components of an infrastructure that are able to be separate from less secure zones through logical or physical means. Security zones are typically created on trust or data sensitivity boundaries but may be created for any security-related purpose that an organization may feel is important enough to create a distinct zone. Common examples include segregated guest networks, Internet-facing networks used to host web servers and other Internet accessible services, and management VLANs, which are used to access network device management ports for switches, access points, routers, and similar devices.</p>
+<p id="c12-para-0035"><i>Connectivity considerations</i> include how the organization connects to the Internet, whether it has redundant connections, how fast the connections are, what security controls the upstream connectivity provider can make available, what type of connectivity is in use—whether it is fiber optic, copper, wireless, or some other form of connectivity, and even if the connection paths are physically separated and using different connectivity providers so that a single event cannot disrupt the organization's connectivity.</p>
+<p id="c12-para-0036">Another consideration are <i>failure modes</i> and how the organization wants to address them. When a security device fails, should it fail so that no traffic passes it or should it fail so that all traffic passes it? These two states are known as <i>fail-closed</i> and <i>fail-open</i>, and the choice between the two is tightly linked to the organization's business objectives. If a fail-closed device fails and the organization cannot conduct business, is that a greater risk than the device failing open and the organization not having the security controls it provides available?</p>
+<p id="c12-para-0037">Network taps, which are devices used to monitor or access traffic, may be <i>active</i> or <i>passive</i>. That means they're either powered or not powered. Passive devices can't lose power, and thus a potential failure mode is removed. They can also be in line, with all traffic flowing through them, or they can be set up as taps or monitors, which copy traffic instead of interacting with the original network traffic.</p>
+</section>
+<section><span id="c12-sec-0007"/>
+<h3 id="head-3-180">Network Design Concepts</h3>
+<p id="c12-para-0038">Much like the infrastructure design concepts you just explored, the Security+ exam outline includes a number of network design concepts and terms that you'll need to know as you prepare for the exam.</p> <span aria-label="381" epub:type="pagebreak" id="Page_381" role="doc-pagebreak"/>
+<section><span id="c12-sec-0008"/>
+<h4 id="head-4-107">Physical Isolation</h4>
+<p id="c12-para-0039"><i>Physical isolation</i> is the idea of separating devices so that there is no connection between them. This is commonly known as an <i>air-gapped</i> design because there is “air” between them instead of a network cable or network connection. Physical isolation requires physical presence to move data between air-gapped systems, preventing remote attackers from bridging the gap.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c12-fea-0003"/>
+<h3 id="head-2-193">When Air Gaps Fail</h3>
+<section><span id="c12-sec-0009"/>
+<p id="c12-para-0040">The Stuxnet malware was designed to overcome air-gapped nuclear facility security by copying itself to removable devices. That meant that when technicians plugged their infected USB drives into systems that were protected by physical isolation, the malware was able to attack its intended targets despite the protection that an air-gapped design offers.</p>
+<p id="c12-para-0041">Like any other control, physical separation only addresses some security concerns and needs to be implemented with effective controls to ensure that other bad practices do not bypass the separation.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c12-sec-0010"/>
+<h4 id="head-4-108">Logical Segmentation</h4>
+<p id="c12-para-0042"><i>Logical segmentation</i> is done using software or settings rather than a physical separation using different devices. Virtual local area networks (VLANs) are a common method of providing logical segmentation. VLAN tags are applied to packets that are part of a VLAN, and systems on that virtual network segment see them like they would a physical network segment. Attacks against logical segmentation attempt to bypass the software controls that separate traffic to allow traffic to be sent or received from other segments.</p>
+</section>
+<section><span id="c12-sec-0011"/>
+<h4 id="head-4-109">High Availability</h4>
+<p id="c12-para-0043"><i>High availability (HA)</i> is the ability of a service, system, network, or other element of infrastructure to be consistently available without downtime. High availability designs will typically allow for upgrades, patching, system or service failures, changes in load, and other events without interruption of services. High availability targets are set when systems are designed and then various solutions like clustering, load balancing, and proxies are used to ensure that the solution reaches availability targets. HA design typically focuses on the ability to reliably switch between components as needed, elimination of single points of failure that could cause an outage, and the ability to detect and remediate or work around a failure if it does happen.</p>
+</section>
+<section><span id="c12-sec-0012"/>
+<h4 id="head-4-110">Implementing Secure Protocols</h4>
+<p id="c12-para-0044"><i>Implementation of secure protocols</i> is a common part of ensuring that communications and services are secure. Examples of secure protocols are the use of HTTPS (TLS) instead of <span aria-label="382" epub:type="pagebreak" id="Page_382" role="doc-pagebreak"/>unencrypted HTTP, using SSH instead of Telnet, and wrapping other services using TLS. <i>Protocol selection</i> for most organizations will default to using the secure protocol if it exists and is supported, and security analysts will typically note the use of insecure protocols as a risk if they are discovered. Port selection is related to this, although default ports for protocols are normally preselected. Some protocols use different ports for the secure version of the protocol, like the use of port 443 for HTTPS instead of 80 for HTTP. Others like Microsoft's SQL Server use the same port and rely on client requests for TLS connections on TCP 1433. Finally, selection of the <i>transport method</i>, including protocol versions, is important when selecting secure protocols. Downgrade attacks and simply using insecure versions of protocols can lead to data exposures, so selecting and requiring appropriate versions of protocols like TLS is an important configuration decision.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c12-fea-0004"/>
+<h3 id="head-2-194">Security Through Obscurity and Port Selection</h3>
+<section><span id="c12-sec-0013"/>
+<p id="c12-para-0045">Some organizations choose to run services on alternate ports to decrease the amount of scanning traffic that reaches the system. While running on an alternate port can somewhat decrease specialized scan traffic, many port scans will attempt to scan all available ports and will still discover the service.</p>
+<p id="c12-para-0046">Is using an alternate port the right answer? In some cases, it may make sense for an organization to do so, or it may be required because another service is already running that uses the default port for a service like TCP 80 for a web server. In general, however, using an alternate port is not a typical security control.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c12-sec-0014"/>
+<h4 id="head-4-111">Reputation Services</h4>
+<p id="c12-para-0047"><i>Reputation</i> describes services and data feeds that track IP addresses, domains, and hosts that engage in malicious activity. Reputation services allow organizations to monitor or block potentially malicious actors and systems, and reputation systems are often combined with threat feeds and log monitoring to provide better insight into potential attacks.</p>
+</section>
+<section><span id="c12-sec-0015"/>
+<h4 id="head-4-112">Software-Defined Networking</h4>
+<p id="c12-para-0048"><i>Software-defined networking (SDN)</i> uses software-based network configuration to control networks. SDN designs rely on controllers that manage network devices and configurations, centrally managing the software-defined network. This allows networks to be dynamically tuned based on performance metrics and other configuration settings, and to be customized as needed in a flexible way. SDN can be leveraged as part of security infrastructure by allowing dynamic configuration of security zones to add systems based on authorization or to remove or isolate systems when they need to be quarantined.</p>
+</section> <span aria-label="383" epub:type="pagebreak" id="Page_383" role="doc-pagebreak"/>
+<section><span id="c12-sec-0016"/>
+<h4 id="head-4-113">SD-WAN</h4>
+<p><i>Software-defined wide area network (SD-WAN)</i> is a virtual wide area network design that can combine multiple connectivity services for organizations. SD-WAN is commonly used with technologies like Multiprotocol Label Switching (MPLS), 4G and 5G, and broadband networks. SD-WAN can help by providing high availability and allowing for networks to route traffic based on application requirements while controlling costs by using less expensive connection methods when possible.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c12-para-0050"><img alt="" role="presentation" src="images/note.png"/> While MPLS isn't in the main body of the Security+ exam outline, it still shows up in the acronym list, and you'll encounter it in real-world scenarios where SD-WAN is used. MPLS uses data labels called a forwarding equivalence class rather than network addresses, and labels establish paths between endpoints. A FEC for voice or video would use low-latency paths to ensure real-time traffic delivery. Email would operate in a best effort class since it is less susceptible to delays and higher latency. MPLS is typically a more expensive type of connection, and many organizations are moving away from MPLS using SD-WAN technology.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c12-sec-0018"/>
+<h4 id="head-4-114">Secure Access Service Edge</h4>
+<p><i>Secure Access Service Edge</i> (SASE; pronounced “sassy”) combines virtual private networks, SD-WAN, and cloud-based security tools like firewalls, cloud access security brokers (CASBs), and zero-trust networks to provide secure access for devices regardless of their location. SASE is deployed to ensure that endpoints are secure, that data is secure in transit, and that policy-based security is delivered as intended across an organization's infrastructure and services.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c12-para-0052"><img alt="" role="presentation" src="images/note.png"/> We'll cover VPNs and Zero Trust more later in the chapter, but cloud access security brokers are only mentioned in the acronym list of the Security+ exam outline. A CASB is a policy enforcement point used between service providers and service consumers to allow organizations to enforce their policies for cloud resources. They may be deployed on-premises or in the cloud, and help organizations ensure policies are enforced on the complex array of cloud services that their users access while also providing visibility and other features.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c12-para-0053">As you review the rest of the chapter, you'll want to consider how and where these concepts can be applied to the overall secure network design elements and models that you're reviewing.</p>
+</section>
+</section>
+<section><span id="c12-sec-0020"/>
+<h3 id="head-3-181">Network Segmentation</h3>
+<p>One of the most common concepts in network security is the idea of <i>network segmentation</i>. Network segmentation divides a network into logical or physical groupings that are <span aria-label="384" epub:type="pagebreak" id="Page_384" role="doc-pagebreak"/>frequently based on trust boundaries, functional requirements, or other reasons that help an organization apply controls or assist with functionality. A number of technologies and concepts are used for segmentation, but one of the most common is the use of virtual local area networks (VLANs). A VLAN sets up a broadcast domain that is segmented at the Data Link layer. Switches or other devices are used to create a VLAN using VLAN tags, allowing different ports across multiple network devices like switches to all be part of the same VLAN without other systems plugged into those switches being in the same broadcast domain.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c12-para-0055"><img alt="" role="presentation" src="images/note.png"/> A broadcast domain is a segment of a network in which all the devices or systems can reach one another via packets sent as a broadcast at the Data Link layer. Broadcasts are sent to all machines on a network, so limiting the broadcast domain makes networks less noisy by limiting the number of devices that are able to broadcast to one another. Broadcasts don't cross boundaries between networks—if your computer sends a broadcast, only those systems in the same broadcast domain will see it.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>A number of network design concepts describe specific implementations of network segmentation:</p>
+<ul class="square" id="c12-list-0014">
+<li id="c12-li-0033">Screened subnets (often called DMZs, or demilitarized zones), are network zones that contain systems that are exposed to less trusted areas. Screened subnets are commonly used to contain web servers or other Internet-facing devices but can also describe internal purposes where trust levels are different.</li>
+<li id="c12-li-0034">Intranets are internal networks set up to provide information to employees or other members of an organization, and they are typically protected from external access.</li>
+<li id="c12-li-0035">Extranets are networks that are set up for external access, typically by partners or customers rather than the public at large.</li>
+</ul>
+<p id="c12-para-0057">Although many network designs used to presume that threats would come from outside the security boundaries used to define network segments, the core concept of Zero Trust networks is that nobody is trusted, regardless of whether they are an internal or an external person or system. Therefore, Zero Trust networks should include security between systems as well as at security boundaries.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c12-fea-0005"/>
+<h3 id="head-2-195">They Left on a Packet Traveling East</h3>
+<section><span id="c12-sec-0022"/>
+<p id="c12-para-0058">You may hear the term “east-west” traffic used to describe traffic flow in a datacenter. It helps to picture a network diagram with systems side by side in a datacenter and network connections between zones or groupings at the top and bottom. Traffic between systems in the same security zone move left and right between them—thus “east and west” as you would see on a map. This terminology is used to describe intrasystem communications, and monitoring east-west traffic can be challenging. Modern Zero Trust networks don't assume that system-to-system traffic will be trusted or harmless, and designing security solutions that can handle east-west traffic is an important part of security within network segments.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section> <span aria-label="385" epub:type="pagebreak" id="Page_385" role="doc-pagebreak"/>
+<section><span id="c12-sec-0023"/>
+<h3 id="head-3-182">Zero Trust</h3>
+<p id="c12-para-0059">Organizations are increasingly designing their networks and infrastructure using <i>Zero Trust</i> principles. Unlike traditional “moat and castle” or defense-in-depth designs, Zero Trust presumes that there is no trust boundary and no network edge. Instead, each action is validated when requested as part of a continuous authentication process and access is only allowed after policies are checked, including elements like identity, permissions, system configuration and security status, threat intelligence data review, and security posture.</p>
+<p id="c12-para-0060"><a href="#c12-fig-0001" id="R_c12-fig-0001">Figure 12.1</a> shows NIST's logical diagram of a Zero Trust architecture (ZTA). Note <i>subject</i>'s use of a system that is untrusted connects through a <i>Policy Enforcement Point</i>, allowing trusted transactions to the enterprise resources. The <i>Policy Engine</i> makes policy decisions based on rules that are then acted on by <i>Policy Administrators</i>.</p>
+<figure> <img alt="A diagram of N I S T Zero Trust core trust logical components. The parts labeled are C D M System, industry compliance, threat intelligence, activity logs, policy engine, policy administrator, subject, policy enforcement point, data access policy, P K I, I D Management, and S I E M system." class="center" src="images/c12f001.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c12-fig-0001" id="c12-fig-0001" role="doc-backlink"><b>FIGURE 12.1</b></a></span> NIST Zero Trust core trust logical components</p>
+</figcaption>
+</figure>
+<p>In the NIST model:</p>
+<ul class="square" id="c12-list-0015">
+<li id="c12-li-0036"><i>Subjects</i> are the users, services, or systems that request access or attempt to use rights.</li>
+<li id="c12-li-0037"><i>Policy Engines</i> make policy decisions based on both rules and external systems like those shown in <a href="#c12-fig-0001">Figure 12.1</a>: threat intelligence, identity management, and SIEM devices, to name a few. They use a trust algorithm that makes the decision to grant, deny, or revoke access to a given resource based on the factors used for input to the algorithm. Once a decision is made, it is logged and the policy administrator takes action based on the decision.</li>
+<li id="c12-li-0038"><i>Policy Administrators</i> are not individuals. Rather they are components that establish or remove the communication path between subjects and resources, including creating session-specific authentication tokens or credentials as needed. In cases where access is denied, the policy administrator tells the policy enforcement point to end the session or connection.</li>
+<li id="c12-li-0039"><span aria-label="386" epub:type="pagebreak" id="Page_386" role="doc-pagebreak"/><i>Policy Enforcement Points</i> communicate with Policy Administrators to forward requests from subjects and to receive instruction from the policy administrators about connections to allow or end. While the Policy Enforcement Point is shown as a single logical element in <a href="#c12-fig-0001">Figure 12.1</a>, it is commonly deployed with a local client or application and a gateway element that is part of the network path to services and resources.</li>
+</ul>
+<p id="c12-para-0062">The Security+ exam outline focuses on two major Zero Trust planes that you should be aware of: the Control Plane and the Data Plane.</p>
+<p>The Control Plane is composed of four components:</p>
+<ul class="square" id="c12-list-0016">
+<li id="c12-li-0040"><i>Adaptive identity</i> (often called adaptive authentication), which leverages context-based authentication that considers data points such as where the user is logging in from, what device they are logging in from, and whether the device meets security and configuration requirements. Adaptive authentication methods may then request additional identity validation if requirements are not met or may decline authentication if policies do not allow for additional validation.</li>
+<li id="c12-li-0041"><i>Threat scope reduction</i>, sometimes described as “limited blast radius,” is a key component in Zero Trust design. Limiting the scope of what a subject can do as well or what access is permitted to a resource limits what can go wrong if an issue does occur. Threat scope reduction relies on least privilege as well as identity-based network segmentation that is based on identity rather than tradition network-based segmentation based on things like an IP address, a network segment, or a VLAN.</li>
+<li id="c12-li-0042"><i>Policy-driven access control</i> is a core concept for Zero Trust. Policy Engines rely on policies as they make decisions that are then enforced by the Policy Administrator and Policy Enforcement Points.</li>
+<li id="c12-li-0043">The <i>Policy Administrator,</i> which as described in the NIST model, executes decisions made by a Policy Engine.</li>
+</ul>
+<p>The Data Plane includes:</p>
+<ul class="square" id="c12-list-0017">
+<li id="c12-li-0044"><i>Implicit trust zones</i>, which allow use and movement once a subject is authenticated by a Zero Trust Policy Engine</li>
+<li id="c12-li-0045"><i>Subjects and systems</i> (subject/system), which are the devices and users that are seeking access</li>
+<li id="c12-li-0046"><i>Policy Enforcement Points</i>, which match the NIST description</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c12-para-0065"><img alt="" role="presentation" src="images/note.png"/> You can read the NIST publication about zero trust at <code><a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf">https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf</a></code>.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c12-fea-0006"/>
+<h3 id="head-2-196">Exam Note</h3>
+<section><span id="c12-sec-0025"/>
+<p id="c12-para-0066">The Security+ exam outline emphasizes infrastructure considerations like device placement, attack surface, failure modes, connectivity, security zones, and device attributes. It also considers network design concepts like physical isolation and logical segmentation as <span aria-label="387" epub:type="pagebreak" id="Page_387" role="doc-pagebreak"/>well as high availability, secure protocols, the role of reputation services, SDN, SD-WAN, SASE, and Zero Trust. Make sure you understand each of these concepts as you prepare for the exam.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c12-sec-0026"/>
+<h3 id="head-3-183">Network Access Control</h3>
+<p id="c12-para-0067">Network segmentation helps divide networks into logical security zones, but protecting networks from unauthorized access is also important. That's where <i>network access control (NAC)</i>, sometimes called network admissions control, comes in. NAC technologies focus on determining whether a system or device should be allowed to connect to a network. If it passes the requirements set for admission, NAC places it into an appropriate zone.</p>
+<p id="c12-para-0068">To accomplish this task, NAC can use a software agent that is installed on the computer to perform security checks. Or the process may be agentless and run from a browser or by another means without installing software locally. Capabilities vary, and software agents typically have a greater ability to determine the security state of a machine by validating patch levels, security settings, antivirus versions, and other settings and details before admitting a system to the network. Some NAC solutions also track user behavior, allowing for systems to be removed from the network if they engage in suspect behaviors.</p>
+<p id="c12-para-0069">Since NAC has the ability to validate security status for systems, it can be an effective policy enforcement tool. If a system does not meet security objectives, or if it has an issue, the system can be placed into a quarantine network. There the system can be remediated and rechecked, or it can simply be prohibited from connecting to the network.</p>
+<p>NAC checks can occur before a device is allowed on the network (preadmission) or after it has connected (postadmission). The combination of agent or agentless solutions and pre- or postadmission designs is driven by security objectives and the technical capabilities of an organization's selected tool. Agent-based NAC requires installation and thus adds complexity and maintenance, but it provides greater insight and control. Agentless installations are lightweight and easier to handle for users whose machines may not be centrally managed or who have devices that may not support the NAC agent. However, agentless installations provide less detail. Preadmission NAC decisions keep potentially dangerous systems off a network; postadmission decisions can help with response and prevent failed NAC access attempts from stopping business.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c12-para-0071"><img alt="" role="presentation" src="images/note.png"/> The Security+ exam outline doesn't include pre- and postadmission as part of NAC, but we have included it here because NAC implementations may be agent or agentless and may be pre- or postadmission.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section><span id="c12-sec-0028"/>
+<h4 id="head-4-115">NAC and 802.1X</h4>
+<p>802.1X is a standard for authenticating devices connected to wired and wireless networks. It uses centralized authentication using EAP. 802.1X authentication requires a supplicant, typically a user or client device that wants to connect. The supplicant connects to the network <span aria-label="388" epub:type="pagebreak" id="Page_388" role="doc-pagebreak"/>and the authentication server sends a request for it to identify itself. The supplicant responds, and an authentication process commences. If the supplicant's credentials are accepted, the system is allowed access to the network, often with appropriate rules applied such as placing the supplicant in a network zone or VLAN.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c12-para-0073"><img alt="" role="presentation" src="images/note.png"/> We discussed EAP and 802.1X in more detail in <a href="c08.xhtml">Chapter 8</a>, “Identity and Access Management.”</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c12-para-0074">802.1X is frequently used for port-based authentication or port security, which is used at the network access switch level to authorize ports or to leave them as unauthorized. Thus, if devices want to connect to a local area network, they need to have an 802.1X supplicant and complete an authentication process.</p>
+</section>
+</section>
+<section><span id="c12-sec-0030"/>
+<h3 id="head-3-184">Port Security and Port-Level Protections</h3>
+<p id="c12-para-0075">Protecting networks from devices that are connected to them requires more than just validating their security state using NAC. A number of protections focus on ensuring that the network itself is not endangered by traffic that is sent on it.</p>
+<p><i>Port security</i> is a capability that allows you to limit the number of MAC addresses that can be used on a single port. This prevents a number of possible problems, including MAC (hardware) address spoofing, content-addressable memory (CAM) table overflows, and in some cases, plugging in additional network devices to extend the network. Although port security implementations vary, most port security capabilities allow you to either dynamically lock the port by setting a maximum number of MAC addresses or statically lock the port to allow only specific MAC addresses. Although this type of MAC filtering is less nuanced and provides less information than NAC does, it remains useful.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c12-para-0077"><img alt="" role="presentation" src="images/note.png"/> Port security was originally a term used for Cisco switches, but many practitioners and vendors use it to describe similar features found on switches from other companies as well.</p>
+<p id="c12-para-0078">Port security helps protect the CAM table, which maps MAC addresses to IP addresses, allowing a switch to send traffic to the correct port. If the CAM table doesn't have an entry, the switch will attempt to determine what port the address is on, broadcasting traffic to all ports if necessary. That means attackers who can fill a CAM table can make switches fail over to broadcasting traffic, making otherwise inaccessible traffic visible on their local port.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c12-para-0079">Since spoofing MAC addresses is relatively easy, port security shouldn't be relied on to prevent untrusted systems from connecting. Despite this, configuring port security can help prevent attackers from easily connecting to a network if NAC is not available or not in use. It can also prevent CAM table overflow attacks that might otherwise be possible.</p>
+<p><span aria-label="389" epub:type="pagebreak" id="Page_389" role="doc-pagebreak"/>In addition to port security, protocol-level protections are an important security capability that switches and other network devices provide. These include the following:</p>
+<ul class="square" id="c12-list-0018">
+<li id="c12-li-0047">Loop prevention focuses on detecting loops and then disabling ports to prevent the loops from causing issues. Spanning Tree Protocol (STP), using bridge protocol data units, as well as anti-loop implementations like Cisco's loopback detection capability, sends frames with a switch identifier that the switch then monitors to prevent loops. Although a loop can be as simple as a cable with both ends plugged into the same switch, loops can also result from cables plugged into different switches, firewalls that are plugged in backward, devices with several network cards plugged into different portions of the same network, and other misconfigurations found in a network.</li>
+<li id="c12-li-0048">Broadcast storm prevention, sometimes called storm control, prevents broadcast packets from being amplified as they traverse a network. Preventing broadcast storms relies on several features, such as offering loop protection on ports that will be connected to user devices, enabling STP on switches to make sure that loops are detected and disabled, and rate-limiting broadcast traffic.
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c12-para-0082"><img alt="" role="presentation" src="images/note.png"/> A broadcast storm occurs when a loop in a network causes traffic amplification to occur as switches attempt to figure out where traffic should be sent. The following graphic shows a loop with three switches, A, B, and C, all connected together. Since traffic from host 1 could be coming through either switch B or switch C, when a broadcast is sent out asking where host 1 is, multiple responses will occur. When this occurs, responses will be sent from both switches B and C. As this repeats, amplification will occur, causing a storm.</p>
+<figure><img alt="A network diagram representing two computers connected to three switches, A, B, and C. Switches B and C are connected parallelly along with switch A." class="center" src="images/c12uf002.png"/>
+<figcaption> 
+</figcaption>
+</figure>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section></li>
+<li id="c12-li-0049">Bridge Protocol Data Unit (BPDU) Guard protects STP by preventing ports that should not send BPDU messages from sending them. It is typically applied to switch ports where user devices and servers will be plugged in. Ports where switches will be <span aria-label="390" epub:type="pagebreak" id="Page_390" role="doc-pagebreak"/>connected will not have BPDU Guard turned on, because they may need to send BPDU messages that provide information about ports, addresses, priorities, and costs as part of the underlying management and control of the network.</li>
+<li id="c12-li-0050">Dynamic Host Configuration Protocol (DHCP) snooping focuses on preventing rogue DHCP servers from handing out IP addresses to clients in a managed network. DHCP snooping drops messages from any DHCP server that is not on a list of trusted servers, but it can also be configured with additional options such as the ability to block DHCP messages where the source MAC and the hardware MAC of a network card do not match. A final security option is to drop messages releasing or declining a DHCP offer if the release or decline does not come from the same port that the request came from, preventing attackers from causing a DHCP offer or renewal to fail.</li>
+</ul>
+<p id="c12-para-0084">These protections may seem like obvious choices, but network administrators need to balance the administrative cost and time to implement them for each port in a network, as well as the potential for unexpected impacts if security settings affect services. Implementation choices must take into account whether attacks are likely, how controlled the network segment or access to network ports is, and how difficult it will be to manage all the network ports that must be configured and maintained. Central network management tools as well as dynamic and rules-based management capabilities can reduce the time needed for maintenance and configuration, but effort will still be required for initial setup and ongoing support.</p>
+</section>
+<section><span id="c12-sec-0033"/>
+<h3 id="head-3-185">Virtual Private Networks and Remote Access</h3>
+<p id="c12-para-0085">A virtual private network (VPN) is a way to create a virtual network link across a public network that allows the endpoints to act as though they are on the same network. Although it is easy to think about VPNs as an encrypted tunnel, encryption is not a requirement of a VPN tunnel.</p>
+<p id="c12-para-0086">There are two major VPN technologies in use in modern networks. The first, <i>IPSec VPNs</i>, operate at layer 3, require a client, and can operate in either tunnel or transport mode. In tunnel mode, entire packets of data sent to the other end of the VPN connection are protected. In transport mode, the IP header is not protected but the IP payload is. IPSec VPNs are often used for site-to-site VPNs and for VPNs that need to transport more than just web and application traffic.</p>
+<p id="c12-para-0087">The second common VPN technology is <i>SSL VPNs</i> (although they actually use TLS in current implementations—the common substitution of SSL for TLS continues here). SSL VPNs can either use a portal-based approach (typically using HTML5), where users access it via a web page and then access services through that connection, or they can offer a tunnel mode like IPSec VPNs. SSL VPNs are popular because they can be used without a client installed or specific endpoint configuration that is normally required for IPSec VPNs. SSL VPNs also provide the ability to segment application access, allowing them to be more granular without additional complex configuration to create security segments using different VPN names or hosts, as most IPSec VPN tools would require.</p>
+<p id="c12-para-0088">In addition to the underlying technology that is used by VPNs, there are implementation decisions that are driven by how a VPN will be used and what traffic it needs to carry.</p> <span aria-label="391" epub:type="pagebreak" id="Page_391" role="doc-pagebreak"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c12-fea-0007"/>
+<h3 id="head-2-197">Exam Note</h3>
+<section><span id="c12-sec-0034"/>
+<p id="c12-para-0089">The Security+ exam outline lists IPSec and TLS under tunneling instead of under VPNs. The underlying technology for VPNs and tunneling is the same, and many security analysts will encounter VPN choices between IPSec VPNs and TLS VPNs before they have to choose between other types of tunneling. Just remember for the purposes of the exam that you may encounter this in either place.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c12-para-0090">The first decision point for many VPN implementations is whether the VPN will be used for remote access or if it will be a <i>site-to-site VPN</i>. <i>Remote-access</i> VPNs are commonly used for traveling staff and other remote workers, and site-to-site VPNs are used to create a secure network channel between two or more sites. Since site-to-site VPNs are typically used to extend an organization's network, they are frequently always-on VPNs, meaning that they are connected and available all of the time, and that if they experience a failure they will automatically attempt to reconnect. Remote-access VPNs are most frequently used in an as-needed mode, with remote workers turning on the VPN when they need to connect to specific resources or systems or when they need a trusted network connection.</p>
+<section><span id="c12-sec-0035"/>
+<h4 id="head-4-116">Tunneling</h4>
+<p>The second important decision for VPN implementations is whether they will be a <i>split-tunnel VPN</i> or a <i>full-tunnel VPN</i>. A full-tunnel VPN sends all network traffic through the VPN tunnel, keeping it secure as it goes to the remote trusted network. A split-tunnel VPN only sends traffic intended for systems on the remote trusted network through the VPN tunnel. Split tunnels offer the advantage of using less bandwidth for the hosting site, since network traffic that is not intended for that network will be sent out through whatever Internet service provider the VPN user is connected to. However, that means the traffic is not protected by the VPN and cannot be monitored.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c12-para-0092"><img alt="" role="presentation" src="images/note.png"/> A full-tunnel VPN is a great way to ensure that traffic sent through an untrusted network, such as those found at a coffee shop, hotel, or other location, remains secure. If the network you are sending traffic through cannot be trusted, a split-tunnel VPN may expose more information about your network traffic than you want it to!</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c12-fea-0008"/>
+<h3 id="head-2-198">Exam Note</h3>
+<section><span id="c12-sec-0037"/>
+<p id="c12-para-0093">NAC, 802.1X, port security, and VPN all have roles to play in how networks and network traffic are secured. For the exam, you'll need to be familiar with each of them and how they're used in secure networks.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section> <span aria-label="392" epub:type="pagebreak" id="Page_392" role="doc-pagebreak"/>
+<section><span id="c12-sec-0038"/>
+<h3 id="head-3-186">Network Appliances and Security Tools</h3>
+<p id="c12-para-0094">There are many different types of network appliances that you should consider as part of your network design. Special-purpose hardware devices, virtual machine and cloud-based software appliances, and hybrid models in both open source and proprietary commercial versions are used by organizations.</p>
+<p id="c12-para-0095">Hardware appliances can offer the advantage of being purpose-built, allowing very high-speed traffic handling capabilities or other capabilities. Software and virtual machine appliances can be easily deployed and can be scaled based on needs, whereas cloud appliances can be dynamically created, scaled, and used as needed. Regardless of the underlying system, appliances offer vendors a way to offer an integrated system or device that can be deployed and used in known ways, providing a more controlled experience than a software package or service deployed on a customer-owned server.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c12-fea-0009"/>
+<h3 id="head-2-199">Hardware, Software, and Vendor Choices</h3>
+<section><span id="c12-sec-0039"/>
+<p id="c12-para-0096">When you choose a network appliance, you must consider more than just the functionality. If you're deploying a device, you also need to determine whether you need or want a hardware appliance or a software appliance that runs on an existing operating system, a virtual machine, or a cloud-based service or appliance. Drivers for that decision include the environment where you're deploying it, the capabilities you need, what your existing infrastructure is, upgradability, support, and the relative cost of the options. So, deciding that you need a DNS appliance isn't as simple as picking one off a vendor website!</p>
+<p id="c12-para-0097">You should also consider whether open source or proprietary commercial options are the right fit for your organization. Open source options may be less expensive or faster to acquire in organizations with procurement and licensing restrictions. Commercial offerings may offer better support, additional proprietary features, certifications and training, or other desirable options as well. When you select a network appliance, make sure you take into account how you will deploy it—hardware, software, virtual, or cloud—and whether you want an open source or proprietary solution.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section><span id="c12-sec-0040"/>
+<h4 id="head-4-117">Jump Servers</h4>
+<p id="c12-para-0098">Administrators and other staff need ways to securely operate in security zones with different security levels. <i>Jump servers</i>, sometimes called jump boxes, are a common solution. A jump server is a secured and monitored system used to provide that access. It is typically configured with the tools required for administrative work and is frequently accessed with SSH, RDP, or other remote desktop methods. Jump boxes should be configured to create and maintain a secure audit trail, with copies maintained in a separate environment to allow for incident and issue investigations.</p>
+</section> <span aria-label="393" epub:type="pagebreak" id="Page_393" role="doc-pagebreak"/>
+<section><span id="c12-sec-0041"/>
+<h4 id="head-4-118">Load Balancing</h4>
+<p id="c12-para-0099"><i>Load balancers</i> are used to distribute traffic to multiple systems, provide redundancy, and allow for ease of upgrades and patching. They are commonly used for web service infrastructures, but other types of load balancers can also be found in use throughout many networks. Load balancers typically present a virtual IP (VIP), which clients send service requests to on a service port. The load balancer then distributes those requests to servers in a pool or group.</p>
+<p>Two major modes of operation are common for load balancers:</p>
+<ul class="square" id="c12-list-0019">
+<li id="c12-li-0051">Active/active load balancer designs distribute the load among multiple systems that are online and in use at the same time.</li>
+<li id="c12-li-0052">Active/passive load balancer designs bring backup or secondary systems online when an active system is removed or fails to respond properly to a health check. This type of environment is more likely to be found as part of disaster recovery or business continuity environments, and it may offer less capability from the passive system to ensure some functionality remains.</li>
+</ul>
+<p>Load balancers rely on a variety of scheduling or load-balancing algorithms to choose where traffic is sent to. Here are a few of the most common options:</p>
+<ul class="square" id="c12-list-0020">
+<li id="c12-li-0053">Round-robin sends each request to servers by working through a list, with each server receiving traffic in turn.</li>
+<li id="c12-li-0054">Least connection sends traffic to the server with the fewest number of active connections.</li>
+<li id="c12-li-0055">Agent-based adaptive balancing monitors the load and other factors that impact a server's ability to respond and updates the load balancer's traffic distribution based on the agent's reports.</li>
+<li id="c12-li-0056">Source IP hashing uses a hash of the source IP to assign traffic to servers. This is essentially a randomization algorithm using client-driven input.</li>
+</ul>
+<p>In addition to these, weighted algorithms take into account a weighting or score. Weighted algorithms include the following:</p>
+<ul class="square" id="c12-list-0021">
+<li id="c12-li-0057">Weighted least connection uses a least connection algorithm combined with a predetermined weight value for each server.</li>
+<li id="c12-li-0058">Fixed weighted relies on a preassigned weight for each server, often based on capability or capacity.</li>
+<li id="c12-li-0059">Weighted response time combines the server's current response time with a weight value to assign it traffic.</li>
+</ul>
+<p id="c12-para-0103">Finally, load balancers may need to establish persistent sessions. Persistence means that a client and a server continue to communicate throughout the duration of a session. This helps servers provide a smoother experience, with consistent information maintained about the client, rather than requiring that the entire load-balanced pool be made aware of the client's session. Of course, sticky sessions also mean that load will remain on the server that the session started with, which requires caution in case too many long-running sessions run on a single server and a load-balancing algorithm is in use that doesn't watch this.</p>
+<p id="c12-para-0104"><span aria-label="394" epub:type="pagebreak" id="Page_394" role="doc-pagebreak"/>Factors such as the use of persistence, different server capabilities, or the use of scalable architectures can all drive choices for scheduling algorithms. Tracking server utilization by a method such as an agent-based adaptive balancing algorithm can be attractive but requires more infrastructure and overhead than a simple round-robin algorithm.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c12-fea-0010"/>
+<h3 id="head-2-200">Layer 4 vs. Layer 7</h3>
+<section><span id="c12-sec-0042"/>
+<p id="c12-para-0105">Another consideration that the Security+ exam outline requires you to know is the difference between devices operating at layer 4 and layer 7. This can be important for firewalls where <i>layer 4 versus layer 7</i> inspection can make a big difference in application security.</p>
+<p id="c12-para-0106">A defining trait of next-generation firewalls (NGFWs) is their ability to interact with traffic at both layer 4 and layer 7. Application awareness allows them to stop application attacks and to monitor for unexpected traffic that would normally pass through a firewall only operating at the transport layer where IP addresses, protocols, and ports are the limit of their insight.</p>
+<p id="c12-para-0107">Of course, this comes with a toll—NGFWs need more CPU and memory to keep track of the complexities of application inspection, and they also need more complex rules and algorithms that can understand application traffic.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c12-sec-0043"/>
+<h4 id="head-4-119">Proxy Servers</h4>
+<p><i>Proxy servers</i> accept and forward requests, centralizing the requests and allowing actions to be taken on the requests and responses. They can filter or modify traffic and cache data, and since they centralize requests, they can be used to support access restrictions by IP address or similar requirements. There are two types of proxy servers:</p>
+<ul class="square" id="c12-list-0022">
+<li id="c12-li-0060"><i>Forward proxies</i> are placed between clients and servers, and they accept requests from clients and send them forward to servers. Since forward proxies conceal the original client, they can anonymize traffic or provide access to resources that might be blocked by IP address or geographic location. They are also frequently used to allow access to resources such as those that libraries subscribe to.</li>
+<li id="c12-li-0061"><i>Reverse proxies</i> are placed between servers and clients, and they are used to help with load balancing and caching of content. Clients can thus query a single system but have traffic load spread to multiple systems or sites.</li>
+</ul>
+</section>
+<section><span id="c12-sec-0044"/>
+<h4 id="head-4-120">Web Filters</h4>
+<p id="c12-para-0109"><i>Web filters</i>, sometimes called content filters, are centralized proxy devices or agent-based tools that allow or block traffic based on content rules. These can be as simple as conducting <span aria-label="395" epub:type="pagebreak" id="Page_395" role="doc-pagebreak"/><i>Uniform Resource Locator (URL) scanning</i> and blocking specific URLs, domains, or hosts, or they may be complex, with pattern matching, IP reputation, and other elements built into the filtering rules. Like other technologies, they can be configured with allow or deny lists as well as rules that operate on the content or traffic they filter.</p>
+<p id="c12-para-0110">When deployed as hardware devices or virtual machines, they are typically a <i>centralized proxy</i>, which means that traffic is routed through the device. In agent-based deployments, the agents are installed on devices, meaning that the proxy is decentralized and can operate wherever the device is rather than requiring a network configured to route traffic through the centralized proxy.</p>
+<p id="c12-para-0111">Regardless of their design, they typically provide <i>content categorization</i> capabilities that are used for URL filtering with common categories, including adult material, business, child-friendly material, and similar broad topics. This is often tied to <i>block rules</i> that stop systems from visiting sites that are in an undesired category or that have been blocked due to reputation, threat, or other reasons.</p>
+<p id="c12-para-0112">Proxies frequently have content filtering capabilities, but content filtering and URL filtering can also be part of other network devices and appliances such as firewalls, network security appliances, and IPSs.</p>
+</section>
+<section><span id="c12-sec-0045"/>
+<h4 id="head-4-121">Data Protection</h4>
+<p id="c12-para-0113">Ensuring that data isn't extracted or inadvertently sent from a network is where a <i>data loss prevention (DLP)</i> solution comes into play. DLP solutions frequently pair agents on systems with filtering capabilities at the network border, email servers, and other likely exfiltration points. When an organization has concerns about sensitive, proprietary, or other data being lost or exposed, a DLP solution is a common option. DLP systems can use pattern-matching capabilities or can rely on tagging, including the use of metadata to identify data that should be flagged. Actions taken by DLP systems can include blocking traffic, sending notifications, or forcing identified data to be encrypted or otherwise securely transferred rather than being sent in an unencrypted or unsecure mode.</p>
+</section>
+<section><span id="c12-sec-0046"/>
+<h4 id="head-4-122">Intrusion Detection and Intrusion Prevention Systems</h4>
+<p>Network-based <i>intrusion detection systems (IDSs)</i> and <i>intrusion prevention systems (IPSs)</i> are used to detect threats and, in the case of IPSs, to block them. They rely on one or more of two different detection methods to identify unwanted and potentially malicious traffic:</p>
+<ul class="square" id="c12-list-0023">
+<li id="c12-li-0062">Signature-based detections rely on a known hash or signature matching to detect a threat.</li>
+<li id="c12-li-0064">Anomaly-based detection establishes a baseline for an organization or network and then flags when out-of-the-ordinary behavior occurs.</li>
+</ul>
+<p id="c12-para-0115">Although an IPS needs to be deployed in line where it can interact with the flow of traffic to stop threats, both IDSs and IPSs can be deployed in a passive mode as well. Passive modes can detect threats but cannot take action—which means that an IPS placed in a passive deployment is effectively an IDS. <a href="#c12-fig-0002" id="R_c12-fig-0002">Figure 12.2</a> shows how these deployments can look in a simple network.</p> <span aria-label="396" epub:type="pagebreak" id="Page_396" role="doc-pagebreak"/>
+<figure> <img alt="An illustration of inline IPS versus passive I D S deployment using a tap or S P A N port. It includes IPS inline, Network tap, or S P A N port, and I D S receives a copy of the traffic." class="center" src="images/c12f002.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c12-fig-0002" id="c12-fig-0002" role="doc-backlink"><b>FIGURE 12.2</b></a></span> Inline IPS vs. passive IDS deployment using a tap or SPAN port</p>
+</figcaption>
+</figure>
+<p id="c12-para-0116">Like many of the other appliances covered in this chapter, IDS and IPS deployments can be hardware appliances, software-based, virtual machines, or cloud instances. Key decision points for selecting them include their throughput, detection methods, availability of detection rules and updates, the ability to create custom filters and detections, and their detection rates for threats in testing.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c12-fea-0011"/>
+<h3 id="head-2-201">Configuration Decisions: Inline vs. Tap, Active vs. Passive</h3>
+<section><span id="c12-sec-0047"/>
+<p id="c12-para-0117">Two common decisions for network security devices are whether they should be inline or use a tap.</p>
+<p id="c12-para-0118"><i>Inline</i> network devices have network traffic pass through them. This provides them the opportunity to interact with the traffic, including modifying it or stopping traffic if needed. It also creates a potential point of failure since an inline device that stops working may cause an outage. Some inline devices are equipped with features that can allow them to fail open instead of failing closed, but not all failure scenarios will activate this feature!</p>
+<p id="c12-para-0119"><i>Taps</i> or monitors are network devices that replicate traffic for inspection. A tap provides access to a copy of network traffic while the traffic continues on. Taps don't provide the same ability to interact with traffic but also avoid the problem of potential failures of a device causing an outage. Taps are commonly used to allow for monitoring, analysis, and security purposes.</p>
+<p id="c12-para-0120"><span aria-label="397" epub:type="pagebreak" id="Page_397" role="doc-pagebreak"/>Taps are divided into two types: <i>active</i> taps and <i>passive</i> taps. Active taps require power to operate and their network ports are physically separate without a direct connection between them. This means that power outages or software failures can interrupt traffic. Passive taps have a direct path between network ports. Passive optical taps simply split the light passing through them to create copies. Passive taps for copper networks do require power but have a direct path, meaning that a power outage will not interrupt traffic.</p>
+<p id="c12-para-0121">The Security+ exam outline doesn't mention a common third option: a SPAN port or mirror port, which is a feature built into routers and switches that allows selected traffic to be copied to a designated port. SPAN ports work similarly to taps but may be impacted by traffic levels on the switch and are typically considered less secure because they can be impacted by switch and router vulnerabilities and configuration issues, unlike a passive tap that simply copies traffic.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c12-sec-0048"/>
+<h4 id="head-4-123">Firewalls</h4>
+<p id="c12-para-0122">Firewalls are one of the most common components in network design. They are deployed as network appliances or on individual devices, and many systems implement a simple firewall or firewall-like capabilities.</p>
+<p>There are two basic types of firewalls:</p>
+<ul class="square" id="c12-list-0024">
+<li id="c12-li-0065"><i>Stateless firewalls</i> (sometimes called packet filters) filter every packet based on data such as the source and destination IP and port, the protocol, and other information that can be gleaned from the packet's headers. They are the most basic type of firewall.</li>
+<li id="c12-li-0066"><i>Stateful firewalls</i> (sometimes called dynamic packet filters) pay attention to the state of traffic between systems. They can make a decision about a conversation and allow it to continue once it has been approved rather than reviewing every packet. They track this information in a state table, and use the information they gather to allow them to see entire traffic flows instead of each packet, providing them with more context to make security decisions.</li>
+</ul>
+<p id="c12-para-0124">Along with stateful and stateless firewalls, additional terms are used to describe some firewall technologies. <i>Next-generation firewall (NGFW)</i> devices are far more than simple firewalls. In fact, they might be more accurately described as all-in-one network security devices in many cases. The general term has been used to describe network security devices that include a range of capabilities such as deep packet inspection, IDS/IPS functionality, antivirus and antimalware, and other functions. Despite the overlap between NGFWs and UTM devices, NGFWs are typically faster and capable of more throughput because they are more focused devices.</p>
+<p id="c12-para-0125"><i>Unified threat management (UTM)</i> devices frequently include firewall, IDS/IPS, antimalware, URL and email filtering and security, data loss prevention, VPN, and security monitoring and analytics capabilities. The line between UTM and NGFW devices can be confusing, and the market continues to narrow the gaps between devices as each side offers <span aria-label="398" epub:type="pagebreak" id="Page_398" role="doc-pagebreak"/>additional features. UTM devices are typically used for an “out of box” solution where they can be quickly deployed and used, often for small to mid-sized organizations. NGFWs typically require more configuration and expertise.</p>
+<p id="c12-para-0126">UTM appliances are frequently deployed at network boundaries, particularly for an entire organization or division. Since they have a wide range of security functionality, they can replace several security devices while providing a single interface to manage and monitor them. They also typically provide a management capability that can handle multiple UTM devices at once, allowing organizations with several sites or divisions to deploy UTM appliances to protect each area while still managing and monitoring them centrally.</p>
+<p id="c12-para-0127">Finally, <i>web application firewalls (WAFs)</i> are security devices that are designed to intercept, analyze, and apply rules to web traffic, including tools such as database queries, APIs, and other web application tools. In many ways, a WAF is easier to understand if you think of it as a firewall combined with an intrusion prevention system. They provide deeper inspection of the traffic sent to web servers looking for attacks and attack patterns, and then apply rules based on what they see. This allows them to block attacks in real time, or even modify traffic sent to web servers to remove potentially dangerous elements in a query or request.</p>
+<p>Regardless of the type of firewall, common elements include the use of firewall <i>rules</i> that determine what traffic is allowed and what traffic is stopped. While rule syntax may vary, an example firewall rule will typically include the source, including IP addresses, hostnames, or domains, <i>ports and protocols</i>, an allow or deny statement, and destination IP addresses, host or hosts, or domain with ports and protocols. Rules may read:</p>
+<pre id="c12-code-0001"><code>ALLOW TCP port ANY from 10.0.10.0/24 to 10.1.1.68/32 to TCP port 80</code>
+</pre>
+<p id="c12-para-0129">This rule would allow any host in the 10.0.10.0/24 subnet to host 10.1.1.68 on port 80—a simple rule to allow a web server to work.</p>
+<p id="c12-para-0130">The Security+ exam outline also calls out one other specific use of firewalls: the creation of screened subnets. A screened subnet like the example shown in <a href="#c12-fig-0003" id="R_c12-fig-0003">Figure 12.3</a> uses three interfaces on a firewall. One interface is used to connect to the Internet or an untrusted network, one is used to create a secured area, and one is used to create a public area (sometimes called a DMZ).</p> <span aria-label="399" epub:type="pagebreak" id="Page_399" role="doc-pagebreak"/>
+<figure> <img alt="A flowchart representation of the screened subnet. The firewall is connected to the internet, web server, and private network." class="center" src="images/c12f003.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c12-fig-0003" id="c12-fig-0003" role="doc-backlink"><b>FIGURE 12.3</b></a></span> Screened subnet</p>
+</figcaption>
+</figure>
+</section>
+<section><span id="c12-sec-0049"/>
+<h4 id="head-4-124">Access Control Lists</h4>
+<p id="c12-para-0131"><i>Access control lists (ACLs)</i> are rules that either permit or deny actions. For network devices, they're typically similar to firewall rules. ACLs can be simple or complex, ranging from a single statement to multiple entries that apply to traffic. Network devices may also provide more advanced forms of ACLs, including time-based, dynamic, or other ACLs that have conditions that impact their application.</p>
+<p>Cisco's IP-based ACLs use the following format:</p>
+<pre id="c12-code-0002"><code>access-list access-list-number dynamic name {permit|deny} [protocol]</code>
+<code>{source source-wildcard|any} {destination destination-wildcard|any}</code>
+<code>[precedence precedence][tos tos][established] [log|log-input]</code>
+<code>[operator destination-port|destination port]</code></pre>
+<p>That means that a sample Cisco ACL that allows access to a web server might read as follows:</p>
+<pre id="c12-code-0003"><code>access-list 100 permit tcp any host 10.10.10.1 eq http</code>
+</pre>
+<p id="c12-para-0134">ACL syntax will vary by vendor, but the basic concept of ACLs as rules that allow or deny actions, traffic, or access remains the same, allowing you to read and understand many ACLs simply by recognizing the elements of the rule statement. A sample of what an ACL might contain is shown in <a href="#c12-tbl-0001" id="R_c12-tbl-0001">Table 12.1</a>.</p>
+<figure>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c12-tbl-0001" id="c12-tbl-0001" role="doc-backlink"><b>TABLE 12.1</b></a></span> Example network ACLs</p>
+</figcaption>
+<table border="1">
+<thead>
+<tr>
+<th scope="col"><span class="left">Rule number</span></th>
+<th scope="col"><span class="left">Protocol</span></th>
+<th scope="col"><span class="left">Ports</span></th>
+<th scope="col"><span class="left">Destination</span></th>
+<th scope="col"><span class="left">Allow/deny</span></th>
+<th scope="col"><span class="left">Notes</span></th> </tr> </thead>
+<tbody>
+<tr>
+<td class="left">10</td>
+<td class="left">TCP</td>
+<td class="left">22</td>
+<td class="left">10.0.10.0/24</td>
+<td class="left">ALLOW</td>
+<td class="left">Allow SSH</td> </tr>
+<tr>
+<td class="left">20</td>
+<td class="left">TCP</td>
+<td class="left">443</td>
+<td class="left">10.0.10.45/32</td>
+<td class="left">ALLOW</td>
+<td class="left">Inbound HTTPS to web server</td> </tr>
+<tr>
+<td class="left">30</td>
+<td class="left">ICMP</td>
+<td class="left">ALL</td>
+<td class="left">0.0.0.0/0</td>
+<td class="left">DENY</td>
+<td class="left">Block ICMP</td> </tr> </tbody> </table>
+</figure>
+<p id="c12-para-0135">Cloud services also provide network ACLs. VPCs and other services provide firewall-like rules that can restrict or allow traffic between systems and services. Like firewall rules, these can typically be grouped, tagged, and managed using security groups or other methods.</p>
+</section>
+</section>
+<section><span id="c12-sec-0050"/>
+<h3 id="head-3-187">Deception and Disruption Technology</h3>
+<p id="c12-para-0136">A final category of network-related tools is those intended to capture information about attackers and their techniques and to disrupt ongoing attacks. Capturing information about attackers can provide defenders with useful details about their tools and processes and can help defenders build better and more secure networks based on real-world experiences.</p>
+<p id="c12-para-0137">There are four major types of deception and disruption tools that are included in the Security+ exam outline. The first and most common is the use of <i>honeypots</i>. Honeypots are <span aria-label="400" epub:type="pagebreak" id="Page_400" role="doc-pagebreak"/>systems that are intentionally configured to appear to be vulnerable but that are actually heavily instrumented and monitored systems that will document everything an attacker does while retaining copies of every file and command they use. They appear to be legitimate and may have tempting false information available on them. Much like honeypots, honeynets are networks set up and instrumented to collect information about network attacks. In essence, a honeynet is a group of honeypots set up to be even more convincing and to provide greater detail on attacker tools due to the variety of systems and techniques required to make it through the network of systems.</p>
+<p id="c12-para-0138">Unlike honeynets and honeypots, which are used for adversarial research, honeyfiles are used for intrusion detection. A <i>honeyfile</i> is an intentionally attractive file that contains unique, detectable data that is left in an area that an attacker is likely to visit if they succeed in their attacks. If the data contained in a honeyfile is detected leaving the network, or is later discovered outside of the network, the organization knows that the system was breached.</p>
+<p><i>Honeytokens</i> are the final item in this category. Honeytokens are data that is intended to be attractive to attackers but which is used specifically to allow security professionals to track data. They may be entries in databases, files, directories, or any other data asset that can be specifically identified. IDS, IPS, DLP, and other systems are then configured to watch for honeytokens that should not be sent outside the organization or accessed under normal circumstances because they are not actual organizational data. If they are in use or being transferred, it is likely that a malicious attacker has accessed them, thinking that they have legitimate and valuable data.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c12-para-0140"><img alt="" role="presentation" src="images/note.png"/> If you're fascinated by honeypots and honeynets, visit the Honeynet project (<code><a href="http://honeynet.org">http://honeynet.org</a></code>), an effort that gathers tools, techniques, and other materials for adversary research using honeypots and honeynets as well as other techniques.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c12-fea-0012"/>
+<h3 id="head-2-202">Exam Note</h3>
+<section><span id="c12-sec-0052"/>
+<p id="c12-para-0141">Appliances and tools like jump servers, load balancers and load-balancing techniques, proxy servers, web filters, DLP, IDS, IPS, firewalls, and the types of firewalls commonly encountered as well as ACLs are all included in the exam outline. Make sure you know what each is used for and how it could be used to secure an organization's infrastructure. Finally, make sure you're aware of the various deception and disruption technologies like honeyfiles, honeytokens, honeynets, and honeypots.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c12-sec-0053"/>
+<h3 id="head-3-188">Network Security, Services, and Management</h3>
+<p id="c12-para-0142">Managing your network in a secure way and using the security tools and capabilities built into your network devices is another key element in designing a secure network. Whether it <span aria-label="401" epub:type="pagebreak" id="Page_401" role="doc-pagebreak"/>is prioritizing traffic via quality of service (QoS), providing route security, or implementing secure protocols on top of your existing network fabric, network devices and systems provide a multitude of options.</p>
+<section><span id="c12-sec-0054"/>
+<h4 id="head-4-125">Out-of-Band Management</h4>
+<p id="c12-para-0143">Access to the management interface for a network appliance or device needs to be protected so that attackers can't seize control of it and to ensure that administrators can reliably gain access when they need to. Whenever possible, network designs must include a way to do secure <i>out-of-band management</i>. A separate means of accessing the administrative interface should exist. Since most devices are now managed through a network connection, modern implementations use a separate management VLAN or an entirely separate physical network for administration. Physical access to administrative interfaces is another option for out-of-band management, but in most cases physical access is reserved for emergencies because traveling to the network device to plug into it and manage it via USB, serial, or other interfaces is time consuming and far less useful for administrators than a network-based management plane.</p>
+</section>
+<section><span id="c12-sec-0055"/>
+<h4 id="head-4-126">DNS</h4>
+<p id="c12-para-0144"><i>Domain Name System (DNS)</i> servers and service can be an attractive target for attackers since systems rely on DNS to tell them where to send their traffic whenever they try to visit a site using a human-readable name.</p>
+<p id="c12-para-0145">DNS itself isn't a secure protocol—in fact, like many of the original Internet protocols, it travels in an unencrypted, unprotected state and does not have authentication capabilities built in. Fortunately, Domain Name System Security Extensions (DNSSEC) can be used to help close some of these security gaps. DNSSEC provides authentication of DNS data, allowing DNS queries to be validated even if they are not encrypted.</p>
+<p id="c12-para-0146">Properly configuring DNS servers themselves is a key component of DNS security. Preventing techniques such as zone transfers, as well as ensuring that DNS logging is turned on and that DNS requests to malicious domains are blocked, are common DNS security techniques.</p>
+<p id="c12-para-0147"><i>DNS filtering</i> is used by many organizations to block malicious domains. DNS filtering uses a list of prohibited domains, subdomains, and hosts and replaces the correct response with an alternate DNS response, often to an internal website that notes that the access was blocked and what to do about the block. DNS filtering can be an effective response to phishing campaigns by allowing organizations to quickly enter the phishing domain into a DNS filter list and redirect users who click on links in the phishing email to a trusted warning site. Like many other security tools, DNS filters are also commonly fed through threat, reputation, and block list feeds, allowing organizations to leverage community knowledge about malicious domains and systems.</p>
+</section>
+<section><span id="c12-sec-0056"/>
+<h4 id="head-4-127">Email Security</h4>
+<p id="c12-para-0148">The Security+ exam outline looks at three major methods of protecting email. These include <i>DomainKeys Identified Mail (DKIM)</i>, <i>Sender Policy Framework (SPF)</i>, and <i>Domain-based Message Authentication Reporting and Conformance (DMARC)</i>.</p>
+<p id="c12-para-0149"><span aria-label="402" epub:type="pagebreak" id="Page_402" role="doc-pagebreak"/>DKIM allows organizations to add content to messages to identify them as being from their domain. DKIM signs both the body of the message and elements of the header, helping to ensure that the message is actually from the organization it claims to be from. It adds a DKIM-Signature header, which can be checked against the public key that is stored in public DNS entries for DKIM-enabled organizations.</p>
+<p>SPF is an email authentication technique that allows organizations to publish a list of their authorized email servers. SPF records are added to the DNS information for your domain, and they specify which systems are allowed to send email from that domain. Systems not listed in SPF will be rejected.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c12-para-0151"><img alt="" role="presentation" src="images/tip.png"/> SPF records in DNS are limited to 255 characters. This can make it tricky to use SPF for organizations that have a lot of email servers or that work with multiple external senders. In fact, SPF has a number of issues you can run into—you can read more about some of them at <code><a href="http://www.mimecast.com/content/sender-policy-framework">www.mimecast.com/content/sender-policy-framework</a></code>.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>DMARC, or Domain-based Message Authentication Reporting and Conformance, is a protocol that uses SPF and DKIM to determine whether an email message is authentic. Like SPF and DKIM, DMARC records are published in DNS, but unlike DKIM and SPF, DMARC can be used to determine whether you should accept a message from a sender. Using DMARC, you can choose to reject or quarantine messages that are not sent by a DMARC-supporting sender. You can read an overview of DMARC at <code><a href="http://dmarc.org/overview">http://dmarc.org/overview</a></code>.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c12-para-0153"><img alt="" role="presentation" src="images/note.png"/> If you want to see an example of a DMARC record, you can check out the DMARC information for SendGrid by using a <code>dig</code> command from a Linux command prompt: <b><code>dig txt _dmarc.sendgrid.net</code></b>. Note that it is critical to include the underscore before _dmarc. You should see something that looks like the following graphic.</p>
+<figure><img alt="The Snapshot represents D M A R C information for SendGrid. The program consists of a pseudo section answer, time, and a query section." class="center" src="images/c12uf003.png"/>
+<figcaption>
+</figcaption>
+</figure>
+<p id="c12-para-0154"><span aria-label="403" epub:type="pagebreak" id="Page_403" role="doc-pagebreak"/></p>
+<p id="c12-para-0155">If you do choose to implement DMARC, you should set it up with the <code>none</code> flag for policies and review your data reports before going further to make sure you won't be inadvertently blocking important email. Although many major email services are already using DMARC, smaller providers and organizations may not be.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p>In addition to email security frameworks like DKIM, SPF, and DMARC, email security devices are used by many organizations. These devices, often called <i>email security gateways</i>, are designed to filter both inbound and outbound email while providing a variety of security services. They typically include functions like phishing protection, email encryption, attachment sandboxing to counter malware, ransomware protection functions, URL analysis and threat feed integration, and of course support for DKIM, SPF, and DMARC checking.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c12-para-0157"><img alt="" role="presentation" src="images/note.png"/> You may also encounter the term “secure email gateway” or “SEG” to describe email security gateways outside of the Security+ exam.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c12-sec-0060"/>
+<h4 id="head-4-128">Secure Sockets Layer/Transport Layer Security</h4>
+<p id="c12-para-0158">The ability to encrypt data as it is transferred is key to the security of many protocols. Although the first example that may come to mind is secure web traffic via HTTPS, Transport Layer Security (TLS) is in broad use to wrap protocols throughout modern systems and networks.</p>
+<p id="c12-para-0159">A key concept for the Security+ exam is the use of <i>ephemeral keys</i> for TLS. In ephemeral Diffie–Hellman key exchanges, each connection receives a unique, temporary key. That means that even if a key is compromised, communications that occurred in the past, or in the future in a new session, will not be exposed. Ephemeral keys are used to provide perfect forward secrecy, meaning that even if the secrets used for key exchange are compromised, the communication itself will not be.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c12-fea-0013"/>
+<h3 id="head-2-203">What about IPv6?</h3>
+<section><span id="c12-sec-0061"/>
+<p id="c12-para-0160">IPv6 still hasn't reached every network, but where it has, it can add additional complexity to many security practices and technologies. While IPv6 is supported by an increasing number of network devices, the address space and functionality it brings with it mean that security practitioners need to make sure that they understand how to monitor and secure IPv6 traffic on their network. Unlike IPv4 networks where ICMP may be blocked by default, IPv6 relies far more heavily on ICMP, meaning that habitual security practices are a bad idea. The use of NAT in IPv4 networks is also no longer needed due to the IPv6 address space, meaning that the protection that NAT provides for some systems will no longer exist. In addition, the many automatic features that IPv6 brings, including automatic tunneling, <span aria-label="404" epub:type="pagebreak" id="Page_404" role="doc-pagebreak"/>automatic configuration, the use of dual network stacks (for both IPv4 and IPv6), and the sheer number of addresses, all create complexity.</p>
+<p id="c12-para-0161">All of this means that if your organization uses IPv6, you will need to make sure you understand the security implications of both IPv4 and IPv6 and what security options you have and may still need.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c12-sec-0062"/>
+<h4 id="head-4-129">SNMP</h4>
+<p id="c12-para-0162">The Simple Network Management Protocol (SNMP) protocol is used to monitor and manage network devices. SNMP objects like network switches, routers, and other devices are listed in a management information base (MIB) and are queried for SNMP information.</p>
+<p id="c12-para-0163">When a device configured to use SNMP encounters an error, it sends a message known as a <i>SNMP trap</i>. Unlike other SNMP traffic, SNMP traps are sent to a SNMP manager from SNMP agents on devices when the device needs to notify the manager. SNMP traps include information about what occurred so that the manager can take appropriate action.</p>
+<p>The base set of SNMP traps are coldStart, warmStart, linkDown, linkUp, authenticationFailure, and egpNeighborLoss. Additional custom traps can be configured and are often created by vendors specifically for their devices to provide information.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c12-para-0165"><img alt="" role="presentation" src="images/note.png"/> SNMP traps aren't the only way that SNMP is used to monitor and manage SNMP-enabled devices—there's a lot more to SNMP, including ways to help secure it. While you won't need to go in-depth for the Security+ exam, if you'd like to learn more about SNMP in general, you can read details about SNMP, the components involved in an SNMP management architecture, and SNMP security at <code><a href="http://www.manageengine.com/network-monitoring/what-is-snmp.html">www.manageengine.com/network-monitoring/what-is-snmp.html</a></code>.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c12-sec-0064"/>
+<h4 id="head-4-130">Monitoring Services and Systems</h4>
+<p id="c12-para-0166">Without services, systems and networks wouldn't have much to do. Ensuring that an organization's services are online and accessible requires monitoring and reporting capabilities. Although checking to see if a service is responding can be simple, validating that the service is functioning as expected can be more complex.</p>
+<p id="c12-para-0167">Organizations often use multiple tiers of service monitoring. The first and most simple validates whether a service port is open and responding. That basic functionality can help identify significant issues such as the service failing to load, crashing, or being blocked by a firewall rule.</p>
+<p id="c12-para-0168">The next level of monitoring requires interaction with the service and some understanding of what a valid response should look like. These transactions require additional functionality and may also use metrics that validate performance and response times.</p>
+<p id="c12-para-0169"><span aria-label="405" epub:type="pagebreak" id="Page_405" role="doc-pagebreak"/>The final level of monitoring systems looks for indicators of likely failure and uses a broad range of data to identify pending problems.</p>
+<p id="c12-para-0170">Service monitoring tools are built into many operations’ monitoring tools, SIEM devices, and other organizational management platforms. Configuring service-level monitoring can provide insight into ongoing issues for security administrators, as service failures or issues can be an indicator of an incident.</p>
+</section>
+<section><span id="c12-sec-0065"/>
+<h4 id="head-4-131">File Integrity Monitors</h4>
+<p id="c12-para-0171">The infrastructure and systems that make up a network are a target for attackers, who may change configuration files, install their own services, or otherwise modify systems that need to be trustworthy. Detecting those changes and either reporting on them or restoring them to normal is the job of a <i>file integrity monitor</i>. Although there are numerous products on the market that can handle file integrity monitoring, one of the oldest and best known is Tripwire, a file integrity monitoring tool with both commercial and open source versions.</p>
+<p id="c12-para-0172">File integrity monitoring tools like Tripwire create a signature or fingerprint for a file, and then monitor the file and filesystem for changes to monitored files. They integrate numerous features to allow normal behaviors like patching or user interaction, but they focus on unexpected and unintended changes. A file integrity monitor can be a key element of system security design, but it can also be challenging to configure and monitor if it is not carefully set up. Since files change through a network and on systems all the time, file integrity monitors can be noisy and require time and effort to set up and maintain.</p>
+</section>
+<section><span id="c12-sec-0066"/>
+<h4 id="head-4-132">Hardening Network Devices</h4>
+<p id="c12-para-0173">Much like the workstations and other endpoints we explored in <a href="c11.xhtml">Chapter 11</a>, “Endpoint Security,” network devices also need to be hardened to keep them secure. Fortunately, hardening guidelines and benchmarks exist for many device operating systems and vendors allowing security practitioners to follow industry best practices to secure their devices. The Center for Internet Security (CIS) as well as manufacturers themselves provide lockdown and hardening guidelines for many common network devices like switches and routers.</p>
+<p id="c12-para-0174">Another important step in hardening network devices is to protect their management console. For many organizations that means putting management ports onto an isolated VLAN that requires access using a jump server or VPN.</p>
+<p id="c12-para-0175">Physical security remains critical as well. Network closets are typically secured, may be monitored, and often take advantage of electronic access mechanisms to allow tracking of who accesses secured spaces.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c12-fea-0014"/>
+<h3 id="head-2-204">Exam Note</h3>
+<section><span id="c12-sec-0067"/>
+<p id="c12-para-0176">Securing the services that a network provides is a key element in the Security+ exam outline. That means you need to know about quality of service, DNS and email security, the use of encryption via TLS to encapsulate other protocols for secure transport, SNMP and monitoring services and systems, file integrity monitoring to track changes, and how network devices are hardened and their management interfaces are protected.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+</section> <span aria-label="406" epub:type="pagebreak" id="Page_406" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-205"><span id="c12-sec-0068"/>
+<h2 id="head-2-205">Secure Protocols</h2>
+<p id="c12-para-0177">Networks carry traffic using a multitude of different protocols operating at different network layers. Although it is possible to protect networks by using encrypted channels for every possible system, in most cases networks do not encrypt every connection from end to end. Therefore, choosing and implementing secure protocols properly is critical to a defense-in-depth strategy. Secure protocols can help ensure that a system or network breach does not result in additional exposure of network traffic.</p>
+<section><span id="c12-sec-0069"/>
+<h3 id="head-3-189">Using Secure Protocols</h3>
+<p>Secure protocols have places in many parts of your network and infrastructure. Security professionals need to be able to recommend the right protocol for each of the following scenarios:</p>
+<ul class="square" id="c12-list-0025">
+<li id="c12-li-0067">Voice and video rely on a number of common protocols. Videoconferencing tools often rely on HTTPS, but secure versions of the Session Initiation Protocol (SIP) and the Real-time Transport Protocol (RTP) exist in the form of SIPS and SRTP, which are also used to ensure that communications traffic remains secure.</li>
+<li id="c12-li-0068">A secure version of the Network Time Protocol (NTP) exists and is called NTS, but NTS has not been widely adopted. Like many other protocols you will learn about in this chapter, NTS relies on TLS. Unlike other protocols, NTS does not protect the time data. Instead, it focuses on authentication to make sure that the time information is from a trusted server and has not been changed in transit.</li>
+<li id="c12-li-0069">Email and web traffic relies on a number of secure options, including HTTPS, IMAPS, POPS, and security protocols like Domain-based Message Authentication Reporting and Conformance (DMARC), DomainKeys Identified Mail (DKIM), and Sender Policy Framework (SPF) as covered earlier in this chapter.</li>
+<li id="c12-li-0070">File Transfer Protocol (FTP) has largely been replaced by a combination of HTTPS file transfers and SFTP or FTPS, depending on organizational preferences and needs.</li>
+<li id="c12-li-0071">Directory services like LDAP can be moved to LDAPS, a secure version of LDAP.</li>
+<li id="c12-li-0072">Remote access technologies—including shell access, which was once accomplished via telnet and is now almost exclusively done via SSH—can also be secured. Microsoft's RDP is encrypted by default, but other remote access tools may use other protocols, including HTTPS, to ensure that their traffic is not exposed.</li>
+<li id="c12-li-0073">Domain name resolution remains a security challenge, with multiple efforts over time that have had limited impact on DNS protocol security, including DNSSEC and DNS reputation lists.</li>
+<li id="c12-li-0074">Routing and switching protocol security can be complex, with protocols like Border Gateway Protocol (BGP) lacking built-in security features. Therefore, attacks such as BGP hijacking attacks and other routing attacks remain possible. Organizations cannot rely on a secure protocol in many cases and need to design around this lack.</li>
+<li id="c12-li-0075"><span aria-label="407" epub:type="pagebreak" id="Page_407" role="doc-pagebreak"/>Network address allocation using DHCP does not offer a secure protocol, and network protection against DHCP attacks relies on detection and response rather than a secure protocol.</li>
+<li id="c12-li-0076">Subscription services such as cloud tools and similar services frequently leverage HTTPS but may also provide other secure protocols for their specific use cases. The wide variety of possible subscriptions and types of services means that these services must be assessed individually with an architecture and design review, as well as data flow reviews all being part of best practices to secure subscription service traffic if options are available.</li>
+</ul>
+<p id="c12-para-0179">That long list of possible security options and the notable lack of secure protocols for DHCP, NTP, and BGP mean that although secure protocols are a useful part of a security design, they are just part of that design process. As a security professional, your assessment should identify whether an appropriate secure protocol option is included, if it is in use, and if it is properly configured. Even if a secure protocol is in use, you must then assess the other layers of security in place to determine whether the design or implementation has appropriate security to meet the risks that it will face in use.</p>
+</section>
+<section><span id="c12-sec-0070"/>
+<h3 id="head-3-190">Secure Protocols</h3>
+<p>The Security+ exam focuses on a number of common protocols that test takers need to know how to identify and implement. As you read this section, take into account when you would recommend a switch to the secure protocol, whether both protocols might coexist in an environment, and what additional factors would need to be considered if you implemented the protocol. These factors include client configuration requirements, a switch to an alternate port, a different client software package, impacts on security tools that may not be able to directly monitor encrypted traffic, and similar concerns.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c12-para-0181"><img alt="" role="presentation" src="images/note.png"/> As you review these protocols, pay particular attention to the nonsecure protocol, the original port and if it changes with the secure protocol, and which secure port replaces it.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c12-para-0182">Organizations rely on a wide variety of services, and the original implementations for many of these services, such as file transfer, remote shell access, email retrieval, web browsing, and others, were plain-text implementations that allowed the traffic to be easily captured, analyzed, and modified. This meant that confidentiality and integrity for the traffic that these services relied on could not be ensured and has led to the implementation of secure versions of these protocols. Security analysts are frequently called on to identify insecure services and to recommend or help implement secure alternatives.</p>
+<p id="c12-para-0183"><a href="#c12-tbl-0002" id="R_c12-tbl-0002">Table 12.2</a> shows a list of common protocols and their secure replacements. Many secure protocols rely on TLS to protect traffic, whereas others implement AES encryption or use other techniques to ensure that they can protect the confidentiality and integrity of the data that they transfer. Many protocols use a different port for the secure version of the protocol, but others rely on an initial negotiation or service request to determine whether or not traffic will be secured.</p> <span aria-label="408" epub:type="pagebreak" id="Page_408" role="doc-pagebreak"/>
+<figure>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c12-tbl-0002" id="c12-tbl-0002" role="doc-backlink"><b>TABLE 12.2</b></a></span> Secure and unsecure protocols</p>
+</figcaption>
+<table border="1">
+<thead>
+<tr>
+<th scope="col"><span class="left">Unsecure protocol</span></th>
+<th scope="col"><span class="left">Original port</span></th>
+<th scope="col"><span class="left">Secure protocol option(s)</span></th>
+<th scope="col"><span class="left">Secure port</span></th>
+<th scope="col"><span class="left">Notes</span></th> </tr> </thead>
+<tbody>
+<tr>
+<td class="left">DNS</td>
+<td class="left">UDP/TCP 53</td>
+<td class="left">DNSSEC</td>
+<td class="left">UDP/TCP 53</td>
+<td class="left"/> </tr>
+<tr>
+<td class="left">FTP</td>
+<td class="left">TCP 21 (and 20)</td>
+<td class="left">FTPS</td>
+<td class="left">TCP 21 in explicit mode and 990 in implicit mode (FTPS)</td>
+<td class="left">Using TLS</td> </tr>
+<tr>
+<td class="left">FTP</td>
+<td class="left">TCP 21 (and 20)</td>
+<td class="left">SFTP</td>
+<td class="left">TCP 22 (SSH)</td>
+<td class="left">Using SSH</td> </tr>
+<tr>
+<td class="left">HTTP</td>
+<td class="left">TCP 80</td>
+<td class="left">HTTPS</td>
+<td class="left">TCP 443</td>
+<td class="left">Using TLS</td> </tr>
+<tr>
+<td class="left">IMAP</td>
+<td class="left">TCP 143</td>
+<td class="left">IMAPS</td>
+<td class="left">TCP 993</td>
+<td class="left">Using TLS</td> </tr>
+<tr>
+<td class="left">LDAP</td>
+<td class="left">UDP and TCP 389</td>
+<td class="left">LDAPS</td>
+<td class="left">TCP 636</td>
+<td class="left">Using TLS</td> </tr>
+<tr>
+<td class="left">POP3</td>
+<td class="left">TCP 110</td>
+<td class="left">POP3</td>
+<td class="left">TCP 995 – Secure POP3</td>
+<td class="left">Using TLS</td> </tr>
+<tr>
+<td class="left">RTP</td>
+<td class="left">UDP 16384-32767</td>
+<td class="left">SRTP</td>
+<td class="left">UDP 5004</td>
+<td class="left"/> </tr>
+<tr>
+<td class="left">SNMP</td>
+<td class="left">UDP 161 and 162</td>
+<td class="left">SNMPv3</td>
+<td class="left">UDP 161 and 162</td>
+<td class="left"/> </tr>
+<tr>
+<td class="left">Telnet</td>
+<td class="left">TCP 23</td>
+<td class="left">SSH</td>
+<td class="left">TCP 22</td>
+<td class="left"> </td> </tr> </tbody> </table>
+</figure>
+<p>Test takers should recognize each of these:</p>
+<ul class="square" id="c12-list-0026">
+<li id="c12-li-0077"><i>Domain Name System Security Extensions</i> (DNSSEC) focuses on ensuring that DNS information is not modified or malicious, but it doesn't provide confidentiality like many of the other secure protocols listed here do. DNSSEC uses digital signatures, allowing systems that query a DNSSEC-equipped server to validate that the server's signature matches the DNS record. DNSSEC can also be used to build a chain of trust for IPSec keys, SSH fingerprints, and similar records.</li>
+<li id="c12-li-0078"><i>Simple Network Management Protocol, version 3 (SNMPv3)</i> improves on previous versions of SNMP by providing authentication of message sources, message integrity validation, and confidentiality via encryption. It supports multiple security levels, but only the authPriv level uses encryption, meaning that insecure implementations of SNMPv3 are still possible. Simply using SNMPv3 does not automatically make SNMP information secure.</li>
+<li id="c12-li-0079"><i>Secure Shell (SSH)</i> is a protocol used for remote console access to devices and is a secure alternative to telnet. SSH is also often used as a tunneling protocol or to support other uses like SFTP. SSH can use SSH keys, which are used for authentication. As with many uses of certificate or key-based authentication, a lack of a password or weak passwords as well as poor key handling can make SSH far less secure in use.</li>
+<li id="c12-li-0080"><span aria-label="409" epub:type="pagebreak" id="Page_409" role="doc-pagebreak"/><i>Hypertext Transfer Protocol over SSL/TLS (HTTPS)</i> relies on TLS in modern implementations but is often called SSL despite this. Like many of the protocols discussed here, the underlying HTTP protocol relies on TLS to provide security in HTTPS implementations.</li>
+<li id="c12-li-0081"><i>Secure Real-Time Protocol (SRTP)</i> is a secure version of the Real-Time Protocol, a protocol designed to provide audio and video streams via networks. SRTP uses encryption and authentication to attempt to reduce the likelihood of successful attacks, including replay and denial-of-service attempts. RTP uses paired protocols, RTP and RTCP. RTCP is the control protocol that monitors the quality of service (QoS) and synchronization of streams, and RTCP has a secure equivalent, SRTP, as well.</li>
+<li id="c12-li-0082"><i>Secure Lightweight Directory Access Protocol (LDAPS</i>) is a TLS-protected version of LDAP that offers confidentiality and integrity protections.</li>
+</ul>
+<section><span id="c12-sec-0072"/>
+<h4 id="head-4-133">Email-Related Protocols</h4>
+<p id="c12-para-0185">Although many organizations have moved to web-based email, email protocols like Post Office Protocol (POP) and Internet Message Access Protocol (IMAP) remain in use for mail clients. Secure protocol options that implement TLS as a protective layer exist for both, resulting in the deployment of <i>POPS</i> and <i>IMAPS</i>.</p>
+<p id="c12-para-0186"><i>Secure/Multipurpose Internet Mail Extensions (S/MIME)</i> provides the ability to encrypt and sign MIME data, the format used for email attachments. Thus, the content and attachments for an email can be protected, while providing authentication, integrity, nonrepudiation, and confidentiality for messages sent using S/MIME.</p>
+<p>Unlike many of the other protocols discussed here, S/MIME requires a certificate for users to be able to send and receive S/MIME-protected messages. A locally generated certificate or one from a public certificate authority (CA) is needed. This requirement adds complexity for S/MIME users who want to communicate securely with other individuals, because certificate management and validation can become complex. For this reason, S/MIME is used less frequently, despite broad support by many email providers and tools.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c12-para-0188"><img alt="" role="presentation" src="images/note.png"/> SMTP itself does not provide a secure option, although multiple efforts have occurred over time to improve SMTP security, including attempts to standardize on an SMTPS service. However, SMTPS has not entered broad usage. Now, email security efforts like DomainKeys Identified Mail (DKIM), Domain-based Message Authentication Reporting and Conformance (DMARC), and Sender Policy Framework (SPF) are all part of efforts to make email more secure and less prone to spam. Email itself continues to traverse the Internet in unencrypted form through SMTP, which makes S/MIME one of the few broadly supported options to ensure that messages are encrypted and secure.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c12-para-0189">Of course, a significant portion of email is accessed via the web, effectively making HTTPS the most common secure protocol for email access.</p>
+</section> <span aria-label="410" epub:type="pagebreak" id="Page_410" role="doc-pagebreak"/>
+<section><span id="c12-sec-0074"/>
+<h4 id="head-4-134">File Transfer Protocols</h4>
+<p id="c12-para-0190">Although file transfer via FTP is increasingly uncommon, secure versions of FTP do exist and remain in use. There are two major options: <i>FTPS</i>, which implements FTP using TLS, and <i>SFTP</i>, which leverages SSH as a channel to perform FTP-like file transfers. SFTP is frequently chosen because it can be easier to get through firewalls since it uses only the SSH port, whereas FTPS can require additional ports, depending on the configuration.</p>
+</section>
+<section><span id="c12-sec-0075"/>
+<h4 id="head-4-135">IPSec</h4>
+<p>IPSec (Internet Protocol Security) is more than just a single protocol. In fact, IPSec is an entire suite of security protocols used to encrypt and authenticate IP traffic. The Security+ exam outline focuses on two components of the standard:</p>
+<ul class="square" id="c12-list-0027">
+<li id="c12-li-0083"><i>Authentication Header (AH)</i> uses hashing and a shared secret key to ensure integrity of data and validates senders by authenticating the IP packets that are sent. AH can ensure that the IP payload and headers are protected.</li>
+<li id="c12-li-0084"><i>Encapsulating Security Payload (ESP)</i> operates in either transport mode or tunnel mode. In tunnel mode, it provides integrity and authentication for the entire packet; in transport mode, it only protects the payload of the packet. If ESP is used with an authentication header, this can cause issues for networks that need to change IP or port information.</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c12-para-0192"><img alt="" role="presentation" src="images/note.png"/> You should be aware of a third major component, <i>security associations (SAs),</i> but SAs aren't included in the exam outline. Security associations provide parameters that AH and ESP require to operate.</p>
+<p id="c12-para-0193">The Internet Security Association and Key Management Protocol (ISAKMP) is a framework for key exchange and authentication. It relies on protocols such as Internet Key Exchange (IKE) for implementation of that process. In essence, ISAKMP defines how to authenticate the system you want to communicate with, how to create and manage SAs, and other details necessary to secure communication.</p>
+<p id="c12-para-0194">IKE is used to set up a security association using X.509 certificates.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c12-para-0195">IPSec is frequently used for VPNs, where it is used in tunnel mode to create a secure network connection between two locations.</p>
+</section>
+</section>
+</section>
+<section aria-labelledby="head-2-206"><span id="c12-sec-0077"/>
+<h2 id="head-2-206">Network Attacks</h2>
+<p id="c12-para-0196">The Security+ exam expects you to be familiar with a few network attack techniques and concepts. As you review these, think about how you would identify them, prevent them, and respond to them in a scenario where you discovered them.</p> <span aria-label="411" epub:type="pagebreak" id="Page_411" role="doc-pagebreak"/>
+<section><span id="c12-sec-0078"/>
+<h3 id="head-3-191">On-Path Attacks</h3>
+<p id="c12-para-0197">An <i>on-path</i> (sometimes also called a man-in-the-middle [MitM]) attack occurs when an attacker causes traffic that should be sent to its intended recipient to be relayed through a system or device the attacker controls. Once the attacker has traffic flowing through that system, they can eavesdrop or even alter the communications as they wish. <a href="#c12-fig-0004" id="R_c12-fig-0004">Figure 12.4</a> shows how traffic flow is altered from normal after an on-path attack has succeeded.</p>
+<figure> <img alt="A flow diagram of communications before and after an on-path attack. It includes two systems connected to an attacker-controlled system." class="center" src="images/c12f004.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c12-fig-0004" id="c12-fig-0004" role="doc-backlink"><b>FIGURE 12.4</b></a></span> Communications before and after an on-path attack</p>
+</figcaption>
+</figure>
+<p>An on-path attack can be used to conduct SSL stripping, an attack that in modern implementations removes TLS encryption to read the contents of traffic that is intended to be sent to a trusted endpoint. A typical SSL stripping attack occurs in three phases:</p>
+<ol class="decimal" id="c12-list-0028">
+<li id="c12-li-0085">A user sends an HTTP request for a web page.</li>
+<li id="c12-li-0086">The server responds with a redirect to the HTTPS version of the page.</li>
+<li id="c12-li-0087">The user sends an HTTPS request for the page they were redirected to, and the website loads.</li>
+</ol>
+<p id="c12-para-0199">A SSL stripping attack uses an on-path attack when the HTTP request occurs, redirecting the rest of the communications through a system that an attacker controls, allowing the communication to be read or possibly modified. Although SSL stripping attacks can be conducted on any network, one of the most common implementations is through an open wireless network, where the attacker can control the wireless infrastructure and thus modify traffic that passes through their access point and network connection.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c12-fea-0015"/>
+<h3 id="head-2-207">Stopping SSL Stripping and HTTPS On-Path Attacks</h3>
+<section><span id="c12-sec-0079"/>
+<p id="c12-para-0200">Protecting against SSL stripping attacks can be done in a number of ways, including configuring systems to expect certificates for sites to be issued by a known certificate authority and thus preventing certificates for alternate sites or self-signed certificates from working. <span aria-label="412" epub:type="pagebreak" id="Page_412" role="doc-pagebreak"/>Redirects to secure websites are also a popular target for attackers since unencrypted requests for the HTTP version of a site could be redirected to a site of the attacker's choosing to allow for an on-path attack. The HTTP Strict Transport Security (HSTS) security policy mechanism is intended to prevent attacks like these that rely on protocol downgrades and cookie jacking by forcing browsers to connect only via HTTPS using TLS. Unfortunately, HSTS only works after a user has visited the site at least once, allowing attackers to continue to leverage on-path attacks.</p>
+<p id="c12-para-0201">Attacks like these, as well as the need to ensure user privacy, have led many websites to require HTTPS throughout the site, reducing the chances of users visiting an HTTP site that introduces the opportunity for an SSL stripping attack. Browser plug-ins like the Electronic Frontier Foundation's HTTPS Everywhere can also help ensure that requests that might have traveled via HTTP are instead sent via HTTPS automatically.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c12-para-0202">A final on-path attack variant is the browser-based on-path attack (formerly man-in-the-browser [MitB or MiB]). This attack relies on a Trojan that is inserted into a user's browser. The Trojan is then able to access and modify information sent and received by the browser. Since the browser receives and decrypts information, a browser-based on-path attack can successfully bypass TLS encryption and other browser security features, and it can also access sites with open sessions or that the browser is authenticated to, allowing a browser-based on-path attack to be a very powerful option for an attacker. Since browser-based on-path attacks require a Trojan to be installed, either as a browser plug-in or a proxy, system-level security defenses like antimalware tools and system configuration management and monitoring capabilities are best suited to preventing them.</p>
+<p id="c12-para-0203">On-path attack indicators are typically changed network gateways or routes, although sophisticated attackers might also compromise network switches or routers to gain access to and redirect traffic.</p>
+</section>
+<section><span id="c12-sec-0080"/>
+<h3 id="head-3-192">Domain Name System Attacks</h3>
+<p id="c12-para-0204">Stripping away encryption isn't the only type of network attack that can provide malicious actors with visibility into your traffic. In fact, simply having traffic sent to a system that they control is much simpler if they can manage it! That's where DNS attacks come into play.</p>
+<p id="c12-para-0205"><i>Domain hijacking</i> changes the registration of a domain, either through technical means like a vulnerability with a domain registrar or control of a system belonging to an authorized user, or through nontechnical means such as social engineering. The end result of domain hijacking is that the domain's settings and configuration can be changed by an attacker, allowing them to intercept traffic, send and receive email, or otherwise take action while appearing to be the legitimate domain holder. Domain hijacking isn't the <span aria-label="413" epub:type="pagebreak" id="Page_413" role="doc-pagebreak"/>only way that domains can be acquired for malicious purposes. In fact, many domains end up in hands other than those of the intended owner because they are not properly renewed. Detecting domain hijacking can be difficult if you are simply a user of systems and services from the domain, but domain name owners can leverage security tools and features provided by domain registrars to both protect and monitor their domains.</p>
+<p><i>DNS poisoning</i> can be accomplished in multiple ways. One form is another form of the on-path attack where an attacker provides a DNS response while pretending to be an authoritative DNS server. Vulnerabilities in DNS protocols or implementations can also permit DNS poisoning, but they are rarer. DNS poisoning can also involve poisoning the DNS cache on systems. Once a malicious DNS entry is in a system's cache, it will continue to use that information until the cache is purged or updated. This means that DNS poisoning can have a longer-term impact, even if it is discovered and blocked by an IPS or other security device. DNS cache poisoning may be noticed by users or may be detected by network defenses like an IDS or IPS, but it can be difficult to detect if done well.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c12-para-0207"><img alt="" role="presentation" src="images/note.png"/> DNSSEC can help prevent DNS poisoning and other DNS attacks by validating both the origin of DNS information and ensuring that the DNS responses have not been modified. You can read more about DNSSEC at <code><a href="http://www.icann.org/resources/pages/dnssec-what-is-it-why-important-2019-03-05-en">www.icann.org/resources/pages/dnssec-what-is-it-why-important-2019-03-05-en</a></code>.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c12-para-0208">When domain hijacking isn't possible and DNS cannot be poisoned, another option for attackers is <i>URL redirection</i>. URL redirection can take many forms, depending on the vulnerability that attackers leverage, but one of the most common is to insert alternate IP addresses into a system's hosts file. The hosts file is checked when a system looks up a site via DNS and will be used first, making a modified hosts file a powerful tool for attackers who can change it. Modified hosts files can be manually checked, or they can be monitored by system security antimalware tools that know the hosts file is a common target. In most organizations, the hosts file for the majority of machines will never be modified from its default, making changes easy to spot.</p>
+<p id="c12-para-0209">Although DNS attacks can provide malicious actors with a way to attack your organization, you can also leverage DNS-related information to help defend against attacks. <i>Domain reputation</i> services and tools provide information about whether a domain is a trusted email sender or sends a lot of spam email. In addition, individual organizations may assign domain reputation scores for email senders using their own email security and antispam tools.</p>
+<p id="c12-para-0210"><a href="#c12-fig-0005" id="R_c12-fig-0005">Figure 12.5</a> shows an example of the Cisco Talos email reputation service. As you would expect, Gmail has a favorable reputation, but you'll also note that the default display shows service in India for the location. Automated systems may not always have completely accurate data, particularly with complex, multinational services like Gmail.</p> <span aria-label="414" epub:type="pagebreak" id="Page_414" role="doc-pagebreak"/>
+<figure> <img alt="A snapshot of reputation data for gmail dot com. It includes location data, reputation details, top cities, email volume data, owner details, block lists, content details, and mail servers." class="center" src="images/c12f005.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c12-fig-0005" id="c12-fig-0005" role="doc-backlink"><b>FIGURE 12.5</b></a></span> Reputation data for <code><a href="http://gmail.com">gmail.com</a></code></p>
+</figcaption>
+</figure>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c12-para-0212"><img alt="" role="presentation" src="images/note.png"/> Other services like McAfee's WebWasher and SmartFilter databases provide other views of IP addresses and websites, allowing granular reputational views based on recent actions and activity. When you consider network-based controls and defenses, you should think about how reputation as a broad concept may be useful for defense, and how you and your organization would respond if an incident caused your reputation score to drop and be listed as negative or malicious by one, or many, services.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c12-para-0213">DNS attack indicators can take a number of forms, ranging from changes in DNS resolution to domain hijacking.</p>
+</section>
+<section><span id="c12-sec-0083"/>
+<h3 id="head-3-193">Credential Replay Attacks</h3>
+<p id="c12-para-0214"><i>Credential replay</i> attacks are a form of network attack that requires the attacker to be able to capture valid network data and to re-send it or delay it so that the attacker's own use of the data is successful. The most common version of this has been to re-send authentication hashes; however, most modern implementations of authentication systems use session IDs and encryption to largely prevent replay attacks.</p>
+<p id="c12-para-0215"><span aria-label="415" epub:type="pagebreak" id="Page_415" role="doc-pagebreak"/>Common indicators of replay attacks are on-path attack indicators like modified gateways or routes.</p>
+</section>
+<section><span id="c12-sec-0084"/>
+<h3 id="head-3-194">Malicious Code</h3>
+<p id="c12-para-0216">The Security+ exam outline points to the broad category of malicious code as a category of network attack to be aware of. Common examples include worms that spread via network connections, use of backdoors via networks, and other types of malicious code like viruses, Trojans, and ransomware that can be spread by protocols or methods that rely on networks.</p>
+<p>Common indicators of malicious activity of this sort include signatures that IDS and IPS systems can identify as well as scanning and probing on ports and protocols associated with worms.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c12-para-0218"><img alt="" role="presentation" src="images/note.png"/> We explored malicious code in more depth in <a href="c03.xhtml">Chapter 3</a>, “Malicious Code.”</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c12-sec-0086"/>
+<h3 id="head-3-195">Distributed Denial-of-Service Attacks</h3>
+<p id="c12-para-0219">Security professionals need to know how to detect and identify distributed denial-of-service (DDoS) attacks. A distributed denial-of-service is conducted from multiple locations, networks, or systems, making it difficult to stop and hard to detect. At the same time, the distributed nature of the DDoS means that it may bring significant resources to bear on a targeted system or network, potentially overwhelming the target through its sheer size.</p>
+<section><span id="c12-sec-0087"/>
+<h4 id="head-4-136">Network DDoS</h4>
+<p id="c12-para-0220">One of the most common forms of the distributed denial-of-service attack is a network-based DDoS. Malicious actors commonly use large-scale botnets to conduct network DDoS attacks, and commercial services exist that conduct DDoS attacks and DDoS-like behavior for stress- and load-testing purposes. All of this means that organizations need to have a plan in place to detect and handle network DDoS attacks.</p>
+<p id="c12-para-0221">In many cases, your organization's Internet service provider (ISP) may provide a DDoS prevention service, either by default or as an additional subscription option. Knowing whether your ISP provides the capability and under what circumstances it will activate or can be turned on can be a critical network defense for your organization. If your ISP does not provide DDoS prevention, a second option is to ensure that your network border security devices have DDoS prevention capabilities.</p>
+<p id="c12-para-0222">Once you understand your defensive capabilities, you need to know the most common types of network DDoS attacks. Although there are many types, they can be categorized into two major categories: volume-based and protocol-based.</p>
+<p><span aria-label="416" epub:type="pagebreak" id="Page_416" role="doc-pagebreak"/>Volume-based network DDoS attacks focus on the sheer amount of traffic causing a denial-of-service condition. Some volume-based DDoS attacks rely on amplification techniques that leverage flaws or features in protocols and services to create significantly more traffic than the attacker sends. Volume-based attack examples include UDP and ICMP floods:</p>
+<ul class="square" id="c12-list-0029">
+<li id="c12-li-0088">UDP floods take advantage of the fact that UDP doesn't use a three-way handshake like TCP does, allowing UDP floods to be executed simply by sending massive amounts of traffic that the target host will receive and attempt to process. Since UDP is not rate limited or otherwise protected and does not use a handshake, UDP floods can be conducted with minimal resources on the attacking systems. UDP floods can be detected using IDSs and IPSs and other network defenses that have a UDP flood detection rule or module. Manual detection of a flood can be done with a packet analyzer as part of a response process, but manual analysis of a live attack can be challenging and may not be timely.</li>
+<li id="c12-li-0089">Unlike UDP, ICMP is rate limited in many modern operating systems. ICMP floods, sometimes called ping floods, send massive numbers of ICMP packets, with each requesting a response. ICMP floods require more aggregate bandwidth on the side of the attacker than the defender has, which is why a distributed denial-of-service via ICMP may be attempted. Many organizations rate-limit or block ping at network ingress points to prevent this type of attack, and they may rate-limit ICMP between security zones as well. Much like UDP floods, detection rules on network security devices as well as manual detection can be used, but proactive defenses are relatively easy and quite common to deploy despite the fact that some ICMP traffic may be lost if the rate limit is hit.</li>
+</ul>
+<p id="c12-para-0224">Protocol-based network DDoS attacks focus on the underlying protocols used for networking. SYN floods send the first step in a three-way handshake and do not respond to the SYN-ACK that is sent back, thus consuming TCP stack resources until they are exhausted. These attacks are one of the most common modern protocol-based network DDoS attacks. Older attacks targeted vulnerable TCP stacks with attacks like the Ping of Death, which sent a ping packet too large for many to handle, and Smurf attacks, which leveraged ICMP broadcast messages with a spoofed sender address, causing systems throughout the broadcast domain to send traffic to the purported sender and thus overwhelming it. Fragmented packets, packets with all of their TCP flags turned on (Christmas Tree or Xmas attacks), and a variety of other attacks have leveraged flaws and limitations in how the networking was implemented in operating systems. Security professionals need to know that the features of network protocols and the specific implementations of those protocols may be leveraged as part of an attack and that they may need to identify those attacks.</p>
+<p id="c12-para-0225"><a href="#c12-fig-0006" id="R_c12-fig-0006">Figure 12.6</a> shows a SYN flood as seen via Wireshark with appropriate filters turned on. Identifying a SYN DDoS will typically mean reviewing traffic aimed at a target host and noticing that there are massive numbers of SYN packets being sent without the rest of the handshake being completed by the requestors. Note that in this figure, a single system is sending the SYN flood; in a real DDoS, several systems would be shown as the source of the traffic. Filtering by the destination system and ensuring that three-way handshakes were not completed would be required to validate a DDoS attack.</p> <span aria-label="417" epub:type="pagebreak" id="Page_417" role="doc-pagebreak"/>
+<figure> <img alt="A snapshot of a S Y N flood is shown in Wireshark. The column headers are number, time, source, destination, protocol, length, and info." class="center" src="images/c12f006.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c12-fig-0006" id="c12-fig-0006" role="doc-backlink"><b>FIGURE 12.6</b></a></span> A SYN flood shown in Wireshark</p>
+</figcaption>
+</figure>
+<p id="c12-para-0226">The Security+ exam outline specifically calls out one type of volume-based denial-of-service attack: <i>amplified denial-of-service attacks</i>. Amplified denial-of-service attacks take advantage of protocols that allow a small query to return large results like a DNS query. Spoofing a system's IP address as part of a query can result in a DNS server sending much more traffic to the spoofed IP address than was sent to the DNS server originally, amplifying a small amount of traffic into a large response.</p>
+<p id="c12-para-0227">This type of attack also takes advantage of the other type of denial-of-service attack specifically mentioned in the exam outline: <i>reflected denial-of-service attacks</i>. The spoofed IP address causes a legitimate service to conduct the attack, making it harder to know who the attacker is. When combined into a reflected and amplified denial-of-service attack, this can be a powerful combination that is difficult to stop and even more difficult to track down.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c12-fea-0016"/>
+<h3 id="head-2-208">Exam Note</h3>
+<section><span id="c12-sec-0088"/>
+<p id="c12-para-0228">The final elements you'll need to know to be ready for the exam include secure protocols, including being familiar with them and being able to suggest replacements for insecure <span aria-label="418" epub:type="pagebreak" id="Page_418" role="doc-pagebreak"/>options. You'll also want to be familiar with common network attacks and how you might counter them with the tools and techniques you've reviewed in this chapter. Consider on-path, DNS, replay attacks, malicious code, and denial-of-service attacks and how you'd identify, prevent, and respond to each.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+</section>
+<section aria-labelledby="head-2-209"><span id="c12-sec-0089"/>
+<h2 id="head-2-209">Summary</h2>
+<p id="c12-para-0229">Security professionals need to understand how secure networks are designed. Infrastructure considerations that security professionals must take into account include the organization's attack surface, where devices are logically and physically placed, and how security zones will be established based on organizational requirements. Then, connectivity requirements, including speed and latency, need to be accounted for and failure modes, including if devices should fail open to maintain access or fail closed to ensure security, should be determined. Concepts like physical isolation and air-gapping and logical segmentation help create barriers to attacks and exploits. High-availability design concepts ensure that systems remain online despite issues or disasters. Secure protocols are used to keep data secure in transit.</p>
+<p id="c12-para-0230">Modern networks also rely on the ability to be controlled by software as part of software-defined networks. SD-WANs (software-defined wide area networks) take this concept outside of the local organization to manage connectivity. SASE helps to protect devices regardless of their location since organizations often operate in more than one place. Finally, zero trust concepts move organizations from traditional layered defenses to a continuous validation and authorization model.</p>
+<p id="c12-para-0231">Network access control (NAC), 802.1X, and port security all help control access to the network itself. Validating machines and their security stance can help ensure that only secure devices are allowed on the network. VPNs provide secure remote access and protect organizational data in transit by tunneling through other, untrusted networks.</p>
+<p id="c12-para-0232">Many of the security tools are available as security appliances and devices. Secure access via jump boxes lets administrators safely cross security boundaries. Load balancers, proxy servers, and web filters provide network capabilities, whereas firewalls, IDS and IPS devices, and DLP tools provide focused security functionality. Security and device management design options include out-of-band management techniques, access control lists, quality-of-service functionality, routing protocol security options, DNS security configurations, broad use of TLS and TLS-enabled services, SNMP and monitoring tools, and even tools used to capture and analyze attacker tools and techniques like honeynets and honeypots. Regardless of the type of network device, it should be hardened as part of its configuration process.</p>
+<p id="c12-para-0233">Using secure protocols and services instead of insecure versions and understanding the limitations and implementation requirements for each protocol and service is also important. Once attackers are in a network, they will attempt to gain access to network traffic, and secure protocols will help ensure that traffic an attacker intercepts will not be easily <span aria-label="419" epub:type="pagebreak" id="Page_419" role="doc-pagebreak"/>accessible to them. Options like secure email, FTP, HTTP, and Secure Shell are all part of the secure network design toolkit.</p>
+<p id="c12-para-0234">Even with all of these defenses in place, you need to be able to identify a number of attacks: on-path attacks, DNS, credential replay, and distributed denial-of-service attacks. Each of these attacks has identifiable characteristics, ranging from traffic patterns to switch behavior.</p>
+</section>
+<section aria-labelledby="head-2-210"><span id="c12-sec-0090"/>
+<h2 id="head-2-210">Exam Essentials</h2>
+<p id="c12-li-0090"><b>The foundation of network security is a secure design.</b> Networks must be designed with security in mind. Considerations include the attack surface of the network and its attached devices, which drives placement and segmentation into different security zones based on risk or security requirements. Understanding what will happen when failures occur and dealing with those failures also influences design and choices around high availability. NAC and 802.1X protect networks from untrusted devices being connected, whereas port security and port-level protections like loop prevention and broadcast storm protection ensure that malicious or misconfigured systems do not cause network issues. Network taps and monitoring ports allow packet capture by creating a copy of traffic from other ports. VPNs are used to tunnel network traffic to another location, and they can be encrypted or simply tunneled. Key concepts like physical isolation, logical segmentation, use of secure protocols, use of reputation services, and tools like software-defined networking, zero trust, SD-WAN, and SASE all have their place in secure network design.</p>
+<p id="c12-li-0091"><b>Network appliances are used to provide security services to networks and systems.</b> There are many types of network appliances. Jump servers provide a secure way to access systems in another security zone. Load balancers spread load among systems and can use different scheduling options as well as operational modes like active/active or active/passive designs. Proxy servers either centralize connections from a group of clients out to a server or from a group of servers out to clients, often as a load-balancing strategy. Web filters filter content and URLs to limit what information can enter and exit a network based on rules, and data loss prevention systems monitor to ensure that data that shouldn't leave systems or networks is identified and flagged, sent securely, or stopped. IDS and IPS devices identify and take action based on malicious behavior, signatures, or anomalies in traffic. Data collection devices like sensors and collectors help with data gathering. Firewalls, including next-generation firewalls, web application firewalls, and unified threat management appliances, are used to build security zones and are placed at trust boundaries. UTM devices combine many of these security features and capabilities into a single appliance or system. Access control lists are used by many devices, including switches and routers to determine what traffic can flow through them based on rules.</p>
+<p id="c12-li-0092"><b>Network security services and management techniques help make sure that a network stays secure.</b> Out-of-band management puts management interfaces on a separate VLAN or physical network or requires direct connection to help prevent attackers from <span aria-label="420" epub:type="pagebreak" id="Page_420" role="doc-pagebreak"/>gaining access to management interfaces. DNS security is also limited, but DNSSEC helps validate DNS servers and responses. DNS servers must be properly configured to prevent zone transfers and other DNS attacks. Email security leverages DMARC, DKIM, and SPF to validate senders and domains. TLS is used broadly to protect network traffic, acting as a wrapper for many other protocols. Monitoring services and systems helps ensure that they remain online and accessible but require care due to the amount of information that can be generated and the fact that false positives are possible if the validation and monitoring does not fully validate service responses. File integrity monitors check to see if files have been changed and can alert on changes or restore existing files to a pre-change or pre-deletion state. Honeypots and honeynets are used to gather information about attackers, and honeyfiles and honeytokens are used to identify potential breaches and attackers who have gathered information from systems in your environment. Network devices are hardened, much like other devices, often based on standards and benchmarks.</p>
+<p id="c12-li-0093"><b>Secure protocols provide ways to send and receive information securely.</b> Many original Internet protocols are not secure—they do not provide encryption or authentication and can be captured and analyzed or modified. Using secure versions of protocols or using an alternate secure service and protocol is an important part of ensuring that a network is secure. Key protocols include voice and video protocols like SRTP; email protocols like IMAPS and POPS; and security protocols like DMARC, DKIM, and SPF. File transfers can be done via SFTP or FTPS instead of FTP, and directory services can be moved from LDAP to LDAPS. Some protocols do not have as many or as complete secure options. In fact, DNS, routing, and DHCP all have limited options for secure communications. Network administrators must take these into account while designing and operating their networks.</p>
+<p id="c12-li-0094"><b>Network attacks drive network security decisions and design.</b> On-path attacks redirect traffic through a system that an attacker controls, allowing them to observe and potentially modify traffic. DNS attacks include domain hijacking, DNS poisoning, and URL redirection, but can be partially countered through the use of DNSSEC. Credential replay attacks take advantage of poorly designed or insecure protocols to send valid authentication hashes or other artifacts pretending to be a legitimate user. Malicious code ranging from worms to denial-of-service tools can impact networks and must be accounted for in design. Denial-of-service attacks and distributed denial-of-service attacks consume resources or target services to cause them to fail. Reflected denial-of-service attacks use spoofed source addresses to cause traffic to be sent to targets, whereas amplified denial-of-service attacks use small queries to get large results, amplifying their impact.</p>
+
+</section> <span aria-label="421" epub:type="pagebreak" id="Page_421" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-211"><span id="c12-sec-0091"/>
+<h2 id="head-2-211">Review Questions</h2>
+<section><span id="c12-exsec-0001"/>
+<ol class="decimal">
+<li id="c12-ex-0001">A system that Tony manages sends an SNMP trap. What type of information should Tony expect to receive?
+<ol class="upper-alpha">
+<li>Notification of a vulnerability</li>
+<li>Notification of a patch being installed</li>
+<li>Notification of an issue</li>
+<li>Notification of user being created</li>
+</ol>
+</li>
+<li id="c12-ex-0002">Ben wants to observe malicious behavior targeted at multiple systems on a network. He sets up a variety of systems and instruments to allow him to capture copies of attack tools and to document all the attacks that are conducted. What has he set up?
+<ol class="upper-alpha">
+<li>A honeypot</li>
+<li>A beartrap</li>
+<li>A honeynet</li>
+<li>A tarpit</li>
+</ol>
+</li>
+<li id="c12-ex-0003">Valerie wants to replace the telnet access that she found still in use in her organization. Which protocol should she use to replace it, and what port will it run on?
+<ol class="upper-alpha">
+<li>SFTP, port 21</li>
+<li>SSH, port 22</li>
+<li>HTTPS, port 443</li>
+<li>RDP, port 3389</li>
+</ol>
+</li>
+<li id="c12-ex-0004">Jill wants to use DNS filtering to prevent users in her organization from visiting potentially malicious sites. What type of service should she use to obtain this information?
+<ol class="upper-alpha">
+<li>An OSINT service</li>
+<li>A STP feed</li>
+<li>An ACL monitoring service</li>
+<li>A reputation service</li>
+</ol>
+</li>
+<li id="c12-ex-0005">Chuck wants to provide access to a protected network from a less trusted network. What type of solution is commonly implemented to provide a secure, monitored access method?
+<ol class="upper-alpha">
+<li>A proxy server</li>
+<li>A jump server</li>
+<li>A VLAN</li>
+<li>An air gap</li>
+</ol>
+</li>
+<li id="c12-ex-0006">Kathleen wants to deploy a firewall that can handle large amounts of network traffic while performing advanced firewalling tasks. What type of device should she select?
+<ol class="upper-alpha">
+<li>A NGFW</li>
+<li>A WAF <span aria-label="422" epub:type="pagebreak" id="Page_422" role="doc-pagebreak"/></li>
+<li>A UTM</li>
+<li>A SD-FW</li>
+</ol>
+</li>
+<li id="c12-ex-0007">Mark wants to prevent DNS poisoning attacks. What technology should he implement to counter them most effectively?
+<ol class="upper-alpha">
+<li>DNSSEC</li>
+<li>SDNS</li>
+<li>SASE</li>
+<li>SD-WAN</li>
+</ol>
+</li>
+<li id="c12-ex-0008">Casey wants to replace her organization's MPLS-based external connectivity using commodity technologies. What technology should she select to help her manage this?
+<ol class="upper-alpha">
+<li>IPSec VPN</li>
+<li>SASE</li>
+<li>SD-WAN</li>
+<li>TLS VPN</li>
+</ol>
+</li>
+<li id="c12-ex-0009">What protocol is used to securely wrap many otherwise insecure protocols?
+<ol class="upper-alpha">
+<li>ISAKMP</li>
+<li>SSL</li>
+<li>IKE</li>
+<li>TLS</li>
+</ol>
+</li>
+<li id="c12-ex-0010">Valentine wants to deploy a secure version of DHCP for her organization. What should she implement?
+<ol class="upper-alpha">
+<li>S-DHCP</li>
+<li>DHCP over TLS</li>
+<li>DHCPS</li>
+<li>There is no secured version of DHCP.</li>
+</ol>
+</li>
+<li id="c12-ex-0011">What component of a zero-trust architecture forwards requests from subjects and acts on whether subjects are allowed to access resources?
+<ol class="upper-alpha">
+<li>Policy administrators</li>
+<li>Policy enforcement points</li>
+<li>Policy engines</li>
+<li>Policy gateways</li>
+</ol>
+</li>
+<li id="c12-ex-0012">Gary wants to use secure protocols for email access for his end users. Which of the following groups of protocols should he implement to accomplish this task?
+<ol class="upper-alpha">
+<li>DKIM, DMARC, HTTPS</li>
+<li>SPF, POPS, IMAPS</li>
+<li>POPS, IMAPS, HTTPS</li>
+<li>DMARC, DKIM, SPF</li>
+</ol>
+</li>
+<li id="c12-ex-0013"><span aria-label="423" epub:type="pagebreak" id="Page_423" role="doc-pagebreak"/> Gary wants to prevent his organization's most sensitive data from being accessed by network-based attackers at any cost. What solution should he implement to ensure this?
+<ol class="upper-alpha">
+<li>An air gap</li>
+<li>Firewall rules</li>
+<li>An IPS</li>
+<li>IPSec</li>
+</ol>
+</li>
+<li id="c12-ex-0014">Madhuri is designing a load-balancing configuration for her company and wants to keep a single node from being overloaded. What type of design will meet this need?
+<ol class="upper-alpha">
+<li>A daisy chain</li>
+<li>Active/active</li>
+<li>Duck-duck-goose</li>
+<li>Active/passive</li>
+</ol>
+</li>
+<li id="c12-ex-0015">What type of NAC will provide Isaac with the greatest amount of information about the systems that are connecting while also giving him the most amount of control of systems and their potential impact on other systems that are connected to the network?
+<ol class="upper-alpha">
+<li>Agent-based, preadmission NAC</li>
+<li>Agentless, postadmission NAC</li>
+<li>Agent-based NAC, postadmission NAC</li>
+<li>Agentless, postadmission NAC</li>
+</ol>
+</li>
+<li id="c12-ex-0016">Danielle's organization has implemented a tool that combines SD-WAN, a CASB, and Zero Trust, among other security functions, to provide security regardless of where her organization's devices are. What type of solution has her organization implemented?
+<ol class="upper-alpha">
+<li>A UTM</li>
+<li>An NGFW</li>
+<li>IPSec</li>
+<li>SASE</li>
+</ol>
+</li>
+<li id="c12-ex-0017">Wayne is concerned that an on-path attack has been used against computers he is responsible for. What artifact is he most likely to find associated with this attack?
+<ol class="upper-alpha">
+<li>A compromised router</li>
+<li>A browser plug-in</li>
+<li>A compromised server</li>
+<li>A modified hosts file</li>
+</ol>
+</li>
+<li id="c12-ex-0018">Elle has scanned her organization from an external IP address and has identified all of the services that are visible from the public Internet. What does this enable her to describe?
+<ol class="upper-alpha">
+<li>If the organization is a fail-open organization</li>
+<li>Her organization's OSINT report</li>
+<li>Her organization's attack surface</li>
+<li>If the organization is a fail-closed organization</li>
+</ol>
+</li>
+<li id="c12-ex-0019"><span aria-label="424" epub:type="pagebreak" id="Page_424" role="doc-pagebreak"/> What technique is used to ensure that DNSSEC-protected DNS information is trustworthy?
+<ol class="upper-alpha">
+<li>It is digitally signed.</li>
+<li>It is sent via TLS.</li>
+<li>It is encrypted using AES256.</li>
+<li>It is sent via an IPSec VPN.</li>
+</ol>
+</li>
+<li id="c12-ex-0020">Fred wants to ensure that the administrative interfaces for the switches and routers are protected so that they cannot be accessed by attackers. Which of the following solutions should he recommend as part of his organization's network design?
+<ol class="upper-alpha">
+<li>NAC</li>
+<li>Trunking</li>
+<li>Out-of-band management</li>
+<li>Port security</li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+</section>
+</body>
+</html>

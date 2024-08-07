@@ -1,0 +1,508 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:svg="http://www.w3.org/2000/svg" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+<head>
+<title>Chapter 1 Today's Security Professional</title>
+<link href="WileyTemplate_v5.5.css" rel="stylesheet" type="text/css"/>
+<meta content="urn:uuid:57d469d3-a1d3-48bd-8447-18ce82f57cc2" name="Adept.expected.resource"/>
+</head>
+<body epub:type="bodymatter">
+<section aria-labelledby="c01_1" epub:type="chapter" role="doc-chapter">
+<header>
+<h1 id="c01_1"><span aria-label="1" epub:type="pagebreak" id="Page_1" role="doc-pagebreak"/><span id="c01"/><span class="chapterNumber">Chapter 1</span><br/><span class="chapterTitle">Today's Security Professional</span></h1>
+</header>
+<section aria-label="chapter opening"><span id="c01-sec-0001"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p><b>THE COMPTIA SECURITY+ EXAM OBJECTIVES COVERED IN THIS CHAPTER INCLUDE:</b></p>
+<ul class="check1" id="c01-list-0002">
+<li id="c01-li-0002"><b>Domain 1.0: General Security Concepts</b>
+<ul class="square1" id="c01-list-0003">
+<li id="c01-li-0003">1.1. Compare and contrast various types of security controls.
+<ul class="square1" id="c01-list-0004">
+<li id="c01-li-0004">Categories (Technical, Managerial, Operational, Physical)</li>
+<li id="c01-li-0005">Control Types (Preventive, Deterrent, Detective, Corrective, Compensating, Directive)</li>
+</ul>
+</li>
+<li id="c01-li-0006">1.2. Summarize fundamental security concepts.
+<ul class="square1" id="c01-list-0005">
+<li id="c01-li-0007">Confidentiality, Integrity, and Availability (CIA)</li>
+<li id="c01-li-0008">Non-repudiation</li>
+<li id="c01-li-0009">Gap analysis</li>
+</ul>
+</li>
+<li id="c01-li-0010">1.4. Explain the importance of using appropriate cryptographic solutions.
+<ul class="square1" id="c01-list-0006">
+<li id="c01-li-0011">Obfuscation (Tokenization, Data masking)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="c01-li-0012"><b>Domain 3.0: Security Architecture</b>
+<ul class="square1" id="c01-list-0007">
+<li id="c01-li-0013">3.3. Compare and contrast concepts and strategies to protect data.
+<ul class="square1" id="c01-list-0008">
+<li id="c01-li-0014">General data considerations (Data states, Data at rest, Data in transit, Data in use)</li>
+<li id="c01-li-0015">Methods to secure data (Geographic restrictions, Encryption, Hashing, Masking, Tokenization, Obfuscation, Segmentation, Permission restrictions)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="c01-li-0016"><b>Domain 5.0: Security Program Management and Oversight</b>
+<ul class="square1" id="c01-list-0009">
+<li id="c01-li-0017">5.2. Explain elements of the risk management process.
+<ul class="square1" id="c01-list-0010">
+<li id="c01-li-0018">Risk identification</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul> <span aria-label="2" epub:type="pagebreak" id="Page_2" role="doc-pagebreak"/>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c01-para-0012">Security professionals play a crucial role in protecting their organizations in today's complex threat landscape. They are responsible for protecting the confidentiality, integrity, and availability of information and information systems used by their organizations. Fulfilling this responsibility requires a strong understanding of the threat environment facing their organization and a commitment to designing and implementing a set of controls capable of rising to the occasion and answering those threats.</p>
+<p id="c01-para-0013">In the first section of this chapter, you will learn about the basic objectives of cybersecurity: confidentiality, integrity, and availability of your operations. In the sections that follow, you will learn about some of the controls that you can put in place to protect your most sensitive data from prying eyes. This chapter sets the stage for the remainder of the book, where you will dive more deeply into many different areas of cybersecurity.</p>
+</section>
+<section aria-labelledby="head-2-3"><span id="c01-sec-0002"/>
+<h2 id="head-2-3">Cybersecurity Objectives</h2>
+<p id="c01-para-0014">When most people think of cybersecurity, they imagine hackers trying to break into an organization's system and steal sensitive information, ranging from Social Security numbers and credit cards to top-secret military information. Although protecting sensitive information from unauthorized disclosure is certainly one element of a cybersecurity program, it is important to understand that cybersecurity actually has three complementary objectives, as shown in <a href="#c01-fig-0001" id="R_c01-fig-0001">Figure 1.1</a>.</p> <span aria-label="3" epub:type="pagebreak" id="Page_3" role="doc-pagebreak"/>
+<figure> <img alt="An illustration of a triangle. It has the words like Confidentiality, Integrity, and Availability." class="center" src="images/c01f001.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c01-fig-0001" id="c01-fig-0001" role="doc-backlink"><b>FIGURE 1.1</b></a></span> The three key objectives of cybersecurity programs are confidentiality, integrity, and availability.</p>
+</figcaption>
+</figure>
+<p id="c01-para-0015"><i>Confidentiality</i> ensures that unauthorized individuals are not able to gain access to sensitive information. Cybersecurity professionals develop and implement security controls, including firewalls, access control lists, and encryption, to prevent unauthorized access to information. Attackers may seek to undermine confidentiality controls to achieve one of their goals: the unauthorized disclosure of sensitive information.</p>
+<p id="c01-para-0016"><i>Integrity</i> ensures that there are no unauthorized modifications to information or systems, either intentionally or unintentionally. Integrity controls, such as hashing and integrity monitoring solutions, seek to enforce this requirement. Integrity threats may come from attackers seeking the alteration of information without authorization or nonmalicious sources, such as a power spike causing the corruption of information.</p>
+<p id="c01-para-0017"><i>Availability</i> ensures that information and systems are ready to meet the needs of legitimate users at the time those users request them. Availability controls, such as fault tolerance, clustering, and backups, seek to ensure that legitimate users may gain access as needed. Similar to integrity threats, availability threats may come either from attackers seeking the disruption of access or from nonmalicious sources, such as a fire destroying a datacenter that contains valuable information or services.</p>
+<p id="c01-para-0018">Cybersecurity analysts often refer to these three goals, known as the <i>CIA triad</i>, when performing their work. They often characterize risks, attacks, and security controls as meeting one or more of the three CIA triad goals when describing them.</p>
+<p id="c01-para-0019"><i>Nonrepudiation</i>, while not part of the CIA triad, is also an important goal of some cybersecurity controls. Nonrepudiation means that someone who performed some action, such as sending a message, cannot later deny having taken that action. Digital signatures are a common example of nonrepudiation. They allow anyone who is interested to confirm that a message truly originated from its purported sender.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c01-fea-0001"/>
+<h3 id="head-2-4">Exam Note</h3>
+<section><span id="c01-sec-0003"/>
+<p id="c01-para-0020">Remember the main components of the CIA triad security model are confidentiality, integrity, and availability. Also know that nonrepudiation is the assurance that something cannot be denied by someone.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section aria-labelledby="head-2-5"><span id="c01-sec-0004"/>
+<h2 id="head-2-5">Data Breach Risks</h2>
+<p id="c01-para-0021"><i>Security incidents</i> occur when an organization experiences a breach of the confidentiality, integrity, and/or availability of information or information systems. These incidents may occur as the result of malicious activity, such as an attacker targeting the organization and stealing sensitive information, as the result of accidental activity, such as an employee leaving an unencrypted laptop in the back of a rideshare, or as the result of natural activity, such as an earthquake destroying a datacenter.</p>
+<p id="c01-para-0022"><span aria-label="4" epub:type="pagebreak" id="Page_4" role="doc-pagebreak"/>As a security professional, you are responsible for understanding these risks and implementing controls designed to manage those risks to an acceptable level. To do so, you must first understand the effects that a breach might have on your organization and the impact it might have on an ongoing basis.</p>
+<section><span id="c01-sec-0005"/>
+<h3 id="head-3-1">The DAD Triad</h3>
+<p id="c01-para-0023">Earlier in this chapter, we introduced the CIA triad, used to describe the three main goals of cybersecurity: confidentiality, integrity, and availability. <a href="#c01-fig-0002" id="R_c01-fig-0002">Figure 1.2</a> shows a related model: the <i>DAD triad</i>. This model explains the three key threats to cybersecurity efforts: <i>disclosure</i>, <i>alteration</i>, and <i>denial</i>. Each of these three threats maps directly to one of the main goals of cybersecurity:</p>
+<figure> <img alt="An illustration of a triangle. It has the words like Disclosure, Alteration, and Denial." class="center" src="images/c01f002.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c01-fig-0002" id="c01-fig-0002" role="doc-backlink"><b>FIGURE 1.2</b></a></span> The three key threats to cybersecurity programs are disclosure, alteration, and denial.</p>
+</figcaption>
+</figure>
+<ul class="square" id="c01-list-0011">
+<li id="c01-li-0019"><i>Disclosure</i> is the exposure of sensitive information to unauthorized individuals, otherwise known as <i>data loss</i>. Disclosure is a violation of the principle of confidentiality. Attackers who gain access to sensitive information and remove it from the organization are said to be performing <i>data exfiltration</i>. Disclosure may also occur accidentally, such as when an administrator misconfigures access controls or an employee loses a device.</li>
+<li id="c01-li-0020"><i>Alteration</i> is the unauthorized modification of information and is a violation of the principle of integrity. Attackers may seek to modify records contained in a system for financial gain, such as adding fraudulent transactions to a financial account. Alteration may occur as the result of natural activity, such as a power surge causing a “bit flip” that modifies stored data. Accidental alteration is also a possibility, if users unintentionally modify information stored in a critical system as the result of a typo or other unintended activity.</li>
+<li id="c01-li-0021"><i>Denial</i> is the disruption of an authorized user's legitimate access to information. Denial events violate the principle of availability. This availability loss may be intentional, such as when an attacker launches a distributed denial-of-service (DDoS) attack against a website. Denial may also occur as the result of accidental activity, such as the failure of a critical server, or as the result of natural activity, such as a natural disaster impacting a communications circuit.</li>
+</ul>
+<p><span aria-label="5" epub:type="pagebreak" id="Page_5" role="doc-pagebreak"/>The CIA and DAD triads are very useful tools for cybersecurity planning and risk analysis. Whenever you find yourself tasked with a broad goal of assessing the security controls used to protect an asset or the threats to an organization, you can turn to the CIA and DAD triads for guidance. For example, if you're asked to assess the threats to your organization's website, you may apply the DAD triad in your analysis:</p>
+<ul class="square" id="c01-list-0012">
+<li id="c01-li-0022">Does the website contain sensitive information that would damage the organization if disclosed to unauthorized individuals?</li>
+<li id="c01-li-0023">If an attacker were able to modify information contained on the website, would this unauthorized alteration cause financial, reputational, or operational damage to the organization?</li>
+<li id="c01-li-0024">Does the website perform mission-critical activities that could damage the business significantly if an attacker were able to disrupt the site?</li>
+</ul>
+<p id="c01-para-0026">That's just one example of using the DAD triad to inform a risk assessment. You can use the CIA and DAD models in almost any situation to serve as a helpful starting point for a more detailed risk analysis.</p>
+</section>
+<section><span id="c01-sec-0006"/>
+<h3 id="head-3-2">Breach Impact</h3>
+<p id="c01-para-0027">The impacts of a security incident may be wide-ranging, depending on the nature of the incident and the type of organization affected. We can categorize the potential impact of a security incident using the same categories that businesses generally use to describe any type of risk: financial, reputational, strategic, operational, and compliance.</p>
+<p id="c01-para-0028">Let's explore each of these risk categories in greater detail.</p>
+<section><span id="c01-sec-0007"/>
+<h4 id="head-4-1">Financial Risk</h4>
+<p id="c01-para-0029"><i>Financial risk</i> is, as the name implies, the risk of monetary damage to the organization as the result of a data breach. This may be very direct financial damage, such as the costs of rebuilding a datacenter after it is physically destroyed or the costs of contracting experts for incident response and forensic analysis services.</p>
+<p id="c01-para-0030">Financial risk may also be indirect and come as a second-order consequence of the breach. For example, if an employee loses a laptop containing plans for a new product, the organization suffers direct financial damages of a few thousand dollars from the loss of the physical laptop. However, the indirect financial damage may be more severe, as competitors may gain hold of those product plans and beat the organization to market, resulting in potentially significant revenue loss.</p>
+</section>
+<section><span id="c01-sec-0008"/>
+<h4 id="head-4-2">Reputational Risk</h4>
+<p id="c01-para-0031"><i>Reputational risk</i> occurs when the negative publicity surrounding a security breach causes the loss of goodwill among customers, employees, suppliers, and other stakeholders. It is often difficult to quantify reputational damage, as these stakeholders may not come out and directly say that they will reduce or eliminate their volume of business with the organization as a result of the security breach. However, the breach may still have an impact on their future decisions about doing business with the organization.</p> <span aria-label="6" epub:type="pagebreak" id="Page_6" role="doc-pagebreak"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c01-fea-0002"/>
+<h3 id="head-2-6">Identity Theft</h3>
+<section><span id="c01-sec-0009"/>
+<p id="c01-para-0032">When a security breach strikes an organization, the effects of that breach often extend beyond the walls of the breached organization, affecting customers, employees, and other individual stakeholders. The most common impact on these groups is the risk of identity theft posed by the exposure of personally identifiable information (PII) to unscrupulous individuals.</p>
+<p id="c01-para-0033">Organizations should take special care to identify, inventory, and protect PII elements, especially those that are prone to use in identity theft crimes. These include Social Security numbers, bank account and credit card information, drivers' license numbers, passport data, and similar sensitive identifiers.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c01-sec-0010"/>
+<h4 id="head-4-3">Strategic Risk</h4>
+<p id="c01-para-0034"><i>Strategic risk</i> is the risk that an organization will become less effective in meeting its major goals and objectives as a result of the breach. Consider again the example of an employee losing a laptop that contains new product development plans. This incident may pose strategic risk to the organization in two different ways. First, if the organization does not have another copy of those plans, they may be unable to bring the new product to market or may suffer significant product development delays. Second, if competitors gain access to those plans, they may be able to bring competing products to market more quickly or even beat the organization to market, gaining first-mover advantage. Both of these effects demonstrate strategic risk to the organization's ability to carry out its business plans.</p>
+</section>
+<section><span id="c01-sec-0011"/>
+<h4 id="head-4-4">Operational Risk</h4>
+<p id="c01-para-0035"><i>Operational risk</i> is risk to the organization's ability to carry out its day-to-day functions. Operational risks may slow down business processes, delay delivery of customer orders, or require the implementation of time-consuming manual work-arounds to normally automated practices.</p>
+<p id="c01-para-0036">Operational risk and strategic risk are closely related, so it might be difficult to distinguish between them. Think about the difference in terms of the nature and degree of the impact on the organization. If a risk threatens the very existence of an organization or the ability of the organization to execute its business plans, that is a strategic risk that seriously jeopardizes the organization's ongoing viability. On the other hand, if the risk only causes inefficiency and delay within the organization, it fits better into the operational risk category.</p>
+</section>
+<section><span id="c01-sec-0012"/>
+<h4 id="head-4-5">Compliance Risk</h4>
+<p id="c01-para-0037"><i>Compliance risk</i> occurs when a security breach causes an organization to run afoul of legal or regulatory requirements. For example, the Health Insurance Portability and <span aria-label="7" epub:type="pagebreak" id="Page_7" role="doc-pagebreak"/>Accountability Act (HIPAA) requires that health-care providers and other covered entities protect the confidentiality, integrity, and availability of protected health information (PHI). If an organization loses patient medical records, they violate HIPAA requirements and are subject to sanctions and fines from the U.S. Department of Health and Human Services. That's an example of compliance risk.</p>
+<p id="c01-para-0038">Organizations face many different types of compliance risk in today's regulatory landscape. The nature of those risks depends on the jurisdictions where the organization operates, the industry that the organization functions within, and the types of data that the organization handles. We discuss these compliance risks in more detail in <a href="c16.xhtml">Chapter 16</a>, “Security Governance and Compliance.”</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c01-fea-0003"/>
+<h3 id="head-2-7">Risks Often Cross Categories</h3>
+<section><span id="c01-sec-0013"/>
+<p id="c01-para-0039">Don't feel like you need to shoehorn every risk into one and only one of these categories. In most cases, a risk will cross multiple risk categories. For example, if an organization suffers a data breach that exposes customer PII to unknown individuals, the organization will likely suffer reputational damage due to negative media coverage. However, the organization may also suffer financial damage. Some of this financial damage may come in the form of lost business due to the reputational damage. Other financial damage may come as a consequence of compliance risk if regulators impose fines on the organization. Still more financial damage may occur as a direct result of the breach, such as the costs associated with providing customers with identity protection services and notifying them about the breach.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+</section>
+<section aria-labelledby="head-2-8"><span id="c01-sec-0014"/>
+<h2 id="head-2-8">Implementing Security Controls</h2>
+<p id="c01-para-0040">As an organization analyzes its risk environment, technical and business leaders determine the level of protection required to preserve the confidentiality, integrity, and availability of their information and systems. They express these requirements by writing the <i>control objectives</i> that the organization wishes to achieve. These control objectives are statements of a desired security state, but they do not, by themselves, actually carry out security activities. <i>Security controls</i> are specific measures that fulfill the security objectives of an organization.</p>
+<section><span id="c01-sec-0015"/>
+<h3 id="head-3-3">Gap Analysis</h3>
+<p id="c01-para-0041">Cybersecurity professionals are responsible for conducting gap analyses to evaluate security controls. During a <i>gap analysis</i>, the cybersecurity professional reviews the control objectives for a particular organization, system, or service and then examines the controls designed <span aria-label="8" epub:type="pagebreak" id="Page_8" role="doc-pagebreak"/>to achieve those objectives. If there are any cases where the controls do not meet the control objective, that is an example of a gap. Gaps identified during a gap analysis should be treated as potential risks and remediated as time and resources permit. Remediation and various other activities associated with vulnerability management are covered in <a href="c05.xhtml">Chapter 5</a>, “Security Assessment and Testing.”</p>
+</section>
+<section><span id="c01-sec-0016"/>
+<h3 id="head-3-4">Security Control Categories</h3>
+<p>Security controls are categorized based on their mechanism of action: the way that they achieve their objectives. There are four different categories of security control:</p>
+<ul class="square" id="c01-list-0013">
+<li id="c01-li-0025"><i>Technical controls</i> enforce confidentiality, integrity, and availability in the digital space. Examples of technical security controls include firewall rules, access control lists, intrusion prevention systems, and encryption.</li>
+<li id="c01-li-0026"><i>Operational controls</i> include the processes that we put in place to manage technology in a secure manner. These include user access reviews, log monitoring, and vulnerability management.</li>
+<li id="c01-li-0027"><i>Managerial controls</i> are procedural mechanisms that focus on the mechanics of the risk management process. Examples of administrative managerial controls include periodic risk assessments, security planning exercises, and the incorporation of security into the organization's change management, service acquisition, and project management practices.</li>
+<li id="c01-li-0028"><i>Physical controls</i> are security controls that impact the physical world. Examples of physical security controls include fences, perimeter lighting, locks, fire suppression systems, and burglar alarms.</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c01-para-0043"><img alt="" role="presentation" src="images/tip.png"/> If you're not familiar with some of the controls provided as examples in this chapter, don't worry about it! We'll discuss them all in detail later in the book.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c01-para-0044">Organizations should select a set of security controls that meets their control objectives based on the criteria and parameters that they either select for their environment or have imposed on them by outside regulators. For example, an organization that handles sensitive information might decide that confidentiality concerns surrounding that information require the highest level of control. At the same time, they might conclude that the availability of their website is not of critical importance. Given these considerations, they would dedicate significant resources to the confidentiality of sensitive information while perhaps investing little, if any, time and money protecting their website against a denial-of-service attack.</p>
+<p>Many control objectives require a combination of technical, operational, and managerial controls. For example, an organization might have the control objective of preventing unauthorized access to a datacenter. They might achieve this goal by implementing biometric <span aria-label="9" epub:type="pagebreak" id="Page_9" role="doc-pagebreak"/>locks (physical control), performing regular reviews of authorized access (operational control), and conducting routine risk assessments (managerial control).</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c01-para-0046"><img alt="" role="presentation" src="images/note.png"/> These control categories and types are unique to CompTIA. If you've already studied similar categories as part of your preparation for another security certification program, be sure to study these carefully and use them when answering exam questions.</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c01-sec-0019"/>
+<h3 id="head-3-5">Security Control Types</h3>
+<p>CompTIA also divides security into control types, based on their desired effect. The types of security control include the following:</p>
+<ul class="square" id="c01-list-0014">
+<li id="c01-li-0029"><i>Preventive controls</i> intend to stop a security issue before it occurs. Firewalls and encryption are examples of preventive controls.</li>
+<li id="c01-li-0030"><i>Deterrent controls</i> seek to prevent an attacker from attempting to violate security policies. Vicious guard dogs and barbed wire fences are examples of deterrent controls.</li>
+<li id="c01-li-0031"><i>Detective controls</i> identify security events that have already occurred. Intrusion detection systems are detective controls.</li>
+<li id="c01-li-0032"><i>Corrective controls</i> remediate security issues that have already occurred. Restoring backups after a ransomware attack is an example of a corrective control.</li>
+<li id="c01-li-0033"><i>Compensating controls</i> are controls designed to mitigate the risk associated with exceptions made to a security policy.</li>
+<li id="c01-li-0034"><i>Directive controls</i> inform employees and others what they should do to achieve security objectives. Policies and procedures are examples of directive controls.</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c01-fea-0004"/>
+<h3 id="head-2-9">Exam Note</h3>
+<section><span id="c01-sec-0020"/>
+<p id="c01-para-0048">Know the various security control categories and types. The Security+ exam is sure to test your knowledge of them.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c01-fea-0005"/>
+<h3 id="head-2-10">Exploring Compensating Controls</h3>
+<section><span id="c01-sec-0021"/>
+<p>The Payment Card Industry Data Security Standard (PCI DSS) includes one of the most formal compensating control processes in use today. It sets out three criteria that must be met for a compensating control to be satisfactory:</p>
+<ul class="square" id="c01-list-0015">
+<li id="c01-li-0035">The control must meet the intent and rigor of the original requirement.</li>
+<li id="c01-li-0036"><span aria-label="10" epub:type="pagebreak" id="Page_10" role="doc-pagebreak"/>The control must provide a similar level of defense as the original requirement, such that the compensating control sufficiently offsets the risk that the original PCI DSS requirement was designed to defend against.</li>
+<li id="c01-li-0037">The control must be “above and beyond” other PCI DSS requirements.</li>
+</ul>
+<p id="c01-para-0050">For example, an organization might find that it needs to run an outdated version of an operating system on a specific machine because software necessary to run the business will only function on that operating system version. Most security policies would prohibit using the outdated operating system because it might be susceptible to security vulnerabilities. The organization could choose to run this system on an isolated network with either very little or no access to other systems as a compensating control.</p>
+<p id="c01-para-0051">The general idea is that a compensating control finds alternative means to achieve an objective when the organization cannot meet the original control requirement. Although PCI DSS offers a very formal process for compensating controls, the use of compensating controls is a common strategy in many different organizations, even those not subject to PCI DSS. Compensating controls balance the fact that it simply isn't possible to implement every required security control in every circumstance with the desire to manage risk to the greatest feasible degree.</p>
+<p id="c01-para-0052">In many cases, organizations adopt compensating controls to address a temporary exception to a security requirement. In those cases, the organization should also develop remediation plans designed to bring the organization back into compliance with the literal meaning and intent of the original control.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+<section aria-labelledby="head-2-11"><span id="c01-sec-0022"/>
+<h2 id="head-2-11">Data Protection</h2>
+<p id="c01-para-0053">Security professionals spend significant amounts of their time focusing on the protection of sensitive data. We serve as stewards and guardians, protecting the confidentiality, integrity, and availability of the sensitive data created by our organizations and entrusted to us by our customers and other stakeholders.</p>
+<p>As we think through data protection techniques, it's helpful to consider the three states where data might exist:</p>
+<ul class="square" id="c01-list-0016">
+<li id="c01-li-0038"><i>Data at rest</i> is stored data that resides on hard drives, tapes, in the cloud, or on other storage media. This data is prone to theft by insiders or external attackers who gain access to systems and are able to browse through their contents.</li>
+<li id="c01-li-0039"><i>Data in transit</i> is data that is in motion/transit over a network. When data travels on an untrusted network, it is open to eavesdropping attacks by anyone with access to those networks.</li>
+<li id="c01-li-0040"><span aria-label="11" epub:type="pagebreak" id="Page_11" role="doc-pagebreak"/><i>Data in use</i> is data that is actively in use by a computer system. This includes the data stored in memory while processing takes place. An attacker with control of the system may be able to read the contents of memory and steal sensitive information.</li>
+</ul>
+<p id="c01-para-0055">We can use different security controls to safeguard data in all of these states, building a robust set of defenses that protects our organization's vital interests.</p>
+<section><span id="c01-sec-0023"/>
+<h3 id="head-3-6">Data Encryption</h3>
+<p id="c01-para-0056"><i>Encryption</i> technology uses mathematical algorithms to protect information from prying eyes, both while it is in transit over a network and while it resides on systems. Encrypted data is unintelligible to anyone who does not have access to the appropriate decryption key, making it safe to store and transmit encrypted data over otherwise insecure means.</p>
+<p id="c01-para-0057">We'll dive deeply into encryption tools and techniques in <a href="c07.xhtml">Chapter 7</a>, “Cryptography and the PKI.”</p>
+</section>
+<section><span id="c01-sec-0024"/>
+<h3 id="head-3-7">Data Loss Prevention</h3>
+<p id="c01-para-0058"><i>Data loss prevention</i> (DLP) systems help organizations enforce information handling policies and procedures to prevent data loss and theft. They search systems for stores of sensitive information that might be unsecured and monitor network traffic for potential attempts to remove sensitive information from the organization. They can act quickly to block the transmission before damage is done and alert administrators to the attempted breach.</p>
+<p>DLP systems work in two different environments:</p>
+<ul class="square" id="c01-list-0017">
+<li id="c01-li-0041">Agent-based DLP</li>
+<li id="c01-li-0042">Agentless (network-based) DLP</li>
+</ul>
+<p id="c01-para-0060">Agent-based DLP uses software agents installed on systems that search those systems for the presence of sensitive information. These searches often turn up Social Security numbers, credit card numbers, and other sensitive information in the most unlikely places!</p>
+<p id="c01-para-0061">Detecting the presence of stored sensitive information allows security professionals to take prompt action to either remove it or secure it with encryption. Taking the time to secure or remove information now may pay handsome rewards down the road if the device is lost, stolen, or compromised.</p>
+<p id="c01-para-0062">Agent-based DLP can also monitor system configuration and user actions, blocking undesirable actions. For example, some organizations use host-based DLP to block users from accessing USB-based removable media devices that they might use to carry information out of the organization's secure environment.</p>
+<p id="c01-para-0063">Agentless (network-based) DLP systems are dedicated devices that sit on the network and monitor outbound network traffic, watching for any transmissions that contain unencrypted sensitive information. They can then block those transmissions, preventing the unsecured loss of sensitive information.</p>
+<p id="c01-para-0064"><span aria-label="12" epub:type="pagebreak" id="Page_12" role="doc-pagebreak"/>DLP systems may simply block traffic that violates the organization's policy, or in some cases, they may automatically apply encryption to the content. This automatic encryption is commonly used with DLP systems that focus on email.</p>
+<p>DLP systems also have two mechanisms of action:</p>
+<ul class="square" id="c01-list-0018">
+<li id="c01-li-0043"><i>Pattern matching</i>, where they watch for the telltale signs of sensitive information. For example, if they see a number that is formatted like a credit card or Social Security number, they can automatically trigger on that. Similarly, they may contain a database of sensitive terms, such as “Top Secret” or “Business Confidential,” and trigger when they see those terms in an outbound transmission.</li>
+<li id="c01-li-0044"><i>Watermarking</i>, where systems or administrators apply electronic tags to sensitive documents and then the DLP system can monitor systems and networks for unencrypted content containing those tags.</li>
+</ul>
+<p id="c01-para-0066">Watermarking technology is also commonly used in <i>digital rights management</i> (DRM) solutions that enforce copyright and data ownership restrictions.</p>
+<p id="c01-para-0067">DLP will be covered in more detail in <a href="c05.xhtml">Chapter 5</a>, “Security Assessment and Testing.”</p>
+</section>
+<section><span id="c01-sec-0025"/>
+<h3 id="head-3-8">Data Minimization</h3>
+<p id="c01-para-0068"><i>Data minimization</i> techniques seek to reduce risk by reducing the amount of sensitive information that we maintain on a regular basis. The best way to achieve data minimization is to simply destroy data when it is no longer necessary to meet our original business purpose.</p>
+<p id="c01-para-0069">If we can't completely remove data from a dataset, we can often transform it into a format where the original sensitive information is deidentified. The <i>deidentification</i> process removes the ability to link data back to an individual, reducing its sensitivity.</p>
+<p>An alternative to deidentifying data is transforming it into a format where the original information can't be retrieved. This is a process called <i>data obfuscation</i>, and we have several tools at our disposal to assist with it:</p>
+<ul class="square" id="c01-list-0019">
+<li id="c01-li-0045"><i>Hashing</i> uses a hash function to transform a value in our dataset to a corresponding hash value. If we apply a strong hash function to a data element, we may replace the value in our file with the hashed value.</li>
+<li id="c01-li-0046"><i>Tokenization</i> replaces sensitive values with a unique identifier using a lookup table. For example, we might replace a widely known value, such as a student ID, with a randomly generated 10-digit number. We'd then maintain a lookup table that allows us to convert those back to student IDs if we need to determine someone's identity. Of course, if you use this approach, you need to keep the lookup table secure!</li>
+<li id="c01-li-0047"><i>Masking</i> partially redacts sensitive information by replacing some or all sensitive fields with blank characters. For example, we might replace all but the last four digits of a credit card number with X's or *'s to render the card number unreadable.</li>
+</ul>
+<p id="c01-para-0071"><span aria-label="13" epub:type="pagebreak" id="Page_13" role="doc-pagebreak"/>Although it isn't possible to retrieve the original value directly from the hashed value, there is one major flaw to this approach. If someone has a list of possible values for a field, they can conduct something called a <i>rainbow table attack</i>. In this attack, the attacker computes the hashes of those candidate values and then checks to see if those hashes exist in our data file.</p>
+<p id="c01-para-0072">For example, imagine that we have a file listing all the students at our college who have failed courses but we hash their student IDs. If an attacker has a list of all students, they can compute the hash values of all student IDs and then check to see which hash values are on the list. For this reason, hashing should only be used with caution.</p>
+</section>
+<section><span id="c01-sec-0026"/>
+<h3 id="head-3-9">Access Restrictions</h3>
+<p><i>Access restrictions</i> are security measures that limit the ability of individuals or systems to access sensitive information or resources. Two common types of access restrictions are geographic restrictions and permission restrictions:</p>
+<ul class="square" id="c01-list-0020">
+<li id="c01-li-0048"><i>Geographic restrictions</i> limit access to resources based on the physical location of the user or system. For example, an organization may restrict access to a database to only those users located within a certain country or region. This can help to prevent unauthorized access from outside of the organization's trusted network.</li>
+<li id="c01-li-0049"><i>Permission restrictions</i> limit access to resources based on the user's role or level of authorization. For example, a company may grant access to financial data only to authorized personnel who have undergone appropriate background checks and training.</li>
+</ul>
+<p id="c01-para-0074">By implementing access restrictions, organizations can ensure that sensitive information and resources are only accessible to authorized individuals and systems, minimizing the risk of data breaches and cyberattacks. In <a href="c08.xhtml">Chapter 8</a>, “Identity and Access Management,” we will explore access restrictions in greater detail.</p>
+</section>
+<section><span id="c01-sec-0027"/>
+<h3 id="head-3-10">Segmentation and Isolation</h3>
+<p id="c01-para-0075">Organizations may also limit the access to sensitive systems based on their network location. <i>Segmentation</i> places sensitive systems on separate networks where they may communicate with each other but have strict restrictions on their ability to communicate with systems on other networks. <i>Isolation</i> goes a step further and completely cuts a system off from access to or from outside networks.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-12"><span id="c01-sec-0028"/>
+<h2 id="head-2-12">Summary</h2>
+<p id="c01-para-0076">Cybersecurity professionals are responsible for ensuring the confidentiality, integrity, and availability of information and systems maintained by their organizations. Confidentiality ensures that unauthorized individuals are not able to gain access to sensitive information. <span aria-label="14" epub:type="pagebreak" id="Page_14" role="doc-pagebreak"/>Integrity ensures that there are no unauthorized modifications to information or systems, either intentionally or unintentionally. Availability ensures that information and systems are ready to meet the needs of legitimate users at the time those users request them. Together, these three goals are known as the CIA triad.</p>
+<p id="c01-para-0077">As cybersecurity analysts seek to protect their organizations, they must evaluate risks to the CIA triad. This includes the design and implementation of an appropriate mixture of security controls drawn from the managerial, operational, technical, and physical control categories. These controls should also be varied in type, including a mixture of preventive, detective, corrective, deterrent, compensating, and directive controls.</p>
+</section>
+<section aria-labelledby="head-2-13"><span id="c01-sec-0029"/>
+<h2 id="head-2-13">Exam Essentials</h2>
+<p id="c01-li-0050"><b>The three core objectives of cybersecurity are confidentiality, integrity, and availability.</b> Confidentiality ensures that unauthorized individuals are not able to gain access to sensitive information. Integrity ensures that there are no unauthorized modifications to information or systems, either intentionally or unintentionally. Availability ensures that information and systems are ready to meet the needs of legitimate users at the time those users request them.</p>
+<p id="c01-li-0051"><b>Nonrepudiation prevents someone from denying that they took an action.</b> Nonrepudiation means that someone who performed some action, such as sending a message, cannot later deny having taken that action. Digital signatures are a common example of nonrepudiation. They allow anyone who is interested to confirm that a message truly originated with its purported sender.</p>
+<p id="c01-li-0052"><b>Security controls may be categorized based on their mechanism of action and their intent.</b> Controls are grouped into the categories of managerial, operational, physical, and technical based on the way that they achieve their objectives. They are divided into the types of preventive, detective, corrective, deterrent, compensating, and directive based on their intended purpose.</p>
+<p id="c01-li-0053"><b>Data breaches have significant and diverse impacts on organizations.</b> When an organization suffers a data breach, the resulting data loss often results in both direct and indirect damages. The organization suffers immediate financial repercussions due to the costs associated with the incident response, as well as long-term financial consequences due to reputational damage. This reputational damage may be difficult to quantify, but it also may have a lasting impact. In some cases, organizations may suffer operational damage if they experience availability damages, preventing them from accessing their own information.</p>
+<p id="c01-li-0054"><b>Data must be protected in transit, at rest, and in use.</b> Attackers may attempt to eavesdrop on network transmissions containing sensitive information. This information is highly vulnerable when in transit unless protected by encryption technology. Attackers also might attempt to breach data stores, stealing data at rest. Encryption serves to protect stored data <span aria-label="15" epub:type="pagebreak" id="Page_15" role="doc-pagebreak"/>as well as data in transit. Data is also vulnerable while in use on a system and should be protected during data processing activities.</p>
+<p id="c01-li-0055"><b>Data loss prevention systems block data exfiltration attempts.</b> DLP technology enforces information handling policies to prevent data loss and theft. DLP systems may function at the host level, using software agents to search systems for the presence of sensitive information. They may also work at the network level, watching for transmissions of unencrypted sensitive information. DLP systems detect sensitive information using pattern-matching technology and/or digital watermarking.</p>
+<p id="c01-li-0056"><b>Data minimization reduces risk by reducing the amount of sensitive information that we maintain.</b> In cases where we cannot simply discard unnecessary information, we can protect information through deidentification and data obfuscation. The tools used to achieve these goals include hashing, tokenization, and masking of sensitive fields.</p>
+
+</section> <span aria-label="16" epub:type="pagebreak" id="Page_16" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-14"><span id="c01-sec-0030"/>
+<h2 id="head-2-14">Review Questions</h2>
+<section><span id="c01-exsec-0001"/>
+<ol class="decimal">
+<li id="c01-ex-0001">Matt is updating the organization's threat assessment process. What category of control is Matt implementing?
+<ol class="upper-alpha">
+<li>Operational</li>
+<li>Technical</li>
+<li>Corrective</li>
+<li>Managerial</li>
+</ol>
+</li>
+<li id="c01-ex-0002">Jade's organization recently suffered a security breach that affected stored credit card data. Jade's primary concern is the fact that the organization is subject to sanctions for violating the provisions of the Payment Card Industry Data Security Standard. What category of risk is concerning Jade?
+<ol class="upper-alpha">
+<li>Strategic</li>
+<li>Compliance</li>
+<li>Operational</li>
+<li>Financial</li>
+</ol>
+</li>
+<li id="c01-ex-0003">Chris is responding to a security incident that compromised one of his organization's web servers. He believes that the attackers defaced one or more pages on the website. What cybersecurity objective did this attack violate?
+<ol class="upper-alpha">
+<li>Confidentiality</li>
+<li>Nonrepudiation</li>
+<li>Integrity</li>
+<li>Availability</li>
+</ol>
+</li>
+<li id="c01-ex-0004"><span aria-label="17" epub:type="pagebreak" id="Page_17" role="doc-pagebreak"/> Gwen is exploring a customer transaction reporting system and discovers the table shown here. What type of data minimization has most likely been used on this table?
+<figure><img alt="A table of 21 rows and four columns. The column headers are Order Number, Amount, Date, and Credit Card Number. The order number ranges from 1023 to 1042." class="center" src="images/c01uf001.png"/>
+</figure>
+<ol class="upper-alpha">
+<li>Destruction</li>
+<li>Masking</li>
+<li>Tokenization</li>
+<li>Hashing</li>
+</ol>
+</li>
+<li id="c01-ex-0005">Tonya is concerned about the risk that an attacker will attempt to gain access to her organization's database server. She is searching for a control that would discourage the attacker from attempting to gain access. What type of security control is she seeking to implement?
+<ol class="upper-alpha">
+<li>Preventive</li>
+<li>Detective</li>
+<li>Corrective</li>
+<li>Deterrent</li>
+</ol>
+</li>
+<li id="c01-ex-0006"><span aria-label="18" epub:type="pagebreak" id="Page_18" role="doc-pagebreak"/> Greg is implementing a data loss prevention system. He would like to ensure that it protects against transmissions of sensitive information by guests on his wireless network. What DLP technology would best meet this goal?
+<ol class="upper-alpha">
+<li>Watermarking</li>
+<li>Pattern recognition</li>
+<li>Host-based</li>
+<li>Network-based</li>
+</ol>
+</li>
+<li id="c01-ex-0007">What term best describes data that is being sent between two systems over a network connection?
+<ol class="upper-alpha">
+<li>Data at rest</li>
+<li>Data in transit</li>
+<li>Data in processing</li>
+<li>Data in use</li>
+</ol>
+</li>
+<li id="c01-ex-0008">Tina is tuning her organization's intrusion prevention system to prevent false positive alerts. What type of control is Tina implementing?
+<ol class="upper-alpha">
+<li>Technical control</li>
+<li>Physical control</li>
+<li>Managerial control</li>
+<li>Operational control</li>
+</ol>
+</li>
+<li id="c01-ex-0009">Which one of the following is not a common goal of a cybersecurity attacker?
+<ol class="upper-alpha">
+<li>Disclosure</li>
+<li>Denial</li>
+<li>Alteration</li>
+<li>Allocation</li>
+</ol>
+</li>
+<li id="c01-ex-0010">Tony is reviewing the status of his organization's defenses against a breach of their file server. He believes that a compromise of the file server could reveal information that would prevent the company from continuing to do business. What term best describes the risk that Tony is considering?
+<ol class="upper-alpha">
+<li>Strategic</li>
+<li>Reputational</li>
+<li>Financial</li>
+<li>Operational</li>
+</ol>
+</li>
+<li id="c01-ex-0011">Which one of the following data elements is not commonly associated with identity theft?
+<ol class="upper-alpha">
+<li>Social Security number</li>
+<li>Driver's license number</li>
+<li>Frequent flyer number</li>
+<li>Passport number</li>
+</ol>
+</li>
+<li id="c01-ex-0012"><span aria-label="19" epub:type="pagebreak" id="Page_19" role="doc-pagebreak"/> What term best describes an organization's desired security state?
+<ol class="upper-alpha">
+<li>Control objectives</li>
+<li>Security priorities</li>
+<li>Strategic goals</li>
+<li>Best practices</li>
+</ol>
+</li>
+<li id="c01-ex-0013">Lou mounted the sign below on the fence surrounding his organization's datacenter. What control type <i>best</i> describes this control?
+<figure><img alt="A photograph of a notice. The notice is hung on the fence. The text reads, beware of dogs." class="center" src="images/c01uf002.png"/>
+</figure>
+<p class="source" id="c01-para-0146">Source: Gabriel Cassan / Adobe Stock</p>
+<ol class="upper-alpha">
+<li>Compensating</li>
+<li>Detective</li>
+<li>Physical</li>
+<li>Deterrent</li>
+</ol>
+</li>
+<li id="c01-ex-0014">What technology uses mathematical algorithms to render information unreadable to those lacking the required key?
+<ol class="upper-alpha">
+<li>Data loss prevention</li>
+<li>Data obfuscation</li>
+<li>Data minimization</li>
+<li>Data encryption</li>
+</ol>
+</li>
+<li id="c01-ex-0015">Greg recently conducted an assessment of his organization's security controls and discovered a potential gap: the organization does not use full-disk encryption on laptops. What type of control gap exists in this case?
+<ol class="upper-alpha">
+<li>Detective</li>
+<li>Corrective</li>
+<li>Deterrent</li>
+<li>Preventive</li>
+</ol>
+</li>
+<li id="c01-ex-0016"><span aria-label="20" epub:type="pagebreak" id="Page_20" role="doc-pagebreak"/> What compliance regulation most directly affects the operations of a health-care provider?
+<ol class="upper-alpha">
+<li>HIPAA</li>
+<li>PCI DSS</li>
+<li>GLBA</li>
+<li>SOX</li>
+</ol>
+</li>
+<li id="c01-ex-0017">Nolan is writing an after action report on a security breach that took place in his organization. The attackers stole thousands of customer records from the organization's database. What cybersecurity principle was most impacted in this breach?
+<ol class="upper-alpha">
+<li>Availability</li>
+<li>Nonrepudiation</li>
+<li>Confidentiality</li>
+<li>Integrity</li>
+</ol>
+</li>
+<li id="c01-ex-0018">Which one of the following objectives is not one of the three main objectives that information security professionals must achieve to protect their organizations against cybersecurity threats?
+<ol class="upper-alpha">
+<li>Integrity</li>
+<li>Nonrepudiation</li>
+<li>Availability</li>
+<li>Confidentiality</li>
+</ol>
+</li>
+<li id="c01-ex-0019">Which one of the following data protection techniques is reversible when conducted properly?
+<ol class="upper-alpha">
+<li>Tokenization</li>
+<li>Masking</li>
+<li>Hashing</li>
+<li>Shredding</li>
+</ol>
+</li>
+<li id="c01-ex-0020">Which one of the following statements is not true about compensating controls under PCI DSS?
+<ol class="upper-alpha">
+<li>Controls used to fulfill one PCI DSS requirement may be used to compensate for the absence of a control needed to meet another requirement.</li>
+<li>Controls must meet the intent of the original requirement.</li>
+<li>Controls must meet the rigor of the original requirement.</li>
+<li>Compensating controls must provide a similar level of defense as the original requirement.</li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+</section>
+</body>
+</html>

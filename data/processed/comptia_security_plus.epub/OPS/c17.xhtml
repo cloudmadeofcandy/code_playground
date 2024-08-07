@@ -1,0 +1,717 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:svg="http://www.w3.org/2000/svg" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+<head>
+<title>Chapter 17 Risk Management and Privacy</title>
+<link href="WileyTemplate_v5.5.css" rel="stylesheet" type="text/css"/>
+<meta content="urn:uuid:57d469d3-a1d3-48bd-8447-18ce82f57cc2" name="Adept.expected.resource"/>
+</head>
+<body epub:type="bodymatter">
+<section aria-labelledby="c17_1" epub:type="chapter" role="doc-chapter">
+<header>
+<h1 id="c17_1"><span aria-label="561" epub:type="pagebreak" id="Page_561" role="doc-pagebreak"/><span id="c17"/><span class="chapterNumber">Chapter 17</span><br/><span class="chapterTitle">Risk Management and Privacy</span></h1>
+</header>
+<section aria-label="chapter opening"><span id="c17-sec-0001"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p><b>THE COMPTIA SECURITY+ EXAM OBJECTIVES COVERED IN THIS CHAPTER INCLUDE:</b></p>
+<ul class="check1" id="c17-list-0002">
+<li id="c17-li-0002"><b>Domain 3.0: Security Architecture</b>
+<ul class="square1" id="c17-list-0003">
+<li id="c17-li-0003">3.3. Compare and contrast concepts and strategies to protect data.
+<ul class="square1" id="c17-list-0004">
+<li id="c17-li-0004">Data types (Regulated, Trade secret, Intellectual property, Legal information, Financial information, Human- and non-human-readable)</li>
+<li id="c17-li-0005">Data classifications (Sensitive, Confidential, Public, Restricted, Private, Critical)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="c17-li-0006"><b>Domain 5.0: Security Program Management and Oversight</b>
+<ul class="square1" id="c17-list-0005">
+<li id="c17-li-0007">5.1. Summarize elements of effective security governance.
+<ul class="square1" id="c17-list-0006">
+<li id="c17-li-0008">Roles and responsibilities for systems and data (Owners, Controllers, Processors, Custodians/stewards)</li>
+</ul>
+</li>
+<li id="c17-li-0009">5.2. Explain elements of the risk management process.
+<ul class="square1" id="c17-list-0007">
+<li id="c17-li-0010">Risk identification</li>
+<li id="c17-li-0011">Risk assessment (Ad hoc, Recurring, One-time, Continuous)</li>
+<li id="c17-li-0012">Risk analysis (Qualitative, Quantitative, Single loss expectancy (SLE), Annualized loss expectancy (ALE), Annualized rate of occurrence (ARO), Probability, Likelihood, Exposure factor, Impact)</li>
+<li id="c17-li-0013">Risk Register (Key risk indicators, Risk owners, Risk threshold)</li>
+<li id="c17-li-0014">Risk tolerance</li>
+<li id="c17-li-0015">Risk appetite (Expansionary, Conservative, Neutral)</li>
+<li id="c17-li-0016"><span aria-label="562" epub:type="pagebreak" id="Page_562" role="doc-pagebreak"/>Risk management strategies (Transfer, Accept, (Exemption, Exception), Avoid, Mitigate)</li>
+<li id="c17-li-0017">Risk reporting</li>
+<li id="c17-li-0018">Business impact analysis (Recovery time objective (RTO), Recovery point objective (RPO), Mean time to repair (MTTR), Mean time between failures (MTBF))</li>
+</ul>
+</li>
+<li id="c17-li-0019">5.4. Summarize elements of effective security compliance.
+<ul class="square1" id="c17-list-0008">
+<li id="c17-li-0020">Privacy (Legal implications, (Local/regional, National, Global), Data subject, Controller vs. processor, Ownership, Data inventory and retention, Right to be forgotten)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul> <span aria-label="563" epub:type="pagebreak" id="Page_563" role="doc-pagebreak"/>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c17-para-0010">Organizations face an almost dizzying array of cybersecurity risks, ranging from the reputational and financial damage associated with a breach of personal information to the operational issues caused by a natural disaster. The discipline of risk management seeks to bring order to the process of identifying and addressing these risks. In this chapter, we examine the risk management process and discuss a category of risk that is closely related to cybersecurity: the privacy and protection of personal information.</p>
+</section>
+<section aria-labelledby="head-2-278"><span id="c17-sec-0002"/>
+<h2 id="head-2-278">Analyzing Risk</h2>
+<p id="c17-para-0011">We operate in a world full of risks. If you left your home and drove to your office this morning, you encountered a large number of risks. You could have been involved in an automobile accident, encountered a train delay, or been struck by a bicycle on the sidewalk. We're aware of these risks in the back of our minds, but we don't let them paralyze us. Instead, we take simple precautions to help manage the risks that we think have the greatest potential to disrupt our lives.</p>
+<p id="c17-para-0012">In an <i>enterprise risk management</i> (<i>ERM)</i> program, organizations take a formal approach to risk analysis that begins with identifying risks, continues with determining the severity of each risk, and then results in adopting one or more <i>risk management</i> strategies to address each risk.</p>
+<p>Before we move too deeply into the risk assessment process, let's define a few important terms that we'll use during our discussion:</p>
+<ul class="square" id="c17-list-0009">
+<li id="c17-li-0021"><i>Threats</i> are any possible events that might have an adverse impact on the confidentiality, integrity, and/or availability of our information or information systems.</li>
+<li id="c17-li-0022"><i>Vulnerabilities</i> are weaknesses in our systems or controls that could be exploited by a threat.</li>
+<li id="c17-li-0023"><i>Risks</i> occur at the intersection of a vulnerability and a threat that might exploit that vulnerability. A threat without a corresponding vulnerability does not pose a risk, nor does a vulnerability without a corresponding threat.</li>
+</ul>
+<p id="c17-para-0014"><a href="#c17-fig-0001" id="R_c17-fig-0001">Figure 17.1</a> illustrates this relationship between threats, vulnerabilities, and risks.</p>
+<p id="c17-para-0015">Consider the example from earlier of walking down the sidewalk on your way to work. The fact that you are on the sidewalk without any protection is a vulnerability. A bicycle speeding down that sidewalk is a threat. The result of this combination of factors is that you are at risk of being hit by the bicycle on the sidewalk. If you remove the vulnerability <span aria-label="564" epub:type="pagebreak" id="Page_564" role="doc-pagebreak"/>by parking in a garage beneath your building, you are no longer at risk for that particular threat. Similarly, if the city erects barriers that prevent bicycles from entering the sidewalk, you are also no longer at risk.</p>
+<figure> <img alt="A ven diagram of risk exists at the intersection of a threat and a corresponding vulnerability. It includes Threat, Risk, and Vulnerability." class="center" src="images/c17f001.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c17-fig-0001" id="c17-fig-0001" role="doc-backlink"><b>FIGURE 17.1</b></a></span> Risk exists at the intersection of a threat and a corresponding vulnerability.</p>
+</figcaption>
+</figure>
+<p id="c17-para-0016">Let's consider another example drawn from the cybersecurity domain. Organizations regularly conduct vulnerability scans designed to identify potential vulnerabilities in their environment. One of these scans might identify a server that exposes TCP port 22 to the world, allowing brute-force SSH attempts by an attacker. Exposing port 22 presents a vulnerability to a brute-force attack. An attacker with a brute-force scanning tool presents a threat. The combination of the port exposure and the existence of attackers presents a risk.</p>
+<p id="c17-para-0017">In this case, you don't have any way to eliminate attackers, so you can't really address the threat, but you do have control over the services running on your systems. If you shut down the SSH service and close port 22, you eliminate the vulnerability and, therefore, also eliminate the risk.</p>
+<p id="c17-para-0018">Of course, we can't always completely eliminate a risk because it isn't always feasible to shut down services. We might decide instead to take actions that reduce the risk. We'll talk more about those options when we get to risk management strategies later in this chapter.</p>
+<section><span id="c17-sec-0003"/>
+<h3 id="head-3-261">Risk Identification</h3>
+<p id="c17-para-0019">The <i>risk identification process</i> requires identifying the threats and vulnerabilities that exist in your operating environment. These risks may come from a wide variety of sources ranging from hackers to hurricanes. In <a href="c01.xhtml">Chapter 1</a>, “Today's Security Professional,” we discussed a large number of types of risks facing modern organizations, including financial risk, reputational risk, strategic risk, operational risk, and compliance risk.</p>
+<p>As you go about identifying all the risks to your organization, keep those categories in mind and also consider some additional examples:</p>
+<ul class="square" id="c17-list-0010">
+<li id="c17-li-0024"><i>External risks</i> are those risks that originate from a source outside the organization. This is an extremely broad category of risk, including cybersecurity adversaries, malicious code, and natural disasters, among many other types of risk.</li>
+<li id="c17-li-0025"><span aria-label="565" epub:type="pagebreak" id="Page_565" role="doc-pagebreak"/><i>Internal risks</i> are those risks that originate from within the organization. They include malicious insiders, mistakes made by authorized users, equipment failures, and similar risks.</li>
+<li id="c17-li-0026"><i>Multiparty risks</i> are those that impact more than one organization. For example, a power outage to a city block is a multiparty risk because it affects all the buildings on that block. Similarly, the compromise of an SaaS provider's database is a multiparty risk because it compromises the information of many different customers of the SaaS provider.</li>
+<li id="c17-li-0027"><i>Legacy systems</i> pose a unique type of risk to organizations. These outdated systems often do not receive security updates and cybersecurity professionals must take extraordinary measures to protect them against unpatchable vulnerabilities.</li>
+<li id="c17-li-0028"><i>Intellectual property (IP) theft</i> risks occur when a company possesses trade secrets or other proprietary information that, if disclosed, could compromise the organization's business advantage.</li>
+<li id="c17-li-0029"><i>Software compliance/licensing risks</i> occur when an organization licenses software from a vendor and intentionally or accidentally runs afoul of usage limitations that expose the customer to financial and legal risk.</li>
+</ul>
+</section>
+<section><span id="c17-sec-0004"/>
+<h3 id="head-3-262">Risk Assessment</h3>
+<p id="c17-para-0021">Not all risks are equal. Returning to the example of a pedestrian on the street, the risk of being hit by a bicycle is far more worrisome than the risk of being struck down by a meteor. That makes intuitive sense, but let's explore the underlying thought process that leads to that conclusion. It's a process called <i>risk assessment</i>.</p>
+<p>When we assess any risk, we do so by using two factors:</p>
+<ul class="square" id="c17-list-0011">
+<li id="c17-li-0030">The <i>likelihood of occurrence</i>, or <i>probability</i>, that the risk will occur. We might express this as the percent of chance that a threat will exploit a vulnerability over a specified period of time, such as within the next year.</li>
+<li id="c17-li-0031">The magnitude of the <i>impact</i> that the risk will have on the organization if it does occur. We might express this as the financial cost that we will incur as the result of a risk, although there are other possible measures.</li>
+</ul>
+<p>Using these two factors, we can assign each risk a conceptual score by combining the probability and the magnitude. This leads many risk analysts to express the severity of a risk using the following formula:</p>
+<div class="informalEquation" id="c17-disp-0001"><img alt="upper R i s k upper S e v e r i t y equals upper L i k e l i h o o d asterisk upper I m p a c t" src="images/c17-disp-0001.png" style="vertical-align:middle;height:1.35em;"/><!--<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi mathvariant="normal">Risk&#160;Severity</mi><mo>=</mo><mi mathvariant="normal">Likelihood</mi><mo>&#42;</mo><mspace width="0.25em"/><mi mathvariant="normal">Impact</mi></mrow></math>--></div>
+<p id="c17-para-0025">It's important to point out that this equation does not always have to be interpreted literally. Although you may wind up multiplying these values together in some risk assessment processes, it's best to think of this conceptually as combining the likelihood and impact to determine the severity of a risk.</p>
+<p id="c17-para-0026"><span aria-label="566" epub:type="pagebreak" id="Page_566" role="doc-pagebreak"/>When we assess the risks of being struck by a bicycle or a meteor on the street, we can use these factors to evaluate the risk severity. There might be a high probability that we will be struck by a bicycle. That type of accident might have a moderate magnitude, leaving us willing to consider taking steps to reduce our risk. Being struck by a meteor would clearly have a catastrophic magnitude of impact, but the probability of such an incident is incredibly unlikely, leading us to acknowledge the risk and move on without changing our behavior.</p>
+<p id="c17-para-0027">The laws and regulations facing an industry may play a significant role in determining the impact of a risk. For example, an organization subject to the European Union's GDPR faces significant fines if they have a data breach affecting the personal information of EU residents. The size of these fines would factor significantly into the impact assessment of the risk of a privacy breach. Organizations must, therefore, remain current on the regulations that affect their risk posture.</p>
+<p>Risk assessments may be performed in several ways:</p>
+<ul class="square" id="c17-list-0012">
+<li id="c17-li-0032"><i>One-time risk assessments</i> offer the organization a point-in-time view of its current risk state. They may be done in response to a security incident, at the request of management, or at any other time when the organization wants a snapshot of its risk profile.</li>
+<li id="c17-li-0033"><i>Ad hoc risk assessments</i> are conducted in response to a specific event or situation, such as a new project, technology implementation, or significant change in the business environment. These assessments are often performed quickly to address a particular concern or set of circumstances.</li>
+<li id="c17-li-0034"><i>Recurring risk assessments</i> are performed at regular intervals, such as annually or quarterly. These assessments are meant to track the evolution of risks over time, monitor changes in the risk profile, and ensure that risk management practices are adapting to new threats and vulnerabilities.</li>
+<li id="c17-li-0035"><i>Continuous risk assessments</i> involve ongoing monitoring and analysis of risks. This can include automated systems that constantly scan for new threats or changes in the risk environment, as well as regular reviews and updates to the risk management strategy. Continuous risk assessment enables organizations to respond more quickly and effectively to emerging risks.</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c17-fea-0001"/>
+<h3 id="head-2-279">Exam Note</h3>
+<section><span id="c17-sec-0005"/>
+<p id="c17-para-0029">You might notice some overlap in the terminology above. For example, an ad hoc risk assessment is a type of one-time risk assessment and continuous risk assessments are closely related to recurring risk assessments. These four terms are the types that CompTIA specifically mentions in the exam objectives, so be sure you can explain any one of them when you take the exam!</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section> <span aria-label="567" epub:type="pagebreak" id="Page_567" role="doc-pagebreak"/>
+<section><span id="c17-sec-0006"/>
+<h3 id="head-3-263">Risk Analysis</h3>
+<p><i>Risk analysis</i> is a formalized approach to risk prioritization that allows organizations to conduct their reviews in a structured manner. Risk assessments follow two different analysis methodologies:</p>
+<ul class="square" id="c17-list-0013">
+<li id="c17-li-0036"><i>Quantitative risk analysis</i> uses numeric data in the analysis, resulting in assessments that allow the very straightforward prioritization of risks.</li>
+<li id="c17-li-0037"><i>Qualitative risk analysis</i> substitutes subjective judgments and categories for strict numerical analysis, allowing the assessment of risks that are difficult to quantify.</li>
+</ul>
+<p id="c17-para-0031">As organizations seek to provide clear communication of risk factors to stakeholders, they often combine elements of quantitative and qualitative risk assessments. Let's review each of these approaches.</p>
+<section><span id="c17-sec-0007"/>
+<h4 id="head-4-173">Quantitative Risk Analysis</h4>
+<p>Most quantitative risk analysis processes follow a similar methodology that includes the following steps:</p>
+<ol class="decimal" id="c17-list-0014">
+<li id="c17-li-0038"><b>Determine the asset value (AV) of the asset affected by the risk.</b> This <i>asset value (AV)</i> is expressed in dollars, or other currency, and may be determined using the cost to acquire the asset, the cost to replace the asset, or the depreciated cost of the asset, depending on the organization's preferences.</li>
+<li id="c17-li-0039"><b>Determine the likelihood that the risk will occur.</b> Risk analysts consult subject matter experts and determine the likelihood (also known as the probability) that a risk will occur in a given year. This is expressed as the number of times the risk is expected each year and is described as the <i>annualized rate of occurrence (ARO)</i>. A risk that is expected to occur twice a year has an ARO of 2.0, whereas a risk that is expected once every one hundred years has an ARO of 0.01.</li>
+<li id="c17-li-0040"><b>Determine the amount of damage that will occur to the asset if the risk materializes.</b> This is known as the <i>exposure factor (EF)</i> and is expressed as the percentage of the asset expected to be damaged. The exposure factor of a risk that would completely destroy an asset is 100 percent, whereas a risk that would damage half of an asset has an EF of 50 percent.</li>
+<li id="c17-li-0041"><b>Calculate the single loss expectancy.</b> The <i>single loss expectancy (SLE)</i> is the amount of financial damage expected each time a risk materializes. It is calculated by multiplying the AV by the EF.</li>
+<li id="c17-li-0042"><b>Calculate the annualized loss expectancy.</b> The <i>annualized loss expectancy (ALE)</i> is the amount of damage expected from a risk each year. It is calculated by multiplying the SLE and the ARO.</li>
+</ol>
+<p id="c17-para-0033">It's important to note that these steps assess the quantitative scale of a single risk—that is, one combination of a threat and a vulnerability. Organizations conducting quantitative risk assessments would repeat this process for each threat/vulnerability combination.</p>
+<p id="c17-para-0034"><span aria-label="568" epub:type="pagebreak" id="Page_568" role="doc-pagebreak"/>Let's walk through an example of a quantitative risk analysis. Imagine that you are concerned about the risk associated with a denial-of-service (DoS) attack against your email server. Your organization uses that server to send email messages to customers offering products for sale. It generates $1,000 in sales per hour that it is in operation. After consulting threat intelligence sources, you believe that a DoS attack is likely to occur three times a year and last for three hours before you are able to control it.</p>
+<p id="c17-para-0035">The asset in this case is not the server itself because the server will not be physically damaged. The asset is the ability to send emails and you have already determined that it is worth $1,000 per hour. The asset value for three hours of server operation is, therefore, $3,000.</p>
+<p id="c17-para-0036">Your threat intelligence estimates that the risk will occur three times per year, making your annualized rate of occurrence 3.0.</p>
+<p id="c17-para-0037">After consulting your email team, you believe the server would operate at 10 percent capacity during a DoS attack, as some legitimate messages would get out. Therefore, your exposure factor is 90 percent because 90 percent of the capacity would be consumed by the attack.</p>
+<p id="c17-para-0038">Your single loss expectancy is calculated by multiplying the asset value ($3,000) by the exposure factor (90 percent) to get the expected loss during each attack. This gives you an SLE of $2,700.</p>
+<p id="c17-para-0039">Your annualized loss expectancy is the product of the SLE ($2,700) and the ARO (3.0), or $8,100.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c17-fea-0002"/>
+<h3 id="head-2-280">Exam Note</h3>
+<section><span id="c17-sec-0008"/>
+<p id="c17-para-0040">Be prepared to explain the terminology of quantitative risk analysis and perform these calculations when you take the Security+ exam. When you encounter these questions, watch out for scenarios that provide you with more information than you may need to answer the question. Question writers sometimes provide extra facts to lead you astray!</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c17-para-0041">Organizations can use the ALEs that result from a quantitative risk analysis to prioritize their remediation activities and determine the appropriate level of investment in controls that mitigate risks. For example, it would not normally make sense (at least in a strictly financial sense) to spend more than the ALE on an annual basis to protect against a risk. In the previous example, if a DoS prevention service would block all of those attacks, it would make financial sense to purchase it if the cost is less than $8,100 per year.</p>
+</section>
+<section><span id="c17-sec-0009"/>
+<h4 id="head-4-174">Qualitative Risk Analysis</h4>
+<p id="c17-para-0042">Quantitative techniques work very well for evaluating financial risks and other risks that can be clearly expressed in numeric terms. Many risks, however, do not easily lend themselves to quantitative analysis. For example, how would you describe reputational damage, public health and safety, or employee morale in quantitative terms? You might be able to <span aria-label="569" epub:type="pagebreak" id="Page_569" role="doc-pagebreak"/>draw some inferences that tie these issues back to financial data, but the bottom line is that quantitative techniques simply aren't well suited to evaluating these risks.</p>
+<p id="c17-para-0043">Qualitative risk analysis techniques seek to overcome the limitations of quantitative techniques by substituting subjective judgment for objective data. Qualitative techniques still use the same probability and magnitude factors to evaluate the severity of a risk but do so using subjective categories. For example, <a href="#c17-fig-0002" id="R_c17-fig-0002">Figure 17.2</a> shows a simple qualitative risk analysis that evaluates the probability and magnitude of several risks on a subjective Low/Medium/High scale. Risks are placed on this chart based on the judgments made by subject matter experts.</p>
+<figure> <img alt="A table of qualitative risk analyses uses subjective rating scales to evaluate the probability and magnitude. The table gives details about magnitude versus probability." class="center" src="images/c17f002.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c17-fig-0002" id="c17-fig-0002" role="doc-backlink"><b>FIGURE 17.2</b></a></span> Qualitative risk analyses use subjective rating scales to evaluate probability and magnitude.</p>
+</figcaption>
+</figure>
+<p>Although it's not possible to directly calculate the financial impact of risks that are assessed using qualitative techniques, this risk assessment scale makes it possible to prioritize risks. For example, reviewing the risk assessment in <a href="#c17-fig-0002">Figure 17.2</a>, we can determine that the greatest risks facing this organization are stolen unencrypted devices and spearphishing attacks. Both of these risks share a high probability and high magnitude of impact. If we're considering using funds to add better physical security to the data center, this risk assessment informs us that our time and money would likely be better spent on full-disk encryption for mobile devices and a secure email gateway.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c17-para-0045"><img alt="" role="presentation" src="images/note.png"/> Many organizations combine quantitative and qualitative techniques to get a well-rounded picture of both the tangible and intangible risks that they face.</p><span aria-label="570" epub:type="pagebreak" id="Page_570" role="doc-pagebreak"/>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c17-fea-0003"/>
+<h3 id="head-2-281">Supply Chain Assessment</h3>
+<section><span id="c17-sec-0011"/>
+<p id="c17-para-0046">When evaluating the risks to your organization, don't forget about the risks that occur based on third-party relationships. You rely on many different vendors to protect the confidentiality, integrity, and availability of your data. Performing vendor due diligence is a crucial security responsibility.</p>
+<p id="c17-para-0047">For example, how many cloud service providers handle your organization's sensitive information? Those vendors become a crucial part of your supply chain from both operational and security perspectives. Your data is at risk if they don't have adequate security controls in place.</p>
+<p id="c17-para-0048">Similarly, the hardware that you use in your organization comes through a supply chain as well. How certain are you that it wasn't tampered with on the way to your organization? Documents leaked by former NSA contractor Edward Snowden revealed that the U.S. government intercepted hardware shipments to foreign countries and implanted malicious code deep within their hardware. Performing hardware source authenticity assessments validates that the hardware you received was not tampered with after leaving the vendor.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section>
+</section>
+<section aria-labelledby="head-2-282"><span id="c17-sec-0012"/>
+<h2 id="head-2-282">Managing Risk</h2>
+<p>With a completed risk analysis in hand, organizations can then turn their attention to addressing those risks. <i>Risk management</i> is the process of systematically addressing the risks facing an organization. The risk assessment serves two important roles in the risk management process:</p>
+<ul class="square" id="c17-list-0015">
+<li id="c17-li-0043">The risk analysis provides guidance in prioritizing risks so that the risks with the highest probability and magnitude are addressed first.</li>
+<li id="c17-li-0044">Quantitative risk analyses help determine whether the potential impact of a risk justifies the costs incurred by adopting a risk management approach.</li>
+</ul>
+<p id="c17-para-0050">Risk managers should work their way through the risk assessment and identify an appropriate management strategy for each risk included in the assessment. They have four strategies to choose from: risk mitigation, risk avoidance, risk transference, and risk acceptance. In the next several sections, we discuss each of these strategies using two examples.</p>
+<p id="c17-para-0051">First, we discuss the financial risk associated with the theft of a laptop from an employee. In this example, we are assuming that the laptop does not contain any unencrypted sensitive information. The risk that we are managing is the financial impact of losing the actual hardware.</p>
+<p id="c17-para-0052"><span aria-label="571" epub:type="pagebreak" id="Page_571" role="doc-pagebreak"/>Second, we discuss the business risk associated with a distributed denial-of-service (DDoS) attack against an organization's website.</p>
+<p id="c17-para-0053">We use these two scenarios to help you understand the different options available when selecting a risk management strategy and the trade-offs involved in that selection process.</p>
+<section><span id="c17-sec-0013"/>
+<h3 id="head-3-264">Risk Mitigation</h3>
+<p id="c17-para-0054"><i>Risk mitigation</i> is the process of applying security controls to reduce the probability and/or magnitude of a risk. Risk mitigation is the most common risk management strategy, and the vast majority of the work of security professionals revolves around mitigating risks through the design, implementation, and management of security controls. Many of these controls involve engineering trade-offs between functionality, performance, and security.</p>
+<p id="c17-para-0055">When you choose to mitigate a risk, you may apply one security control or a series of security controls. Each of those controls should reduce the probability that the risk will materialize, the magnitude of the risk should it materialize, or both the probability and magnitude.</p>
+<p id="c17-para-0056">In our first scenario, we are concerned about the theft of laptops from our organization. If we want to mitigate that risk, we could choose from a variety of security controls. For example, purchasing cable locks for laptops might reduce the probability that a theft will occur.</p>
+<p id="c17-para-0057">We could also choose to purchase a device registration service that provides tamperproof registration tags for devices, such as the STOP tags shown in <a href="#c17-fig-0003" id="R_c17-fig-0003">Figure 17.3</a>. These tags provide a prominent warning to potential thieves when attached to a device, as shown in <a href="#c17-fig-0003">Figure 17.3</a>(a). This serves as a deterrent to theft, reducing the probability that the laptop will be stolen in the first place. If a thief does steal the device and removes the tag, it leaves the permanent residue, shown in <a href="#c17-fig-0003">Figure 17.3</a>(b). Anyone finding the device is instructed to contact the registration vendor for instructions, reducing the potential impact of the theft if the device is returned.</p> <span aria-label="572" epub:type="pagebreak" id="Page_572" role="doc-pagebreak"/>
+<figure> <img alt="A set of two photographs. A. S T O P tag attached to a device. B. Residue remaining on the device after&#10;attempted removal of a S T O P tag." class="center" src="images/c17f003.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c17-fig-0003" id="c17-fig-0003" role="doc-backlink"><b>FIGURE 17.3</b></a></span> (a) STOP tag attached to a device. (b) Residue remaining on device after attempted removal of a STOP tag.</p>
+</figcaption>
+</figure>
+<p id="c17-para-0058">In our second scenario, a DDoS attack against an organization's website, we could choose among several mitigating controls. For example, we could simply purchase more bandwidth and server capacity, allowing us to absorb the bombardment of a DDoS attack and thus reducing the impact of an attack. We could also choose to purchase a third-party DDoS mitigation service that prevents the traffic from reaching our network in the first place, thus reducing the probability of an attack.</p>
+</section>
+<section><span id="c17-sec-0014"/>
+<h3 id="head-3-265">Risk Avoidance</h3>
+<p id="c17-para-0059"><i>Risk avoidance</i> is a risk management strategy where we change our business practices to completely eliminate the potential that a risk will materialize. Risk avoidance may initially seem like a highly desirable approach. After all, who wouldn't want to eliminate the risks facing their organization? There is, however, a major drawback. Risk avoidance strategies typically have a serious detrimental impact on the business.</p>
+<p id="c17-para-0060">For example, consider the laptop theft risk discussed earlier in this chapter. We could adopt a risk avoidance strategy and completely eliminate the risk by not allowing employees to purchase or use laptops. This approach is unwieldy and would likely be met with strong opposition from employees and managers due to the negative impact on employee productivity.</p>
+<p id="c17-para-0061">Similarly, we could avoid the risk of a DDoS attack against the organization's website by simply shutting down the website. If there is no website to attack, there's no risk that a DDoS attack can affect the site. But it's highly improbable that business leaders will accept shutting down the website as a viable approach. In fact, you might consider being driven to shut down your website to avoid DDoS attacks as the <i>ultimate</i> denial-of-service attack!</p>
+</section>
+<section><span id="c17-sec-0015"/>
+<h3 id="head-3-266">Risk Transference</h3>
+<p id="c17-para-0062"><i>Risk transference</i> shifts some of the impact of a risk from the organization experiencing the risk to another entity. The most common example of risk transference is purchasing an insurance policy that covers a risk. When purchasing insurance, the customer pays a premium to the insurance carrier. In exchange, the insurance carrier agrees to cover losses from risks specified in the policy.</p>
+<p id="c17-para-0063">In the example of laptop theft, property insurance policies may cover the risk. If an employee's laptop is stolen, the insurance policy would provide funds to cover either the value of the stolen device or the cost to replace the device, depending on the type of coverage.</p>
+<p id="c17-para-0064">It's unlikely that a property insurance policy would cover a DDoS attack. In fact, many general business policies exclude all cybersecurity risks. An organization seeking insurance coverage against this type of attack should purchase <i>cybersecurity insurance</i>, either as a separate policy or as a rider on an existing business insurance policy. This coverage would repay some or all of the cost of recovering operations and may also cover lost revenue during an attack.</p>
+</section> <span aria-label="573" epub:type="pagebreak" id="Page_573" role="doc-pagebreak"/>
+<section><span id="c17-sec-0016"/>
+<h3 id="head-3-267">Risk Acceptance</h3>
+<p id="c17-para-0065"><i>Risk acceptance</i> is the final risk management strategy, and it boils down to deliberately choosing to take no other risk management strategy and to simply continue operations as normal in the face of the risk. A risk acceptance approach may be warranted if the cost of mitigating a risk is greater than the impact of the risk itself.</p>
+<p id="c17-para-0066">Risk acceptance should not be confused with neglecting the risk. It should be a conscious decision, and in certain cases, mechanisms such as exemptions and exceptions can be employed. For example, if a particular risk does not align with the established policy but the cost of mitigation is too high, an <i>exception</i> can be granted for that specific case. This means the organization acknowledges the risk and has decided to accept it for certain reasons.</p>
+<p><i>Exemptions</i> are similar to exceptions but are generally more formal. They may require a higher level of approval and are often documented to ensure that there is a record of the decision-making process. Exemptions might also have an expiration date and need to be reviewed periodically.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3">
+<p id="c17-para-0068"><img alt="" role="presentation" src="images/warn.png"/> Risk acceptance is a deliberate decision that comes as the result of a thoughtful analysis. It should not be undertaken as a default strategy. Simply stating that “we accept this risk” without analysis is not an example of an accepted risk; it is an example of an unmanaged risk!</p>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c17-para-0069">In our laptop theft example, we might decide that none of the other risk management strategies are appropriate. For example, we might feel that the use of cable locks is an unnecessary burden and that theft recovery tags are unlikely to work, leaving us without a viable risk mitigation strategy. Business leaders might require that employees have laptop devices, taking risk avoidance off the table. And the cost of a laptop insurance policy might be too high to justify. In that case, we might decide that we will simply accept the risk and cover the cost of stolen devices when thefts occur. That's risk acceptance.</p>
+<p id="c17-para-0070">In the case of the DDoS risk, we might go through a similar analysis and decide that risk mitigation and transference strategies are too costly. In the event we continue to operate the site, we might do so accepting the risk that a DDoS attack could take the site down.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c17-fea-0004"/>
+<h3 id="head-2-283">Exam Note</h3>
+<section><span id="c17-sec-0018"/>
+<p id="c17-para-0071">Understand the four risk management strategies: risk mitigation, risk avoidance, risk acceptance, and risk transference when you take the Security+ exam. Also remember that in the case of risk acceptance, you have the options of providing an exemption or an exception. Be prepared to provide examples of these strategies and to identify which strategy is being used in a given scenario.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+</section> <span aria-label="574" epub:type="pagebreak" id="Page_574" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-284"><span id="c17-sec-0019"/>
+<h2 id="head-2-284">Risk Tracking</h2>
+<p>As you work to manage risks, you will implement controls designed to mitigate those risks. There are a few key terms that you can use to describe different states of risk that you should know as you prepare for the Security+ exam:</p>
+<ul class="square" id="c17-list-0016">
+<li id="c17-li-0045">The <i>inherent risk</i> facing an organization is the original level of risk that exists before implementing any controls. Inherent risk takes its name from the fact that it is the level of risk inherent in the organization's business.</li>
+<li id="c17-li-0046">The <i>residual risk</i> is the risk that remains after an organization implements controls designed to mitigate, avoid, and/or transfer the inherent risk.</li>
+<li id="c17-li-0047">An organization's <i>risk appetite</i> is the level of risk that it is willing to accept as a cost of doing business. This is a broad term describing overall risk.</li>
+<li id="c17-li-0048">An organization's <i>risk threshold</i> is related to its risk appetite, but it is a more specific term. The risk threshold is the specific level at which a risk becomes unacceptable. It is the actual boundary that, when crossed, will trigger some action or decision. The risk threshold is usually more quantitative, defining clear points or values.</li>
+<li id="c17-li-0049">An organization's <i>risk tolerance</i> is its ability to withstand risks and continue operations without any significant impact.</li>
+<li id="c17-li-0050"><i>Key Risk Indicators (KRIs)</i> are metrics used to measure and provide early warning signals for increasing levels of risk. These indicators help in tracking the effectiveness of risk mitigation efforts and make sure that the residual risk stays within the risk appetite.</li>
+<li id="c17-li-0051">The <i>risk owner</i> is an individual or entity responsible for managing and monitoring risks, including implementing necessary controls and actions to mitigate them.</li>
+</ul>
+<p id="c17-para-0073">These concepts are connected by the way that an organization manages risk. An organization begins with its inherent risk and then implements risk management strategies to reduce that level of risk. It continues doing so until the residual risk is at or below the organization's risk appetite.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c17-fea-0005"/>
+<h3 id="head-2-285">Risk Appetite</h3>
+<section><span id="c17-sec-0020"/>
+<p id="c17-para-0074">Different organizations have different risk appetites because they operate with different objectives. Generally speaking, the more risk an organization is willing to take, the more likely it is that it will fail to meet its goals, but the greater the reward it might reap if it does achieve its goals. Organizations that are not willing to take on higher levels of risk will generally reap fewer rewards, but they have a higher likelihood of success.</p>
+<p>The CompTIA exam objectives list three specific types of risk appetite that may be suitable for different types of organizations:<span aria-label="575" epub:type="pagebreak" id="Page_575" role="doc-pagebreak"/></p>
+<ul class="square" id="c17-list-0017">
+<li id="c17-li-0052"><i>Expansionary risk appetites</i>—Organizations with an expansionary risk appetite are willing to take on higher levels of risk in the pursuit of potential higher rewards. This might be suitable for organizations that are looking to aggressively grow, innovate, or capture market share. They often engage in new ventures, investments, or technologies.</li>
+<li id="c17-li-0053"><i>Neutral risk appetites</i>—Organizations with a neutral risk appetite take a balanced approach. They are willing to take on moderate levels of risk to achieve steady growth and returns. These organizations aim for stability and moderate growth, usually opting for more secure investments and projects.</li>
+<li id="c17-li-0054"><i>Conservative risk appetites</i>—Organizations with a conservative risk appetite tend to avoid high risks and focus on maintaining stability and protecting existing assets. They are generally risk-averse and prioritize security and preservation over high growth. This is common in highly regulated industries or where the consequences of risks are severe.</li>
+</ul>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c17-para-0076">Organizations can implement these concepts only if they have a high degree of risk awareness. They must understand the risks they face and the controls they can implement to manage those risks. They must also conduct regular risk control assessments and self-assessments to determine whether those controls continue to operate effectively.</p>
+<section><span id="c17-sec-0021"/>
+<h3 id="head-3-268">Risk Register</h3>
+<p id="c17-para-0077">As risk managers work to track and manage risks, they must communicate their results to other risk professionals and business leaders. The <i>risk register</i> is the primary tool that risk management professionals use to track risks facing the organization. <a href="#c17-fig-0004" id="R_c17-fig-0004">Figure 17.4</a> shows an excerpt from a risk register used to track IT risks in higher education.</p>
+<p id="c17-para-0078">The risk register is a lengthy document that often provides far too much detail for business leaders. When communicating risk management concepts to senior leaders, risk professionals often use a <i>risk matrix</i>, or heat map, such as the one shown in <a href="#c17-fig-0005" id="R_c17-fig-0005">Figure 17.5</a>. This approach quickly summarizes risks and allows senior leaders to quickly focus on the most significant risks facing the organization.</p>
+<p>Think carefully about the types of information that you want to include in your risk register. Some of the common data elements are:</p>
+<ul class="square" id="c17-list-0018">
+<li id="c17-li-0055">Risk owner</li>
+<li id="c17-li-0056">Risk threshold information</li>
+<li id="c17-li-0057">Key Risk Indicators (KRIs)</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c17-fea-0006"/>
+<h3 id="head-2-286">Exam Note</h3>
+<section><span id="c17-sec-0022"/>
+<p id="c17-para-0080">These three risk register elements—risk owner, risk threshold, and KRIs—are specifically mentioned in the CompTIA exam objectives, so be sure to remember them!</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<figure> <img alt="A table of Risk register excerpt. The column headers are risk statement, risk causes, risk impacts, likelihood, impact, and score." class="center" src="images/c17f004.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c17-fig-0004" id="c17-fig-0004" role="doc-backlink"><b>FIGURE 17.4</b></a></span> Risk register excerpt</p>
+<p class="source">Source: EDUCAUSE IT Risk Register (<code><a href="http://library.educause.edu/resources/2015/10/it-risk-register">http://library.educause.edu/resources/2015/10/it-risk-register</a></code>)</p>
+</figcaption>
+</figure>
+<figure> <img alt="A table of risk matrix. The table gives details about impact versus likelihood. If the impact is high the low livelihood is medium." class="center" src="images/c17f005.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c17-fig-0005" id="c17-fig-0005" role="doc-backlink"><b>FIGURE 17.5</b></a></span> Risk matrix</p>
+</figcaption>
+</figure>
+</section> <span aria-label="576" epub:type="pagebreak" id="Page_576" role="doc-pagebreak"/>
+<section><span id="c17-sec-0023"/>
+<h3 id="head-3-269">Risk Reporting</h3>
+<p id="c17-para-0081"><i>Risk reporting</i> is an essential component of the risk management process that involves communicating the status and evolution of risks to stakeholders within the organization. Effective risk reporting ensures that decision-makers are aware of the current risk landscape and can make informed choices regarding risk mitigation strategies, allocation of resources, and setting priorities.</p>
+<p>There are various forms of risk reporting that an organization can use, including:</p>
+<ul class="none" id="c17-list-0019">
+<li id="c17-li-0058"><b>Regular Updates</b> Routine reports that provide stakeholders with the status of risks, the effectiveness of controls, and any recent changes or developments.</li>
+<li id="c17-li-0059"><span aria-label="577" epub:type="pagebreak" id="Page_577" role="doc-pagebreak"/><b>Dashboard Reporting</b> Utilizes visual aids like graphs and charts to summarize risk data, usually in real time. This allows for a quick understanding and monitoring of key risk indicators.</li>
+<li id="c17-li-0060"><b>Ad Hoc Reports</b> These reports are produced as needed, typically in response to specific events or situations that require immediate attention or in-depth analysis.</li>
+<li id="c17-li-0061"><b>Risk Trend Analysis</b> This reporting form involves analyzing historical data to identify patterns or trends in the risks faced by the organization. This helps in predicting possible future risks or understanding the evolution of current risks.</li>
+<li id="c17-li-0062"><b>Risk Event Reports</b> Focused on documenting specific risk events, such as security breaches or incidents, their impacts, and the responses taken.</li>
+</ul>
+<p id="c17-para-0088">When compiling a risk report, be sure to tailor the information and format to the audience. For example, top-level management might prefer summarized dashboards or high-level reports, whereas a risk management team might need detailed data for analysis.</p>
+<p id="c17-para-0089">Reports should be clear, concise, and focused, providing essential information that supports decision-making. They should not only highlight the current status but also provide context, such as changes since the last report and how the information relates to the organization's risk appetite and thresholds.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-287"><span id="c17-sec-0024"/>
+<h2 id="head-2-287">Disaster Recovery Planning</h2>
+<p id="c17-para-0090">No matter how many controls we put in place, the reality is that disasters will sometimes strike our organization and cause disruptions. <i>Disaster recovery planning (DRP)</i> is the discipline of developing plans to recover operations as quickly as possible in the face of a disaster. The disaster recovery planning process creates a formal, broad disaster recovery plan for the organization and, when required, develops specific functional recovery plans for critical business functions. The goal of these plans is to help the organization recover normal operations as quickly as possible in the wake of a disruption.</p>
+<section><span id="c17-sec-0025"/>
+<h3 id="head-3-270">Disaster Types</h3>
+<p id="c17-para-0091">Disasters of any type may strike an organization. When we first hear the word “disaster,” we often immediately conjure up images of hurricanes, floods, and other natural environmental disasters. However, disasters may be of human-made origin and may come as a result of forces external to the organization, as well as internal risks. From a disaster recovery planning perspective, a disaster is any event that has the potential to disrupt an organization's business. The occurrence of a disaster triggers the activation of the organization's disaster recovery plan.</p>
+<p id="c17-para-0092">As part of the DRP process, organizations should conduct site risk assessments for each of their facilities. These risk assessments should seek to identify and prioritize the risks posed <span aria-label="578" epub:type="pagebreak" id="Page_578" role="doc-pagebreak"/>to the facility by a disaster, including both internal and external risks from both environmental and human-made disasters.</p>
+</section>
+<section><span id="c17-sec-0026"/>
+<h3 id="head-3-271">Business Impact Analysis</h3>
+<p id="c17-para-0093">The <i>business impact analysis (BIA)</i> is a formal process designed to identify the mission-essential functions within an organization and facilitate the identification of the critical systems that support those functions.</p>
+<p>There are four key metrics used in the BIA process that you should understand when preparing for the Security+ exam:</p>
+<ul class="square" id="c17-list-0020">
+<li id="c17-li-0063">The <i>Mean Time Between Failures (MTBF)</i> is a measure of the reliability of a system. It is the expected amount of time that will elapse between system failures. For example, if the MTBF is six months, you can expect that the system will fail once every six months, on average.</li>
+<li id="c17-li-0064">The <i>Mean Time to Repair (MTTR)</i> is the average amount of time to restore a system to its normal operating state after a failure.</li>
+<li id="c17-li-0065">The <i>Recovery Time Objective (RTO)</i> is the amount of time that the organization can tolerate a system being down before it is repaired. The service team is meeting expectations when the time to repair is less than the RTO.</li>
+<li id="c17-li-0066">The <i>Recovery Point Objective (RPO)</i> is the amount of data that the organization can tolerate losing during an outage.</li>
+</ul>
+<p id="c17-para-0095">Each of these metrics allows the organization to evaluate the impact of different risks on its operations and the acceptability of the state of its disaster recovery controls.</p>
+<p id="c17-para-0096">As organizations evaluate the state of their environment, they should pay particular attention to <i>single points of failure</i>. These are systems, devices, or other components that, if they fail, would cause an outage. For example, if a server only has one power supply, the failure of that power supply would bring down the server, making it a single point of failure. Adding a redundant power supply to the server resolves that single point of failure. Similarly, if that server is the only server providing the organization's web page, the server then becomes a single point of failure. Adding a second server to a cluster resolves that single point of failure.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-288"><span id="c17-sec-0027"/>
+<h2 id="head-2-288">Privacy</h2>
+<p id="c17-para-0097">Cybersecurity professionals are responsible for protecting the confidentiality, integrity, and availability of all information under their care. This includes personally identifiable information (PII) that, if improperly disclosed, would jeopardize the privacy of one or more individuals.</p>
+<p id="c17-para-0098"><span aria-label="579" epub:type="pagebreak" id="Page_579" role="doc-pagebreak"/>When privacy breaches occur, they clearly have a negative impact on the individuals whose information was lost in the breach. Those individuals may find themselves exposed to identity theft and other personal risks. Privacy breaches also have organizational consequences for the business that loses control of personal information. These consequences may include reputational damage, fines, and the loss of important intellectual property (IP) that may now fall into the hands of a competitor.</p>
+<p id="c17-para-0099">When evaluating privacy risks, be certain to understand the legal implications that may exist based on the jurisdiction(s) where your business operates. You should be familiar with local, regional, national, and global privacy requirements.</p>
+<p id="c17-para-0100">Organizations seeking to codify their privacy practices may adopt a <i>privacy notice</i> that outlines their privacy commitments. In some cases, laws or regulations may require that the organization adopt a privacy notice. In addition, organizations may include privacy statements in their terms of agreement with customers and other stakeholders.</p>
+<section><span id="c17-sec-0028"/>
+<h3 id="head-3-272">Data Inventory</h3>
+<p id="c17-para-0101">Organizations often deal with many different types of sensitive and personal information. The first step in managing this sensitive data is developing a <i>data inventory</i> of the types of information maintained by the organization and the places where that data is stored, processed, and transmitted.</p>
+<p>Organizations should include the following data types in their inventory:</p>
+<ul class="square" id="c17-list-0021">
+<li id="c17-li-0067"><i>Personally identifiable information (PII)</i> includes any information that uniquely identifies an individual person, including customers, employees, and third parties.</li>
+<li id="c17-li-0068"><i>Protected health information (PHI)</i> includes medical records maintained by health-care providers and other organizations that are subject to the Health Insurance Portability and Accountability Act (HIPAA).</li>
+<li id="c17-li-0069"><i>Financial information</i> includes any personal financial records maintained by the organization. Some of these records may be subject to the provisions of the Gramm–Leach–Bliley Act (GLBA) and/or the Payment Card Industry Data Security Standard (PCI DSS).</li>
+<li id="c17-li-0070"><i>Intellectual property</i> includes <i>trade secrets</i>, which encompass proprietary business information that provides a company with a competitive edge, such as formulas, manufacturing processes, strategies, or any other confidential information.</li>
+<li id="c17-li-0071"><i>Legal information</i> includes documents, communications, and records that are related to legal proceedings, contracts, or corporate governance. This might include attorney-client privileged communications, contracts, legal opinions, court records, and regulatory filings.</li>
+<li id="c17-li-0072"><i>Regulated information</i> includes any data that is governed by laws or regulations. This includes the regulations discussed earlier (HIPAA, GLBA, and PCI DSS), as well as any other rules governing different categories of information.</li>
+</ul>
+<p id="c17-para-0103">Once the organization has an inventory of this sensitive information, it can begin to take steps to ensure that it is appropriately protected from loss or theft.</p> <span aria-label="580" epub:type="pagebreak" id="Page_580" role="doc-pagebreak"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c17-fea-0007"/>
+<h3 id="head-2-289">Exam Note</h3>
+<section><span id="c17-sec-0029"/>
+<p id="c17-para-0104">It's very important to understand that this inventory should include all forms of information maintained by the organization. The exam objectives specifically mention that you should include both human-readable and non-human-readable information in your inventory. For example, binary format data files that contain PII are still PII whether they can be read by a human being or whether they require specialized software to read.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c17-sec-0030"/>
+<h3 id="head-3-273">Information Classification</h3>
+<p><i>Information classification</i> programs organize data into categories based on the sensitivity of the information and the impact on the organization should the information be inadvertently disclosed. For example, the U.S. government uses the following four major classification categories:</p>
+<ul class="square" id="c17-list-0022">
+<li id="c17-li-0073"><i>Top Secret</i> information requires the highest degree of protection. The unauthorized disclosure of Top Secret information could reasonably be expected to cause exceptionally grave damage to national security.</li>
+<li id="c17-li-0074"><i>Secret</i> information requires a substantial degree of protection. The unauthorized disclosure of Secret information could reasonably be expected to cause serious damage to national security.</li>
+<li id="c17-li-0075"><i>Confidential</i> information requires some protection. The unauthorized disclosure of Confidential information could reasonably be expected to cause identifiable damage to national security.</li>
+<li id="c17-li-0076"><i>Unclassified</i> information is information that does not meet the standards for classification under the other categories. Information in this category is still not publicly releasable without authorization.</li>
+</ul>
+<p id="c17-para-0106">Businesses generally don't use the same terminology for their levels of classified information. Instead, they might use more friendly terms, such as Highly Sensitive, Sensitive, Internal, and Public.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c17-fea-0008"/>
+<h3 id="head-2-290">Exam Note</h3>
+<section><span id="c17-sec-0031"/>
+<p>CompTIA includes a listing of classification levels in the Security+ exam objectives. As you prepare for the exam, become familiar with these examples that are commonly used in business:</p>
+<ul class="square" id="c17-list-0023">
+<li id="c17-li-0077">Public</li>
+<li id="c17-li-0078">Private</li>
+<li id="c17-li-0079"><span aria-label="581" epub:type="pagebreak" id="Page_581" role="doc-pagebreak"/>Sensitive</li>
+<li id="c17-li-0080">Confidential</li>
+<li id="c17-li-0081">Critical</li>
+<li id="c17-li-0082">Restricted</li>
+</ul>
+<p id="c17-para-0108">It's important to understand that there are no “official” classification levels in business. Each of these terms may be used differently between organizations and it is likely that different firms may use these terms for different purposes. It's very important to review your organization's classification policy and understand the different levels in use and their meanings.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c17-para-0109">Data classification allows organizations to clearly specify the security controls required to protect information with different levels of sensitivity. For example, the U.S. government requires the use of brightly colored cover sheets, such as those shown in <a href="#c17-fig-0006" id="R_c17-fig-0006">Figure 17.6</a>, to identify classified information in printed form.</p>
+<figure> <img alt="A set of three cover sheets. The three cover sheets are as follows. 1. Confidential. 2. Secret. 3. Top Secret." class="center" src="images/c17f006.png"/>
+<figcaption>
+<p><span class="figureLabel"><a href="#R_c17-fig-0006" id="c17-fig-0006" role="doc-backlink"><b>FIGURE 17.6</b></a></span> Cover sheets used to identify classified U.S. government information</p>
+</figcaption>
+</figure>
+</section>
+<section><span id="c17-sec-0032"/>
+<h3 id="head-3-274">Data Roles and Responsibilities</h3>
+<p id="c17-para-0110">One of the most important things that we can do to protect our data is to create clear <i>data ownership</i> policies and procedures. Using this approach, the organization designates specific senior executives as the data owners for different data types. For example, the vice president of Human Resources might be the data owner for employment and payroll data, whereas the vice president for Sales might be the data owner for customer information.</p>
+<p id="c17-para-0111"><span aria-label="582" epub:type="pagebreak" id="Page_582" role="doc-pagebreak"/>Clear lines of data ownership place responsibility for data in the hands of executives who best understand the impact of decisions about that data on the business. They don't make all of these decisions in isolation, however. Data owners delegate some of their responsibilities to others in the organization and also rely on advice from subject matter experts (SMEs), such as cybersecurity analysts and data protection specialists.</p>
+<p>As you prepare for the Security+ exam, you should be familiar with other important data privacy roles:</p>
+<ul class="square" id="c17-list-0024">
+<li id="c17-li-0083"><i>Data subjects</i> are individuals whose personal data is being processed. This can include customers, employees, and partners. Data subjects often have rights regarding their data, such as the right to access, correct, or request the deletion of their data.</li>
+<li id="c17-li-0084"><i>Data controllers</i> are the entities who determine the reasons for processing personal information and direct the methods of processing that data. This term is used primarily in European law and it serves as a substitute for the term data owner to avoid a presumption that anyone who collects data has an ownership interest in that data.</li>
+<li id="c17-li-0085"><i>Data stewards</i> are individuals who carry out the intent of the data controller and are delegated responsibility from the controller.</li>
+<li id="c17-li-0086"><i>Data custodians</i> are individuals or teams who do not have controller or stewardship responsibility but are responsible for the secure safekeeping of information. For example, a data controller might delegate responsibility for securing PII to an information security team. In that case, the information security team serves as a data custodian.</li>
+<li id="c17-li-0087"><i>Data processors</i> are service providers that process personal information on behalf of a data controller. For example, a credit card processing service might be a data processor for a retailer. The retailer retains responsibility as the data controller but uses the service as a data processor.</li>
+</ul>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c17-fea-0009"/>
+<h3 id="head-2-291">Data Protection Officers</h3>
+<section><span id="c17-sec-0033"/>
+<p id="c17-para-0113">Organizations should identify a specific individual who bears overall responsibility for carrying out the organization's data privacy efforts. This person, often given the title of chief privacy officer, bears the ultimate responsibility for data privacy and must coordinate across functional teams to achieve the organization's privacy objectives.</p>
+<p id="c17-para-0114">The European Union's General Data Protection Regulation (GDPR) formalizes this role, requiring that every data controller designate a data protection officer (DPO) and grant that individual the autonomy to carry out their responsibilities without undue oversight.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section> <span aria-label="583" epub:type="pagebreak" id="Page_583" role="doc-pagebreak"/>
+<section><span id="c17-sec-0034"/>
+<h3 id="head-3-275">Information Life Cycle</h3>
+<p id="c17-para-0115">Data protection should continue at all stages of the information life cycle, from the time the data is originally collected until the time it is eventually disposed of.</p>
+<p id="c17-para-0116">At the early stages of the data life cycle, organizations should practice <i>data minimization</i>, where they collect the smallest possible amount of information necessary to meet their business requirements. Information that is not necessary should either be immediately discarded or, better yet, not collected in the first place.</p>
+<p id="c17-para-0117">Although information remains within the care of the organization, the organization should practice <i>purpose limitation</i>. This means that information should be used only for the purpose that it was originally collected and that was consented to by the data subjects.</p>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c17-fea-0010"/>
+<h3 id="head-2-292">Right to Be Forgotten</h3>
+<section><span id="c17-sec-0035"/>
+<p id="c17-para-0118">The <i>right to be forgotten</i>, also known as the right to erasure, is a concept that has been implemented in various data protection laws, notably the European Union's GDPR.</p>
+<p>The right to be forgotten allows individuals to request the deletion of personal data about them under certain circumstances. Under GDPR, individuals can request erasure if:</p>
+<ul class="square" id="c17-list-0025">
+<li id="c17-li-0088">The data is no longer needed for its original purpose.</li>
+<li id="c17-li-0089">The individual withdraws consent.</li>
+<li id="c17-li-0090">The individual objects and there is no overriding legitimate interest to continue processing.</li>
+<li id="c17-li-0091">The data has been unlawfully processed.</li>
+<li id="c17-li-0092">There is a legal obligation to erase the data.</li>
+</ul>
+<p id="c17-para-0120">The principle behind this right is that outdated or incorrect information can be harmful or misleading and individuals should have some degree of control over their personal information online, particularly in the age of digitalization and vast data storage capabilities.</p>
+<p id="c17-para-0121">Implementing the right to be forgotten can be challenging from both technical and procedural standpoints. Businesses need to have proper mechanisms in place to identify and erase data when requested.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+<p id="c17-para-0122">At the end of the life cycle, the organization should implement <i>data retention</i> standards that guide the end of the data life cycle. Data should only be kept for as long as it remains necessary to fulfill the purpose for which it was originally collected. At the conclusion of its life cycle, data should be securely destroyed.</p> <span aria-label="584" epub:type="pagebreak" id="Page_584" role="doc-pagebreak"/>
+<section>
+<aside>
+<div class="top hr"><hr/></div>
+<section class="feature3"><span id="c17-fea-0011"/>
+<h3 id="head-2-293">Exam Note</h3>
+<section><span id="c17-sec-0036"/>
+<p id="c17-para-0123">Reducing the amount of data that you retain is a great way to minimize your security risk. Remember this as you answer exam questions that ask you to identify the best or most effective strategy for reducing risk.</p>
+</section>
+<div class="bottom hr"><hr/></div>
+</section>
+</aside>
+</section>
+</section>
+<section><span id="c17-sec-0037"/>
+<h3 id="head-3-276">Privacy Enhancing Technologies</h3>
+<p id="c17-para-0124">If we can't completely remove data from a dataset, we can often transform it into a format where the original sensitive information is anonymized. Although true anonymization may be quite difficult to achieve, we can often use pseudo-anonymization techniques, such as deidentification. The <i>deidentification</i> process removes the ability to link data back to an individual, reducing its sensitivity.</p>
+<p>An alternative to deidentifying data is transforming it into a format where the original information can't be retrieved. This is a process called <i>data obfuscation</i>, and we have several tools at our disposal to assist with it:</p>
+<ul class="square" id="c17-list-0026">
+<li id="c17-li-0093"><i>Hashing</i> uses a hash function to transform a value in our dataset to a corresponding hash value. If we apply a strong hash function to a data element, we may replace the value in our file with the hashed value.</li>
+<li id="c17-li-0094"><i>Tokenization</i> replaces sensitive values with a unique identifier using a lookup table. For example, we might replace a widely known value, such as a student ID, with a randomly generated 10-digit number. We'd then maintain a lookup table that allows us to convert those back to student IDs if we need to determine someone's identity. Of course, if you use this approach, you need to keep the lookup table secure!</li>
+<li id="c17-li-0095"><i>Data masking</i> partially redacts sensitive information by replacing some or all sensitive fields with blank characters. For example, we might replace all but the last four digits of a credit card number with Xs or *s to render the card number unreadable.</li>
+</ul>
+<p id="c17-para-0126">Although it isn't possible to retrieve the original value directly from the hashed value, there is one major flaw to this approach. If someone has a list of possible values for a field, they can conduct something called a <i>rainbow table attack</i>. In this attack, the attacker computes the hashes of those candidate values and then checks to see if those hashes exist in your data file.</p>
+<p id="c17-para-0127">For example, imagine that we have a file listing all the students at our college who have failed courses but we hash their student IDs. If an attacker has a list of all students, they can compute the hash values of all student IDs and then check to see which hash values are on the list. For this reason, hashing should only be used with caution.</p>
+</section> <span aria-label="585" epub:type="pagebreak" id="Page_585" role="doc-pagebreak"/>
+<section><span id="c17-sec-0038"/>
+<h3 id="head-3-277">Privacy and Data Breach Notification</h3>
+<p id="c17-para-0128">In the unfortunate event of a data breach, the organization should immediately activate its cybersecurity incident response plan. The details of this incident response plan are discussed thoroughly in <a href="c14.xhtml">Chapter 14</a>, “Monitoring and Incident Response,” and should include procedures for the notification of key personnel and escalation of serious incidents.</p>
+<p id="c17-para-0129">Organizations may also have a responsibility under national and regional laws to make public notifications and disclosures in the wake of a data breach. This responsibility may be limited to notifying the individuals involved or, in some cases, may require notification of government regulators and/or the news media.</p>
+<p id="c17-para-0130">In the United States, every state has a data breach notification law with different requirements for triggering notifications. The European Union's GDPR also includes a breach notification requirement. The U.S. lacks a federal law requiring broad notification for all security breaches but does have industry-specific laws and requirements that require notification in some circumstances.</p>
+<p id="c17-para-0131">The bottom line is that breach notification requirements vary by industry and jurisdiction and an organization experiencing a breach may be required to untangle many overlapping requirements. For this reason, organizations experiencing a data breach should consult with an attorney who is well versed in this field.</p>
+</section>
+</section>
+<section aria-labelledby="head-2-294"><span id="c17-sec-0039"/>
+<h2 id="head-2-294">Summary</h2>
+<p id="c17-para-0132">Cybersecurity efforts are all about risk management. In this chapter, you learned about the techniques that cybersecurity analysts use to identify, assess, and manage a wide variety of risks. You learned about the differences between risk mitigation, risk avoidance, risk transference, and risk acceptance and when it is appropriate to use each. You also learned how the disaster recovery planning process can help prevent disruptions to a business, and we discussed the role of security professionals in protecting the privacy of personally identifiable information.</p>
+</section>
+<section aria-labelledby="head-2-295"><span id="c17-sec-0040"/>
+<h2 id="head-2-295">Exam Essentials</h2>
+<p id="c17-li-0096"><b>Risk identification and assessment helps organizations prioritize cybersecurity efforts.</b> Cybersecurity analysts seek to identify all of the risks facing their organization and then conduct a business impact analysis to assess the potential degree of risk based on the probability that it will occur and the magnitude of the potential effect on the organization. This work allows security professionals to prioritize risks and communicate risk factors to others in the organization.</p>
+<p id="c17-li-0097"><span aria-label="586" epub:type="pagebreak" id="Page_586" role="doc-pagebreak"/><b>Vendors are a source of external risk.</b> Organizations should conduct their own systems assessments as part of their risk assessment practices, but they should also conduct supply chain assessments as well. Performing vendor due diligence reduces the likelihood that a previously unidentified risk at a vendor will negatively impact the organization. Hardware source authenticity techniques verify that hardware was not tampered with after leaving the vendor's premises.</p>
+<p id="c17-li-0098"><b>Organizations may choose from a variety of risk management strategies.</b> Risk avoidance strategies change business practices to make a risk irrelevant to the organization. Risk mitigation techniques seek to reduce the probability or magnitude of a risk. Risk transference approaches move some of the risk to a third party. Risk acceptance acknowledges the risk and continues normal business operations despite the presence of the risk.</p>
+<p id="c17-li-0099"><b>Disaster recovery planning builds resiliency.</b> Disaster recovery plans activate when an organization experiences a natural or human-made disaster that disrupts its normal operations. The disaster recovery plan helps the organization quickly recover its information and systems and resume normal operations.</p>
+<p id="c17-li-0100"><b>Privacy controls protect personal information.</b> Organizations handling sensitive personal information should develop privacy programs that protect that information from misuse and unauthorized disclosure. The plan should cover personally identifiable information (PII), protected health information (PHI), financial information, and other records maintained by the organization that might impact personal privacy.</p>
+
+</section> <span aria-label="587" epub:type="pagebreak" id="Page_587" role="doc-pagebreak"/>
+<section aria-labelledby="head-2-296"><span id="c17-sec-0041"/>
+<h2 id="head-2-296">Review Questions</h2>
+<section><span id="c17-exsec-0001"/>
+<ol class="decimal">
+<li id="c17-ex-0001">Jen identified a missing patch on a Windows server that might allow an attacker to gain remote control of the system. After consulting with her manager, she applied the patch. From a risk management perspective, what has she done?
+<ol class="upper-alpha">
+<li>Removed the threat</li>
+<li>Reduced the threat</li>
+<li>Removed the vulnerability</li>
+<li>Reduced the vulnerability</li>
+</ol>
+</li>
+<li id="c17-ex-0002">You notice a high number of SQL injection attacks against a web application run by your organization, so you install a web application firewall to block many of these attacks before they reach the server. How have you altered the severity of this risk?
+<ol class="upper-alpha">
+<li>Reduced the magnitude</li>
+<li>Eliminated the vulnerability</li>
+<li>Reduced the probability</li>
+<li>Eliminated the threat</li>
+</ol>
+</li>
+<li id="c17-ex-0003">Questions 3–7 refer to the following scenario:
+<p class="listPara1" id="c17-para-8152">Aziz is responsible for the administration of an e-commerce website that generates $100,000 per day in revenue for his firm. The website uses a database that contains sensitive information about the firm’s customers. He expects that a compromise of that database would result in $500,000 of fines against his firm.</p>
+<p class="listPara1" id="c17-para-7152">Aziz is assessing the risk of a SQL injection attack against the database where the attacker would steal all of the customer personally identifiable information (PII) from the database. After consulting threat intelligence, he believes that there is a 5 percent chance of a successful attack in any given year.</p>
+<p class="listPara1" id="c17-para-0152">What is the asset value (AV)?</p>
+<ol class="upper-alpha">
+<li>$5,000</li>
+<li>$100,000</li>
+<li>$500,000</li>
+<li>$600,000</li>
+</ol>
+</li>
+<li id="c17-ex-0004">What is the exposure factor (EF)?
+<ol class="upper-alpha">
+<li>5%</li>
+<li>20%</li>
+<li>50%</li>
+<li>100%</li>
+</ol>
+</li>
+<li id="c17-ex-0005"><span aria-label="588" epub:type="pagebreak" id="Page_588" role="doc-pagebreak"/> What is the single loss expectancy (SLE)?
+<ol class="upper-alpha">
+<li>$5,000</li>
+<li>$100,000</li>
+<li>$500,000</li>
+<li>$600,000</li>
+</ol>
+</li>
+<li id="c17-ex-0006">What is the annualized rate of occurrence (ARO)?
+<ol class="upper-alpha">
+<li>0.05</li>
+<li>0.20</li>
+<li>2.00</li>
+<li>5.00</li>
+</ol>
+</li>
+<li id="c17-ex-0007">What is the annualized loss expectancy (ALE)?
+<ol class="upper-alpha">
+<li>$5,000</li>
+<li>$25,000</li>
+<li>$100,000</li>
+<li>$500,000</li>
+</ol>
+</li>
+<li id="c17-ex-0008">Questions 8–11 refer to the following scenario:
+<p class="listPara1" id="c17-para-2152">Grace recently completed a risk assessment of her organization’s exposure to data breaches and determined that there is a high level of risk related to the loss of sensitive personal information. She is considering a variety of approaches to managing this risk.</p>
+<p class="listPara1" id="c17-para-0179">Grace's first idea is to add a web application firewall to protect her organization against SQL injection attacks. What risk management strategy does this approach adopt?</p>
+<ol class="upper-alpha">
+<li>Risk acceptance</li>
+<li>Risk avoidance</li>
+<li>Risk mitigation</li>
+<li>Risk transference</li>
+</ol>
+</li>
+<li id="c17-ex-0009">Business leaders are considering dropping the customer activities that collect and store sensitive personal information. What risk management strategy would this approach use?
+<ol class="upper-alpha">
+<li>Risk acceptance</li>
+<li>Risk avoidance</li>
+<li>Risk mitigation</li>
+<li>Risk transference</li>
+</ol>
+</li>
+<li id="c17-ex-0010">Grace's company decided to install the web application firewall and continue doing business. They are still worried about other risks to the information that were not addressed by the firewall and are considering purchasing an insurance policy to cover those risks. What strategy does this use?
+<ol class="upper-alpha">
+<li>Risk acceptance</li>
+<li>Risk avoidance <span aria-label="589" epub:type="pagebreak" id="Page_589" role="doc-pagebreak"/></li>
+<li>Risk mitigation</li>
+<li>Risk transference</li>
+</ol>
+</li>
+<li id="c17-ex-0011">In the end, Grace's risk managers found that the insurance policy was too expensive and opted not to purchase it. They are taking no additional action. What risk management strategy is being used in this situation?
+<ol class="upper-alpha">
+<li>Risk acceptance</li>
+<li>Risk avoidance</li>
+<li>Risk mitigation</li>
+<li>Risk transference</li>
+</ol>
+</li>
+<li id="c17-ex-0012">Under the European Union's GDPR, what term is assigned to the individual who leads an organization's privacy efforts?
+<ol class="upper-alpha">
+<li>Data protection officer</li>
+<li>Data controller</li>
+<li>Data steward</li>
+<li>Data processor</li>
+</ol>
+</li>
+<li id="c17-ex-0013">Helen's organization maintains medical records on behalf of its customers, who are individual physicians. What term best describes the role of Helen's organization?
+<ol class="upper-alpha">
+<li>Data processor</li>
+<li>Data controller</li>
+<li>Data owner</li>
+<li>Data steward</li>
+</ol>
+</li>
+<li id="c17-ex-0014">Gene recently conducted an assessment and determined that his organization can be without its main transaction database for a maximum of two hours before unacceptable damage occurs to the business. What metric has Gene identified?
+<ol class="upper-alpha">
+<li>MTBF</li>
+<li>MTTR</li>
+<li>RTO</li>
+<li>RPO</li>
+</ol>
+</li>
+<li id="c17-ex-0015">Tina works for a hospital system and manages the system's patient records. What category of personal information best describes the information that is likely to be found in those records?
+<ol class="upper-alpha">
+<li>PCI</li>
+<li>PHI</li>
+<li>PFI</li>
+<li>PII</li>
+</ol>
+</li>
+<li id="c17-ex-0016"><span aria-label="590" epub:type="pagebreak" id="Page_590" role="doc-pagebreak"/> Asa believes that her organization is taking data collected from customers for technical support and using it for marketing without their permission. What principle is most likely being violated?
+<ol class="upper-alpha">
+<li>Data minimization</li>
+<li>Data retention</li>
+<li>Purpose limitation</li>
+<li>Data sovereignty</li>
+</ol>
+</li>
+<li id="c17-ex-0017">Which one of the following U.S. government classification levels requires the highest degree of security control?
+<ol class="upper-alpha">
+<li>Secret</li>
+<li>Confidential</li>
+<li>Top Secret</li>
+<li>Unclassified</li>
+</ol>
+</li>
+<li id="c17-ex-0018">Which type of analysis uses numeric data in the analysis, resulting in assessments that allow the very straightforward prioritization of risk?
+<ol class="upper-alpha">
+<li>Qualitative</li>
+<li>One-time</li>
+<li>Recurring</li>
+<li>Quantitative</li>
+</ol>
+</li>
+<li id="c17-ex-0019">What term is given to an individual or organization who determines the reasons for processing personal information?
+<ol class="upper-alpha">
+<li>Data steward</li>
+<li>Data controller</li>
+<li>Data processor</li>
+<li>Data custodian</li>
+</ol>
+</li>
+<li id="c17-ex-0020">Brian recently conducted a risk mitigation exercise and has determined the level of risk that remains after implementing a series of controls. What term best describes this risk?
+<ol class="upper-alpha">
+<li>Inherent risk</li>
+<li>Control risk</li>
+<li>Risk appetite</li>
+<li>Residual risk</li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+</section>
+</body>
+</html>
