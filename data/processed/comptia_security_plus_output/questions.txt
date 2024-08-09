@@ -1,0 +1,3058 @@
+{
+    "1": {
+        "question": "Matt is updating the organization's threat assessment process. What category of control is Matt implementing?",
+        "answer": {
+            "A": "Operational",
+            "B": "Technical",
+            "C": "Corrective",
+            "D": "Managerial"
+        }
+    },
+    "2": {
+        "question": "Jade's organization recently suffered a security breach that affected stored credit card data. Jade's primary concern is the fact that the organization is subject to sanctions for violating the provisions of the Payment Card Industry Data Security Standard. What category of risk is concerning Jade?",
+        "answer": {
+            "A": "Strategic",
+            "B": "Compliance",
+            "C": "Operational",
+            "D": "Financial"
+        }
+    },
+    "3": {
+        "question": "Chris is responding to a security incident that compromised one of his organization's web servers. He believes that the attackers defaced one or more pages on the website. What cybersecurity objective did this attack violate?",
+        "answer": {
+            "A": "Confidentiality",
+            "B": "Nonrepudiation",
+            "C": "Integrity",
+            "D": "Availability"
+        }
+    },
+    "4": {
+        "question": " Gwen is exploring a customer transaction reporting system and discovers the table shown here. What type of data minimization has most likely been used on this table?",
+        "answer": {
+            "A": "Destruction",
+            "B": "Masking",
+            "C": "Tokenization",
+            "D": "Hashing"
+        }
+    },
+    "5": {
+        "question": "Tonya is concerned about the risk that an attacker will attempt to gain access to her organization's database server. She is searching for a control that would discourage the attacker from attempting to gain access. What type of security control is she seeking to implement?",
+        "answer": {
+            "A": "Preventive",
+            "B": "Detective",
+            "C": "Corrective",
+            "D": "Deterrent"
+        }
+    },
+    "6": {
+        "question": " Greg is implementing a data loss prevention system. He would like to ensure that it protects against transmissions of sensitive information by guests on his wireless network. What DLP technology would best meet this goal?",
+        "answer": {
+            "A": "Watermarking",
+            "B": "Pattern recognition",
+            "C": "Host-based",
+            "D": "Network-based"
+        }
+    },
+    "7": {
+        "question": "What term best describes data that is being sent between two systems over a network connection?",
+        "answer": {
+            "A": "Data at rest",
+            "B": "Data in transit",
+            "C": "Data in processing",
+            "D": "Data in use"
+        }
+    },
+    "8": {
+        "question": "Tina is tuning her organization's intrusion prevention system to prevent false positive alerts. What type of control is Tina implementing?",
+        "answer": {
+            "A": "Technical control",
+            "B": "Physical control",
+            "C": "Managerial control",
+            "D": "Operational control"
+        }
+    },
+    "9": {
+        "question": "Which one of the following is not a common goal of a cybersecurity attacker?",
+        "answer": {
+            "A": "Disclosure",
+            "B": "Denial",
+            "C": "Alteration",
+            "D": "Allocation"
+        }
+    },
+    "10": {
+        "question": "Tony is reviewing the status of his organization's defenses against a breach of their file server. He believes that a compromise of the file server could reveal information that would prevent the company from continuing to do business. What term best describes the risk that Tony is considering?",
+        "answer": {
+            "A": "Strategic",
+            "B": "Reputational",
+            "C": "Financial",
+            "D": "Operational"
+        }
+    },
+    "11": {
+        "question": "Which one of the following data elements is not commonly associated with identity theft?",
+        "answer": {
+            "A": "Social Security number",
+            "B": "Driver's license number",
+            "C": "Frequent flyer number",
+            "D": "Passport number"
+        }
+    },
+    "12": {
+        "question": " What term best describes an organization's desired security state?",
+        "answer": {
+            "A": "Control objectives",
+            "B": "Security priorities",
+            "C": "Strategic goals",
+            "D": "Best practices"
+        }
+    },
+    "13": {
+        "question": "Lou mounted the sign below on the fence surrounding his organization's datacenter. What control type best describes this control?",
+        "answer": {
+            "A": "Compensating",
+            "B": "Detective",
+            "C": "Physical",
+            "D": "Deterrent"
+        }
+    },
+    "14": {
+        "question": "What technology uses mathematical algorithms to render information unreadable to those lacking the required key?",
+        "answer": {
+            "A": "Data loss prevention",
+            "B": "Data obfuscation",
+            "C": "Data minimization",
+            "D": "Data encryption"
+        }
+    },
+    "15": {
+        "question": "Greg recently conducted an assessment of his organization's security controls and discovered a potential gap: the organization does not use full-disk encryption on laptops. What type of control gap exists in this case?",
+        "answer": {
+            "A": "Detective",
+            "B": "Corrective",
+            "C": "Deterrent",
+            "D": "Preventive"
+        }
+    },
+    "16": {
+        "question": " What compliance regulation most directly affects the operations of a health-care provider?",
+        "answer": {
+            "A": "HIPAA",
+            "B": "PCI DSS",
+            "C": "GLBA",
+            "D": "SOX"
+        }
+    },
+    "17": {
+        "question": "Nolan is writing an after action report on a security breach that took place in his organization. The attackers stole thousands of customer records from the organization's database. What cybersecurity principle was most impacted in this breach?",
+        "answer": {
+            "A": "Availability",
+            "B": "Nonrepudiation",
+            "C": "Confidentiality",
+            "D": "Integrity"
+        }
+    },
+    "18": {
+        "question": "Which one of the following objectives is not one of the three main objectives that information security professionals must achieve to protect their organizations against cybersecurity threats?",
+        "answer": {
+            "A": "Integrity",
+            "B": "Nonrepudiation",
+            "C": "Availability",
+            "D": "Confidentiality"
+        }
+    },
+    "19": {
+        "question": "Which one of the following data protection techniques is reversible when conducted properly?",
+        "answer": {
+            "A": "Tokenization",
+            "B": "Masking",
+            "C": "Hashing",
+            "D": "Shredding"
+        }
+    },
+    "20": {
+        "question": "Which one of the following statements is not true about compensating controls under PCI DSS?",
+        "answer": {
+            "A": "Controls used to fulfill one PCI DSS requirement may be used to compensate for the absence of a control needed to meet another requirement.",
+            "B": "Controls must meet the intent of the original requirement.",
+            "C": "Controls must meet the rigor of the original requirement.",
+            "D": "Compensating controls must provide a similar level of defense as the original requirement."
+        }
+    },
+    "21": {
+        "question": "Which of the following measures is not commonly used to assess threat intelligence?",
+        "answer": {
+            "A": "Timeliness",
+            "B": "Detail",
+            "C": "Accuracy",
+            "D": "Relevance"
+        }
+    },
+    "22": {
+        "question": "Which one of the following motivations is most commonly attributed to hacktivists?",
+        "answer": {
+            "A": "War",
+            "B": "Financial gain",
+            "C": "Political/philosophical beliefs",
+            "D": "Ethical"
+        }
+    },
+    "23": {
+        "question": "Kolin is a penetration tester who works for a cybersecurity company. His firm was hired to conduct a penetration test against a health-care system, and Kolin is working to gain access to the systems belonging to a hospital in that system. What term best describes Kolin's work?",
+        "answer": {
+            "A": "Authorized attacker",
+            "B": "Unauthorized attacker",
+            "C": "Unknown attacker",
+            "D": "Semi-authorized attacker"
+        }
+    },
+    "24": {
+        "question": "Which one of the following attackers is most likely to be associated with an APT?",
+        "answer": {
+            "A": "Nation-state actor",
+            "B": "Hacktivist",
+            "C": "Unskilled",
+            "D": "Insider"
+        }
+    },
+    "25": {
+        "question": "Which organization did the U.S. government help create to share knowledge between organizations in specific verticals?",
+        "answer": {
+            "A": "DHS",
+            "B": "SANS",
+            "C": "CERTS",
+            "D": "ISACs"
+        }
+    },
+    "26": {
+        "question": "Which of the following threat actors typically has the greatest access to resources?",
+        "answer": {
+            "A": "Nation-state actors",
+            "B": "Organized crime",
+            "C": "Hacktivists",
+            "D": "Insider threats"
+        }
+    },
+    "27": {
+        "question": " Of the threat vectors shown here, which one is most commonly exploited by attackers who are at a distant location?",
+        "answer": {
+            "A": "Email",
+            "B": "Direct access",
+            "C": "Wireless",
+            "D": "Removable media"
+        }
+    },
+    "28": {
+        "question": "Which one of the following is the best example of a hacktivist group?",
+        "answer": {
+            "A": "Chinese military",
+            "B": "U.S. government",
+            "C": "Russian mafia",
+            "D": "Anonymous"
+        }
+    },
+    "29": {
+        "question": "What type of assessment is particularly useful for identifying insider threats?",
+        "answer": {
+            "A": "Behavioral",
+            "B": "Instinctual",
+            "C": "Habitual",
+            "D": "IoCs"
+        }
+    },
+    "30": {
+        "question": "Cindy is concerned that her organization may be targeted by a supply chain attack and is conducting a review of all of her vendor and supplier partners. Which one of the following organizations is least likely to be the conduit for a supply chain attack?",
+        "answer": {
+            "A": "Hardware provider",
+            "B": "Software provider",
+            "C": "Managed service provider",
+            "D": "Talent provider"
+        }
+    },
+    "31": {
+        "question": "Greg believes that an attacker may have installed malicious firmware in a network device before it was provided to his organization by the supplier. What type of threat vector best describes this attack?",
+        "answer": {
+            "A": "Supply chain",
+            "B": "Removable media",
+            "C": "Cloud",
+            "D": "Direct access"
+        }
+    },
+    "32": {
+        "question": "Ken is conducting threat research on Transport Layer Security (TLS) and would like to consult the authoritative reference for the protocol's technical specification. What resource would best meet his needs?",
+        "answer": {
+            "A": "Academic journal",
+            "B": "Internet RFCs",
+            "C": "Subject matter experts",
+            "D": "Textbooks"
+        }
+    },
+    "33": {
+        "question": " Wendy is scanning cloud-based repositories for sensitive information. Which one of the following should concern her most, if discovered in a public repository?",
+        "answer": {
+            "A": "Product manuals",
+            "B": "Source code",
+            "C": "API keys",
+            "D": "Open source data"
+        }
+    },
+    "34": {
+        "question": "Which one of the following threat research tools is used to visually display information about the location of threat actors?",
+        "answer": {
+            "A": "Threat map",
+            "B": "Predictive analysis",
+            "C": "Vulnerability feed",
+            "D": "STIX"
+        }
+    },
+    "35": {
+        "question": "Vince recently received the hash values of malicious software that several other firms in his industry found installed on their systems after a compromise. What term best describes this information?",
+        "answer": {
+            "A": "Vulnerability feed",
+            "B": "IoC",
+            "C": "TTP",
+            "D": "RFC"
+        }
+    },
+    "36": {
+        "question": "Ursula recently discovered that a group of developers are sharing information over a messaging tool provided by a cloud vendor but not sanctioned by her organization. What term best describes this use of technology?",
+        "answer": {
+            "A": "Shadow IT",
+            "B": "System integration",
+            "C": "Vendor management",
+            "D": "Data exfiltration"
+        }
+    },
+    "37": {
+        "question": "Tom's organization recently learned that the vendor is discontinuing support for their customer relationship management (CRM) system. What should concern Tom the most from a security perspective?",
+        "answer": {
+            "A": "Unavailability of future patches",
+            "B": "Lack of technical support",
+            "C": "Theft of customer information",
+            "D": "Increased costs"
+        }
+    },
+    "38": {
+        "question": " Which one of the following information sources would not be considered an OSINT source?",
+        "answer": {
+            "A": "DNS lookup",
+            "B": "Search engine research",
+            "C": "Port scans",
+            "D": "WHOIS queries"
+        }
+    },
+    "39": {
+        "question": "Edward Snowden was a government contractor who disclosed sensitive government documents to journalists to uncover what he believed were unethical activities. Which of the following terms best describe Snowden's activities? (Choose two.)",
+        "answer": {
+            "A": "Insider",
+            "B": "State actor",
+            "C": "Hacktivist",
+            "D": "APT",
+            "E": "Organized crime"
+        }
+    },
+    "40": {
+        "question": "Renee is a cybersecurity hobbyist. She receives an email about a new web-based grading system being used by her son's school and she visits the site. She notices that the URL for the site looks like this:\nwww.myschool.edu/grades.php&studentID=1023425\nShe realizes that 1023425 is her son's student ID number and she then attempts to access the following similar URLs:\nwww.myschool.edu/grades.php&studentID=1023423\nwww.myschool.edu/grades.php&studentID=1023424\nwww.myschool.edu/grades.php&studentID=1023426\nwww.myschool.edu/grades.php&studentID=1023427\nWhen she does so, she accesses the records of other students. She closes the records and immediately informs the school principal of the vulnerability. What term best describes Renee's work?",
+        "answer": {
+            "A": "Authorized hacking",
+            "B": "Unknown hacking",
+            "C": "Semi-authorized hacking",
+            "D": "Unauthorized hacking"
+        }
+    },
+    "41": {
+        "question": "Ryan wants to prevent logic bombs created by insider threats from impacting his organization. What technique will most effectively limit the likelihood of logic bombs being put in place?",
+        "answer": {
+            "A": "Deploying antivirus software",
+            "B": "Using a code review process",
+            "C": "Deploying endpoint detection and response (EDR) software",
+            "D": "Disabling autorun for USB drives"
+        }
+    },
+    "42": {
+        "question": "Yasmine believes that her organization may be dealing with an advanced rootkit and wants to write IoC definitions for it. Which of the following is not likely to be a useful IoC for a rootkit?",
+        "answer": {
+            "A": "File hashes",
+            "B": "Command and control domains",
+            "C": "Pop-ups demanding a ransom",
+            "D": "Behavior-based identifiers"
+        }
+    },
+    "43": {
+        "question": "Nathan works at a school and notices that one of his staff appears to have logged in and changed grades for a single student to higher grades, even in classes that staff member is not responsible for. When asked, the staff member says that they did not perform the action. Which of the following is the most likely way that a student could have gotten access to the staff member's password?",
+        "answer": {
+            "A": "A keylogger",
+            "B": "A rootkit",
+            "C": "Spyware",
+            "D": "A logic bomb"
+        }
+    },
+    "44": {
+        "question": "Amanda notices traffic between her systems and a known malicious host on TCP port 6667. What type of traffic is she most likely detecting?",
+        "answer": {
+            "A": "Command and control",
+            "B": "Spyware",
+            "C": "A worm",
+            "D": "A hijacked web browser"
+        }
+    },
+    "45": {
+        "question": "Mike discovers that attackers have left software that allows them to have remote access to systems on a computer in his company's network. How should he describe or classify this malware?",
+        "answer": {
+            "A": "A worm",
+            "B": "Crypto malware",
+            "C": "A trojan",
+            "D": "A backdoor"
+        }
+    },
+    "46": {
+        "question": " What is the primary impact of bloatware?",
+        "answer": {
+            "A": "Consuming resources",
+            "B": "Logging keystrokes",
+            "C": "Providing information about users and devices to third parties",
+            "D": "Allowing unauthorized remote access"
+        }
+    },
+    "47": {
+        "question": "What type of malware is used to gather information about a user's browsing habits and system?",
+        "answer": {
+            "A": "A Trojan",
+            "B": "Bloatware",
+            "C": "Spyware",
+            "D": "A rootkit"
+        }
+    },
+    "48": {
+        "question": "Matt uploads a malware sample to a third-party malware scanning site that uses multiple antimalware and antivirus engines to scan the sample. He receives multiple different answers for what the malware package is. What has occurred?",
+        "answer": {
+            "A": "The package contains more than one piece of malware.",
+            "B": "The service is misconfigured.",
+            "C": "The malware is polymorphic and changed while being tested.",
+            "D": "Different vendors use different names for malware packages."
+        }
+    },
+    "49": {
+        "question": "Nancy is concerned that there is a software keylogger on the system she's investigating. What best describes data that may have been stolen?",
+        "answer": {
+            "A": "All files on the system",
+            "B": "All keyboard input",
+            "C": "All files the user accessed while the keylogger was active",
+            "D": "Keyboard and other input from the user"
+        }
+    },
+    "50": {
+        "question": "A system in Elaine's company has suddenly displayed a message demanding payment in Bitcoin and claiming that the data from the system has been encrypted. What type of malware has Elaine likely encountered?",
+        "answer": {
+            "A": "Worms",
+            "B": "A virus",
+            "C": "Ransomware",
+            "D": "Rootkit"
+        }
+    },
+    "51": {
+        "question": " Rick believes that a system he is responsible for has been compromised with malware that uses a rootkit to obtain and retain access to the system. When he runs an antimalware tool's scanner, the system doesn't show any malware. If he has other data that indicates the system is infected, what should his next step be if he wants to determine what malware may be on the system?",
+        "answer": {
+            "A": "Rerun the antimalware scan.",
+            "B": "Mount the drive on another system and scan it that way.",
+            "C": "Disable the systems antivirus because it may be causing a false negative.",
+            "D": "The system is not infected and he should move on."
+        }
+    },
+    "52": {
+        "question": "A recently terminated developer from Jaya's organization has contacted the organization claiming that they left code in an application that they wrote that will delete files and bring the application down if they are not employed by the company. What type of malware is this?",
+        "answer": {
+            "A": "Ransomware",
+            "B": "Extortionware",
+            "C": "A logic bomb",
+            "D": "A Trojan"
+        }
+    },
+    "53": {
+        "question": "Selah wants to ensure that malware is completely removed from a system. What should she do to ensure this?",
+        "answer": {
+            "A": "Run multiple antimalware tools and use them to remove all detections.",
+            "B": "Wipe the drive and reinstall from known good media.",
+            "C": "Use the delete setting in her antimalware software rather than the quarantine setting.",
+            "D": "There is no way to ensure the system is safe and it should be destroyed."
+        }
+    },
+    "54": {
+        "question": "What is the key difference between a worm and a virus?",
+        "answer": {
+            "A": "What operating system they run on",
+            "B": "How they spread",
+            "C": "What their potential impact is",
+            "D": "The number of infections"
+        }
+    },
+    "55": {
+        "question": "Ben wants to analyze Python code that he believes may be malicious code written by an employee of his organization. What can he do to determine if the code is malicious?",
+        "answer": {
+            "A": "Run a decompiler against it to allow him to read the code",
+            "B": "Open the file using a text editor to review the code",
+            "C": "Test the code using an antivirus tool",
+            "D": "Submit the Python code to a malware testing website"
+        }
+    },
+    "56": {
+        "question": " Which of the following defenses is most likely to prevent Trojan installation?",
+        "answer": {
+            "A": "Installing patches for known vulnerabilities",
+            "B": "Preventing downloads from application stores",
+            "C": "Preventing the use of USB drives",
+            "D": "Disabling autorun from USB drives"
+        }
+    },
+    "57": {
+        "question": "Jason's security team reports that a recent WordPress vulnerability seems to have been exploited by malware and that their organization's entire WordPress service cluster has been infected. What type of malware is most likely involved if a vulnerability in the software was exploited over the network?",
+        "answer": {
+            "A": "A logic bomb",
+            "B": "A Trojan",
+            "C": "A worm",
+            "D": "A rootkit"
+        }
+    },
+    "58": {
+        "question": "Hui's organization recently purchased new Windows computers from an office supply store. The systems have a number of unwanted programs on them that load at startup that were installed by the manufacturer. What type of software is this?",
+        "answer": {
+            "A": "Viruses",
+            "B": "Trojans",
+            "C": "Spyware",
+            "D": "Bloatware"
+        }
+    },
+    "59": {
+        "question": "What type of malware connects to a command and control system, allowing attackers to manage, control, and update it remotely?",
+        "answer": {
+            "A": "A bot",
+            "B": "A drone",
+            "C": "A vampire",
+            "D": "A worm"
+        }
+    },
+    "60": {
+        "question": "Randy believes that a system that he is responsible for was infected after a user picked up a USB drive and plugged it in. The user claims that they only opened one file on the drive to see who might own it. What type of malware is most likely involved?",
+        "answer": {
+            "A": "A virus",
+            "B": "A worm",
+            "C": "A trojan",
+            "D": "A spyware tool"
+        }
+    },
+    "61": {
+        "question": "Joseph receives an email notifying him that he needs to change his password due to a recent account issue. He notices that the email links him to a website using the domain amaz0n.com. What type of attack should he describe this as?",
+        "answer": {
+            "A": "Typosquatting",
+            "B": "Phishing",
+            "C": "Smishing",
+            "D": "A watering hole attack"
+        }
+    },
+    "62": {
+        "question": "When you combine phishing with voicemail, it is known as:",
+        "answer": {
+            "A": "Whaling",
+            "B": "Spoofing",
+            "C": "Spooning",
+            "D": "Vishing"
+        }
+    },
+    "63": {
+        "question": "While reviewing her logs, Michele notices that a remote system has attempted to log into her server via SSH using the username admin and a variety of passwords like \u201cpassword\u201d and \u201cninja.\u201d What type of attack has Michele noticed?",
+        "answer": {
+            "A": "A brute-force attack",
+            "B": "Shoulder surfing",
+            "C": "An on-path attack",
+            "D": "Pretexting"
+        }
+    },
+    "64": {
+        "question": "Joanna wants to detect password spraying attacks. What type of rule should she deploy through her security systems?",
+        "answer": {
+            "A": "Match attempts to log into many systems with the same username and password.",
+            "B": "Match multiple attempts to log into the same user account using different passwords.",
+            "C": "Match repeated use of the same password during failed login attempts for multiple usernames.",
+            "D": "Match all attempts to use passwords with slight changes for the same account."
+        }
+    },
+    "65": {
+        "question": "One of the staff at Susan's organization has reported that a critical vendor has contacted them about an unpaid invoice. After Susan investigates, she discovers that the invoice was sent from an email account that was not typically a contact and that the invoice requested payment to a PayPal account. What type of social engineering attack has Susan most likely discovered?",
+        "answer": {
+            "A": "Smishing",
+            "B": "Business email compromise",
+            "C": "Disinformation",
+            "D": "Typosquatting"
+        }
+    },
+    "66": {
+        "question": " Selah infects the ads on a website that users from her target company frequently visit with malware as part of her penetration test. What technique has she used?",
+        "answer": {
+            "A": "A watering hole attack",
+            "B": "Vishing",
+            "C": "Whaling",
+            "D": "Typosquatting"
+        }
+    },
+    "67": {
+        "question": "Ben wants to determine if brute-force password attacks are being used against his company. What log information is least likely to be useful when working to detect brute-force attacks?",
+        "answer": {
+            "A": "Source IP address or hostname",
+            "B": "Failed login logs",
+            "C": "The password that was used for each attempt",
+            "D": "The geographic location of system being logged into"
+        }
+    },
+    "68": {
+        "question": "Melissa receives a call and the caller informs her a senior manager in her organization needs her to buy gift cards for an event that starts in an hour. The caller says that the senior leader forgot to get the cards, and that the event is critical to her organization. Melissa buys the cards and sends them to the Gmail address the caller says that the senior leader needs them sent to. What type of attack has Melissa fallen for?",
+        "answer": {
+            "A": "Phishing",
+            "B": "Pretexting",
+            "C": "Business email compromise",
+            "D": "Carding"
+        }
+    },
+    "69": {
+        "question": "Alaina wants to determine if a password spraying attack was used against her organization. Which of the following indicators would be most useful as part of her investigation?",
+        "answer": {
+            "A": "The time the login attempts happened",
+            "B": "The passwords used for failed attempts",
+            "C": "The source IP address of the attempts",
+            "D": "The number of failed attempts for each user"
+        }
+    },
+    "70": {
+        "question": "Which of the following human vectors is primarily associated with nation-state actors?",
+        "answer": {
+            "A": "Misinformation campaigns",
+            "B": "Watering hole attacks",
+            "C": "Business email compromise",
+            "D": "Password spraying"
+        }
+    },
+    "71": {
+        "question": "Nicole accidentally types www.smazon.com into her browser and discovers that she is directed to a different site loaded with ads and pop-ups. Which of the following is the most accurate description of the attack she has experienced?",
+        "answer": {
+            "A": "DNS hijacking",
+            "B": "Pharming",
+            "C": "Typosquatting",
+            "D": "Hosts file compromise"
+        }
+    },
+    "72": {
+        "question": " Devon is a penetration tester and sets up malicious tools on his target organization's primary internal website. What type of attack is he conducting?",
+        "answer": {
+            "A": "A misinformation campaign",
+            "B": "A watering hole attack",
+            "C": "A typosquatting attack",
+            "D": "A disinformation campaign"
+        }
+    },
+    "73": {
+        "question": "Phishing emails sent pretending to be from a company that recipients are familiar with and likely to respond to is what type of attack?",
+        "answer": {
+            "A": "Phishing",
+            "B": "Pharming",
+            "C": "Brand impersonation",
+            "D": "Pretexting"
+        }
+    },
+    "74": {
+        "question": "When a caller was recently directed to Amanda, who is a junior IT employee at her company, the caller informed her that they were the head of IT for her organization and that she needed to immediately disable the organization's firewall. After Amanda made the change, she discovered that the caller was not the head of IT, and that they were actually a penetration tester hired by her company. What social engineering attack best describes this?",
+        "answer": {
+            "A": "Smishing",
+            "B": "Pretexting",
+            "C": "Impersonation",
+            "D": "Vishing"
+        }
+    },
+    "75": {
+        "question": "Fred is concerned about text message\u2013based attacks. Which of the following attacks relies on text messages as its primary focus?",
+        "answer": {
+            "A": "Impersonation",
+            "B": "Watering hole attacks",
+            "C": "Smishing",
+            "D": "Business email compromise"
+        }
+    },
+    "76": {
+        "question": "Sharif notices that his authentication logs have many different usernames showing failed logins with the same password. What type of attack has he discovered?",
+        "answer": {
+            "A": "Credential harvesting",
+            "B": "Impersonation",
+            "C": "BEC",
+            "D": "Spraying"
+        }
+    },
+    "77": {
+        "question": "Naomi receives a report of smishing. What type of attack should she be looking for?",
+        "answer": {
+            "A": "Compressed files in phishing",
+            "B": "Text message\u2013based phishing",
+            "C": "Voicemail-based phishing",
+            "D": "Server-based phishing"
+        }
+    },
+    "78": {
+        "question": " Jack's organization wants to prevent typosquatting. What option should he select to address this issue?",
+        "answer": {
+            "A": "Copyright the domain name",
+            "B": "Purchase the most common typos for his organization's domain",
+            "C": "Trademark the domain name",
+            "D": "Disable typo resolution for the domain"
+        }
+    },
+    "79": {
+        "question": "Gwyne's company has been contacted by customers asking about a new social media account operating under the company's brand. The social media account is advertising cryptocurrency, which Gwyne's organization does not sell or work with. What type of attack best describes what Gwyne's organization has encountered?",
+        "answer": {
+            "A": "Impersonation",
+            "B": "Brand impersonation",
+            "C": "Mis-branding",
+            "D": "Crypto-phishing"
+        }
+    },
+    "80": {
+        "question": "Nation-state-driven social media campaigns about the trustworthiness of the U.S. election in 2016 are an example of what type of social engineering?",
+        "answer": {
+            "A": "Smishing",
+            "B": "Pretexting",
+            "C": "Disinformation",
+            "D": "Spraying"
+        }
+    },
+    "81": {
+        "question": "Which one of the following security assessment techniques assumes that an organization has already been compromised and searches for evidence of that compromise?",
+        "answer": {
+            "A": "Vulnerability scanning",
+            "B": "Penetration testing",
+            "C": "Threat hunting",
+            "D": "War driving"
+        }
+    },
+    "82": {
+        "question": "Renee is configuring her vulnerability management solution to perform credentialed scans of servers on her network. What type of account should she provide to the scanner?",
+        "answer": {
+            "A": "Domain administrator",
+            "B": "Local administrator",
+            "C": "Root",
+            "D": "Read-only"
+        }
+    },
+    "83": {
+        "question": "Ryan is planning to conduct a vulnerability scan of a business-critical system using dangerous plug-ins. What would be the best approach for the initial scan?",
+        "answer": {
+            "A": "Run the scan against production systems to achieve the most realistic results possible.",
+            "B": "Run the scan during business hours.",
+            "C": "Run the scan in a test environment.",
+            "D": "Do not run the scan to avoid disrupting the business."
+        }
+    },
+    "84": {
+        "question": "Which one of the following values for the CVSS attack complexity metric would indicate that the specified attack is simplest to exploit?",
+        "answer": {
+            "A": "High",
+            "B": "Medium",
+            "C": "Low",
+            "D": "Severe"
+        }
+    },
+    "85": {
+        "question": "Tara recently analyzed the results of a vulnerability scan report and found that a vulnerability reported by the scanner did not exist because the system was actually patched as specified. What type of error occurred?",
+        "answer": {
+            "A": "False positive",
+            "B": "False negative",
+            "C": "True positive",
+            "D": "True negative"
+        }
+    },
+    "86": {
+        "question": " Brian ran a penetration test against a school's grading system and discovered a flaw that would allow students to alter their grades by exploiting a SQL injection vulnerability. What type of control should he recommend to the school's cybersecurity team to prevent students from engaging in this type of activity?",
+        "answer": {
+            "A": "Confidentiality",
+            "B": "Integrity",
+            "C": "Alteration",
+            "D": "Availability"
+        }
+    },
+    "87": {
+        "question": "Which one of the following security assessment tools is least likely to be used during the reconnaissance phase of a penetration test?",
+        "answer": {
+            "A": "Nmap",
+            "B": "Nessus",
+            "C": "Metasploit",
+            "D": "Nslookup"
+        }
+    },
+    "88": {
+        "question": "During a vulnerability scan, Brian discovered that a system on his network contained this vulnerability:",
+        "answer": {
+            "A": "Patch management",
+            "B": "File integrity monitoring",
+            "C": "Intrusion detection",
+            "D": "Threat hunting"
+        }
+    },
+    "89": {
+        "question": "Which one of the following tools is most likely to detect an XSS vulnerability?",
+        "answer": {
+            "A": "Static application test",
+            "B": "Web application vulnerability scanner",
+            "C": "Intrusion detection system",
+            "D": "Network vulnerability scanner"
+        }
+    },
+    "90": {
+        "question": " During a penetration test, Patrick deploys a toolkit on a compromised system and uses it to gain access to other systems on the same network. What term best describes this activity?",
+        "answer": {
+            "A": "Lateral movement",
+            "B": "Privilege escalation",
+            "C": "Footprinting",
+            "D": "OSINT"
+        }
+    },
+    "91": {
+        "question": "Zian is a cybersecurity leader who is coordinating the activities of a security audit. The audit is being done to validate the organization's financial statements to investors and involves a review of cybersecurity controls. What term best describes this audit?",
+        "answer": {
+            "A": "External audit",
+            "B": "Penetration test",
+            "C": "Internal audit",
+            "D": "Informal audit"
+        }
+    },
+    "92": {
+        "question": "Which one of the following assessment techniques is designed to solicit participation from external security experts and reward them for discovering vulnerabilities?",
+        "answer": {
+            "A": "Threat hunting",
+            "B": "Penetration testing",
+            "C": "Bug bounty",
+            "D": "Vulnerability scanning"
+        }
+    },
+    "93": {
+        "question": "Kyle is conducting a penetration test. After gaining access to an organization's database server, he installs a backdoor on the server to grant himself access in the future. What term best describes this action?",
+        "answer": {
+            "A": "Privilege escalation",
+            "B": "Lateral movement",
+            "C": "Maneuver",
+            "D": "Persistence"
+        }
+    },
+    "94": {
+        "question": "Which one of the following techniques would be considered passive reconnaissance?",
+        "answer": {
+            "A": "Port scans",
+            "B": "Vulnerability scans",
+            "C": "WHOIS lookups",
+            "D": "Footprinting"
+        }
+    },
+    "95": {
+        "question": "Which element of the SCAP framework can be used to consistently describe vulnerabilities?",
+        "answer": {
+            "A": "CPE",
+            "B": "CVE",
+            "C": "CVSS",
+            "D": "CCE"
+        }
+    },
+    "96": {
+        "question": " Bruce is conducting a penetration test for a client. The client provided him with full details of their systems in advance. What type of test is Bruce conducting?",
+        "answer": {
+            "A": "Partially known environment test",
+            "B": "Detailed environment test",
+            "C": "Known environment test",
+            "D": "Unknown environment test"
+        }
+    },
+    "97": {
+        "question": "Lila is working on a penetration testing team and she is unsure whether she is allowed to conduct social engineering as part of the test. What document should she consult to find this information?",
+        "answer": {
+            "A": "Contract",
+            "B": "Statement of work",
+            "C": "Rules of engagement",
+            "D": "Lessons learned report"
+        }
+    },
+    "98": {
+        "question": "Grace would like to determine the operating system running on a system that she is targeting in a penetration test. Which one of the following techniques will most directly provide her with this information?",
+        "answer": {
+            "A": "Port scanning",
+            "B": "Footprinting",
+            "C": "Vulnerability scanning",
+            "D": "Packet capture"
+        }
+    },
+    "99": {
+        "question": "Kevin recently identified a new security vulnerability and computed its CVSS base score as 6.5. Which risk category would this vulnerability fall into?",
+        "answer": {
+            "A": "Low",
+            "B": "Medium",
+            "C": "High",
+            "D": "Critical"
+        }
+    },
+    "100": {
+        "question": "Which one of the CVSS metrics would contain information about the type of account access that an attacker must have to execute an attack?",
+        "answer": {
+            "A": "AV",
+            "B": "C",
+            "C": "PR",
+            "D": "AC"
+        }
+    },
+    "101": {
+        "question": "Adam is conducting software testing by reviewing the source code of the application. What type of code testing is Adam conducting?",
+        "answer": {
+            "A": "Mutation testing",
+            "B": "Static code analysis",
+            "C": "Dynamic code analysis",
+            "D": "Fuzzing"
+        }
+    },
+    "102": {
+        "question": "Charles is worried about users conducting SQL injection attacks. Which of the following solutions will best address his concerns?",
+        "answer": {
+            "A": "Using secure session management",
+            "B": "Enabling logging on the database",
+            "C": "Performing user input validation",
+            "D": "Implementing TLS"
+        }
+    },
+    "103": {
+        "question": "Precompiled SQL statements that only require variables to be input are an example of what type of application security control?",
+        "answer": {
+            "A": "Parameterized queries",
+            "B": "Encoding data",
+            "C": "Input validation",
+            "D": "Appropriate access controls"
+        }
+    },
+    "104": {
+        "question": "During a web application test, Ben discovers that the application shows SQL code as part of an error provided to application users. What should he note in his report?",
+        "answer": {
+            "A": "Improper error handling",
+            "B": "Code exposure",
+            "C": "SQL injection",
+            "D": "A default configuration issue"
+        }
+    },
+    "105": {
+        "question": "The application that Scott is writing has a flaw that occurs when two operations are attempted at the same time, resulting in unexpected results when the two actions do not occur in the expected order. What type of flaw does the application have?",
+        "answer": {
+            "A": "Dereferencing",
+            "B": "A race condition",
+            "C": "An insecure function",
+            "D": "Improper error handling"
+        }
+    },
+    "106": {
+        "question": " Every time Susan checks code into her organization's code repository, it is tested and validated, and then if accepted, it is immediately put into production. What is the term for this?",
+        "answer": {
+            "A": "Continuous integration",
+            "B": "Continuous delivery",
+            "C": "A security nightmare",
+            "D": "Agile development"
+        }
+    },
+    "107": {
+        "question": "Tim is working on a change to a web application used by his organization to fix a known bug. What environment should he be working in?",
+        "answer": {
+            "A": "Test",
+            "B": "Development",
+            "C": "Staging",
+            "D": "Production"
+        }
+    },
+    "108": {
+        "question": "Ricky is concerned that developers in his organization make use of third-party code in their applications, which may introduce unknown vulnerabilities. He is concerned about the risk of the organization running code that it is not aware it is using. Which one of the following activities would best address this risk?",
+        "answer": {
+            "A": "Web application firewalls",
+            "B": "Package monitoring",
+            "C": "Static analysis",
+            "D": "Dynamic analysis"
+        }
+    },
+    "109": {
+        "question": "Which one of the following is not an advantage of automation in cybersecurity operations?",
+        "answer": {
+            "A": "Enforcing baselines",
+            "B": "Technical debt",
+            "C": "Employee retention",
+            "D": "Standardizing infrastructure configurations"
+        }
+    },
+    "110": {
+        "question": "Chris is creating a script that will automatically screen any user requests and flag those that exceed normal thresholds for manual review. What term best describes this automation use case?",
+        "answer": {
+            "A": "User provisioning",
+            "B": "Guard rails",
+            "C": "Ticket creation",
+            "D": "Escalation"
+        }
+    },
+    "111": {
+        "question": " Which one of the following is not a common drawback of automating cybersecurity operations?",
+        "answer": {
+            "A": "Reducing employee satisfaction",
+            "B": "Creating single points of failure",
+            "C": "Costs",
+            "D": "Complexity"
+        }
+    },
+    "112": {
+        "question": "Frank is investigating a security incident where the attacker entered a very long string into an input field, which was followed by a system command. What type of attack likely took place?",
+        "answer": {
+            "A": "Cross-site request forgery",
+            "B": "Server-side request forgery",
+            "C": "Command injection",
+            "D": "Buffer overflow"
+        }
+    },
+    "113": {
+        "question": "What type of attack places an attacker in the position to eavesdrop on communications between a user and a web server?",
+        "answer": {
+            "A": "On-path attack",
+            "B": "Session hijacking",
+            "C": "Buffer overflow",
+            "D": "Meet-in-the-middle"
+        }
+    },
+    "114": {
+        "question": "Tom is a software developer who creates code for sale to the public. He would like to assure his users that the code they receive actually came from him. What technique can he use to best provide this assurance?",
+        "answer": {
+            "A": "Code signing",
+            "B": "Code endorsement",
+            "C": "Code encryption",
+            "D": "Code obfuscation"
+        }
+    },
+    "115": {
+        "question": "Chris is reviewing evidence of a cross-site scripting attack where the attacker embedded JavaScript in a URL that a user clicked. The web page then sent the JavaScript to the user in the displayed page. What term best describes this attack?",
+        "answer": {
+            "A": "Reflected XSS",
+            "B": "Stored XSS",
+            "C": "Persistent XSS",
+            "D": "DOM-based XSS"
+        }
+    },
+    "116": {
+        "question": " Joe checks his web server logs and sees that someone sent the following query string to an application running on the server:\nwww.mycompany.com/servicestatus.php?serviceID=892&serviceID=892\u2019%20;DROP%20TABLE%20Services;--",
+        "answer": {
+            "A": "Cross-site scripting",
+            "B": "Session hijacking",
+            "C": "Parameter pollution",
+            "D": "On-path"
+        }
+    },
+    "117": {
+        "question": "Upon further inspection, Joe finds a series of thousands of requests to the same URL coming from a single IP address. Here are a few examples:\nwww.mycompany.com/servicestatus.php?serviceID=1\nwww.mycompany.com/servicestatus.php?serviceID=2\nwww.mycompany.com/servicestatus.php?serviceID=3\nwww.mycompany.com/servicestatus.php?serviceID=4\nwww.mycompany.com/servicestatus.php?serviceID=5\nwww.mycompany.com/servicestatus.php?serviceID=6",
+        "answer": {
+            "A": "Insecure direct object reference",
+            "B": "File upload",
+            "C": "Unvalidated redirect",
+            "D": "Session hijacking"
+        }
+    },
+    "118": {
+        "question": "Joe's adventures in web server log analysis are not yet complete. As he continues to review the logs, he finds the request:\nwww.mycompany.com/../../../etc/passwd",
+        "answer": {
+            "A": "SQL injection",
+            "B": "Session hijacking",
+            "C": "Directory traversal",
+            "D": "File upload"
+        }
+    },
+    "119": {
+        "question": "Wendy is a penetration tester who wishes to engage in a session hijacking attack. What information is crucial for Wendy to obtain if her attack will be successful?",
+        "answer": {
+            "A": "Session ticket",
+            "B": "Session cookie",
+            "C": "Username",
+            "D": "User password"
+        }
+    },
+    "120": {
+        "question": "Joe is examining the logs for his web server and discovers that a user sent input to a web application that contained the string WAITFOR. What type of attack was the user likely attempting?",
+        "answer": {
+            "A": "Timing-based SQL injection",
+            "B": "HTML injection",
+            "C": "Cross-site scripting",
+            "D": "Content-based SQL injection"
+        }
+    },
+    "121": {
+        "question": "Mike is sending David an encrypted message using a symmetric encryption algorithm. What key should he use to encrypt the message?",
+        "answer": {
+            "A": "Mike's public key",
+            "B": "Mike's private key",
+            "C": "David's public key",
+            "D": "Shared secret key"
+        }
+    },
+    "122": {
+        "question": "Shahla recently discovered an attack where the attacker managed to force a network user to use weak encryption and was then able to decrypt that content. What term best describes this attack?",
+        "answer": {
+            "A": "Downgrade",
+            "B": "Collision",
+            "C": "Homomorphic encryption",
+            "D": "Birthday attack"
+        }
+    },
+    "123": {
+        "question": "Norm is using full-disk encryption technology to protect the contents of laptops against theft. What goal of cryptography is he attempting to achieve?",
+        "answer": {
+            "A": "Integrity",
+            "B": "Non-repudiation",
+            "C": "Authentication",
+            "D": "Confidentiality"
+        }
+    },
+    "124": {
+        "question": "Brian discovers that a user suspected of stealing sensitive information is posting many image files to a message board. What technique might the individual be using to hide sensitive information in those images?",
+        "answer": {
+            "A": "Steganography",
+            "B": "Homomorphic encryption",
+            "C": "Replay attack",
+            "D": "Birthday attack"
+        }
+    },
+    "125": {
+        "question": "Which one of the following statements about cryptographic keys is incorrect?",
+        "answer": {
+            "A": "All cryptographic keys should be kept secret.",
+            "B": "Longer keys are better than shorter keys when the same algorithm is used.",
+            "C": "Asymmetric algorithms generally use longer keys than symmetric algorithms.",
+            "D": "Digital certificates are designed to share public keys."
+        }
+    },
+    "126": {
+        "question": " What type of cipher operates on one character of text at a time?",
+        "answer": {
+            "A": "Block cipher",
+            "B": "Bit cipher",
+            "C": "Stream cipher",
+            "D": "Balanced cipher"
+        }
+    },
+    "127": {
+        "question": "Vince is choosing a symmetric encryption algorithm for use in his organization. He would like to choose the strongest algorithm from these choices. What algorithm should he choose?",
+        "answer": {
+            "A": "DES",
+            "B": "3DES",
+            "C": "RSA",
+            "D": "AES"
+        }
+    },
+    "128": {
+        "question": "Kevin is configuring a web server to use digital certificates. What technology can he use to allow clients to quickly verify the status of those certificates without contacting a remote server?",
+        "answer": {
+            "A": "CRL",
+            "B": "OCSP",
+            "C": "Certificate stapling",
+            "D": "Certificate pinning"
+        }
+    },
+    "129": {
+        "question": "Acme Widgets has 10 employees and they all need the ability to communicate with one another using a symmetric encryption system. The system should allow any two employees to securely communicate without other employees eavesdropping. If an 11th employee is added to the organization, how many new keys must be added to the system?",
+        "answer": {
+            "A": "1",
+            "B": "2",
+            "C": "10",
+            "D": "11"
+        }
+    },
+    "130": {
+        "question": "Referring to the scenario in question 9, if Acme Widgets switched to an asymmetric encryption algorithm, how many keys would be required to add the 11th employee?",
+        "answer": {
+            "A": "1",
+            "B": "2",
+            "C": "10",
+            "D": "11"
+        }
+    },
+    "131": {
+        "question": "What type of digital certificate provides the greatest level of assurance that the certificate owner is who they claim to be?",
+        "answer": {
+            "A": "DV",
+            "B": "OV",
+            "C": "UV",
+            "D": "EV"
+        }
+    },
+    "132": {
+        "question": " Glenn recently obtained a wildcard certificate for *.mydomain.com. Which one of the following domains would not be covered by this certificate?",
+        "answer": {
+            "A": "mydomain.com",
+            "B": "core.mydomain.com",
+            "C": "dev. www.mydomain.com",
+            "D": "mail.mydomain.com"
+        }
+    },
+    "133": {
+        "question": "Which one of the following servers is almost always an offline CA in a large PKI deployment?",
+        "answer": {
+            "A": "Root CA",
+            "B": "Intermediate CA",
+            "C": "RA",
+            "D": "Internal CA"
+        }
+    },
+    "134": {
+        "question": "Which one of the following certificate formats is closely associated with Windows binary certificate files?",
+        "answer": {
+            "A": "DER",
+            "B": "PEM",
+            "C": "PFX",
+            "D": "P7B"
+        }
+    },
+    "135": {
+        "question": "What type of security solution provides a hardware platform for the storage and management of encryption keys?",
+        "answer": {
+            "A": "HSM",
+            "B": "IPS",
+            "C": "SIEM",
+            "D": "SOAR"
+        }
+    },
+    "136": {
+        "question": "What type of cryptographic attack attempts to force a user to reduce the level of encryption that they use to communicate with a remote server?",
+        "answer": {
+            "A": "Birthday",
+            "B": "Frequency",
+            "C": "Downgrade",
+            "D": "Collision"
+        }
+    },
+    "137": {
+        "question": "David would like to send Mike a message using an asymmetric encryption algorithm. What key should he use to encrypt the message?",
+        "answer": {
+            "A": "David's public key",
+            "B": "David's private key",
+            "C": "Mike's public key",
+            "D": "Mike's private key"
+        }
+    },
+    "138": {
+        "question": " When Mike receives the message that David encrypted for him, what key should he use to decrypt the message?",
+        "answer": {
+            "A": "David's public key",
+            "B": "David's private key",
+            "C": "Mike's public key",
+            "D": "Mike's private key"
+        }
+    },
+    "139": {
+        "question": "If David wishes to digitally sign the message that he is sending Mike, what key would he use to create the digital signature?",
+        "answer": {
+            "A": "David's public key",
+            "B": "David's private key",
+            "C": "Mike's public key",
+            "D": "Mike's private key"
+        }
+    },
+    "140": {
+        "question": "When Mike receives the digitally signed message from David, what key should he use to verify the digital signature?",
+        "answer": {
+            "A": "David's public key",
+            "B": "David's private key",
+            "C": "Mike's public key",
+            "D": "Mike's private key"
+        }
+    },
+    "141": {
+        "question": "Angela has chosen to federate with other organizations to allow use of services that each organization provides. What role does Angela's organization play when they authenticate their users and assert that those users are valid to other members of the federation?",
+        "answer": {
+            "A": "Service provider",
+            "B": "Relying party",
+            "C": "Authentication provider",
+            "D": "Identity provider"
+        }
+    },
+    "142": {
+        "question": "Which of the following technologies is the least effective means of preventing shared accounts?",
+        "answer": {
+            "A": "Password complexity requirements",
+            "B": "Requiring biometric authentication",
+            "C": "Requiring one-time passwords via a token",
+            "D": "Requiring a one-time password via an application"
+        }
+    },
+    "143": {
+        "question": "What major difference is likely to exist between on-premises identity services and those used in a cloud-hosted environment?\nA.Account policy control will be set to the cloud provider's standards.\nB.The cloud service will provide account and identity management services.\nC.Multifactor authentication will not be supported by the cloud vendor.\nD.None of the above.",
+        "answer": {}
+    },
+    "144": {
+        "question": "Amitoj wants to ensure that her organization's password policy does not allow users to reset their password multiple times until they can reuse their current password. What setting is used to prevent this?",
+        "answer": {
+            "A": "Complexity",
+            "B": "Length",
+            "C": "Expiration",
+            "D": "Age"
+        }
+    },
+    "145": {
+        "question": "Which type of multifactor authentication is considered the least secure?",
+        "answer": {
+            "A": "HOTP",
+            "B": "SMS",
+            "C": "TOTP",
+            "D": "Biometric"
+        }
+    },
+    "146": {
+        "question": " Geeta has been issued a USB security key as part of her organization's multifactor implementation. What type of implementation is this?",
+        "answer": {
+            "A": "A hard token",
+            "B": "A biometric token",
+            "C": "A soft token",
+            "D": "An attestation token"
+        }
+    },
+    "147": {
+        "question": "Michelle enables the Windows picture password feature to control logins for her laptop. Which type of attribute will it provide?",
+        "answer": {
+            "A": "Somewhere you are",
+            "B": "Something you know",
+            "C": "Something you are",
+            "D": "Someone you know"
+        }
+    },
+    "148": {
+        "question": "What purpose would Linux file permissions set to rw-r\u2014r-- serve?",
+        "answer": {
+            "A": "To allow the owner to read and write the file, and for the owner's group and others to be able to read it",
+            "B": "To allow all users to read and write the file, and for the group and owner to be able to read it",
+            "C": "To allow system administrators to read and write the file, and for users and all others to be able to read it",
+            "D": "To prevent reading and writing for all users, and to prevent reading by groups and a specific user"
+        }
+    },
+    "149": {
+        "question": "Theresa wants to implement an access control scheme that sets permissions based on what the individual's job requires. Which of the following schemes is most suited to this type of implementation?",
+        "answer": {
+            "A": "ABAC",
+            "B": "DAC",
+            "C": "RBAC",
+            "D": "MAC"
+        }
+    },
+    "150": {
+        "question": "Which of the following biometric technologies is most broadly deployed due to its ease of use and acceptance from end users?",
+        "answer": {
+            "A": "Voice print recognition",
+            "B": "Gait recognition",
+            "C": "Retina scanners",
+            "D": "Fingerprint scanner"
+        }
+    },
+    "151": {
+        "question": " Adam want to increase his organization's passwords resistance to attacks in the event that the password hash database is stolen by attackers. Which of the following password security settings has the largest impact on password cracking if his organization's current passwords are 8 characters long?",
+        "answer": {
+            "A": "Password complexity",
+            "B": "Password length",
+            "C": "Password reuse limitations",
+            "D": "Preventing the use of common words in passwords"
+        }
+    },
+    "152": {
+        "question": "A PIN is an example of what type of factor?",
+        "answer": {
+            "A": "Something you know",
+            "B": "Something you are",
+            "C": "Something you have",
+            "D": "Something you set"
+        }
+    },
+    "153": {
+        "question": "Marie is implementing a PAM solution and wants to ensure that root passwords are available in the event of an outage. Which PAM-related tool is most likely to be useful in this situation?",
+        "answer": {
+            "A": "Ephemeral accounts",
+            "B": "Just-in-time permissions",
+            "C": "Password vaulting",
+            "D": "Token-based authentication"
+        }
+    },
+    "154": {
+        "question": "Jill sets her files on a Windows file share to allow Fred to access the files. What type of access control system is she using?",
+        "answer": {
+            "A": "Mandatory access control",
+            "B": "Rule-based access control",
+            "C": "Attribute-based access control",
+            "D": "Discretionary access control"
+        }
+    },
+    "155": {
+        "question": "Lisa sets up an account on a website that allows her to log in with Google. When she logs in, Google provides an access token to the website that confirms that she is who she says she is but doesn't provide the site with her password. Which of the following technologies has she used?",
+        "answer": {
+            "A": "LDAP",
+            "B": "OAuth",
+            "C": "MITRE",
+            "D": "RADIUS"
+        }
+    },
+    "156": {
+        "question": " Kyle has been asked to provide his government-issued ID as part of the creation of his user account. What process should he assume it is being used for?",
+        "answer": {
+            "A": "Biometric enrollment",
+            "B": "Just-in-time permission creation",
+            "C": "Identity proofing",
+            "D": "Federation"
+        }
+    },
+    "157": {
+        "question": "What key concept below best describes only providing the permissions necessary to perform a role?",
+        "answer": {
+            "A": "Least privilege",
+            "B": "Best practice",
+            "C": "Ephemeral accounts",
+            "D": "Mandatory access control"
+        }
+    },
+    "158": {
+        "question": "Nina has recently left her organization. What should the organization do with her account?",
+        "answer": {
+            "A": "Transfer it to her replacement.",
+            "B": "Reprovision it for another user.",
+            "C": "Deprovision her account.",
+            "D": "Change the password and preserve the account."
+        }
+    },
+    "159": {
+        "question": "A person's name, age, location, or job title are all examples of what?",
+        "answer": {
+            "A": "Biometric factors",
+            "B": "Identity factors",
+            "C": "Attributes",
+            "D": "Account permissions"
+        }
+    },
+    "160": {
+        "question": "What type of access control scheme best describes the Linux filesystem?",
+        "answer": {
+            "A": "MAC",
+            "B": "RBAC",
+            "C": "DAC",
+            "D": "ABAC"
+        }
+    },
+    "161": {
+        "question": "Naomi wants to handle increasing load by scaling cloud-hosted resources as needed while having the change remain transparent to users. She also wants to allow for upgrades and system replacements transparently. What solution should she select?",
+        "answer": {
+            "A": "Load balancing",
+            "B": "Clustering",
+            "C": "Geographic diversity",
+            "D": "A hot site"
+        }
+    },
+    "162": {
+        "question": "Rick performs a backup that captures the changes since the last full backup. What type of backup has he performed?",
+        "answer": {
+            "A": "A new full backup",
+            "B": "A snapshot",
+            "C": "An incremental backup",
+            "D": "A differential backup"
+        }
+    },
+    "163": {
+        "question": "What type of recovery site has some or most systems in place but does not have the data needed to take over operations?",
+        "answer": {
+            "A": "A hot site",
+            "B": "A warm site",
+            "C": "A cloud site",
+            "D": "A cold site"
+        }
+    },
+    "164": {
+        "question": "Ben wants to test his warm site to verify that it will take over operations successfully. What type of testing is this?",
+        "answer": {
+            "A": "Parallel processing",
+            "B": "Simulation",
+            "C": "Failover",
+            "D": "A tabletop exercise"
+        }
+    },
+    "165": {
+        "question": "Felix wants to clone a virtual machine. What should he do to capture a live machine, including the machine state?",
+        "answer": {
+            "A": "A full backup",
+            "B": "A snapshot",
+            "C": "A differential backup",
+            "D": "Live boot media"
+        }
+    },
+    "166": {
+        "question": " Sally is working to restore her organization's operations after a disaster took her datacenter offline. What critical document should she refer to as she restarts systems?",
+        "answer": {
+            "A": "The restoration order documentation",
+            "B": "The TOTP documentation",
+            "C": "The HOTP documentation",
+            "D": "The last-known good configuration documentation"
+        }
+    },
+    "167": {
+        "question": "Mike wants to stop vehicles from traveling toward the entrance of his building. What physical security control should he implement?",
+        "answer": {
+            "A": "An air gap",
+            "B": "A hot aisle",
+            "C": "A robotic sentry",
+            "D": "A bollard"
+        }
+    },
+    "168": {
+        "question": "Alecia wants to ensure that her backups cannot be accessed by third parties while stored in an offsite storage location. What should she do to secure her backups?",
+        "answer": {
+            "A": "Hash the backup data.",
+            "B": "Avoid the use of offsite storage locations.",
+            "C": "Employ security guards.",
+            "D": "Encrypt the backup data."
+        }
+    },
+    "169": {
+        "question": "Fred wants to be able to recover his database transactions at any point in time if a physical disaster occurs involving his datacenter. His organization uses daily backups. What additional solution should he select to support this need?",
+        "answer": {
+            "A": "Onsite journaling",
+            "B": "Onsite snapshots",
+            "C": "Offsite journaling",
+            "D": "Offsite snapshots"
+        }
+    },
+    "170": {
+        "question": "Ellen is concerned about her company's resilience and wants to ensure it can handle either changing loads or support disaster recovery and business continuity efforts if a primary location or datacenter were taken offline. Which of the following should she primarily focus on during her capacity planning?",
+        "answer": {
+            "A": "People, technology, and infrastructure",
+            "B": "A generator and a UPS",
+            "C": "RAID 0, 1, 5, and 10",
+            "D": "Incremental, differential, and full backups"
+        }
+    },
+    "171": {
+        "question": " Madhuri has deployed a replication tool that copies data over to a secondary hot site in real time. What type of replication has she deployed?",
+        "answer": {
+            "A": "Synchronous replication",
+            "B": "Journaled replication",
+            "C": "Asynchronous replication",
+            "D": "Snapshot-based replication"
+        }
+    },
+    "172": {
+        "question": "What factor is a major reason organizations do not use security guards?",
+        "answer": {
+            "A": "Reliability",
+            "B": "Training",
+            "C": "Cost",
+            "D": "Social engineering"
+        }
+    },
+    "173": {
+        "question": "Megan wants to deploy a sensor that is inexpensive, yet will allow her to detect humans entering and moving in a secured room. Which of the following should she select?",
+        "answer": {
+            "A": "An infrared sensor",
+            "B": "A microwave sensor",
+            "C": "An ultrasonic sensor",
+            "D": "A pressure sensor"
+        }
+    },
+    "174": {
+        "question": "Kathleen wants to discourage potential attackers from entering the facility she is responsible for. Which of the following is not a common control used for this type of preventive defense?",
+        "answer": {
+            "A": "Fences",
+            "B": "Lighting",
+            "C": "Platform diversity",
+            "D": "Video surveillance"
+        }
+    },
+    "175": {
+        "question": "How does technology diversity help ensure cybersecurity resilience?",
+        "answer": {
+            "A": "It ensures that a vulnerability in a single company's product will not impact the entire infrastructure.",
+            "B": "If a single vendor goes out of business, the company does not need to replace its entire infrastructure.",
+            "C": "It means that a misconfiguration will not impact the company's entire infrastructure.",
+            "D": "All of the above."
+        }
+    },
+    "176": {
+        "question": "Scott sends his backups to a company that keeps them in a secure vault. What type of backup solution has he implemented?",
+        "answer": {
+            "A": "Nearline",
+            "B": "Safe",
+            "C": "Onsite",
+            "D": "Offsite"
+        }
+    },
+    "177": {
+        "question": " Gabby wants to detect physical brute-force attempts against her organization. What solution is best suited to this?",
+        "answer": {
+            "A": "Security guards",
+            "B": "Locks",
+            "C": "Access badges",
+            "D": "An intrusion detection system (IDS)"
+        }
+    },
+    "178": {
+        "question": "Florian wants to test his high-availability designs but does not want to interrupt his organization's normal work. Which of the following is the least disruptive testing scenario?",
+        "answer": {
+            "A": "A failover exercise",
+            "B": "A tabletop exercise",
+            "C": "A partial failover exercise",
+            "D": "A simulation"
+        }
+    },
+    "179": {
+        "question": "What type of physical security control is shown here?",
+        "answer": {
+            "A": "A Faraday cage",
+            "B": "An access control vestibule",
+            "C": "A bollard",
+            "D": "An air gap"
+        }
+    },
+    "180": {
+        "question": "Gurvinder identifies a third-party datacenter provider over 90 miles away to run his redundant datacenter operations. Why has he placed the datacenter that far away?",
+        "answer": {
+            "A": "Because it is required by law",
+            "B": "Network traffic latency concerns",
+            "C": "Geographic dispersion",
+            "D": "Geographic tax reasons"
+        }
+    },
+    "181": {
+        "question": "Kevin discovered that his web server was being overwhelmed by traffic, causing a CPU bottleneck. Using the interface offered by his cloud service provider, he added another CPU to the server. What term best describes Kevin's action?",
+        "answer": {
+            "A": "Elasticity",
+            "B": "Horizontal scaling",
+            "C": "Vertical scaling",
+            "D": "High availability"
+        }
+    },
+    "182": {
+        "question": "Fran's organization uses a Type I hypervisor to implement an IaaS offering that it sells to customers. Which one of the following security controls is least applicable to this environment?",
+        "answer": {
+            "A": "Customers must maintain security patches on guest operating systems.",
+            "B": "The provider must maintain security patches on the hypervisor.",
+            "C": "The provider must maintain security patches on the host operating system.",
+            "D": "Customers must manage security groups to mediate network access to guest operating systems."
+        }
+    },
+    "183": {
+        "question": "In what cloud security model does the cloud service provider bear the most responsibility for implementing security controls?",
+        "answer": {
+            "A": "IaaS",
+            "B": "FaaS",
+            "C": "PaaS",
+            "D": "SaaS"
+        }
+    },
+    "184": {
+        "question": "Greg would like to find a reference document that describes how to map cloud security controls to different regulatory standards. What document would best assist with this task?",
+        "answer": {
+            "A": "CSA CCM",
+            "B": "NIST SP 500-292",
+            "C": "ISO 27001",
+            "D": "PCI DSS"
+        }
+    },
+    "185": {
+        "question": "Wanda is responsible for a series of seismic sensors placed at remote locations. These sensors have low-bandwidth connections, and she would like to place computing power on the sensors to allow them to preprocess data before it is sent back to the cloud. What term best describes this approach?",
+        "answer": {
+            "A": "Edge computing",
+            "B": "Client-server computing",
+            "C": "Fog computing",
+            "D": "Thin client computing"
+        }
+    },
+    "186": {
+        "question": " Which one of the following statements about cloud computing is incorrect?",
+        "answer": {
+            "A": "Cloud computing offers ubiquitous, convenient access.",
+            "B": "Cloud computing customers store data on hardware that is shared with other customers.",
+            "C": "Cloud computing customers provision resources through the service provider's sales team.",
+            "D": "Cloud computing resources are accessed over a network."
+        }
+    },
+    "187": {
+        "question": "Helen designed a new payroll system that she offers to her customers. She hosts the payroll system in AWS and her customers access it through the web. What tier of cloud computing best describes Helen's service?",
+        "answer": {
+            "A": "PaaS",
+            "B": "SaaS",
+            "C": "FaaS",
+            "D": "IaaS"
+        }
+    },
+    "188": {
+        "question": "Which cloud computing deployment model requires the use of a unifying technology platform to tie together components from different providers?",
+        "answer": {
+            "A": "Public cloud",
+            "B": "Private cloud",
+            "C": "Community cloud",
+            "D": "Hybrid cloud"
+        }
+    },
+    "189": {
+        "question": "Which one of the following would not commonly be available as an IaaS service offering?",
+        "answer": {
+            "A": "CRM",
+            "B": "Storage",
+            "C": "Networking",
+            "D": "Computing"
+        }
+    },
+    "190": {
+        "question": "Which one of the following is not an example of infrastructure as code?",
+        "answer": {
+            "A": "Defining infrastructure in JSON",
+            "B": "Writing code to interact with a cloud provider's API",
+            "C": "Using a cloud provider's web interface to provision resources",
+            "D": "Defining infrastructure in YAML"
+        }
+    },
+    "191": {
+        "question": "Brian is selecting a CASB for his organization, and he would like to use an approach that interacts with the cloud provider directly. Which CASB approach is most appropriate for his needs?",
+        "answer": {
+            "A": "Inline CASB",
+            "B": "Outsider CASB",
+            "C": "Comprehensive CASB",
+            "D": "API-based CASB"
+        }
+    },
+    "192": {
+        "question": " In which of the following cloud categories are customers typically charged based on the number of virtual server instances dedicated to their use?",
+        "answer": {
+            "A": "IaaS only",
+            "B": "SaaS only",
+            "C": "IaaS and PaaS",
+            "D": "IaaS, SaaS, and PaaS"
+        }
+    },
+    "193": {
+        "question": "Brian would like to limit the ability of users inside his organization to provision expensive cloud server instances without permission. What type of control would best help him achieve this goal?",
+        "answer": {
+            "A": "Resource policy",
+            "B": "Security group",
+            "C": "Multifactor authentication",
+            "D": "Secure web gateway"
+        }
+    },
+    "194": {
+        "question": "Ursula would like to link the networks in her on-premises datacenter with cloud VPCs in a secure manner. What technology would help her best achieve this goal?",
+        "answer": {
+            "A": "Transit gateway",
+            "B": "HSM",
+            "C": "VPC endpoint",
+            "D": "SWG"
+        }
+    },
+    "195": {
+        "question": "What component of a virtualization platform is primarily responsible for preventing VM escape attacks?",
+        "answer": {
+            "A": "Administrator",
+            "B": "Guest operating system",
+            "C": "Host operating system",
+            "D": "Hypervisor"
+        }
+    },
+    "196": {
+        "question": "Ryan is selecting a new security control to meet his organization's objectives. He would like to use it in their multicloud environment and would like to minimize the administrative work required from his fellow technologists. What approach would best meet his needs?",
+        "answer": {
+            "A": "Third-party control",
+            "B": "Internally developed control",
+            "C": "Cloud-native control",
+            "D": "Any of the above"
+        }
+    },
+    "197": {
+        "question": "Kira would like to implement a security control that can implement access restrictions across all of the SaaS solutions used by her organization. What control would best meet her needs?",
+        "answer": {
+            "A": "Security group",
+            "B": "Resource policy",
+            "C": "CASB",
+            "D": "SWG"
+        }
+    },
+    "198": {
+        "question": " Howard is assessing the legal risks to his organization based on its handling of PII. The organization is based in the United States, handles the data of customers located in Europe, and stores information in Japanese datacenters. What law would be most important to Howard during his assessment?",
+        "answer": {
+            "A": "Japanese law",
+            "B": "European Union law",
+            "C": "U.S. law",
+            "D": "All should have equal weight."
+        }
+    },
+    "199": {
+        "question": "Brenda's company provides a managed incident response service to its customers. What term best describes this type of service offering?",
+        "answer": {
+            "A": "MSP",
+            "B": "PaaS",
+            "C": "SaaS",
+            "D": "MSSP"
+        }
+    },
+    "200": {
+        "question": "Tony purchases virtual machines from Microsoft Azure exclusively for use by his organization. What model of cloud computing is this?",
+        "answer": {
+            "A": "Public cloud",
+            "B": "Private cloud",
+            "C": "Hybrid cloud",
+            "D": "Community cloud"
+        }
+    },
+    "201": {
+        "question": "Lin's hardware manufacturer has stopped selling the model of device that Lin's organization uses and has also stopped providing security or other updates. What phase of the hardware life cycle is the device in?",
+        "answer": {
+            "A": "End-of-life",
+            "B": "Legacy",
+            "C": "End-of-sales",
+            "D": "Senescence"
+        }
+    },
+    "202": {
+        "question": "Naomi has discovered the following TCP ports open on a system she wants to harden. Which ports are used for unsecure services and thus should be disabled to allow their secure equivalents to continue to be used?",
+        "answer": {
+            "A": "21, 22, and 80",
+            "B": "21 and 80",
+            "C": "21, 23, and 80",
+            "D": "22 and 443"
+        }
+    },
+    "203": {
+        "question": "Frank's organization is preparing to deploy a data loss prevention (DLP) system. What key process should they undertake before they deploy it?",
+        "answer": {
+            "A": "Define data life cycles for all nonsensitive data.",
+            "B": "Encrypt all sensitive data.",
+            "C": "Implement and use a data classification scheme.",
+            "D": "Tag all data by creator or owner."
+        }
+    },
+    "204": {
+        "question": "Oliver wants to store and manage secrets in his cloud service provider's environment. What type of solution should he look for as part of their offerings?",
+        "answer": {
+            "A": "A TPM",
+            "B": "A secure enclave",
+            "C": "A KMS",
+            "D": "A Titan M"
+        }
+    },
+    "205": {
+        "question": "What is the key difference between EDR and XDR solutions?",
+        "answer": {
+            "A": "The variety of malware it can detect",
+            "B": "The number of threat feeds that are used",
+            "C": "The breadth of the technology stack that is covered",
+            "D": "The volume of logs that can be processed"
+        }
+    },
+    "206": {
+        "question": " Michelle wants to prevent unauthorized applications from being installed on a Windows system. What type of tool can she use to stop applications from being installed?",
+        "answer": {
+            "A": "Antivirus",
+            "B": "A GPO",
+            "C": "An EDR",
+            "D": "A HIPS"
+        }
+    },
+    "207": {
+        "question": "What term is used to describe tools focused on detecting and responding to suspicious activities occurring on endpoints like desktops, laptops, and mobile devices?",
+        "answer": {
+            "A": "EDR",
+            "B": "IAM",
+            "C": "FDE",
+            "D": "ESC"
+        }
+    },
+    "208": {
+        "question": "Fred has recently purchased a network router and is preparing to deploy it. Which of the following is a common step in deploying new routers?",
+        "answer": {
+            "A": "Disabling unwanted services",
+            "B": "Removing unnecessary software",
+            "C": "Installing antivirus",
+            "D": "Changing default passwords"
+        }
+    },
+    "209": {
+        "question": "Charlene wants to prevent attacks against her system that leverage flaws in the services that it provides while still keeping the services accessible. What hardening technique should she use?",
+        "answer": {
+            "A": "A host-based firewall",
+            "B": "A host-based IPS",
+            "C": "Encryption",
+            "D": "An EDR"
+        }
+    },
+    "210": {
+        "question": "Allan is preparing to harden his organization's network switches. Which of the following is not a common hardening technique for network devices?",
+        "answer": {
+            "A": "Removing unnecessary software",
+            "B": "Installing patches",
+            "C": "Administrative VLANs",
+            "D": "Changing default passwords"
+        }
+    },
+    "211": {
+        "question": "Helen's organization is planning to deploy IoT devices across their buildings as part of a HVAC system. Helen knows that the vendor for the IoT devices does not provide regular security updates to the device's web interfaces that are used to manage the devices. What security control should she recommend to help protect the devices on the network?",
+        "answer": {
+            "A": "Install host-based firewalls.",
+            "B": "Deploy the IoT devices to a protected VLAN.",
+            "C": "Install host-based IPS.",
+            "D": "Disable the web interfaces for the IoT devices."
+        }
+    },
+    "212": {
+        "question": " What is the primary reason to remove unnecessary software during hardening efforts?",
+        "answer": {
+            "A": "To reduce the attack footprint of the device",
+            "B": "To reduce the number of patches that are installed",
+            "C": "To reduce the number of firewall rules required for the device",
+            "D": "To support incident response (IR) activities"
+        }
+    },
+    "213": {
+        "question": "Brian has deployed a system that monitors sensors and uses that data to manage the power distribution for the power company that he works for. Which of the following terms is commonly used to describe this type of control and monitoring solution?",
+        "answer": {
+            "A": "SCADA",
+            "B": "SIM",
+            "C": "HVAC",
+            "D": "AVAD"
+        }
+    },
+    "214": {
+        "question": "The organization that Lynn works for wants to deploy an embedded system that needs to process data as it comes in to the device without processing delays or other interruptions. What type of solution does Lynn's company need to deploy?",
+        "answer": {
+            "A": "An MFP",
+            "B": "A HIPS",
+            "C": "An SoC",
+            "D": "An RTOS"
+        }
+    },
+    "215": {
+        "question": "Which of the following is not a common constraint of an embedded system?",
+        "answer": {
+            "A": "Compute",
+            "B": "Cost",
+            "C": "Network",
+            "D": "Authentication"
+        }
+    },
+    "216": {
+        "question": "Jim configures a Windows machine with the built-in BitLocker full-disk encryption tool that uses a TPM chip. When is the machine least vulnerable to having data stolen from it?",
+        "answer": {
+            "A": "When the machine is off",
+            "B": "When the machine is booted and logged in but is locked",
+            "C": "When the machine is booted and logged in but is unlocked",
+            "D": "When the machine is booted and logged in but is asleep"
+        }
+    },
+    "217": {
+        "question": "Olivia wants to install a host-based security package that can detect attacks against the system coming from the network, but she does not want to take the risk of blocking the attacks since she fears that she might inadvertently block legitimate traffic. What type of tool could she install that will meet this requirement?",
+        "answer": {
+            "A": "A host firewall",
+            "B": "A host-based intrusion detection system",
+            "C": "A host-based intrusion prevention system",
+            "D": "A data loss prevention tool"
+        }
+    },
+    "218": {
+        "question": " Anita wants to enforce security settings across her organization's Windows Active Directory domain. What tool can she use to do this?",
+        "answer": {
+            "A": "EDR",
+            "B": "Group Policy",
+            "C": "XDR",
+            "D": "SELinux"
+        }
+    },
+    "219": {
+        "question": "Chris wants systems that connect to his network to report their boot processes to a server where they can be validated before being permitted to join the network. What technology should he use to do this on the workstations?",
+        "answer": {
+            "A": "UEFI/Trusted boot",
+            "B": "BIOS/Trusted boot",
+            "C": "UEFI/Measured boot",
+            "D": "BIOS/Measured boot"
+        }
+    },
+    "220": {
+        "question": "Elaine wants to securely erase the contents of a tape used for backups in her organization's tape library. What is the fastest secure erase method available to her that will allow the tape to be reused?",
+        "answer": {
+            "A": "Using a degausser",
+            "B": "Wiping the tape by writing a random pattern of 1s and 0s to it",
+            "C": "Incinerating the tape",
+            "D": "Wiping the tape by writing all 1s or all 0s to it"
+        }
+    },
+    "221": {
+        "question": "A system that Tony manages sends an SNMP trap. What type of information should Tony expect to receive?",
+        "answer": {
+            "A": "Notification of a vulnerability",
+            "B": "Notification of a patch being installed",
+            "C": "Notification of an issue",
+            "D": "Notification of user being created"
+        }
+    },
+    "222": {
+        "question": "Ben wants to observe malicious behavior targeted at multiple systems on a network. He sets up a variety of systems and instruments to allow him to capture copies of attack tools and to document all the attacks that are conducted. What has he set up?",
+        "answer": {
+            "A": "A honeypot",
+            "B": "A beartrap",
+            "C": "A honeynet",
+            "D": "A tarpit"
+        }
+    },
+    "223": {
+        "question": "Valerie wants to replace the telnet access that she found still in use in her organization. Which protocol should she use to replace it, and what port will it run on?",
+        "answer": {
+            "A": "SFTP, port 21",
+            "B": "SSH, port 22",
+            "C": "HTTPS, port 443",
+            "D": "RDP, port 3389"
+        }
+    },
+    "224": {
+        "question": "Jill wants to use DNS filtering to prevent users in her organization from visiting potentially malicious sites. What type of service should she use to obtain this information?",
+        "answer": {
+            "A": "An OSINT service",
+            "B": "A STP feed",
+            "C": "An ACL monitoring service",
+            "D": "A reputation service"
+        }
+    },
+    "225": {
+        "question": "Chuck wants to provide access to a protected network from a less trusted network. What type of solution is commonly implemented to provide a secure, monitored access method?",
+        "answer": {
+            "A": "A proxy server",
+            "B": "A jump server",
+            "C": "A VLAN",
+            "D": "An air gap"
+        }
+    },
+    "226": {
+        "question": "Kathleen wants to deploy a firewall that can handle large amounts of network traffic while performing advanced firewalling tasks. What type of device should she select?",
+        "answer": {
+            "A": "A NGFW",
+            "B": "A WAF ",
+            "C": "A UTM",
+            "D": "A SD-FW"
+        }
+    },
+    "227": {
+        "question": "Mark wants to prevent DNS poisoning attacks. What technology should he implement to counter them most effectively?",
+        "answer": {
+            "A": "DNSSEC",
+            "B": "SDNS",
+            "C": "SASE",
+            "D": "SD-WAN"
+        }
+    },
+    "228": {
+        "question": "Casey wants to replace her organization's MPLS-based external connectivity using commodity technologies. What technology should she select to help her manage this?",
+        "answer": {
+            "A": "IPSec VPN",
+            "B": "SASE",
+            "C": "SD-WAN",
+            "D": "TLS VPN"
+        }
+    },
+    "229": {
+        "question": "What protocol is used to securely wrap many otherwise insecure protocols?",
+        "answer": {
+            "A": "ISAKMP",
+            "B": "SSL",
+            "C": "IKE",
+            "D": "TLS"
+        }
+    },
+    "230": {
+        "question": "Valentine wants to deploy a secure version of DHCP for her organization. What should she implement?",
+        "answer": {
+            "A": "S-DHCP",
+            "B": "DHCP over TLS",
+            "C": "DHCPS",
+            "D": "There is no secured version of DHCP."
+        }
+    },
+    "231": {
+        "question": "What component of a zero-trust architecture forwards requests from subjects and acts on whether subjects are allowed to access resources?",
+        "answer": {
+            "A": "Policy administrators",
+            "B": "Policy enforcement points",
+            "C": "Policy engines",
+            "D": "Policy gateways"
+        }
+    },
+    "232": {
+        "question": "Gary wants to use secure protocols for email access for his end users. Which of the following groups of protocols should he implement to accomplish this task?",
+        "answer": {
+            "A": "DKIM, DMARC, HTTPS",
+            "B": "SPF, POPS, IMAPS",
+            "C": "POPS, IMAPS, HTTPS",
+            "D": "DMARC, DKIM, SPF"
+        }
+    },
+    "233": {
+        "question": " Gary wants to prevent his organization's most sensitive data from being accessed by network-based attackers at any cost. What solution should he implement to ensure this?",
+        "answer": {
+            "A": "An air gap",
+            "B": "Firewall rules",
+            "C": "An IPS",
+            "D": "IPSec"
+        }
+    },
+    "234": {
+        "question": "Madhuri is designing a load-balancing configuration for her company and wants to keep a single node from being overloaded. What type of design will meet this need?",
+        "answer": {
+            "A": "A daisy chain",
+            "B": "Active/active",
+            "C": "Duck-duck-goose",
+            "D": "Active/passive"
+        }
+    },
+    "235": {
+        "question": "What type of NAC will provide Isaac with the greatest amount of information about the systems that are connecting while also giving him the most amount of control of systems and their potential impact on other systems that are connected to the network?",
+        "answer": {
+            "A": "Agent-based, preadmission NAC",
+            "B": "Agentless, postadmission NAC",
+            "C": "Agent-based NAC, postadmission NAC",
+            "D": "Agentless, postadmission NAC"
+        }
+    },
+    "236": {
+        "question": "Danielle's organization has implemented a tool that combines SD-WAN, a CASB, and Zero Trust, among other security functions, to provide security regardless of where her organization's devices are. What type of solution has her organization implemented?",
+        "answer": {
+            "A": "A UTM",
+            "B": "An NGFW",
+            "C": "IPSec",
+            "D": "SASE"
+        }
+    },
+    "237": {
+        "question": "Wayne is concerned that an on-path attack has been used against computers he is responsible for. What artifact is he most likely to find associated with this attack?",
+        "answer": {
+            "A": "A compromised router",
+            "B": "A browser plug-in",
+            "C": "A compromised server",
+            "D": "A modified hosts file"
+        }
+    },
+    "238": {
+        "question": "Elle has scanned her organization from an external IP address and has identified all of the services that are visible from the public Internet. What does this enable her to describe?",
+        "answer": {
+            "A": "If the organization is a fail-open organization",
+            "B": "Her organization's OSINT report",
+            "C": "Her organization's attack surface",
+            "D": "If the organization is a fail-closed organization"
+        }
+    },
+    "239": {
+        "question": " What technique is used to ensure that DNSSEC-protected DNS information is trustworthy?",
+        "answer": {
+            "A": "It is digitally signed.",
+            "B": "It is sent via TLS.",
+            "C": "It is encrypted using AES256.",
+            "D": "It is sent via an IPSec VPN."
+        }
+    },
+    "240": {
+        "question": "Fred wants to ensure that the administrative interfaces for the switches and routers are protected so that they cannot be accessed by attackers. Which of the following solutions should he recommend as part of his organization's network design?",
+        "answer": {
+            "A": "NAC",
+            "B": "Trunking",
+            "C": "Out-of-band management",
+            "D": "Port security"
+        }
+    },
+    "241": {
+        "question": "Alyssa wants to harden iOS devices her organization uses. What set of guidelines can she follow to align to common industry security practices?",
+        "answer": {
+            "A": "OWASP",
+            "B": "CIS benchmarks",
+            "C": "NIST 800-103",
+            "D": "NIST 800-111"
+        }
+    },
+    "242": {
+        "question": "Fred's company issues devices in a BYOD model. That means that Fred wants to ensure that corporate data and applications are kept separate from personal applications on the devices. What technology is best suited to meet this need?",
+        "answer": {
+            "A": "Biometrics",
+            "B": "Full-device encryption",
+            "C": "Context-aware authentication",
+            "D": "Containerization"
+        }
+    },
+    "243": {
+        "question": "Michelle has deployed iPads to her staff who work her company's factory floor. She wants to ensure that the devices work only in the factory and that if they are taken home they cannot access business data or services. What type of solution is best suited to her needs?",
+        "answer": {
+            "A": "Context-aware authentication",
+            "B": "Geofencing",
+            "C": "Geolocation",
+            "D": "Unified endpoint management (UEM)"
+        }
+    },
+    "244": {
+        "question": "Ivan is running an enterprise wireless network and his heatmap shows that two access points are likely conflicting with each other. What will the enterprise access controller most likely do to handle this conflict?",
+        "answer": {
+            "A": "Increase the broadcast power of one of the access points.",
+            "B": "Change the SSID for one of the access points.",
+            "C": "Disable one of the access points.",
+            "D": "Decrease the broadcast power of the access points."
+        }
+    },
+    "245": {
+        "question": "Chris wants to use geolocation technology to find where phones issued by his organization are located. Which of the following is not commonly used as part of geolocation techniques?",
+        "answer": {
+            "A": "Bluetooth",
+            "B": "GPS",
+            "C": "NFC",
+            "D": "Wi-Fi"
+        }
+    },
+    "246": {
+        "question": " Daniel knows that WPA3 has added a method to ensure that brute-force attacks against weak preshared keys are less likely to succeed. What is this technology called?",
+        "answer": {
+            "A": "SAE",
+            "B": "CCMP",
+            "C": "PSK",
+            "D": "WPS"
+        }
+    },
+    "247": {
+        "question": "Isabelle needs to select the EAP protocol that she will use with her wireless network. She wants to use a secure protocol that does not require client devices to have a certificate, but she does want to require mutual authentication. Which EAP protocol should she use?",
+        "answer": {
+            "A": "EAP-FAST",
+            "B": "EAP-TTLS",
+            "C": "PEAP",
+            "D": "EAP-TLS"
+        }
+    },
+    "248": {
+        "question": "Theresa has implemented a technology that keeps data for personal use separate from data for her company on mobile devices used by members of her staff. What is this concept called?",
+        "answer": {
+            "A": "Storage segmentation",
+            "B": "Multifactor storage",
+            "C": "Full-device encryption",
+            "D": "Geofencing"
+        }
+    },
+    "249": {
+        "question": "A member of Jake's team tells him that he sideloaded applications on his Android-based company owned phone. What has occurred?",
+        "answer": {
+            "A": "Malware was installed on the phone.",
+            "B": "The phone was rooted to allow administrative access.",
+            "C": "Applications were installed by copying them instead of via an app store.",
+            "D": "The organization's MDM was disabled to avoid its management controls."
+        }
+    },
+    "250": {
+        "question": "Madhuri disables SMS, MMS, and RCS on phones in her organization. What has she prevented from being sent?",
+        "answer": {
+            "A": "Phone calls and texts",
+            "B": "Text messages and multimedia messages",
+            "C": "Text messages and firmware updates",
+            "D": "Phone calls and multimedia messages"
+        }
+    },
+    "251": {
+        "question": "What is the most frequent concern that leads to GPS tagging being disabled by some companies via an MDM tool?",
+        "answer": {
+            "A": "Chain of custody",
+            "B": "The ability to support geofencing",
+            "C": "Privacy",
+            "D": "Context-aware authentication"
+        }
+    },
+    "252": {
+        "question": " Bart wants to use a cellular hotspot to provide Internet connectivity via Wi-Fi. What type of network has he set up for his laptop and phone to connect to?",
+        "answer": {
+            "A": "Ad-hoc",
+            "B": "NFC",
+            "C": "Point-to-point",
+            "D": "RFID"
+        }
+    },
+    "253": {
+        "question": "Susan wants to ensure that the threat of a lost phone creating a data breach is minimized. What two technologies should she implement to do this?",
+        "answer": {
+            "A": "Wi-Fi and NFC",
+            "B": "Remote wipe and FDE",
+            "C": "Containerization and NFC",
+            "D": "Geofencing and remote wipe"
+        }
+    },
+    "254": {
+        "question": "What are the two most commonly deployed biometric authentication solutions for mobile devices?",
+        "answer": {
+            "A": "Voice recognition and face recognition",
+            "B": "Fingerprint recognition and gait recognition",
+            "C": "Face recognition and fingerprint recognition",
+            "D": "Voice recognition and fingerprint recognition"
+        }
+    },
+    "255": {
+        "question": "Alaina wants to modify operating system settings and features on her iOS device and to install applications that are not permitted or available via the Apple App Store. What would she need to do to accomplish this?",
+        "answer": {
+            "A": "Deploy an MDM tool to the phone.",
+            "B": "Jailbreak the phone.",
+            "C": "Keymod the phone.",
+            "D": "Install a third-party operating system."
+        }
+    },
+    "256": {
+        "question": "Jerome wants to allow guests to use his organization's wireless network, but he does not want to provide a preshared key. What solution can he deploy to gather information such as email addresses or other contact information before allowing users to access his open network?",
+        "answer": {
+            "A": "WPS capture mode",
+            "B": "Kerberos",
+            "C": "WPA2",
+            "D": "A captive portal"
+        }
+    },
+    "257": {
+        "question": "Amanda wants to create a view of her buildings that shows Wi-Fi signal strength and coverage. What is this type of view called?",
+        "answer": {
+            "A": "A channel overlay",
+            "B": "A PSK ",
+            "C": "A heatmap",
+            "D": "A SSID chart"
+        }
+    },
+    "258": {
+        "question": "Megan wants to prevent access to phones that are misplaced by members of her organization. Which of the following MDM control options is least likely to help her protect phones that are misplaced?",
+        "answer": {
+            "A": "PINs",
+            "B": "Device encryption",
+            "C": "Remote wipe",
+            "D": "Application management"
+        }
+    },
+    "259": {
+        "question": "Gurvinder wants to select a mobile device deployment method that provides employees with devices that they can use as though they're personally owned to maximize flexibility and ease of use. Which deployment model should he select?",
+        "answer": {
+            "A": "CYOD",
+            "B": "COPE",
+            "C": "BYOD",
+            "D": "MOTD"
+        }
+    },
+    "260": {
+        "question": "Octavia discovers that the contact list from her phone has been acquired via a wireless attack. Which of the following is the most likely culprit?",
+        "answer": {
+            "A": "Bluejacking",
+            "B": "An evil maid",
+            "C": "Bluesnarfing",
+            "D": "An evil twin"
+        }
+    },
+    "261": {
+        "question": "The following figure shows the Security+ incident response cycle. What item is missing?",
+        "answer": {
+            "A": "Planning",
+            "B": "Reporting",
+            "C": "Monitoring",
+            "D": "Preparation"
+        }
+    },
+    "262": {
+        "question": "Michael analyzes network traffic, including packet content, as part of his incident response process. What tool should he use?",
+        "answer": {
+            "A": "Syslog",
+            "B": "NetFlow",
+            "C": "Packet capture",
+            "D": "A SIEM"
+        }
+    },
+    "263": {
+        "question": "Susan wants to create a dashboard that shows her aggregated log events related to logins from different geographic regions. Her goal is to identify impossible travel scenarios. Which of the following solutions should she select to accomplish that goal?",
+        "answer": {
+            "A": "IPS",
+            "B": "OS logs",
+            "C": "SIEM",
+            "D": "Vulnerability scan data"
+        }
+    },
+    "264": {
+        "question": " Selah wants to ensure that users in her organization can only install applications that are evaluated and approved by the organization's security team. What should she use?",
+        "answer": {
+            "A": "A SIEM",
+            "B": "An application deny list",
+            "C": "An application allow list",
+            "D": "sFlow"
+        }
+    },
+    "265": {
+        "question": "What is the primary concern with sFlow in a large, busy network?",
+        "answer": {
+            "A": "It may allow buffer overflow attacks against the collector host.",
+            "B": "sFlow is not designed for large or complex networks.",
+            "C": "sFlow puts extreme load on the flow collector host.",
+            "D": "sFlow samples only network traffic, meaning that some detail will be lost."
+        }
+    },
+    "266": {
+        "question": "Mark unplugs the network connection from a system that is part of an incident and places tape over its Ethernet jack with a sign that says, \u201cDo not reconnect without approval from IR team.\u201d How is this method best described?",
+        "answer": {
+            "A": "Containment",
+            "B": "Isolation",
+            "C": "Segmentation",
+            "D": "Zoning"
+        }
+    },
+    "267": {
+        "question": "The company that Ben works for wants to test its incident response plan. Ben gathers the incident response team in a room and walks through a scenario to validate the organization's processes and procedures. What type of event has Ben hosted?",
+        "answer": {
+            "A": "A checklist exercise",
+            "B": "A simulation",
+            "C": "A tabletop exercise",
+            "D": "A fail-over exercise"
+        }
+    },
+    "268": {
+        "question": "Madhuri wants to check a PNG-formatted photo for GPS coordinates. Where can she find that information if it exists in the photo?",
+        "answer": {
+            "A": "In the location.txt file appended to the PNG",
+            "B": "On the original camera",
+            "C": "In the photo's metadata",
+            "D": "In the photo as a steganographically embedded data field"
+        }
+    },
+    "269": {
+        "question": "Alyssa has identified malware on a system. She removes the system from the network to ensure that it cannot impact other systems. What technique has she used to deal with this system?",
+        "answer": {
+            "A": "Quarantine",
+            "B": "Segmentation",
+            "C": "Converted it to agentless",
+            "D": "Deny listing"
+        }
+    },
+    "270": {
+        "question": " Kristen discovers missing logs as part of her threat hunting activities. What has most likely happened?",
+        "answer": {
+            "A": "The logs hit the end of their life cycle and were rotated.",
+            "B": "The system is a newly deployed system.",
+            "C": "An attacker wiped the logs to hide evidence.",
+            "D": "An attacker encrypted the logs as part of their process."
+        }
+    },
+    "271": {
+        "question": "Ian has been receiving hundreds of false positive alerts from his SIEM every night when scheduled jobs run across his datacenter. What should he adjust on his SIEM to reduce the false positive rate?",
+        "answer": {
+            "A": "Trend analysis",
+            "B": "Sensitivity",
+            "C": "Correlation rules",
+            "D": "Dashboard configuration"
+        }
+    },
+    "272": {
+        "question": "Which team member acts as a primary conduit to senior management on an IR team?",
+        "answer": {
+            "A": "Communications and public relations",
+            "B": "Information security",
+            "C": "Management",
+            "D": "Technical expert"
+        }
+    },
+    "273": {
+        "question": "Dana is reviewing her system's application logs and notices that a full backup of the application was done at 10 a.m. She knows that the job that runs the backup process is set to run overnight. What indicator should she flag this as?",
+        "answer": {
+            "A": "Unexpected logs",
+            "B": "Resource consumption",
+            "C": "Resource inaccessibility",
+            "D": "Out-of-cycle logging"
+        }
+    },
+    "274": {
+        "question": "Jim wants to view log entries that describe actions taken by applications on a Red Hat Linux system. Which of the following tools can he use on the system to view those logs?",
+        "answer": {
+            "A": "logger",
+            "B": "syslog-ng",
+            "C": "journalctl",
+            "D": "tail"
+        }
+    },
+    "275": {
+        "question": "Megan wants to ensure that logging is properly configured for her organization's Windows workstations. What could she use to ensure that logging best practices are configured?",
+        "answer": {
+            "A": "SIEM",
+            "B": "Benchmarks",
+            "C": "Syslog",
+            "D": "Agents"
+        }
+    },
+    "276": {
+        "question": " Chris has turned on logon auditing for a Windows system. Which log will show them?",
+        "answer": {
+            "A": "The Windows Application log",
+            "B": "The Windows Security log",
+            "C": "The Windows System log",
+            "D": "All of the above"
+        }
+    },
+    "277": {
+        "question": "Jayne wants to determine why a ransomware attack was successful against her organization. She plans to conduct a root cause analysis. Which of the following is not a typical root cause analysis method?",
+        "answer": {
+            "A": "Root/branch review",
+            "B": "Five whys",
+            "C": "Event analysis",
+            "D": "Diagramming"
+        }
+    },
+    "278": {
+        "question": "Hitesh wants to keep a system online but limit the impact of the malware that was found on it while an investigation occurs. What method from the following list should he use?",
+        "answer": {
+            "A": "Containment",
+            "B": "Isolation",
+            "C": "Segmentation",
+            "D": "Black holing"
+        }
+    },
+    "279": {
+        "question": "What phase in the incident response process leverages indicators of compromise and log analysis as part of a review of events?",
+        "answer": {
+            "A": "Preparation",
+            "B": "Containment",
+            "C": "Eradication",
+            "D": "Identification"
+        }
+    },
+    "280": {
+        "question": "Henry wants to check to see if services were installed by an attacker. What commonly gathered organizational data can he use to see if a new service appeared on systems?",
+        "answer": {
+            "A": "Registry dumps from systems throughout his organization",
+            "B": "Firewall logs",
+            "C": "Vulnerability scans",
+            "D": "Flow logs"
+        }
+    },
+    "281": {
+        "question": "Felix wants to make an exact copy of a drive using a Linux command-line tool as part of a forensic acquisition process. What command should he use?",
+        "answer": {
+            "A": "df",
+            "B": "cp",
+            "C": "dd",
+            "D": "ln"
+        }
+    },
+    "282": {
+        "question": "Greg is preparing a forensic report and needs to describe the tools that were used. What should he report about the tools in addition to their names?",
+        "answer": {
+            "A": "The type of system the tools were installed or run on",
+            "B": "The training level or certifications of the team that uses the tools",
+            "C": "Any known limitations or issues with the tools",
+            "D": "The patch level or installed version of the tools"
+        }
+    },
+    "283": {
+        "question": "Gabby is preparing chain-of-custody documentation and identifies a gap in hand-off documentation for an original source forensic drive. What issue should she expect to encounter due to this gap?",
+        "answer": {
+            "A": "The evidence may not be admissible in court.",
+            "B": "The forensic activities may need to be repeated.",
+            "C": "The staff involved may have to re-create the missed log.",
+            "D": "The chain of custody may need to be edited to note the problem."
+        }
+    },
+    "284": {
+        "question": "Mike's organization has recently moved to a SaaS cloud service and needs to collect forensic data from the cloud service. What process can Mike use to gather the information he needs?",
+        "answer": {
+            "A": "Install forensic imaging software on the cloud service's servers.",
+            "B": "Identify the log information available and request any other desired information from the cloud service provider.",
+            "C": "Engage law enforcement to acquire the forensic data.",
+            "D": "Request the forensic information from third-party auditors."
+        }
+    },
+    "285": {
+        "question": "Charles wants to obtain a forensic copy of a running virtual machine. What technique should he use to capture the image?",
+        "answer": {
+            "A": "Run dd from within the running machine.",
+            "B": "Use FTK Imager from the virtual machine host.",
+            "C": "Use the VM host to create a snapshot.",
+            "D": "Use WinHex to create a copy from within the running machine."
+        }
+    },
+    "286": {
+        "question": " Melissa wants to capture network traffic for forensic purposes. What tool should she use to capture it?",
+        "answer": {
+            "A": "A forensic suite",
+            "B": "Wireshark",
+            "C": "dd",
+            "D": "WinHex"
+        }
+    },
+    "287": {
+        "question": "Frank is concerned about the admissibility of his forensic data. Which of the following is not an element he should be concerned about?",
+        "answer": {
+            "A": "Whether the forensic source data has remained unaltered",
+            "B": "Whether the practices and procedures would survive review by experts",
+            "C": "Whether the evidence is relevant to the case",
+            "D": "Whether the forensic information includes a time stamp"
+        }
+    },
+    "288": {
+        "question": "What is the document that tracks the custody or control of a piece of evidence called?",
+        "answer": {
+            "A": "Evidence log",
+            "B": "Audit log",
+            "C": "Event report",
+            "D": "Chain of custody"
+        }
+    },
+    "289": {
+        "question": "Isaac is performing a forensic analysis on two systems that were compromised in the same event in the same facility. As he performs his analysis, he notices that the event appears to have happened almost exactly one hour earlier on one system than the other. What is the most likely issue he has encountered?",
+        "answer": {
+            "A": "The attacker took an hour to get to the second system.",
+            "B": "One system is set to an incorrect time zone.",
+            "C": "The attacker changed the system clock to throw off forensic practitioners.",
+            "D": "The forensic tool is reading the time stamps incorrectly."
+        }
+    },
+    "290": {
+        "question": "What legal concept determines the law enforcement agency or agencies that will be involved in a case based on location?",
+        "answer": {
+            "A": "Nexus",
+            "B": "Nonrepudiation",
+            "C": "Jurisdiction",
+            "D": "Admissibility"
+        }
+    },
+    "291": {
+        "question": "Michael wants to acquire the firmware from a running device for analysis. What method is most likely to succeed?",
+        "answer": {
+            "A": "Use forensic memory acquisition techniques.",
+            "B": "Use disk forensic acquisition techniques.",
+            "C": "Remove the firmware chip from the system.",
+            "D": "Shut down the system and boot to the firmware to copy it to a removable device."
+        }
+    },
+    "292": {
+        "question": " Charles needs to know about actions an individual performed on a PC. What is the best starting point to help him identify those actions?",
+        "answer": {
+            "A": "Review the system log.",
+            "B": "Review the event log.",
+            "C": "Interview the individual.",
+            "D": "Analyze the system's keystroke log."
+        }
+    },
+    "293": {
+        "question": "Maria has acquired a disk image from a hard drive using dd, and she wants to ensure that her process is forensically sound. What should her next step be after completing the copy?",
+        "answer": {
+            "A": "Securely wipe the source drive.",
+            "B": "Compare the hashes of the source and target drive.",
+            "C": "Securely wipe the target drive.",
+            "D": "Update her chain-of-custody document."
+        }
+    },
+    "294": {
+        "question": "Alex has been handed a flash media device that was quick-formatted and has been asked to recover the data. What data will remain on the drive?",
+        "answer": {
+            "A": "No data will remain on the drive.",
+            "B": "Files will remain but file indexes will not.",
+            "C": "File indexes will remain, but the files will be gone.",
+            "D": "Files and file indexes will remain on the drive."
+        }
+    },
+    "295": {
+        "question": "Naomi is preparing to migrate her organization to a cloud service and wants to ensure that she has the appropriate contractual language in place. Which of the following is not a common item she should include?",
+        "answer": {
+            "A": "Right-to-audit clauses",
+            "B": "Right to forensic examination",
+            "C": "Choice of jurisdiction",
+            "D": "Data breach notification timeframe"
+        }
+    },
+    "296": {
+        "question": "Alaina wants to maintain chain-of-custody documentation and has created a form. Which of the following is not a common element on a chain-of-custody form?",
+        "answer": {
+            "A": "Item identifier number",
+            "B": "Signature of the person transferring the item",
+            "C": "Signature of the person receiving the item",
+            "D": "Method of transport"
+        }
+    },
+    "297": {
+        "question": "Henry is following the EDRM model and is preparing to review data. What two key tasks occur during this stage?",
+        "answer": {
+            "A": "Validating that time stamps match between systems and that data is properly hashed to confirm that original data is sent",
+            "B": "Validating that the legal hold request is valid and that all documented items are included ",
+            "C": "Validating that the desired data is included and that information that should not be shared is not included",
+            "D": "Validating that chain of custody is ensured and that malicious files are not included"
+        }
+    },
+    "298": {
+        "question": "Theresa's organization has received a legal hold notice for their files and documents. Which of the following is not an action she needs to take?",
+        "answer": {
+            "A": "Ensure that changes to existing documents related to the case are tracked and that originals can be provided.",
+            "B": "Preserve all existing documents relevant to the case.",
+            "C": "Delete all sensitive documents related to the case.",
+            "D": "Prevent backups that contain files related to the case from being overwritten on their normal schedule."
+        }
+    },
+    "299": {
+        "question": "Gurvinder wants to follow the order of volatility to guide his forensic data acquisition. Which of the following is the least volatile?",
+        "answer": {
+            "A": "RAM",
+            "B": "Data on the hard drive",
+            "C": "Backups",
+            "D": "Remote logs"
+        }
+    },
+    "300": {
+        "question": "What is the key difference between hashing and checksums?",
+        "answer": {
+            "A": "Both can validate integrity, but a hash also provides a unique digital fingerprint.",
+            "B": "A hash can be reversed, and a checksum cannot be.",
+            "C": "Checksums provide greater security than hashing.",
+            "D": "Checksums have fewer message collisions than a hash."
+        }
+    },
+    "301": {
+        "question": "Joe is authoring a document that explains to system administrators one way in which they might comply with the organization's requirement to encrypt all laptops. What type of document is Joe writing?",
+        "answer": {
+            "A": "Policy",
+            "B": "Guideline",
+            "C": "Procedure",
+            "D": "Standard"
+        }
+    },
+    "302": {
+        "question": "Which one of the following statements is not true about compensating controls under PCI DSS?",
+        "answer": {
+            "A": "Controls used to fulfill one PCI DSS requirement may be used to compensate for the absence of a control needed to meet another requirement.",
+            "B": "Controls must meet the intent of the original requirement.",
+            "C": "Controls must meet the rigor of the original requirement.",
+            "D": "Compensating controls must provide a similar level of defense as the original requirement."
+        }
+    },
+    "303": {
+        "question": "What law creates privacy obligations for those who handle the personal information of European Union residents?",
+        "answer": {
+            "A": "HIPAA",
+            "B": "FERPA",
+            "C": "GDPR",
+            "D": "PCI DSS"
+        }
+    },
+    "304": {
+        "question": "Which one of the following is not one of the five core security functions defined by the NIST Cybersecurity Framework?",
+        "answer": {
+            "A": "Identify",
+            "B": "Contain",
+            "C": "Respond",
+            "D": "Recover"
+        }
+    },
+    "305": {
+        "question": "What ISO standard provides guidance on privacy controls?",
+        "answer": {
+            "A": "27002",
+            "B": "27001",
+            "C": "27701",
+            "D": "31000"
+        }
+    },
+    "306": {
+        "question": " Which one of the following documents must normally be approved by the CEO or similarly high-level executive?",
+        "answer": {
+            "A": "Standard",
+            "B": "Procedure",
+            "C": "Guideline",
+            "D": "Policy"
+        }
+    },
+    "307": {
+        "question": "Greg would like to create an umbrella agreement that provides the security terms and conditions for all future work that his organization does with a vendor. What type of agreement should Greg use?",
+        "answer": {
+            "A": "BPA",
+            "B": "MOU",
+            "C": "MSA",
+            "D": "SLA"
+        }
+    },
+    "308": {
+        "question": "What organization is known for creating independent security benchmarks covering hardware and software platforms from many different vendors?",
+        "answer": {
+            "A": "Microsoft",
+            "B": "Center for Internet Security",
+            "C": "Cloud Security Alliance",
+            "D": "Cisco"
+        }
+    },
+    "309": {
+        "question": "What do many organizations use to schedule and coordinate changes for information systems?",
+        "answer": {
+            "A": "Impact analysis",
+            "B": "Backout plans",
+            "C": "Maintenance windows",
+            "D": "Version control"
+        }
+    },
+    "310": {
+        "question": "Which one of the following would not normally be found in an organization's information security policy?",
+        "answer": {
+            "A": "Statement of the importance of cybersecurity",
+            "B": "Requirement to use AES-256 encryption",
+            "C": "Delegation of authority",
+            "D": "Designation of responsible executive"
+        }
+    },
+    "311": {
+        "question": "Alice, an IT security manager at Acme Corporation, decides to conduct an exercise to test the employees' ability to recognize phishing emails. She creates fake phishing messages and sends them to the employees. When employees click on the links in the fake messages, they are redirected to a training program. What is the primary purpose of the exercise that Alice is conducting?",
+        "answer": {
+            "A": "To penalize the employees who click on the phishing links",
+            "B": "To reward employees who identify the fake phishing messages ",
+            "C": "To test employees' ability to recognize phishing messages and help them improve",
+            "D": "To gather data for a report on the most gullible departments"
+        }
+    },
+    "312": {
+        "question": "Tonya discovers that an employee is running a side business from his office, using company technology resources. What policy would most likely contain information relevant to this situation?",
+        "answer": {
+            "A": "NDA",
+            "B": "AUP",
+            "C": "Data ownership",
+            "D": "Data classification"
+        }
+    },
+    "313": {
+        "question": "What compliance obligation applies to merchants and service providers who work with credit card information?",
+        "answer": {
+            "A": "FERPA",
+            "B": "SOX",
+            "C": "HIPAA",
+            "D": "PCI DSS"
+        }
+    },
+    "314": {
+        "question": "Mike is an information security manager at TechRise Solutions. The company has been experiencing an increase in security incidents, and senior management is concerned about the security posture of the organization. They have asked Mike to take proactive measures to strengthen the company's security culture. What should be Mike's primary role in enhancing the security awareness and training at TechRise Solutions?",
+        "answer": {
+            "A": "To delegate all security responsibilities to the HR department",
+            "B": "To establish, promote, and maintain security training and awareness programs",
+            "C": "To create and distribute security awareness posters",
+            "D": "To personally conduct security training sessions for all employees"
+        }
+    },
+    "315": {
+        "question": "Colin would like to implement a security control in his accounting department that is specifically designed to detect cases of fraud that are able to occur despite the presence of other security controls. Which one of the following controls is best suited to meet Colin's need?",
+        "answer": {
+            "A": "Separation of duties",
+            "B": "Least privilege",
+            "C": "Dual control",
+            "D": "Mandatory vacations"
+        }
+    },
+    "316": {
+        "question": "Which one of the following security policy framework components does not contain mandatory guidance for individuals in the organization?",
+        "answer": {
+            "A": "Policy",
+            "B": "Standard",
+            "C": "Procedure",
+            "D": "Guideline"
+        }
+    },
+    "317": {
+        "question": " Rachel is the Head of Security at WebCraft Inc. She wants to create both security training and awareness programs. Which statement best captures the difference between these programs?",
+        "answer": {
+            "A": "Security training requires time to learn new material, whereas awareness efforts use techniques like posters and emails to remind employees of security lessons.",
+            "B": "Security training involves giving rewards to employees, whereas awareness efforts involve punishments.",
+            "C": "There is no difference; both terms can be used interchangeably.",
+            "D": "Security training is for security team members only, whereas security awareness is for all employees."
+        }
+    },
+    "318": {
+        "question": "Allan is developing a document that lists the acceptable mechanisms for securely obtaining remote administrative access to servers in his organization. What type of document is Allan writing?",
+        "answer": {
+            "A": "Policy",
+            "B": "Standard",
+            "C": "Guideline",
+            "D": "Procedure"
+        }
+    },
+    "319": {
+        "question": "Which one of the following is not a common use of the NIST Cybersecurity Framework?",
+        "answer": {
+            "A": "Describe the current cybersecurity posture of an organization.",
+            "B": "Describe the target future cybersecurity posture of an organization.",
+            "C": "Communicate with stakeholders about cybersecurity risk.",
+            "D": "Create specific technology requirements for an organization."
+        }
+    },
+    "320": {
+        "question": "Which one of the following items is not normally included in a request for an exception to security policy?",
+        "answer": {
+            "A": "Description of a compensating control",
+            "B": "Description of the risks associated with the exception",
+            "C": "Proposed revision to the security policy",
+            "D": "Business justification for the exception"
+        }
+    },
+    "321": {
+        "question": "Jen identified a missing patch on a Windows server that might allow an attacker to gain remote control of the system. After consulting with her manager, she applied the patch. From a risk management perspective, what has she done?",
+        "answer": {
+            "A": "Removed the threat",
+            "B": "Reduced the threat",
+            "C": "Removed the vulnerability",
+            "D": "Reduced the vulnerability"
+        }
+    },
+    "322": {
+        "question": "You notice a high number of SQL injection attacks against a web application run by your organization, so you install a web application firewall to block many of these attacks before they reach the server. How have you altered the severity of this risk?",
+        "answer": {
+            "A": "Reduced the magnitude",
+            "B": "Eliminated the vulnerability",
+            "C": "Reduced the probability",
+            "D": "Eliminated the threat"
+        }
+    },
+    "323": {
+        "question": "Questions 3\u20137 refer to the following scenario:\nAziz is responsible for the administration of an e-commerce website that generates $100,000 per day in revenue for his firm. The website uses a database that contains sensitive information about the firm\u2019s customers. He expects that a compromise of that database would result in $500,000 of fines against his firm.\nAziz is assessing the risk of a SQL injection attack against the database where the attacker would steal all of the customer personally identifiable information (PII) from the database. After consulting threat intelligence, he believes that there is a 5 percent chance of a successful attack in any given year.\nWhat is the asset value (AV)?",
+        "answer": {
+            "A": "$5,000",
+            "B": "$100,000",
+            "C": "$500,000",
+            "D": "$600,000"
+        }
+    },
+    "324": {
+        "question": "What is the exposure factor (EF)?",
+        "answer": {
+            "A": "5%",
+            "B": "20%",
+            "C": "50%",
+            "D": "100%"
+        }
+    },
+    "325": {
+        "question": " What is the single loss expectancy (SLE)?",
+        "answer": {
+            "A": "$5,000",
+            "B": "$100,000",
+            "C": "$500,000",
+            "D": "$600,000"
+        }
+    },
+    "326": {
+        "question": "What is the annualized rate of occurrence (ARO)?",
+        "answer": {
+            "A": "0.05",
+            "B": "0.20",
+            "C": "2.00",
+            "D": "5.00"
+        }
+    },
+    "327": {
+        "question": "What is the annualized loss expectancy (ALE)?",
+        "answer": {
+            "A": "$5,000",
+            "B": "$25,000",
+            "C": "$100,000",
+            "D": "$500,000"
+        }
+    },
+    "328": {
+        "question": "Questions 8\u201311 refer to the following scenario:\nGrace recently completed a risk assessment of her organization\u2019s exposure to data breaches and determined that there is a high level of risk related to the loss of sensitive personal information. She is considering a variety of approaches to managing this risk.\nGrace's first idea is to add a web application firewall to protect her organization against SQL injection attacks. What risk management strategy does this approach adopt?",
+        "answer": {
+            "A": "Risk acceptance",
+            "B": "Risk avoidance",
+            "C": "Risk mitigation",
+            "D": "Risk transference"
+        }
+    },
+    "329": {
+        "question": "Business leaders are considering dropping the customer activities that collect and store sensitive personal information. What risk management strategy would this approach use?",
+        "answer": {
+            "A": "Risk acceptance",
+            "B": "Risk avoidance",
+            "C": "Risk mitigation",
+            "D": "Risk transference"
+        }
+    },
+    "330": {
+        "question": "Grace's company decided to install the web application firewall and continue doing business. They are still worried about other risks to the information that were not addressed by the firewall and are considering purchasing an insurance policy to cover those risks. What strategy does this use?",
+        "answer": {
+            "A": "Risk acceptance",
+            "B": "Risk avoidance ",
+            "C": "Risk mitigation",
+            "D": "Risk transference"
+        }
+    },
+    "331": {
+        "question": "In the end, Grace's risk managers found that the insurance policy was too expensive and opted not to purchase it. They are taking no additional action. What risk management strategy is being used in this situation?",
+        "answer": {
+            "A": "Risk acceptance",
+            "B": "Risk avoidance",
+            "C": "Risk mitigation",
+            "D": "Risk transference"
+        }
+    },
+    "332": {
+        "question": "Under the European Union's GDPR, what term is assigned to the individual who leads an organization's privacy efforts?",
+        "answer": {
+            "A": "Data protection officer",
+            "B": "Data controller",
+            "C": "Data steward",
+            "D": "Data processor"
+        }
+    },
+    "333": {
+        "question": "Helen's organization maintains medical records on behalf of its customers, who are individual physicians. What term best describes the role of Helen's organization?",
+        "answer": {
+            "A": "Data processor",
+            "B": "Data controller",
+            "C": "Data owner",
+            "D": "Data steward"
+        }
+    },
+    "334": {
+        "question": "Gene recently conducted an assessment and determined that his organization can be without its main transaction database for a maximum of two hours before unacceptable damage occurs to the business. What metric has Gene identified?",
+        "answer": {
+            "A": "MTBF",
+            "B": "MTTR",
+            "C": "RTO",
+            "D": "RPO"
+        }
+    },
+    "335": {
+        "question": "Tina works for a hospital system and manages the system's patient records. What category of personal information best describes the information that is likely to be found in those records?",
+        "answer": {
+            "A": "PCI",
+            "B": "PHI",
+            "C": "PFI",
+            "D": "PII"
+        }
+    },
+    "336": {
+        "question": " Asa believes that her organization is taking data collected from customers for technical support and using it for marketing without their permission. What principle is most likely being violated?",
+        "answer": {
+            "A": "Data minimization",
+            "B": "Data retention",
+            "C": "Purpose limitation",
+            "D": "Data sovereignty"
+        }
+    },
+    "337": {
+        "question": "Which one of the following U.S. government classification levels requires the highest degree of security control?",
+        "answer": {
+            "A": "Secret",
+            "B": "Confidential",
+            "C": "Top Secret",
+            "D": "Unclassified"
+        }
+    },
+    "338": {
+        "question": "Which type of analysis uses numeric data in the analysis, resulting in assessments that allow the very straightforward prioritization of risk?",
+        "answer": {
+            "A": "Qualitative",
+            "B": "One-time",
+            "C": "Recurring",
+            "D": "Quantitative"
+        }
+    },
+    "339": {
+        "question": "What term is given to an individual or organization who determines the reasons for processing personal information?",
+        "answer": {
+            "A": "Data steward",
+            "B": "Data controller",
+            "C": "Data processor",
+            "D": "Data custodian"
+        }
+    },
+    "340": {
+        "question": "Brian recently conducted a risk mitigation exercise and has determined the level of risk that remains after implementing a series of controls. What term best describes this risk?",
+        "answer": {
+            "A": "Inherent risk",
+            "B": "Control risk",
+            "C": "Risk appetite",
+            "D": "Residual risk"
+        }
+    }
+}
