@@ -3,397 +3,9 @@
         "answer_key": "D",
         "explaination": "Managerial controls are procedural mechanisms that focus on the mechanics of the risk management process. Threat assessment is an example of one of these activities."
     },
-    "2": {
-        "answer_key": "B",
-        "explaination": "The breach of credit card information may cause many different impacts on the organization, including compliance, operational, and financial risks. However, in this scenario, Jade's primary concern is violating PCI DSS, making his concern a compliance risk."
-    },
-    "3": {
-        "answer_key": "C",
-        "explaination": "The defacement of a website alters content without authorization and is, therefore, a violation of the integrity objective. The attackers may also have breached the confidentiality or availability of the website, but the scenario does not provide us with enough information to draw those conclusions."
-    },
-    "4": {
-        "answer_key": "B",
-        "explaination": "In this case, the first 12 digits of the credit card have been removed and replaced with asterisks. This is an example of data masking."
-    },
-    "5": {
-        "answer_key": "D",
-        "explaination": "Deterrent controls are designed to prevent an attacker from attempting to violate security policies in the first place. Preventive controls would attempt to block an attack that was about to take place. Corrective controls would remediate the issues that arose during an attack. Detective controls detect issues or indicators of issues."
-    },
-    "6": {
-        "answer_key": "D",
-        "explaination": "In this case, Greg must use a network-based DLP system. Host-based DLP requires the use of agents, which would not be installed on guest systems. Greg may use watermarking and/or pattern recognition to identify the sensitive information, but he must use network-based DLP to meet his goal."
-    },
-    "7": {
-        "answer_key": "B",
-        "explaination": "Data being sent over a network is data in transit. Data at rest is stored data that resides on hard drives, tapes, in the cloud, or on other storage media. Data in processing, or data in use, is data that is actively in use by a computer system."
-    },
-    "8": {
-        "answer_key": "A",
-        "explaination": "Technical controls enforce confidentiality, integrity, and availability in the digital space. Examples of technical security controls include firewall rules, access control lists, intrusion prevention systems, and encryption."
-    },
-    "9": {
-        "answer_key": "D",
-        "explaination": "The three primary goals of cybersecurity attackers are disclosure, alteration, and denial. These map directly to the three objectives of cybersecurity professionals: confidentiality, integrity, and availability."
-    },
     "10": {
         "answer_key": "A",
         "explaination": "The risk that Tony is contemplating could fit any one of these categories. However, his primary concern is that the company may no longer be able to do business if the risk materializes. This is a strategic risk."
-    },
-    "11": {
-        "answer_key": "C",
-        "explaination": "Although it is possible that a frequent flyer account number, or any other account number for that matter, could be used in identity theft, it is far more likely that identity thieves would use core identity documents. These include drivers' licenses, passports, and Social Security numbers."
-    },
-    "12": {
-        "answer_key": "A",
-        "explaination": "As an organization analyzes its risk environment, technical and business leaders determine the level of protection required to preserve the confidentiality, integrity, and availability of their information and systems. They express these requirements by writing the control objectives that the organization wishes to achieve. These control objectives are statements of a desired security state."
-    },
-    "13": {
-        "answer_key": "D",
-        "explaination": "This question is a little tricky. The use of an actual guard dog could be considered a deterrent, physical, or detective control. It could even be a compensating control in some circumstances. However, the question asks about the presence of a sign and does not state that an actual dog is used. The sign only has value as a deterrent control. Be careful when facing exam questions like this to read the details of the question."
-    },
-    "14": {
-        "answer_key": "D",
-        "explaination": "Encryption technology uses mathematical algorithms to protect information from prying eyes, both while it is in transit over a network and while it resides on systems. Encrypted data is unintelligible to anyone who does not have access to the appropriate decryption key, making it safe to store and transmit encrypted data over otherwise insecure means."
-    },
-    "15": {
-        "answer_key": "D",
-        "explaination": "The use of full-disk encryption is intended to prevent a security incident from occurring if a device is lost or stolen. Therefore, this is a preventive control gap."
-    },
-    "16": {
-        "answer_key": "A",
-        "explaination": "Although a health-care provider may be impacted by any of these regulations, the Health Insurance Portability and Accountability Act (HIPAA) provides direct regulations for the security and privacy of protected health information and would have the most direct impact on a health-care provider."
-    },
-    "17": {
-        "answer_key": "C",
-        "explaination": "The disclosure of sensitive information to unauthorized individuals is a violation of the principle of confidentiality."
-    },
-    "18": {
-        "answer_key": "B",
-        "explaination": "The three primary objectives of cybersecurity professionals are confidentiality, integrity, and availability."
-    },
-    "19": {
-        "answer_key": "A",
-        "explaination": "Tokenization techniques use a lookup table and are designed to be reversible. Masking and hashing techniques replace the data with values that can't be reversed back to the original data if performed properly. Shredding, when conducted properly, physically destroys data so that it may not be recovered."
-    },
-    "20": {
-        "answer_key": "A",
-        "explaination": "PCI DSS compensating controls must be \u201cabove and beyond\u201d other PCI DSS requirements. This specifically bans the use of a control used to meet one requirement as a compensating control for another requirement."
-    },
-    "21": {
-        "answer_key": "B",
-        "explaination": "Although higher levels of detail can be useful, they aren't a common measure used to assess threat intelligence. Instead, the timeliness, accuracy, and relevance of the information are considered critical to determining whether you should use the threat information."
-    },
-    "22": {
-        "answer_key": "C",
-        "explaination": "Hacktivists are defined by the motivation behind their actions\u2014advancing their political or philosophical beliefs. They engage in cyberattacks that they believe will advance their causes."
-    },
-    "23": {
-        "answer_key": "A",
-        "explaination": "Attacks that are conducted as part of an authorized penetration test are white-hat hacking attacks, regardless of whether they are conducted by internal employees or an external firm. Kolin is, therefore, engaged in white-hat hacking. If he were acting on his own, without authorization, his status would depend on his intent. If he had malicious intent, his activity would be considered black-hat hacking. If he simply intended to report vulnerabilities to the hospital, his attack would be considered gray hat and he would likely be semi-authorized."
-    },
-    "24": {
-        "answer_key": "A",
-        "explaination": "Advanced persistent threats (APTs) are most commonly associated with nation-state actors. It is unlikely that an APT group would leverage the unsophisticated services of an unskilled script kiddie type attacker. It is also unlikely that a hacktivist would have access to APT resources. Although APTs may take advantage of insider access, they are most commonly associated with nation-state actors."
-    },
-    "25": {
-        "answer_key": "D",
-        "explaination": "The U.S. government created the Information Sharing and Analysis Centers (ISACs). ISACs help infrastructure owners and operators share threat information, and provide tools and assistance to their members."
-    },
-    "26": {
-        "answer_key": "A",
-        "explaination": "Nation-state actors are government sponsored, and they typically have the greatest access to resources, including tools, money, and talent."
-    },
-    "27": {
-        "answer_key": "A",
-        "explaination": "Email is the most common threat vector exploited by attackers who use phishing and other social engineering tactics to gain access to an organization. The other vectors listed here, direct access, wireless, and removable media, all require physical proximity to an organization and are not easily executed from a remote location."
-    },
-    "28": {
-        "answer_key": "D",
-        "explaination": "The Chinese military and U.S. government are examples of nation-state actors and advanced persistent threats (APTs). The Russian mafia is an example of a criminal syndicate. Anonymous is the world's most prominent hacktivist group."
-    },
-    "29": {
-        "answer_key": "A",
-        "explaination": "Behavioral assessments are very useful when you are attempting to identify insider threats. Since insider threats are often hard to distinguish from normal behavior, the context of the actions performed\u2014such as after-hours logins, misuse of credentials, logins from abnormal locations, or abnormal patterns\u2014and other behavioral indicators are often used."
-    },
-    "30": {
-        "answer_key": "D",
-        "explaination": "Supply chain attacks are typically associated with vendors and suppliers that provide technology infrastructure or services that may be compromised. This would include hardware and software providers as well as managed service providers (MSPs). Talent providers, who help with staffing solutions, are generally not considered common avenues for supply chain attacks."
-    },
-    "31": {
-        "answer_key": "A",
-        "explaination": "Tampering with equipment before it reaches the intended user is an example of a supply chain threat. It is also possible to describe this attack as a direct access attack because it involved physical access to the device, but supply chain is a more relevant answer. You should be prepared to select the best possible choice from several possible correct answers when you take the exam. Security+ questions often use this type of misdirection."
-    },
-    "32": {
-        "answer_key": "B",
-        "explaination": "All of these resources might contain information about the technical details of TLS, but Internet Request for Comments (RFC) documents are the definitive technical standards for Internet protocols. Consulting the RFCs would be Ken's best option."
-    },
-    "33": {
-        "answer_key": "C",
-        "explaination": "All of these items could be concerning, depending on the circumstances. However, API keys should never be found in public repositories because they may grant unauthorized individuals access to information and resources."
-    },
-    "34": {
-        "answer_key": "A",
-        "explaination": "Threat maps are graphical tools that display information about the geographic locations of attackers and their targets. These tools are most often used as interesting marketing gimmicks, but they can also help identify possible threat sources."
-    },
-    "35": {
-        "answer_key": "B",
-        "explaination": "Specific details of attacks that may be used to identify compromises are known as indicators of compromise (IoCs). This data may also be described as an adversary tactics, techniques, and procedures (TTP), but the fact that it is a set of file signatures makes it more closely match the definition of an IoC."
-    },
-    "36": {
-        "answer_key": "A",
-        "explaination": "The developers in question are using unapproved technology for business purposes. This is the classic definition of shadow IT. It is possible to describe this as data exfiltration, but there is no indication that the data security has been compromised, so shadow IT is a better description here. Remember, you will often be asked to choose the best answer from multiple correct answers on the exam."
-    },
-    "37": {
-        "answer_key": "A",
-        "explaination": "Tom's greatest concern should be that running unsupported software exposes his organization to the risk of new, unpatchable vulnerabilities. It is certainly true that they will no longer receive technical support, but this is a less important issue from a security perspective. There is no indication in the scenario that discontinuing the product will result in the theft of customer information or increased costs."
-    },
-    "38": {
-        "answer_key": "C",
-        "explaination": "Port scans are an active reconnaissance technique that probe target systems and would not be considered open source intelligence (OSINT). Search engine research, DNS lookups, and WHOIS queries are all open source resources."
-    },
-    "39": {
-        "answer_key": "A, C",
-        "explaination": "As a government contractor, Snowden had authorized access to classified information and exploited this access to make an unauthorized disclosure of that information. This clearly makes him fit into the category of an insider. He did so with political motivations, making him fit the category of hacktivist as well."
-    },
-    "40": {
-        "answer_key": "C",
-        "explaination": "Renee was not authorized to perform this security testing, so her work does not fit into the category of white-hat hacking, or authorized hacking. However, she also does not have malicious intent, so her work cannot be categorized as an unauthorized, or black-hat attack. Instead, it fits somewhere in between the two extremes and would best be described as semi-authorized, or gray-hat hacking."
-    },
-    "41": {
-        "answer_key": "B",
-        "explaination": "Logic bombs are embedded in code, so Ryan's organization would get the most benefit from a code review process for any code that goes into production. Antivirus and EDR are unlikely to detect logic bombs created by staff in Ryan's organization."
-    },
-    "42": {
-        "answer_key": "C",
-        "explaination": "Rootkits are intended to be stealthy, and a pop-up demanding ransom works against that purpose. File hashes, command and control details, and behavior-based identifiers are all useful IoCs likely to be relevant to a rootkit."
-    },
-    "43": {
-        "answer_key": "A",
-        "explaination": "Nathan should check the staff member's computer for a keylogger, which would have captured their username and password. A student could have then used the staff member's credentials to make the changes described. A rootkit would be used to retain access, spyware gathers a variety of data but is not specifically aimed at capturing keystrokes like this, and logic bombs have specific events or triggers that cause them to take action."
-    },
-    "44": {
-        "answer_key": "A",
-        "explaination": "Amanda has most likely discovered a botnet's command and control channel, and the system or systems she is monitoring are probably using IRC as the command and control channel. Spyware is likely to simply send data to a central server via HTTP/HTTPS, worms spread by attacking vulnerable services, and a hijacked web browser would probably operate on common HTTP or HTTPS ports (80/443)."
-    },
-    "45": {
-        "answer_key": "D",
-        "explaination": "Remote access to a system is typically provided by a backdoor. Backdoors may also appear in firmware or even in hardware. None of the other items listed provide remote access by default, although they may have a backdoor as part of a more capable malware package."
-    },
-    "46": {
-        "answer_key": "A",
-        "explaination": "Bloatware is typically not a significant security threat, but it consumes resources like disk space, CPU, and memory. Unfortunately, some bloatware can be vulnerable and may not get regularly patched, meaning it's both useless and a potential risk!"
-    },
-    "47": {
-        "answer_key": "C",
-        "explaination": "Spyware is specifically designed to gather information about users and systems and to send that data back to a central collector. Trojans pretend to be useful software and include malicious components, bloatware is preinstalled software that isn't needed, and rootkits are used to conceal malicious software and retain a foothold on compromised systems."
-    },
-    "48": {
-        "answer_key": "D",
-        "explaination": "One of the challenges security practitioners can face when attempting to identify malware is that different antivirus and antimalware vendors will name malware packages and families differently. This means that Matt may need to look at different names to figure out what he is dealing with."
-    },
-    "49": {
-        "answer_key": "D",
-        "explaination": "While keyloggers often focus on keyboard input, other types of input may also be captured, meaning Nancy should worry about any user input that occurred while the keylogger was installed. Keyloggers typically do not target files on systems, although if Nancy finds a keylogger, she may want to check for other malware packages with additional capabilities."
-    },
-    "50": {
-        "answer_key": "C",
-        "explaination": "Ransomware demands payment to be made while typically using encryption to make data inaccessible. Worms, viruses, and rootkits are not defined by behavior like this."
-    },
-    "51": {
-        "answer_key": "B",
-        "explaination": "Rootkits are designed to hide from antimalware scanners and can often defeat locally run scans. Mounting the drive in another system in read-only mode or booting from a USB drive and scanning using a trusted, known good operating system can be an effective way to determine what malware is on a potentially infected system."
-    },
-    "52": {
-        "answer_key": "C",
-        "explaination": "Jaya's former employee is describing a logic bomb, malicious code that will cause harm when a trigger or specific action occurs. In this case, the former employee is claiming that the trigger is them not being employed at the company. Jaya will need to assess all of the code that the employee wrote to determine if a logic bomb exists. Ransomware is a type of malicious software that typically uses encryption to extort a ransom. Extortionware is not a commonly used term. Trojans appear to be useful or desirable software but contain malicious code."
-    },
-    "53": {
-        "answer_key": "B",
-        "explaination": "In most malware infection scenarios, wiping the drive and reinstalling from known good media is the best option available. If the malware has tools that can infect the system BIOS/UEFI, even this may not be sufficient, but BIOS/UEFI resident malware is relatively uncommon. Multiple antivirus and antimalware tools, even if they are set to delete malware, may still fail against unknown or advanced malware packages. Destroying systems is uncommon, expensive, and unlikely to be acceptable to most organizations as a means of dealing with a malware infection."
-    },
-    "54": {
-        "answer_key": "B",
-        "explaination": "The key difference between worms and viruses is how they spread. Worms spread themselves, whereas viruses rely on human interaction."
-    },
-    "55": {
-        "answer_key": "B",
-        "explaination": "Python is an interpreted rather than a compiled language, so Ben doesn't need to use a decompiler. Instead, his best bet is to open the file and review the code to see what it does. Since it was written by an employee, it is unlikely that it will match an existing known malicious package, which means antivirus and antimalware tools and sites will be useless."
-    },
-    "56": {
-        "answer_key": "B",
-        "explaination": "Trojans are often found in application stores where they appear to be innocuous but desirable applications or are listed in confusingly similar ways to legitimate applications. Many organizations choose to lock down the ability to acquire applications from app stores to prevent this type of issue. Since Trojans do not self-spread and rely on user action, patching typically won't prevent them. While users may try to transfer files via USB, this isn't the most common means for modern Trojans to spread."
-    },
-    "57": {
-        "answer_key": "C",
-        "explaination": "Worms often spread via networks, taking advantage of vulnerabilities to install themselves on targeted systems and then to propagate further. Trojans require human interaction to install software that appears desirable. Logic bombs are embedded in code and perform actions when triggers like a date or event occur. Rootkits are used to hide malware and to conceal attacker's actions."
-    },
-    "58": {
-        "answer_key": "D",
-        "explaination": "Unwanted, typically preinstalled programs are known as bloatware. They take up space and resources without providing value, and many organizations either uninstall them or install clean operating system images to avoid them. There is no indication of malicious activity in the question, so these are most likely not viruses, Trojans, or spyware."
-    },
-    "59": {
-        "answer_key": "A",
-        "explaination": "Bots connect to command and control (C&C) systems, allowing them to be updated, controlled, and managed remotely. Worms spread via vulnerabilities, and drones and vampires aren't common terms for malware."
-    },
-    "60": {
-        "answer_key": "A",
-        "explaination": "Randy knows that viruses spread through user interaction with files on thumb drives. A worm would spread itself, a Trojan would look like a useful or desirable file, and there is no indication of spyware in the question."
-    },
-    "61": {
-        "answer_key": "B",
-        "explaination": "This email is an attempt to get account information and is a phishing email. Joseph did not enter the URL himself, which is the behavior that a typosquatter relies on. A smishing attack relies on SMS, and a watering hole attack uses a frequently visited website."
-    },
-    "62": {
-        "answer_key": "D",
-        "explaination": "Vishing is a form of phishing done via voice phones call or voicemail. Whaling focuses on targeting important targets for phishing attacks, whereas spoofing is a general term that means faking things. Spooning is not a technical term used for security practices."
-    },
-    "63": {
-        "answer_key": "A",
-        "explaination": "Michele has discovered a brute-force attack, which relies on trying a large number of passwords, often combined with a list of usernames to try. Shoulder surfing attacks involve an attacker watching as a user enters information like a password or credit card data. On-path attacks intercept data sent via a network, and pretexting is a social engineering attack that relies on a believable reason for attackers to need a victim to take action."
-    },
-    "64": {
-        "answer_key": "C",
-        "explaination": "Password spraying involves the use of the same password to attempt to log into multiple accounts. Joanna should search for uses of the same password for different accounts."
-    },
-    "65": {
-        "answer_key": "B",
-        "explaination": "Susan has most likely discovered a business email compromise and should reach out to the impacted organization to inform them of the potentially compromised account. Smishing would occur via SMS, there is nothing in the question to indicate a disinformation campaign was part of this, and there is no URL mentioned and thus typosquatting can be dismissed as well."
-    },
-    "66": {
-        "answer_key": "A",
-        "explaination": "Watering hole attacks rely on compromising or infecting a website that targeted users frequently visit, much like animals will visit a common watering hole. Vishing is phishing via voice, whaling is a targeted phishing attack against senior or important staff, and typosquatting registers similar URLs that are likely to be inadvertently entered in order to harvest clicks or conduct malicious activity."
-    },
-    "67": {
-        "answer_key": "D",
-        "explaination": "The source IP or hostname; the failed login logs with time, date, username, and other information; and the password that was used for each failed attempt would be useful for watching for brute-force attempts. Knowing where the system being logged into is located isn't useful when tracking brute-force attempts.\nLogging failed passwords can be problematic as it can reveal actual passwords by allowing log reviewers to see failures driven by typos, so Ben may want to avoid that sort of log even though it can be useful!"
-    },
-    "68": {
-        "answer_key": "B",
-        "explaination": "The caller is using pretexting, providing Melissa with a story that relies on urgency and perceived authority to get her to take actions she might normally question. This social engineering attack is not a phishing attack aimed at gathering information or credentials, it does not involve business email accounts being compromised, and carding is not a topic covered in the Security+ exam outline."
-    },
-    "69": {
-        "answer_key": "B",
-        "explaination": "Password spraying attempts try to use a single common password for many user accounts. Determining if a single password is being used over and over can help catch basic password spraying attempts. The time, source IP, or number of failed attempts do not indicate password spraying."
-    },
-    "70": {
-        "answer_key": "A",
-        "explaination": "Misinformation and disinformation campaigns are primarily associated with nation-state actors, but are increasingly used by other organizations and even individuals as well. Watering hole attacks, business email compromise, and password spraying are broadly used attacks."
-    },
-    "71": {
-        "answer_key": "C",
-        "explaination": "Typosquatting uses misspellings and common typos of websites to redirect traffic for profit or malicious reasons. Fortunately in reality, if you visit smazon.com, you'll be redirected to the actual amazon.com website, as Amazon knows about and works to prevent this type of issue. DNS hijacking and hosts file modifications both attempt to redirect traffic to actual URLs or hostnames to different destinations, and pharming does redirect legitimate traffic to fake sites, but typosquatting is the more specific answer."
-    },
-    "72": {
-        "answer_key": "B",
-        "explaination": "Devon is conducting a watering hole attack that leverages a frequently visited site to deploy malware. There is no description of misinformation or disinformation in the question, and there is not a typo described that would lead to a typosquatting attack being successful."
-    },
-    "73": {
-        "answer_key": "C",
-        "explaination": "Brand impersonation attacks are designed to appear to be from a company that recipients are likely to be familiar with, and thus are more likely to elicit a response. While these are a type of phishing, the more specific answer of brand impersonation is the best answer. Pretexting is a social engineering concept that provides a reason for the request. Pharming attacks redirect traffic intended to be sent to a legitimate site to a fake website typically designed to simulate the real one."
-    },
-    "74": {
-        "answer_key": "C",
-        "explaination": "This is an example of an impersonation attack. The pentester impersonated the head of IT in order to achieve their goals. The good news is that it was a penetration tester! Smishing is phishing via SMS, vishing is phishing via voice or voicemail, and pretexting provides a reason that the target should perform an action. Here the attack relied on the authority that Amanda believed the caller had."
-    },
-    "75": {
-        "answer_key": "C",
-        "explaination": "Smishing attacks are SMS-based. Impersonation attacks could use texts but don't specifically rely on them. Watering hole attacks use frequently visited websites, whereas business email compromise attacks focus on gaining access to business email accounts to use in follow-up attacks."
-    },
-    "76": {
-        "answer_key": "D",
-        "explaination": "Sharif has discovered a spraying attack that uses the same password\u2014often a default or common password\u2014with many usernames. Credential harvesting is the process of gathering credentials like usernames and passwords. Impersonation is a social engineering technique used when an attacker pretends to be someone else. BEC, or business email compromise, involves attackers posing as a trusted individual and asking for actions to be performed."
-    },
-    "77": {
-        "answer_key": "B",
-        "explaination": "Smishing is a type of phishing that occurs via text (SMS) message."
-    },
-    "78": {
-        "answer_key": "B",
-        "explaination": "While it's nearly impossible to prevent typosquatting, purchasing and registering the most common typos (typo-domains) related to your organization's domain and redirecting them to your real domain is the most effective option available. Copyrighting or trademarking the domain name does not prevent typosquatting, and typo resolution is not a feature or capability that is available."
-    },
-    "79": {
-        "answer_key": "B",
-        "explaination": "Using an organization's brand in this way is an example of brand impersonation. While this is also an impersonation attack, the more specific description is the best answer here. Misbranding and crypto-phishing were both made up for this question and aren't commonly used terms."
-    },
-    "80": {
-        "answer_key": "C",
-        "explaination": "Disinformation campaigns are used to shift public opinion or to accomplish other goals. They are not limited to nation-state actors but are an increasingly heavily used social engineering tactic at a broad scale. Smishing relies on SMS messages, pretexting involves using a reason that creates urgency or importance in a request from a social engineer, and spraying is a type of password brute forcing."
-    },
-    "81": {
-        "answer_key": "C",
-        "explaination": "Threat hunting is an assessment technique that makes an assumption of compromise and then searches the organization for indicators of compromise that confirm the assumption. Vulnerability scanning, penetration testing, and war driving are all assessment techniques that probe for vulnerabilities but do not assume that a compromise has already taken place."
-    },
-    "82": {
-        "answer_key": "D",
-        "explaination": "Credentialed scans only require read-only access to target servers. Renee should follow the principle of least privilege and limit the access available to the scanner."
-    },
-    "83": {
-        "answer_key": "C",
-        "explaination": "Ryan should first run his scan against a test environment to identify likely vulnerabilities and assess whether the scan itself might disrupt business activities."
-    },
-    "84": {
-        "answer_key": "C",
-        "explaination": "An attack complexity of \u201clow\u201d indicates that exploiting the vulnerability does not require any specialized conditions."
-    },
-    "85": {
-        "answer_key": "A",
-        "explaination": "A false positive error occurs when the vulnerability scanner reports a vulnerability that does not actually exist."
-    },
-    "86": {
-        "answer_key": "B",
-        "explaination": "By allowing students to change their own grades, this vulnerability provides a pathway to unauthorized alteration of information. Brian should recommend that the school deploy integrity controls that prevent unauthorized modifications."
-    },
-    "87": {
-        "answer_key": "C",
-        "explaination": "Nmap is a port scanning tool used to enumerate open network ports on a system. Nessus is a vulnerability scanner designed to detect security issues on a system. Nslookup is a DNS information gathering utility. All three of these tools may be used to gather information and detect vulnerabilities. Metasploit is an exploitation framework used to execute and attack and would be better suited for the Attacking and Exploiting phase of a penetration test."
-    },
-    "88": {
-        "answer_key": "A",
-        "explaination": "This vulnerability is corrected by a patch that was released by Microsoft in 2017. A strong patch management program would have identified and remediated the missing patch."
-    },
-    "89": {
-        "answer_key": "B",
-        "explaination": "Intrusion detection systems do not detect vulnerabilities; they detect attacks. The remaining three tools could all possibly discover a cross-site scripting (XSS) vulnerability, but a web application vulnerability scanner is the most likely to detect it because it is specifically designed to test web applications."
-    },
-    "90": {
-        "answer_key": "A",
-        "explaination": "Moving from one compromised system to other systems on the same network is known as lateral movement. Privilege escalation attacks increase the level of access that an attacker has to an already compromised system. Footprinting and OSINT are reconnaissance techniques."
-    },
-    "91": {
-        "answer_key": "A",
-        "explaination": "Audits performed to validate an organization's financial statements are very formal audits that are performed by independent third-party auditors. This makes them external audits. Internal audits may be more or less formal than external audits but they are generally done only to provide assurance to internal parties and not to investors. Penetration tests may be done as part of an audit but they are not audits themselves."
-    },
-    "92": {
-        "answer_key": "C",
-        "explaination": "Bug bounty programs are designed to allow external security experts to test systems and uncover previously unknown vulnerabilities. Bug bounty programs offer successful testers financial rewards to incentivize their participation."
-    },
-    "93": {
-        "answer_key": "D",
-        "explaination": "Backdoors are a persistence tool, designed to make sure that the attacker's access persists after the original vulnerability is remediated. Kyle can use this backdoor to gain access to the system in the future, even if the original exploit that he used to gain access is no longer effective."
-    },
-    "94": {
-        "answer_key": "C",
-        "explaination": "WHOIS lookups use external registries and are an example of open source intelligence (OSINT), which is a passive reconnaissance technique. Port scans, vulnerability scans, and footprinting all require active engagement with the target and are, therefore, active reconnaissance."
-    },
-    "95": {
-        "answer_key": "B",
-        "explaination": "Common Vulnerabilities and Exposures (CVE) provides a standard nomenclature for describing security-related software flaws. Common Platform Enumeration (CPE) provides a standard nomenclature for describing product names and versions. The Common Vulnerability Scoring System (CVSS) provides a standardized approach for measuring and describing the severity of security-related software flaws. Common Configuration Enumeration (CCE) provides a standard nomenclature for discussing system configuration issues."
-    },
-    "96": {
-        "answer_key": "C",
-        "explaination": "Known environment tests are performed with full knowledge of the underlying technology, configurations, and settings that make up the target. Unknown environment tests are intended to replicate what an attacker would encounter. Testers are not provided with access to or information about an environment, and instead, they must gather information, discover vulnerabilities, and make their way through an infrastructure or systems like an attacker would. Partially known environment tests are a blend of unknown environment and known environment testing. Detailed environment tests are not a type of penetration test."
-    },
-    "97": {
-        "answer_key": "C",
-        "explaination": "The rules of engagement provide technical details on the parameters of the test. This level of detail would not normally be found in a contract or statement of work (SOW). The lessons learned report is not produced until after the test."
-    },
-    "98": {
-        "answer_key": "B",
-        "explaination": "All of these techniques might provide Grace with information about the operating system running on a device. However, footprinting is a technique specifically designed to elicit this information."
-    },
-    "99": {
-        "answer_key": "B",
-        "explaination": "Vulnerabilities with CVSS base scores between 4.0 and 6.9 fit into the medium risk category. Vulnerability scores between 0.1 and 3.9 would be low, between 7.0 and 8.9 would be high, and those between 9.0 and 10.0 would be in the critical risk category."
     },
     "100": {
         "answer_key": "C",
@@ -435,6 +47,10 @@
         "answer_key": "B",
         "explaination": "The main benefits of automation are efficiency and time savings, enforcing baselines, standardizing infrastructure configurations, scaling in a secure manner, retaining employees, reducing reaction time, and serving as a workforce multiplier. Technical debt is one of the potential drawbacks of automation."
     },
+    "11": {
+        "answer_key": "C",
+        "explaination": "Although it is possible that a frequent flyer account number, or any other account number for that matter, could be used in identity theft, it is far more likely that identity thieves would use core identity documents. These include drivers' licenses, passports, and Social Security numbers."
+    },
     "110": {
         "answer_key": "B",
         "explaination": "This is an example of the guard rails use case for automation. Cybersecurity professionals can use scripting to automatically review user actions and block any that are outside of normal parameters."
@@ -474,6 +90,10 @@
     "119": {
         "answer_key": "B",
         "explaination": "Websites use HTTP cookies to maintain sessions over time. If Wendy is able to obtain a copy of the user's session cookie, she can use that cookie to impersonate the user's browser and hijack the authenticated session."
+    },
+    "12": {
+        "answer_key": "A",
+        "explaination": "As an organization analyzes its risk environment, technical and business leaders determine the level of protection required to preserve the confidentiality, integrity, and availability of their information and systems. They express these requirements by writing the control objectives that the organization wishes to achieve. These control objectives are statements of a desired security state."
     },
     "120": {
         "answer_key": "A",
@@ -515,6 +135,10 @@
         "answer_key": "C",
         "explaination": "When the 11th employee joins Acme Widgets, they will need a shared secret key with every existing employee. There are 10 existing employees, so 10 new keys are required."
     },
+    "13": {
+        "answer_key": "D",
+        "explaination": "This question is a little tricky. The use of an actual guard dog could be considered a deterrent, physical, or detective control. It could even be a compensating control in some circumstances. However, the question asks about the presence of a sign and does not state that an actual dog is used. The sign only has value as a deterrent control. Be careful when facing exam questions like this to read the details of the question."
+    },
     "130": {
         "answer_key": "B",
         "explaination": "In an asymmetric encryption algorithm, each employee needs only two keys: a public key and a private key. Adding a new user to the system requires the addition of these two keys for that user, regardless of how many other users exist."
@@ -554,6 +178,10 @@
     "139": {
         "answer_key": "B",
         "explaination": "The sender of a message may digitally sign the message by encrypting a message digest with the sender's own private key."
+    },
+    "14": {
+        "answer_key": "D",
+        "explaination": "Encryption technology uses mathematical algorithms to protect information from prying eyes, both while it is in transit over a network and while it resides on systems. Encrypted data is unintelligible to anyone who does not have access to the appropriate decryption key, making it safe to store and transmit encrypted data over otherwise insecure means."
     },
     "140": {
         "answer_key": "A",
@@ -595,6 +223,10 @@
         "answer_key": "C",
         "explaination": "Role-based access control (RBAC) sets permissions based on an individual's role, which is typically associated with their job. Attribute-based access control (ABAC) is typically matched to other attributes than the job role. Discretionary access control (DAC) and mandatory access control (MAC) are commonly implemented at the operating system level."
     },
+    "15": {
+        "answer_key": "D",
+        "explaination": "The use of full-disk encryption is intended to prevent a security incident from occurring if a device is lost or stolen. Therefore, this is a preventive control gap."
+    },
     "150": {
         "answer_key": "D",
         "explaination": "Fingerprint scanners are found on many mobile devices and laptops, making them one of the most broadly deployed biometric technologies. Facial recognition is also broadly deployed, but it is not mentioned in this question or offered as an option."
@@ -634,6 +266,10 @@
     "159": {
         "answer_key": "C",
         "explaination": "A person's name, age, location, job title, and even things like their height or their hair color are all attributes that may be associated with a person's identity. None of these describe biometric factors used for authentication, and identity factors are something you are, something you have, or somewhere you are. Account permissions determine what you can do, not attributes like these."
+    },
+    "16": {
+        "answer_key": "A",
+        "explaination": "Although a health-care provider may be impacted by any of these regulations, the Health Insurance Portability and Accountability Act (HIPAA) provides direct regulations for the security and privacy of protected health information and would have the most direct impact on a health-care provider."
     },
     "160": {
         "answer_key": "C",
@@ -675,6 +311,10 @@
         "answer_key": "C",
         "explaination": "Offsite journaling will allow transactions to be recorded and to remain available if a significant event occurred that involved his datacenter. Snapshots are useful at a point in time but do not retain a transaction log between snapshots."
     },
+    "17": {
+        "answer_key": "C",
+        "explaination": "The disclosure of sensitive information to unauthorized individuals is a violation of the principle of confidentiality."
+    },
     "170": {
         "answer_key": "A",
         "explaination": "Resilience requires capacity planning to ensure that capacity\u2014including staff, technology, and infrastructure\u2014is available when is needed. Although a generator, UPS, various RAID levels, and backups have their place in disaster recovery and contingency planning, they are not the primary focus of resiliency and capacity planning."
@@ -714,6 +354,10 @@
     "179": {
         "answer_key": "B",
         "explaination": "An access control vestibule uses a pair of doors. When an individual enters, the first door must be closed and secured before the second door can be opened. This helps prevent tailgating, since the person entering will notice anybody following them through the secured area. A Faraday cage is used to stop electromagnetic interference (EMI), a bollard prevents vehicular traffic, and an air gap is a physical separation of networks or devices."
+    },
+    "18": {
+        "answer_key": "B",
+        "explaination": "The three primary objectives of cybersecurity professionals are confidentiality, integrity, and availability."
     },
     "180": {
         "answer_key": "C",
@@ -755,6 +399,10 @@
         "answer_key": "A",
         "explaination": "Customer relationship management (CRM) packages offered in the cloud would be classified as software-as-a-service (SaaS), since they are not infrastructure components. Storage, networking, and computing resources are all common IaaS offerings."
     },
+    "19": {
+        "answer_key": "A",
+        "explaination": "Tokenization techniques use a lookup table and are designed to be reversible. Masking and hashing techniques replace the data with values that can't be reversed back to the original data if performed properly. Shredding, when conducted properly, physically destroys data so that it may not be recovered."
+    },
     "190": {
         "answer_key": "C",
         "explaination": "Infrastructure as code (IaC) is any approach that automates the provisioning, management, and deprovisioning of cloud resources. Defining resources through JSON or YAML is IaC, as is writing code that interacts with an API. Provisioning resources through a web interface is manual, not automated, and therefore does not qualify as IaC."
@@ -794,6 +442,14 @@
     "199": {
         "answer_key": "D",
         "explaination": "Brenda's company is offering a technology service to customers on a managed basis, making it a managed service provider (MSP). However, this service is a security service, so the term managed security service provider (MSSP) is a better description of the situation."
+    },
+    "2": {
+        "answer_key": "B",
+        "explaination": "The breach of credit card information may cause many different impacts on the organization, including compliance, operational, and financial risks. However, in this scenario, Jade's primary concern is violating PCI DSS, making his concern a compliance risk."
+    },
+    "20": {
+        "answer_key": "A",
+        "explaination": "PCI DSS compensating controls must be \u201cabove and beyond\u201d other PCI DSS requirements. This specifically bans the use of a control used to meet one requirement as a compensating control for another requirement."
     },
     "200": {
         "answer_key": "A",
@@ -835,6 +491,10 @@
         "answer_key": "B",
         "explaination": "A host-based intrusion prevention system (HIPS) can detect and prevent attacks against services while allowing the service to be accessible. A firewall can only block based on port, protocol, and IP; encryption won't prevent this; and an EDR is primarily targeted at malicious software and activity, not at network-based attacks on services."
     },
+    "21": {
+        "answer_key": "B",
+        "explaination": "Although higher levels of detail can be useful, they aren't a common measure used to assess threat intelligence. Instead, the timeliness, accuracy, and relevance of the information are considered critical to determining whether you should use the threat information."
+    },
     "210": {
         "answer_key": "A",
         "explaination": "Unlike computers and mobile devices, switches and other network devices typically do not have additional software that can be removed. Installing patches, placing administrative interfaces on protected VLANs, and changing default passwords are all common hardening techniques for network devices like switches."
@@ -874,6 +534,10 @@
     "219": {
         "answer_key": "C",
         "explaination": "Chris knows that BIOS-based systems do not support either of these modes, and that trusted boot validates every component before loading it, whereas measured boot logs the boot process and sends it to a server that can validate it before permitting the system to connect to the network or perform other actions."
+    },
+    "22": {
+        "answer_key": "C",
+        "explaination": "Hacktivists are defined by the motivation behind their actions\u2014advancing their political or philosophical beliefs. They engage in cyberattacks that they believe will advance their causes."
     },
     "220": {
         "answer_key": "A",
@@ -915,6 +579,10 @@
         "answer_key": "D",
         "explaination": "Transport Layer Security (TLS) is commonly used to wrap (protect) otherwise insecure protocols. In fact, many of the secure protocols simply add TLS to protect them. ISAKMP and IKE are both used for IPSec and can be used to wrap insecure protocols, but they aren't used alone. SSL is no longer used; TLS has almost entirely replaced it, although SSL is still often casually referred to as TLS."
     },
+    "23": {
+        "answer_key": "A",
+        "explaination": "Attacks that are conducted as part of an authorized penetration test are white-hat hacking attacks, regardless of whether they are conducted by internal employees or an external firm. Kolin is, therefore, engaged in white-hat hacking. If he were acting on his own, without authorization, his status would depend on his intent. If he had malicious intent, his activity would be considered black-hat hacking. If he simply intended to report vulnerabilities to the hospital, his attack would be considered gray hat and he would likely be semi-authorized."
+    },
     "230": {
         "answer_key": "D",
         "explaination": "While many protocols have a secure version, DHCP does not have a secure option, and protection must be handled by using detection and response mechanisms, rather than an encrypted protocol."
@@ -954,6 +622,10 @@
     "239": {
         "answer_key": "A",
         "explaination": "DNSSEC does not encrypt data but does rely on digital signatures to ensure that DNS information has not been modified and that it is coming from a server that the domain owner trusts. DNSSEC does not protect confidentiality, which is a key thing to remember when discussing it as a security option. TLS, an IPSec VPN, or encryption via AES are all potential solutions to protect the confidentiality of network data."
+    },
+    "24": {
+        "answer_key": "A",
+        "explaination": "Advanced persistent threats (APTs) are most commonly associated with nation-state actors. It is unlikely that an APT group would leverage the unsophisticated services of an unskilled script kiddie type attacker. It is also unlikely that a hacktivist would have access to APT resources. Although APTs may take advantage of insider access, they are most commonly associated with nation-state actors."
     },
     "240": {
         "answer_key": "C",
@@ -995,6 +667,10 @@
         "answer_key": "C",
         "explaination": "Sideloading is the process of copying files between two devices like a phone and a laptop, desktop, or storage device. Jake's team member has loaded an application without using the Android application store. Sideloading does not necessarily imply malware, rooting, or disabling an MDM, although an MDM may be configured to prevent sideloading."
     },
+    "25": {
+        "answer_key": "D",
+        "explaination": "The U.S. government created the Information Sharing and Analysis Centers (ISACs). ISACs help infrastructure owners and operators share threat information, and provide tools and assistance to their members."
+    },
     "250": {
         "answer_key": "B",
         "explaination": "SMS (Short Message Service) is used to send text messages, and MMS and RCS provide additional multimedia features. Neither provides phone calls or firmware updates."
@@ -1035,6 +711,10 @@
         "answer_key": "B",
         "explaination": "Gurvinder's requirements fit the COPE (corporate-owned, personally enabled) mobile device deployment model. Choose your own device (CYOD) allows users to choose a device but then centrally manages it. BYOD allows users to use their own device, rather than have the company provide it, and MOTD means message of the day, and is not a mobile device deployment scheme."
     },
+    "26": {
+        "answer_key": "A",
+        "explaination": "Nation-state actors are government sponsored, and they typically have the greatest access to resources, including tools, money, and talent."
+    },
     "260": {
         "answer_key": "C",
         "explaination": "Bluesnarfing is the theft of information from a Bluetooth enabled device. If Octavia left Bluetooth on and had not properly secured her device, then an attacker may have been able to access her contact list and download its contents. A bluejacking attack occurs when unwanted messages are sent to a device via Bluetooth. Evil twins are malicious access points configured to appear to be legitimate access points, and an evil maid attack is an in-person attack where an attacker takes advantage of physical access to hardware to acquire information or to insert malicious software on a device."
@@ -1043,320 +723,644 @@
         "answer_key": "D",
         "explaination": "The first item in the incident response cycle used by the Security+ exam is preparation."
     },
-    "263": {
+    "262": {
         "answer_key": "C",
         "explaination": "Packet capture will allow Michael to see all the content of packets that are captured to analyze them. NetFlow simply shows source, destination, protocol, and traffic volume. Syslog and a SIEM don't capture packet content, and instead focus on logs and events."
     },
-    "264": {
+    "263": {
         "answer_key": "C",
         "explaination": "A SIEM with correlation rules for geographic IP information as well as user IDs and authentication events will accomplish Susan's goals. An IPS may detect attacks, but it isn't well suited to detecting impossible travel. OS logs would need to be aggregated, and vulnerability scan data won't show this at all."
     },
-    "265": {
+    "264": {
         "answer_key": "C",
         "explaination": "Application allow lists are used to ensure that only allowed applications are installable on systems. A deny list specifically identifies programs that aren't allowed. A SIEM doesn't provide application management capabilities, and sFlow is a flow tool like NetFlow."
     },
-    "266": {
+    "265": {
         "answer_key": "D",
         "explaination": "The primary concern for analysts who deploy sFlow is often that it samples only data, meaning some accuracy and nuance can be lost in the collection of flow data. Sampling, as well as the implementation methods for sFlow, means that it scales well to handle complex and busy networks. Although vulnerabilities may exist in sFlow collectors, a buffer overflow is not a primary concern for them."
     },
-    "267": {
+    "266": {
         "answer_key": "B",
         "explaination": "Mark has isolated the system by removing it from the network and ensuring that it cannot communicate with other systems. Containment would limit the impact of the incident and might leave the system connected but with restricted or protected access. Segmentation moves systems or groups of systems into zones that have similar purposes, data classification, or other restrictions on them."
     },
-    "268": {
+    "267": {
         "answer_key": "C",
         "explaination": "Ben's organization is conducting a tabletop exercise. Tabletop exercises are conducted with more flexibility\u2014team members are given a scenario and asked how they would respond and what they would do to accomplish tasks they believe would be relevant. Checklist exercises are not a specific type of exercise. A simulation exercise attempts to more fully re-create an actual incident to test responses. Fail-over exercises are conducted by actually failing a datacenter over to a hot location."
     },
-    "269": {
+    "268": {
         "answer_key": "C",
         "explaination": "If the photo includes GPS data, it will be included in the photo's metadata. Madhuri can use a tool like ExifTool to review the metadata for useful information. None of the other options are places where data is stored for a PNG image as a normal practice."
     },
-    "270": {
+    "269": {
         "answer_key": "A",
         "explaination": "Alyssa's has quarantined the machine, ensuring it cannot reach other systems or impact the rest of her organization. Segmentation would involve putting the system in protected network zone. Agentless tools are used to send data without a separate program or agent deployed to allow that. Deny lists are used to prevent specific programs or files from being used or deployed to systems."
     },
-    "271": {
+    "27": {
+        "answer_key": "A",
+        "explaination": "Email is the most common threat vector exploited by attackers who use phishing and other social engineering tactics to gain access to an organization. The other vectors listed here, direct access, wireless, and removable media, all require physical proximity to an organization and are not easily executed from a remote location."
+    },
+    "270": {
         "answer_key": "C",
         "explaination": "Missing logs are often associated with an attacker attempting to hide evidence of their actions. Log rotation will typically remove the oldest log items and replace them with new log items rather than wiping a log, or will archive the old log file and create a new one. A newly deployed system typically has at least some logs from booting and running. Encrypting logs would leave a file in place even if it couldn't be read."
     },
-    "272": {
+    "271": {
         "answer_key": "B",
         "explaination": "Ian's first step should be changing the sensitivity for his alerts. Adjusting the alerts to ignore safe or expected events can help reduce false positives. Correlation rules may then need to be adjusted if they are matching unrelated items. Dashboards are used to visualize data, not for alerting, and trend analysis is used to feed dashboards and reports."
     },
-    "273": {
+    "272": {
         "answer_key": "C",
         "explaination": "Members of management or organizational leadership act as a primary conduit to senior leadership for most incident response teams. They also ensure that difficult or urgent decisions can be made without needing escalated authority. Communications and PR staff focus on internal and external communications but are typically not the direct conduit to leadership. Technical and information security experts do most of the incident response work itself."
     },
-    "274": {
+    "273": {
         "answer_key": "D",
         "explaination": "This is an example of out-of-cycle logging, or logging that occurs at a different time than expected. This may be because an attacker is using the backup tool to acquire data. Unexpected logs are not an indicator found on the Security+ exam outline. There is no indication of resource consumption or inaccessibility in the question."
     },
-    "275": {
+    "274": {
         "answer_key": "C",
         "explaination": "Red Hat Enterprise uses journalctl to view journal logs that contain application information. Jim should use journalctl to review the logs for the information he needs. The tool also provides functionality that replicates what head and tail can do for logs. Syslog-ng is a logging infrastructure, and though logs may be sent via syslog-ng, it is not mentioned here. logger is a logging utility used to make entries in the system log."
     },
-    "276": {
+    "275": {
         "answer_key": "B",
         "explaination": "Benchmarks often include logging settings and configurations. SIEM is used to gather and analyze logs. Syslog is a standard for logging and sending logs. Agents are used to send logs for systems that don't have a logging capability."
     },
-    "277": {
+    "276": {
         "answer_key": "B",
         "explaination": "The Windows Security log records logon events when logon auditing is enabled. The Application and System logs do not contain these events."
     },
-    "278": {
+    "277": {
         "answer_key": "A",
         "explaination": "Five whys, event analysis, and diagramming are all common methods of performing root cause analysis. Root/branch review is not a typical process for this."
     },
-    "279": {
+    "278": {
         "answer_key": "A",
         "explaination": "Containment activities focus on preventing further malicious actions or attacks. In this case, Hitesh might opt to prevent the malware from spreading but leave the system online due to a critical need or a desire to preserve memory and other artifacts for investigation. Isolation walls a system or systems off from the rest of the world, whereas segmentation is frequently used before incidents occur to create zones or segments of a network or system with different security levels and purposes."
     },
-    "280": {
+    "279": {
         "answer_key": "D",
         "explaination": "The Analysis phase focuses on using various techniques to analyze events to identify potential incidents. Preparation focuses on building tools, processes, and procedures to respond to incidents. Eradication involves the removal of artifacts related to the incident, and containment limits the scope and impact of the incident."
     },
-    "281": {
+    "28": {
+        "answer_key": "D",
+        "explaination": "The Chinese military and U.S. government are examples of nation-state actors and advanced persistent threats (APTs). The Russian mafia is an example of a criminal syndicate. Anonymous is the world's most prominent hacktivist group."
+    },
+    "280": {
         "answer_key": "C",
         "explaination": "Vulnerability scans are the best way to find new services that are offered by systems. In fact, many vulnerability scanners will flag new services when they appear, allowing administrators to quickly notice unexpected new services. Registry information is not regularly dumped or collected in most organizations. Firewall logs and flow logs could show information about the services being used by systems whose traffic passes through them, but this is a less useful and accurate way of identifying new services and would work only if those services were also being used."
     },
-    "282": {
+    "281": {
         "answer_key": "C",
         "explaination": "dd is a copying and conversion command for Linux and can be used to create a forensic image that can be validated using an MD5sum or SHA1 hash. The other commands are df for disk usage, cp for copying files, and ln to link files."
     },
-    "283": {
+    "282": {
         "answer_key": "C",
         "explaination": "If there are known limitations or issues with the tools used, this should be included in the report. The type of system the tool was installed on may influence performance but should not influence the report or output. Training and certification may be listed as part of a team description but are not required as part of tool description. Finally, patch levels or installed versions are not critical unless there are known issues that would have been described as such."
     },
-    "284": {
+    "283": {
         "answer_key": "A",
         "explaination": "If forensic evidence was not properly handled, it may not be admissible in court. Repeating forensic activities won't reverse mishandling, staff can't go back and re-create logs, and noting the issue will not resolve it."
     },
-    "285": {
+    "284": {
         "answer_key": "B",
         "explaination": "Mike's best option is to identify the log information available from the provider and to request any additional information knowing that he may not receive more detail unless there is contractual language that specifies it. SaaS vendors typically won't allow installation of forensic tools, law enforcement does not perform forensic acquisition for third parties upon request, and auditors don't provide forensic data acquisition either."
     },
-    "286": {
+    "285": {
         "answer_key": "C",
         "explaination": "Creating a snapshot will provide a complete copy of the system, including memory state that can then be analyzed for forensic purposes. Copying a running system from a program running within that system can be problematic, since the system itself will change while it is trying to copy itself. FTK Imager can copy drives and files, but it would not handle a running virtual machine."
     },
-    "287": {
+    "286": {
         "answer_key": "B",
         "explaination": "Even though Wireshark is not a dedicated network forensic tool, since network traffic is ephemeral, capturing it with a packet sniffer like Wireshark is Melissa's best option. Forensic suites are useful for analyzing captured images, not capturing network traffic, and dd and WinHex are both useful for packet capture, but not for network traffic analysis."
     },
-    "288": {
+    "287": {
         "answer_key": "D",
         "explaination": "Forensic information does not have to include a time stamp to be admissible, but time stamps can help build a case that shows when events occurred. Files without a time stamp may still show other information that is useful to the case or may have other artifacts associated with them that can provide context about the time and date."
     },
-    "289": {
+    "288": {
         "answer_key": "D",
         "explaination": "Chain-of-custody documentation tracks evidence throughout its life cycle, with information about who has custody or control and when transfers happened, and continues until the evidence is removed from the legal process and disposed of. The other terms are not used for this practice."
     },
-    "290": {
+    "289": {
         "answer_key": "B",
         "explaination": "The most common cause of an hour of difference between two systems in an environment is an incorrectly set time zone. Isaac should check the time zone settings, and then correct his findings based on the time zones set on the systems if necessary."
     },
-    "291": {
+    "29": {
+        "answer_key": "A",
+        "explaination": "Behavioral assessments are very useful when you are attempting to identify insider threats. Since insider threats are often hard to distinguish from normal behavior, the context of the actions performed\u2014such as after-hours logins, misuse of credentials, logins from abnormal locations, or abnormal patterns\u2014and other behavioral indicators are often used."
+    },
+    "290": {
         "answer_key": "C",
         "explaination": "Jurisdiction is the legal authority over an area or individuals based on laws that create the jurisdiction. Nexus defines whether a relationship or connection exists, such as a local branch or business location. Non-repudiation ensures that evidence or materials can be connected to their originator. Admissibility determines whether evidence can be used in court."
     },
-    "292": {
+    "291": {
         "answer_key": "A",
         "explaination": "Firmware can be challenging to access, but both memory forensic techniques and direct hardware interface access are viable means in some cases. Firmware is not typically stored on the disk and instead is stored in a BIOS or UEFI chip. Removing the chip from the system will leave it unable to run and thus this is not a preferred method. Also, many chips are not removable. Shutting down the device and booting it to the firmware does not provide a means of copying the firmware for most devices. Although the firmware is likely to allow updates, most do not allow downloads or copying."
     },
-    "293": {
+    "292": {
         "answer_key": "C",
         "explaination": "Although it may be tempting to use a technical answer, interviewing the individual involved is the best starting point when a person performed actions that need to be reviewed. Charles can interview the staff member, and then move on to technical means to validate their responses. System and event logs may have some clues to what occurred, but normal systems do not maintain a keystroke log. In fact, the closest normal element is the command log used by both Windows and Linux to allow command-line input to be recalled as needed."
     },
-    "294": {
+    "293": {
         "answer_key": "B",
         "explaination": "Once a copy is made, hashes for the original and target drive should be compared to ensure that the copy was successful. After that, the chain-of-custody document can be updated to note that a copy was made and will be tracked as it is analyzed while the original is preserved. Wiping either drive after a copy is not part of the process, although a target drive may be wiped after a case is complete."
     },
-    "295": {
+    "294": {
         "answer_key": "B",
         "explaination": "Quick-formatting a drive removes the file indexes but leaves the file content on the drive. Recovery tools look for those files on the drive and piece them back together using metadata, headers, and other clues that help to recover the files."
     },
-    "296": {
+    "295": {
         "answer_key": "B",
         "explaination": "Contracts commonly include right to audit, choice of jurisdiction, and data breach notification time frame clauses, but a right to forensically examine a vendor's systems or devices is rarely included. Naomi may want to ask about their incident response process and for examples of previous breach notification and incident documentation shared with customers instead."
     },
-    "297": {
+    "296": {
         "answer_key": "D",
         "explaination": "Chain of custody tracks who has an item, how it is collected, where it is stored and how, how it is secured or protected, who collected it, and transfers, but it does not typically include how the items were transported because that is not relevant if the other data is provided."
     },
-    "298": {
+    "297": {
         "answer_key": "C",
         "explaination": "It is important to ensure that data prepared for e-discovery only contains what it is supposed to, and that information that should not be shared is not included. Time stamps, hashing, chain of custody, and ensuring malicious files are not included are not part of the EDRM model. Validating that a legal hold is valid should happen before preservation, but validating that documented items from the hold are included if they exist should occur."
     },
-    "299": {
+    "298": {
         "answer_key": "C",
         "explaination": "Removing information relevant to a legal hold is exactly what the hold is intended to prevent. Theresa's organization could be in serious legal trouble if they were to intentionally purge or change related information."
     },
-    "300": {
+    "299": {
         "answer_key": "C",
         "explaination": "Backups are the least volatile of these options according to the order of volatility. Backups will be kept until they are aged out, which may be days, weeks, or even months in some cases. From most to least volatile, these are RAM, data on the hard drive, remote logs, and then backups."
     },
-    "301": {
+    "3": {
+        "answer_key": "C",
+        "explaination": "The defacement of a website alters content without authorization and is, therefore, a violation of the integrity objective. The attackers may also have breached the confidentiality or availability of the website, but the scenario does not provide us with enough information to draw those conclusions."
+    },
+    "30": {
+        "answer_key": "D",
+        "explaination": "Supply chain attacks are typically associated with vendors and suppliers that provide technology infrastructure or services that may be compromised. This would include hardware and software providers as well as managed service providers (MSPs). Talent providers, who help with staffing solutions, are generally not considered common avenues for supply chain attacks."
+    },
+    "300": {
         "answer_key": "A",
         "explaination": "Although both a checksum and a hash can be used to validate message integrity, a hash has fewer collisions than a checksum and will also provide a unique fingerprint for a file. Checksums are primarily used as a quick means of checking that that integrity is maintained, whereas hashes are used for many other purposes such as secure password validation without retaining the original password. A checksum would not be useful for proving a forensic image was identical, but it could be used to ensure that your work had not changed the contents of the drive."
     },
-    "302": {
+    "301": {
         "answer_key": "B",
         "explaination": "The key phrase in this scenario is \u201cone way.\u201d This indicates that compliance with the document is not mandatory, so Joe must be authoring a guideline. Policies, standards, and procedures are all mandatory."
     },
-    "303": {
+    "302": {
         "answer_key": "A",
         "explaination": "PCI DSS compensating controls must be \u201cabove and beyond\u201d other PCI DSS requirements. This specifically bans the use of a control used to meet one requirement as a compensating control for another requirement."
     },
-    "304": {
+    "303": {
         "answer_key": "C",
         "explaination": "The General Data Protection Regulation (GDPR) implements privacy requirements for handling the personal information of EU residents. The Health Insurance Portability and Accountability Act (HIPAA) includes security and privacy rules that affect health-care providers, health insurers, and health information clearinghouses. The Family Educational Rights and Privacy Act (FERPA) applies to educational institutions. The Payment Card Industry Data Security Standard (PCI DSS) applies to credit and debit card information."
     },
-    "305": {
+    "304": {
         "answer_key": "B",
         "explaination": "The five security functions described in the NIST Cybersecurity Framework are identify, protect, detect, respond, and recover."
     },
-    "306": {
+    "305": {
         "answer_key": "C",
         "explaination": "The International Organization for Standardization (ISO) publishes ISO 27701, covering privacy controls. ISO 27001 and 27002 cover cybersecurity, and ISO 31000 covers risk management."
     },
-    "307": {
+    "306": {
         "answer_key": "D",
         "explaination": "Policies require approval from the highest level of management, usually the CEO. Other documents may often be approved by other managers, such as the CISO."
     },
-    "308": {
+    "307": {
         "answer_key": "C",
         "explaination": "Master service agreements (MSAs) provide an umbrella contract for the work that a vendor does with an organization over an extended period of time. The MSA typically includes detailed security and privacy requirements. Each time the organization enters into a new project with the vendor, they may then create a statement of work (SOW) that contains project-specific details and references the MSA."
     },
-    "309": {
+    "308": {
         "answer_key": "B",
         "explaination": "All of these organizations produce security standards and benchmarks. However, only the Center for Internet Security (CIS) is known for producing independent benchmarks covering a wide variety of software and hardware."
     },
-    "310": {
+    "309": {
         "answer_key": "C",
         "explaination": "Many organizations use scheduled maintenance windows to coordinate changes to information systems. These windows are preplanned and announced times when all non-emergency changes will take place and often occur on evenings and weekends. A change management process ensures that personnel can perform a security impact analysis. Experts evaluate changes to identify any security impacts before personnel deploy the changes in a production environment. A backout plan allows personnel to undo the change and return the system to its previous state if necessary. Version control ensures that developers and users have access to the latest versions of software and that changes are carefully managed throughout the release process."
     },
-    "311": {
+    "31": {
+        "answer_key": "A",
+        "explaination": "Tampering with equipment before it reaches the intended user is an example of a supply chain threat. It is also possible to describe this attack as a direct access attack because it involved physical access to the device, but supply chain is a more relevant answer. You should be prepared to select the best possible choice from several possible correct answers when you take the exam. Security+ questions often use this type of misdirection."
+    },
+    "310": {
         "answer_key": "B",
         "explaination": "Security policies do not normally contain prescriptive technical guidance, such as a requirement to use a specific encryption algorithm. This type of detail would normally be found in a security standard."
     },
-    "312": {
+    "311": {
         "answer_key": "C",
         "explaination": "Alice's exercise is designed to evaluate how well employees can identify phishing messages and, if they fail to do so, redirect them to a training program that is meant to help them get better at recognizing such messages.\nThe exercise is meant for educational purposes and not for penalizing employees. It is intended to help them improve their skills in recognizing phishing emails.\nWhile rewarding employees for identifying phishing emails could be a component of a security awareness program, the exercise described is primarily educational and is focused on helping those who fail to recognize the phishing messages.\nWhile data might be collected for analysis and understanding areas where improvement is needed, the intention is not to label departments as gullible."
     },
-    "313": {
+    "312": {
         "answer_key": "B",
         "explaination": "An organization's acceptable use policy (AUP) should contain information on what constitutes allowable and unallowable use of company resources. This policy should contain information to help guide Tonya's next steps."
     },
-    "314": {
+    "313": {
         "answer_key": "D",
         "explaination": "The Payment Card Industry Data Security Standard (PCI DSS) provides detailed rules about the storage, processing, and transmission of credit and debit card information. PCI DSS is not a law but rather a contractual obligation that applies to credit card merchants and service providers."
     },
-    "315": {
+    "314": {
         "answer_key": "B",
         "explaination": "As an information security manager, Mike's primary role would be to establish an effective security training and awareness program, promote it within the organization, and ensure it is maintained effectively to foster a security-conscious culture among employees. This aligns with a proactive approach to reducing security incidents.\nMike should take an active role in security training and awareness, rather than delegating all responsibilities to another department. While HR may be involved, Mike's expertise is crucial in establishing effective programs.\nAlthough security awareness posters and training sessions are two components of security awareness efforts, Mike's role should be much broader, encompassing the establishment, promotion, and maintenance of comprehensive training and awareness programs."
     },
-    "316": {
+    "315": {
         "answer_key": "D",
         "explaination": "Mandatory vacations are designed to force individuals to take time away from the office to allow fraudulent activity to come to light in their absence. The other controls listed here (separation of duties, least privilege, and dual control) are all designed to prevent, rather than detect, fraud."
     },
-    "317": {
+    "316": {
         "answer_key": "D",
         "explaination": "Guidelines are the only element of the security policy framework that is optional. Compliance with policies, standards, and procedures is mandatory."
     },
-    "318": {
+    "317": {
         "answer_key": "A",
         "explaination": "Security training typically involves structured and formal programs where employees learn new security concepts and practices. In contrast, security awareness efforts are more informal and aim to keep security principles top-of-mind for employees through reminders, without requiring them to engage in formal learning.\nThe idea that security training involves giving rewards to employees and awareness efforts involve punishments is not accurate. Security training is meant to educate employees on security concepts and practices, not to serve as a platform for rewards. Similarly, awareness efforts are not punitive; they serve to remind and reinforce security principles among employees. The statement that there is no difference between security training and awareness efforts and that both terms can be used interchangeably is also incorrect. There is a distinct difference between the two in terms of their structure and purpose, as explained in the correct answer. Lastly, the notion that security training is only for security team members while security awareness is for all employees is not true. Security training is important for all employees, depending on their roles and responsibilities, to ensure they understand the security protocols and policies. Security awareness, on the other hand, is a continual reminder for all employees, including the security team, to stay vigilant and informed about security practices."
     },
-    "319": {
+    "318": {
         "answer_key": "B",
         "explaination": "Standards describe specific security controls that must be in place for an organization. Allan would not include acceptable mechanisms in a high-level policy document, and this information is too general to be useful as a procedure. Guidelines are not mandatory, so they would not be applicable in this scenario."
     },
-    "320": {
+    "319": {
         "answer_key": "D",
         "explaination": "The NIST Cybersecurity Framework is designed to help organizations describe their current cybersecurity posture, describe their target state for cybersecurity, identify and prioritize opportunities for improvement, assess progress, and communicate with stakeholders about risk. It does not create specific technology requirements."
     },
-    "321": {
+    "32": {
+        "answer_key": "B",
+        "explaination": "All of these resources might contain information about the technical details of TLS, but Internet Request for Comments (RFC) documents are the definitive technical standards for Internet protocols. Consulting the RFCs would be Ken's best option."
+    },
+    "320": {
         "answer_key": "C",
         "explaination": "Requests for an exception to a security policy would not normally include a proposed revision to the policy. Exceptions are documented variances from the policy because of specific technical and/or business requirements. They do not alter the original policy, which remains in force for systems not covered by the exception."
     },
-    "322": {
+    "321": {
         "answer_key": "C",
         "explaination": "By applying the patch, Jen has removed the vulnerability from her server. This also has the effect of eliminating this particular risk. Jen cannot control the external threat of an attacker attempting to gain access to her server."
     },
-    "323": {
+    "322": {
         "answer_key": "C",
         "explaination": "Installing a web application firewall reduces the probability that an attack will reach the web server. Vulnerabilities may still exist in the web application and the threat of an external attack is unchanged. The impact of a successful SQL injection attack is also unchanged by a web application firewall."
     },
-    "324": {
+    "323": {
         "answer_key": "C",
         "explaination": "The asset at risk in this case is the customer database. Losing control of the database would result in a $500,000 fine, so the asset value (AV) is $500,000."
     },
-    "325": {
+    "324": {
         "answer_key": "D",
         "explaination": "The attack would result in the total loss of customer data stored in the database, making the exposure factor (EF) 100 percent."
     },
-    "326": {
+    "325": {
         "answer_key": "C",
         "explaination": "We compute the single loss expectancy (SLE) by multiplying the asset value (AV) ($500,000) and the exposure factor (EF) (100%) to get an SLE of $500,000."
     },
-    "327": {
+    "326": {
         "answer_key": "A",
         "explaination": "Aziz's threat intelligence research determined that the threat has a 5 percent likelihood of occurrence each year. This is an ARO of 0.05."
     },
-    "328": {
+    "327": {
         "answer_key": "B",
         "explaination": "We compute the annualized loss expectancy (ALE) by multiplying the SLE ($500,000) and the ARO (0.05) to get an ALE of $25,000."
     },
-    "329": {
+    "328": {
         "answer_key": "C",
         "explaination": "Installing new controls or upgrading existing controls is an effort to reduce the probability or magnitude of a risk. This is an example of a risk mitigation activity."
     },
-    "330": {
+    "329": {
         "answer_key": "B",
         "explaination": "Changing business processes or activities to eliminate a risk is an example of risk avoidance."
     },
-    "331": {
+    "33": {
+        "answer_key": "C",
+        "explaination": "All of these items could be concerning, depending on the circumstances. However, API keys should never be found in public repositories because they may grant unauthorized individuals access to information and resources."
+    },
+    "330": {
         "answer_key": "D",
         "explaination": "Insurance policies use a risk transference strategy by shifting some or all of the financial risk from the organization to an insurance company."
     },
-    "332": {
+    "331": {
         "answer_key": "A",
         "explaination": "When an organization decides to take no further action to address remaining risk, they are choosing a strategy of risk acceptance."
     },
-    "333": {
+    "332": {
         "answer_key": "A",
         "explaination": "Under the GDPR, the data protection officer (DPO) is an individual assigned direct responsibility for carrying out an organization's privacy program."
     },
-    "334": {
+    "333": {
         "answer_key": "A",
         "explaination": "In this case, the physicians maintain the data ownership role. They have chosen to outsource data processing to Helen's organization, making that organization a data processor."
     },
-    "335": {
+    "334": {
         "answer_key": "C",
         "explaination": "The Recovery Time Objective (RTO) is the amount of time that the organization can tolerate a system being down before it is repaired. That is the metric that Gene has identified in this scenario."
     },
-    "336": {
+    "335": {
         "answer_key": "B",
         "explaination": "This is a tricky question, as it is possible that all of these categories of information may be found in patient records. However, they are most likely to contain protected health information (PHI). PHI could also be described as a subcategory of personally identifiable information (PII), but PHI is a better description. It is also possible that the records might contain payment card information (PCI) or personal financial information (PFI), but that is less likely than PHI."
     },
-    "337": {
+    "336": {
         "answer_key": "C",
         "explaination": "Organizations should only use data for the purposes disclosed during the collection of that data. In this case, the organization collected data for technical support purposes and is now using it for marketing purposes. That violates the principle of purpose limitation."
     },
-    "338": {
+    "337": {
         "answer_key": "C",
         "explaination": "Top Secret is the highest level of classification under the U.S. system and, therefore, requires the highest level of security control."
     },
-    "339": {
+    "338": {
         "answer_key": "D",
         "explaination": "Quantitative risk analysis uses numeric data in the analysis, resulting in assessments that allow the very straightforward prioritization of risks. Qualitative risk analysis substitutes subjective judgments and categories for strict numerical analysis, allowing the assessment of risks that are difficult to quantify. A one-time risk assessment offers the organization a point-in-time view of its current risk state. Recurring risk assessments are performed at regular intervals, such as annually or quarterly."
     },
-    "340": {
+    "339": {
         "answer_key": "B",
         "explaination": "Data controllers are the entities who determine the reasons for processing personal information and direct the methods of processing that data. This term is used primarily in European law, and it serves as a substitute for the term data owner to avoid a presumption that anyone who collects data has an ownership interest in that data."
+    },
+    "34": {
+        "answer_key": "A",
+        "explaination": "Threat maps are graphical tools that display information about the geographic locations of attackers and their targets. These tools are most often used as interesting marketing gimmicks, but they can also help identify possible threat sources."
+    },
+    "340": {
+        "answer_key": "D",
+        "explaination": "The residual risk is the risk that remains after an organization implements controls designed to mitigate, avoid, and/or transfer the inherent risk."
     },
     "341": {
         "answer_key": "D",
         "explaination": "The residual risk is the risk that remains after an organization implements controls designed to mitigate, avoid, and/or transfer the inherent risk."
+    },
+    "35": {
+        "answer_key": "B",
+        "explaination": "Specific details of attacks that may be used to identify compromises are known as indicators of compromise (IoCs). This data may also be described as an adversary tactics, techniques, and procedures (TTP), but the fact that it is a set of file signatures makes it more closely match the definition of an IoC."
+    },
+    "36": {
+        "answer_key": "A",
+        "explaination": "The developers in question are using unapproved technology for business purposes. This is the classic definition of shadow IT. It is possible to describe this as data exfiltration, but there is no indication that the data security has been compromised, so shadow IT is a better description here. Remember, you will often be asked to choose the best answer from multiple correct answers on the exam."
+    },
+    "37": {
+        "answer_key": "A",
+        "explaination": "Tom's greatest concern should be that running unsupported software exposes his organization to the risk of new, unpatchable vulnerabilities. It is certainly true that they will no longer receive technical support, but this is a less important issue from a security perspective. There is no indication in the scenario that discontinuing the product will result in the theft of customer information or increased costs."
+    },
+    "38": {
+        "answer_key": "C",
+        "explaination": "Port scans are an active reconnaissance technique that probe target systems and would not be considered open source intelligence (OSINT). Search engine research, DNS lookups, and WHOIS queries are all open source resources."
+    },
+    "39": {
+        "answer_key": "A, C",
+        "explaination": "As a government contractor, Snowden had authorized access to classified information and exploited this access to make an unauthorized disclosure of that information. This clearly makes him fit into the category of an insider. He did so with political motivations, making him fit the category of hacktivist as well."
+    },
+    "4": {
+        "answer_key": "B",
+        "explaination": "In this case, the first 12 digits of the credit card have been removed and replaced with asterisks. This is an example of data masking."
+    },
+    "40": {
+        "answer_key": "C",
+        "explaination": "Renee was not authorized to perform this security testing, so her work does not fit into the category of white-hat hacking, or authorized hacking. However, she also does not have malicious intent, so her work cannot be categorized as an unauthorized, or black-hat attack. Instead, it fits somewhere in between the two extremes and would best be described as semi-authorized, or gray-hat hacking."
+    },
+    "41": {
+        "answer_key": "B",
+        "explaination": "Logic bombs are embedded in code, so Ryan's organization would get the most benefit from a code review process for any code that goes into production. Antivirus and EDR are unlikely to detect logic bombs created by staff in Ryan's organization."
+    },
+    "42": {
+        "answer_key": "C",
+        "explaination": "Rootkits are intended to be stealthy, and a pop-up demanding ransom works against that purpose. File hashes, command and control details, and behavior-based identifiers are all useful IoCs likely to be relevant to a rootkit."
+    },
+    "43": {
+        "answer_key": "A",
+        "explaination": "Nathan should check the staff member's computer for a keylogger, which would have captured their username and password. A student could have then used the staff member's credentials to make the changes described. A rootkit would be used to retain access, spyware gathers a variety of data but is not specifically aimed at capturing keystrokes like this, and logic bombs have specific events or triggers that cause them to take action."
+    },
+    "44": {
+        "answer_key": "A",
+        "explaination": "Amanda has most likely discovered a botnet's command and control channel, and the system or systems she is monitoring are probably using IRC as the command and control channel. Spyware is likely to simply send data to a central server via HTTP/HTTPS, worms spread by attacking vulnerable services, and a hijacked web browser would probably operate on common HTTP or HTTPS ports (80/443)."
+    },
+    "45": {
+        "answer_key": "D",
+        "explaination": "Remote access to a system is typically provided by a backdoor. Backdoors may also appear in firmware or even in hardware. None of the other items listed provide remote access by default, although they may have a backdoor as part of a more capable malware package."
+    },
+    "46": {
+        "answer_key": "A",
+        "explaination": "Bloatware is typically not a significant security threat, but it consumes resources like disk space, CPU, and memory. Unfortunately, some bloatware can be vulnerable and may not get regularly patched, meaning it's both useless and a potential risk!"
+    },
+    "47": {
+        "answer_key": "C",
+        "explaination": "Spyware is specifically designed to gather information about users and systems and to send that data back to a central collector. Trojans pretend to be useful software and include malicious components, bloatware is preinstalled software that isn't needed, and rootkits are used to conceal malicious software and retain a foothold on compromised systems."
+    },
+    "48": {
+        "answer_key": "D",
+        "explaination": "One of the challenges security practitioners can face when attempting to identify malware is that different antivirus and antimalware vendors will name malware packages and families differently. This means that Matt may need to look at different names to figure out what he is dealing with."
+    },
+    "49": {
+        "answer_key": "D",
+        "explaination": "While keyloggers often focus on keyboard input, other types of input may also be captured, meaning Nancy should worry about any user input that occurred while the keylogger was installed. Keyloggers typically do not target files on systems, although if Nancy finds a keylogger, she may want to check for other malware packages with additional capabilities."
+    },
+    "5": {
+        "answer_key": "D",
+        "explaination": "Deterrent controls are designed to prevent an attacker from attempting to violate security policies in the first place. Preventive controls would attempt to block an attack that was about to take place. Corrective controls would remediate the issues that arose during an attack. Detective controls detect issues or indicators of issues."
+    },
+    "50": {
+        "answer_key": "C",
+        "explaination": "Ransomware demands payment to be made while typically using encryption to make data inaccessible. Worms, viruses, and rootkits are not defined by behavior like this."
+    },
+    "51": {
+        "answer_key": "B",
+        "explaination": "Rootkits are designed to hide from antimalware scanners and can often defeat locally run scans. Mounting the drive in another system in read-only mode or booting from a USB drive and scanning using a trusted, known good operating system can be an effective way to determine what malware is on a potentially infected system."
+    },
+    "52": {
+        "answer_key": "C",
+        "explaination": "Jaya's former employee is describing a logic bomb, malicious code that will cause harm when a trigger or specific action occurs. In this case, the former employee is claiming that the trigger is them not being employed at the company. Jaya will need to assess all of the code that the employee wrote to determine if a logic bomb exists. Ransomware is a type of malicious software that typically uses encryption to extort a ransom. Extortionware is not a commonly used term. Trojans appear to be useful or desirable software but contain malicious code."
+    },
+    "53": {
+        "answer_key": "B",
+        "explaination": "In most malware infection scenarios, wiping the drive and reinstalling from known good media is the best option available. If the malware has tools that can infect the system BIOS/UEFI, even this may not be sufficient, but BIOS/UEFI resident malware is relatively uncommon. Multiple antivirus and antimalware tools, even if they are set to delete malware, may still fail against unknown or advanced malware packages. Destroying systems is uncommon, expensive, and unlikely to be acceptable to most organizations as a means of dealing with a malware infection."
+    },
+    "54": {
+        "answer_key": "B",
+        "explaination": "The key difference between worms and viruses is how they spread. Worms spread themselves, whereas viruses rely on human interaction."
+    },
+    "55": {
+        "answer_key": "B",
+        "explaination": "Python is an interpreted rather than a compiled language, so Ben doesn't need to use a decompiler. Instead, his best bet is to open the file and review the code to see what it does. Since it was written by an employee, it is unlikely that it will match an existing known malicious package, which means antivirus and antimalware tools and sites will be useless."
+    },
+    "56": {
+        "answer_key": "B",
+        "explaination": "Trojans are often found in application stores where they appear to be innocuous but desirable applications or are listed in confusingly similar ways to legitimate applications. Many organizations choose to lock down the ability to acquire applications from app stores to prevent this type of issue. Since Trojans do not self-spread and rely on user action, patching typically won't prevent them. While users may try to transfer files via USB, this isn't the most common means for modern Trojans to spread."
+    },
+    "57": {
+        "answer_key": "C",
+        "explaination": "Worms often spread via networks, taking advantage of vulnerabilities to install themselves on targeted systems and then to propagate further. Trojans require human interaction to install software that appears desirable. Logic bombs are embedded in code and perform actions when triggers like a date or event occur. Rootkits are used to hide malware and to conceal attacker's actions."
+    },
+    "58": {
+        "answer_key": "D",
+        "explaination": "Unwanted, typically preinstalled programs are known as bloatware. They take up space and resources without providing value, and many organizations either uninstall them or install clean operating system images to avoid them. There is no indication of malicious activity in the question, so these are most likely not viruses, Trojans, or spyware."
+    },
+    "59": {
+        "answer_key": "A",
+        "explaination": "Bots connect to command and control (C&C) systems, allowing them to be updated, controlled, and managed remotely. Worms spread via vulnerabilities, and drones and vampires aren't common terms for malware."
+    },
+    "6": {
+        "answer_key": "D",
+        "explaination": "In this case, Greg must use a network-based DLP system. Host-based DLP requires the use of agents, which would not be installed on guest systems. Greg may use watermarking and/or pattern recognition to identify the sensitive information, but he must use network-based DLP to meet his goal."
+    },
+    "60": {
+        "answer_key": "A",
+        "explaination": "Randy knows that viruses spread through user interaction with files on thumb drives. A worm would spread itself, a Trojan would look like a useful or desirable file, and there is no indication of spyware in the question."
+    },
+    "61": {
+        "answer_key": "B",
+        "explaination": "This email is an attempt to get account information and is a phishing email. Joseph did not enter the URL himself, which is the behavior that a typosquatter relies on. A smishing attack relies on SMS, and a watering hole attack uses a frequently visited website."
+    },
+    "62": {
+        "answer_key": "D",
+        "explaination": "Vishing is a form of phishing done via voice phones call or voicemail. Whaling focuses on targeting important targets for phishing attacks, whereas spoofing is a general term that means faking things. Spooning is not a technical term used for security practices."
+    },
+    "63": {
+        "answer_key": "A",
+        "explaination": "Michele has discovered a brute-force attack, which relies on trying a large number of passwords, often combined with a list of usernames to try. Shoulder surfing attacks involve an attacker watching as a user enters information like a password or credit card data. On-path attacks intercept data sent via a network, and pretexting is a social engineering attack that relies on a believable reason for attackers to need a victim to take action."
+    },
+    "64": {
+        "answer_key": "C",
+        "explaination": "Password spraying involves the use of the same password to attempt to log into multiple accounts. Joanna should search for uses of the same password for different accounts."
+    },
+    "65": {
+        "answer_key": "B",
+        "explaination": "Susan has most likely discovered a business email compromise and should reach out to the impacted organization to inform them of the potentially compromised account. Smishing would occur via SMS, there is nothing in the question to indicate a disinformation campaign was part of this, and there is no URL mentioned and thus typosquatting can be dismissed as well."
+    },
+    "66": {
+        "answer_key": "A",
+        "explaination": "Watering hole attacks rely on compromising or infecting a website that targeted users frequently visit, much like animals will visit a common watering hole. Vishing is phishing via voice, whaling is a targeted phishing attack against senior or important staff, and typosquatting registers similar URLs that are likely to be inadvertently entered in order to harvest clicks or conduct malicious activity."
+    },
+    "67": {
+        "answer_key": "D",
+        "explaination": "The source IP or hostname; the failed login logs with time, date, username, and other information; and the password that was used for each failed attempt would be useful for watching for brute-force attempts. Knowing where the system being logged into is located isn't useful when tracking brute-force attempts.\nLogging failed passwords can be problematic as it can reveal actual passwords by allowing log reviewers to see failures driven by typos, so Ben may want to avoid that sort of log even though it can be useful!"
+    },
+    "68": {
+        "answer_key": "B",
+        "explaination": "The caller is using pretexting, providing Melissa with a story that relies on urgency and perceived authority to get her to take actions she might normally question. This social engineering attack is not a phishing attack aimed at gathering information or credentials, it does not involve business email accounts being compromised, and carding is not a topic covered in the Security+ exam outline."
+    },
+    "69": {
+        "answer_key": "B",
+        "explaination": "Password spraying attempts try to use a single common password for many user accounts. Determining if a single password is being used over and over can help catch basic password spraying attempts. The time, source IP, or number of failed attempts do not indicate password spraying."
+    },
+    "7": {
+        "answer_key": "B",
+        "explaination": "Data being sent over a network is data in transit. Data at rest is stored data that resides on hard drives, tapes, in the cloud, or on other storage media. Data in processing, or data in use, is data that is actively in use by a computer system."
+    },
+    "70": {
+        "answer_key": "A",
+        "explaination": "Misinformation and disinformation campaigns are primarily associated with nation-state actors, but are increasingly used by other organizations and even individuals as well. Watering hole attacks, business email compromise, and password spraying are broadly used attacks."
+    },
+    "71": {
+        "answer_key": "C",
+        "explaination": "Typosquatting uses misspellings and common typos of websites to redirect traffic for profit or malicious reasons. Fortunately in reality, if you visit smazon.com, you'll be redirected to the actual amazon.com website, as Amazon knows about and works to prevent this type of issue. DNS hijacking and hosts file modifications both attempt to redirect traffic to actual URLs or hostnames to different destinations, and pharming does redirect legitimate traffic to fake sites, but typosquatting is the more specific answer."
+    },
+    "72": {
+        "answer_key": "B",
+        "explaination": "Devon is conducting a watering hole attack that leverages a frequently visited site to deploy malware. There is no description of misinformation or disinformation in the question, and there is not a typo described that would lead to a typosquatting attack being successful."
+    },
+    "73": {
+        "answer_key": "C",
+        "explaination": "Brand impersonation attacks are designed to appear to be from a company that recipients are likely to be familiar with, and thus are more likely to elicit a response. While these are a type of phishing, the more specific answer of brand impersonation is the best answer. Pretexting is a social engineering concept that provides a reason for the request. Pharming attacks redirect traffic intended to be sent to a legitimate site to a fake website typically designed to simulate the real one."
+    },
+    "74": {
+        "answer_key": "C",
+        "explaination": "This is an example of an impersonation attack. The pentester impersonated the head of IT in order to achieve their goals. The good news is that it was a penetration tester! Smishing is phishing via SMS, vishing is phishing via voice or voicemail, and pretexting provides a reason that the target should perform an action. Here the attack relied on the authority that Amanda believed the caller had."
+    },
+    "75": {
+        "answer_key": "C",
+        "explaination": "Smishing attacks are SMS-based. Impersonation attacks could use texts but don't specifically rely on them. Watering hole attacks use frequently visited websites, whereas business email compromise attacks focus on gaining access to business email accounts to use in follow-up attacks."
+    },
+    "76": {
+        "answer_key": "D",
+        "explaination": "Sharif has discovered a spraying attack that uses the same password\u2014often a default or common password\u2014with many usernames. Credential harvesting is the process of gathering credentials like usernames and passwords. Impersonation is a social engineering technique used when an attacker pretends to be someone else. BEC, or business email compromise, involves attackers posing as a trusted individual and asking for actions to be performed."
+    },
+    "77": {
+        "answer_key": "B",
+        "explaination": "Smishing is a type of phishing that occurs via text (SMS) message."
+    },
+    "78": {
+        "answer_key": "B",
+        "explaination": "While it's nearly impossible to prevent typosquatting, purchasing and registering the most common typos (typo-domains) related to your organization's domain and redirecting them to your real domain is the most effective option available. Copyrighting or trademarking the domain name does not prevent typosquatting, and typo resolution is not a feature or capability that is available."
+    },
+    "79": {
+        "answer_key": "B",
+        "explaination": "Using an organization's brand in this way is an example of brand impersonation. While this is also an impersonation attack, the more specific description is the best answer here. Misbranding and crypto-phishing were both made up for this question and aren't commonly used terms."
+    },
+    "8": {
+        "answer_key": "A",
+        "explaination": "Technical controls enforce confidentiality, integrity, and availability in the digital space. Examples of technical security controls include firewall rules, access control lists, intrusion prevention systems, and encryption."
+    },
+    "80": {
+        "answer_key": "C",
+        "explaination": "Disinformation campaigns are used to shift public opinion or to accomplish other goals. They are not limited to nation-state actors but are an increasingly heavily used social engineering tactic at a broad scale. Smishing relies on SMS messages, pretexting involves using a reason that creates urgency or importance in a request from a social engineer, and spraying is a type of password brute forcing."
+    },
+    "81": {
+        "answer_key": "C",
+        "explaination": "Threat hunting is an assessment technique that makes an assumption of compromise and then searches the organization for indicators of compromise that confirm the assumption. Vulnerability scanning, penetration testing, and war driving are all assessment techniques that probe for vulnerabilities but do not assume that a compromise has already taken place."
+    },
+    "82": {
+        "answer_key": "D",
+        "explaination": "Credentialed scans only require read-only access to target servers. Renee should follow the principle of least privilege and limit the access available to the scanner."
+    },
+    "83": {
+        "answer_key": "C",
+        "explaination": "Ryan should first run his scan against a test environment to identify likely vulnerabilities and assess whether the scan itself might disrupt business activities."
+    },
+    "84": {
+        "answer_key": "C",
+        "explaination": "An attack complexity of \u201clow\u201d indicates that exploiting the vulnerability does not require any specialized conditions."
+    },
+    "85": {
+        "answer_key": "A",
+        "explaination": "A false positive error occurs when the vulnerability scanner reports a vulnerability that does not actually exist."
+    },
+    "86": {
+        "answer_key": "B",
+        "explaination": "By allowing students to change their own grades, this vulnerability provides a pathway to unauthorized alteration of information. Brian should recommend that the school deploy integrity controls that prevent unauthorized modifications."
+    },
+    "87": {
+        "answer_key": "C",
+        "explaination": "Nmap is a port scanning tool used to enumerate open network ports on a system. Nessus is a vulnerability scanner designed to detect security issues on a system. Nslookup is a DNS information gathering utility. All three of these tools may be used to gather information and detect vulnerabilities. Metasploit is an exploitation framework used to execute and attack and would be better suited for the Attacking and Exploiting phase of a penetration test."
+    },
+    "88": {
+        "answer_key": "A",
+        "explaination": "This vulnerability is corrected by a patch that was released by Microsoft in 2017. A strong patch management program would have identified and remediated the missing patch."
+    },
+    "89": {
+        "answer_key": "B",
+        "explaination": "Intrusion detection systems do not detect vulnerabilities; they detect attacks. The remaining three tools could all possibly discover a cross-site scripting (XSS) vulnerability, but a web application vulnerability scanner is the most likely to detect it because it is specifically designed to test web applications."
+    },
+    "9": {
+        "answer_key": "D",
+        "explaination": "The three primary goals of cybersecurity attackers are disclosure, alteration, and denial. These map directly to the three objectives of cybersecurity professionals: confidentiality, integrity, and availability."
+    },
+    "90": {
+        "answer_key": "A",
+        "explaination": "Moving from one compromised system to other systems on the same network is known as lateral movement. Privilege escalation attacks increase the level of access that an attacker has to an already compromised system. Footprinting and OSINT are reconnaissance techniques."
+    },
+    "91": {
+        "answer_key": "A",
+        "explaination": "Audits performed to validate an organization's financial statements are very formal audits that are performed by independent third-party auditors. This makes them external audits. Internal audits may be more or less formal than external audits but they are generally done only to provide assurance to internal parties and not to investors. Penetration tests may be done as part of an audit but they are not audits themselves."
+    },
+    "92": {
+        "answer_key": "C",
+        "explaination": "Bug bounty programs are designed to allow external security experts to test systems and uncover previously unknown vulnerabilities. Bug bounty programs offer successful testers financial rewards to incentivize their participation."
+    },
+    "93": {
+        "answer_key": "D",
+        "explaination": "Backdoors are a persistence tool, designed to make sure that the attacker's access persists after the original vulnerability is remediated. Kyle can use this backdoor to gain access to the system in the future, even if the original exploit that he used to gain access is no longer effective."
+    },
+    "94": {
+        "answer_key": "C",
+        "explaination": "WHOIS lookups use external registries and are an example of open source intelligence (OSINT), which is a passive reconnaissance technique. Port scans, vulnerability scans, and footprinting all require active engagement with the target and are, therefore, active reconnaissance."
+    },
+    "95": {
+        "answer_key": "B",
+        "explaination": "Common Vulnerabilities and Exposures (CVE) provides a standard nomenclature for describing security-related software flaws. Common Platform Enumeration (CPE) provides a standard nomenclature for describing product names and versions. The Common Vulnerability Scoring System (CVSS) provides a standardized approach for measuring and describing the severity of security-related software flaws. Common Configuration Enumeration (CCE) provides a standard nomenclature for discussing system configuration issues."
+    },
+    "96": {
+        "answer_key": "C",
+        "explaination": "Known environment tests are performed with full knowledge of the underlying technology, configurations, and settings that make up the target. Unknown environment tests are intended to replicate what an attacker would encounter. Testers are not provided with access to or information about an environment, and instead, they must gather information, discover vulnerabilities, and make their way through an infrastructure or systems like an attacker would. Partially known environment tests are a blend of unknown environment and known environment testing. Detailed environment tests are not a type of penetration test."
+    },
+    "97": {
+        "answer_key": "C",
+        "explaination": "The rules of engagement provide technical details on the parameters of the test. This level of detail would not normally be found in a contract or statement of work (SOW). The lessons learned report is not produced until after the test."
+    },
+    "98": {
+        "answer_key": "B",
+        "explaination": "All of these techniques might provide Grace with information about the operating system running on a device. However, footprinting is a technique specifically designed to elicit this information."
+    },
+    "99": {
+        "answer_key": "B",
+        "explaination": "Vulnerabilities with CVSS base scores between 4.0 and 6.9 fit into the medium risk category. Vulnerability scores between 0.1 and 3.9 would be low, between 7.0 and 8.9 would be high, and those between 9.0 and 10.0 would be in the critical risk category."
     }
 }
